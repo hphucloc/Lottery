@@ -1,0 +1,13 @@
+C:\Users\hphucloc\documents\visual studio 2015\Projects\LotteryWindowsService\LotteryConsoleApplication\bin\Release\LotteryConsoleApplication.exe.config
+C:\Users\hphucloc\documents\visual studio 2015\Projects\LotteryWindowsService\LotteryConsoleApplication\bin\Release\LotteryConsoleApplication.exe
+C:\Users\hphucloc\documents\visual studio 2015\Projects\LotteryWindowsService\LotteryConsoleApplication\bin\Release\LotteryConsoleApplication.pdb
+C:\Users\hphucloc\documents\visual studio 2015\Projects\LotteryWindowsService\LotteryConsoleApplication\bin\Release\EntityFramework.dll
+C:\Users\hphucloc\documents\visual studio 2015\Projects\LotteryWindowsService\LotteryConsoleApplication\bin\Release\EntityFramework.SqlServer.dll
+C:\Users\hphucloc\documents\visual studio 2015\Projects\LotteryWindowsService\LotteryConsoleApplication\bin\Release\HtmlAgilityPack.dll
+C:\Users\hphucloc\documents\visual studio 2015\Projects\LotteryWindowsService\LotteryConsoleApplication\bin\Release\LotteryDAL.dll
+C:\Users\hphucloc\documents\visual studio 2015\Projects\LotteryWindowsService\LotteryConsoleApplication\bin\Release\LotteryDAL.pdb
+C:\Users\hphucloc\documents\visual studio 2015\Projects\LotteryWindowsService\LotteryConsoleApplication\bin\Release\EntityFramework.xml
+C:\Users\hphucloc\documents\visual studio 2015\Projects\LotteryWindowsService\LotteryConsoleApplication\bin\Release\EntityFramework.SqlServer.xml
+C:\Users\hphucloc\documents\visual studio 2015\Projects\LotteryWindowsService\LotteryConsoleApplication\obj\Release\LotteryApplication.csprojResolveAssemblyReference.cache
+C:\Users\hphucloc\documents\visual studio 2015\Projects\LotteryWindowsService\LotteryConsoleApplication\obj\Release\LotteryConsoleApplication.exe
+C:\Users\hphucloc\documents\visual studio 2015\Projects\LotteryWindowsService\LotteryConsoleApplication\obj\Release\LotteryConsoleApplication.pdb

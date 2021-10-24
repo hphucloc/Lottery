@@ -1,0 +1,154 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="LotteryDataModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="NumberType">
+    <Key>
+      <PropertyRef Name="NumberTypeId" />
+    </Key>
+    <Property Name="NumberTypeId" Type="Int16" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Label" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="DateCreated" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="Numbers" Relationship="LotteryDataModel.FK__Number__NumberTy__164452B1" FromRole="NumberType" ToRole="Number" />
+    <NavigationProperty Name="NumberBoughts" Relationship="LotteryDataModel.FK_NumberBought_NumberType" FromRole="NumberType" ToRole="NumberBought" />
+  </EntityType>
+  <EntityType Name="NumberWinLevel">
+    <Key>
+      <PropertyRef Name="NumberWinLevelId" />
+    </Key>
+    <Property Name="NumberWinLevelId" Type="Int16" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Label" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="DateCreated" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="Numbers" Relationship="LotteryDataModel.FK__Number__NumberWi__173876EA" FromRole="NumberWinLevel" ToRole="Number" />
+    <NavigationProperty Name="NumberBoughts" Relationship="LotteryDataModel.FK_NumberBought_NumberWinLevel" FromRole="NumberWinLevel" ToRole="NumberBought" />
+  </EntityType>
+  <EntityContainer Name="LotteryEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="NumberTypes" EntityType="Self.NumberType" />
+    <EntitySet Name="NumberWinLevels" EntityType="Self.NumberWinLevel" />
+    <EntitySet Name="NumberTipBets" EntityType="LotteryDataModel.NumberTipBet" />
+    <EntitySet Name="Matches" EntityType="LotteryDataModel.Match" />
+    <EntitySet Name="AmountBuyLotteries" EntityType="LotteryDataModel.AmountBuyLottery" />
+    <EntitySet Name="Numbers" EntityType="LotteryDataModel.Number" />
+    <AssociationSet Name="FK__Number__NumberTy__164452B1" Association="LotteryDataModel.FK__Number__NumberTy__164452B1">
+      <End Role="NumberType" EntitySet="NumberTypes" />
+      <End Role="Number" EntitySet="Numbers" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Number__NumberWi__173876EA" Association="LotteryDataModel.FK__Number__NumberWi__173876EA">
+      <End Role="NumberWinLevel" EntitySet="NumberWinLevels" />
+      <End Role="Number" EntitySet="Numbers" />
+    </AssociationSet>
+    <EntitySet Name="NumberBoughts" EntityType="LotteryDataModel.NumberBought" />
+    <AssociationSet Name="FK_NumberBought_NumberType" Association="LotteryDataModel.FK_NumberBought_NumberType">
+      <End Role="NumberType" EntitySet="NumberTypes" />
+      <End Role="NumberBought" EntitySet="NumberBoughts" />
+    </AssociationSet>
+    <AssociationSet Name="FK_NumberBought_NumberWinLevel" Association="LotteryDataModel.FK_NumberBought_NumberWinLevel">
+      <End Role="NumberWinLevel" EntitySet="NumberWinLevels" />
+      <End Role="NumberBought" EntitySet="NumberBoughts" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="NumberTipBet">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Label" Type="String" Nullable="false" MaxLength="250" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="Match">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Date" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="Amount" Type="Decimal" Nullable="false" Precision="19" Scale="4" />
+    <Property Name="MatchNumber" Type="String" Nullable="false" MaxLength="12" FixedLength="true" Unicode="true" />
+    <Property Name="FullNumber" Type="String" Nullable="false" MaxLength="12" FixedLength="true" Unicode="false" />
+    <Property Name="Comment" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="AmountBuyLottery">
+    <Key>
+      <PropertyRef Name="AmountBuyLotteryId" />
+    </Key>
+    <Property Name="AmountBuyLotteryId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Date" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="Amount" Type="Decimal" Nullable="false" Precision="19" Scale="4" />
+    <Property Name="FullNumber" Type="String" MaxLength="20" FixedLength="true" Unicode="false" />
+    <Property Name="Comment" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="Number">
+    <Key>
+      <PropertyRef Name="NumberTypeId" />
+      <PropertyRef Name="NumberWinLevelId" />
+      <PropertyRef Name="LotNumber" />
+      <PropertyRef Name="DatePublish" />
+    </Key>
+    <Property Name="NumberId" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="NumberTypeId" Type="Int16" Nullable="false" />
+    <Property Name="NumberWinLevelId" Type="Int16" Nullable="false" />
+    <Property Name="LotNumber" Type="Int32" Nullable="false" />
+    <Property Name="DatePublish" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="DateCreated" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="DateUpdated" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="NumberType" Relationship="LotteryDataModel.FK__Number__NumberTy__164452B1" FromRole="Number" ToRole="NumberType" />
+    <NavigationProperty Name="NumberWinLevel" Relationship="LotteryDataModel.FK__Number__NumberWi__173876EA" FromRole="Number" ToRole="NumberWinLevel" />
+  </EntityType>
+  <Association Name="FK__Number__NumberTy__164452B1">
+    <End Type="LotteryDataModel.NumberType" Role="NumberType" Multiplicity="1" />
+    <End Type="LotteryDataModel.Number" Role="Number" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="NumberType">
+        <PropertyRef Name="NumberTypeId" />
+      </Principal>
+      <Dependent Role="Number">
+        <PropertyRef Name="NumberTypeId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Number__NumberWi__173876EA">
+    <End Type="LotteryDataModel.NumberWinLevel" Role="NumberWinLevel" Multiplicity="1" />
+    <End Type="LotteryDataModel.Number" Role="Number" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="NumberWinLevel">
+        <PropertyRef Name="NumberWinLevelId" />
+      </Principal>
+      <Dependent Role="Number">
+        <PropertyRef Name="NumberWinLevelId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="NumberBought">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="DateBought" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="LotNumber" Type="Byte" Nullable="false" />
+    <Property Name="CreatedDate" Type="DateTime" Precision="3" />
+    <Property Name="NumberTypeId" Type="Int16" Nullable="false" />
+    <Property Name="NumberWinLevelId" Type="Int16" Nullable="false" />
+    <NavigationProperty Name="NumberType" Relationship="LotteryDataModel.FK_NumberBought_NumberType" FromRole="NumberBought" ToRole="NumberType" />
+    <NavigationProperty Name="NumberWinLevel" Relationship="LotteryDataModel.FK_NumberBought_NumberWinLevel" FromRole="NumberBought" ToRole="NumberWinLevel" />
+  </EntityType>
+  <Association Name="FK_NumberBought_NumberType">
+    <End Type="LotteryDataModel.NumberType" Role="NumberType" Multiplicity="1" />
+    <End Type="LotteryDataModel.NumberBought" Role="NumberBought" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="NumberType">
+        <PropertyRef Name="NumberTypeId" />
+      </Principal>
+      <Dependent Role="NumberBought">
+        <PropertyRef Name="NumberTypeId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_NumberBought_NumberWinLevel">
+    <End Type="LotteryDataModel.NumberWinLevel" Role="NumberWinLevel" Multiplicity="1" />
+    <End Type="LotteryDataModel.NumberBought" Role="NumberBought" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="NumberWinLevel">
+        <PropertyRef Name="NumberWinLevelId" />
+      </Principal>
+      <Dependent Role="NumberBought">
+        <PropertyRef Name="NumberWinLevelId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

@@ -1,0 +1,11 @@
+C:\Users\hphucloc\documents\visual studio 2015\Projects\LotteryWindowsService\LotteryBusiness\bin\Release\LotteryBusiness.dll.config
+C:\Users\hphucloc\documents\visual studio 2015\Projects\LotteryWindowsService\LotteryBusiness\bin\Release\LotteryBusiness.dll
+C:\Users\hphucloc\documents\visual studio 2015\Projects\LotteryWindowsService\LotteryBusiness\bin\Release\LotteryBusiness.pdb
+C:\Users\hphucloc\documents\visual studio 2015\Projects\LotteryWindowsService\LotteryBusiness\bin\Release\EntityFramework.dll
+C:\Users\hphucloc\documents\visual studio 2015\Projects\LotteryWindowsService\LotteryBusiness\bin\Release\EntityFramework.SqlServer.dll
+C:\Users\hphucloc\documents\visual studio 2015\Projects\LotteryWindowsService\LotteryBusiness\bin\Release\LotteryDAL.dll
+C:\Users\hphucloc\documents\visual studio 2015\Projects\LotteryWindowsService\LotteryBusiness\bin\Release\EntityFramework.xml
+C:\Users\hphucloc\documents\visual studio 2015\Projects\LotteryWindowsService\LotteryBusiness\bin\Release\EntityFramework.SqlServer.xml
+C:\Users\hphucloc\documents\visual studio 2015\Projects\LotteryWindowsService\LotteryBusiness\bin\Release\LotteryDAL.pdb
+C:\Users\hphucloc\documents\visual studio 2015\Projects\LotteryWindowsService\LotteryBusiness\obj\Release\LotteryBusiness.dll
+C:\Users\hphucloc\documents\visual studio 2015\Projects\LotteryWindowsService\LotteryBusiness\obj\Release\LotteryBusiness.pdb

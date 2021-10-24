@@ -1,0 +1,23 @@
+C:\Users\hphucloc\documents\visual studio 2015\Projects\LotteryWindowsService\Test\bin\Debug\Test.exe.config
+C:\Users\hphucloc\documents\visual studio 2015\Projects\LotteryWindowsService\Test\bin\Debug\Test.exe
+C:\Users\hphucloc\documents\visual studio 2015\Projects\LotteryWindowsService\Test\bin\Debug\Test.pdb
+C:\Users\hphucloc\documents\visual studio 2015\Projects\LotteryWindowsService\Test\obj\Debug\Test.exe
+C:\Users\hphucloc\documents\visual studio 2015\Projects\LotteryWindowsService\Test\obj\Debug\Test.pdb
+C:\Users\hphucloc\documents\visual studio 2015\Projects\LotteryWindowsService\Test\bin\Debug\LotteryBusiness.dll
+C:\Users\hphucloc\documents\visual studio 2015\Projects\LotteryWindowsService\Test\bin\Debug\EntityFramework.dll
+C:\Users\hphucloc\documents\visual studio 2015\Projects\LotteryWindowsService\Test\bin\Debug\LotteryBusiness.pdb
+C:\Users\hphucloc\documents\visual studio 2015\Projects\LotteryWindowsService\Test\bin\Debug\EntityFramework.xml
+C:\Users\hphucloc\documents\visual studio 2015\Projects\LotteryWindowsService\Test\obj\Debug\Test.csprojResolveAssemblyReference.cache
+D:\Projects\LotteryWindowsService\Test\bin\Debug\Test.exe.config
+D:\Projects\LotteryWindowsService\Test\bin\Debug\Test.exe
+D:\Projects\LotteryWindowsService\Test\bin\Debug\Test.pdb
+D:\Projects\LotteryWindowsService\Test\bin\Debug\LotteryBusiness.dll
+D:\Projects\LotteryWindowsService\Test\bin\Debug\EntityFramework.dll
+D:\Projects\LotteryWindowsService\Test\bin\Debug\LotteryBusiness.pdb
+D:\Projects\LotteryWindowsService\Test\bin\Debug\LotteryBusiness.dll.config
+D:\Projects\LotteryWindowsService\Test\bin\Debug\EntityFramework.xml
+D:\Projects\LotteryWindowsService\Test\obj\Debug\Test.csprojAssemblyReference.cache
+D:\Projects\LotteryWindowsService\Test\obj\Debug\Test.csproj.CoreCompileInputs.cache
+D:\Projects\LotteryWindowsService\Test\obj\Debug\Test.csproj.CopyComplete
+D:\Projects\LotteryWindowsService\Test\obj\Debug\Test.exe
+D:\Projects\LotteryWindowsService\Test\obj\Debug\Test.pdb

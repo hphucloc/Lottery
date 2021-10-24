@@ -1,0 +1,11 @@
+C:\Users\hphucloc\documents\visual studio 2015\Projects\LotteryWindowsService\LotteryDAL\bin\Release\LotteryDAL.dll.config
+C:\Users\hphucloc\documents\visual studio 2015\Projects\LotteryWindowsService\LotteryDAL\bin\Release\LotteryDAL.dll
+C:\Users\hphucloc\documents\visual studio 2015\Projects\LotteryWindowsService\LotteryDAL\bin\Release\LotteryDAL.pdb
+C:\Users\hphucloc\documents\visual studio 2015\Projects\LotteryWindowsService\LotteryDAL\bin\Release\EntityFramework.dll
+C:\Users\hphucloc\documents\visual studio 2015\Projects\LotteryWindowsService\LotteryDAL\bin\Release\EntityFramework.SqlServer.dll
+C:\Users\hphucloc\documents\visual studio 2015\Projects\LotteryWindowsService\LotteryDAL\bin\Release\Microsoft.Web.XmlTransform.dll
+C:\Users\hphucloc\documents\visual studio 2015\Projects\LotteryWindowsService\LotteryDAL\bin\Release\NuGet.Core.dll
+C:\Users\hphucloc\documents\visual studio 2015\Projects\LotteryWindowsService\LotteryDAL\bin\Release\EntityFramework.xml
+C:\Users\hphucloc\documents\visual studio 2015\Projects\LotteryWindowsService\LotteryDAL\bin\Release\EntityFramework.SqlServer.xml
+C:\Users\hphucloc\documents\visual studio 2015\Projects\LotteryWindowsService\LotteryDAL\obj\Release\LotteryDAL.dll
+C:\Users\hphucloc\documents\visual studio 2015\Projects\LotteryWindowsService\LotteryDAL\obj\Release\LotteryDAL.pdb

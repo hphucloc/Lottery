@@ -1,0 +1,95 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="LotteryDataModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="NumberType">
+    <Key>
+      <PropertyRef Name="NumberTypeId" />
+    </Key>
+    <Property Name="NumberTypeId" Type="Int16" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Label" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="DateCreated" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="Numbers" Relationship="LotteryDataModel.FK__Number__NumberTy__300424B4" FromRole="NumberType" ToRole="Number" />
+  </EntityType>
+  <EntityType Name="NumberWinLevel">
+    <Key>
+      <PropertyRef Name="NumberWinLevelId" />
+    </Key>
+    <Property Name="NumberWinLevelId" Type="Int16" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Label" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="DateCreated" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="Numbers" Relationship="LotteryDataModel.FK__Number__NumberWi__30F848ED" FromRole="NumberWinLevel" ToRole="Number" />
+  </EntityType>
+  <EntityContainer Name="LotteryEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="NumberTypes" EntityType="Self.NumberType" />
+    <EntitySet Name="NumberWinLevels" EntityType="Self.NumberWinLevel" />
+    <EntitySet Name="Numbers" EntityType="LotteryDataModel.Number" />
+    <AssociationSet Name="FK__Number__NumberTy__300424B4" Association="LotteryDataModel.FK__Number__NumberTy__300424B4">
+      <End Role="NumberType" EntitySet="NumberTypes" />
+      <End Role="Number" EntitySet="Numbers" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Number__NumberWi__30F848ED" Association="LotteryDataModel.FK__Number__NumberWi__30F848ED">
+      <End Role="NumberWinLevel" EntitySet="NumberWinLevels" />
+      <End Role="Number" EntitySet="Numbers" />
+    </AssociationSet>
+    <EntitySet Name="NumberTipBets" EntityType="LotteryDataModel.NumberTipBet" />
+    <EntitySet Name="Matches" EntityType="LotteryDataModel.Match" />
+  </EntityContainer>
+  <EntityType Name="Number">
+    <Key>
+      <PropertyRef Name="NumberTypeId" />
+      <PropertyRef Name="NumberWinLevelId" />
+      <PropertyRef Name="LotNumber" />
+      <PropertyRef Name="DatePublish" />
+    </Key>
+    <Property Name="NumberId" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="NumberTypeId" Type="Int16" Nullable="false" />
+    <Property Name="NumberWinLevelId" Type="Int16" Nullable="false" />
+    <Property Name="LotNumber" Type="Int32" Nullable="false" />
+    <Property Name="DatePublish" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="DateCreated" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="DateUpdated" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="NumberType" Relationship="LotteryDataModel.FK__Number__NumberTy__300424B4" FromRole="Number" ToRole="NumberType" />
+    <NavigationProperty Name="NumberWinLevel" Relationship="LotteryDataModel.FK__Number__NumberWi__30F848ED" FromRole="Number" ToRole="NumberWinLevel" />
+  </EntityType>
+  <Association Name="FK__Number__NumberTy__300424B4">
+    <End Type="LotteryDataModel.NumberType" Role="NumberType" Multiplicity="1" />
+    <End Type="LotteryDataModel.Number" Role="Number" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="NumberType">
+        <PropertyRef Name="NumberTypeId" />
+      </Principal>
+      <Dependent Role="Number">
+        <PropertyRef Name="NumberTypeId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Number__NumberWi__30F848ED">
+    <End Type="LotteryDataModel.NumberWinLevel" Role="NumberWinLevel" Multiplicity="1" />
+    <End Type="LotteryDataModel.Number" Role="Number" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="NumberWinLevel">
+        <PropertyRef Name="NumberWinLevelId" />
+      </Principal>
+      <Dependent Role="Number">
+        <PropertyRef Name="NumberWinLevelId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="NumberTipBet">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Label" Type="String" Nullable="false" MaxLength="250" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="Match">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Date" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="Amount" Type="Decimal" Nullable="false" Precision="19" Scale="4" />
+    <Property Name="MatchNumber" Type="String" Nullable="false" MaxLength="12" FixedLength="true" Unicode="true" />
+    <Property Name="FullNumber" Type="String" Nullable="false" MaxLength="12" FixedLength="true" Unicode="false" />
+    <Property Name="Comment" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+  </EntityType>
+</Schema>

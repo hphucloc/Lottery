@@ -1,0 +1,25 @@
+C:\Users\hphucloc\documents\visual studio 2015\Projects\LotteryWindowsService\LotteryDAL\bin\Debug\LotteryDAL.dll.config
+C:\Users\hphucloc\documents\visual studio 2015\Projects\LotteryWindowsService\LotteryDAL\bin\Debug\LotteryDAL.dll
+C:\Users\hphucloc\documents\visual studio 2015\Projects\LotteryWindowsService\LotteryDAL\bin\Debug\LotteryDAL.pdb
+C:\Users\hphucloc\documents\visual studio 2015\Projects\LotteryWindowsService\LotteryDAL\bin\Debug\EntityFramework.dll
+C:\Users\hphucloc\documents\visual studio 2015\Projects\LotteryWindowsService\LotteryDAL\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\hphucloc\documents\visual studio 2015\Projects\LotteryWindowsService\LotteryDAL\bin\Debug\Microsoft.Web.XmlTransform.dll
+C:\Users\hphucloc\documents\visual studio 2015\Projects\LotteryWindowsService\LotteryDAL\bin\Debug\NuGet.Core.dll
+C:\Users\hphucloc\documents\visual studio 2015\Projects\LotteryWindowsService\LotteryDAL\bin\Debug\EntityFramework.xml
+C:\Users\hphucloc\documents\visual studio 2015\Projects\LotteryWindowsService\LotteryDAL\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\hphucloc\documents\visual studio 2015\Projects\LotteryWindowsService\LotteryDAL\obj\Debug\LotteryDAL.dll
+C:\Users\hphucloc\documents\visual studio 2015\Projects\LotteryWindowsService\LotteryDAL\obj\Debug\LotteryDAL.pdb
+D:\Projects\LotteryWindowsService\LotteryDAL\bin\Debug\LotteryDAL.dll.config
+D:\Projects\LotteryWindowsService\LotteryDAL\bin\Debug\LotteryDAL.dll
+D:\Projects\LotteryWindowsService\LotteryDAL\bin\Debug\LotteryDAL.pdb
+D:\Projects\LotteryWindowsService\LotteryDAL\bin\Debug\EntityFramework.dll
+D:\Projects\LotteryWindowsService\LotteryDAL\bin\Debug\EntityFramework.SqlServer.dll
+D:\Projects\LotteryWindowsService\LotteryDAL\bin\Debug\Microsoft.Web.XmlTransform.dll
+D:\Projects\LotteryWindowsService\LotteryDAL\bin\Debug\NuGet.Core.dll
+D:\Projects\LotteryWindowsService\LotteryDAL\bin\Debug\EntityFramework.xml
+D:\Projects\LotteryWindowsService\LotteryDAL\bin\Debug\EntityFramework.SqlServer.xml
+D:\Projects\LotteryWindowsService\LotteryDAL\obj\Debug\LotteryDAL.csproj.CoreCompileInputs.cache
+D:\Projects\LotteryWindowsService\LotteryDAL\obj\Debug\LotteryDAL.csproj.CopyComplete
+D:\Projects\LotteryWindowsService\LotteryDAL\obj\Debug\LotteryDAL.dll
+D:\Projects\LotteryWindowsService\LotteryDAL\obj\Debug\LotteryDAL.pdb
+D:\Projects\LotteryWindowsService\LotteryDAL\obj\Debug\LotteryDAL.csprojAssemblyReference.cache

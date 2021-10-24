@@ -1,0 +1,63 @@
+C:\Users\hphucloc\documents\visual studio 2015\Projects\LotteryWindowsService\LotteryUI\bin\Debug\LotteryUI.exe.config
+C:\Users\hphucloc\documents\visual studio 2015\Projects\LotteryWindowsService\LotteryUI\bin\Debug\LotteryUI.exe
+C:\Users\hphucloc\documents\visual studio 2015\Projects\LotteryWindowsService\LotteryUI\bin\Debug\LotteryUI.pdb
+C:\Users\hphucloc\documents\visual studio 2015\Projects\LotteryWindowsService\LotteryUI\obj\Debug\LotteryUI.Main.resources
+C:\Users\hphucloc\documents\visual studio 2015\Projects\LotteryWindowsService\LotteryUI\obj\Debug\LotteryUI.Properties.Resources.resources
+C:\Users\hphucloc\documents\visual studio 2015\Projects\LotteryWindowsService\LotteryUI\obj\Debug\LotteryUI.csproj.GenerateResource.Cache
+C:\Users\hphucloc\documents\visual studio 2015\Projects\LotteryWindowsService\LotteryUI\obj\Debug\LotteryUI.exe
+C:\Users\hphucloc\documents\visual studio 2015\Projects\LotteryWindowsService\LotteryUI\obj\Debug\LotteryUI.pdb
+C:\Users\hphucloc\documents\visual studio 2015\Projects\LotteryWindowsService\LotteryUI\obj\Debug\LotteryUI._4DMax.resources
+C:\Users\hphucloc\documents\visual studio 2015\Projects\LotteryWindowsService\LotteryUI\obj\Debug\LotteryUI._6Over45.resources
+C:\Users\hphucloc\documents\visual studio 2015\Projects\LotteryWindowsService\LotteryUI\bin\Debug\LotteryConsoleApplication.exe
+C:\Users\hphucloc\documents\visual studio 2015\Projects\LotteryWindowsService\LotteryUI\bin\Debug\LotteryDAL.dll
+C:\Users\hphucloc\documents\visual studio 2015\Projects\LotteryWindowsService\LotteryUI\bin\Debug\HtmlAgilityPack.dll
+C:\Users\hphucloc\documents\visual studio 2015\Projects\LotteryWindowsService\LotteryUI\bin\Debug\EntityFramework.dll
+C:\Users\hphucloc\documents\visual studio 2015\Projects\LotteryWindowsService\LotteryUI\bin\Debug\LotteryConsoleApplication.pdb
+C:\Users\hphucloc\documents\visual studio 2015\Projects\LotteryWindowsService\LotteryUI\bin\Debug\LotteryDAL.pdb
+C:\Users\hphucloc\documents\visual studio 2015\Projects\LotteryWindowsService\LotteryUI\bin\Debug\EntityFramework.xml
+C:\Users\hphucloc\documents\visual studio 2015\Projects\LotteryWindowsService\LotteryUI\obj\Debug\LotteryUI.csprojResolveAssemblyReference.cache
+C:\Users\hphucloc\documents\visual studio 2015\Projects\LotteryWindowsService\LotteryUI\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\hphucloc\documents\visual studio 2015\Projects\LotteryWindowsService\LotteryUI\bin\Debug\LotteryBusiness.dll
+C:\Users\hphucloc\documents\visual studio 2015\Projects\LotteryWindowsService\LotteryUI\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\hphucloc\documents\visual studio 2015\Projects\LotteryWindowsService\LotteryUI\bin\Debug\LotteryBusiness.pdb
+C:\Users\hphucloc\documents\visual studio 2015\Projects\LotteryWindowsService\LotteryUI\obj\Debug\LotteryUI._NumberNotAppear.resources
+C:\Users\hphucloc\Documents\Visual Studio 2015\Projects\LotteryWindowsService\LotteryUI\obj\Debug\LotteryUI.TipBet.resources
+C:\Users\hphucloc\Documents\Visual Studio 2015\Projects\LotteryWindowsService\LotteryUI\obj\Debug\LotteryUI.NoBet.resources
+C:\Users\hphucloc\documents\visual studio 2015\Projects\LotteryWindowsService\LotteryUI\obj\Debug\LotteryUI._6Over55.resources
+C:\Users\hphucloc\documents\visual studio 2015\Projects\LotteryWindowsService\LotteryUI\obj\Debug\LotteryUI._New6Over55Number.resources
+C:\Users\hphucloc\documents\visual studio 2015\Projects\LotteryWindowsService\LotteryUI\obj\Debug\LotteryUI._New6Over45Number.resources
+D:\Projects\LotteryWindowsService\LotteryUI\bin\Debug\LotteryUI.exe.config
+D:\Projects\LotteryWindowsService\LotteryUI\bin\Debug\LotteryUI.exe
+D:\Projects\LotteryWindowsService\LotteryUI\bin\Debug\LotteryUI.pdb
+D:\Projects\LotteryWindowsService\LotteryUI\bin\Debug\EntityFramework.dll
+D:\Projects\LotteryWindowsService\LotteryUI\bin\Debug\EntityFramework.SqlServer.dll
+D:\Projects\LotteryWindowsService\LotteryUI\bin\Debug\LotteryBusiness.dll
+D:\Projects\LotteryWindowsService\LotteryUI\bin\Debug\LotteryConsoleApplication.exe
+D:\Projects\LotteryWindowsService\LotteryUI\bin\Debug\LotteryDAL.dll
+D:\Projects\LotteryWindowsService\LotteryUI\bin\Debug\HtmlAgilityPack.dll
+D:\Projects\LotteryWindowsService\LotteryUI\bin\Debug\LotteryDAL.pdb
+D:\Projects\LotteryWindowsService\LotteryUI\bin\Debug\LotteryDAL.dll.config
+D:\Projects\LotteryWindowsService\LotteryUI\bin\Debug\EntityFramework.xml
+D:\Projects\LotteryWindowsService\LotteryUI\bin\Debug\EntityFramework.SqlServer.xml
+D:\Projects\LotteryWindowsService\LotteryUI\bin\Debug\LotteryBusiness.pdb
+D:\Projects\LotteryWindowsService\LotteryUI\bin\Debug\LotteryBusiness.dll.config
+D:\Projects\LotteryWindowsService\LotteryUI\bin\Debug\LotteryConsoleApplication.pdb
+D:\Projects\LotteryWindowsService\LotteryUI\bin\Debug\LotteryConsoleApplication.exe.config
+D:\Projects\LotteryWindowsService\LotteryUI\obj\Debug\LotteryUI.csprojAssemblyReference.cache
+D:\Projects\LotteryWindowsService\LotteryUI\obj\Debug\LotteryUI.Main.resources
+D:\Projects\LotteryWindowsService\LotteryUI\obj\Debug\LotteryUI.Properties.Resources.resources
+D:\Projects\LotteryWindowsService\LotteryUI\obj\Debug\LotteryUI.NoBet.resources
+D:\Projects\LotteryWindowsService\LotteryUI\obj\Debug\LotteryUI.TipBet.resources
+D:\Projects\LotteryWindowsService\LotteryUI\obj\Debug\LotteryUI._4DMax.resources
+D:\Projects\LotteryWindowsService\LotteryUI\obj\Debug\LotteryUI._6Over55.resources
+D:\Projects\LotteryWindowsService\LotteryUI\obj\Debug\LotteryUI._6Over45.resources
+D:\Projects\LotteryWindowsService\LotteryUI\obj\Debug\LotteryUI._New6Over45Number.resources
+D:\Projects\LotteryWindowsService\LotteryUI\obj\Debug\LotteryUI._New6Over55Number.resources
+D:\Projects\LotteryWindowsService\LotteryUI\obj\Debug\LotteryUI._NumberNotAppear.resources
+D:\Projects\LotteryWindowsService\LotteryUI\obj\Debug\LotteryUI.csproj.GenerateResource.cache
+D:\Projects\LotteryWindowsService\LotteryUI\obj\Debug\LotteryUI.csproj.CoreCompileInputs.cache
+D:\Projects\LotteryWindowsService\LotteryUI\obj\Debug\LotteryUI.csproj.CopyComplete
+D:\Projects\LotteryWindowsService\LotteryUI\obj\Debug\LotteryUI.exe
+D:\Projects\LotteryWindowsService\LotteryUI\obj\Debug\LotteryUI.pdb
+D:\Projects\LotteryWindowsService\LotteryUI\obj\Debug\LotteryUI._FullShowNumber.resources
+D:\Projects\LotteryWindowsService\LotteryUI\obj\Debug\LotteryUI.About.resources

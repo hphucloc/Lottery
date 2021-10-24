@@ -1,0 +1,27 @@
+C:\Users\hphucloc\documents\visual studio 2015\Projects\LotteryWindowsService\LotteryConsoleApplication\bin\Debug\LotteryConsoleApplication.exe.config
+C:\Users\hphucloc\documents\visual studio 2015\Projects\LotteryWindowsService\LotteryConsoleApplication\bin\Debug\LotteryConsoleApplication.exe
+C:\Users\hphucloc\documents\visual studio 2015\Projects\LotteryWindowsService\LotteryConsoleApplication\bin\Debug\LotteryConsoleApplication.pdb
+C:\Users\hphucloc\documents\visual studio 2015\Projects\LotteryWindowsService\LotteryConsoleApplication\bin\Debug\EntityFramework.dll
+C:\Users\hphucloc\documents\visual studio 2015\Projects\LotteryWindowsService\LotteryConsoleApplication\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\hphucloc\documents\visual studio 2015\Projects\LotteryWindowsService\LotteryConsoleApplication\bin\Debug\LotteryDAL.dll
+C:\Users\hphucloc\documents\visual studio 2015\Projects\LotteryWindowsService\LotteryConsoleApplication\bin\Debug\LotteryDAL.pdb
+C:\Users\hphucloc\documents\visual studio 2015\Projects\LotteryWindowsService\LotteryConsoleApplication\bin\Debug\EntityFramework.xml
+C:\Users\hphucloc\documents\visual studio 2015\Projects\LotteryWindowsService\LotteryConsoleApplication\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\hphucloc\documents\visual studio 2015\Projects\LotteryWindowsService\LotteryConsoleApplication\obj\Debug\LotteryApplication.csprojResolveAssemblyReference.cache
+C:\Users\hphucloc\documents\visual studio 2015\Projects\LotteryWindowsService\LotteryConsoleApplication\obj\Debug\LotteryConsoleApplication.exe
+C:\Users\hphucloc\documents\visual studio 2015\Projects\LotteryWindowsService\LotteryConsoleApplication\obj\Debug\LotteryConsoleApplication.pdb
+D:\Projects\LotteryWindowsService\LotteryConsoleApplication\bin\Debug\LotteryConsoleApplication.exe.config
+D:\Projects\LotteryWindowsService\LotteryConsoleApplication\bin\Debug\LotteryConsoleApplication.exe
+D:\Projects\LotteryWindowsService\LotteryConsoleApplication\bin\Debug\LotteryConsoleApplication.pdb
+D:\Projects\LotteryWindowsService\LotteryConsoleApplication\bin\Debug\EntityFramework.dll
+D:\Projects\LotteryWindowsService\LotteryConsoleApplication\bin\Debug\EntityFramework.SqlServer.dll
+D:\Projects\LotteryWindowsService\LotteryConsoleApplication\bin\Debug\LotteryDAL.dll
+D:\Projects\LotteryWindowsService\LotteryConsoleApplication\bin\Debug\LotteryDAL.pdb
+D:\Projects\LotteryWindowsService\LotteryConsoleApplication\bin\Debug\LotteryDAL.dll.config
+D:\Projects\LotteryWindowsService\LotteryConsoleApplication\bin\Debug\EntityFramework.xml
+D:\Projects\LotteryWindowsService\LotteryConsoleApplication\bin\Debug\EntityFramework.SqlServer.xml
+D:\Projects\LotteryWindowsService\LotteryConsoleApplication\obj\Debug\LotteryApplication.csproj.CoreCompileInputs.cache
+D:\Projects\LotteryWindowsService\LotteryConsoleApplication\obj\Debug\LotteryApplication.csproj.CopyComplete
+D:\Projects\LotteryWindowsService\LotteryConsoleApplication\obj\Debug\LotteryConsoleApplication.exe
+D:\Projects\LotteryWindowsService\LotteryConsoleApplication\obj\Debug\LotteryConsoleApplication.pdb
+D:\Projects\LotteryWindowsService\LotteryConsoleApplication\obj\Debug\LotteryApplication.csprojAssemblyReference.cache

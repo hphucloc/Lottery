@@ -1,0 +1,11 @@
+<configuration>
+	<mindateNumber>
+		250
+	</mindateNumber>
+	<mindateColor>
+		500
+	</mindateColor>
+	<newline>
+		10
+	</newline>
+</configuration>

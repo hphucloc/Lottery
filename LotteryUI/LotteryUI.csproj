@@ -1,0 +1,247 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{70C10253-244F-4E58-AB77-FD12841F8347}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>LotteryUI</RootNamespace>
+    <AssemblyName>LotteryUI</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="LotteryBusiness">
+      <HintPath>..\LotteryBusiness\bin\Debug\LotteryBusiness.dll</HintPath>
+    </Reference>
+    <Reference Include="LotteryConsoleApplication, Version=1.0.0.0, Culture=neutral, processorArchitecture=AMD64">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\LotteryConsoleApplication\bin\Debug\LotteryConsoleApplication.exe</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="CustomButton.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="CustomLabel.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Main.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Main.Designer.cs">
+      <DependentUpon>Main.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="NoBet.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NoBet.Designer.cs">
+      <DependentUpon>NoBet.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TimeAppear.cs" />
+    <Compile Include="About.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="About.Designer.cs">
+      <DependentUpon>About.cs</DependentUpon>
+    </Compile>
+    <Compile Include="_FullShowNumber.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="_FullShowNumber.Designer.cs">
+      <DependentUpon>_FullShowNumber.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TipBet.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TipBet.Designer.cs">
+      <DependentUpon>TipBet.cs</DependentUpon>
+    </Compile>
+    <Compile Include="_4DMax.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="_4DMax.Designer.cs">
+      <DependentUpon>_4DMax.cs</DependentUpon>
+    </Compile>
+    <Compile Include="_6Over55.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="_6Over55.Designer.cs">
+      <DependentUpon>_6Over55.cs</DependentUpon>
+    </Compile>
+    <Compile Include="_6Over45.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="_6Over45.Designer.cs">
+      <DependentUpon>_6Over45.cs</DependentUpon>
+    </Compile>
+    <Compile Include="_New6Over45Number.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="_New6Over45Number.Designer.cs">
+      <DependentUpon>_New6Over45Number.cs</DependentUpon>
+    </Compile>
+    <Compile Include="_New6Over55Number.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="_New6Over55Number.Designer.cs">
+      <DependentUpon>_New6Over55Number.cs</DependentUpon>
+    </Compile>
+    <Compile Include="_NumberNotAppear.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="_NumberNotAppear.Designer.cs">
+      <DependentUpon>_NumberNotAppear.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Main.resx">
+      <DependentUpon>Main.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="NoBet.resx">
+      <DependentUpon>NoBet.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="About.resx">
+      <DependentUpon>About.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="_FullShowNumber.resx">
+      <DependentUpon>_FullShowNumber.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TipBet.resx">
+      <DependentUpon>TipBet.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="_4DMax.resx">
+      <DependentUpon>_4DMax.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="_6Over55.resx">
+      <DependentUpon>_6Over55.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="_6Over45.resx">
+      <DependentUpon>_6Over45.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="_New6Over45Number.resx">
+      <DependentUpon>_New6Over45Number.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="_New6Over55Number.resx">
+      <DependentUpon>_New6Over55Number.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="_NumberNotAppear.resx">
+      <DependentUpon>_NumberNotAppear.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\LotteryDAL\LotteryDAL.csproj">
+      <Project>{88FFB372-9CFD-4D66-8F71-4259E1287719}</Project>
+      <Name>LotteryDAL</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.6.1">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.6.1 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\WP_20170528_12_12_39_Pro.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\6.45.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\6.55.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
