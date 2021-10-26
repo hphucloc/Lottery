@@ -4,12 +4,18 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 
+using LotteryBusiness;
+
 namespace WebAppLottery.Controllers
 {
     public class HomeController : Controller
     {
+        private List<LoterryStatistic> _6Over45No { get; set; }
         public ActionResult Index()
         {
+            _6Over45No = LotteryBusiness._6Over45TimeLine.Get6Over45Number(DateTime.MinValue, DateTime.MaxValue);
+            ViewBag.Message = _6Over45No[0].
+
             return View();
         }
 

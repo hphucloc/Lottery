@@ -156,3 +156,13 @@ C:\Users\hphuc\Documents\GitHub\Lottery\Web\WebAppLottery\WebAppLottery\obj\Debu
 C:\Users\hphuc\Documents\GitHub\Lottery\Web\WebAppLottery\WebAppLottery\obj\Debug\WebAppLottery.csproj.CopyComplete
 C:\Users\hphuc\Documents\GitHub\Lottery\Web\WebAppLottery\WebAppLottery\obj\Debug\WebAppLottery.dll
 C:\Users\hphuc\Documents\GitHub\Lottery\Web\WebAppLottery\WebAppLottery\obj\Debug\WebAppLottery.pdb
+C:\Users\hphuc\Documents\GitHub\Lottery\Web\WebAppLottery\WebAppLottery\bin\EntityFramework.dll
+C:\Users\hphuc\Documents\GitHub\Lottery\Web\WebAppLottery\WebAppLottery\bin\EntityFramework.SqlServer.dll
+C:\Users\hphuc\Documents\GitHub\Lottery\Web\WebAppLottery\WebAppLottery\bin\LotteryBusiness.dll
+C:\Users\hphuc\Documents\GitHub\Lottery\Web\WebAppLottery\WebAppLottery\bin\LotteryDAL.dll
+C:\Users\hphuc\Documents\GitHub\Lottery\Web\WebAppLottery\WebAppLottery\bin\EntityFramework.xml
+C:\Users\hphuc\Documents\GitHub\Lottery\Web\WebAppLottery\WebAppLottery\bin\EntityFramework.SqlServer.xml
+C:\Users\hphuc\Documents\GitHub\Lottery\Web\WebAppLottery\WebAppLottery\bin\LotteryBusiness.pdb
+C:\Users\hphuc\Documents\GitHub\Lottery\Web\WebAppLottery\WebAppLottery\bin\LotteryBusiness.dll.config
+C:\Users\hphuc\Documents\GitHub\Lottery\Web\WebAppLottery\WebAppLottery\bin\LotteryDAL.pdb
+C:\Users\hphuc\Documents\GitHub\Lottery\Web\WebAppLottery\WebAppLottery\bin\LotteryDAL.dll.config

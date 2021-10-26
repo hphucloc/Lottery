@@ -46,6 +46,18 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework">
+      <HintPath>..\..\..\LotteryBusiness\bin\Debug\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer">
+      <HintPath>..\..\..\LotteryBusiness\bin\Debug\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="LotteryBusiness">
+      <HintPath>..\..\..\LotteryBusiness\bin\Debug\LotteryBusiness.dll</HintPath>
+    </Reference>
+    <Reference Include="LotteryDAL">
+      <HintPath>..\..\..\LotteryBusiness\bin\Debug\LotteryDAL.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System" />
     <Reference Include="System.Data" />
