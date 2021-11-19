@@ -1,0 +1,74 @@
+﻿@model WebAppLottery.Models.IndexPageModel
+
+<table class="table">
+    <thead>
+        <tr>
+            <td colspan="7">
+                Tổng số lần xuất hiện theo nhóm
+            </td>
+        </tr>
+        <tr>
+            <td class="table-danger">
+                1->7
+            </td>
+            <td class="table-warning">
+                8->15
+            </td>
+            <td class="table-success">
+                16->23
+            </td>
+            <td class="table-secondary">
+                24->31
+            </td>
+            <td class="table-dark">
+                32->39
+            </td>
+            <td class="table-primary">
+                40->47
+            </td>
+            <td>
+                48->55
+            </td>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+
+                <p> @Model.NoAppear1To7</p>
+                    
+            </td>
+            <td>
+                   
+                    <p> @Model.NoAppear8To15</p>
+                    
+            </td>
+            <td>
+                   
+                    <p> @Model.NoAppear16To23</p>
+                    
+            </td>
+            <td>
+                   
+                    <p> @Model.NoAppear24To31</p>
+                    
+            </td>
+            <td>
+                   
+                    <p> @Model.NoAppear32To39</p>
+                    
+            </td>
+            <td>
+                    
+                    <p> @Model.NoAppear40To47</p>
+                    
+            </td>
+            <td>
+                   
+                    <p> @Model.NoAppear48To55</p>
+                   
+            </td>
+        </tr>
+    </tbody>
+</table>
+

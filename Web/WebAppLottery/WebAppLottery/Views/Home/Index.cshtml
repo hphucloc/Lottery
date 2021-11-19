@@ -1,9 +1,49 @@
-﻿@{
-    ViewBag.Title = "Home Page";
+﻿@model WebAppLottery.Models.IndexPageModel
+@{ 
+    int c = 0;
 }
-
-<h1>
-   
-    @ViewBag.Message
-        
-</h1>
+@if (Model.Data != null)
+{
+    <table class="table table-primary table-striped table-bordered">
+        <thead class="table-bordered">
+            <tr>
+                <td><strong>Số</strong></td>
+                <td><strong>Xuất hiện</strong></td>
+                @foreach (var i in Model.AllDatePublist.OrderByDescending(x => x.Date))
+                {
+                    <td>@string.Format("{0:d/M}", i.Date)</td>
+                }
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var i in Model.Data)
+            {
+                c = 0;
+                <tr>
+                    <td class="align-middle"><h4><strong>@i.LotNumber</strong></h4></td>
+                    <td class="align-middle"><h5>@i.TotalNumberAppearInRange</h5></td>
+                    @foreach (var j in Model.AllDatePublist.OrderByDescending(x => x.Date))
+                    {
+                        c = c + 1;
+                        <td class="align-middle">
+                            @foreach (var k in i.DatePublishList.DatePublishList1.OrderByDescending(x => x.Date))
+                            {                                
+                                if (j.Date == k.Date)
+                                {
+                                    c = 0;
+                                    <div class="MauNenSoTrung">
+                                        <h6>@string.Format("{0:d/M}", k.Date)</h6>
+                                    </div>                                         
+                                }
+                                else
+                                {
+                                    @*<h6>@c</h6>*@                                     
+                                }
+                            }
+                        </td>                         
+                    }
+                </tr>
+            }
+        </tbody>
+    </table>
+}

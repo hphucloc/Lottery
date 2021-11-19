@@ -1,0 +1,46 @@
+﻿@model WebAppLottery.Models.IndexPageModel
+<table class="table">
+    <thead class="table-primary">
+        <tr>
+            <td>
+                Loại vé
+            </td>
+            <td>
+                Từ ngày
+            </td>
+            <td>
+                Đến ngày
+            </td>
+            <td></td>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+                @Html.EnumDropDownListFor(x => x.ListLoaiVe, new { })
+            </td>
+            <td>
+                @Html.HiddenFor(x=>x.HiddenFrom)
+                @Html.EditorFor(x => x.From, new { htmlAttributes = new { @class = "form-control" } })              
+            </td>
+            <td>
+                @Html.HiddenFor(x => x.HiddenTo)
+                @Html.EditorFor(x => x.To, new { htmlAttributes = new { @class = "form-control" } })
+            </td>
+            <td class="d-flex flex-row-reverse">
+                <button type="submit" class="btn btn-success btn-sm" onclick="SubmitClick()">Lấy dữ liệu</button>
+            </td>
+        </tr>        
+    </tbody>
+</table>
+
+<script>
+    function SubmitClick() {        
+        $('#HiddenFrom').val(null);
+        $('#HiddenTo').val(null);
+    }
+</script>
+
+    
+    
+   

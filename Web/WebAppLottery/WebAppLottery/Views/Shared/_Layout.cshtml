@@ -1,4 +1,5 @@
-﻿<!DOCTYPE html>
+﻿@model WebAppLottery.Models.IndexPageModel
+<!DOCTYPE html>
 <html>
 <head>
     <meta charset="utf-8" />
@@ -11,50 +12,66 @@
     <!--===============================================================================================-->
     <link rel="stylesheet" type="text/css" href="~/fonts/font-awesome-4.7.0/css/font-awesome.min.css">
     <!--===============================================================================================-->
-    <link rel="stylesheet" type="text/css" href="~/vendor/animate/animate.css">
+    @*<link rel="stylesheet" type="text/css" href="~/vendor/animate/animate.css">*@
     <!--===============================================================================================-->
-    <link rel="stylesheet" type="text/css" href="~/vendor/select2/select2.min.css">
+    @* <link rel="stylesheet" type="text/css" href="~/vendor/select2/select2.min.css">*@
     <!--===============================================================================================-->
     <link rel="stylesheet" type="text/css" href="~/css/util.css">
     <link rel="stylesheet" type="text/css" href="~/css/main.css">
     <!--===============================================================================================-->
 
-    <title>Vietlott prediction</title>
+    <title>Dự đoán Vietlott</title>
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
 </head>
-<body>        
-    <div class="bg-img1 size1 flex-w flex-c-m p-t-55 p-b-55 p-l-15 p-r-15" 
-            style="background-image: url('../../images/bg01.jpg');">
-        <div class="wsize1 bor1 bg1 p-t-175 p-b-45 p-l-15 p-r-15 respon1">           
-            <div class="wsize2 flex-w flex-c hsize1 cd100">
-                @RenderBody()
-            </div>           
+<body>
+    @using (Html.BeginForm("Request", "Home", FormMethod.Post))
+    {
+        @Html.AntiForgeryToken()
+    <div class="bg-img1 size1 flex-w flex-c-m p-t-55 p-b-55 p-l-15 p-r-15"
+         style="background-image: url('../../images/bg01.jpg');">
+        <div class="wsize1 bor1 bg-light p-t-10 p-b-1 p-l-15 p-r-15 respon1 d-flex justify-content-center border border-info">
+            @Html.Partial("_RequestHeader", Model)
         </div>
-    </div>    
-    
-    @*@Scripts.Render("~/bundles/jquery")
-    @Scripts.Render("~/bundles/bootstrap")
-    @RenderSection("scripts", required: false)*@
+        @if (Model.Data != null)
+        {
+            <div class="wsize1 bor1 bg1 p-t-1 p-b-1 p-l-15 p-r-15 respon1 d-flex justify-content-start border border-info">
+                <div class="wsize3">
+                    @RenderBody()
+                </div>
+            </div>
+        }
+        else
+        {
+            @RenderBody()
+        }
+        @if (Model.NoAppear1To7 != null &&
+            Model.NoAppear8To15 != null &&
+            Model.NoAppear16To23 != null &&
+            Model.NoAppear24To31 != null &&
+            Model.NoAppear32To39 != null &&
+            Model.NoAppear40To47 != null &&
+            Model.NoAppear48To55 != null)
+        {
+            <div class="wsize1 bor1 bg-light p-t-10 p-b-1 p-l-15 p-r-15 respon1 d-flex justify-content-center border border-info">
+                @Html.Partial("_GroupNumberStatistic", Model)
+            </div>
+        }
+    </div>
+    }
 
-    <!--===============================================================================================-->
-    <script src="~/vendor/jquery/jquery-3.2.1.min.js"></script>
-    <!--===============================================================================================-->
-    <script src="~/vendor/bootstrap/js/popper.js"></script>
-    <script src="~/vendor/bootstrap/js/bootstrap.min.js"></script>
-    <!--===============================================================================================-->
-    <script src="~/vendor/select2/select2.min.js"></script>
-    <!--===============================================================================================-->
-    <script src="~/vendor/countdowntime/moment.min.js"></script>
-    <script src="~/vendor/countdowntime/moment-timezone.min.js"></script>
-    <script src="~/vendor/countdowntime/moment-timezone-with-data.min.js"></script>
-    <script src="~/vendor/countdowntime/countdowntime.js"></script>   
-    <!--===============================================================================================-->
-    <script src="~/vendor/tilt/tilt.jquery.min.js"></script>
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+
     <script>
-		$('.js-tilt').tilt({
-			scale: 1.1
-		})
+        $(document).ready(function () {
+            $("#ListLoaiVe").addClass('LoaiVe100');  
+            if (!!$('#HiddenFrom').val())
+                $('#From').val($('#HiddenFrom').val());
+            if (!!$('#HiddenTo').val())
+                $('#To').val($('#HiddenTo').val());
+        });
     </script>
     <!--===============================================================================================-->
     <script src="~/js/main.js"></script>
