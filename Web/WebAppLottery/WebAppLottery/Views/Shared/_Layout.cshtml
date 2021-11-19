@@ -11,11 +11,7 @@
     <link rel="stylesheet" type="text/css" href="~/vendor/bootstrap/css/bootstrap.min.css">
     <!--===============================================================================================-->
     <link rel="stylesheet" type="text/css" href="~/fonts/font-awesome-4.7.0/css/font-awesome.min.css">
-    <!--===============================================================================================-->
-    @*<link rel="stylesheet" type="text/css" href="~/vendor/animate/animate.css">*@
-    <!--===============================================================================================-->
-    @* <link rel="stylesheet" type="text/css" href="~/vendor/select2/select2.min.css">*@
-    <!--===============================================================================================-->
+    <!--===============================================================================================-->  
     <link rel="stylesheet" type="text/css" href="~/css/util.css">
     <link rel="stylesheet" type="text/css" href="~/css/main.css">
     <!--===============================================================================================-->
@@ -25,39 +21,45 @@
     @Scripts.Render("~/bundles/modernizr")
 </head>
 <body>
+    <div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">           
+            <div class="navbar-collapse collapse">                
+            </div>
+        </div>
+    </div>
     @using (Html.BeginForm("Request", "Home", FormMethod.Post))
     {
         @Html.AntiForgeryToken()
-    <div class="bg-img1 size1 flex-w flex-c-m p-t-55 p-b-55 p-l-15 p-r-15"
-         style="background-image: url('../../images/bg01.jpg');">
-        <div class="wsize1 bor1 bg-light p-t-10 p-b-1 p-l-15 p-r-15 respon1 d-flex justify-content-center border border-info">
-            @Html.Partial("_RequestHeader", Model)
-        </div>
-        @if (Model.Data != null)
-        {
-            <div class="wsize1 bor1 bg1 p-t-1 p-b-1 p-l-15 p-r-15 respon1 d-flex justify-content-start border border-info">
-                <div class="wsize3">
-                    @RenderBody()
-                </div>
-            </div>
-        }
-        else
-        {
-            @RenderBody()
-        }
-        @if (Model.NoAppear1To7 != null &&
-            Model.NoAppear8To15 != null &&
-            Model.NoAppear16To23 != null &&
-            Model.NoAppear24To31 != null &&
-            Model.NoAppear32To39 != null &&
-            Model.NoAppear40To47 != null &&
-            Model.NoAppear48To55 != null)
-        {
+        <div class="bg-img1 size1 flex-w flex-c-m p-t-55 p-b-55 p-l-15 p-r-15"
+             style="background-image: url('../../images/bg01.jpg');">
             <div class="wsize1 bor1 bg-light p-t-10 p-b-1 p-l-15 p-r-15 respon1 d-flex justify-content-center border border-info">
-                @Html.Partial("_GroupNumberStatistic", Model)
+                @Html.Partial("_RequestHeader", Model)
             </div>
-        }
-    </div>
+            @if (Model.Data != null)
+            {
+                <div class="wsize1 bor1 bg1 p-t-1 p-b-1 p-l-15 p-r-15 respon1 d-flex justify-content-start border border-info">
+                    <div class="wsize3">
+                        @RenderBody()
+                    </div>
+                </div>
+            }
+            else
+            {
+                @RenderBody()
+            }
+            @if (Model.NoAppear1To7 != null &&
+                Model.NoAppear8To15 != null &&
+                Model.NoAppear16To23 != null &&
+                Model.NoAppear24To31 != null &&
+                Model.NoAppear32To39 != null &&
+                Model.NoAppear40To47 != null &&
+                Model.NoAppear48To55 != null)
+            {
+                <div class="wsize1 bor1 bg-light p-t-10 p-b-1 p-l-15 p-r-15 respon1 d-flex justify-content-center border border-info">
+                    @Html.Partial("_GroupNumberStatistic", Model)
+                </div>
+            }
+        </div>
     }
 
     @Scripts.Render("~/bundles/jquery")
@@ -66,7 +68,7 @@
 
     <script>
         $(document).ready(function () {
-            $("#ListLoaiVe").addClass('LoaiVe100');  
+            $("#ListLoaiVe").addClass('LoaiVe100');
             if (!!$('#HiddenFrom').val())
                 $('#From').val($('#HiddenFrom').val());
             if (!!$('#HiddenTo').val())
