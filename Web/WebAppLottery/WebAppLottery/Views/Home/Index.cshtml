@@ -20,7 +20,11 @@
             {
                 c = 0;
                 <tr>
-                    <td class="align-middle"><h4><strong>@i.LotNumber</strong></h4></td>
+                    <td class="align-middle">
+                        <input type="checkbox" checked data-toggle="toggle" data-onstyle="dark" data-offstyle="success"
+                               data-width="50" data-height="30"
+                               data-on="@i.LotNumber" data-off="@i.LotNumber"/>
+                    </td>
                     <td class="align-middle"><h5>@i.TotalNumberAppearInRange</h5></td>
                     @foreach (var j in Model.AllDatePublist.OrderByDescending(x => x.Date))
                     {

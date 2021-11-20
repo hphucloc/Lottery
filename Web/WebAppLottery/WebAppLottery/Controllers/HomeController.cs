@@ -18,10 +18,10 @@ namespace WebAppLottery.Controllers
         public ActionResult Index(IndexPageModel m)
         {            
             m.ListLoaiVe = IndexPageModel.LoaiVe._6Over45;
-            m.From = DateTime.Now.AddMonths(-1);
-            m.HiddenFrom = string.Format("{0:yyyy-M-d}", m.From);
+            m.From = DateTime.Now.AddMonths(-3);
+            m.HiddenFrom = string.Format("{0:yyyy-MM-dd}", m.From);
             m.To = DateTime.Now;
-            m.HiddenTo = string.Format("{0:yyyy-M-d}", m.To);
+            m.HiddenTo = string.Format("{0:yyyy-MM-dd}", m.To);
             
             return View(m);
         }
