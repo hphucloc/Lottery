@@ -29,6 +29,7 @@ namespace WebAppLottery.Models
         [DisplayFormat(DataFormatString = "{0:d/M/yyyy}", ApplyFormatInEditMode = true)]
         public DateTime To { get; set; }
         public string HiddenTo { get; set; }
+        public string ErrorMessage { get; set; }
 
         //numberGroupStatistic
         public int? NoAppear1To7 { get; set; }

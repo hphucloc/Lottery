@@ -22,42 +22,49 @@
     @Scripts.Render("~/bundles/modernizr")
 </head>
 <body>
-    <div class="navbar navbar-inverse navbar-fixed-top">
-        <div class="container">
-            <div class="navbar-collapse collapse">
-                <table cellpadding="50" cellspacing="50">
-                    <tr>
-                        <td>
-                            @Html.ActionLink("Đăng nhập/Đăng ký", "", "", new { @class = "HeaderLinkColor" })
-                        </td>
-                        <td>
-                            @Html.ActionLink("Chia sẻ kinh nghiệm", "", "", new { @class = "HeaderLinkColor" })
-                        </td>
-                        <td>
-                            @Html.ActionLink("Dự đoán số", "", "", new { @class = "HeaderLinkColor" })
-                        </td>
-                        <td>
-                            @if (Model.ListLoaiVe == WebAppLottery.Models.IndexPageModel.LoaiVe._6Over55)
-                            {
-                                <a href="https://vietlott.vn/vi/trung-thuong/ket-qua-trung-thuong/winning-number-655"
-                                   title="Đi đến trang Vietlott 655" target="_blank" class="HeaderLinkColor">Vietlott website</a>
-                            }
-                            else if (Model.ListLoaiVe == WebAppLottery.Models.IndexPageModel.LoaiVe._6Over45)
-                            {
-                                <a href="https://vietlott.vn/vi/trung-thuong/ket-qua-trung-thuong/winning-number-645"
-                                   title="Đi đến trang Vietlott 645" target="_blank" class="HeaderLinkColor">Vietlott website</a>
-                            }
+    
+        <div class="container-fluid justify-content-end bg-dark">
+            <div class="row align-items-lg-center">
+                <div class="col-5">
 
-                            @*https://vietlott.vn/vi/trung-thuong/ket-qua-trung-thuong/winning-number-Keno
-                                https://vietlott.vn/vi/trung-thuong/ket-qua-trung-thuong/winning-number-max-3D
-                                https://vietlott.vn/vi/trung-thuong/ket-qua-trung-thuong/winning-number-max-3Dpro
-                                https://vietlott.vn/vi/trung-thuong/ket-qua-trung-thuong/winning-number-max-4d*@
-                        </td>
-                    </tr>
-                </table>
+                </div>
+                    <div class="col-1">
+                        @Html.LabelFor(x => x.ErrorMessage, Model.ErrorMessage, new { @class = "text-danger" })
+                    </div>
+                    <div class="col-1">
+                        @Html.ActionLink("Đăng nhập/Đăng ký", "", "", new { @class = "text-light text-decoration-none HeaderLinkColor" })
+                    </div>
+                    <div class="col-1">
+                        @Html.ActionLink("Chia sẻ kinh nghiệm", "", "", new { @class = "text-light text-decoration-none HeaderLinkColor" })
+                    </div>
+                    <div class="col-1">
+                        @Html.ActionLink("Dự đoán số", "", "", new { @class = "text-light text-decoration-none HeaderLinkColor" })
+                    </div>
+                    <div class="col-1">
+                        @if (Model.ListLoaiVe == WebAppLottery.Models.IndexPageModel.LoaiVe._6Over55)
+                        {
+                            <a href="https://vietlott.vn/vi/trung-thuong/ket-qua-trung-thuong/winning-number-655"
+                               title="Đi đến trang Vietlott 655" target="_blank" class="text-light text-decoration-none HeaderLinkColor">Vietlott website</a>
+                        }
+                        else if (Model.ListLoaiVe == WebAppLottery.Models.IndexPageModel.LoaiVe._6Over45)
+                        {
+                            <a href="https://vietlott.vn/vi/trung-thuong/ket-qua-trung-thuong/winning-number-645"
+                               title="Đi đến trang Vietlott 645" target="_blank" class="text-light text-decoration-none HeaderLinkColor">Vietlott website</a>
+                        }
+
+                        @*https://vietlott.vn/vi/trung-thuong/ket-qua-trung-thuong/winning-number-Keno
+                https://vietlott.vn/vi/trung-thuong/ket-qua-trung-thuong/winning-number-max-3D
+                https://vietlott.vn/vi/trung-thuong/ket-qua-trung-thuong/winning-number-max-3Dpro
+                https://vietlott.vn/vi/trung-thuong/ket-qua-trung-thuong/winning-number-max-4d*@
+                    </div>
+                    <div class="col-1">                        
+                        <a title="Hướng dẫn sử dụng" class="text-light text-decoration-none HeaderLinkColor" data-bs-toggle="modal" data-bs-target="#modalHDSD">Hướng dẫn sử dụng</a>                        
+                    </div>
+                    <div class="col">
+                    </div>
+                </div>
             </div>
-        </div>
-    </div>
+   
     @using (Html.BeginForm("Request", "Home", FormMethod.Post))
     {
         @Html.AntiForgeryToken()
@@ -109,5 +116,26 @@
     <!--===============================================================================================-->
     <script src="~/js/main.js"></script>
     <script src="~/js/bootstrap4-toggle.min.js"></script>
+    
+    <!-- Huong Dan Su Dung FULLSCREEN MODAL-->   
+    <div class="modal fade" id="modalHDSD" tabindex="-1" aria-labelledby="HDSD" aria-hidden="true">
+        <div class="modal-dialog modal-fullscreen">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="HDSD">HƯỚNG DẪN SỬ DỤNG</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <h1>BƯỚC 1</h1>
+                    <img src="~/images/HDSDStep1.png" />
+                    <h1>BƯỚC 2</h1>
+                    <img src="~/images/HDSDStep2.png" />
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>                  
+                </div>
+            </div>
+        </div>
+    </div>
 </body>
 </html>

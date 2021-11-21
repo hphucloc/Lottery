@@ -22,7 +22,8 @@ namespace WebAppLottery.Controllers
             m.HiddenFrom = string.Format("{0:yyyy-MM-dd}", m.From);
             m.To = DateTime.Now;
             m.HiddenTo = string.Format("{0:yyyy-MM-dd}", m.To);
-            
+            m.ErrorMessage = "";
+
             return View(m);
         }
 
@@ -42,8 +43,30 @@ namespace WebAppLottery.Controllers
                 int countUpper47 = 0;
                 
                 int loaiVe = (int)m.ListLoaiVe;
-                DateTime from = DateTime.ParseExact(m.From.ToShortDateString(), "M/d/yyyy", CultureInfo.InvariantCulture);
-                DateTime to = DateTime.ParseExact(m.To.ToShortDateString(), "M/d/yyyy", CultureInfo.InvariantCulture);                
+                DateTime from, to;                
+                string sysFormat = CultureInfo.CurrentCulture.DateTimeFormat.ShortDatePattern;
+                if (sysFormat == "d/M/yyyy")
+                {
+                    from = DateTime.ParseExact(m.From.ToShortDateString(), "d/M/yyyy", CultureInfo.InvariantCulture);
+                    to = DateTime.ParseExact(m.To.ToShortDateString(), "d/M/yyyy", CultureInfo.InvariantCulture);
+                    m.ErrorMessage = "";
+                }
+                else if (sysFormat == "M/d/yyyy")
+                {
+
+                    from = DateTime.ParseExact(m.From.ToShortDateString(), "M/d/yyyy", CultureInfo.InvariantCulture);
+                    to = DateTime.ParseExact(m.To.ToShortDateString(), "M/d/yyyy", CultureInfo.InvariantCulture);
+                    m.ErrorMessage = "";
+                }
+                else
+                {
+                    from = DateTime.Now.AddMonths(-3);
+                    to = DateTime.Now;
+                    m.ErrorMessage = "Unsuppoted System DateTime Format";
+                }
+
+                m.From = from;
+                m.To = to;
                 if (m.ListLoaiVe == IndexPageModel.LoaiVe._6Over45)
                     _6Over45NoData = m.Data = _6Over45TimeLine.Get6Over45Number(from, to);
                 else if (m.ListLoaiVe == IndexPageModel.LoaiVe._6Over55)

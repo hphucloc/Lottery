@@ -253,12 +253,6 @@ input.input100 {
   height: 40px;
 }
 
-/*//////////////////////////////////////////////////////////////////
-[ Width ]*/
-.wsize1 {
-    max-width: 100%;
-    width: 880px;   
-}
 
 /*//////////////////////////////////////////////////////////////////
 [ Height ]*/
@@ -501,22 +495,31 @@ input.input100 {
 
 }
 
+
+/*//////////////////////////////////////////////////////////////////
+[ Width ]*/
+.wsize1 {
+    max-width: 100%;
+    width: 1000px;
+}
 .wsize3 {
     max-width: 100%;
-    width: 880px;
+    width: 1000px;
     height: 500px;
     overflow-y: auto;
     overflow-x: auto;
 }
 
 .MauNenSoTrung{
-    background-color:greenyellow
+    background-color:greenyellow;
+    width:40px;
+    height:20px;   
 }
 
 .HeaderLinkColor{
-    color:white;
+    
 }
 
 .HeaderLinkColor:hover {
-    color: greenyellow;
+    cursor:pointer;
 }

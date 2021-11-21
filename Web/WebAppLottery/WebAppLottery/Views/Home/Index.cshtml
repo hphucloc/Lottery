@@ -4,11 +4,11 @@
 }
 @if (Model.Data != null)
 {
-    <table class="table table-primary table-striped table-bordered">
-        <thead class="table-bordered">
-            <tr>
-                <td><strong>Số</strong></td>
-                <td><strong>Xuất hiện</strong></td>
+    <table class="table table-secondary table-striped table-bordered">
+        <thead class="table-dark">
+            <tr class="text-info">
+                <td>Số</td>
+                <td>Xuất hiện</td>
                 @foreach (var i in Model.AllDatePublist.OrderByDescending(x => x.Date))
                 {
                     <td>@string.Format("{0:d/M}", i.Date)</td>
@@ -25,7 +25,7 @@
                                data-width="50" data-height="30"
                                data-on="@i.LotNumber" data-off="@i.LotNumber"/>
                     </td>
-                    <td class="align-middle"><h5>@i.TotalNumberAppearInRange</h5></td>
+                    <td class="align-middle"><h6>@i.TotalNumberAppearInRange</h6></td>
                     @foreach (var j in Model.AllDatePublist.OrderByDescending(x => x.Date))
                     {
                         c = c + 1;
@@ -35,7 +35,7 @@
                                 if (j.Date == k.Date)
                                 {
                                     c = 0;
-                                    <div class="MauNenSoTrung">
+                                    <div class="MauNenSoTrung font-italic fs-5 text-secondary align-items-lg-center align-middle text-center">
                                         <h6>@string.Format("{0:d/M}", k.Date)</h6>
                                     </div>                                         
                                 }

@@ -72,7 +72,6 @@ C:\Users\Admin\Documents\GitHub\Lottery\Web\WebAppLottery\WebAppLottery\bin\Syst
 C:\Users\Admin\Documents\GitHub\Lottery\Web\WebAppLottery\WebAppLottery\bin\Newtonsoft.Json.xml
 C:\Users\Admin\Documents\GitHub\Lottery\Web\WebAppLottery\WebAppLottery\bin\Antlr3.Runtime.pdb
 C:\Users\Admin\Documents\GitHub\Lottery\Web\WebAppLottery\WebAppLottery\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
-C:\Users\Admin\Documents\GitHub\Lottery\Web\WebAppLottery\WebAppLottery\obj\Debug\WebAppLottery.csproj.AssemblyReference.cache
 C:\Users\Admin\Documents\GitHub\Lottery\Web\WebAppLottery\WebAppLottery\obj\Debug\WebAppLottery.csproj.CoreCompileInputs.cache
 C:\Users\Admin\Documents\GitHub\Lottery\Web\WebAppLottery\WebAppLottery\obj\Debug\WebAppLottery.dll
 C:\Users\Admin\Documents\GitHub\Lottery\Web\WebAppLottery\WebAppLottery\obj\Debug\WebAppLottery.pdb
@@ -168,3 +167,4 @@ C:\Users\Admin\Documents\GitHub\Lottery\Web\WebAppLottery\WebAppLottery\bin\Enti
 C:\Users\Admin\Documents\GitHub\Lottery\Web\WebAppLottery\WebAppLottery\bin\EntityFramework.SqlServer.xml
 C:\Users\Admin\Documents\GitHub\Lottery\Web\WebAppLottery\WebAppLottery\bin\LotteryDAL.pdb
 C:\Users\Admin\Documents\GitHub\Lottery\Web\WebAppLottery\WebAppLottery\bin\LotteryDAL.dll.config
+C:\Users\Admin\Documents\GitHub\Lottery\Web\WebAppLottery\WebAppLottery\obj\Debug\WebAppLottery.csproj.AssemblyReference.cache
