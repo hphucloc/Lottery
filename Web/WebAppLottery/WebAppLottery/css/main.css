@@ -523,3 +523,7 @@ input.input100 {
 .HeaderLinkColor:hover {
     cursor:pointer;
 }
+
+.TableData{
+    margin-left: -20px;
+}

@@ -1,74 +1,71 @@
 ﻿@model WebAppLottery.Models.IndexPageModel
-
-<table class="table">
-    <thead class="table-primary">
-        <tr>
-            <td colspan="7">
-                Tổng số lần xuất hiện theo nhóm
-            </td>          
-        </tr>
-        <tr>
-            <td class="table-danger">
-                1->7
-            </td>
-            <td class="table-warning">
-                8->15
-            </td>
-            <td class="table-success">
-                16->23
-            </td>
-            <td class="table-secondary">
-                24->31
-            </td>
-            <td class="table-info">
-                32->39
-            </td>
-            <td class="table-primary">
-                40->47
-            </td>
-            <td class="table-light">
-                48->55
-            </td>
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <td>
-
-                <p> @Model.NoAppear1To7</p>
-
-            </td>
-            <td>
-
-                <p> @Model.NoAppear8To15</p>
-
-            </td>
-            <td>
-
-                <p> @Model.NoAppear16To23</p>
-
-            </td>
-            <td>
-
-                <p> @Model.NoAppear24To31</p>
-
-            </td>
-            <td>
-
-                <p> @Model.NoAppear32To39</p>
-
-            </td>
-            <td>
-
-                <p> @Model.NoAppear40To47</p>
-
-            </td>
-            <td>
-
-                <p> @Model.NoAppear48To55</p>
-
-            </td>
-        </tr>
-    </tbody>
-</table>
+@if (Model.Data != null)
+{
+    <div class="container">
+        <div class="col-12">
+            <h6>Tổng số lần xuất hiện theo nhóm</h6>
+        </div>
+        <div class="col-12">
+            <table class="table table-secondary table-striped table-bordered TableData">
+                <thead class="table-dark">
+                    <tr>
+                        <td class="table-danger">
+                            1->7
+                        </td>
+                        <td class="table-warning">
+                            8->15
+                        </td>
+                        <td class="table-success">
+                            16->23
+                        </td>
+                        <td class="table-secondary">
+                            24->31
+                        </td>
+                        <td class="table-info">
+                            32->39
+                        </td>
+                        <td class="table-primary">
+                            40->47
+                        </td>
+                        <td class="table-light">
+                            48->55
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <p> @Model.NoAppear1To7</p>
+                        </td>
+                        <td>
+                            <p> @Model.NoAppear8To15</p>
+                        </td>
+                        <td>
+                            <p> @Model.NoAppear16To23</p>
+                        </td>
+                        <td>
+                            <p> @Model.NoAppear24To31</p>
+                        </td>
+                        <td>
+                            <p> @Model.NoAppear32To39</p>
+                        </td>
+                        <td>
+                            <p> @Model.NoAppear40To47</p>
+                        </td>
+                        <td>
+                            <p> @Model.NoAppear48To55</p>
+                        </td>
+                    </tr>
+                </thead>
+                <tbody>
+                    @*@foreach (var i in Model.Data)
+            {
+                <tr>
+                    <td>
+                    </td>
+                </tr>
+            }*@
+                </tbody>
+            </table>
+        </div>
+    </div>        
+}
 

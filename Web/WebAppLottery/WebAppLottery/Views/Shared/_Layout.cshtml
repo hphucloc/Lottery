@@ -25,21 +25,21 @@
     
         <div class="container-fluid justify-content-end bg-dark">
             <div class="row align-items-lg-center">
-                <div class="col-5">
+                <div class="col-7">
 
                 </div>
                     <div class="col-1">
                         @Html.LabelFor(x => x.ErrorMessage, Model.ErrorMessage, new { @class = "text-danger" })
                     </div>
-                    <div class="col-1">
+                    @*<div class="col-1">
                         @Html.ActionLink("Đăng nhập/Đăng ký", "", "", new { @class = "text-light text-decoration-none HeaderLinkColor" })
-                    </div>
+                    </div>*@
                     <div class="col-1">
                         @Html.ActionLink("Chia sẻ kinh nghiệm", "", "", new { @class = "text-light text-decoration-none HeaderLinkColor" })
                     </div>
-                    <div class="col-1">
+                    @*<div class="col-1">
                         @Html.ActionLink("Dự đoán số", "", "", new { @class = "text-light text-decoration-none HeaderLinkColor" })
-                    </div>
+                    </div>*@
                     <div class="col-1">
                         @if (Model.ListLoaiVe == WebAppLottery.Models.IndexPageModel.LoaiVe._6Over55)
                         {
@@ -94,7 +94,7 @@
                 Model.NoAppear40To47 != null &&
                 Model.NoAppear48To55 != null)
             {
-                <div class="wsize1 bor1 bg-light p-t-10 p-b-1 p-l-15 p-r-15 respon1 d-flex justify-content-center border border-info">
+                <div class="wsize1 bor1 bg1 p-t-1 p-b-1 p-l-15 p-r-15 respon1 d-flex justify-content-start border border-info">
                     @Html.Partial("_GroupNumberStatistic", Model)
                 </div>
             }
@@ -113,6 +113,17 @@
             if (!!$('#HiddenTo').val())
                 $('#To').val($('#HiddenTo').val());
         });
+
+        function SoDaChonClick(input) {           
+            var q = $('#QuantitySoDaChon').text();
+            if (!q) { q = 0; }            
+            if (input.checked) {
+                $('#QuantitySoDaChon').text(parseInt(q) - 1);
+            }
+            else {
+                $('#QuantitySoDaChon').text(parseInt(q) + 1);
+            }
+        }
     </script>
     <!--===============================================================================================-->
     <script src="~/js/main.js"></script>

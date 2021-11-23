@@ -1,53 +1,61 @@
 ﻿@model WebAppLottery.Models.IndexPageModel
-@{ 
+@{
     int c = 0;
 }
 @if (Model.Data != null)
 {
-    <table class="table table-secondary table-striped table-bordered">
-        <thead class="table-dark">
-            <tr class="text-info">
-                <td>Số </td>
-                <td>Xuất hiện</td>
-                @foreach (var i in Model.AllDatePublist.OrderByDescending(x => x.Date))
-                {
-                    <td>@string.Format("{0:d/M}", i.Date)</td>
-                }
-            </tr>
-        </thead>
-        <tbody>
-            @foreach (var i in Model.Data)
-            {
-                c = 0;
-                <tr>
-                    <td class="align-middle">
-                        <input type="checkbox" checked data-toggle="toggle" data-onstyle="dark" data-offstyle="success"
-                               data-width="50" data-height="30"
-                               data-on="@i.LotNumber" data-off="@i.LotNumber"/>
-                    </td>
-                    <td class="align-middle"><h6>@i.TotalNumberAppearInRange</h6></td>
-                    @foreach (var j in Model.AllDatePublist.OrderByDescending(x => x.Date))
+    <div class="container">
+        <div class="col-12">
+            <h6> Số xuất hiện theo chu kỳ</h6>
+        </div>
+        <div class="col-12">
+            <table class="table table-secondary table-striped table-bordered TableData">
+                <thead class="table-dark">
+                    <tr class="text-info">
+                        <td><h6 id="QuantitySoDaChon"></h6>Số</td>
+                        <td>Xuất hiện</td>
+                        @foreach (var i in Model.AllDatePublist.OrderByDescending(x => x.Date))
+                        {
+                            <td>@string.Format("{0:d/M}", i.Date)</td>
+                        }
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var i in Model.Data)
                     {
-                        c = c + 1;
-                        <td class="align-middle">
-                            @foreach (var k in i.DatePublishList.DatePublishList1.OrderByDescending(x => x.Date))
-                            {                                
-                                if (j.Date == k.Date)
-                                {
-                                    c = 0;
-                                    <div class="MauNenSoTrung font-italic fs-5 text-secondary align-items-lg-center align-middle text-center">
-                                        <h6>@string.Format("{0:d/M}", k.Date)</h6>
-                                    </div>                                         
-                                }
-                                else
-                                {
-                                    @*<h6>@c</h6>*@                                     
-                                }
+                        c = 0;
+                        <tr>
+                            <td class="align-middle">
+                                <input type="checkbox" checked data-toggle="toggle" data-onstyle="dark" data-offstyle="success"
+                                       data-width="50" data-height="30"
+                                       data-on="@i.LotNumber" data-off="@i.LotNumber"
+                                       onchange="SoDaChonClick(this)" />
+                            </td>
+                            <td class="align-middle"><h6>@i.TotalNumberAppearInRange</h6></td>
+                            @foreach (var j in Model.AllDatePublist.OrderByDescending(x => x.Date))
+                            {
+                                c = c + 1;
+                                <td class="align-middle">
+                                    @foreach (var k in i.DatePublishList.DatePublishList1.OrderByDescending(x => x.Date))
+                                    {
+                                        if (j.Date == k.Date)
+                                        {
+                                            c = 0;
+                                            <div class="MauNenSoTrung font-italic fs-5 text-secondary align-items-lg-center align-middle text-center">
+                                                <h6>@string.Format("{0:d/M}", k.Date)</h6>
+                                            </div>
+                                        }
+                                        else
+                                        {
+                                            @*<h6>@c</h6>*@
+                                        }
+                                    }
+                                </td>
                             }
-                        </td>                         
+                        </tr>
                     }
-                </tr>
-            }
-        </tbody>
-    </table>
+                </tbody>
+            </table>
+        </div>
+    </div>
 }
