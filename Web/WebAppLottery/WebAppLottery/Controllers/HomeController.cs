@@ -70,10 +70,16 @@ namespace WebAppLottery.Controllers
                 if (m.ListLoaiVe == IndexPageModel.LoaiVe._6Over45)
                     _6Over45NoData = m.Data = _6Over45TimeLine.Get6Over45Number(from, to);
                 else if (m.ListLoaiVe == IndexPageModel.LoaiVe._6Over55)
-                    _6Over55NoData = m.Data = _6Over55TimeLine.Get6Over55Number(from, to);
+                    _6Over55NoData = m.Data = _6Over55TimeLine.Get6Over55Number(from, to);                                         
 
+                //************************Render Body*************************//    
+                m.AllDatePublist = m.Data[0].AllDatePublishList;
+
+                //************************Render GroupNumberStatistic*************************//
+                SortedDictionary<DateTime, SortedSet<int>> hitNumberByDate = 
+                    new SortedDictionary<DateTime, SortedSet<int>>();
                 foreach (var i in m.Data)
-                {                   
+                {
                     if (i.LotNumber >= 1 && i.LotNumber <= 7)
                     {
                         count1_7 += i.TotalNumberAppearInRange;
@@ -107,18 +113,31 @@ namespace WebAppLottery.Controllers
                     {
                         countUpper47 += i.TotalNumberAppearInRange;
                     }
+
+                    //Get all publih Date               
+                    foreach (var date in i.AllDatePublishList)
+                    {
+                        if (!hitNumberByDate.ContainsKey(date))
+                        {
+                            hitNumberByDate.Add(date, new SortedSet<int>());
+                        }
+                    }
                 }
-                
-                m.NoAppear1To7   = count1_7;
-                m.NoAppear8To15  = count8_15;
+
+                foreach (var item in hitNumberByDate)
+                    foreach (var aNo in m.Data)
+                        foreach (var date in aNo.DatePublishList.DatePublishList1)
+                            if (item.Key == date)
+                                item.Value.Add(aNo.LotNumber);
+
+                m.groupNumberStatistic = hitNumberByDate;
+                m.NoAppear1To7 = count1_7;
+                m.NoAppear8To15 = count8_15;
                 m.NoAppear16To23 = count16_23;
                 m.NoAppear24To31 = count24_31;
                 m.NoAppear32To39 = count32_39;
                 m.NoAppear40To47 = count40_47;
-                m.NoAppear48To55 = countUpper47;
-
-                //************************Render Body*************************//    
-                m.AllDatePublist = m.Data[0].AllDatePublishList;
+                m.NoAppear48To55 = countUpper47;                
             }
             return View("Index", m);            
         }        

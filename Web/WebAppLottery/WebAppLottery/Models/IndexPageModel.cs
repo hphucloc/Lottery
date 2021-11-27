@@ -39,6 +39,7 @@ namespace WebAppLottery.Models
         public int? NoAppear32To39 { get; set; }
         public int? NoAppear40To47 { get; set; }
         public int? NoAppear48To55 { get; set; }
+        public SortedDictionary<DateTime, SortedSet<int>> groupNumberStatistic { get; set; }
 
         //Render body
         public List<LotteryBusiness.LoterryStatistic> Data { get; set; }      

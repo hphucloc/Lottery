@@ -1,13 +1,13 @@
 ﻿@model WebAppLottery.Models.IndexPageModel
 @if (Model.Data != null)
 {
-    <div class="container">
+    <div class="container-fluid">
         <div class="col-12">
             <h6>Tổng số lần xuất hiện theo nhóm</h6>
         </div>
         <div class="col-12">
             <table class="table table-secondary table-striped table-bordered TableData">
-                <thead class="table-dark">
+                <thead>
                     <tr>
                         <td class="table-danger">
                             1->7
@@ -31,6 +31,8 @@
                             48->55
                         </td>
                     </tr>
+                </thead>
+                <tbody class="table-light">
                     <tr>
                         <td>
                             <p> @Model.NoAppear1To7</p>
@@ -54,15 +56,30 @@
                             <p> @Model.NoAppear48To55</p>
                         </td>
                     </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="col-12">
+            <table class="table table-secondary table-striped table-bordered TableData">     
+                <thead class="table-dark">
+                    <tr class="text-info">
+                        <td><h6 id="QuantitySoDaChon"></h6>Số</td>                        
+                        @foreach (var i in Model.groupNumberStatistic.Keys.OrderByDescending(x => x.Date))
+                        {
+                            <td>@string.Format("{0:d/M}", i.Date)</td>
+                        }
+                    </tr>
                 </thead>
                 <tbody>
-                    @*@foreach (var i in Model.Data)
-            {
-                <tr>
-                    <td>
-                    </td>
-                </tr>
-            }*@
+                    @foreach (var i in Model.groupNumberStatistic)
+                    {
+                        <tr>
+
+                            <td>
+
+                            </td>
+                        </tr>
+                    }
                 </tbody>
             </table>
         </div>
