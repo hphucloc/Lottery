@@ -22,85 +22,84 @@
     @Scripts.Render("~/bundles/modernizr")
 </head>
 <body>
-    
-        <div class="container-fluid justify-content-end bg-dark">
-            <div class="row align-items-lg-center">
-                <div class="col-7">
 
-                </div>
-                    <div class="col-1">
-                        @Html.LabelFor(x => x.ErrorMessage, Model.ErrorMessage, new { @class = "text-danger" })
-                    </div>
-                    @*<div class="col-1">
-                        @Html.ActionLink("Đăng nhập/Đăng ký", "", "", new { @class = "text-light text-decoration-none HeaderLinkColor" })
-                    </div>*@
-                    <div class="col-1">
-                        @Html.ActionLink("Chia sẻ kinh nghiệm", "", "", new { @class = "text-light text-decoration-none HeaderLinkColor" })
-                    </div>
-                    @*<div class="col-1">
-                        @Html.ActionLink("Dự đoán số", "", "", new { @class = "text-light text-decoration-none HeaderLinkColor" })
-                    </div>*@
-                    <div class="col-1">
-                        @if (Model.ListLoaiVe == WebAppLottery.Models.IndexPageModel.LoaiVe._6Over55)
-                        {
-                            <a href="https://vietlott.vn/vi/trung-thuong/ket-qua-trung-thuong/winning-number-655"
-                               title="Đi đến trang Vietlott 655" target="_blank" class="text-light text-decoration-none HeaderLinkColor">Vietlott website</a>
-                        }
-                        else if (Model.ListLoaiVe == WebAppLottery.Models.IndexPageModel.LoaiVe._6Over45)
-                        {
-                            <a href="https://vietlott.vn/vi/trung-thuong/ket-qua-trung-thuong/winning-number-645"
-                               title="Đi đến trang Vietlott 645" target="_blank" class="text-light text-decoration-none HeaderLinkColor">Vietlott website</a>
-                        }
+    <div class="container-fluid justify-content-end bg-dark">
+        <div class="row align-items-lg-center">
+            <div class="col-9 align-middle">
+                @Html.LabelFor(x => x.ErrorMessage, Model.ErrorMessage, new { @class = "text-danger" })
+            </div>            
+            @*<div class="col-1">
+            @Html.ActionLink("Chia sẻ kinh nghiệm", "", "", new { @class = "text-light text-decoration-none HeaderLinkColor" })
+        </div>*@
+            @*<div class="col-1">
+            @Html.ActionLink("Dự đoán số", "", "", new { @class = "text-light text-decoration-none HeaderLinkColor" })
+        </div>*@
+            <div class="col-1">
+                @if (Model.ListLoaiVe == WebAppLottery.Models.IndexPageModel.LoaiVe._6Over55)
+                {
+                    <a href="https://vietlott.vn/vi/trung-thuong/ket-qua-trung-thuong/winning-number-655"
+                       title="Đi đến trang Vietlott 655" target="_blank" class="text-light text-decoration-none HeaderLinkColor">Vietlott website</a>
+                }
+                else if (Model.ListLoaiVe == WebAppLottery.Models.IndexPageModel.LoaiVe._6Over45)
+                {
+                    <a href="https://vietlott.vn/vi/trung-thuong/ket-qua-trung-thuong/winning-number-645"
+                       title="Đi đến trang Vietlott 645" target="_blank" class="text-light text-decoration-none HeaderLinkColor">Vietlott website</a>
+                }
 
-                        @*https://vietlott.vn/vi/trung-thuong/ket-qua-trung-thuong/winning-number-Keno
-                https://vietlott.vn/vi/trung-thuong/ket-qua-trung-thuong/winning-number-max-3D
-                https://vietlott.vn/vi/trung-thuong/ket-qua-trung-thuong/winning-number-max-3Dpro
-                https://vietlott.vn/vi/trung-thuong/ket-qua-trung-thuong/winning-number-max-4d*@
-                    </div>
-                    <div class="col-1">                        
-                        <a title="Hướng dẫn sử dụng" class="text-light text-decoration-none HeaderLinkColor" 
-                           data-bs-toggle="modal" data-bs-target="#modalHDSD">Hướng dẫn sử dụng</a>                        
-                    </div>
-                    <div class="col">
-                    </div>
-                </div>
+                @*https://vietlott.vn/vi/trung-thuong/ket-qua-trung-thuong/winning-number-Keno
+            https://vietlott.vn/vi/trung-thuong/ket-qua-trung-thuong/winning-number-max-3D
+            https://vietlott.vn/vi/trung-thuong/ket-qua-trung-thuong/winning-number-max-3Dpro
+            https://vietlott.vn/vi/trung-thuong/ket-qua-trung-thuong/winning-number-max-4d*@
             </div>
-   
+            <div class="col-1">
+                <a title="Hướng dẫn sử dụng" class="text-light text-decoration-none HeaderLinkColor"
+                   data-bs-toggle="modal" data-bs-target="#modalHDSD">Hướng dẫn sử dụng</a>
+            </div>
+            <div class="col-1">
+                <a title="Liên hệ tác giả" class="text-light text-decoration-none HeaderLinkColor"
+                   data-bs-toggle="modal" data-bs-target="#modalLienHe">Góp ý/Liên hệ</a>
+            </div>
+            @*<div class="col-1">
+                @Html.ActionLink("Đăng ký/Đăng nhập", "", "", new { @class = "text-light text-decoration-none HeaderLinkColor" })
+            </div>*@
+        </div>
+    </div>
+
     @using (Html.BeginForm("Request", "Home", FormMethod.Post))
     {
         @Html.AntiForgeryToken()
-        <div class="bg-img1 size1 flex-w flex-c-m p-t-55 p-b-55 p-l-15 p-r-15"
-             style="background-image: url('../../images/bg01.jpg');">
-            <div class="wsize1 bor1 bg-light p-t-10 p-b-1 p-l-15 p-r-15 respon1 d-flex justify-content-center border border-info">
-                @Html.Partial("_RequestHeader", Model)
-            </div>
-            @if (Model.Data != null)
-            {
-                <div class="wsize1 bor1 bg1 p-t-1 p-b-1 p-l-15 p-r-15 respon1 d-flex justify-content-start border border-info">
-                    <div class="wsize3">
-                        @RenderBody()
-                    </div>
-                </div>
-            }
-            else
-            {
-                @RenderBody()
-            }
-            @if (Model.NoAppear1To7 != null &&
-                Model.NoAppear8To15 != null &&
-                Model.NoAppear16To23 != null &&
-                Model.NoAppear24To31 != null &&
-                Model.NoAppear32To39 != null &&
-                Model.NoAppear40To47 != null &&
-                Model.NoAppear48To55 != null)
-            {
-                <div class="wsize1 bor1 bg1 p-t-1 p-b-1 p-l-15 p-r-15 respon1 d-flex justify-content-start border border-info">
-                    <div class="wsize3">
-                        @Html.Partial("_GroupNumberStatistic", Model)
-                    </div>                    
-                </div>
-            }
+    <div class="bg-img1 size1 flex-w flex-c-m p-t-55 p-b-55 p-l-15 p-r-15"
+         style="background-image: url('../../images/bg02.jpg');">
+        <div class="wsize1 bor1 bg-light p-t-10 p-b-1 p-l-15 p-r-15 respon1 d-flex justify-content-center border border-info">
+            @Html.Partial("_RequestHeader", Model)
         </div>
+        @if (Model.NoAppear1To7 != null &&
+            Model.NoAppear8To15 != null &&
+            Model.NoAppear16To23 != null &&
+            Model.NoAppear24To31 != null &&
+            Model.NoAppear32To39 != null &&
+            Model.NoAppear40To47 != null &&
+            Model.NoAppear48To55 != null)
+        {
+            <div class="wsize1 bor1 bg1 p-t-1 p-b-1 p-l-15 p-r-15 respon1 d-flex justify-content-start border border-info">
+                <div class="wsize3">
+                    @Html.Partial("_GroupNumberStatistic", Model)
+                </div>
+            </div>
+        }
+        @if (Model.Data != null)
+        {
+            <div class="wsize1 bor1 bg1 p-t-1 p-b-1 p-l-15 p-r-15 respon1 d-flex justify-content-start border border-info">
+                <div class="wsize3">
+                    @RenderBody()
+                </div>
+            </div>
+        }
+        else
+        {
+            @RenderBody()
+        }
+    </div>
     }
 
     @Scripts.Render("~/bundles/jquery")
@@ -116,9 +115,9 @@
                 $('#To').val($('#HiddenTo').val());
         });
 
-        function SoDaChonClick(input) {           
+        function SoDaChonClick(input) {
             var q = $('#QuantitySoDaChon').text();
-            if (!q) { q = 0; }            
+            if (!q) { q = 0; }
             if (input.checked) {
                 $('#QuantitySoDaChon').text(parseInt(q) - 1);
             }
@@ -130,8 +129,8 @@
     <!--===============================================================================================-->
     <script src="~/js/main.js"></script>
     <script src="~/js/bootstrap4-toggle.min.js"></script>
-    
-    <!-- Huong Dan Su Dung FULLSCREEN MODAL-->   
+
+    <!-- Huong Dan Su Dung FULLSCREEN MODAL-->
     <div class="modal fade" id="modalHDSD" tabindex="-1" aria-labelledby="HDSD" aria-hidden="true">
         <div class="modal-dialog modal-fullscreen">
             <div class="modal-content">
@@ -146,7 +145,27 @@
                     <img src="~/images/HDSDStep2.png" />
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>                  
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Lien He MODAL-->
+    <div class="modal fade" id="modalLienHe" tabindex="-1" aria-labelledby="LienHe" aria-hidden="true">
+        <div class="modal-dialog modal-sm">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title text-danger" id="LienHe">GÓP Ý/LIÊN HỆ</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <h6>Mọi sự góp ý, vui lòng email:</h6> <h5 class="font-italic text-primary">hphucloc@gmail.com</h5>
+                    <h6>Xin chân thành cảm ơn.</h6>
+                    <h5 class="text-primary">Huỳnh Phúc Lộc</h5>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
                 </div>
             </div>
         </div>

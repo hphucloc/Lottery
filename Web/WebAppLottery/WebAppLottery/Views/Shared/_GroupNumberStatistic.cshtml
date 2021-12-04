@@ -60,10 +60,9 @@
             </table>
         </div>
         <div class="col-12">
-            <table class="table table-secondary table-striped table-bordered TableData">     
+            <table class="table table-bordered TableData">
                 <thead class="table-dark">
                     <tr class="text-info">
-                        <td><h6 id="QuantitySoDaChon"></h6>Số</td>                        
                         @foreach (var i in Model.groupNumberStatistic.Keys.OrderByDescending(x => x.Date))
                         {
                             <td>@string.Format("{0:d/M}", i.Date)</td>
@@ -71,18 +70,439 @@
                     </tr>
                 </thead>
                 <tbody>
-                    @foreach (var i in Model.groupNumberStatistic)
+                    <tr>
+                        @foreach (var i in Model.groupNumberStatistic.Keys.OrderByDescending(x => x.Date))
+                        {
+                            if (Model.groupNumberStatistic[i].ElementAt(0) >= 1 && Model.groupNumberStatistic[i].ElementAt(0) <= 7)
+                            {
+                                <td class="table-danger">
+                                    <div class="font-italic fs-5 text-secondary align-items-lg-center align-middle text-center">
+                                        <h6>@Model.groupNumberStatistic[i].ElementAt(0)</h6>
+                                    </div>
+                                </td>
+                            }
+                            else if (Model.groupNumberStatistic[i].ElementAt(0) >= 8 && Model.groupNumberStatistic[i].ElementAt(0) <= 15)
+                            {
+                                <td class="table-warning">
+                                    <div class="font-italic fs-5 text-secondary align-items-lg-center align-middle text-center">
+                                        <h6>@Model.groupNumberStatistic[i].ElementAt(0)</h6>
+                                    </div>
+                                </td>
+                            }
+                            else if (Model.groupNumberStatistic[i].ElementAt(0) >= 16 && Model.groupNumberStatistic[i].ElementAt(0) <= 23)
+                            {
+                                <td class="table-success">
+                                    <div class="font-italic fs-5 text-secondary align-items-lg-center align-middle text-center">
+                                        <h6>@Model.groupNumberStatistic[i].ElementAt(0)</h6>
+                                    </div>
+                                </td>
+                            }
+                            else if (Model.groupNumberStatistic[i].ElementAt(0) >= 24 && Model.groupNumberStatistic[i].ElementAt(0) <= 31)
+                            {
+                                <td class="table-secondary">
+                                    <div class="font-italic fs-5 text-secondary align-items-lg-center align-middle text-center">
+                                        <h6>@Model.groupNumberStatistic[i].ElementAt(0)</h6>
+                                    </div>
+                                </td>
+                            }
+                            else if (Model.groupNumberStatistic[i].ElementAt(0) >= 32 && Model.groupNumberStatistic[i].ElementAt(0) <= 39)
+                            {
+                                <td class="table-info">
+                                    <div class="font-italic fs-5 text-secondary align-items-lg-center align-middle text-center">
+                                        <h6>@Model.groupNumberStatistic[i].ElementAt(0)</h6>
+                                    </div>
+                                </td>
+                            }
+                            else if (Model.groupNumberStatistic[i].ElementAt(0) >= 40 && Model.groupNumberStatistic[i].ElementAt(0) <= 47)
+                            {
+                                <td class="table-primary">
+                                    <div class="font-italic fs-5 text-secondary align-items-lg-center align-middle text-center">
+                                        <h6>@Model.groupNumberStatistic[i].ElementAt(0)</h6>
+                                    </div>
+                                </td>
+                            }
+                            else if (Model.groupNumberStatistic[i].ElementAt(0) >= 48 && Model.groupNumberStatistic[i].ElementAt(0) <= 55)
+                            {
+                                <td class="table-light">
+                                    <div class="font-italic fs-5 text-secondary align-items-lg-center align-middle text-center">
+                                        <h6>@Model.groupNumberStatistic[i].ElementAt(0)</h6>
+                                    </div>
+                                </td>
+                            }
+                        }
+                    </tr>
+                    <tr>
+                        @foreach (var i in Model.groupNumberStatistic.Keys.OrderByDescending(x => x.Date))
+                        {
+                            if (Model.groupNumberStatistic[i].ElementAt(1) >= 1 && Model.groupNumberStatistic[i].ElementAt(1) <= 7)
+                            {
+                                <td class="table-danger">
+                                    <div class="font-italic fs-5 text-secondary align-items-lg-center align-middle text-center">
+                                        <h6>@Model.groupNumberStatistic[i].ElementAt(1)</h6>
+                                    </div>
+                                </td>
+                            }
+                            else if (Model.groupNumberStatistic[i].ElementAt(1) >= 8 && Model.groupNumberStatistic[i].ElementAt(1) <= 15)
+                            {
+                                <td class="table-warning">
+                                    <div class="font-italic fs-5 text-secondary align-items-lg-center align-middle text-center">
+                                        <h6>@Model.groupNumberStatistic[i].ElementAt(1)</h6>
+                                    </div>
+                                </td>
+                            }
+                            else if (Model.groupNumberStatistic[i].ElementAt(1) >= 16 && Model.groupNumberStatistic[i].ElementAt(1) <= 23)
+                            {
+                                <td class="table-success">
+                                    <div class="font-italic fs-5 text-secondary align-items-lg-center align-middle text-center">
+                                        <h6>@Model.groupNumberStatistic[i].ElementAt(1)</h6>
+                                    </div>
+                                </td>
+                            }
+                            else if (Model.groupNumberStatistic[i].ElementAt(1) >= 24 && Model.groupNumberStatistic[i].ElementAt(1) <= 31)
+                            {
+                                <td class="table-secondary">
+                                    <div class="font-italic fs-5 text-secondary align-items-lg-center align-middle text-center">
+                                        <h6>@Model.groupNumberStatistic[i].ElementAt(1)</h6>
+                                    </div>
+                                </td>
+                            }
+                            else if (Model.groupNumberStatistic[i].ElementAt(1) >= 32 && Model.groupNumberStatistic[i].ElementAt(1) <= 39)
+                            {
+                                <td class="table-info">
+                                    <div class="font-italic fs-5 text-secondary align-items-lg-center align-middle text-center">
+                                        <h6>@Model.groupNumberStatistic[i].ElementAt(1)</h6>
+                                    </div>
+                                </td>
+                            }
+                            else if (Model.groupNumberStatistic[i].ElementAt(1) >= 40 && Model.groupNumberStatistic[i].ElementAt(1) <= 47)
+                            {
+                                <td class="table-primary">
+                                    <div class="font-italic fs-5 text-secondary align-items-lg-center align-middle text-center">
+                                        <h6>@Model.groupNumberStatistic[i].ElementAt(1)</h6>
+                                    </div>
+                                </td>
+                            }
+                            else if (Model.groupNumberStatistic[i].ElementAt(1) >= 48 && Model.groupNumberStatistic[i].ElementAt(1) <= 55)
+                            {
+                                <td class="table-light">
+                                    <div class="font-italic fs-5 text-secondary align-items-lg-center align-middle text-center">
+                                        <h6>@Model.groupNumberStatistic[i].ElementAt(1)</h6>
+                                    </div>
+                                </td>
+                            }
+                        }
+                    </tr>
+                    <tr>
+                        @foreach (var i in Model.groupNumberStatistic.Keys.OrderByDescending(x => x.Date))
+                        {
+                            if (Model.groupNumberStatistic[i].ElementAt(2) >= 1 && Model.groupNumberStatistic[i].ElementAt(2) <= 7)
+                            {
+                                <td class="table-danger">
+                                    <div class="font-italic fs-5 text-secondary align-items-lg-center align-middle text-center">
+                                        <h6>@Model.groupNumberStatistic[i].ElementAt(2)</h6>
+                                    </div>
+                                </td>
+                            }
+                            else if (Model.groupNumberStatistic[i].ElementAt(2) >= 8 && Model.groupNumberStatistic[i].ElementAt(2) <= 15)
+                            {
+                                <td class="table-warning">
+                                    <div class="font-italic fs-5 text-secondary align-items-lg-center align-middle text-center">
+                                        <h6>@Model.groupNumberStatistic[i].ElementAt(2)</h6>
+                                    </div>
+                                </td>
+                            }
+                            else if (Model.groupNumberStatistic[i].ElementAt(2) >= 16 && Model.groupNumberStatistic[i].ElementAt(2) <= 23)
+                            {
+                                <td class="table-success">
+                                    <div class="font-italic fs-5 text-secondary align-items-lg-center align-middle text-center">
+                                        <h6>@Model.groupNumberStatistic[i].ElementAt(2)</h6>
+                                    </div>
+                                </td>
+                            }
+                            else if (Model.groupNumberStatistic[i].ElementAt(2) >= 24 && Model.groupNumberStatistic[i].ElementAt(2) <= 31)
+                            {
+                                <td class="table-secondary">
+                                    <div class="font-italic fs-5 text-secondary align-items-lg-center align-middle text-center">
+                                        <h6>@Model.groupNumberStatistic[i].ElementAt(2)</h6>
+                                    </div>
+                                </td>
+                            }
+                            else if (Model.groupNumberStatistic[i].ElementAt(2) >= 32 && Model.groupNumberStatistic[i].ElementAt(2) <= 39)
+                            {
+                                <td class="table-info">
+                                    <div class="font-italic fs-5 text-secondary align-items-lg-center align-middle text-center">
+                                        <h6>@Model.groupNumberStatistic[i].ElementAt(2)</h6>
+                                    </div>
+                                </td>
+                            }
+                            else if (Model.groupNumberStatistic[i].ElementAt(2) >= 40 && Model.groupNumberStatistic[i].ElementAt(2) <= 47)
+                            {
+                                <td class="table-primary">
+                                    <div class="font-italic fs-5 text-secondary align-items-lg-center align-middle text-center">
+                                        <h6>@Model.groupNumberStatistic[i].ElementAt(2)</h6>
+                                    </div>
+                                </td>
+                            }
+                            else if (Model.groupNumberStatistic[i].ElementAt(2) >= 48 && Model.groupNumberStatistic[i].ElementAt(2) <= 55)
+                            {
+                                <td class="table-light">
+                                    <div class="font-italic fs-5 text-secondary align-items-lg-center align-middle text-center">
+                                        <h6>@Model.groupNumberStatistic[i].ElementAt(2)</h6>
+                                    </div>
+                                </td>
+                            }
+                        }
+                    </tr>
+                    <tr>
+                        @foreach (var i in Model.groupNumberStatistic.Keys.OrderByDescending(x => x.Date))
+                        {
+                            if (Model.groupNumberStatistic[i].ElementAt(3) >= 1 && Model.groupNumberStatistic[i].ElementAt(3) <= 7)
+                            {
+                                <td class="table-danger">
+                                    <div class="font-italic fs-5 text-secondary align-items-lg-center align-middle text-center">
+                                        <h6>@Model.groupNumberStatistic[i].ElementAt(3)</h6>
+                                    </div>
+                                </td>
+                            }
+                            else if (Model.groupNumberStatistic[i].ElementAt(3) >= 8 && Model.groupNumberStatistic[i].ElementAt(3) <= 15)
+                            {
+                                <td class="table-warning">
+                                    <div class="font-italic fs-5 text-secondary align-items-lg-center align-middle text-center">
+                                        <h6>@Model.groupNumberStatistic[i].ElementAt(3)</h6>
+                                    </div>
+                                </td>
+                            }
+                            else if (Model.groupNumberStatistic[i].ElementAt(3) >= 16 && Model.groupNumberStatistic[i].ElementAt(3) <= 23)
+                            {
+                                <td class="table-success">
+                                    <div class="font-italic fs-5 text-secondary align-items-lg-center align-middle text-center">
+                                        <h6>@Model.groupNumberStatistic[i].ElementAt(3)</h6>
+                                    </div>
+                                </td>
+                            }
+                            else if (Model.groupNumberStatistic[i].ElementAt(3) >= 24 && Model.groupNumberStatistic[i].ElementAt(3) <= 31)
+                            {
+                                <td class="table-secondary">
+                                    <div class="font-italic fs-5 text-secondary align-items-lg-center align-middle text-center">
+                                        <h6>@Model.groupNumberStatistic[i].ElementAt(3)</h6>
+                                    </div>
+                                </td>
+                            }
+                            else if (Model.groupNumberStatistic[i].ElementAt(3) >= 32 && Model.groupNumberStatistic[i].ElementAt(3) <= 39)
+                            {
+                                <td class="table-info">
+                                    <div class="font-italic fs-5 text-secondary align-items-lg-center align-middle text-center">
+                                        <h6>@Model.groupNumberStatistic[i].ElementAt(3)</h6>
+                                    </div>
+                                </td>
+                            }
+                            else if (Model.groupNumberStatistic[i].ElementAt(3) >= 40 && Model.groupNumberStatistic[i].ElementAt(3) <= 47)
+                            {
+                                <td class="table-primary">
+                                    <div class="font-italic fs-5 text-secondary align-items-lg-center align-middle text-center">
+                                        <h6>@Model.groupNumberStatistic[i].ElementAt(3)</h6>
+                                    </div>
+                                </td>
+                            }
+                            else if (Model.groupNumberStatistic[i].ElementAt(3) >= 48 && Model.groupNumberStatistic[i].ElementAt(3) <= 55)
+                            {
+                                <td class="table-light">
+                                    <div class="font-italic fs-5 text-secondary align-items-lg-center align-middle text-center">
+                                        <h6>@Model.groupNumberStatistic[i].ElementAt(3)</h6>
+                                    </div>
+                                </td>
+                            }
+                        }
+                    </tr>
+                    <tr>
+                        @foreach (var i in Model.groupNumberStatistic.Keys.OrderByDescending(x => x.Date))
+                        {
+                            if (Model.groupNumberStatistic[i].ElementAt(4) >= 1 && Model.groupNumberStatistic[i].ElementAt(4) <= 7)
+                            {
+                                <td class="table-danger">
+                                    <div class="font-italic fs-5 text-secondary align-items-lg-center align-middle text-center">
+                                        <h6>@Model.groupNumberStatistic[i].ElementAt(4)</h6>
+                                    </div>
+                                </td>
+                            }
+                            else if (Model.groupNumberStatistic[i].ElementAt(4) >= 8 && Model.groupNumberStatistic[i].ElementAt(4) <= 15)
+                            {
+                                <td class="table-warning">
+                                    <div class="font-italic fs-5 text-secondary align-items-lg-center align-middle text-center">
+                                        <h6>@Model.groupNumberStatistic[i].ElementAt(4)</h6>
+                                    </div>
+                                </td>
+                            }
+                            else if (Model.groupNumberStatistic[i].ElementAt(4) >= 16 && Model.groupNumberStatistic[i].ElementAt(4) <= 23)
+                            {
+                                <td class="table-success">
+                                    <div class="font-italic fs-5 text-secondary align-items-lg-center align-middle text-center">
+                                        <h6>@Model.groupNumberStatistic[i].ElementAt(4)</h6>
+                                    </div>
+                                </td>
+                            }
+                            else if (Model.groupNumberStatistic[i].ElementAt(4) >= 24 && Model.groupNumberStatistic[i].ElementAt(4) <= 31)
+                            {
+                                <td class="table-secondary">
+                                    <div class="font-italic fs-5 text-secondary align-items-lg-center align-middle text-center">
+                                        <h6>@Model.groupNumberStatistic[i].ElementAt(4)</h6>
+                                    </div>
+                                </td>
+                            }
+                            else if (Model.groupNumberStatistic[i].ElementAt(4) >= 32 && Model.groupNumberStatistic[i].ElementAt(4) <= 39)
+                            {
+                                <td class="table-info">
+                                    <div class="font-italic fs-5 text-secondary align-items-lg-center align-middle text-center">
+                                        <h6>@Model.groupNumberStatistic[i].ElementAt(4)</h6>
+                                    </div>
+                                </td>
+                            }
+                            else if (Model.groupNumberStatistic[i].ElementAt(4) >= 40 && Model.groupNumberStatistic[i].ElementAt(4) <= 47)
+                            {
+                                <td class="table-primary">
+                                    <div class="font-italic fs-5 text-secondary align-items-lg-center align-middle text-center">
+                                        <h6>@Model.groupNumberStatistic[i].ElementAt(4)</h6>
+                                    </div>
+                                </td>
+                            }
+                            else if (Model.groupNumberStatistic[i].ElementAt(4) >= 48 && Model.groupNumberStatistic[i].ElementAt(4) <= 55)
+                            {
+                                <td class="table-light">
+                                    <div class="font-italic fs-5 text-secondary align-items-lg-center align-middle text-center">
+                                        <h6>@Model.groupNumberStatistic[i].ElementAt(4)</h6>
+                                    </div>
+                                </td>
+                            }
+                        }
+                    </tr>
+                    <tr>
+                        @foreach (var i in Model.groupNumberStatistic.Keys.OrderByDescending(x => x.Date))
+                        {
+                            if (Model.groupNumberStatistic[i].ElementAt(5) >= 1 && Model.groupNumberStatistic[i].ElementAt(5) <= 7)
+                            {
+                                <td class="table-danger">
+                                    <div class="font-italic fs-5 text-secondary align-items-lg-center align-middle text-center">
+                                        <h6>@Model.groupNumberStatistic[i].ElementAt(5)</h6>
+                                    </div>
+                                </td>
+                            }
+                            else if (Model.groupNumberStatistic[i].ElementAt(5) >= 8 && Model.groupNumberStatistic[i].ElementAt(5) <= 15)
+                            {
+                                <td class="table-warning">
+                                    <div class="font-italic fs-5 text-secondary align-items-lg-center align-middle text-center">
+                                        <h6>@Model.groupNumberStatistic[i].ElementAt(5)</h6>
+                                    </div>
+                                </td>
+                            }
+                            else if (Model.groupNumberStatistic[i].ElementAt(5) >= 16 && Model.groupNumberStatistic[i].ElementAt(5) <= 23)
+                            {
+                                <td class="table-success">
+                                    <div class="font-italic fs-5 text-secondary align-items-lg-center align-middle text-center">
+                                        <h6>@Model.groupNumberStatistic[i].ElementAt(5)</h6>
+                                    </div>
+                                </td>
+                            }
+                            else if (Model.groupNumberStatistic[i].ElementAt(5) >= 24 && Model.groupNumberStatistic[i].ElementAt(5) <= 31)
+                            {
+                                <td class="table-secondary">
+                                    <div class="font-italic fs-5 text-secondary align-items-lg-center align-middle text-center">
+                                        <h6>@Model.groupNumberStatistic[i].ElementAt(5)</h6>
+                                    </div>
+                                </td>
+                            }
+                            else if (Model.groupNumberStatistic[i].ElementAt(5) >= 32 && Model.groupNumberStatistic[i].ElementAt(5) <= 39)
+                            {
+                                <td class="table-info">
+                                    <div class="font-italic fs-5 text-secondary align-items-lg-center align-middle text-center">
+                                        <h6>@Model.groupNumberStatistic[i].ElementAt(5)</h6>
+                                    </div>
+                                </td>
+                            }
+                            else if (Model.groupNumberStatistic[i].ElementAt(5) >= 40 && Model.groupNumberStatistic[i].ElementAt(5) <= 47)
+                            {
+                                <td class="table-primary">
+                                    <div class="font-italic fs-5 text-secondary align-items-lg-center align-middle text-center">
+                                        <h6>@Model.groupNumberStatistic[i].ElementAt(5)</h6>
+                                    </div>
+                                </td>
+                            }
+                            else if (Model.groupNumberStatistic[i].ElementAt(5) >= 48 && Model.groupNumberStatistic[i].ElementAt(5) <= 55)
+                            {
+                                <td class="table-light">
+                                    <div class="font-italic fs-5 text-secondary align-items-lg-center align-middle text-center">
+                                        <h6>@Model.groupNumberStatistic[i].ElementAt(5)</h6>
+                                    </div>
+                                </td>
+                            }
+                        }
+                    </tr>
+                    @if (Model.ListLoaiVe == WebAppLottery.Models.IndexPageModel.LoaiVe._6Over55)
                     {
                         <tr>
-
-                            <td>
-
-                            </td>
+                            @foreach (var i in Model.groupNumberStatistic.Keys.OrderByDescending(x => x.Date))
+                            {
+                                if (Model.groupNumberStatistic[i].ElementAt(6) >= 1 && Model.groupNumberStatistic[i].ElementAt(6) <= 7)
+                                {
+                                    <td class="table-danger">
+                                        <div class="font-italic fs-5 text-secondary align-items-lg-center align-middle text-center">
+                                            <h6>@Model.groupNumberStatistic[i].ElementAt(6)</h6>
+                                        </div>
+                                    </td>
+                                }
+                                else if (Model.groupNumberStatistic[i].ElementAt(6) >= 8 && Model.groupNumberStatistic[i].ElementAt(6) <= 15)
+                                {
+                                    <td class="table-warning">
+                                        <div class="font-italic fs-5 text-secondary align-items-lg-center align-middle text-center">
+                                            <h6>@Model.groupNumberStatistic[i].ElementAt(6)</h6>
+                                        </div>
+                                    </td>
+                                }
+                                else if (Model.groupNumberStatistic[i].ElementAt(6) >= 16 && Model.groupNumberStatistic[i].ElementAt(6) <= 23)
+                                {
+                                    <td class="table-success">
+                                        <div class="font-italic fs-5 text-secondary align-items-lg-center align-middle text-center">
+                                            <h6>@Model.groupNumberStatistic[i].ElementAt(6)</h6>
+                                        </div>
+                                    </td>
+                                }
+                                else if (Model.groupNumberStatistic[i].ElementAt(6) >= 24 && Model.groupNumberStatistic[i].ElementAt(6) <= 31)
+                                {
+                                    <td class="table-secondary">
+                                        <div class="font-italic fs-5 text-secondary align-items-lg-center align-middle text-center">
+                                            <h6>@Model.groupNumberStatistic[i].ElementAt(6)</h6>
+                                        </div>
+                                    </td>
+                                }
+                                else if (Model.groupNumberStatistic[i].ElementAt(6) >= 32 && Model.groupNumberStatistic[i].ElementAt(6) <= 39)
+                                {
+                                    <td class="table-info">
+                                        <div class="font-italic fs-5 text-secondary align-items-lg-center align-middle text-center">
+                                            <h6>@Model.groupNumberStatistic[i].ElementAt(6)</h6>
+                                        </div>
+                                    </td>
+                                }
+                                else if (Model.groupNumberStatistic[i].ElementAt(6) >= 40 && Model.groupNumberStatistic[i].ElementAt(6) <= 47)
+                                {
+                                    <td class="table-primary">
+                                        <div class="font-italic fs-5 text-secondary align-items-lg-center align-middle text-center">
+                                            <h6>@Model.groupNumberStatistic[i].ElementAt(6)</h6>
+                                        </div>
+                                    </td>
+                                }
+                                else if (Model.groupNumberStatistic[i].ElementAt(6) >= 48 && Model.groupNumberStatistic[i].ElementAt(6) <= 55)
+                                {
+                                    <td class="table-light">
+                                        <div class="font-italic fs-5 text-secondary align-items-lg-center align-middle text-center">
+                                            <h6>@Model.groupNumberStatistic[i].ElementAt(6)</h6>
+                                        </div>
+                                    </td>
+                                }
+                            }
                         </tr>
                     }
                 </tbody>
             </table>
         </div>
-    </div>        
+    </div>
 }
 

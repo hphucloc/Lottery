@@ -510,6 +510,14 @@ input.input100 {
     overflow-x: auto;
 }
 
+.wsize4 {
+    max-width: 100%;
+    width: 600px;
+    height: 500px;
+    overflow-y: auto;
+    overflow-x: auto;
+}
+
 .MauNenSoTrung{
     background-color:greenyellow;
     width:40px;
@@ -526,4 +534,10 @@ input.input100 {
 
 .TableData{
     margin-left: -20px;
+}
+
+.StatusDataPage {
+    max-width: 100%;
+    width: 600px;
+    height: 480px;
 }

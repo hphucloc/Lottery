@@ -137,9 +137,34 @@ namespace WebAppLottery.Controllers
                 m.NoAppear24To31 = count24_31;
                 m.NoAppear32To39 = count32_39;
                 m.NoAppear40To47 = count40_47;
-                m.NoAppear48To55 = countUpper47;                
+                m.NoAppear48To55 = countUpper47;             
             }
             return View("Index", m);            
-        }        
+        }
+
+        [HttpGet]
+        public ActionResult Data(DataPageModel m)
+        {
+            string val = null;
+            try
+            {
+                val = DataVietlott._6Over45.Insert(DataVietlott.Common.ReadAppConfig("6Over45URL"));
+                m.Status = val + "\n";
+
+                val = DataVietlott._6Over55.Insert(DataVietlott.Common.ReadAppConfig("6Over55URL"));
+                m.Status += val + "\n";
+            }
+            catch (Exception e)
+            {
+                m.ErrorMessage = e.Message;
+            }
+
+            return View(m);
+        }
+
+        public ActionResult Admin()
+        {            
+            return View();
+        }
     }
 }
