@@ -25,3 +25,17 @@ D:\Projects\LotteryWindowsService\LotteryConsoleApplication\obj\Debug\LotteryApp
 D:\Projects\LotteryWindowsService\LotteryConsoleApplication\obj\Debug\LotteryConsoleApplication.exe
 D:\Projects\LotteryWindowsService\LotteryConsoleApplication\obj\Debug\LotteryConsoleApplication.pdb
 D:\Projects\LotteryWindowsService\LotteryConsoleApplication\obj\Debug\LotteryApplication.csprojAssemblyReference.cache
+C:\Users\Admin\Documents\GitHub\Lottery\LotteryConsoleApplication\bin\Debug\LotteryConsoleApplication.exe.config
+C:\Users\Admin\Documents\GitHub\Lottery\LotteryConsoleApplication\bin\Debug\LotteryConsoleApplication.exe
+C:\Users\Admin\Documents\GitHub\Lottery\LotteryConsoleApplication\bin\Debug\LotteryConsoleApplication.pdb
+C:\Users\Admin\Documents\GitHub\Lottery\LotteryConsoleApplication\bin\Debug\EntityFramework.dll
+C:\Users\Admin\Documents\GitHub\Lottery\LotteryConsoleApplication\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Admin\Documents\GitHub\Lottery\LotteryConsoleApplication\bin\Debug\LotteryDAL.dll
+C:\Users\Admin\Documents\GitHub\Lottery\LotteryConsoleApplication\bin\Debug\LotteryDAL.pdb
+C:\Users\Admin\Documents\GitHub\Lottery\LotteryConsoleApplication\bin\Debug\LotteryDAL.dll.config
+C:\Users\Admin\Documents\GitHub\Lottery\LotteryConsoleApplication\bin\Debug\EntityFramework.xml
+C:\Users\Admin\Documents\GitHub\Lottery\LotteryConsoleApplication\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Admin\Documents\GitHub\Lottery\LotteryConsoleApplication\obj\Debug\LotteryApplication.csproj.CoreCompileInputs.cache
+C:\Users\Admin\Documents\GitHub\Lottery\LotteryConsoleApplication\obj\Debug\LotteryApplication.csproj.CopyComplete
+C:\Users\Admin\Documents\GitHub\Lottery\LotteryConsoleApplication\obj\Debug\LotteryConsoleApplication.exe
+C:\Users\Admin\Documents\GitHub\Lottery\LotteryConsoleApplication\obj\Debug\LotteryConsoleApplication.pdb

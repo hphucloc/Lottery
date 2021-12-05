@@ -99,15 +99,24 @@ namespace DataVietlott
             }
 
             List<Number> ListNumber = ConvertListStringToListNumber(list);
+            int c = 0;
             foreach (Number lotNumber in ListNumber)
             {
-                value += lotNumber + " ";
+                c++;
+                value += lotNumber.LotNumber + " ";
                 Db.Numbers.Add(lotNumber);
                 Db.Entry(lotNumber).State = System.Data.Entity.EntityState.Added;
+                Db.SaveChanges();
+
+                if (c == 7)
+                {
+                    value += "\t(" + lotNumber.DatePublish.ToShortDateString() + ")\n\t";
+                    c = 0;
+                }
             }
 
-            Db.SaveChanges();
-            return "+ " + DateTime.Now + ", Đã Lấy 6/55 thành công các số: " + (string.IsNullOrEmpty(value) ? "none" : value);
+            
+            return "+ " + DateTime.Now + ", Đã Lấy 6/55 thành công các số: \n\t" + (string.IsNullOrEmpty(value) ? "none" : value);
         }
     }
 }

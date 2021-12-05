@@ -153,6 +153,8 @@ namespace WebAppLottery.Controllers
 
                 val = DataVietlott._6Over55.Insert(DataVietlott.Common.ReadAppConfig("6Over55URL"));
                 m.Status += val + "\n";
+
+                m.ErrorMessage = "";
             }
             catch (Exception e)
             {

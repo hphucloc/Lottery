@@ -23,3 +23,16 @@ D:\Projects\LotteryWindowsService\LotteryDAL\obj\Debug\LotteryDAL.csproj.CopyCom
 D:\Projects\LotteryWindowsService\LotteryDAL\obj\Debug\LotteryDAL.dll
 D:\Projects\LotteryWindowsService\LotteryDAL\obj\Debug\LotteryDAL.pdb
 D:\Projects\LotteryWindowsService\LotteryDAL\obj\Debug\LotteryDAL.csprojAssemblyReference.cache
+C:\Users\Admin\Documents\GitHub\Lottery\LotteryDAL\bin\Debug\LotteryDAL.dll.config
+C:\Users\Admin\Documents\GitHub\Lottery\LotteryDAL\bin\Debug\LotteryDAL.dll
+C:\Users\Admin\Documents\GitHub\Lottery\LotteryDAL\bin\Debug\LotteryDAL.pdb
+C:\Users\Admin\Documents\GitHub\Lottery\LotteryDAL\bin\Debug\EntityFramework.dll
+C:\Users\Admin\Documents\GitHub\Lottery\LotteryDAL\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Admin\Documents\GitHub\Lottery\LotteryDAL\bin\Debug\Microsoft.Web.XmlTransform.dll
+C:\Users\Admin\Documents\GitHub\Lottery\LotteryDAL\bin\Debug\NuGet.Core.dll
+C:\Users\Admin\Documents\GitHub\Lottery\LotteryDAL\bin\Debug\EntityFramework.xml
+C:\Users\Admin\Documents\GitHub\Lottery\LotteryDAL\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Admin\Documents\GitHub\Lottery\LotteryDAL\obj\Debug\LotteryDAL.csproj.CoreCompileInputs.cache
+C:\Users\Admin\Documents\GitHub\Lottery\LotteryDAL\obj\Debug\LotteryDAL.dll
+C:\Users\Admin\Documents\GitHub\Lottery\LotteryDAL\obj\Debug\LotteryDAL.pdb
+C:\Users\Admin\Documents\GitHub\Lottery\LotteryDAL\obj\Debug\LotteryDAL.csproj.AssemblyReference.cache
