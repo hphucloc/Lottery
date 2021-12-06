@@ -31,9 +31,9 @@
             <div class="col1 text-end">
                 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
                     <div class="container-fluid">
-                        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                            <span class="navbar-toggler-icon"></span>
-                        </button>
+                        @*<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                                <span class="navbar-toggler-icon"></span>
+                            </button>*@
 
                         <ul class="navbar-nav ml-auto">
                             <li class="nav-item">
@@ -53,11 +53,13 @@
                                            title="Đi đến trang Vietlott 645" target="_blank" class="dropdown-item dropdown text-decoration-none HeaderLinkColor">Vietlott website</a>
                                     }
 
-                                    <a title="Hướng dẫn sử dụng" class="dropdown-item text-decoration-none HeaderLinkColor"
-                                       data-bs-toggle="modal" data-bs-target="#modalHDSD">Hướng dẫn sử dụng</a>
+                                    <button type="button" class="dropdown-item btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalHDSD">
+                                        Hướng dẫn sử dụng
+                                    </button>
 
-                                    <a title="Liên hệ tác giả" class="dropdown-item text-decoration-none HeaderLinkColor"
-                                       data-bs-toggle="modal" data-bs-target="#modalLienHe">Góp ý/Liên hệ</a>
+                                    <button type="button" class="dropdown-item btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalLienHe">
+                                        Góp ý/Liên hệ
+                                    </button>
 
                                 </div>
                             </li>
@@ -66,113 +68,113 @@
                 </nav>
             </div>
         </div>
-
-        @using (Html.BeginForm("Request", "Home", FormMethod.Post))
-        {
-            @Html.AntiForgeryToken()
-            <div class="bg-img1 size1 flex-w flex-c-m p-t-55 p-b-55 p-l-15 p-r-15"
-                 style="background-image: url('../../images/bg02.jpg');">
-                <div class="wsize1 bor1 bg-light p-t-10 p-b-1 p-l-15 p-r-15 respon1 d-flex justify-content-center border border-info">
-                    <div class="wsize5">
-                        @Html.Partial("_RequestHeader", Model)
+    </div>
+    @using (Html.BeginForm("Request", "Home", FormMethod.Post))
+    {
+        @Html.AntiForgeryToken()
+        <div class="bg-img1 size1 flex-w flex-c-m p-t-55 p-b-55 p-l-15 p-r-15"
+             style="background-image: url('../../images/bg02.jpg');">
+            <div class="wsize1 bor1 bg-light p-t-10 p-b-1 p-l-15 p-r-15 respon1 d-flex justify-content-center border border-info">
+                <div class="wsize5">
+                    @Html.Partial("_RequestHeader", Model)
+                </div>
+            </div>
+            @if (Model.Data != null)
+            {
+                <div class="wsize1 bor1 bg1 p-t-1 p-b-1 p-l-15 p-r-15 respon1 d-flex justify-content-start border border-info">
+                    <div class="wsize3">
+                        @RenderBody()
                     </div>
                 </div>
-                @if (Model.Data != null)
-                {
-                    <div class="wsize1 bor1 bg1 p-t-1 p-b-1 p-l-15 p-r-15 respon1 d-flex justify-content-start border border-info">
-                        <div class="wsize3">
-                            @RenderBody()
-                        </div>
-                    </div>
-                }
-                else
-                {
-                    @RenderBody()
-                }
-                @if (Model.NoAppear1To7 != null &&
-                    Model.NoAppear8To15 != null &&
-                    Model.NoAppear16To23 != null &&
-                    Model.NoAppear24To31 != null &&
-                    Model.NoAppear32To39 != null &&
-                    Model.NoAppear40To47 != null &&
-                    Model.NoAppear48To55 != null)
-                {
-                    <div class="wsize1 bor1 bg1 p-t-1 p-b-1 p-l-15 p-r-15 respon1 d-flex justify-content-start border border-info">
-                        <div class="wsize3">
-                            @Html.Partial("_GroupNumberStatistic", Model)
-                        </div>
-                    </div>
-                }
-            </div>
-        }
-
-        @Scripts.Render("~/bundles/jquery")
-        @Scripts.Render("~/bundles/bootstrap")
-        @RenderSection("scripts", required: false)
-
-        <script>
-            $(document).ready(function () {
-                $("#ListLoaiVe").addClass('LoaiVe100');
-                if (!!$('#HiddenFrom').val())
-                    $('#From').val($('#HiddenFrom').val());
-                if (!!$('#HiddenTo').val())
-                    $('#To').val($('#HiddenTo').val());
-            });
-
-            function SoDaChonClick(input) {
-                var q = $('#QuantitySoDaChon').text();
-                if (!q) { q = 0; }
-                if (input.checked) {
-                    $('#QuantitySoDaChon').text(parseInt(q) - 1);
-                }
-                else {
-                    $('#QuantitySoDaChon').text(parseInt(q) + 1);
-                }
             }
-        </script>
-        <!--===============================================================================================-->
-        <script src="~/js/main.js"></script>
-        <script src="~/js/bootstrap4-toggle.min.js"></script>
+            else
+            {
+                @RenderBody()
+            }
+            @if (Model.NoAppear1To7 != null &&
+                Model.NoAppear8To15 != null &&
+                Model.NoAppear16To23 != null &&
+                Model.NoAppear24To31 != null &&
+                Model.NoAppear32To39 != null &&
+                Model.NoAppear40To47 != null &&
+                Model.NoAppear48To55 != null)
+            {
+                <div class="wsize1 bor1 bg1 p-t-1 p-b-1 p-l-15 p-r-15 respon1 d-flex justify-content-start border border-info">
+                    <div class="wsize3">
+                        @Html.Partial("_GroupNumberStatistic", Model)
+                    </div>
+                </div>
+            }
+        </div>
+    }
 
-        <!-- Huong Dan Su Dung FULLSCREEN MODAL-->
-        <div class="modal fade" id="modalHDSD" tabindex="-1" aria-labelledby="HDSD" aria-hidden="true">
-            <div class="modal-dialog modal-fullscreen">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title" id="HDSD">HƯỚNG DẪN SỬ DỤNG</h5>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                    </div>
-                    <div class="modal-body">
-                        <h1>BƯỚC 1</h1>
-                        <img src="~/images/HDSDStep1.png" />
-                        <h1>BƯỚC 2</h1>
-                        <img src="~/images/HDSDStep2.png" />
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                    </div>
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+
+    <script>
+        $(document).ready(function () {
+            $("#ListLoaiVe").addClass('LoaiVe100');
+            if (!!$('#HiddenFrom').val())
+                $('#From').val($('#HiddenFrom').val());
+            if (!!$('#HiddenTo').val())
+                $('#To').val($('#HiddenTo').val());
+        });
+
+        function SoDaChonClick(input) {
+            var q = $('#QuantitySoDaChon').text();
+            if (!q) { q = 0; }
+            if (input.checked) {
+                $('#QuantitySoDaChon').text(parseInt(q) - 1);
+            }
+            else {
+                $('#QuantitySoDaChon').text(parseInt(q) + 1);
+            }
+        }
+    </script>
+    <!--===============================================================================================-->
+    <script src="~/js/main.js"></script>
+    <script src="~/js/bootstrap4-toggle.min.js"></script>
+
+    <!-- Huong Dan Su Dung FULLSCREEN MODAL-->
+    <div class="modal fade" id="modalHDSD" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="HDSD" aria-hidden="true">
+        <div class="modal-dialog modal-fullscreen">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="HDSD">HƯỚNG DẪN SỬ DỤNG</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <h1>BƯỚC 1</h1>
+                    <img src="~/images/HDSDStep1.png" />
+                    <h1>BƯỚC 2</h1>
+                    <img src="~/images/HDSDStep2.png" />
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
                 </div>
             </div>
         </div>
+    </div>
 
-        <!-- Lien He MODAL-->
-        <div class="modal fade" id="modalLienHe" tabindex="-1" aria-labelledby="LienHe" aria-hidden="true">
-            <div class="modal-dialog modal-sm">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title text-danger" id="LienHe">GÓP Ý/LIÊN HỆ</h5>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                    </div>
-                    <div class="modal-body">
-                        <h6>Mọi sự góp ý, vui lòng email:</h6> <h5 class="font-italic text-primary">hphucloc@gmail.com</h5>
-                        <h6>Xin chân thành cảm ơn.</h6>
-                        <h5 class="text-primary">Huỳnh Phúc Lộc</h5>
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                    </div>
+    <!-- Lien He MODAL-->
+    <div class="modal fade" id="modalLienHe" tabindex="-1" data-bs-backdrop="static" data-bs-keyboard="false" aria-labelledby="LienHe" aria-hidden="true">
+        <div class="modal-dialog modal-sm">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="LienHe">GÓP Ý/LIÊN HỆ</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <h6>Mọi sự góp ý, vui lòng email:</h6> <h5 class="font-italic text-primary">hphucloc@gmail.com</h5>
+                    <h6>Xin chân thành cảm ơn.</h6>
+                    <h5 class="text-primary">Huỳnh Phúc Lộc</h5>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
                 </div>
             </div>
         </div>
+    </div>
 </body>
 </html>

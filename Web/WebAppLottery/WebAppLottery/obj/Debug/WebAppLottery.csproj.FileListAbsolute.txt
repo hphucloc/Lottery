@@ -158,8 +158,6 @@ C:\Users\hphuc\Documents\GitHub\Lottery\Web\WebAppLottery\WebAppLottery\bin\Enti
 C:\Users\hphuc\Documents\GitHub\Lottery\Web\WebAppLottery\WebAppLottery\bin\EntityFramework.xml
 C:\Users\hphuc\Documents\GitHub\Lottery\Web\WebAppLottery\WebAppLottery\bin\EntityFramework.SqlServer.xml
 C:\Users\hphuc\Documents\GitHub\Lottery\Web\WebAppLottery\WebAppLottery\bin\LotteryDAL.dll
-C:\Users\hphuc\Documents\GitHub\Lottery\Web\WebAppLottery\WebAppLottery\bin\LotteryDAL.pdb
-C:\Users\hphuc\Documents\GitHub\Lottery\Web\WebAppLottery\WebAppLottery\bin\LotteryDAL.dll.config
 C:\Users\Admin\Documents\GitHub\Lottery\Web\WebAppLottery\WebAppLottery\bin\EntityFramework.dll
 C:\Users\Admin\Documents\GitHub\Lottery\Web\WebAppLottery\WebAppLottery\bin\EntityFramework.SqlServer.dll
 C:\Users\Admin\Documents\GitHub\Lottery\Web\WebAppLottery\WebAppLottery\bin\LotteryDAL.dll
