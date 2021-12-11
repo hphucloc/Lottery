@@ -60,9 +60,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AmountBuyLottery.cs">
-      <DependentUpon>LotteryDataModel.tt</DependentUpon>
-    </Compile>
     <Compile Include="EnumLocal.cs" />
     <Compile Include="LotteryConnection.cs" />
     <Compile Include="LotteryDataModel.Context.cs">
@@ -80,16 +77,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>LotteryDataModel.edmx</DependentUpon>
     </Compile>
-    <Compile Include="Match.cs">
-      <DependentUpon>LotteryDataModel.tt</DependentUpon>
-    </Compile>
     <Compile Include="Number.cs">
-      <DependentUpon>LotteryDataModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="NumberBought.cs">
-      <DependentUpon>LotteryDataModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="NumberTipBet.cs">
       <DependentUpon>LotteryDataModel.tt</DependentUpon>
     </Compile>
     <Compile Include="NumberType.cs">

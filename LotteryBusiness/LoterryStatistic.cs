@@ -10,7 +10,7 @@ namespace LotteryBusiness
     {
         public Int16 NumberTypeId { get; set; }
         public Int16 NumberWinLevelId { get; set; }
-        public int LotNumber { get; set; }
+        public string LotNumber { get; set; }
         
         public DatePublishList2 DatePublishList = new DatePublishList2();
 
@@ -20,6 +20,7 @@ namespace LotteryBusiness
         public System.DateTime DatePublishMax { get; set; }
         public System.DateTime DatePublishMin { get; set; }
         public int TotalNumberAppear { get; set; }
+        public int TotalNumberAppearInRange { get; set; }
     }
 
     public class DatePublishList2

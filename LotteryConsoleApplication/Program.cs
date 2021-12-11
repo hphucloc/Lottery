@@ -18,8 +18,8 @@ namespace LotteryApplication
                 Console.WriteLine("Dang lay 6/55.....");
                 _6Over55.Insert(Common.ReadAppConfig("6Over55URL"));
 
-                //Console.WriteLine("Dang lay 4dMax.....");
-                //Max4d.Insert(Common.ReadAppConfig("4dMaxURL"));
+               // Console.WriteLine("Dang lay 3dMax.....");
+                //Max4d.Insert(Common.ReadAppConfig("3dMaxURL"));
 
                 Console.Write("Hoan tat. Nhan phim bat ky de dong.");
                 Console.ReadKey();

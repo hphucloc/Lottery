@@ -1,58 +1,16 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Schema Namespace="LotteryDataModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
-  <EntityType Name="AmountBuyLottery">
-    <Key>
-      <PropertyRef Name="AmountBuyLotteryId" />
-    </Key>
-    <Property Name="AmountBuyLotteryId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="Date" Type="datetime" Nullable="false" />
-    <Property Name="Amount" Type="money" Nullable="false" />
-    <Property Name="FullNumber" Type="char" MaxLength="20" />
-    <Property Name="Comment" Type="nvarchar" MaxLength="250" />
-  </EntityType>
-  <EntityType Name="Match">
-    <Key>
-      <PropertyRef Name="Id" />
-    </Key>
-    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="Date" Type="datetime" Nullable="false" />
-    <Property Name="Amount" Type="money" Nullable="false" />
-    <Property Name="MatchNumber" Type="nchar" MaxLength="12" Nullable="false" />
-    <Property Name="FullNumber" Type="char" MaxLength="12" Nullable="false" />
-    <Property Name="Comment" Type="nvarchar" MaxLength="250" />
-  </EntityType>
   <EntityType Name="Number">
     <Key>
-      <PropertyRef Name="NumberTypeId" />
-      <PropertyRef Name="NumberWinLevelId" />
-      <PropertyRef Name="LotNumber" />
-      <PropertyRef Name="DatePublish" />
+      <PropertyRef Name="NumberId" />
     </Key>
     <Property Name="NumberId" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="NumberTypeId" Type="smallint" Nullable="false" />
     <Property Name="NumberWinLevelId" Type="smallint" Nullable="false" />
-    <Property Name="LotNumber" Type="int" Nullable="false" />
+    <Property Name="LotNumber" Type="nvarchar" MaxLength="99" Nullable="false" />
     <Property Name="DatePublish" Type="datetime" Nullable="false" />
     <Property Name="DateCreated" Type="datetime" Nullable="false" />
     <Property Name="DateUpdated" Type="datetime" />
-  </EntityType>
-  <EntityType Name="NumberBought">
-    <Key>
-      <PropertyRef Name="Id" />
-    </Key>
-    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="DateBought" Type="date" Nullable="false" />
-    <Property Name="LotNumber" Type="tinyint" Nullable="false" />
-    <Property Name="NumberTypeId" Type="smallint" Nullable="false" />
-    <Property Name="NumberWinLevelId" Type="smallint" Nullable="false" />
-    <Property Name="CreatedDate" Type="datetime" />
-  </EntityType>
-  <EntityType Name="NumberTipBet">
-    <Key>
-      <PropertyRef Name="ID" />
-    </Key>
-    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="Label" Type="nvarchar" MaxLength="250" Nullable="false" />
   </EntityType>
   <EntityType Name="NumberType">
     <Key>
@@ -94,36 +52,8 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK_NumberBought_NumberType">
-    <End Role="NumberType" Type="Self.NumberType" Multiplicity="1" />
-    <End Role="NumberBought" Type="Self.NumberBought" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="NumberType">
-        <PropertyRef Name="NumberTypeId" />
-      </Principal>
-      <Dependent Role="NumberBought">
-        <PropertyRef Name="NumberTypeId" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK_NumberBought_NumberWinLevel">
-    <End Role="NumberWinLevel" Type="Self.NumberWinLevel" Multiplicity="1" />
-    <End Role="NumberBought" Type="Self.NumberBought" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="NumberWinLevel">
-        <PropertyRef Name="NumberWinLevelId" />
-      </Principal>
-      <Dependent Role="NumberBought">
-        <PropertyRef Name="NumberWinLevelId" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
   <EntityContainer Name="LotteryDataModelStoreContainer">
-    <EntitySet Name="AmountBuyLottery" EntityType="Self.AmountBuyLottery" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="Match" EntityType="Self.Match" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Number" EntityType="Self.Number" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="NumberBought" EntityType="Self.NumberBought" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="NumberTipBet" EntityType="Self.NumberTipBet" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="NumberType" EntityType="Self.NumberType" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="NumberWinLevel" EntityType="Self.NumberWinLevel" Schema="dbo" store:Type="Tables" />
     <AssociationSet Name="FK__Number__NumberTy__164452B1" Association="Self.FK__Number__NumberTy__164452B1">
@@ -133,14 +63,6 @@
     <AssociationSet Name="FK__Number__NumberWi__173876EA" Association="Self.FK__Number__NumberWi__173876EA">
       <End Role="NumberWinLevel" EntitySet="NumberWinLevel" />
       <End Role="Number" EntitySet="Number" />
-    </AssociationSet>
-    <AssociationSet Name="FK_NumberBought_NumberType" Association="Self.FK_NumberBought_NumberType">
-      <End Role="NumberType" EntitySet="NumberType" />
-      <End Role="NumberBought" EntitySet="NumberBought" />
-    </AssociationSet>
-    <AssociationSet Name="FK_NumberBought_NumberWinLevel" Association="Self.FK_NumberBought_NumberWinLevel">
-      <End Role="NumberWinLevel" EntitySet="NumberWinLevel" />
-      <End Role="NumberBought" EntitySet="NumberBought" />
     </AssociationSet>
   </EntityContainer>
 </Schema>

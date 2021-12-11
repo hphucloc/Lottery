@@ -80,7 +80,7 @@ namespace WebAppLottery.Controllers
                     new SortedDictionary<DateTime, SortedSet<int>>();
                 foreach (var i in m.Data)
                 {
-                    if (i.LotNumber >= 1 && i.LotNumber <= 7)
+                    if (Convert.ToInt32(i.LotNumber) >= 1 && Convert.ToInt32(i.LotNumber) <= 7)
                     {
                         count1_7 += i.TotalNumberAppearInRange;
                     }

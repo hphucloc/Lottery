@@ -25,7 +25,7 @@ namespace DataVietlott
                     aNo.NumberTypeId = (Int16)Enum_NumberType._6Over45;
                     aNo.NumberWinLevelId = (Int16)Enum_NumberWinLevel.DacBiet;
                     aNo.DateCreated = DateTime.Now;
-                    aNo.LotNumber = Convert.ToInt32(input[no + 2].Substring(0,2));      
+                    aNo.LotNumber = input[no + 2].Substring(0,2);      
                                 
                     val.Add(aNo);
                    
@@ -33,7 +33,7 @@ namespace DataVietlott
                     aNo.DatePublish = Convert.ToDateTime(input[no],cul);
                     aNo.NumberTypeId = (Int16)Enum_NumberType._6Over45;
                     aNo.NumberWinLevelId = (Int16)Enum_NumberWinLevel.DacBiet;
-                    aNo.LotNumber = Convert.ToInt32(input[no + 2].Substring(2,2));
+                    aNo.LotNumber = input[no + 2].Substring(2,2);
                     aNo.DateCreated = DateTime.Now;
                     val.Add(aNo);                   
 
@@ -41,7 +41,7 @@ namespace DataVietlott
                     aNo.DatePublish = Convert.ToDateTime(input[no],cul);
                     aNo.NumberTypeId = (Int16)Enum_NumberType._6Over45;
                     aNo.NumberWinLevelId = (Int16)Enum_NumberWinLevel.DacBiet;
-                    aNo.LotNumber = Convert.ToInt32(input[no + 2].Substring(4,2));
+                    aNo.LotNumber = input[no + 2].Substring(4,2);
                     aNo.DateCreated = DateTime.Now;
                     val.Add(aNo);
 
@@ -49,7 +49,7 @@ namespace DataVietlott
                     aNo.DatePublish = Convert.ToDateTime(input[no],cul);
                     aNo.NumberTypeId = (Int16)Enum_NumberType._6Over45;
                     aNo.NumberWinLevelId = (Int16)Enum_NumberWinLevel.DacBiet;
-                    aNo.LotNumber = Convert.ToInt32(input[no + 2].Substring(6,2));
+                    aNo.LotNumber = input[no + 2].Substring(6,2);
                     aNo.DateCreated = DateTime.Now;
                     val.Add(aNo);
 
@@ -57,7 +57,7 @@ namespace DataVietlott
                     aNo.DatePublish = Convert.ToDateTime(input[no],cul);
                     aNo.NumberTypeId = (Int16)Enum_NumberType._6Over45;
                     aNo.NumberWinLevelId = (Int16)Enum_NumberWinLevel.DacBiet;
-                    aNo.LotNumber = Convert.ToInt32(input[no + 2].Substring(8, 2));
+                    aNo.LotNumber = input[no + 2].Substring(8, 2);
                     aNo.DateCreated = DateTime.Now;
                     val.Add(aNo);
 
@@ -65,7 +65,7 @@ namespace DataVietlott
                     aNo.DatePublish = Convert.ToDateTime(input[no],cul);
                     aNo.NumberTypeId = (Int16)Enum_NumberType._6Over45;
                     aNo.NumberWinLevelId = (Int16)Enum_NumberWinLevel.DacBiet;
-                    aNo.LotNumber = Convert.ToInt32(input[no + 2].Substring(10, 2));
+                    aNo.LotNumber = input[no + 2].Substring(10, 2);
                     aNo.DateCreated = DateTime.Now;
                     val.Add(aNo);                    
                 }

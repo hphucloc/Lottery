@@ -27,10 +27,6 @@ namespace LotteryDAL
     
         public virtual DbSet<NumberType> NumberTypes { get; set; }
         public virtual DbSet<NumberWinLevel> NumberWinLevels { get; set; }
-        public virtual DbSet<NumberTipBet> NumberTipBets { get; set; }
-        public virtual DbSet<Match> Matches { get; set; }
-        public virtual DbSet<AmountBuyLottery> AmountBuyLotteries { get; set; }
         public virtual DbSet<Number> Numbers { get; set; }
-        public virtual DbSet<NumberBought> NumberBoughts { get; set; }
     }
 }

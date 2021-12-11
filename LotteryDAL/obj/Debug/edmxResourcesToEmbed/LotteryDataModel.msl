@@ -19,37 +19,6 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="NumberTipBets">
-      <EntityTypeMapping TypeName="LotteryDataModel.NumberTipBet">
-        <MappingFragment StoreEntitySet="NumberTipBet">
-          <ScalarProperty Name="Label" ColumnName="Label" />
-          <ScalarProperty Name="ID" ColumnName="ID" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="Matches">
-      <EntityTypeMapping TypeName="LotteryDataModel.Match">
-        <MappingFragment StoreEntitySet="Match">
-          <ScalarProperty Name="Comment" ColumnName="Comment" />
-          <ScalarProperty Name="FullNumber" ColumnName="FullNumber" />
-          <ScalarProperty Name="MatchNumber" ColumnName="MatchNumber" />
-          <ScalarProperty Name="Amount" ColumnName="Amount" />
-          <ScalarProperty Name="Date" ColumnName="Date" />
-          <ScalarProperty Name="Id" ColumnName="Id" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="AmountBuyLotteries">
-      <EntityTypeMapping TypeName="LotteryDataModel.AmountBuyLottery">
-        <MappingFragment StoreEntitySet="AmountBuyLottery">
-          <ScalarProperty Name="Comment" ColumnName="Comment" />
-          <ScalarProperty Name="FullNumber" ColumnName="FullNumber" />
-          <ScalarProperty Name="Amount" ColumnName="Amount" />
-          <ScalarProperty Name="Date" ColumnName="Date" />
-          <ScalarProperty Name="AmountBuyLotteryId" ColumnName="AmountBuyLotteryId" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
     <EntitySetMapping Name="Numbers">
       <EntityTypeMapping TypeName="LotteryDataModel.Number">
         <MappingFragment StoreEntitySet="Number">
@@ -60,18 +29,6 @@
           <ScalarProperty Name="NumberWinLevelId" ColumnName="NumberWinLevelId" />
           <ScalarProperty Name="NumberTypeId" ColumnName="NumberTypeId" />
           <ScalarProperty Name="NumberId" ColumnName="NumberId" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="NumberBoughts">
-      <EntityTypeMapping TypeName="LotteryDataModel.NumberBought">
-        <MappingFragment StoreEntitySet="NumberBought">
-          <ScalarProperty Name="NumberWinLevelId" ColumnName="NumberWinLevelId" />
-          <ScalarProperty Name="NumberTypeId" ColumnName="NumberTypeId" />
-          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
-          <ScalarProperty Name="LotNumber" ColumnName="LotNumber" />
-          <ScalarProperty Name="DateBought" ColumnName="DateBought" />
-          <ScalarProperty Name="Id" ColumnName="Id" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

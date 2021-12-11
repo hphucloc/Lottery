@@ -3,8 +3,10 @@
     public enum Enum_NumberType
     {
         _6Over45 = 1,
-        _4DMax = 2,
-        _6Over55 = 3
+        _3DMax = 2,
+        _6Over55 = 3,
+        _3DMaxPro = 4,
+        _Keno = 5,
     }
 
     public enum Enum_NumberWinLevel

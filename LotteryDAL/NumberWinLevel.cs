@@ -18,7 +18,6 @@ namespace LotteryDAL
         public NumberWinLevel()
         {
             this.Numbers = new HashSet<Number>();
-            this.NumberBoughts = new HashSet<NumberBought>();
         }
     
         public short NumberWinLevelId { get; set; }
@@ -27,7 +26,5 @@ namespace LotteryDAL
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Number> Numbers { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<NumberBought> NumberBoughts { get; set; }
     }
 }

@@ -17,7 +17,7 @@ namespace LotteryDAL
         public long NumberId { get; set; }
         public short NumberTypeId { get; set; }
         public short NumberWinLevelId { get; set; }
-        public int LotNumber { get; set; }
+        public string LotNumber { get; set; }
         public System.DateTime DatePublish { get; set; }
         public System.DateTime DateCreated { get; set; }
         public Nullable<System.DateTime> DateUpdated { get; set; }

@@ -262,7 +262,7 @@ namespace LotteryUI
             int count24_31 = 0;
             int count32_39 = 0;
             int countUpper40 = 0;
-            SortedDictionary<DateTime, SortedSet<int>> hitNumberByDate = new SortedDictionary<DateTime, SortedSet<int>>();
+            SortedDictionary<DateTime, SortedSet<int?>> hitNumberByDate = new SortedDictionary<DateTime, SortedSet<int?>>();
             foreach (var aNo in data)
             {
                 //Number
@@ -321,7 +321,7 @@ namespace LotteryUI
                 {
                     if (!hitNumberByDate.ContainsKey(date))
                     {
-                        hitNumberByDate.Add(date, new SortedSet<int>());
+                        hitNumberByDate.Add(date, new SortedSet<int?>());
                     }
                 }
             }
