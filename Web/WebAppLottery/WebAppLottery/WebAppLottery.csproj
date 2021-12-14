@@ -59,13 +59,12 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>bin\HtmlAgilityPack.dll</HintPath>
     </Reference>
-    <Reference Include="LotteryBusiness, Version=1.0.0.2, Culture=neutral, processorArchitecture=MSIL">
+    <Reference Include="LotteryBusiness, Version=1.0.0.3, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\DllVersion\1.0.0.3\LotteryBusiness.dll</HintPath>
+      <HintPath>..\..\..\DllVersion\1.0.0.4\LotteryBusiness.dll</HintPath>
     </Reference>
-    <Reference Include="LotteryDAL, Version=1.0.0.1, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\DllVersion\1.0.0.3\LotteryDAL.dll</HintPath>
+    <Reference Include="LotteryDAL">
+      <HintPath>..\..\..\DllVersion\1.0.0.4\LotteryDAL.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System" />
@@ -142,6 +141,7 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Common\Common.cs" />
+    <Compile Include="Common\_3DMax.cs" />
     <Compile Include="Common\_6Over45.cs" />
     <Compile Include="Common\_6Over55.cs" />
     <Compile Include="Controllers\HomeController.cs" />
@@ -150,6 +150,7 @@
     </Compile>
     <Compile Include="Models\DataPageModel.cs" />
     <Compile Include="Models\IndexPageModel.cs" />
+    <Compile Include="Models\LotteryStatistic1.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -237,6 +238,13 @@
     <Content Include="Content\bootstrap-grid.min.css.map" />
     <Content Include="Content\bootstrap-grid.css.map" />
     <Content Include="Scripts\bootstrap4-toggle.min.js" />
+    <Content Include="Web.config" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
     <None Include="Scripts\jquery-3.6.0.intellisense.js" />
     <Content Include="Scripts\jquery-3.6.0.js" />
     <Content Include="Scripts\jquery-3.6.0.min.js" />
@@ -341,13 +349,6 @@
     <Content Include="vendor\select2\select2.min.css" />
     <Content Include="vendor\select2\select2.min.js" />
     <Content Include="vendor\tilt\tilt.jquery.min.js" />
-    <Content Include="Web.config" />
-    <Content Include="Web.Debug.config">
-      <DependentUpon>Web.config</DependentUpon>
-    </Content>
-    <Content Include="Web.Release.config">
-      <DependentUpon>Web.config</DependentUpon>
-    </Content>
     <Content Include="Views\Web.config" />
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Shared\Error.cshtml" />

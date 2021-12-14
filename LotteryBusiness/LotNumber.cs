@@ -16,6 +16,7 @@ namespace LotteryBusiness
         public System.DateTime DateCreated { get; set; }
         public Nullable<System.DateTime> DateUpdated { get; set; }   
         public int TotalNumberAppear { get; set; }
-            
+        public int TotalNumberAppearInRange { get; set; }
+
     }
 }

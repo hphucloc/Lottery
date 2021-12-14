@@ -35,7 +35,6 @@ C:\Users\Admin\Documents\GitHub\Lottery\LotteryDAL\bin\Debug\EntityFramework.Sql
 C:\Users\Admin\Documents\GitHub\Lottery\LotteryDAL\obj\Debug\LotteryDAL.csproj.CoreCompileInputs.cache
 C:\Users\Admin\Documents\GitHub\Lottery\LotteryDAL\obj\Debug\LotteryDAL.dll
 C:\Users\Admin\Documents\GitHub\Lottery\LotteryDAL\obj\Debug\LotteryDAL.pdb
-C:\Users\Admin\Documents\GitHub\Lottery\LotteryDAL\obj\Debug\LotteryDAL.csproj.AssemblyReference.cache
 C:\Users\hphuc\Documents\GitHub\Lottery\LotteryDAL\bin\Debug\LotteryDAL.dll.config
 C:\Users\hphuc\Documents\GitHub\Lottery\LotteryDAL\bin\Debug\LotteryDAL.dll
 C:\Users\hphuc\Documents\GitHub\Lottery\LotteryDAL\bin\Debug\LotteryDAL.pdb
@@ -49,3 +48,4 @@ C:\Users\hphuc\Documents\GitHub\Lottery\LotteryDAL\obj\Debug\LotteryDAL.csproj.C
 C:\Users\hphuc\Documents\GitHub\Lottery\LotteryDAL\obj\Debug\LotteryDAL.csproj.CopyComplete
 C:\Users\hphuc\Documents\GitHub\Lottery\LotteryDAL\obj\Debug\LotteryDAL.dll
 C:\Users\hphuc\Documents\GitHub\Lottery\LotteryDAL\obj\Debug\LotteryDAL.pdb
+C:\Users\Admin\Documents\GitHub\Lottery\LotteryDAL\obj\Debug\LotteryDAL.csproj.CopyComplete

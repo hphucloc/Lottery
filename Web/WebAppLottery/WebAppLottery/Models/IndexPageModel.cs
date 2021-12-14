@@ -42,7 +42,7 @@ namespace WebAppLottery.Models
         public SortedDictionary<DateTime, SortedSet<int>> groupNumberStatistic { get; set; }
 
         //Render body
-        public List<LotteryBusiness.LoterryStatistic> Data { get; set; }      
+        public List<WebAppLottery.Models.LotteryStatistic1> Data { get; set; }      
 
         public List<DateTime> AllDatePublist { get; set; }
     }

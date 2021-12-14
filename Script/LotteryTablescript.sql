@@ -1,0 +1,254 @@
+USE [master]
+GO
+/****** Object:  Database [Lottery]    Script Date: 12/9/2021 3:23:29 PM ******/
+CREATE DATABASE [Lottery]
+ CONTAINMENT = NONE
+ ON  PRIMARY 
+( NAME = N'Lottery', FILENAME = N'C:\Program Files\Microsoft SQL Server\MSSQL12.MSSQLSERVER\MSSQL\DATA\Lottery.mdf' , SIZE = 4288KB , MAXSIZE = UNLIMITED, FILEGROWTH = 1024KB )
+ LOG ON 
+( NAME = N'Lottery_log', FILENAME = N'C:\Program Files\Microsoft SQL Server\MSSQL12.MSSQLSERVER\MSSQL\DATA\Lottery_log.ldf' , SIZE = 6400KB , MAXSIZE = 2048GB , FILEGROWTH = 10%)
+GO
+ALTER DATABASE [Lottery] SET COMPATIBILITY_LEVEL = 120
+GO
+IF (1 = FULLTEXTSERVICEPROPERTY('IsFullTextInstalled'))
+begin
+EXEC [Lottery].[dbo].[sp_fulltext_database] @action = 'enable'
+end
+GO
+ALTER DATABASE [Lottery] SET ANSI_NULL_DEFAULT OFF 
+GO
+ALTER DATABASE [Lottery] SET ANSI_NULLS OFF 
+GO
+ALTER DATABASE [Lottery] SET ANSI_PADDING OFF 
+GO
+ALTER DATABASE [Lottery] SET ANSI_WARNINGS OFF 
+GO
+ALTER DATABASE [Lottery] SET ARITHABORT OFF 
+GO
+ALTER DATABASE [Lottery] SET AUTO_CLOSE OFF 
+GO
+ALTER DATABASE [Lottery] SET AUTO_SHRINK OFF 
+GO
+ALTER DATABASE [Lottery] SET AUTO_UPDATE_STATISTICS ON 
+GO
+ALTER DATABASE [Lottery] SET CURSOR_CLOSE_ON_COMMIT OFF 
+GO
+ALTER DATABASE [Lottery] SET CURSOR_DEFAULT  GLOBAL 
+GO
+ALTER DATABASE [Lottery] SET CONCAT_NULL_YIELDS_NULL OFF 
+GO
+ALTER DATABASE [Lottery] SET NUMERIC_ROUNDABORT OFF 
+GO
+ALTER DATABASE [Lottery] SET QUOTED_IDENTIFIER OFF 
+GO
+ALTER DATABASE [Lottery] SET RECURSIVE_TRIGGERS OFF 
+GO
+ALTER DATABASE [Lottery] SET  DISABLE_BROKER 
+GO
+ALTER DATABASE [Lottery] SET AUTO_UPDATE_STATISTICS_ASYNC OFF 
+GO
+ALTER DATABASE [Lottery] SET DATE_CORRELATION_OPTIMIZATION OFF 
+GO
+ALTER DATABASE [Lottery] SET TRUSTWORTHY OFF 
+GO
+ALTER DATABASE [Lottery] SET ALLOW_SNAPSHOT_ISOLATION OFF 
+GO
+ALTER DATABASE [Lottery] SET PARAMETERIZATION SIMPLE 
+GO
+ALTER DATABASE [Lottery] SET READ_COMMITTED_SNAPSHOT OFF 
+GO
+ALTER DATABASE [Lottery] SET HONOR_BROKER_PRIORITY OFF 
+GO
+ALTER DATABASE [Lottery] SET RECOVERY FULL 
+GO
+ALTER DATABASE [Lottery] SET  MULTI_USER 
+GO
+ALTER DATABASE [Lottery] SET PAGE_VERIFY CHECKSUM  
+GO
+ALTER DATABASE [Lottery] SET DB_CHAINING OFF 
+GO
+ALTER DATABASE [Lottery] SET FILESTREAM( NON_TRANSACTED_ACCESS = OFF ) 
+GO
+ALTER DATABASE [Lottery] SET TARGET_RECOVERY_TIME = 0 SECONDS 
+GO
+ALTER DATABASE [Lottery] SET DELAYED_DURABILITY = DISABLED 
+GO
+EXEC sys.sp_db_vardecimal_storage_format N'Lottery', N'ON'
+GO
+USE [Lottery]
+GO
+/****** Object:  Table [dbo].[AmountBuyLottery]    Script Date: 12/9/2021 3:23:29 PM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+SET ANSI_PADDING ON
+GO
+CREATE TABLE [dbo].[AmountBuyLottery](
+	[AmountBuyLotteryId] [int] IDENTITY(1,1) NOT NULL,
+	[Date] [datetime] NOT NULL CONSTRAINT [DF__AmountBuyL__Date__778AC167]  DEFAULT (getdate()),
+	[Amount] [money] NOT NULL,
+	[FullNumber] [char](20) NULL,
+	[Comment] [nvarchar](250) NULL,
+ CONSTRAINT [PK_AmountBuyLottery] PRIMARY KEY CLUSTERED 
+(
+	[AmountBuyLotteryId] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+
+GO
+SET ANSI_PADDING OFF
+GO
+/****** Object:  Table [dbo].[Match]    Script Date: 12/9/2021 3:23:29 PM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+SET ANSI_PADDING ON
+GO
+CREATE TABLE [dbo].[Match](
+	[Id] [int] IDENTITY(1,1) NOT NULL,
+	[Date] [datetime] NOT NULL CONSTRAINT [DF_Match_Date]  DEFAULT (getdate()),
+	[Amount] [money] NOT NULL,
+	[MatchNumber] [nchar](12) NOT NULL,
+	[FullNumber] [char](12) NOT NULL,
+	[Comment] [nvarchar](250) NULL,
+ CONSTRAINT [PK_Match] PRIMARY KEY CLUSTERED 
+(
+	[Id] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+
+GO
+SET ANSI_PADDING OFF
+GO
+/****** Object:  Table [dbo].[Number]    Script Date: 12/9/2021 3:23:29 PM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[Number](
+	[NumberId] [bigint] IDENTITY(1,1) NOT NULL,
+	[NumberTypeId] [smallint] NOT NULL,
+	[NumberWinLevelId] [smallint] NOT NULL,
+	[LotNumber] [int] NOT NULL,
+	[DatePublish] [datetime] NOT NULL,
+	[DateCreated] [datetime] NOT NULL,
+	[DateUpdated] [datetime] NULL,
+ CONSTRAINT [PK_Number] PRIMARY KEY CLUSTERED 
+(
+	[NumberTypeId] ASC,
+	[NumberWinLevelId] ASC,
+	[LotNumber] ASC,
+	[DatePublish] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+
+GO
+/****** Object:  Table [dbo].[NumberBought]    Script Date: 12/9/2021 3:23:29 PM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[NumberBought](
+	[Id] [int] IDENTITY(1,1) NOT NULL,
+	[DateBought] [date] NOT NULL,
+	[LotNumber] [tinyint] NOT NULL,
+	[NumberTypeId] [smallint] NOT NULL,
+	[NumberWinLevelId] [smallint] NOT NULL,
+	[CreatedDate] [datetime] NOT NULL CONSTRAINT [DF_NumberBought_CreatedDate]  DEFAULT (getdate()),
+ CONSTRAINT [PK_NumberBought_1] PRIMARY KEY CLUSTERED 
+(
+	[Id] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+
+GO
+/****** Object:  Table [dbo].[NumberTipBet]    Script Date: 12/9/2021 3:23:29 PM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[NumberTipBet](
+	[ID] [int] IDENTITY(1,1) NOT NULL,
+	[Label] [nvarchar](250) NOT NULL,
+ CONSTRAINT [PK_NumberTipBet] PRIMARY KEY CLUSTERED 
+(
+	[ID] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+
+GO
+/****** Object:  Table [dbo].[NumberType]    Script Date: 12/9/2021 3:23:29 PM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[NumberType](
+	[NumberTypeId] [smallint] IDENTITY(1,1) NOT NULL,
+	[Label] [nvarchar](50) NOT NULL,
+	[DateCreated] [datetime] NULL DEFAULT (getdate()),
+PRIMARY KEY CLUSTERED 
+(
+	[NumberTypeId] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+
+GO
+/****** Object:  Table [dbo].[NumberWinLevel]    Script Date: 12/9/2021 3:23:29 PM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[NumberWinLevel](
+	[NumberWinLevelId] [smallint] IDENTITY(1,1) NOT NULL,
+	[Label] [nvarchar](50) NOT NULL,
+	[DateCreated] [datetime] NULL DEFAULT (getdate()),
+PRIMARY KEY CLUSTERED 
+(
+	[NumberWinLevelId] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+
+GO
+/****** Object:  Table [dbo].[User]    Script Date: 12/9/2021 3:23:29 PM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[User](
+	[UserID] [int] IDENTITY(1,1) NOT NULL,
+	[FullName] [nvarchar](50) NOT NULL,
+	[Phone] [numeric](18, 0) NULL,
+	[Email] [nvarchar](50) NOT NULL,
+ CONSTRAINT [PK_User] PRIMARY KEY CLUSTERED 
+(
+	[UserID] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+
+GO
+ALTER TABLE [dbo].[Number]  WITH CHECK ADD  CONSTRAINT [FK__Number__NumberTy__164452B1] FOREIGN KEY([NumberTypeId])
+REFERENCES [dbo].[NumberType] ([NumberTypeId])
+GO
+ALTER TABLE [dbo].[Number] CHECK CONSTRAINT [FK__Number__NumberTy__164452B1]
+GO
+ALTER TABLE [dbo].[Number]  WITH CHECK ADD  CONSTRAINT [FK__Number__NumberWi__173876EA] FOREIGN KEY([NumberWinLevelId])
+REFERENCES [dbo].[NumberWinLevel] ([NumberWinLevelId])
+GO
+ALTER TABLE [dbo].[Number] CHECK CONSTRAINT [FK__Number__NumberWi__173876EA]
+GO
+ALTER TABLE [dbo].[NumberBought]  WITH CHECK ADD  CONSTRAINT [FK_NumberBought_NumberType] FOREIGN KEY([NumberTypeId])
+REFERENCES [dbo].[NumberType] ([NumberTypeId])
+GO
+ALTER TABLE [dbo].[NumberBought] CHECK CONSTRAINT [FK_NumberBought_NumberType]
+GO
+ALTER TABLE [dbo].[NumberBought]  WITH CHECK ADD  CONSTRAINT [FK_NumberBought_NumberWinLevel] FOREIGN KEY([NumberWinLevelId])
+REFERENCES [dbo].[NumberWinLevel] ([NumberWinLevelId])
+GO
+ALTER TABLE [dbo].[NumberBought] CHECK CONSTRAINT [FK_NumberBought_NumberWinLevel]
+GO
+USE [master]
+GO
+ALTER DATABASE [Lottery] SET  READ_WRITE 
+GO

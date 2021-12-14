@@ -118,6 +118,7 @@ namespace LotteryBusiness
                 no.DatePublishMax = Number.Max(a => a.DatePublish);
                 no.DatePublishMin = Number.Min(a => a.DatePublish);
                 no.TotalNumberAppear = GetTotalNumberAppear(no.LotNumber, no.NumberTypeId);
+                no.TotalNumberAppearInRange = no.DatePublishList.DatePublishList1.Count;
             }
 
             //Lay tat ca ngay publish

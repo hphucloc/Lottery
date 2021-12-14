@@ -28,7 +28,6 @@ namespace WebAppLottery.Controllers
         }
 
         [HttpPost]
-        [ValidateAntiForgeryToken]
         public new ActionResult Request(IndexPageModel m)
         {
             if (ModelState.IsValid)
@@ -68,9 +67,29 @@ namespace WebAppLottery.Controllers
                 m.From = from;
                 m.To = to;
                 if (m.ListLoaiVe == IndexPageModel.LoaiVe._6Over45)
-                    _6Over45NoData = m.Data = _6Over45TimeLine.Get6Over45Number(from, to);
+                {
+                    _6Over45NoData = _6Over45TimeLine.Get6Over45Number(from, to);
+                    m.Data = _6Over45NoData.Select(x => new LotteryStatistic1
+                    {
+                        LotNumber = Convert.ToInt32(x.LotNumber),
+                        AllDatePublishList =  x.AllDatePublishList,
+                        DatePublish = x.DatePublish,
+                        TotalNumberAppearInRange = x.TotalNumberAppearInRange,
+                        DatePublishList = x.DatePublishList
+                    }).OrderBy(x => x.LotNumber).ToList();
+                }
                 else if (m.ListLoaiVe == IndexPageModel.LoaiVe._6Over55)
-                    _6Over55NoData = m.Data = _6Over55TimeLine.Get6Over55Number(from, to);                                         
+                {
+                    _6Over55NoData = _6Over55TimeLine.Get6Over55Number(from, to);
+                    m.Data = _6Over55NoData.Select(x => new LotteryStatistic1
+                    {
+                        LotNumber = Convert.ToInt32(x.LotNumber),
+                        AllDatePublishList = x.AllDatePublishList,
+                        DatePublish = x.DatePublish,
+                        TotalNumberAppearInRange = x.TotalNumberAppearInRange,
+                        DatePublishList = x.DatePublishList
+                    }).OrderBy(x=>x.LotNumber).ToList();
+                }
 
                 //************************Render Body*************************//    
                 m.AllDatePublist = m.Data[0].AllDatePublishList;
@@ -85,27 +104,27 @@ namespace WebAppLottery.Controllers
                         count1_7 += i.TotalNumberAppearInRange;
                     }
                     else
-                        if (i.LotNumber >= 8 && i.LotNumber <= 15)
+                        if (Convert.ToInt32(i.LotNumber) >= 8 && Convert.ToInt32(i.LotNumber) <= 15)
                     {
                         count8_15 += i.TotalNumberAppearInRange;
                     }
                     else
-                        if (i.LotNumber >= 6 && i.LotNumber <= 23)
+                        if (Convert.ToInt32(i.LotNumber) >= 6 && Convert.ToInt32(i.LotNumber) <= 23)
                     {
                         count16_23 += i.TotalNumberAppearInRange;
                     }
                     else
-                        if (i.LotNumber >= 24 && i.LotNumber <= 31)
+                        if (Convert.ToInt32(i.LotNumber) >= 24 && Convert.ToInt32(i.LotNumber) <= 31)
                     {
                         count24_31 += i.TotalNumberAppearInRange;
                     }
                     else
-                        if (i.LotNumber >= 32 && i.LotNumber <= 39)
+                        if (Convert.ToInt32(i.LotNumber) >= 32 && Convert.ToInt32(i.LotNumber) <= 39)
                     {
                         count32_39 += i.TotalNumberAppearInRange;
                     }
                     else
-                        if (i.LotNumber >= 40 && i.LotNumber <= 47)
+                        if (Convert.ToInt32(i.LotNumber) >= 40 && Convert.ToInt32(i.LotNumber) <= 47)
                     {
                         count40_47 += i.TotalNumberAppearInRange;
                     }
@@ -128,7 +147,7 @@ namespace WebAppLottery.Controllers
                     foreach (var aNo in m.Data)
                         foreach (var date in aNo.DatePublishList.DatePublishList1)
                             if (item.Key == date)
-                                item.Value.Add(aNo.LotNumber);
+                                item.Value.Add(Convert.ToInt32(aNo.LotNumber));
 
                 m.groupNumberStatistic = hitNumberByDate;
                 m.NoAppear1To7 = count1_7;
@@ -152,6 +171,9 @@ namespace WebAppLottery.Controllers
                 m.Status = val + "\n";
 
                 val = DataVietlott._6Over55.Insert(DataVietlott.Common.ReadAppConfig("6Over55URL"));
+                m.Status += val + "\n";
+
+                val = DataVietlott._3DMax.Insert(DataVietlott.Common.ReadAppConfig("4dMaxURL"));
                 m.Status += val + "\n";
 
                 m.ErrorMessage = "";

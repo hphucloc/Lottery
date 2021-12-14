@@ -5,7 +5,7 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <_PublishTargetUrl>ftp://vietnamlott.net/httpdocs</_PublishTargetUrl>
-    <History>True|2021-12-05T04:32:08.8774730Z;False|2021-12-05T11:30:30.3572263+07:00;</History>
+    <History>True|2021-12-14T16:11:47.0178136Z;True|2021-12-05T11:32:08.8774730+07:00;False|2021-12-05T11:30:30.3572263+07:00;</History>
     <TimeStampOfAssociatedLegacyPublishXmlFile />
     <EncryptedPassword>AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAA3+EyMADWWkeMmRWD1DbqKwAAAAACAAAAAAAQZgAAAAEAACAAAACT3Na7IEzUsCA9U5h9AHZvkfLnolxPgt/2ddNP3aoRggAAAAAOgAAAAAIAACAAAADVvRRmSlQejLbpjFJGrO/v2wF9Va6LS6Xd5aizj/m24yAAAAAAfL8JkZqaFa6pTP72Dxw0n4CXd5OVgAoPAbwGRjfRYkAAAADcZjGkVqFZ/5feJqqm2rO1aXYVjzwNeUw+n1cOjrXaeGm57HugmjMjbnW3yygVWLVZhtNRguXJq2GsZBRdwKVw</EncryptedPassword>
   </PropertyGroup>
@@ -26,10 +26,10 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
       <publishTime>05/12/2021 08:30:09</publishTime>
     </File>
     <File Include="bin/LotteryBusiness.dll">
-      <publishTime>11/19/2021 22:28:21</publishTime>
+      <publishTime>12/14/2021 21:20:17</publishTime>
     </File>
     <File Include="bin/LotteryDAL.dll">
-      <publishTime>05/12/2021 11:16:26</publishTime>
+      <publishTime>12/14/2021 21:20:16</publishTime>
     </File>
     <File Include="bin/Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll">
       <publishTime>05/09/2018 16:10:50</publishTime>
@@ -209,10 +209,10 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
       <publishTime>11/28/2018 13:04:24</publishTime>
     </File>
     <File Include="bin/WebAppLottery.dll">
-      <publishTime>05/12/2021 21:13:14</publishTime>
+      <publishTime>12/14/2021 23:51:46</publishTime>
     </File>
     <File Include="bin/WebAppLottery.pdb">
-      <publishTime>05/12/2021 21:13:14</publishTime>
+      <publishTime>12/14/2021 23:51:46</publishTime>
     </File>
     <File Include="bin/WebGrease.dll">
       <publishTime>01/23/2014 13:57:34</publishTime>
@@ -848,7 +848,7 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
       <publishTime>05/12/2021 08:30:09</publishTime>
     </File>
     <File Include="Views/Shared/_Layout.cshtml">
-      <publishTime>12/05/2021 21:51:03</publishTime>
+      <publishTime>12/14/2021 23:23:30</publishTime>
     </File>
     <File Include="Views/Shared/_RequestHeader.cshtml">
       <publishTime>12/05/2021 21:54:32</publishTime>
@@ -860,7 +860,7 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
       <publishTime>10/24/2021 21:48:27</publishTime>
     </File>
     <File Include="Web.config">
-      <publishTime>12/05/2021 22:21:55</publishTime>
+      <publishTime>12/14/2021 23:51:47</publishTime>
     </File>
   </ItemGroup>
 </Project>
