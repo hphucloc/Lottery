@@ -49,3 +49,4 @@ C:\Users\hphuc\Documents\GitHub\Lottery\LotteryDAL\obj\Debug\LotteryDAL.csproj.C
 C:\Users\hphuc\Documents\GitHub\Lottery\LotteryDAL\obj\Debug\LotteryDAL.dll
 C:\Users\hphuc\Documents\GitHub\Lottery\LotteryDAL\obj\Debug\LotteryDAL.pdb
 C:\Users\Admin\Documents\GitHub\Lottery\LotteryDAL\obj\Debug\LotteryDAL.csproj.CopyComplete
+C:\Users\Admin\Documents\GitHub\Lottery\LotteryDAL\obj\Debug\LotteryDAL.csproj.AssemblyReference.cache

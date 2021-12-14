@@ -1,0 +1,19 @@
+C:\Users\Mahesh\AppData\Local\Temporary Projects\WebBrowserCSharp\bin\Debug\WebBrowserCSharp.exe
+C:\Users\Mahesh\AppData\Local\Temporary Projects\WebBrowserCSharp\bin\Debug\WebBrowserCSharp.pdb
+C:\Users\Mahesh\AppData\Local\Temporary Projects\WebBrowserCSharp\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Users\Mahesh\AppData\Local\Temporary Projects\WebBrowserCSharp\obj\x86\Debug\WebBrowserCSharp.Form1.resources
+C:\Users\Mahesh\AppData\Local\Temporary Projects\WebBrowserCSharp\obj\x86\Debug\WebBrowserCSharp.Properties.Resources.resources
+C:\Users\Mahesh\AppData\Local\Temporary Projects\WebBrowserCSharp\obj\x86\Debug\GenerateResource.read.1.tlog
+C:\Users\Mahesh\AppData\Local\Temporary Projects\WebBrowserCSharp\obj\x86\Debug\GenerateResource.write.1.tlog
+C:\Users\Mahesh\AppData\Local\Temporary Projects\WebBrowserCSharp\obj\x86\Debug\WebBrowserCSharp.exe
+C:\Users\Mahesh\AppData\Local\Temporary Projects\WebBrowserCSharp\obj\x86\Debug\WebBrowserCSharp.pdb
+C:\Books\Windows Forms\WebBrowserCSharp\WebBrowserCSharp\obj\x86\Debug\WebBrowserCSharp.exe
+C:\Books\Windows Forms\WebBrowserCSharp\WebBrowserCSharp\obj\x86\Debug\WebBrowserCSharp.pdb
+C:\Users\Admin\Documents\GitHub\Lottery\GetData\bin\Debug\WebBrowserCSharp.exe
+C:\Users\Admin\Documents\GitHub\Lottery\GetData\bin\Debug\WebBrowserCSharp.pdb
+C:\Users\Admin\Documents\GitHub\Lottery\GetData\obj\x86\Debug\WebBrowserCSharp.Properties.Resources.resources
+C:\Users\Admin\Documents\GitHub\Lottery\GetData\obj\x86\Debug\WebBrowserCSharp.csproj.GenerateResource.cache
+C:\Users\Admin\Documents\GitHub\Lottery\GetData\obj\x86\Debug\WebBrowserCSharp.csproj.CoreCompileInputs.cache
+C:\Users\Admin\Documents\GitHub\Lottery\GetData\obj\x86\Debug\WebBrowserCSharp.exe
+C:\Users\Admin\Documents\GitHub\Lottery\GetData\obj\x86\Debug\WebBrowserCSharp.pdb
+C:\Users\Admin\Documents\GitHub\Lottery\GetData\obj\x86\Debug\WebBrowserCSharp.Form1.resources

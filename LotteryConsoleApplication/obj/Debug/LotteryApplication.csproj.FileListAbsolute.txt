@@ -36,7 +36,6 @@ C:\Users\Admin\Documents\GitHub\Lottery\LotteryConsoleApplication\bin\Debug\Lott
 C:\Users\Admin\Documents\GitHub\Lottery\LotteryConsoleApplication\bin\Debug\EntityFramework.xml
 C:\Users\Admin\Documents\GitHub\Lottery\LotteryConsoleApplication\bin\Debug\EntityFramework.SqlServer.xml
 C:\Users\Admin\Documents\GitHub\Lottery\LotteryConsoleApplication\obj\Debug\LotteryApplication.csproj.CoreCompileInputs.cache
-C:\Users\Admin\Documents\GitHub\Lottery\LotteryConsoleApplication\obj\Debug\LotteryApplication.csproj.CopyComplete
 C:\Users\Admin\Documents\GitHub\Lottery\LotteryConsoleApplication\obj\Debug\LotteryConsoleApplication.exe
 C:\Users\Admin\Documents\GitHub\Lottery\LotteryConsoleApplication\obj\Debug\LotteryConsoleApplication.pdb
 C:\Users\hphuc\Documents\GitHub\Lottery\LotteryConsoleApplication\bin\Debug\LotteryConsoleApplication.exe.config
@@ -53,3 +52,4 @@ C:\Users\hphuc\Documents\GitHub\Lottery\LotteryConsoleApplication\obj\Debug\Lott
 C:\Users\hphuc\Documents\GitHub\Lottery\LotteryConsoleApplication\obj\Debug\LotteryApplication.csproj.CopyComplete
 C:\Users\hphuc\Documents\GitHub\Lottery\LotteryConsoleApplication\obj\Debug\LotteryConsoleApplication.exe
 C:\Users\hphuc\Documents\GitHub\Lottery\LotteryConsoleApplication\obj\Debug\LotteryConsoleApplication.pdb
+C:\Users\Admin\Documents\GitHub\Lottery\LotteryConsoleApplication\obj\Debug\LotteryApplication.csproj.CopyComplete
