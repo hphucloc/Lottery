@@ -164,7 +164,7 @@ namespace WebAppLottery.Controllers
         [HttpGet]
         public ActionResult Data(DataPageModel m)
         {
-            string val = null;
+            string val;
             try
             {
                 val = DataVietlott._6Over45.Insert(DataVietlott.Common.ReadAppConfig("6Over45URL"));
@@ -176,7 +176,16 @@ namespace WebAppLottery.Controllers
                 val = DataVietlott._3DMax.Insert(DataVietlott.Common.ReadAppConfig("3dMaxURL"));
                 m.Status += val + "\n";
 
+                val = DataVietlott._3DMaxPro.Insert(DataVietlott.Common.ReadAppConfig("3dMaxProURL"));
+                m.Status += val + "\n";
+
                 m.ErrorMessage = "";
+                m.IsGet6Over45 = true;
+                m.IsGet6Over55 = true;
+                m.IsGet3DMax = true;
+                m.IsGet3DMaxPro = true;
+                m.IsGetKeno = true;
+                ModelState.Clear();
             }
             catch (Exception e)
             {
@@ -184,6 +193,44 @@ namespace WebAppLottery.Controllers
             }
 
             return View(m);
+        }
+
+        [HttpPost]
+        public ActionResult DataWithFilter(DataPageModel m)
+        {
+            string val;          
+            try
+            {
+                if (m.IsGet6Over45) {
+                    val = DataVietlott._6Over45.Insert(DataVietlott.Common.ReadAppConfig("6Over45URL"));
+                    m.Status = val + "\n";
+                }
+                if (m.IsGet6Over55)
+                {
+                    val = DataVietlott._6Over55.Insert(DataVietlott.Common.ReadAppConfig("6Over55URL"));
+                    m.Status += val + "\n";
+                }
+                if (m.IsGet3DMax)
+                {
+                    val = DataVietlott._3DMax.Insert(DataVietlott.Common.ReadAppConfig("3dMaxURL"));
+                    m.Status += val + "\n";
+                }
+                if (m.IsGet3DMaxPro)
+                {
+                    val = DataVietlott._3DMaxPro.Insert(DataVietlott.Common.ReadAppConfig("3dMaxProURL"));
+                    m.Status += val + "\n";
+                }
+                if (string.IsNullOrEmpty(m.ErrorMessage))
+                    m.ErrorMessage = "";
+
+                ModelState.Clear();
+            }
+            catch (Exception e)
+            {
+                m.ErrorMessage = e.Message;
+            }
+         
+            return View("Data", m);
         }
 
         public ActionResult Admin()

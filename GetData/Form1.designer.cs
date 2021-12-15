@@ -49,11 +49,11 @@
             this.PrintPreviewButton = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator5 = new System.Windows.Forms.ToolStripSeparator();
             this.PropertiesButton = new System.Windows.Forms.ToolStripButton();
+            this.fillData = new System.Windows.Forms.ToolStripButton();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.webBrowser1 = new System.Windows.Forms.WebBrowser();
             this.btnGetData = new System.Windows.Forms.Button();
             this.textBoxStatus = new System.Windows.Forms.TextBox();
-            this.fillData = new System.Windows.Forms.ToolStripButton();
             this.toolStrip1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
@@ -233,6 +233,16 @@
             this.PropertiesButton.Text = "Properties";
             this.PropertiesButton.Click += new System.EventHandler(this.PropertiesButton_Click);
             // 
+            // fillData
+            // 
+            this.fillData.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.fillData.Image = ((System.Drawing.Image)(resources.GetObject("fillData.Image")));
+            this.fillData.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.fillData.Name = "fillData";
+            this.fillData.Size = new System.Drawing.Size(50, 22);
+            this.fillData.Text = "FillData";
+            this.fillData.Click += new System.EventHandler(this.toolStripButton1_Click);
+            // 
             // tableLayoutPanel1
             // 
             this.tableLayoutPanel1.ColumnCount = 2;
@@ -258,7 +268,8 @@
             this.webBrowser1.Name = "webBrowser1";
             this.webBrowser1.Size = new System.Drawing.Size(648, 269);
             this.webBrowser1.TabIndex = 3;
-            this.webBrowser1.Url = new System.Uri("https://vietlott.vn/vi/trung-thuong/ket-qua-trung-thuong/winning-number-max-3D", System.UriKind.Absolute);
+            this.webBrowser1.Url = new System.Uri("https://vietlott.vn/vi/trung-thuong/ket-qua-trung-thuong/winning-number-max-3Dpro" +
+        "", System.UriKind.Absolute);
             // 
             // btnGetData
             // 
@@ -280,16 +291,6 @@
             this.tableLayoutPanel1.SetRowSpan(this.textBoxStatus, 2);
             this.textBoxStatus.Size = new System.Drawing.Size(275, 319);
             this.textBoxStatus.TabIndex = 5;
-            // 
-            // fillData
-            // 
-            this.fillData.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.fillData.Image = ((System.Drawing.Image)(resources.GetObject("fillData.Image")));
-            this.fillData.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.fillData.Name = "fillData";
-            this.fillData.Size = new System.Drawing.Size(50, 22);
-            this.fillData.Text = "FillData";
-            this.fillData.Click += new System.EventHandler(this.toolStripButton1_Click);
             // 
             // Form1
             // 

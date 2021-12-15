@@ -7,7 +7,7 @@ using System.Linq;
 
 namespace DataVietlott
 {
-    public class _3DMax
+    public class _Keno
     {
         private static LotteryEntities Db = LotteryDAL.LotteryConnection.Instance;       
         private static List<Number> ConvertListStringToListNumber(List<string> input)
@@ -16,13 +16,13 @@ namespace DataVietlott
             CultureInfo cul = new CultureInfo("vi-VN");
             for (int no = 0; no < input.Count; no++)
             {
-                if (!Common.CheckDateExisted(Convert.ToDateTime(input[no], cul), (Int16)Enum_NumberType._3DMax))
+                if (!Common.CheckDateExisted(Convert.ToDateTime(input[no], cul), (Int16)Enum_NumberType._Keno))
                 {
                     Console.WriteLine(input[no]);
 
                     Number aNo = new Number();
                     aNo.DatePublish = Convert.ToDateTime(input[no], cul);
-                    aNo.NumberTypeId = (Int16)Enum_NumberType._3DMax;
+                    aNo.NumberTypeId = (Int16)Enum_NumberType._Keno;
                     aNo.NumberWinLevelId = (Int16)Enum_NumberWinLevel.DacBiet;
                     aNo.LotNumber = input[no + 4] + input[no + 8];
                     aNo.DateCreated = DateTime.Now;
@@ -30,7 +30,7 @@ namespace DataVietlott
 
                     aNo = new Number();
                     aNo.DatePublish = Convert.ToDateTime(input[no], cul);
-                    aNo.NumberTypeId = (Int16)Enum_NumberType._3DMax;
+                    aNo.NumberTypeId = (Int16)Enum_NumberType._Keno;
                     aNo.NumberWinLevelId = (Int16)Enum_NumberWinLevel.GiaiNhat;
                     aNo.LotNumber = input[no + 14] + input[no + 18] + input[no + 22] + input[no + 26];
                     aNo.DateCreated = DateTime.Now;

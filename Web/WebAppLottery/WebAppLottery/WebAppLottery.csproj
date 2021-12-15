@@ -141,6 +141,8 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Common\Common.cs" />
+    <Compile Include="Common\_Keno.cs" />
+    <Compile Include="Common\_3DMaxPro.cs" />
     <Compile Include="Common\_3DMax.cs" />
     <Compile Include="Common\_6Over45.cs" />
     <Compile Include="Common\_6Over55.cs" />

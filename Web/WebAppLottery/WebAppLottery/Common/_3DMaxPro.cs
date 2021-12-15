@@ -7,7 +7,7 @@ using System.Linq;
 
 namespace DataVietlott
 {
-    public class _3DMax
+    public class _3DMaxPro
     {
         private static LotteryEntities Db = LotteryDAL.LotteryConnection.Instance;       
         private static List<Number> ConvertListStringToListNumber(List<string> input)
@@ -16,13 +16,13 @@ namespace DataVietlott
             CultureInfo cul = new CultureInfo("vi-VN");
             for (int no = 0; no < input.Count; no++)
             {
-                if (!Common.CheckDateExisted(Convert.ToDateTime(input[no], cul), (Int16)Enum_NumberType._3DMax))
+                if (!Common.CheckDateExisted(Convert.ToDateTime(input[no], cul), (Int16)Enum_NumberType._3DMaxPro))
                 {
                     Console.WriteLine(input[no]);
 
                     Number aNo = new Number();
                     aNo.DatePublish = Convert.ToDateTime(input[no], cul);
-                    aNo.NumberTypeId = (Int16)Enum_NumberType._3DMax;
+                    aNo.NumberTypeId = (Int16)Enum_NumberType._3DMaxPro;
                     aNo.NumberWinLevelId = (Int16)Enum_NumberWinLevel.DacBiet;
                     aNo.LotNumber = input[no + 4] + input[no + 8];
                     aNo.DateCreated = DateTime.Now;
@@ -30,7 +30,7 @@ namespace DataVietlott
 
                     aNo = new Number();
                     aNo.DatePublish = Convert.ToDateTime(input[no], cul);
-                    aNo.NumberTypeId = (Int16)Enum_NumberType._3DMax;
+                    aNo.NumberTypeId = (Int16)Enum_NumberType._3DMaxPro;
                     aNo.NumberWinLevelId = (Int16)Enum_NumberWinLevel.GiaiNhat;
                     aNo.LotNumber = input[no + 14] + input[no + 18] + input[no + 22] + input[no + 26];
                     aNo.DateCreated = DateTime.Now;
@@ -38,7 +38,7 @@ namespace DataVietlott
 
                     aNo = new Number();
                     aNo.DatePublish = Convert.ToDateTime(input[no], cul);
-                    aNo.NumberTypeId = (Int16)Enum_NumberType._3DMax;
+                    aNo.NumberTypeId = (Int16)Enum_NumberType._3DMaxPro;
                     aNo.NumberWinLevelId = (Int16)Enum_NumberWinLevel.GiaiNhi;
                     aNo.LotNumber = input[no + 32] + input[no + 36] + input[no + 40] + input[no + 44] + input[no + 48] + input[no + 52];
                     aNo.DateCreated = DateTime.Now;
@@ -46,7 +46,7 @@ namespace DataVietlott
 
                     aNo = new Number();
                     aNo.DatePublish = Convert.ToDateTime(input[no], cul);
-                    aNo.NumberTypeId = (Int16)Enum_NumberType._3DMax;
+                    aNo.NumberTypeId = (Int16)Enum_NumberType._3DMaxPro;
                     aNo.NumberWinLevelId = (Int16)Enum_NumberWinLevel.GiaiBa;
                     aNo.LotNumber = input[no + 58] + input[no + 62] + input[no + 66] + input[no + 70] + input[no + 74] + input[no + 78] + input[no + 82] + input[no + 86];
                     aNo.DateCreated = DateTime.Now;
@@ -89,7 +89,7 @@ namespace DataVietlott
             }
 
             
-            return "+ " + DateTime.Now + ", Đã Lấy 3D MAX thành công các số: \n\t" + (string.IsNullOrEmpty(value) ? "none" : value);
+            return "+ " + DateTime.Now + ", Đã Lấy 3D MAX PRO thành công các số: \n\t" + (string.IsNullOrEmpty(value) ? "none" : value);
         }
     }
 }
