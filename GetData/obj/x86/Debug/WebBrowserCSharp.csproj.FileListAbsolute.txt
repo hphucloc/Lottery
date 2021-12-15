@@ -9,11 +9,20 @@ C:\Users\Mahesh\AppData\Local\Temporary Projects\WebBrowserCSharp\obj\x86\Debug\
 C:\Users\Mahesh\AppData\Local\Temporary Projects\WebBrowserCSharp\obj\x86\Debug\WebBrowserCSharp.pdb
 C:\Books\Windows Forms\WebBrowserCSharp\WebBrowserCSharp\obj\x86\Debug\WebBrowserCSharp.exe
 C:\Books\Windows Forms\WebBrowserCSharp\WebBrowserCSharp\obj\x86\Debug\WebBrowserCSharp.pdb
-C:\Users\Admin\Documents\GitHub\Lottery\GetData\bin\Debug\WebBrowserCSharp.exe
-C:\Users\Admin\Documents\GitHub\Lottery\GetData\bin\Debug\WebBrowserCSharp.pdb
-C:\Users\Admin\Documents\GitHub\Lottery\GetData\obj\x86\Debug\WebBrowserCSharp.Properties.Resources.resources
+C:\Users\Admin\Documents\GitHub\Lottery\GetData\obj\x86\Debug\GetData.Form1.resources
 C:\Users\Admin\Documents\GitHub\Lottery\GetData\obj\x86\Debug\WebBrowserCSharp.csproj.GenerateResource.cache
 C:\Users\Admin\Documents\GitHub\Lottery\GetData\obj\x86\Debug\WebBrowserCSharp.csproj.CoreCompileInputs.cache
+C:\Users\Admin\Documents\GitHub\Lottery\GetData\obj\x86\Debug\WebBrowserCSharp.csproj.AssemblyReference.cache
+C:\Users\Admin\Documents\GitHub\Lottery\GetData\obj\x86\Debug\GetData.Properties.Resources.resources
+C:\Users\Admin\Documents\GitHub\Lottery\GetData\bin\Debug\WebBrowserCSharp.exe.config
+C:\Users\Admin\Documents\GitHub\Lottery\GetData\bin\Debug\WebBrowserCSharp.exe
+C:\Users\Admin\Documents\GitHub\Lottery\GetData\bin\Debug\WebBrowserCSharp.pdb
+C:\Users\Admin\Documents\GitHub\Lottery\GetData\bin\Debug\EntityFramework.dll
+C:\Users\Admin\Documents\GitHub\Lottery\GetData\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Admin\Documents\GitHub\Lottery\GetData\bin\Debug\LotteryDAL.dll
+C:\Users\Admin\Documents\GitHub\Lottery\GetData\bin\Debug\EntityFramework.xml
+C:\Users\Admin\Documents\GitHub\Lottery\GetData\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Admin\Documents\GitHub\Lottery\GetData\bin\Debug\LotteryDAL.pdb
+C:\Users\Admin\Documents\GitHub\Lottery\GetData\bin\Debug\LotteryDAL.dll.config
 C:\Users\Admin\Documents\GitHub\Lottery\GetData\obj\x86\Debug\WebBrowserCSharp.exe
 C:\Users\Admin\Documents\GitHub\Lottery\GetData\obj\x86\Debug\WebBrowserCSharp.pdb
-C:\Users\Admin\Documents\GitHub\Lottery\GetData\obj\x86\Debug\WebBrowserCSharp.Form1.resources

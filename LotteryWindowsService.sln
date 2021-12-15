@@ -15,7 +15,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LotteryBusiness", "LotteryB
 		{88FFB372-9CFD-4D66-8F71-4259E1287719} = {88FFB372-9CFD-4D66-8F71-4259E1287719}
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebBrowserCSharp", "GetData\WebBrowserCSharp.csproj", "{D5DA8294-0356-48F6-BCA4-98502D8F1893}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GetData", "GetData\GetData.csproj", "{D5DA8294-0356-48F6-BCA4-98502D8F1893}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

@@ -173,7 +173,7 @@ namespace WebAppLottery.Controllers
                 val = DataVietlott._6Over55.Insert(DataVietlott.Common.ReadAppConfig("6Over55URL"));
                 m.Status += val + "\n";
 
-                val = DataVietlott._3DMax.Insert(DataVietlott.Common.ReadAppConfig("4dMaxURL"));
+                val = DataVietlott._3DMax.Insert(DataVietlott.Common.ReadAppConfig("3dMaxURL"));
                 m.Status += val + "\n";
 
                 m.ErrorMessage = "";

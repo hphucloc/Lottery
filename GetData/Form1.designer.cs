@@ -1,4 +1,4 @@
-﻿namespace WebBrowserCSharp
+﻿namespace GetData
 {
     partial class Form1
     {
@@ -52,6 +52,8 @@
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.webBrowser1 = new System.Windows.Forms.WebBrowser();
             this.btnGetData = new System.Windows.Forms.Button();
+            this.textBoxStatus = new System.Windows.Forms.TextBox();
+            this.fillData = new System.Windows.Forms.ToolStripButton();
             this.toolStrip1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
@@ -78,10 +80,11 @@
             this.toolStripSeparator7,
             this.PrintPreviewButton,
             this.toolStripSeparator5,
-            this.PropertiesButton});
+            this.PropertiesButton,
+            this.fillData});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(630, 25);
+            this.toolStrip1.Size = new System.Drawing.Size(935, 25);
             this.toolStrip1.TabIndex = 3;
             // 
             // toolStripLabel1
@@ -181,7 +184,7 @@
             this.SaveButton.Image = ((System.Drawing.Image)(resources.GetObject("SaveButton.Image")));
             this.SaveButton.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.SaveButton.Name = "SaveButton";
-            this.SaveButton.Size = new System.Drawing.Size(35, 19);
+            this.SaveButton.Size = new System.Drawing.Size(35, 22);
             this.SaveButton.Text = "Save";
             this.SaveButton.Click += new System.EventHandler(this.SaveButton_Click);
             // 
@@ -196,7 +199,7 @@
             this.PrintButton.Image = ((System.Drawing.Image)(resources.GetObject("PrintButton.Image")));
             this.PrintButton.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.PrintButton.Name = "PrintButton";
-            this.PrintButton.Size = new System.Drawing.Size(36, 19);
+            this.PrintButton.Size = new System.Drawing.Size(36, 22);
             this.PrintButton.Text = "Print";
             this.PrintButton.Click += new System.EventHandler(this.PrintButton_Click);
             // 
@@ -211,7 +214,7 @@
             this.PrintPreviewButton.Image = ((System.Drawing.Image)(resources.GetObject("PrintPreviewButton.Image")));
             this.PrintPreviewButton.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.PrintPreviewButton.Name = "PrintPreviewButton";
-            this.PrintPreviewButton.Size = new System.Drawing.Size(80, 19);
+            this.PrintPreviewButton.Size = new System.Drawing.Size(80, 22);
             this.PrintPreviewButton.Text = "Print Preview";
             this.PrintPreviewButton.Click += new System.EventHandler(this.PrintPreviewButton_Click);
             // 
@@ -226,23 +229,25 @@
             this.PropertiesButton.Image = ((System.Drawing.Image)(resources.GetObject("PropertiesButton.Image")));
             this.PropertiesButton.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.PropertiesButton.Name = "PropertiesButton";
-            this.PropertiesButton.Size = new System.Drawing.Size(64, 19);
+            this.PropertiesButton.Size = new System.Drawing.Size(64, 22);
             this.PropertiesButton.Text = "Properties";
             this.PropertiesButton.Click += new System.EventHandler(this.PropertiesButton_Click);
             // 
             // tableLayoutPanel1
             // 
-            this.tableLayoutPanel1.ColumnCount = 1;
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel1.ColumnCount = 2;
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 70F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 30F));
             this.tableLayoutPanel1.Controls.Add(this.webBrowser1, 0, 1);
             this.tableLayoutPanel1.Controls.Add(this.btnGetData, 0, 0);
+            this.tableLayoutPanel1.Controls.Add(this.textBoxStatus, 1, 0);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 25);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 2;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(630, 325);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(935, 325);
             this.tableLayoutPanel1.TabIndex = 6;
             // 
             // webBrowser1
@@ -251,7 +256,7 @@
             this.webBrowser1.Location = new System.Drawing.Point(3, 53);
             this.webBrowser1.MinimumSize = new System.Drawing.Size(20, 20);
             this.webBrowser1.Name = "webBrowser1";
-            this.webBrowser1.Size = new System.Drawing.Size(624, 269);
+            this.webBrowser1.Size = new System.Drawing.Size(648, 269);
             this.webBrowser1.TabIndex = 3;
             this.webBrowser1.Url = new System.Uri("https://vietlott.vn/vi/trung-thuong/ket-qua-trung-thuong/winning-number-max-3D", System.UriKind.Absolute);
             // 
@@ -260,16 +265,37 @@
             this.btnGetData.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btnGetData.Location = new System.Drawing.Point(3, 3);
             this.btnGetData.Name = "btnGetData";
-            this.btnGetData.Size = new System.Drawing.Size(624, 44);
+            this.btnGetData.Size = new System.Drawing.Size(648, 44);
             this.btnGetData.TabIndex = 4;
             this.btnGetData.Text = "GetData";
             this.btnGetData.UseVisualStyleBackColor = true;
+            this.btnGetData.Click += new System.EventHandler(this.btnGetData_Click);
+            // 
+            // textBoxStatus
+            // 
+            this.textBoxStatus.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.textBoxStatus.Location = new System.Drawing.Point(657, 3);
+            this.textBoxStatus.Multiline = true;
+            this.textBoxStatus.Name = "textBoxStatus";
+            this.tableLayoutPanel1.SetRowSpan(this.textBoxStatus, 2);
+            this.textBoxStatus.Size = new System.Drawing.Size(275, 319);
+            this.textBoxStatus.TabIndex = 5;
+            // 
+            // fillData
+            // 
+            this.fillData.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.fillData.Image = ((System.Drawing.Image)(resources.GetObject("fillData.Image")));
+            this.fillData.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.fillData.Name = "fillData";
+            this.fillData.Size = new System.Drawing.Size(50, 22);
+            this.fillData.Text = "FillData";
+            this.fillData.Click += new System.EventHandler(this.toolStripButton1_Click);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(630, 350);
+            this.ClientSize = new System.Drawing.Size(935, 350);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Controls.Add(this.toolStrip1);
             this.Name = "Form1";
@@ -278,6 +304,7 @@
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
             this.tableLayoutPanel1.ResumeLayout(false);
+            this.tableLayoutPanel1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -307,6 +334,8 @@
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.WebBrowser webBrowser1;
         private System.Windows.Forms.Button btnGetData;
+        private System.Windows.Forms.TextBox textBoxStatus;
+        private System.Windows.Forms.ToolStripButton fillData;
     }
 }
 
