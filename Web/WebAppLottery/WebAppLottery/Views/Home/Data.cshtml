@@ -57,10 +57,7 @@
                             </td>
                             <td>
                                 @Html.CheckBoxFor(x => x.IsGet3DMaxPro, new { }) <i>Is get 3D Max Pro</i>
-                            </td>
-                            <td>
-                                @Html.CheckBoxFor(x => x.IsGetKeno, new { }) <i>Is get Keno</i>
-                            </td>     
+                            </td>                              
                             <td>
                                 <button type="submit" class="btn btn-success btn-lg">Get Data</button>
                             </td>
@@ -69,7 +66,7 @@
                     </thead>
                     <tbody>
                         <tr>
-                            <td colspan="6">
+                            <td colspan="5">
                                 @Html.TextAreaFor(x => x.Status, new { @class = "form-control StatusDataPage" })
                             </td>
                         </tr>

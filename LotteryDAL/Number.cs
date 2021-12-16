@@ -17,10 +17,11 @@ namespace LotteryDAL
         public long NumberId { get; set; }
         public short NumberTypeId { get; set; }
         public short NumberWinLevelId { get; set; }
-        public string LotNumber { get; set; }
+        public long LotNumber { get; set; }
         public System.DateTime DatePublish { get; set; }
         public System.DateTime DateCreated { get; set; }
         public Nullable<System.DateTime> DateUpdated { get; set; }
+        public Nullable<int> KyQuay { get; set; }
     
         public virtual NumberType NumberType { get; set; }
         public virtual NumberWinLevel NumberWinLevel { get; set; }

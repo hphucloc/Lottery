@@ -33,15 +33,19 @@
   </EntityContainer>
   <EntityType Name="Number">
     <Key>
-      <PropertyRef Name="NumberId" />
+      <PropertyRef Name="NumberTypeId" />
+      <PropertyRef Name="NumberWinLevelId" />
+      <PropertyRef Name="LotNumber" />
+      <PropertyRef Name="DatePublish" />
     </Key>
     <Property Name="NumberId" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="NumberTypeId" Type="Int16" Nullable="false" />
     <Property Name="NumberWinLevelId" Type="Int16" Nullable="false" />
-    <Property Name="LotNumber" Type="String" Nullable="false" MaxLength="99" FixedLength="false" Unicode="true" />
+    <Property Name="LotNumber" Type="Int64" Nullable="false" />
     <Property Name="DatePublish" Type="DateTime" Nullable="false" Precision="3" />
     <Property Name="DateCreated" Type="DateTime" Nullable="false" Precision="3" />
     <Property Name="DateUpdated" Type="DateTime" Precision="3" />
+    <Property Name="KyQuay" Type="Int32" />
     <NavigationProperty Name="NumberType" Relationship="LotteryDataModel.FK__Number__NumberTy__164452B1" FromRole="Number" ToRole="NumberType" />
     <NavigationProperty Name="NumberWinLevel" Relationship="LotteryDataModel.FK__Number__NumberWi__173876EA" FromRole="Number" ToRole="NumberWinLevel" />
   </EntityType>

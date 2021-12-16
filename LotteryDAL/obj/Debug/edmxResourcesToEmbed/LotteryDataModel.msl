@@ -22,6 +22,7 @@
     <EntitySetMapping Name="Numbers">
       <EntityTypeMapping TypeName="LotteryDataModel.Number">
         <MappingFragment StoreEntitySet="Number">
+          <ScalarProperty Name="KyQuay" ColumnName="KyQuay" />
           <ScalarProperty Name="DateUpdated" ColumnName="DateUpdated" />
           <ScalarProperty Name="DateCreated" ColumnName="DateCreated" />
           <ScalarProperty Name="DatePublish" ColumnName="DatePublish" />

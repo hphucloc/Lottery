@@ -19,7 +19,7 @@
         GiaiNam = 6,
         GiaiSau = 7,
         GiaiBay= 8,
-        GiaiKhuyenKhich1 = 9,
-        GiaiKhuyenKhich2 = 10
+        GiaiChanLe = 9,
+        GiaiLonNho = 10
     }
 }

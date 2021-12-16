@@ -233,6 +233,27 @@ namespace WebAppLottery.Controllers
             return View("Data", m);
         }
 
+        [HttpGet]
+        public ActionResult Keno(DataPageModel m)
+        {
+            string val;
+            try
+            {
+                val = DataVietlott._Keno.Insert(DataVietlott.Common.ReadAppConfig("KenoURL"));
+                m.Status = val + "\n";
+
+                m.ErrorMessage = "";              
+                m.IsGetKeno = true;
+                ModelState.Clear();
+            }
+            catch (Exception e)
+            {
+                m.ErrorMessage = e.Message;
+            }
+
+            return View("Data", m);
+        }
+
         public ActionResult Admin()
         {            
             return View();

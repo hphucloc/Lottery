@@ -16,43 +16,36 @@ namespace DataVietlott
             CultureInfo cul = new CultureInfo("vi-VN");
             for (int no = 0; no < input.Count; no++)
             {
-                if (!Common.CheckDateExisted(Convert.ToDateTime(input[no], cul), (Int16)Enum_NumberType._Keno))
-                {
-                    Console.WriteLine(input[no]);
-
+                if (!Common.CheckDateExisted(Convert.ToDateTime(input[no].Substring(0,10), cul), (Int16)Enum_NumberType._Keno))
+                {                   
                     Number aNo = new Number();
-                    aNo.DatePublish = Convert.ToDateTime(input[no], cul);
+                    aNo.DatePublish = Convert.ToDateTime(input[no].Substring(0, 10), cul);
                     aNo.NumberTypeId = (Int16)Enum_NumberType._Keno;
                     aNo.NumberWinLevelId = (Int16)Enum_NumberWinLevel.DacBiet;
-                    aNo.LotNumber = input[no + 4] + input[no + 8];
+                    for(int j = 1; j <= 20; j++)
+                    {
+                        aNo.LotNumber += input[no + j];
+                    }                   
                     aNo.DateCreated = DateTime.Now;
                     val.Add(aNo);
 
                     aNo = new Number();
-                    aNo.DatePublish = Convert.ToDateTime(input[no], cul);
+                    aNo.DatePublish = Convert.ToDateTime(input[no].Substring(0, 10), cul);
                     aNo.NumberTypeId = (Int16)Enum_NumberType._Keno;
-                    aNo.NumberWinLevelId = (Int16)Enum_NumberWinLevel.GiaiNhat;
-                    aNo.LotNumber = input[no + 14] + input[no + 18] + input[no + 22] + input[no + 26];
+                    aNo.NumberWinLevelId = (Int16)Enum_NumberWinLevel.GiaiChanLe;
+                    aNo.LotNumber = input[no + 21] + input[no + 22];
                     aNo.DateCreated = DateTime.Now;
                     val.Add(aNo);
 
                     aNo = new Number();
-                    aNo.DatePublish = Convert.ToDateTime(input[no], cul);
-                    aNo.NumberTypeId = (Int16)Enum_NumberType._3DMax;
-                    aNo.NumberWinLevelId = (Int16)Enum_NumberWinLevel.GiaiNhi;
-                    aNo.LotNumber = input[no + 32] + input[no + 36] + input[no + 40] + input[no + 44] + input[no + 48] + input[no + 52];
-                    aNo.DateCreated = DateTime.Now;
-                    val.Add(aNo);
-
-                    aNo = new Number();
-                    aNo.DatePublish = Convert.ToDateTime(input[no], cul);
-                    aNo.NumberTypeId = (Int16)Enum_NumberType._3DMax;
-                    aNo.NumberWinLevelId = (Int16)Enum_NumberWinLevel.GiaiBa;
-                    aNo.LotNumber = input[no + 58] + input[no + 62] + input[no + 66] + input[no + 70] + input[no + 74] + input[no + 78] + input[no + 82] + input[no + 86];
+                    aNo.DatePublish = Convert.ToDateTime(input[no].Substring(0, 10), cul);
+                    aNo.NumberTypeId = (Int16)Enum_NumberType._Keno;
+                    aNo.NumberWinLevelId = (Int16)Enum_NumberWinLevel.GiaiLonNho;
+                    aNo.LotNumber = input[no + 23] + input[no + 24];
                     aNo.DateCreated = DateTime.Now;
                     val.Add(aNo);
                 }
-                no += 97;
+                no += 24;
             }
 
             return val;
@@ -66,7 +59,7 @@ namespace DataVietlott
             var list = Common.RemoveEmptyElement(array);
 
             //Remove 4 first items in list
-            for (byte i = 0; i <= 4; i++)
+            for (byte i = 0; i <= 5; i++)
             {
                 list.RemoveAt(0);
             }
@@ -79,7 +72,7 @@ namespace DataVietlott
                 value += lotNumber.LotNumber + " ";
                 Db.Numbers.Add(lotNumber);
                 Db.Entry(lotNumber).State = System.Data.Entity.EntityState.Added;
-                Db.SaveChanges();
+               // Db.SaveChanges();
 
                 if (c == 4)
                 {
@@ -89,7 +82,7 @@ namespace DataVietlott
             }
 
             
-            return "+ " + DateTime.Now + ", Đã Lấy 3D MAX thành công các số: \n\t" + (string.IsNullOrEmpty(value) ? "none" : value);
+            return "+ " + DateTime.Now + ", Đã Lấy Keno thành công các số: \n\t" + (string.IsNullOrEmpty(value) ? "none" : value);
         }
     }
 }
