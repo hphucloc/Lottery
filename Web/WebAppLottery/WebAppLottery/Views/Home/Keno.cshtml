@@ -19,7 +19,7 @@
     <link rel="stylesheet" type="text/css" href="~/css/util.css">
     <link rel="stylesheet" type="text/css" href="~/css/main.css">
 
-    <title>Lấy Data Vietlott</title>
+    <title>Lấy Keno Data Vietlott</title>
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
 </head>
@@ -38,26 +38,14 @@
         </div>
     </div>
 
-    @using (Html.BeginForm("DataWithFilter", "Home", FormMethod.Post))
+    @using (Html.BeginForm("SubmitKeno", "Home", FormMethod.Post))
     {
         <div class="bg-img1 size1 flex-w flex-c-m p-t-55 p-b-55 p-l-15 p-r-15"
              style="background-image: url('../../images/bg01.jpg');">
             <div class="wsize1 bor1 bg1 p-t-1 p-b-1 p-l-15 p-r-15 d-flex justify-content-start border border-info">
                 <table class="table">
                     <thead>
-                        <tr>
-                            <td>
-                                @Html.CheckBoxFor(x => x.IsGet6Over45, new { }) <i>Is get 6/45</i>
-                            </td>
-                            <td>
-                                @Html.CheckBoxFor(x => x.IsGet6Over55, new { }) <i>Is get 6/55</i>
-                            </td>
-                            <td>
-                                @Html.CheckBoxFor(x => x.IsGet3DMax, new { }) <i>Is get 3D Max</i>
-                            </td>
-                            <td>
-                                @Html.CheckBoxFor(x => x.IsGet3DMaxPro, new { }) <i>Is get 3D Max Pro</i>
-                            </td>                              
+                        <tr>                                                    
                             <td>
                                 <button type="submit" class="btn btn-success btn-lg">Get Data</button>
                             </td>
@@ -66,7 +54,7 @@
                     </thead>
                     <tbody>
                         <tr>
-                            <td colspan="5">
+                            <td>
                                 @Html.TextAreaFor(x => x.Status, new { @class = "form-control StatusDataPage" })
                             </td>
                         </tr>
@@ -82,7 +70,13 @@
     <!--===============================================================================================-->
     <script src="~/js/main.js"></script>
 
-    <script>       
+    <script>          
+        $(document).ready(function () {            
+            setInterval(function () {
+                $(":button").click();
+            }, 60000);
+        });
+      
     </script>
 </body>
 </html>

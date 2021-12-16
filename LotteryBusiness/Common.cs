@@ -8,11 +8,11 @@ namespace LotteryBusiness
 {
     public class Common
     {
-        private static LotteryEntities Db = LotteryDAL.LotteryConnection.Instance;       
+        private static LotteryEntities Db = LotteryDAL.LotteryConnection.Instance;
         public static IQueryable<LotteryNumber> GetNumber(Int16 numberWinLevelId, Int16 numberTypeId, DateTime datePublishFrom, DateTime datePublishTo)
-        {           
+        {
             var t = Db.Numbers.Where(n => n.NumberWinLevelId == numberWinLevelId && n.NumberTypeId == numberTypeId &&
-                n.DatePublish >= datePublishFrom && n.DatePublish <= datePublishTo).OrderBy(p=>p.LotNumber).Select(p => new LotteryNumber()
+                n.DatePublish >= datePublishFrom && n.DatePublish <= datePublishTo).OrderBy(p => p.LotNumber).Select(p => new LotteryNumber()
                 {
                     DateCreated = p.DateCreated,
                     DatePublish = p.DatePublish,
@@ -20,8 +20,8 @@ namespace LotteryBusiness
                     LotNumber = p.LotNumber,
                     NumberId = p.NumberId,
                     NumberTypeId = p.NumberTypeId,
-                    NumberWinLevelId = p.NumberWinLevelId,                  
-                });           
+                    NumberWinLevelId = p.NumberWinLevelId,
+                });
 
             return t;
         }
@@ -41,7 +41,7 @@ namespace LotteryBusiness
 
             return t;
         }
-       
+
         public static List<FullLotteryStatistic> GetFullLotNumberStatistic(IQueryable<LotteryNumber> Number)
         {
             List<FullLotteryStatistic> lst = new List<FullLotteryStatistic>();

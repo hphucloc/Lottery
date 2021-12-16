@@ -42,5 +42,9 @@ namespace DataVietlott
         {
             return System.Configuration.ConfigurationManager.AppSettings[key];
         }
+        public static bool CheckKyQuayExisted(int kyQuay, int numberTypeID)
+        {
+            return Db.Numbers.Any(x=>x.KyQuay == kyQuay);
+        }
     }
 }

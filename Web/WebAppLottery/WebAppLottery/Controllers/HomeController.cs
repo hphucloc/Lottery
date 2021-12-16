@@ -242,8 +242,7 @@ namespace WebAppLottery.Controllers
                 val = DataVietlott._Keno.Insert(DataVietlott.Common.ReadAppConfig("KenoURL"));
                 m.Status = val + "\n";
 
-                m.ErrorMessage = "";              
-                m.IsGetKeno = true;
+                m.ErrorMessage = "";                            
                 ModelState.Clear();
             }
             catch (Exception e)
@@ -251,7 +250,27 @@ namespace WebAppLottery.Controllers
                 m.ErrorMessage = e.Message;
             }
 
-            return View("Data", m);
+            return View(m);
+        }
+
+        [HttpPost]
+        public ActionResult SubmitKeno(DataPageModel m)
+        {
+            string val;
+            try
+            {
+                val = DataVietlott._Keno.Insert(DataVietlott.Common.ReadAppConfig("KenoURL"));
+                m.Status = val + "\n";
+
+                m.ErrorMessage = "";
+                ModelState.Clear();
+            }
+            catch (Exception e)
+            {
+                m.ErrorMessage = e.Message;
+            }
+
+            return View("Keno", m);
         }
 
         public ActionResult Admin()

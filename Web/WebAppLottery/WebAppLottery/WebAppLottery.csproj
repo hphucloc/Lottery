@@ -59,13 +59,13 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>bin\HtmlAgilityPack.dll</HintPath>
     </Reference>
-    <Reference Include="LotteryBusiness, Version=1.0.0.4, Culture=neutral, processorArchitecture=MSIL">
+    <Reference Include="LotteryBusiness, Version=1.0.0.5, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\DllVersion\1.0.0.5\LotteryBusiness.dll</HintPath>
+      <HintPath>..\..\..\DllVersion\1.0.0.6\LotteryBusiness.dll</HintPath>
     </Reference>
-    <Reference Include="LotteryDAL, Version=1.0.0.3, Culture=neutral, processorArchitecture=MSIL">
+    <Reference Include="LotteryDAL, Version=1.0.0.5, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\DllVersion\1.0.0.5\LotteryDAL.dll</HintPath>
+      <HintPath>..\..\..\DllVersion\1.0.0.6\LotteryDAL.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System" />
@@ -242,6 +242,7 @@
     <Content Include="Content\bootstrap-grid.css.map" />
     <Content Include="Scripts\bootstrap4-toggle.min.js" />
     <Content Include="Web.config" />
+    <Content Include="Views\Home\Keno.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

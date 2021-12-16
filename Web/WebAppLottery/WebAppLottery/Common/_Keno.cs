@@ -16,7 +16,15 @@ namespace DataVietlott
             CultureInfo cul = new CultureInfo("vi-VN");
             for (int no = 0; no < input.Count; no++)
             {
-                if (!Common.CheckDateExisted(Convert.ToDateTime(input[no].Substring(0,10), cul), (Int16)Enum_NumberType._Keno))
+                if (input[no + 21].ToLower() == "Hòa".ToLower())
+                {
+                    input.Insert(no + 22, "");
+                }
+                if (input[no + 23].ToLower() == "Hòa".ToLower())
+                {
+                    input.Insert(no + 24, "");
+                }
+                if (!Common.CheckKyQuayExisted(Convert.ToInt32(input[no].Substring(11)), (Int16)Enum_NumberType._Keno))
                 {                   
                     Number aNo = new Number();
                     aNo.DatePublish = Convert.ToDateTime(input[no].Substring(0, 10), cul);
@@ -27,25 +35,28 @@ namespace DataVietlott
                         aNo.LotNumber += input[no + j];
                     }                   
                     aNo.DateCreated = DateTime.Now;
+                    aNo.KyQuay = Convert.ToInt32(input[no].Substring(11));
                     val.Add(aNo);
 
                     aNo = new Number();
                     aNo.DatePublish = Convert.ToDateTime(input[no].Substring(0, 10), cul);
                     aNo.NumberTypeId = (Int16)Enum_NumberType._Keno;
                     aNo.NumberWinLevelId = (Int16)Enum_NumberWinLevel.GiaiChanLe;
-                    aNo.LotNumber = input[no + 21] + input[no + 22];
+                    aNo.LotNumber = input[no + 21].ToLower() == "Hòa".ToLower() ? input[no + 21] : input[no + 21] + input[no + 22];                   
                     aNo.DateCreated = DateTime.Now;
+                    aNo.KyQuay = Convert.ToInt32(input[no].Substring(11));
                     val.Add(aNo);
 
                     aNo = new Number();
                     aNo.DatePublish = Convert.ToDateTime(input[no].Substring(0, 10), cul);
                     aNo.NumberTypeId = (Int16)Enum_NumberType._Keno;
-                    aNo.NumberWinLevelId = (Int16)Enum_NumberWinLevel.GiaiLonNho;
-                    aNo.LotNumber = input[no + 23] + input[no + 24];
+                    aNo.NumberWinLevelId = (Int16)Enum_NumberWinLevel.GiaiLonNho;                                    
+                    aNo.LotNumber = input[no + 23].ToLower() == "Hòa".ToLower() ? input[no + 23] : input[no + 23] + input[no + 24];                   
                     aNo.DateCreated = DateTime.Now;
+                    aNo.KyQuay = Convert.ToInt32(input[no].Substring(11));
                     val.Add(aNo);
                 }
-                no += 24;
+                no += 24;                              
             }
 
             return val;
@@ -72,11 +83,11 @@ namespace DataVietlott
                 value += lotNumber.LotNumber + " ";
                 Db.Numbers.Add(lotNumber);
                 Db.Entry(lotNumber).State = System.Data.Entity.EntityState.Added;
-               // Db.SaveChanges();
+                Db.SaveChanges();
 
-                if (c == 4)
+                if (c == 3)
                 {
-                    value += "\t(" + lotNumber.DatePublish.ToShortDateString() + ")\n\t";
+                    value += "\t(" + lotNumber.DatePublish.ToShortDateString() + ", kỳ quay: " + lotNumber.KyQuay + ")\n\t";
                     c = 0;
                 }
             }

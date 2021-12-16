@@ -21,6 +21,7 @@ namespace LotteryBusiness
         public System.DateTime DatePublishMin { get; set; }
         public int TotalNumberAppear { get; set; }
         public int TotalNumberAppearInRange { get; set; }
+        public int? KyQuay { get; set; }
     }
 
     public class DatePublishList2

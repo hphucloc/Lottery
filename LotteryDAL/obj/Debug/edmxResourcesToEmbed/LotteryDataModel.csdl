@@ -33,15 +33,12 @@
   </EntityContainer>
   <EntityType Name="Number">
     <Key>
-      <PropertyRef Name="NumberTypeId" />
-      <PropertyRef Name="NumberWinLevelId" />
-      <PropertyRef Name="LotNumber" />
-      <PropertyRef Name="DatePublish" />
+      <PropertyRef Name="NumberId" />
     </Key>
     <Property Name="NumberId" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="NumberTypeId" Type="Int16" Nullable="false" />
     <Property Name="NumberWinLevelId" Type="Int16" Nullable="false" />
-    <Property Name="LotNumber" Type="Int64" Nullable="false" />
+    <Property Name="LotNumber" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
     <Property Name="DatePublish" Type="DateTime" Nullable="false" Precision="3" />
     <Property Name="DateCreated" Type="DateTime" Nullable="false" Precision="3" />
     <Property Name="DateUpdated" Type="DateTime" Precision="3" />

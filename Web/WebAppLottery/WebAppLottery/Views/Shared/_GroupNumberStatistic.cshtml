@@ -27,10 +27,13 @@
                         <td class="Cham">
                             40->47
                         </td>
-                        <td class="Tim">
-                            48->55
-                        </td>
-                    </tr>
+                        @if (Model.ListLoaiVe == WebAppLottery.Models.IndexPageModel.LoaiVe._6Over55)
+                        {
+                            <td class="Tim">
+                                48->55
+                            </td>
+                        }
+                        </tr>
                 </thead>
                 <tbody class="table-light">
                     <tr>
@@ -52,10 +55,13 @@
                         <td>
                             <p> @Model.NoAppear40To47</p>
                         </td>
-                        <td>
-                            <p> @Model.NoAppear48To55</p>
-                        </td>
-                    </tr>
+                        @if (Model.ListLoaiVe == WebAppLottery.Models.IndexPageModel.LoaiVe._6Over55)
+                        {
+                            <td>
+                                <p> @Model.NoAppear48To55</p>
+                            </td>
+                        }
+                        </tr>
                 </tbody>
             </table>
         </div>
