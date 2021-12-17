@@ -39,7 +39,7 @@
       <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
     <Reference Include="LotteryDAL">
-      <HintPath>..\LotteryDAL\bin\Debug\LotteryDAL.dll</HintPath>
+      <HintPath>..\DllVersion\1.0.0.6\LotteryDAL.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
@@ -56,7 +56,8 @@
     <Compile Include="FullLotteryStatistic.cs" />
     <Compile Include="LoterryStatistic.cs" />
     <Compile Include="LotNumber.cs" />
-    <Compile Include="_4DMaxTimeLine.cs" />
+    <Compile Include="_KenoTimeLine.cs" />
+    <Compile Include="_3DMaxTimeLine.cs" />
     <Compile Include="_6Over55TimeLine.cs" />
     <Compile Include="_6Over45TimeLine.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

@@ -42,6 +42,24 @@ namespace LotteryBusiness
             return t;
         }
 
+        public static IQueryable<LotteryNumber> GetNumber(Int16 numberTypeId, DateTime datePublishFrom, DateTime datePublishTo)
+        {
+            var t = Db.Numbers.Where(n => n.NumberTypeId == numberTypeId &&
+                n.DatePublish >= datePublishFrom && n.DatePublish <= datePublishTo).OrderByDescending(x=>x.KyQuay).Select(p => new LotteryNumber()
+                {
+                    DateCreated = p.DateCreated,
+                    DatePublish = p.DatePublish,
+                    DateUpdated = p.DateUpdated,
+                    LotNumber = p.LotNumber,
+                    NumberId = p.NumberId,
+                    NumberTypeId = p.NumberTypeId,
+                    NumberWinLevelId = p.NumberWinLevelId,
+                    KyQuay = p.KyQuay
+                });
+
+            return t;
+        }
+
         public static List<FullLotteryStatistic> GetFullLotNumberStatistic(IQueryable<LotteryNumber> Number)
         {
             List<FullLotteryStatistic> lst = new List<FullLotteryStatistic>();

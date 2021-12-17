@@ -15,6 +15,8 @@ namespace WebAppLottery.Models
             _6Over45 = 1,
             [Description("6/55")]
             _6Over55 = 3,
+            [Description("Keno")]
+            _Keno = 5,
         }
 
         //request header       

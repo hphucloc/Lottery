@@ -52,6 +52,10 @@ namespace GetData
         public static bool CheckDateExisted(DateTime date, Int16 numberTypeId)
         {
             return Db.Numbers.Any(a => DbFunctions.TruncateTime(a.DatePublish) == date.Date && a.NumberTypeId == numberTypeId);
-        }        
+        }
+        public static bool CheckKyQuayExisted(int kyQuay, int numberTypeID)
+        {
+            return Db.Numbers.Any(x => x.KyQuay == kyQuay);
+        }
     }
 }

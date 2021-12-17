@@ -268,8 +268,7 @@
             this.webBrowser1.Name = "webBrowser1";
             this.webBrowser1.Size = new System.Drawing.Size(648, 269);
             this.webBrowser1.TabIndex = 3;
-            this.webBrowser1.Url = new System.Uri("https://vietlott.vn/vi/trung-thuong/ket-qua-trung-thuong/winning-number-max-3Dpro" +
-        "", System.UriKind.Absolute);
+            this.webBrowser1.Url = new System.Uri("https://vietlott.vn/vi/trung-thuong/ket-qua-trung-thuong/winning-number-keno", System.UriKind.Absolute);
             // 
             // btnGetData
             // 

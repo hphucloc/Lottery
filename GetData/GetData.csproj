@@ -51,7 +51,7 @@
     </Reference>
     <Reference Include="LotteryDAL, Version=1.0.0.3, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\LotteryConsoleApplication\bin\Debug\LotteryDAL.dll</HintPath>
+      <HintPath>..\DllVersion\1.0.0.6\LotteryDAL.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />

@@ -52,7 +52,6 @@ namespace WebAppLottery.Controllers
                 }
                 else if (sysFormat == "M/d/yyyy")
                 {
-
                     from = DateTime.ParseExact(m.From.ToShortDateString(), "M/d/yyyy", CultureInfo.InvariantCulture);
                     to = DateTime.ParseExact(m.To.ToShortDateString(), "M/d/yyyy", CultureInfo.InvariantCulture);
                     m.ErrorMessage = "";
