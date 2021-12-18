@@ -21,6 +21,7 @@ namespace LotteryBusiness
                     NumberId = p.NumberId,
                     NumberTypeId = p.NumberTypeId,
                     NumberWinLevelId = p.NumberWinLevelId,
+                    KyQuay = p.KyQuay
                 });
 
             return t;
@@ -37,6 +38,7 @@ namespace LotteryBusiness
                     NumberId = p.NumberId,
                     NumberTypeId = p.NumberTypeId,
                     NumberWinLevelId = p.NumberWinLevelId,
+                    KyQuay = p.KyQuay
                 });
 
             return t;

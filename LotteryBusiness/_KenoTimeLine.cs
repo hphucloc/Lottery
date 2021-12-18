@@ -11,20 +11,31 @@ namespace LotteryBusiness
     {
         public static List<LoterryStatistic> GetKeno(DateTime datePublishFrom, DateTime datePublishTo)
         {
+            List<LoterryStatistic> lst = new List<LoterryStatistic>();
             IQueryable<LotteryNumber> number = Common.GetNumber((Int16)Enum_NumberType._Keno, datePublishFrom, datePublishTo);
-           // return Common.GetLotNumberStatistic(number);
-        }
 
-        public static List<LoterryStatistic> GetKenoChanLe(DateTime datePublishFrom, DateTime datePublishTo)
-        {
-            IQueryable<LotteryNumber> number = Common.GetNumber((Int16)Enum_NumberWinLevel.GiaiNhi, (Int16)Enum_NumberType._3DMax, datePublishFrom, datePublishTo);
-            return Common.GetLotNumberStatistic(number);
-        }
+            List<string> numbers = new List<string>();
+            int c = 0;
+            foreach (LotteryNumber no in number)
+            {               
+                if (no.LotNumber.Length == 40)
+                {                    
+                    for (int i = 2; i <= 40; i += 2)
+                    {
+                        numbers.Add(no.LotNumber.Substring(c, i));
+                        c = i;
+                    }                 
+                }
+                else
+                {
+                    numbers.Add(no.LotNumber);
+                }
+            }
 
-        public static List<LoterryStatistic> GetKenoLonNho(DateTime datePublishFrom, DateTime datePublishTo)
-        {
-            IQueryable<LotteryNumber> number = Common.GetNumber((Int16)Enum_NumberWinLevel.GiaiBa, (Int16)Enum_NumberType._3DMax, datePublishFrom, datePublishTo);
-            return Common.GetLotNumberStatistic(number);
-        }        
+            foreach (var a in numbers)
+                Console.WriteLine(a);
+
+            return lst;
+        }       
     }
 }

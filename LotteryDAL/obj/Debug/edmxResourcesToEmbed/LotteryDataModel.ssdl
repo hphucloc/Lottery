@@ -1,0 +1,69 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="LotteryDataModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Number">
+    <Key>
+      <PropertyRef Name="NumberId" />
+    </Key>
+    <Property Name="NumberId" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="NumberTypeId" Type="smallint" Nullable="false" />
+    <Property Name="NumberWinLevelId" Type="smallint" Nullable="false" />
+    <Property Name="LotNumber" Type="nvarchar" MaxLength="200" />
+    <Property Name="DatePublish" Type="datetime" Nullable="false" />
+    <Property Name="DateCreated" Type="datetime" Nullable="false" />
+    <Property Name="DateUpdated" Type="datetime" />
+    <Property Name="KyQuay" Type="int" />
+  </EntityType>
+  <EntityType Name="NumberType">
+    <Key>
+      <PropertyRef Name="NumberTypeId" />
+    </Key>
+    <Property Name="NumberTypeId" Type="smallint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Label" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="DateCreated" Type="datetime" />
+  </EntityType>
+  <EntityType Name="NumberWinLevel">
+    <Key>
+      <PropertyRef Name="NumberWinLevelId" />
+    </Key>
+    <Property Name="NumberWinLevelId" Type="smallint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Label" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="DateCreated" Type="datetime" />
+  </EntityType>
+  <Association Name="FK__Number__NumberTy__164452B1">
+    <End Role="NumberType" Type="Self.NumberType" Multiplicity="1" />
+    <End Role="Number" Type="Self.Number" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="NumberType">
+        <PropertyRef Name="NumberTypeId" />
+      </Principal>
+      <Dependent Role="Number">
+        <PropertyRef Name="NumberTypeId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Number__NumberWi__173876EA">
+    <End Role="NumberWinLevel" Type="Self.NumberWinLevel" Multiplicity="1" />
+    <End Role="Number" Type="Self.Number" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="NumberWinLevel">
+        <PropertyRef Name="NumberWinLevelId" />
+      </Principal>
+      <Dependent Role="Number">
+        <PropertyRef Name="NumberWinLevelId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="LotteryDataModelStoreContainer">
+    <EntitySet Name="Number" EntityType="Self.Number" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="NumberType" EntityType="Self.NumberType" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="NumberWinLevel" EntityType="Self.NumberWinLevel" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK__Number__NumberTy__164452B1" Association="Self.FK__Number__NumberTy__164452B1">
+      <End Role="NumberType" EntitySet="NumberType" />
+      <End Role="Number" EntitySet="Number" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Number__NumberWi__173876EA" Association="Self.FK__Number__NumberWi__173876EA">
+      <End Role="NumberWinLevel" EntitySet="NumberWinLevel" />
+      <End Role="Number" EntitySet="Number" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>
