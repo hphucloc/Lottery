@@ -9,7 +9,7 @@ namespace LotteryBusiness
 {
     public class _KenoTimeLine
     {
-        public static List<LoterryStatistic> GetKenoNumberStatistic(List<LotteryNumber> numbers, DateTime datePublishFrom, DateTime datePublishTo)
+        public static List<LoterryStatistic> GetKenoNumberStatistic(List<LotteryNumber> numbers)
         {                       
             return Common.GetLotNumberStatisticKeno(numbers.AsQueryable());
         }
@@ -41,7 +41,7 @@ namespace LotteryBusiness
             return numbers;            
         }
 
-        public static SortedDictionary<int?, SortedSet<int>> GetKenoNumberKyquay(List<LotteryNumber> numbers, DateTime datePublishFrom, DateTime datePublishTo)
+        public static SortedDictionary<int?, SortedSet<int>> GetKenoNumberKyquay(List<LotteryNumber> numbers)
         {
             SortedDictionary<int?, SortedSet<int>> kyQuays = new SortedDictionary<int?, SortedSet<int>>();
             var kyquay = numbers.GroupBy(x => x.KyQuay).Select(x => x.First().KyQuay);

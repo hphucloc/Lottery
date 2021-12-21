@@ -69,19 +69,20 @@
             </div>
             <div class="col-12">
                 <table class="table table-bordered TableData">
-                    <thead class="table-dark">
+                    @*<thead class="table-dark">
                         <tr class="text-info">
                             @foreach (var i in Model.groupNumberStatistic.Keys.OrderByDescending(x => x.Date))
                             {
                                 <td>@string.Format("{0:d/M}", i.Date)</td>
                             }
                         </tr>
-                    </thead>
+                    </thead>*@
                     <tbody>
                         <tr>
                             @foreach (var i in Model.groupNumberStatistic.Keys.OrderByDescending(x => x.Date))
                             {
-                                if (Model.groupNumberStatistic[i].ElementAt(0) >= 1 && Model.groupNumberStatistic[i].ElementAt(0) <= 7)
+                                if (Model.groupNumberStatistic[i].Count() >= 6 &&
+                                    Model.groupNumberStatistic[i].ElementAt(0) >= 1 && Model.groupNumberStatistic[i].ElementAt(0) <= 7)
                                 {
                                     <td class="Do">
                                         <div class="font-italic fs-5 text-secondary align-items-lg-center align-middle text-center">
@@ -89,7 +90,8 @@
                                         </div>
                                     </td>
                                 }
-                                else if (Model.groupNumberStatistic[i].ElementAt(0) >= 8 && Model.groupNumberStatistic[i].ElementAt(0) <= 15)
+                                else if (Model.groupNumberStatistic[i].Count() >= 6 &&
+                                    Model.groupNumberStatistic[i].ElementAt(0) >= 8 && Model.groupNumberStatistic[i].ElementAt(0) <= 15)
                                 {
                                     <td class="Cam">
                                         <div class="font-italic fs-5 text-secondary align-items-lg-center align-middle text-center">
@@ -97,7 +99,8 @@
                                         </div>
                                     </td>
                                 }
-                                else if (Model.groupNumberStatistic[i].ElementAt(0) >= 16 && Model.groupNumberStatistic[i].ElementAt(0) <= 23)
+                                else if (Model.groupNumberStatistic[i].Count() >= 6 &&
+                                    Model.groupNumberStatistic[i].ElementAt(0) >= 16 && Model.groupNumberStatistic[i].ElementAt(0) <= 23)
                                 {
                                     <td class="Vang">
                                         <div class="font-italic fs-5 text-secondary align-items-lg-center align-middle text-center">
@@ -105,7 +108,8 @@
                                         </div>
                                     </td>
                                 }
-                                else if (Model.groupNumberStatistic[i].ElementAt(0) >= 24 && Model.groupNumberStatistic[i].ElementAt(0) <= 31)
+                                else if (Model.groupNumberStatistic[i].Count() >= 6 &&
+                                    Model.groupNumberStatistic[i].ElementAt(0) >= 24 && Model.groupNumberStatistic[i].ElementAt(0) <= 31)
                                 {
                                     <td class="Luc">
                                         <div class="font-italic fs-5 text-secondary align-items-lg-center align-middle text-center">
@@ -113,7 +117,8 @@
                                         </div>
                                     </td>
                                 }
-                                else if (Model.groupNumberStatistic[i].ElementAt(0) >= 32 && Model.groupNumberStatistic[i].ElementAt(0) <= 39)
+                                else if (Model.groupNumberStatistic[i].Count() >= 6 &&
+                                    Model.groupNumberStatistic[i].ElementAt(0) >= 32 && Model.groupNumberStatistic[i].ElementAt(0) <= 39)
                                 {
                                     <td class="Lam">
                                         <div class="font-italic fs-5 text-secondary align-items-lg-center align-middle text-center">
@@ -121,7 +126,8 @@
                                         </div>
                                     </td>
                                 }
-                                else if (Model.groupNumberStatistic[i].ElementAt(0) >= 40 && Model.groupNumberStatistic[i].ElementAt(0) <= 47)
+                                else if (Model.groupNumberStatistic[i].Count() >= 6 &&
+                                    Model.groupNumberStatistic[i].ElementAt(0) >= 40 && Model.groupNumberStatistic[i].ElementAt(0) <= 47)
                                 {
                                     <td class="Cham">
                                         <div class="font-italic fs-5 text-secondary align-items-lg-center align-middle text-center">
@@ -129,7 +135,8 @@
                                         </div>
                                     </td>
                                 }
-                                else if (Model.groupNumberStatistic[i].ElementAt(0) >= 48 && Model.groupNumberStatistic[i].ElementAt(0) <= 55)
+                                else if (Model.groupNumberStatistic[i].Count() >= 6 &&
+                                    Model.groupNumberStatistic[i].Count() >= 6 &&Model.groupNumberStatistic[i].ElementAt(0) >= 48 && Model.groupNumberStatistic[i].ElementAt(0) <= 55)
                                 {
                                     <td class="Tim">
                                         <div class="font-italic fs-5 text-secondary align-items-lg-center align-middle text-center">
@@ -142,7 +149,8 @@
                         <tr>
                             @foreach (var i in Model.groupNumberStatistic.Keys.OrderByDescending(x => x.Date))
                             {
-                                if (Model.groupNumberStatistic[i].ElementAt(1) >= 1 && Model.groupNumberStatistic[i].ElementAt(1) <= 7)
+                                if (Model.groupNumberStatistic[i].Count() >= 6 &&
+                                    Model.groupNumberStatistic[i].ElementAt(1) >= 1 && Model.groupNumberStatistic[i].ElementAt(1) <= 7)
                                 {
                                     <td class="Do">
                                         <div class="font-italic fs-5 text-secondary align-items-lg-center align-middle text-center">
@@ -150,7 +158,8 @@
                                         </div>
                                     </td>
                                 }
-                                else if (Model.groupNumberStatistic[i].ElementAt(1) >= 8 && Model.groupNumberStatistic[i].ElementAt(1) <= 15)
+                                else if (Model.groupNumberStatistic[i].Count() >= 6 &&
+                                    Model.groupNumberStatistic[i].ElementAt(1) >= 8 && Model.groupNumberStatistic[i].ElementAt(1) <= 15)
                                 {
                                     <td class="Cam">
                                         <div class="font-italic fs-5 text-secondary align-items-lg-center align-middle text-center">
@@ -158,7 +167,8 @@
                                         </div>
                                     </td>
                                 }
-                                else if (Model.groupNumberStatistic[i].ElementAt(1) >= 16 && Model.groupNumberStatistic[i].ElementAt(1) <= 23)
+                                else if (Model.groupNumberStatistic[i].Count() >= 6 &&
+                                    Model.groupNumberStatistic[i].ElementAt(1) >= 16 && Model.groupNumberStatistic[i].ElementAt(1) <= 23)
                                 {
                                     <td class="Vang">
                                         <div class="font-italic fs-5 text-secondary align-items-lg-center align-middle text-center">
@@ -166,7 +176,8 @@
                                         </div>
                                     </td>
                                 }
-                                else if (Model.groupNumberStatistic[i].ElementAt(1) >= 24 && Model.groupNumberStatistic[i].ElementAt(1) <= 31)
+                                else if (Model.groupNumberStatistic[i].Count() >= 6 &&
+                                    Model.groupNumberStatistic[i].ElementAt(1) >= 24 && Model.groupNumberStatistic[i].ElementAt(1) <= 31)
                                 {
                                     <td class="Luc">
                                         <div class="font-italic fs-5 text-secondary align-items-lg-center align-middle text-center">
@@ -174,7 +185,8 @@
                                         </div>
                                     </td>
                                 }
-                                else if (Model.groupNumberStatistic[i].ElementAt(1) >= 32 && Model.groupNumberStatistic[i].ElementAt(1) <= 39)
+                                else if (Model.groupNumberStatistic[i].Count() >= 6 &&
+                                    Model.groupNumberStatistic[i].ElementAt(1) >= 32 && Model.groupNumberStatistic[i].ElementAt(1) <= 39)
                                 {
                                     <td class="Lam">
                                         <div class="font-italic fs-5 text-secondary align-items-lg-center align-middle text-center">
@@ -182,7 +194,8 @@
                                         </div>
                                     </td>
                                 }
-                                else if (Model.groupNumberStatistic[i].ElementAt(1) >= 40 && Model.groupNumberStatistic[i].ElementAt(1) <= 47)
+                                else if (Model.groupNumberStatistic[i].Count() >= 6 &&
+                                    Model.groupNumberStatistic[i].ElementAt(1) >= 40 && Model.groupNumberStatistic[i].ElementAt(1) <= 47)
                                 {
                                     <td class="Cham">
                                         <div class="font-italic fs-5 text-secondary align-items-lg-center align-middle text-center">
@@ -190,7 +203,8 @@
                                         </div>
                                     </td>
                                 }
-                                else if (Model.groupNumberStatistic[i].ElementAt(1) >= 48 && Model.groupNumberStatistic[i].ElementAt(1) <= 55)
+                                else if (Model.groupNumberStatistic[i].Count() >= 6 &&
+                                    Model.groupNumberStatistic[i].ElementAt(1) >= 48 && Model.groupNumberStatistic[i].ElementAt(1) <= 55)
                                 {
                                     <td class="Tim">
                                         <div class="font-italic fs-5 text-secondary align-items-lg-center align-middle text-center">
@@ -203,7 +217,8 @@
                         <tr>
                             @foreach (var i in Model.groupNumberStatistic.Keys.OrderByDescending(x => x.Date))
                             {
-                                if (Model.groupNumberStatistic[i].ElementAt(2) >= 1 && Model.groupNumberStatistic[i].ElementAt(2) <= 7)
+                                if (Model.groupNumberStatistic[i].Count() >= 6 &&
+                                    Model.groupNumberStatistic[i].ElementAt(2) >= 1 && Model.groupNumberStatistic[i].ElementAt(2) <= 7)
                                 {
                                     <td class="Do">
                                         <div class="font-italic fs-5 text-secondary align-items-lg-center align-middle text-center">
@@ -211,7 +226,8 @@
                                         </div>
                                     </td>
                                 }
-                                else if (Model.groupNumberStatistic[i].ElementAt(2) >= 8 && Model.groupNumberStatistic[i].ElementAt(2) <= 15)
+                                else if (Model.groupNumberStatistic[i].Count() >= 6 &&
+                                    Model.groupNumberStatistic[i].ElementAt(2) >= 8 && Model.groupNumberStatistic[i].ElementAt(2) <= 15)
                                 {
                                     <td class="Cam">
                                         <div class="font-italic fs-5 text-secondary align-items-lg-center align-middle text-center">
@@ -219,7 +235,8 @@
                                         </div>
                                     </td>
                                 }
-                                else if (Model.groupNumberStatistic[i].ElementAt(2) >= 16 && Model.groupNumberStatistic[i].ElementAt(2) <= 23)
+                                else if (Model.groupNumberStatistic[i].Count() >= 6 &&
+                                    Model.groupNumberStatistic[i].ElementAt(2) >= 16 && Model.groupNumberStatistic[i].ElementAt(2) <= 23)
                                 {
                                     <td class="Vang">
                                         <div class="font-italic fs-5 text-secondary align-items-lg-center align-middle text-center">
@@ -227,7 +244,8 @@
                                         </div>
                                     </td>
                                 }
-                                else if (Model.groupNumberStatistic[i].ElementAt(2) >= 24 && Model.groupNumberStatistic[i].ElementAt(2) <= 31)
+                                else if (Model.groupNumberStatistic[i].Count() >= 6 &&
+                                    Model.groupNumberStatistic[i].ElementAt(2) >= 24 && Model.groupNumberStatistic[i].ElementAt(2) <= 31)
                                 {
                                     <td class="Luc">
                                         <div class="font-italic fs-5 text-secondary align-items-lg-center align-middle text-center">
@@ -235,7 +253,8 @@
                                         </div>
                                     </td>
                                 }
-                                else if (Model.groupNumberStatistic[i].ElementAt(2) >= 32 && Model.groupNumberStatistic[i].ElementAt(2) <= 39)
+                                else if (Model.groupNumberStatistic[i].Count() >= 6 &&
+                                    Model.groupNumberStatistic[i].ElementAt(2) >= 32 && Model.groupNumberStatistic[i].ElementAt(2) <= 39)
                                 {
                                     <td class="Lam">
                                         <div class="font-italic fs-5 text-secondary align-items-lg-center align-middle text-center">
@@ -243,7 +262,8 @@
                                         </div>
                                     </td>
                                 }
-                                else if (Model.groupNumberStatistic[i].ElementAt(2) >= 40 && Model.groupNumberStatistic[i].ElementAt(2) <= 47)
+                                else if (Model.groupNumberStatistic[i].Count() >= 6 &&
+                                    Model.groupNumberStatistic[i].ElementAt(2) >= 40 && Model.groupNumberStatistic[i].ElementAt(2) <= 47)
                                 {
                                     <td class="Cham">
                                         <div class="font-italic fs-5 text-secondary align-items-lg-center align-middle text-center">
@@ -251,7 +271,8 @@
                                         </div>
                                     </td>
                                 }
-                                else if (Model.groupNumberStatistic[i].ElementAt(2) >= 48 && Model.groupNumberStatistic[i].ElementAt(2) <= 55)
+                                else if (Model.groupNumberStatistic[i].Count() >= 6 &&
+                                    Model.groupNumberStatistic[i].ElementAt(2) >= 48 && Model.groupNumberStatistic[i].ElementAt(2) <= 55)
                                 {
                                     <td class="Tim">
                                         <div class="font-italic fs-5 text-secondary align-items-lg-center align-middle text-center">
@@ -264,7 +285,8 @@
                         <tr>
                             @foreach (var i in Model.groupNumberStatistic.Keys.OrderByDescending(x => x.Date))
                             {
-                                if (Model.groupNumberStatistic[i].ElementAt(3) >= 1 && Model.groupNumberStatistic[i].ElementAt(3) <= 7)
+                                if (Model.groupNumberStatistic[i].Count() >= 6 &&
+                                    Model.groupNumberStatistic[i].ElementAt(3) >= 1 && Model.groupNumberStatistic[i].ElementAt(3) <= 7)
                                 {
                                     <td class="Do">
                                         <div class="font-italic fs-5 text-secondary align-items-lg-center align-middle text-center">
@@ -272,7 +294,8 @@
                                         </div>
                                     </td>
                                 }
-                                else if (Model.groupNumberStatistic[i].ElementAt(3) >= 8 && Model.groupNumberStatistic[i].ElementAt(3) <= 15)
+                                else if (Model.groupNumberStatistic[i].Count() >= 6 &&
+                                    Model.groupNumberStatistic[i].ElementAt(3) >= 8 && Model.groupNumberStatistic[i].ElementAt(3) <= 15)
                                 {
                                     <td class="Cam">
                                         <div class="font-italic fs-5 text-secondary align-items-lg-center align-middle text-center">
@@ -280,7 +303,8 @@
                                         </div>
                                     </td>
                                 }
-                                else if (Model.groupNumberStatistic[i].ElementAt(3) >= 16 && Model.groupNumberStatistic[i].ElementAt(3) <= 23)
+                                else if (Model.groupNumberStatistic[i].Count() >= 6 &&
+                                    Model.groupNumberStatistic[i].ElementAt(3) >= 16 && Model.groupNumberStatistic[i].ElementAt(3) <= 23)
                                 {
                                     <td class="Vang">
                                         <div class="font-italic fs-5 text-secondary align-items-lg-center align-middle text-center">
@@ -288,7 +312,8 @@
                                         </div>
                                     </td>
                                 }
-                                else if (Model.groupNumberStatistic[i].ElementAt(3) >= 24 && Model.groupNumberStatistic[i].ElementAt(3) <= 31)
+                                else if (Model.groupNumberStatistic[i].Count() >= 6 &&
+                                    Model.groupNumberStatistic[i].ElementAt(3) >= 24 && Model.groupNumberStatistic[i].ElementAt(3) <= 31)
                                 {
                                     <td class="Luc">
                                         <div class="font-italic fs-5 text-secondary align-items-lg-center align-middle text-center">
@@ -296,7 +321,8 @@
                                         </div>
                                     </td>
                                 }
-                                else if (Model.groupNumberStatistic[i].ElementAt(3) >= 32 && Model.groupNumberStatistic[i].ElementAt(3) <= 39)
+                                else if (Model.groupNumberStatistic[i].Count() >= 6 &&
+                                    Model.groupNumberStatistic[i].ElementAt(3) >= 32 && Model.groupNumberStatistic[i].ElementAt(3) <= 39)
                                 {
                                     <td class="Lam">
                                         <div class="font-italic fs-5 text-secondary align-items-lg-center align-middle text-center">
@@ -304,7 +330,8 @@
                                         </div>
                                     </td>
                                 }
-                                else if (Model.groupNumberStatistic[i].ElementAt(3) >= 40 && Model.groupNumberStatistic[i].ElementAt(3) <= 47)
+                                else if (Model.groupNumberStatistic[i].Count() >= 6 &&
+                                    Model.groupNumberStatistic[i].ElementAt(3) >= 40 && Model.groupNumberStatistic[i].ElementAt(3) <= 47)
                                 {
                                     <td class="Cham">
                                         <div class="font-italic fs-5 text-secondary align-items-lg-center align-middle text-center">
@@ -312,7 +339,8 @@
                                         </div>
                                     </td>
                                 }
-                                else if (Model.groupNumberStatistic[i].ElementAt(3) >= 48 && Model.groupNumberStatistic[i].ElementAt(3) <= 55)
+                                else if (Model.groupNumberStatistic[i].Count() >= 6 &&
+                                    Model.groupNumberStatistic[i].ElementAt(3) >= 48 && Model.groupNumberStatistic[i].ElementAt(3) <= 55)
                                 {
                                     <td class="Tim">
                                         <div class="font-italic fs-5 text-secondary align-items-lg-center align-middle text-center">
@@ -325,7 +353,8 @@
                         <tr>
                             @foreach (var i in Model.groupNumberStatistic.Keys.OrderByDescending(x => x.Date))
                             {
-                                if (Model.groupNumberStatistic[i].ElementAt(4) >= 1 && Model.groupNumberStatistic[i].ElementAt(4) <= 7)
+                                if (Model.groupNumberStatistic[i].Count() >= 6 &&
+                                    Model.groupNumberStatistic[i].ElementAt(4) >= 1 && Model.groupNumberStatistic[i].ElementAt(4) <= 7)
                                 {
                                     <td class="Do">
                                         <div class="font-italic fs-5 text-secondary align-items-lg-center align-middle text-center">
@@ -333,7 +362,8 @@
                                         </div>
                                     </td>
                                 }
-                                else if (Model.groupNumberStatistic[i].ElementAt(4) >= 8 && Model.groupNumberStatistic[i].ElementAt(4) <= 15)
+                                else if (Model.groupNumberStatistic[i].Count() >= 6 &&
+                                    Model.groupNumberStatistic[i].ElementAt(4) >= 8 && Model.groupNumberStatistic[i].ElementAt(4) <= 15)
                                 {
                                     <td class="Cam">
                                         <div class="font-italic fs-5 text-secondary align-items-lg-center align-middle text-center">
@@ -341,7 +371,8 @@
                                         </div>
                                     </td>
                                 }
-                                else if (Model.groupNumberStatistic[i].ElementAt(4) >= 16 && Model.groupNumberStatistic[i].ElementAt(4) <= 23)
+                                else if (Model.groupNumberStatistic[i].Count() >= 6 &&
+                                    Model.groupNumberStatistic[i].ElementAt(4) >= 16 && Model.groupNumberStatistic[i].ElementAt(4) <= 23)
                                 {
                                     <td class="Vang">
                                         <div class="font-italic fs-5 text-secondary align-items-lg-center align-middle text-center">
@@ -349,7 +380,8 @@
                                         </div>
                                     </td>
                                 }
-                                else if (Model.groupNumberStatistic[i].ElementAt(4) >= 24 && Model.groupNumberStatistic[i].ElementAt(4) <= 31)
+                                else if (Model.groupNumberStatistic[i].Count() >= 6 &&
+                                    Model.groupNumberStatistic[i].ElementAt(4) >= 24 && Model.groupNumberStatistic[i].ElementAt(4) <= 31)
                                 {
                                     <td class="Luc">
                                         <div class="font-italic fs-5 text-secondary align-items-lg-center align-middle text-center">
@@ -357,7 +389,8 @@
                                         </div>
                                     </td>
                                 }
-                                else if (Model.groupNumberStatistic[i].ElementAt(4) >= 32 && Model.groupNumberStatistic[i].ElementAt(4) <= 39)
+                                else if (Model.groupNumberStatistic[i].Count() >= 6 &&
+                                    Model.groupNumberStatistic[i].ElementAt(4) >= 32 && Model.groupNumberStatistic[i].ElementAt(4) <= 39)
                                 {
                                     <td class="Lam">
                                         <div class="font-italic fs-5 text-secondary align-items-lg-center align-middle text-center">
@@ -365,7 +398,8 @@
                                         </div>
                                     </td>
                                 }
-                                else if (Model.groupNumberStatistic[i].ElementAt(4) >= 40 && Model.groupNumberStatistic[i].ElementAt(4) <= 47)
+                                else if (Model.groupNumberStatistic[i].Count() >= 6 &&
+                                    Model.groupNumberStatistic[i].ElementAt(4) >= 40 && Model.groupNumberStatistic[i].ElementAt(4) <= 47)
                                 {
                                     <td class="Cham">
                                         <div class="font-italic fs-5 text-secondary align-items-lg-center align-middle text-center">
@@ -373,7 +407,8 @@
                                         </div>
                                     </td>
                                 }
-                                else if (Model.groupNumberStatistic[i].ElementAt(4) >= 48 && Model.groupNumberStatistic[i].ElementAt(4) <= 55)
+                                else if (Model.groupNumberStatistic[i].Count() >= 6 &&
+                                    Model.groupNumberStatistic[i].ElementAt(4) >= 48 && Model.groupNumberStatistic[i].ElementAt(4) <= 55)
                                 {
                                     <td class="Tim">
                                         <div class="font-italic fs-5 text-secondary align-items-lg-center align-middle text-center">
@@ -386,7 +421,8 @@
                         <tr>
                             @foreach (var i in Model.groupNumberStatistic.Keys.OrderByDescending(x => x.Date))
                             {
-                                if (Model.groupNumberStatistic[i].ElementAt(5) >= 1 && Model.groupNumberStatistic[i].ElementAt(5) <= 7)
+                                if (Model.groupNumberStatistic[i].Count() >= 6 &&
+                                    Model.groupNumberStatistic[i].ElementAt(5) >= 1 && Model.groupNumberStatistic[i].ElementAt(5) <= 7)
                                 {
                                     <td class="Do">
                                         <div class="font-italic fs-5 text-secondary align-items-lg-center align-middle text-center">
@@ -394,7 +430,8 @@
                                         </div>
                                     </td>
                                 }
-                                else if (Model.groupNumberStatistic[i].ElementAt(5) >= 8 && Model.groupNumberStatistic[i].ElementAt(5) <= 15)
+                                else if (Model.groupNumberStatistic[i].Count() >= 6 &&
+                                    Model.groupNumberStatistic[i].ElementAt(5) >= 8 && Model.groupNumberStatistic[i].ElementAt(5) <= 15)
                                 {
                                     <td class="Cam">
                                         <div class="font-italic fs-5 text-secondary align-items-lg-center align-middle text-center">
@@ -402,7 +439,8 @@
                                         </div>
                                     </td>
                                 }
-                                else if (Model.groupNumberStatistic[i].ElementAt(5) >= 16 && Model.groupNumberStatistic[i].ElementAt(5) <= 23)
+                                else if (Model.groupNumberStatistic[i].Count() >= 6 &&
+                                    Model.groupNumberStatistic[i].ElementAt(5) >= 16 && Model.groupNumberStatistic[i].ElementAt(5) <= 23)
                                 {
                                     <td class="Vang">
                                         <div class="font-italic fs-5 text-secondary align-items-lg-center align-middle text-center">
@@ -410,7 +448,8 @@
                                         </div>
                                     </td>
                                 }
-                                else if (Model.groupNumberStatistic[i].ElementAt(5) >= 24 && Model.groupNumberStatistic[i].ElementAt(5) <= 31)
+                                else if (Model.groupNumberStatistic[i].Count() >= 6 &&
+                                    Model.groupNumberStatistic[i].ElementAt(5) >= 24 && Model.groupNumberStatistic[i].ElementAt(5) <= 31)
                                 {
                                     <td class="Luc">
                                         <div class="font-italic fs-5 text-secondary align-items-lg-center align-middle text-center">
@@ -418,7 +457,8 @@
                                         </div>
                                     </td>
                                 }
-                                else if (Model.groupNumberStatistic[i].ElementAt(5) >= 32 && Model.groupNumberStatistic[i].ElementAt(5) <= 39)
+                                else if (Model.groupNumberStatistic[i].Count() >= 6 &&
+                                    Model.groupNumberStatistic[i].ElementAt(5) >= 32 && Model.groupNumberStatistic[i].ElementAt(5) <= 39)
                                 {
                                     <td class="Lam">
                                         <div class="font-italic fs-5 text-secondary align-items-lg-center align-middle text-center">
@@ -426,7 +466,8 @@
                                         </div>
                                     </td>
                                 }
-                                else if (Model.groupNumberStatistic[i].ElementAt(5) >= 40 && Model.groupNumberStatistic[i].ElementAt(5) <= 47)
+                                else if (Model.groupNumberStatistic[i].Count() >= 6 &&
+                                    Model.groupNumberStatistic[i].ElementAt(5) >= 40 && Model.groupNumberStatistic[i].ElementAt(5) <= 47)
                                 {
                                     <td class="Cham">
                                         <div class="font-italic fs-5 text-secondary align-items-lg-center align-middle text-center">
@@ -434,7 +475,8 @@
                                         </div>
                                     </td>
                                 }
-                                else if (Model.groupNumberStatistic[i].ElementAt(5) >= 48 && Model.groupNumberStatistic[i].ElementAt(5) <= 55)
+                                else if (Model.groupNumberStatistic[i].Count() >= 6 &&
+                                    Model.groupNumberStatistic[i].ElementAt(5) >= 48 && Model.groupNumberStatistic[i].ElementAt(5) <= 55)
                                 {
                                     <td class="Tim">
                                         <div class="font-italic fs-5 text-secondary align-items-lg-center align-middle text-center">
@@ -449,7 +491,8 @@
                             <tr>
                                 @foreach (var i in Model.groupNumberStatistic.Keys.OrderByDescending(x => x.Date))
                                 {
-                                    if (Model.groupNumberStatistic[i].ElementAt(6) >= 1 && Model.groupNumberStatistic[i].ElementAt(6) <= 7)
+                                    if (Model.groupNumberStatistic[i].Count() >= 6 &&
+                                        Model.groupNumberStatistic[i].ElementAt(6) >= 1 && Model.groupNumberStatistic[i].ElementAt(6) <= 7)
                                     {
                                         <td class="Do">
                                             <div class="font-italic fs-5 text-secondary align-items-lg-center align-middle text-center">
@@ -457,7 +500,8 @@
                                             </div>
                                         </td>
                                     }
-                                    else if (Model.groupNumberStatistic[i].ElementAt(6) >= 8 && Model.groupNumberStatistic[i].ElementAt(6) <= 15)
+                                    else if (Model.groupNumberStatistic[i].Count() >= 6 &&
+                                        Model.groupNumberStatistic[i].ElementAt(6) >= 8 && Model.groupNumberStatistic[i].ElementAt(6) <= 15)
                                     {
                                         <td class="Cam">
                                             <div class="font-italic fs-5 text-secondary align-items-lg-center align-middle text-center">
@@ -465,7 +509,8 @@
                                             </div>
                                         </td>
                                     }
-                                    else if (Model.groupNumberStatistic[i].ElementAt(6) >= 16 && Model.groupNumberStatistic[i].ElementAt(6) <= 23)
+                                    else if (Model.groupNumberStatistic[i].Count() >= 6 &&
+                                        Model.groupNumberStatistic[i].ElementAt(6) >= 16 && Model.groupNumberStatistic[i].ElementAt(6) <= 23)
                                     {
                                         <td class="Vang">
                                             <div class="font-italic fs-5 text-secondary align-items-lg-center align-middle text-center">
@@ -473,7 +518,8 @@
                                             </div>
                                         </td>
                                     }
-                                    else if (Model.groupNumberStatistic[i].ElementAt(6) >= 24 && Model.groupNumberStatistic[i].ElementAt(6) <= 31)
+                                    else if (Model.groupNumberStatistic[i].Count() >= 6 &&
+                                        Model.groupNumberStatistic[i].ElementAt(6) >= 24 && Model.groupNumberStatistic[i].ElementAt(6) <= 31)
                                     {
                                         <td class="Luc">
                                             <div class="font-italic fs-5 text-secondary align-items-lg-center align-middle text-center">
@@ -481,7 +527,8 @@
                                             </div>
                                         </td>
                                     }
-                                    else if (Model.groupNumberStatistic[i].ElementAt(6) >= 32 && Model.groupNumberStatistic[i].ElementAt(6) <= 39)
+                                    else if (Model.groupNumberStatistic[i].Count() >= 6 &&
+                                        Model.groupNumberStatistic[i].ElementAt(6) >= 32 && Model.groupNumberStatistic[i].ElementAt(6) <= 39)
                                     {
                                         <td class="Lam">
                                             <div class="font-italic fs-5 text-secondary align-items-lg-center align-middle text-center">
@@ -489,7 +536,8 @@
                                             </div>
                                         </td>
                                     }
-                                    else if (Model.groupNumberStatistic[i].ElementAt(6) >= 40 && Model.groupNumberStatistic[i].ElementAt(6) <= 47)
+                                    else if (Model.groupNumberStatistic[i].Count() >= 6 &&
+                                        Model.groupNumberStatistic[i].ElementAt(6) >= 40 && Model.groupNumberStatistic[i].ElementAt(6) <= 47)
                                     {
                                         <td class="Cham">
                                             <div class="font-italic fs-5 text-secondary align-items-lg-center align-middle text-center">
@@ -497,7 +545,8 @@
                                             </div>
                                         </td>
                                     }
-                                    else if (Model.groupNumberStatistic[i].ElementAt(6) >= 48 && Model.groupNumberStatistic[i].ElementAt(6) <= 55)
+                                    else if (Model.groupNumberStatistic[i].Count() >= 6 &&
+                                        Model.groupNumberStatistic[i].ElementAt(6) >= 48 && Model.groupNumberStatistic[i].ElementAt(6) <= 55)
                                     {
                                         <td class="Tim">
                                             <div class="font-italic fs-5 text-secondary align-items-lg-center align-middle text-center">
@@ -508,8 +557,6 @@
                                 }
                             </tr>
                         }
-
-
                     </tbody>
                 </table>
             </div>
@@ -595,23 +642,1710 @@
             </div>
             <div class="col-12">
                 <table class="table table-bordered TableData">
-                    <thead class="table-dark">
+                    @*<thead class="table-dark">                        
                         <tr class="text-info">                           
                             @foreach (var i in Model.KyQuays.OrderByDescending(x=>x.Key))
                             {
                                 <td>@string.Format("{0:0,0}", i.Key)</td>
                             }
                         </tr>
-                    </thead>
+                    </thead>*@
                     <tbody>
                         <tr>
                             @foreach (var i in Model.KyQuays.Keys.OrderByDescending(x => x.Value))
                             {
-                                if (Model.KyQuays[i].ElementAt(0) >=1 && Model.KyQuays[i].ElementAt(0) <= 7)
+                                if (Model.KyQuays[i].ElementAt(0) >= 1 && Model.KyQuays[i].ElementAt(0) <= 7)
                                 {
                                     <td class="Do">
                                         <div class="font-italic fs-5 text-secondary align-items-lg-center align-middle text-center">
                                             <h6>@Model.KyQuays[i].ElementAt(0)</h6>
+                                        </div>
+                                    </td>
+                                }
+                                else if (Model.KyQuays[i].ElementAt(0) >= 8 && Model.KyQuays[i].ElementAt(0) <= 15)
+                                {
+                                    <td class="Cam">
+                                        <div class="font-italic fs-5 text-secondary align-items-lg-center align-middle text-center">
+                                            <h6>@Model.KyQuays[i].ElementAt(0)</h6>
+                                        </div>
+                                    </td>
+                                }
+                                else if (Model.KyQuays[i].ElementAt(0) >= 16 && Model.KyQuays[i].ElementAt(0) <= 23)
+                                {
+                                    <td class="Vang">
+                                        <div class="font-italic fs-5 text-secondary align-items-lg-center align-middle text-center">
+                                            <h6>@Model.KyQuays[i].ElementAt(0)</h6>
+                                        </div>
+                                    </td>
+                                }
+                                else if (Model.KyQuays[i].ElementAt(0) >= 24 && Model.KyQuays[i].ElementAt(0) <= 31)
+                                {
+                                    <td class="Luc">
+                                        <div class="font-italic fs-5 text-secondary align-items-lg-center align-middle text-center">
+                                            <h6>@Model.KyQuays[i].ElementAt(0)</h6>
+                                        </div>
+                                    </td>
+                                }
+                                else if (Model.KyQuays[i].ElementAt(0) >= 32 && Model.KyQuays[i].ElementAt(0) <= 39)
+                                {
+                                    <td class="Lam">
+                                        <div class="font-italic fs-5 text-secondary align-items-lg-center align-middle text-center">
+                                            <h6>@Model.KyQuays[i].ElementAt(0)</h6>
+                                        </div>
+                                    </td>
+                                }
+                                else if (Model.KyQuays[i].ElementAt(0) >= 40 && Model.KyQuays[i].ElementAt(0) <= 47)
+                                {
+                                    <td class="Cham">
+                                        <div class="font-italic fs-5 text-secondary align-items-lg-center align-middle text-center">
+                                            <h6>@Model.KyQuays[i].ElementAt(0)</h6>
+                                        </div>
+                                    </td>
+                                }
+                                else if (Model.KyQuays[i].ElementAt(0) >= 48 && Model.KyQuays[i].ElementAt(0) <= 55)
+                                {
+                                    <td class="Tim">
+                                        <div class="font-italic fs-5 text-secondary align-items-lg-center align-middle text-center">
+                                            <h6>@Model.KyQuays[i].ElementAt(0)</h6>
+                                        </div>
+                                    </td>
+                                }
+                                else if (Model.KyQuays[i].ElementAt(0) >= 56 && Model.KyQuays[i].ElementAt(0) <= 63)
+                                {
+                                    <td class="BlueGreen">
+                                        <div class="font-italic fs-5 text-secondary align-items-lg-center align-middle text-center">
+                                            <h6>@Model.KyQuays[i].ElementAt(0)</h6>
+                                        </div>
+                                    </td>
+                                }
+                                else if (Model.KyQuays[i].ElementAt(0) >= 64 && Model.KyQuays[i].ElementAt(0) <= 71)
+                                {
+                                    <td class="Pink">
+                                        <div class="font-italic fs-5 text-secondary align-items-lg-center align-middle text-center">
+                                            <h6>@Model.KyQuays[i].ElementAt(0)</h6>
+                                        </div>
+                                    </td>
+                                }
+                                else if (Model.KyQuays[i].ElementAt(0) >= 72 && Model.KyQuays[i].ElementAt(0) <= 80)
+                                {
+                                    <td class="LightBlue">
+                                        <div class="font-italic fs-5 text-secondary align-items-lg-center align-middle text-center">
+                                            <h6>@Model.KyQuays[i].ElementAt(0)</h6>
+                                        </div>
+                                    </td>
+                                }
+                            }
+                        </tr>
+                        <tr>
+                            @foreach (var i in Model.KyQuays.Keys.OrderByDescending(x => x.Value))
+                            {
+                                if (Model.KyQuays[i].ElementAt(1) >= 1 && Model.KyQuays[i].ElementAt(1) <= 7)
+                                {
+                                    <td class="Do">
+                                        <div class="font-italic fs-5 text-secondary align-items-lg-center align-middle text-center">
+                                            <h6>@Model.KyQuays[i].ElementAt(1)</h6>
+                                        </div>
+                                    </td>
+                                }
+                                else if (Model.KyQuays[i].ElementAt(1) >= 8 && Model.KyQuays[i].ElementAt(1) <= 15)
+                                {
+                                    <td class="Cam">
+                                        <div class="font-italic fs-5 text-secondary align-items-lg-center align-middle text-center">
+                                            <h6>@Model.KyQuays[i].ElementAt(1)</h6>
+                                        </div>
+                                    </td>
+                                }
+                                else if (Model.KyQuays[i].ElementAt(1) >= 16 && Model.KyQuays[i].ElementAt(1) <= 23)
+                                {
+                                    <td class="Vang">
+                                        <div class="font-italic fs-5 text-secondary align-items-lg-center align-middle text-center">
+                                            <h6>@Model.KyQuays[i].ElementAt(1)</h6>
+                                        </div>
+                                    </td>
+                                }
+                                else if (Model.KyQuays[i].ElementAt(1) >= 24 && Model.KyQuays[i].ElementAt(1) <= 31)
+                                {
+                                    <td class="Luc">
+                                        <div class="font-italic fs-5 text-secondary align-items-lg-center align-middle text-center">
+                                            <h6>@Model.KyQuays[i].ElementAt(1)</h6>
+                                        </div>
+                                    </td>
+                                }
+                                else if (Model.KyQuays[i].ElementAt(1) >= 32 && Model.KyQuays[i].ElementAt(1) <= 39)
+                                {
+                                    <td class="Lam">
+                                        <div class="font-italic fs-5 text-secondary align-items-lg-center align-middle text-center">
+                                            <h6>@Model.KyQuays[i].ElementAt(1)</h6>
+                                        </div>
+                                    </td>
+                                }
+                                else if (Model.KyQuays[i].ElementAt(1) >= 41 && Model.KyQuays[i].ElementAt(1) <= 47)
+                                {
+                                    <td class="Cham">
+                                        <div class="font-italic fs-5 text-secondary align-items-lg-center align-middle text-center">
+                                            <h6>@Model.KyQuays[i].ElementAt(1)</h6>
+                                        </div>
+                                    </td>
+                                }
+                                else if (Model.KyQuays[i].ElementAt(1) >= 48 && Model.KyQuays[i].ElementAt(1) <= 55)
+                                {
+                                    <td class="Tim">
+                                        <div class="font-italic fs-5 text-secondary align-items-lg-center align-middle text-center">
+                                            <h6>@Model.KyQuays[i].ElementAt(1)</h6>
+                                        </div>
+                                    </td>
+                                }
+                                else if (Model.KyQuays[i].ElementAt(1) >= 56 && Model.KyQuays[i].ElementAt(1) <= 63)
+                                {
+                                    <td class="BlueGreen">
+                                        <div class="font-italic fs-5 text-secondary align-items-lg-center align-middle text-center">
+                                            <h6>@Model.KyQuays[i].ElementAt(1)</h6>
+                                        </div>
+                                    </td>
+                                }
+                                else if (Model.KyQuays[i].ElementAt(1) >= 64 && Model.KyQuays[i].ElementAt(1) <= 71)
+                                {
+                                    <td class="Pink">
+                                        <div class="font-italic fs-5 text-secondary align-items-lg-center align-middle text-center">
+                                            <h6>@Model.KyQuays[i].ElementAt(1)</h6>
+                                        </div>
+                                    </td>
+                                }
+                                else if (Model.KyQuays[i].ElementAt(1) >= 72 && Model.KyQuays[i].ElementAt(1) <= 80)
+                                {
+                                    <td class="LightBlue">
+                                        <div class="font-italic fs-5 text-secondary align-items-lg-center align-middle text-center">
+                                            <h6>@Model.KyQuays[i].ElementAt(1)</h6>
+                                        </div>
+                                    </td>
+                                }
+                            }
+                        </tr>
+                        <tr>
+                            @foreach (var i in Model.KyQuays.Keys.OrderByDescending(x => x.Value))
+                            {
+                                if (Model.KyQuays[i].ElementAt(2) >= 1 && Model.KyQuays[i].ElementAt(2) <= 7)
+                                {
+                                    <td class="Do">
+                                        <div class="font-italic fs-5 text-secondary align-items-lg-center align-middle text-center">
+                                            <h6>@Model.KyQuays[i].ElementAt(2)</h6>
+                                        </div>
+                                    </td>
+                                }
+                                else if (Model.KyQuays[i].ElementAt(2) >= 8 && Model.KyQuays[i].ElementAt(2) <= 15)
+                                {
+                                    <td class="Cam">
+                                        <div class="font-italic fs-5 text-secondary align-items-lg-center align-middle text-center">
+                                            <h6>@Model.KyQuays[i].ElementAt(2)</h6>
+                                        </div>
+                                    </td>
+                                }
+                                else if (Model.KyQuays[i].ElementAt(2) >= 16 && Model.KyQuays[i].ElementAt(2) <= 23)
+                                {
+                                    <td class="Vang">
+                                        <div class="font-italic fs-5 text-secondary align-items-lg-center align-middle text-center">
+                                            <h6>@Model.KyQuays[i].ElementAt(2)</h6>
+                                        </div>
+                                    </td>
+                                }
+                                else if (Model.KyQuays[i].ElementAt(2) >= 24 && Model.KyQuays[i].ElementAt(2) <= 31)
+                                {
+                                    <td class="Luc">
+                                        <div class="font-italic fs-5 text-secondary align-items-lg-center align-middle text-center">
+                                            <h6>@Model.KyQuays[i].ElementAt(2)</h6>
+                                        </div>
+                                    </td>
+                                }
+                                else if (Model.KyQuays[i].ElementAt(2) >= 32 && Model.KyQuays[i].ElementAt(2) <= 39)
+                                {
+                                    <td class="Lam">
+                                        <div class="font-italic fs-5 text-secondary align-items-lg-center align-middle text-center">
+                                            <h6>@Model.KyQuays[i].ElementAt(2)</h6>
+                                        </div>
+                                    </td>
+                                }
+                                else if (Model.KyQuays[i].ElementAt(2) >= 41 && Model.KyQuays[i].ElementAt(2) <= 47)
+                                {
+                                    <td class="Cham">
+                                        <div class="font-italic fs-5 text-secondary align-items-lg-center align-middle text-center">
+                                            <h6>@Model.KyQuays[i].ElementAt(2)</h6>
+                                        </div>
+                                    </td>
+                                }
+                                else if (Model.KyQuays[i].ElementAt(2) >= 48 && Model.KyQuays[i].ElementAt(2) <= 55)
+                                {
+                                    <td class="Tim">
+                                        <div class="font-italic fs-5 text-secondary align-items-lg-center align-middle text-center">
+                                            <h6>@Model.KyQuays[i].ElementAt(2)</h6>
+                                        </div>
+                                    </td>
+                                }
+                                else if (Model.KyQuays[i].ElementAt(2) >= 56 && Model.KyQuays[i].ElementAt(2) <= 63)
+                                {
+                                    <td class="BlueGreen">
+                                        <div class="font-italic fs-5 text-secondary align-items-lg-center align-middle text-center">
+                                            <h6>@Model.KyQuays[i].ElementAt(2)</h6>
+                                        </div>
+                                    </td>
+                                }
+                                else if (Model.KyQuays[i].ElementAt(2) >= 64 && Model.KyQuays[i].ElementAt(2) <= 71)
+                                {
+                                    <td class="Pink">
+                                        <div class="font-italic fs-5 text-secondary align-items-lg-center align-middle text-center">
+                                            <h6>@Model.KyQuays[i].ElementAt(2)</h6>
+                                        </div>
+                                    </td>
+                                }
+                                else if (Model.KyQuays[i].ElementAt(2) >= 72 && Model.KyQuays[i].ElementAt(2) <= 80)
+                                {
+                                    <td class="LightBlue">
+                                        <div class="font-italic fs-5 text-secondary align-items-lg-center align-middle text-center">
+                                            <h6>@Model.KyQuays[i].ElementAt(2)</h6>
+                                        </div>
+                                    </td>
+                                }
+                            }
+                        </tr>
+                        <tr>
+                            @foreach (var i in Model.KyQuays.Keys.OrderByDescending(x => x.Value))
+                            {
+                                if (Model.KyQuays[i].ElementAt(3) >= 1 && Model.KyQuays[i].ElementAt(3) <= 7)
+                                {
+                                    <td class="Do">
+                                        <div class="font-italic fs-5 text-secondary align-items-lg-center align-middle text-center">
+                                            <h6>@Model.KyQuays[i].ElementAt(3)</h6>
+                                        </div>
+                                    </td>
+                                }
+                                else if (Model.KyQuays[i].ElementAt(3) >= 8 && Model.KyQuays[i].ElementAt(3) <= 15)
+                                {
+                                    <td class="Cam">
+                                        <div class="font-italic fs-5 text-secondary align-items-lg-center align-middle text-center">
+                                            <h6>@Model.KyQuays[i].ElementAt(3)</h6>
+                                        </div>
+                                    </td>
+                                }
+                                else if (Model.KyQuays[i].ElementAt(3) >= 16 && Model.KyQuays[i].ElementAt(3) <= 23)
+                                {
+                                    <td class="Vang">
+                                        <div class="font-italic fs-5 text-secondary align-items-lg-center align-middle text-center">
+                                            <h6>@Model.KyQuays[i].ElementAt(3)</h6>
+                                        </div>
+                                    </td>
+                                }
+                                else if (Model.KyQuays[i].ElementAt(3) >= 24 && Model.KyQuays[i].ElementAt(3) <= 31)
+                                {
+                                    <td class="Luc">
+                                        <div class="font-italic fs-5 text-secondary align-items-lg-center align-middle text-center">
+                                            <h6>@Model.KyQuays[i].ElementAt(3)</h6>
+                                        </div>
+                                    </td>
+                                }
+                                else if (Model.KyQuays[i].ElementAt(3) >= 32 && Model.KyQuays[i].ElementAt(3) <= 39)
+                                {
+                                    <td class="Lam">
+                                        <div class="font-italic fs-5 text-secondary align-items-lg-center align-middle text-center">
+                                            <h6>@Model.KyQuays[i].ElementAt(3)</h6>
+                                        </div>
+                                    </td>
+                                }
+                                else if (Model.KyQuays[i].ElementAt(3) >= 41 && Model.KyQuays[i].ElementAt(3) <= 47)
+                                {
+                                    <td class="Cham">
+                                        <div class="font-italic fs-5 text-secondary align-items-lg-center align-middle text-center">
+                                            <h6>@Model.KyQuays[i].ElementAt(3)</h6>
+                                        </div>
+                                    </td>
+                                }
+                                else if (Model.KyQuays[i].ElementAt(3) >= 48 && Model.KyQuays[i].ElementAt(3) <= 55)
+                                {
+                                    <td class="Tim">
+                                        <div class="font-italic fs-5 text-secondary align-items-lg-center align-middle text-center">
+                                            <h6>@Model.KyQuays[i].ElementAt(3)</h6>
+                                        </div>
+                                    </td>
+                                }
+                                else if (Model.KyQuays[i].ElementAt(3) >= 56 && Model.KyQuays[i].ElementAt(3) <= 63)
+                                {
+                                    <td class="BlueGreen">
+                                        <div class="font-italic fs-5 text-secondary align-items-lg-center align-middle text-center">
+                                            <h6>@Model.KyQuays[i].ElementAt(3)</h6>
+                                        </div>
+                                    </td>
+                                }
+                                else if (Model.KyQuays[i].ElementAt(3) >= 64 && Model.KyQuays[i].ElementAt(3) <= 71)
+                                {
+                                    <td class="Pink">
+                                        <div class="font-italic fs-5 text-secondary align-items-lg-center align-middle text-center">
+                                            <h6>@Model.KyQuays[i].ElementAt(3)</h6>
+                                        </div>
+                                    </td>
+                                }
+                                else if (Model.KyQuays[i].ElementAt(3) >= 72 && Model.KyQuays[i].ElementAt(3) <= 80)
+                                {
+                                    <td class="LightBlue">
+                                        <div class="font-italic fs-5 text-secondary align-items-lg-center align-middle text-center">
+                                            <h6>@Model.KyQuays[i].ElementAt(3)</h6>
+                                        </div>
+                                    </td>
+                                }
+                            }
+                        </tr>
+                        <tr>
+                            @foreach (var i in Model.KyQuays.Keys.OrderByDescending(x => x.Value))
+                            {
+                                if (Model.KyQuays[i].ElementAt(4) >= 1 && Model.KyQuays[i].ElementAt(4) <= 7)
+                                {
+                                    <td class="Do">
+                                        <div class="font-italic fs-5 text-secondary align-items-lg-center align-middle text-center">
+                                            <h6>@Model.KyQuays[i].ElementAt(4)</h6>
+                                        </div>
+                                    </td>
+                                }
+                                else if (Model.KyQuays[i].ElementAt(4) >= 8 && Model.KyQuays[i].ElementAt(4) <= 15)
+                                {
+                                    <td class="Cam">
+                                        <div class="font-italic fs-5 text-secondary align-items-lg-center align-middle text-center">
+                                            <h6>@Model.KyQuays[i].ElementAt(4)</h6>
+                                        </div>
+                                    </td>
+                                }
+                                else if (Model.KyQuays[i].ElementAt(4) >= 16 && Model.KyQuays[i].ElementAt(4) <= 23)
+                                {
+                                    <td class="Vang">
+                                        <div class="font-italic fs-5 text-secondary align-items-lg-center align-middle text-center">
+                                            <h6>@Model.KyQuays[i].ElementAt(4)</h6>
+                                        </div>
+                                    </td>
+                                }
+                                else if (Model.KyQuays[i].ElementAt(4) >= 24 && Model.KyQuays[i].ElementAt(4) <= 31)
+                                {
+                                    <td class="Luc">
+                                        <div class="font-italic fs-5 text-secondary align-items-lg-center align-middle text-center">
+                                            <h6>@Model.KyQuays[i].ElementAt(4)</h6>
+                                        </div>
+                                    </td>
+                                }
+                                else if (Model.KyQuays[i].ElementAt(4) >= 32 && Model.KyQuays[i].ElementAt(4) <= 39)
+                                {
+                                    <td class="Lam">
+                                        <div class="font-italic fs-5 text-secondary align-items-lg-center align-middle text-center">
+                                            <h6>@Model.KyQuays[i].ElementAt(4)</h6>
+                                        </div>
+                                    </td>
+                                }
+                                else if (Model.KyQuays[i].ElementAt(4) >= 41 && Model.KyQuays[i].ElementAt(4) <= 47)
+                                {
+                                    <td class="Cham">
+                                        <div class="font-italic fs-5 text-secondary align-items-lg-center align-middle text-center">
+                                            <h6>@Model.KyQuays[i].ElementAt(4)</h6>
+                                        </div>
+                                    </td>
+                                }
+                                else if (Model.KyQuays[i].ElementAt(4) >= 48 && Model.KyQuays[i].ElementAt(4) <= 55)
+                                {
+                                    <td class="Tim">
+                                        <div class="font-italic fs-5 text-secondary align-items-lg-center align-middle text-center">
+                                            <h6>@Model.KyQuays[i].ElementAt(4)</h6>
+                                        </div>
+                                    </td>
+                                }
+                                else if (Model.KyQuays[i].ElementAt(4) >= 56 && Model.KyQuays[i].ElementAt(4) <= 63)
+                                {
+                                    <td class="BlueGreen">
+                                        <div class="font-italic fs-5 text-secondary align-items-lg-center align-middle text-center">
+                                            <h6>@Model.KyQuays[i].ElementAt(4)</h6>
+                                        </div>
+                                    </td>
+                                }
+                                else if (Model.KyQuays[i].ElementAt(4) >= 64 && Model.KyQuays[i].ElementAt(4) <= 71)
+                                {
+                                    <td class="Pink">
+                                        <div class="font-italic fs-5 text-secondary align-items-lg-center align-middle text-center">
+                                            <h6>@Model.KyQuays[i].ElementAt(4)</h6>
+                                        </div>
+                                    </td>
+                                }
+                                else if (Model.KyQuays[i].ElementAt(4) >= 72 && Model.KyQuays[i].ElementAt(4) <= 80)
+                                {
+                                    <td class="LightBlue">
+                                        <div class="font-italic fs-5 text-secondary align-items-lg-center align-middle text-center">
+                                            <h6>@Model.KyQuays[i].ElementAt(4)</h6>
+                                        </div>
+                                    </td>
+                                }
+                            }
+                        </tr>
+                        <tr>
+                            @foreach (var i in Model.KyQuays.Keys.OrderByDescending(x => x.Value))
+                            {
+                                if (Model.KyQuays[i].ElementAt(5) >= 1 && Model.KyQuays[i].ElementAt(5) <= 7)
+                                {
+                                    <td class="Do">
+                                        <div class="font-italic fs-5 text-secondary align-items-lg-center align-middle text-center">
+                                            <h6>@Model.KyQuays[i].ElementAt(5)</h6>
+                                        </div>
+                                    </td>
+                                }
+                                else if (Model.KyQuays[i].ElementAt(5) >= 8 && Model.KyQuays[i].ElementAt(5) <= 15)
+                                {
+                                    <td class="Cam">
+                                        <div class="font-italic fs-5 text-secondary align-items-lg-center align-middle text-center">
+                                            <h6>@Model.KyQuays[i].ElementAt(5)</h6>
+                                        </div>
+                                    </td>
+                                }
+                                else if (Model.KyQuays[i].ElementAt(5) >= 16 && Model.KyQuays[i].ElementAt(5) <= 23)
+                                {
+                                    <td class="Vang">
+                                        <div class="font-italic fs-5 text-secondary align-items-lg-center align-middle text-center">
+                                            <h6>@Model.KyQuays[i].ElementAt(5)</h6>
+                                        </div>
+                                    </td>
+                                }
+                                else if (Model.KyQuays[i].ElementAt(5) >= 24 && Model.KyQuays[i].ElementAt(5) <= 31)
+                                {
+                                    <td class="Luc">
+                                        <div class="font-italic fs-5 text-secondary align-items-lg-center align-middle text-center">
+                                            <h6>@Model.KyQuays[i].ElementAt(5)</h6>
+                                        </div>
+                                    </td>
+                                }
+                                else if (Model.KyQuays[i].ElementAt(5) >= 32 && Model.KyQuays[i].ElementAt(5) <= 39)
+                                {
+                                    <td class="Lam">
+                                        <div class="font-italic fs-5 text-secondary align-items-lg-center align-middle text-center">
+                                            <h6>@Model.KyQuays[i].ElementAt(5)</h6>
+                                        </div>
+                                    </td>
+                                }
+                                else if (Model.KyQuays[i].ElementAt(5) >= 41 && Model.KyQuays[i].ElementAt(5) <= 47)
+                                {
+                                    <td class="Cham">
+                                        <div class="font-italic fs-5 text-secondary align-items-lg-center align-middle text-center">
+                                            <h6>@Model.KyQuays[i].ElementAt(5)</h6>
+                                        </div>
+                                    </td>
+                                }
+                                else if (Model.KyQuays[i].ElementAt(5) >= 48 && Model.KyQuays[i].ElementAt(5) <= 55)
+                                {
+                                    <td class="Tim">
+                                        <div class="font-italic fs-5 text-secondary align-items-lg-center align-middle text-center">
+                                            <h6>@Model.KyQuays[i].ElementAt(5)</h6>
+                                        </div>
+                                    </td>
+                                }
+                                else if (Model.KyQuays[i].ElementAt(5) >= 56 && Model.KyQuays[i].ElementAt(5) <= 63)
+                                {
+                                    <td class="BlueGreen">
+                                        <div class="font-italic fs-5 text-secondary align-items-lg-center align-middle text-center">
+                                            <h6>@Model.KyQuays[i].ElementAt(5)</h6>
+                                        </div>
+                                    </td>
+                                }
+                                else if (Model.KyQuays[i].ElementAt(5) >= 64 && Model.KyQuays[i].ElementAt(5) <= 71)
+                                {
+                                    <td class="Pink">
+                                        <div class="font-italic fs-5 text-secondary align-items-lg-center align-middle text-center">
+                                            <h6>@Model.KyQuays[i].ElementAt(5)</h6>
+                                        </div>
+                                    </td>
+                                }
+                                else if (Model.KyQuays[i].ElementAt(5) >= 72 && Model.KyQuays[i].ElementAt(5) <= 80)
+                                {
+                                    <td class="LightBlue">
+                                        <div class="font-italic fs-5 text-secondary align-items-lg-center align-middle text-center">
+                                            <h6>@Model.KyQuays[i].ElementAt(5)</h6>
+                                        </div>
+                                    </td>
+                                }
+                            }
+                        </tr>
+                        <tr>
+                            @foreach (var i in Model.KyQuays.Keys.OrderByDescending(x => x.Value))
+                            {
+                                if (Model.KyQuays[i].ElementAt(6) >= 1 && Model.KyQuays[i].ElementAt(6) <= 7)
+                                {
+                                    <td class="Do">
+                                        <div class="font-italic fs-5 text-secondary align-items-lg-center align-middle text-center">
+                                            <h6>@Model.KyQuays[i].ElementAt(6)</h6>
+                                        </div>
+                                    </td>
+                                }
+                                else if (Model.KyQuays[i].ElementAt(6) >= 8 && Model.KyQuays[i].ElementAt(6) <= 15)
+                                {
+                                    <td class="Cam">
+                                        <div class="font-italic fs-5 text-secondary align-items-lg-center align-middle text-center">
+                                            <h6>@Model.KyQuays[i].ElementAt(6)</h6>
+                                        </div>
+                                    </td>
+                                }
+                                else if (Model.KyQuays[i].ElementAt(6) >= 16 && Model.KyQuays[i].ElementAt(6) <= 23)
+                                {
+                                    <td class="Vang">
+                                        <div class="font-italic fs-5 text-secondary align-items-lg-center align-middle text-center">
+                                            <h6>@Model.KyQuays[i].ElementAt(6)</h6>
+                                        </div>
+                                    </td>
+                                }
+                                else if (Model.KyQuays[i].ElementAt(6) >= 24 && Model.KyQuays[i].ElementAt(6) <= 31)
+                                {
+                                    <td class="Luc">
+                                        <div class="font-italic fs-5 text-secondary align-items-lg-center align-middle text-center">
+                                            <h6>@Model.KyQuays[i].ElementAt(6)</h6>
+                                        </div>
+                                    </td>
+                                }
+                                else if (Model.KyQuays[i].ElementAt(6) >= 32 && Model.KyQuays[i].ElementAt(6) <= 39)
+                                {
+                                    <td class="Lam">
+                                        <div class="font-italic fs-5 text-secondary align-items-lg-center align-middle text-center">
+                                            <h6>@Model.KyQuays[i].ElementAt(6)</h6>
+                                        </div>
+                                    </td>
+                                }
+                                else if (Model.KyQuays[i].ElementAt(6) >= 41 && Model.KyQuays[i].ElementAt(6) <= 47)
+                                {
+                                    <td class="Cham">
+                                        <div class="font-italic fs-5 text-secondary align-items-lg-center align-middle text-center">
+                                            <h6>@Model.KyQuays[i].ElementAt(6)</h6>
+                                        </div>
+                                    </td>
+                                }
+                                else if (Model.KyQuays[i].ElementAt(6) >= 48 && Model.KyQuays[i].ElementAt(6) <= 55)
+                                {
+                                    <td class="Tim">
+                                        <div class="font-italic fs-5 text-secondary align-items-lg-center align-middle text-center">
+                                            <h6>@Model.KyQuays[i].ElementAt(6)</h6>
+                                        </div>
+                                    </td>
+                                }
+                                else if (Model.KyQuays[i].ElementAt(6) >= 56 && Model.KyQuays[i].ElementAt(6) <= 63)
+                                {
+                                    <td class="BlueGreen">
+                                        <div class="font-italic fs-5 text-secondary align-items-lg-center align-middle text-center">
+                                            <h6>@Model.KyQuays[i].ElementAt(6)</h6>
+                                        </div>
+                                    </td>
+                                }
+                                else if (Model.KyQuays[i].ElementAt(6) >= 64 && Model.KyQuays[i].ElementAt(6) <= 71)
+                                {
+                                    <td class="Pink">
+                                        <div class="font-italic fs-5 text-secondary align-items-lg-center align-middle text-center">
+                                            <h6>@Model.KyQuays[i].ElementAt(6)</h6>
+                                        </div>
+                                    </td>
+                                }
+                                else if (Model.KyQuays[i].ElementAt(6) >= 72 && Model.KyQuays[i].ElementAt(6) <= 80)
+                                {
+                                    <td class="LightBlue">
+                                        <div class="font-italic fs-5 text-secondary align-items-lg-center align-middle text-center">
+                                            <h6>@Model.KyQuays[i].ElementAt(6)</h6>
+                                        </div>
+                                    </td>
+                                }
+                            }
+                        </tr>
+                        <tr>
+                            @foreach (var i in Model.KyQuays.Keys.OrderByDescending(x => x.Value))
+                            {
+                                if (Model.KyQuays[i].ElementAt(7) >= 1 && Model.KyQuays[i].ElementAt(7) <= 7)
+                                {
+                                    <td class="Do">
+                                        <div class="font-italic fs-5 text-secondary align-items-lg-center align-middle text-center">
+                                            <h6>@Model.KyQuays[i].ElementAt(7)</h6>
+                                        </div>
+                                    </td>
+                                }
+                                else if (Model.KyQuays[i].ElementAt(7) >= 8 && Model.KyQuays[i].ElementAt(7) <= 15)
+                                {
+                                    <td class="Cam">
+                                        <div class="font-italic fs-5 text-secondary align-items-lg-center align-middle text-center">
+                                            <h6>@Model.KyQuays[i].ElementAt(7)</h6>
+                                        </div>
+                                    </td>
+                                }
+                                else if (Model.KyQuays[i].ElementAt(7) >= 16 && Model.KyQuays[i].ElementAt(7) <= 23)
+                                {
+                                    <td class="Vang">
+                                        <div class="font-italic fs-5 text-secondary align-items-lg-center align-middle text-center">
+                                            <h6>@Model.KyQuays[i].ElementAt(7)</h6>
+                                        </div>
+                                    </td>
+                                }
+                                else if (Model.KyQuays[i].ElementAt(7) >= 24 && Model.KyQuays[i].ElementAt(7) <= 31)
+                                {
+                                    <td class="Luc">
+                                        <div class="font-italic fs-5 text-secondary align-items-lg-center align-middle text-center">
+                                            <h6>@Model.KyQuays[i].ElementAt(7)</h6>
+                                        </div>
+                                    </td>
+                                }
+                                else if (Model.KyQuays[i].ElementAt(7) >= 32 && Model.KyQuays[i].ElementAt(7) <= 39)
+                                {
+                                    <td class="Lam">
+                                        <div class="font-italic fs-5 text-secondary align-items-lg-center align-middle text-center">
+                                            <h6>@Model.KyQuays[i].ElementAt(7)</h6>
+                                        </div>
+                                    </td>
+                                }
+                                else if (Model.KyQuays[i].ElementAt(7) >= 41 && Model.KyQuays[i].ElementAt(7) <= 47)
+                                {
+                                    <td class="Cham">
+                                        <div class="font-italic fs-5 text-secondary align-items-lg-center align-middle text-center">
+                                            <h6>@Model.KyQuays[i].ElementAt(7)</h6>
+                                        </div>
+                                    </td>
+                                }
+                                else if (Model.KyQuays[i].ElementAt(7) >= 48 && Model.KyQuays[i].ElementAt(7) <= 55)
+                                {
+                                    <td class="Tim">
+                                        <div class="font-italic fs-5 text-secondary align-items-lg-center align-middle text-center">
+                                            <h6>@Model.KyQuays[i].ElementAt(7)</h6>
+                                        </div>
+                                    </td>
+                                }
+                                else if (Model.KyQuays[i].ElementAt(7) >= 56 && Model.KyQuays[i].ElementAt(7) <= 63)
+                                {
+                                    <td class="BlueGreen">
+                                        <div class="font-italic fs-5 text-secondary align-items-lg-center align-middle text-center">
+                                            <h6>@Model.KyQuays[i].ElementAt(7)</h6>
+                                        </div>
+                                    </td>
+                                }
+                                else if (Model.KyQuays[i].ElementAt(7) >= 64 && Model.KyQuays[i].ElementAt(7) <= 71)
+                                {
+                                    <td class="Pink">
+                                        <div class="font-italic fs-5 text-secondary align-items-lg-center align-middle text-center">
+                                            <h6>@Model.KyQuays[i].ElementAt(7)</h6>
+                                        </div>
+                                    </td>
+                                }
+                                else if (Model.KyQuays[i].ElementAt(7) >= 72 && Model.KyQuays[i].ElementAt(7) <= 80)
+                                {
+                                    <td class="LightBlue">
+                                        <div class="font-italic fs-5 text-secondary align-items-lg-center align-middle text-center">
+                                            <h6>@Model.KyQuays[i].ElementAt(7)</h6>
+                                        </div>
+                                    </td>
+                                }
+                            }
+                        </tr>
+                        <tr>
+                            @foreach (var i in Model.KyQuays.Keys.OrderByDescending(x => x.Value))
+                            {
+                                if (Model.KyQuays[i].ElementAt(8) >= 1 && Model.KyQuays[i].ElementAt(8) <= 7)
+                                {
+                                    <td class="Do">
+                                        <div class="font-italic fs-5 text-secondary align-items-lg-center align-middle text-center">
+                                            <h6>@Model.KyQuays[i].ElementAt(8)</h6>
+                                        </div>
+                                    </td>
+                                }
+                                else if (Model.KyQuays[i].ElementAt(8) >= 8 && Model.KyQuays[i].ElementAt(8) <= 15)
+                                {
+                                    <td class="Cam">
+                                        <div class="font-italic fs-5 text-secondary align-items-lg-center align-middle text-center">
+                                            <h6>@Model.KyQuays[i].ElementAt(8)</h6>
+                                        </div>
+                                    </td>
+                                }
+                                else if (Model.KyQuays[i].ElementAt(8) >= 16 && Model.KyQuays[i].ElementAt(8) <= 23)
+                                {
+                                    <td class="Vang">
+                                        <div class="font-italic fs-5 text-secondary align-items-lg-center align-middle text-center">
+                                            <h6>@Model.KyQuays[i].ElementAt(8)</h6>
+                                        </div>
+                                    </td>
+                                }
+                                else if (Model.KyQuays[i].ElementAt(8) >= 24 && Model.KyQuays[i].ElementAt(8) <= 31)
+                                {
+                                    <td class="Luc">
+                                        <div class="font-italic fs-5 text-secondary align-items-lg-center align-middle text-center">
+                                            <h6>@Model.KyQuays[i].ElementAt(8)</h6>
+                                        </div>
+                                    </td>
+                                }
+                                else if (Model.KyQuays[i].ElementAt(8) >= 32 && Model.KyQuays[i].ElementAt(8) <= 39)
+                                {
+                                    <td class="Lam">
+                                        <div class="font-italic fs-5 text-secondary align-items-lg-center align-middle text-center">
+                                            <h6>@Model.KyQuays[i].ElementAt(8)</h6>
+                                        </div>
+                                    </td>
+                                }
+                                else if (Model.KyQuays[i].ElementAt(8) >= 41 && Model.KyQuays[i].ElementAt(8) <= 47)
+                                {
+                                    <td class="Cham">
+                                        <div class="font-italic fs-5 text-secondary align-items-lg-center align-middle text-center">
+                                            <h6>@Model.KyQuays[i].ElementAt(8)</h6>
+                                        </div>
+                                    </td>
+                                }
+                                else if (Model.KyQuays[i].ElementAt(8) >= 48 && Model.KyQuays[i].ElementAt(8) <= 55)
+                                {
+                                    <td class="Tim">
+                                        <div class="font-italic fs-5 text-secondary align-items-lg-center align-middle text-center">
+                                            <h6>@Model.KyQuays[i].ElementAt(8)</h6>
+                                        </div>
+                                    </td>
+                                }
+                                else if (Model.KyQuays[i].ElementAt(8) >= 56 && Model.KyQuays[i].ElementAt(8) <= 63)
+                                {
+                                    <td class="BlueGreen">
+                                        <div class="font-italic fs-5 text-secondary align-items-lg-center align-middle text-center">
+                                            <h6>@Model.KyQuays[i].ElementAt(8)</h6>
+                                        </div>
+                                    </td>
+                                }
+                                else if (Model.KyQuays[i].ElementAt(8) >= 64 && Model.KyQuays[i].ElementAt(8) <= 71)
+                                {
+                                    <td class="Pink">
+                                        <div class="font-italic fs-5 text-secondary align-items-lg-center align-middle text-center">
+                                            <h6>@Model.KyQuays[i].ElementAt(8)</h6>
+                                        </div>
+                                    </td>
+                                }
+                                else if (Model.KyQuays[i].ElementAt(8) >= 72 && Model.KyQuays[i].ElementAt(8) <= 80)
+                                {
+                                    <td class="LightBlue">
+                                        <div class="font-italic fs-5 text-secondary align-items-lg-center align-middle text-center">
+                                            <h6>@Model.KyQuays[i].ElementAt(8)</h6>
+                                        </div>
+                                    </td>
+                                }
+                            }
+                        </tr>
+                        <tr>
+                            @foreach (var i in Model.KyQuays.Keys.OrderByDescending(x => x.Value))
+                            {
+                                if (Model.KyQuays[i].ElementAt(9) >= 1 && Model.KyQuays[i].ElementAt(9) <= 7)
+                                {
+                                    <td class="Do">
+                                        <div class="font-italic fs-5 text-secondary align-items-lg-center align-middle text-center">
+                                            <h6>@Model.KyQuays[i].ElementAt(9)</h6>
+                                        </div>
+                                    </td>
+                                }
+                                else if (Model.KyQuays[i].ElementAt(9) >= 8 && Model.KyQuays[i].ElementAt(9) <= 15)
+                                {
+                                    <td class="Cam">
+                                        <div class="font-italic fs-5 text-secondary align-items-lg-center align-middle text-center">
+                                            <h6>@Model.KyQuays[i].ElementAt(9)</h6>
+                                        </div>
+                                    </td>
+                                }
+                                else if (Model.KyQuays[i].ElementAt(9) >= 16 && Model.KyQuays[i].ElementAt(9) <= 23)
+                                {
+                                    <td class="Vang">
+                                        <div class="font-italic fs-5 text-secondary align-items-lg-center align-middle text-center">
+                                            <h6>@Model.KyQuays[i].ElementAt(9)</h6>
+                                        </div>
+                                    </td>
+                                }
+                                else if (Model.KyQuays[i].ElementAt(9) >= 24 && Model.KyQuays[i].ElementAt(9) <= 31)
+                                {
+                                    <td class="Luc">
+                                        <div class="font-italic fs-5 text-secondary align-items-lg-center align-middle text-center">
+                                            <h6>@Model.KyQuays[i].ElementAt(9)</h6>
+                                        </div>
+                                    </td>
+                                }
+                                else if (Model.KyQuays[i].ElementAt(9) >= 32 && Model.KyQuays[i].ElementAt(9) <= 39)
+                                {
+                                    <td class="Lam">
+                                        <div class="font-italic fs-5 text-secondary align-items-lg-center align-middle text-center">
+                                            <h6>@Model.KyQuays[i].ElementAt(9)</h6>
+                                        </div>
+                                    </td>
+                                }
+                                else if (Model.KyQuays[i].ElementAt(9) >= 41 && Model.KyQuays[i].ElementAt(9) <= 47)
+                                {
+                                    <td class="Cham">
+                                        <div class="font-italic fs-5 text-secondary align-items-lg-center align-middle text-center">
+                                            <h6>@Model.KyQuays[i].ElementAt(9)</h6>
+                                        </div>
+                                    </td>
+                                }
+                                else if (Model.KyQuays[i].ElementAt(9) >= 48 && Model.KyQuays[i].ElementAt(9) <= 55)
+                                {
+                                    <td class="Tim">
+                                        <div class="font-italic fs-5 text-secondary align-items-lg-center align-middle text-center">
+                                            <h6>@Model.KyQuays[i].ElementAt(9)</h6>
+                                        </div>
+                                    </td>
+                                }
+                                else if (Model.KyQuays[i].ElementAt(9) >= 56 && Model.KyQuays[i].ElementAt(9) <= 63)
+                                {
+                                    <td class="BlueGreen">
+                                        <div class="font-italic fs-5 text-secondary align-items-lg-center align-middle text-center">
+                                            <h6>@Model.KyQuays[i].ElementAt(9)</h6>
+                                        </div>
+                                    </td>
+                                }
+                                else if (Model.KyQuays[i].ElementAt(9) >= 64 && Model.KyQuays[i].ElementAt(9) <= 71)
+                                {
+                                    <td class="Pink">
+                                        <div class="font-italic fs-5 text-secondary align-items-lg-center align-middle text-center">
+                                            <h6>@Model.KyQuays[i].ElementAt(9)</h6>
+                                        </div>
+                                    </td>
+                                }
+                                else if (Model.KyQuays[i].ElementAt(9) >= 72 && Model.KyQuays[i].ElementAt(9) <= 80)
+                                {
+                                    <td class="LightBlue">
+                                        <div class="font-italic fs-5 text-secondary align-items-lg-center align-middle text-center">
+                                            <h6>@Model.KyQuays[i].ElementAt(9)</h6>
+                                        </div>
+                                    </td>
+                                }
+                            }
+                        </tr>
+                        <tr>
+                            @foreach (var i in Model.KyQuays.Keys.OrderByDescending(x => x.Value))
+                            {
+                                if (Model.KyQuays[i].ElementAt(10) >= 1 && Model.KyQuays[i].ElementAt(10) <= 7)
+                                {
+                                    <td class="Do">
+                                        <div class="font-italic fs-5 text-secondary align-items-lg-center align-middle text-center">
+                                            <h6>@Model.KyQuays[i].ElementAt(10)</h6>
+                                        </div>
+                                    </td>
+                                }
+                                else if (Model.KyQuays[i].ElementAt(10) >= 8 && Model.KyQuays[i].ElementAt(10) <= 15)
+                                {
+                                    <td class="Cam">
+                                        <div class="font-italic fs-5 text-secondary align-items-lg-center align-middle text-center">
+                                            <h6>@Model.KyQuays[i].ElementAt(10)</h6>
+                                        </div>
+                                    </td>
+                                }
+                                else if (Model.KyQuays[i].ElementAt(10) >= 16 && Model.KyQuays[i].ElementAt(10) <= 23)
+                                {
+                                    <td class="Vang">
+                                        <div class="font-italic fs-5 text-secondary align-items-lg-center align-middle text-center">
+                                            <h6>@Model.KyQuays[i].ElementAt(10)</h6>
+                                        </div>
+                                    </td>
+                                }
+                                else if (Model.KyQuays[i].ElementAt(10) >= 24 && Model.KyQuays[i].ElementAt(10) <= 31)
+                                {
+                                    <td class="Luc">
+                                        <div class="font-italic fs-5 text-secondary align-items-lg-center align-middle text-center">
+                                            <h6>@Model.KyQuays[i].ElementAt(10)</h6>
+                                        </div>
+                                    </td>
+                                }
+                                else if (Model.KyQuays[i].ElementAt(10) >= 32 && Model.KyQuays[i].ElementAt(10) <= 39)
+                                {
+                                    <td class="Lam">
+                                        <div class="font-italic fs-5 text-secondary align-items-lg-center align-middle text-center">
+                                            <h6>@Model.KyQuays[i].ElementAt(10)</h6>
+                                        </div>
+                                    </td>
+                                }
+                                else if (Model.KyQuays[i].ElementAt(10) >= 41 && Model.KyQuays[i].ElementAt(10) <= 47)
+                                {
+                                    <td class="Cham">
+                                        <div class="font-italic fs-5 text-secondary align-items-lg-center align-middle text-center">
+                                            <h6>@Model.KyQuays[i].ElementAt(10)</h6>
+                                        </div>
+                                    </td>
+                                }
+                                else if (Model.KyQuays[i].ElementAt(10) >= 48 && Model.KyQuays[i].ElementAt(10) <= 55)
+                                {
+                                    <td class="Tim">
+                                        <div class="font-italic fs-5 text-secondary align-items-lg-center align-middle text-center">
+                                            <h6>@Model.KyQuays[i].ElementAt(10)</h6>
+                                        </div>
+                                    </td>
+                                }
+                                else if (Model.KyQuays[i].ElementAt(10) >= 56 && Model.KyQuays[i].ElementAt(10) <= 63)
+                                {
+                                    <td class="BlueGreen">
+                                        <div class="font-italic fs-5 text-secondary align-items-lg-center align-middle text-center">
+                                            <h6>@Model.KyQuays[i].ElementAt(10)</h6>
+                                        </div>
+                                    </td>
+                                }
+                                else if (Model.KyQuays[i].ElementAt(10) >= 64 && Model.KyQuays[i].ElementAt(10) <= 71)
+                                {
+                                    <td class="Pink">
+                                        <div class="font-italic fs-5 text-secondary align-items-lg-center align-middle text-center">
+                                            <h6>@Model.KyQuays[i].ElementAt(10)</h6>
+                                        </div>
+                                    </td>
+                                }
+                                else if (Model.KyQuays[i].ElementAt(10) >= 72 && Model.KyQuays[i].ElementAt(10) <= 80)
+                                {
+                                    <td class="LightBlue">
+                                        <div class="font-italic fs-5 text-secondary align-items-lg-center align-middle text-center">
+                                            <h6>@Model.KyQuays[i].ElementAt(10)</h6>
+                                        </div>
+                                    </td>
+                                }
+                            }
+                        </tr>
+                        <tr>
+                            @foreach (var i in Model.KyQuays.Keys.OrderByDescending(x => x.Value))
+                            {
+                                if (Model.KyQuays[i].ElementAt(11) >= 1 && Model.KyQuays[i].ElementAt(11) <= 7)
+                                {
+                                    <td class="Do">
+                                        <div class="font-italic fs-5 text-secondary align-items-lg-center align-middle text-center">
+                                            <h6>@Model.KyQuays[i].ElementAt(11)</h6>
+                                        </div>
+                                    </td>
+                                }
+                                else if (Model.KyQuays[i].ElementAt(11) >= 8 && Model.KyQuays[i].ElementAt(11) <= 15)
+                                {
+                                    <td class="Cam">
+                                        <div class="font-italic fs-5 text-secondary align-items-lg-center align-middle text-center">
+                                            <h6>@Model.KyQuays[i].ElementAt(11)</h6>
+                                        </div>
+                                    </td>
+                                }
+                                else if (Model.KyQuays[i].ElementAt(11) >= 16 && Model.KyQuays[i].ElementAt(11) <= 23)
+                                {
+                                    <td class="Vang">
+                                        <div class="font-italic fs-5 text-secondary align-items-lg-center align-middle text-center">
+                                            <h6>@Model.KyQuays[i].ElementAt(11)</h6>
+                                        </div>
+                                    </td>
+                                }
+                                else if (Model.KyQuays[i].ElementAt(11) >= 24 && Model.KyQuays[i].ElementAt(11) <= 31)
+                                {
+                                    <td class="Luc">
+                                        <div class="font-italic fs-5 text-secondary align-items-lg-center align-middle text-center">
+                                            <h6>@Model.KyQuays[i].ElementAt(11)</h6>
+                                        </div>
+                                    </td>
+                                }
+                                else if (Model.KyQuays[i].ElementAt(11) >= 32 && Model.KyQuays[i].ElementAt(11) <= 39)
+                                {
+                                    <td class="Lam">
+                                        <div class="font-italic fs-5 text-secondary align-items-lg-center align-middle text-center">
+                                            <h6>@Model.KyQuays[i].ElementAt(11)</h6>
+                                        </div>
+                                    </td>
+                                }
+                                else if (Model.KyQuays[i].ElementAt(11) >= 41 && Model.KyQuays[i].ElementAt(11) <= 47)
+                                {
+                                    <td class="Cham">
+                                        <div class="font-italic fs-5 text-secondary align-items-lg-center align-middle text-center">
+                                            <h6>@Model.KyQuays[i].ElementAt(11)</h6>
+                                        </div>
+                                    </td>
+                                }
+                                else if (Model.KyQuays[i].ElementAt(11) >= 48 && Model.KyQuays[i].ElementAt(11) <= 55)
+                                {
+                                    <td class="Tim">
+                                        <div class="font-italic fs-5 text-secondary align-items-lg-center align-middle text-center">
+                                            <h6>@Model.KyQuays[i].ElementAt(11)</h6>
+                                        </div>
+                                    </td>
+                                }
+                                else if (Model.KyQuays[i].ElementAt(11) >= 56 && Model.KyQuays[i].ElementAt(11) <= 63)
+                                {
+                                    <td class="BlueGreen">
+                                        <div class="font-italic fs-5 text-secondary align-items-lg-center align-middle text-center">
+                                            <h6>@Model.KyQuays[i].ElementAt(11)</h6>
+                                        </div>
+                                    </td>
+                                }
+                                else if (Model.KyQuays[i].ElementAt(11) >= 64 && Model.KyQuays[i].ElementAt(11) <= 71)
+                                {
+                                    <td class="Pink">
+                                        <div class="font-italic fs-5 text-secondary align-items-lg-center align-middle text-center">
+                                            <h6>@Model.KyQuays[i].ElementAt(11)</h6>
+                                        </div>
+                                    </td>
+                                }
+                                else if (Model.KyQuays[i].ElementAt(11) >= 72 && Model.KyQuays[i].ElementAt(11) <= 80)
+                                {
+                                    <td class="LightBlue">
+                                        <div class="font-italic fs-5 text-secondary align-items-lg-center align-middle text-center">
+                                            <h6>@Model.KyQuays[i].ElementAt(11)</h6>
+                                        </div>
+                                    </td>
+                                }
+                            }
+                        </tr>
+                        <tr>
+                            @foreach (var i in Model.KyQuays.Keys.OrderByDescending(x => x.Value))
+                            {
+                                if (Model.KyQuays[i].ElementAt(12) >= 1 && Model.KyQuays[i].ElementAt(12) <= 7)
+                                {
+                                    <td class="Do">
+                                        <div class="font-italic fs-5 text-secondary align-items-lg-center align-middle text-center">
+                                            <h6>@Model.KyQuays[i].ElementAt(12)</h6>
+                                        </div>
+                                    </td>
+                                }
+                                else if (Model.KyQuays[i].ElementAt(12) >= 8 && Model.KyQuays[i].ElementAt(12) <= 15)
+                                {
+                                    <td class="Cam">
+                                        <div class="font-italic fs-5 text-secondary align-items-lg-center align-middle text-center">
+                                            <h6>@Model.KyQuays[i].ElementAt(12)</h6>
+                                        </div>
+                                    </td>
+                                }
+                                else if (Model.KyQuays[i].ElementAt(12) >= 16 && Model.KyQuays[i].ElementAt(12) <= 23)
+                                {
+                                    <td class="Vang">
+                                        <div class="font-italic fs-5 text-secondary align-items-lg-center align-middle text-center">
+                                            <h6>@Model.KyQuays[i].ElementAt(12)</h6>
+                                        </div>
+                                    </td>
+                                }
+                                else if (Model.KyQuays[i].ElementAt(12) >= 24 && Model.KyQuays[i].ElementAt(12) <= 31)
+                                {
+                                    <td class="Luc">
+                                        <div class="font-italic fs-5 text-secondary align-items-lg-center align-middle text-center">
+                                            <h6>@Model.KyQuays[i].ElementAt(12)</h6>
+                                        </div>
+                                    </td>
+                                }
+                                else if (Model.KyQuays[i].ElementAt(12) >= 32 && Model.KyQuays[i].ElementAt(12) <= 39)
+                                {
+                                    <td class="Lam">
+                                        <div class="font-italic fs-5 text-secondary align-items-lg-center align-middle text-center">
+                                            <h6>@Model.KyQuays[i].ElementAt(12)</h6>
+                                        </div>
+                                    </td>
+                                }
+                                else if (Model.KyQuays[i].ElementAt(12) >= 41 && Model.KyQuays[i].ElementAt(12) <= 47)
+                                {
+                                    <td class="Cham">
+                                        <div class="font-italic fs-5 text-secondary align-items-lg-center align-middle text-center">
+                                            <h6>@Model.KyQuays[i].ElementAt(12)</h6>
+                                        </div>
+                                    </td>
+                                }
+                                else if (Model.KyQuays[i].ElementAt(12) >= 48 && Model.KyQuays[i].ElementAt(12) <= 55)
+                                {
+                                    <td class="Tim">
+                                        <div class="font-italic fs-5 text-secondary align-items-lg-center align-middle text-center">
+                                            <h6>@Model.KyQuays[i].ElementAt(12)</h6>
+                                        </div>
+                                    </td>
+                                }
+                                else if (Model.KyQuays[i].ElementAt(12) >= 56 && Model.KyQuays[i].ElementAt(12) <= 63)
+                                {
+                                    <td class="BlueGreen">
+                                        <div class="font-italic fs-5 text-secondary align-items-lg-center align-middle text-center">
+                                            <h6>@Model.KyQuays[i].ElementAt(12)</h6>
+                                        </div>
+                                    </td>
+                                }
+                                else if (Model.KyQuays[i].ElementAt(12) >= 64 && Model.KyQuays[i].ElementAt(12) <= 71)
+                                {
+                                    <td class="Pink">
+                                        <div class="font-italic fs-5 text-secondary align-items-lg-center align-middle text-center">
+                                            <h6>@Model.KyQuays[i].ElementAt(12)</h6>
+                                        </div>
+                                    </td>
+                                }
+                                else if (Model.KyQuays[i].ElementAt(12) >= 72 && Model.KyQuays[i].ElementAt(12) <= 80)
+                                {
+                                    <td class="LightBlue">
+                                        <div class="font-italic fs-5 text-secondary align-items-lg-center align-middle text-center">
+                                            <h6>@Model.KyQuays[i].ElementAt(12)</h6>
+                                        </div>
+                                    </td>
+                                }
+                            }
+                        </tr>
+                        <tr>
+                            @foreach (var i in Model.KyQuays.Keys.OrderByDescending(x => x.Value))
+                            {
+                                if (Model.KyQuays[i].ElementAt(13) >= 1 && Model.KyQuays[i].ElementAt(13) <= 7)
+                                {
+                                    <td class="Do">
+                                        <div class="font-italic fs-5 text-secondary align-items-lg-center align-middle text-center">
+                                            <h6>@Model.KyQuays[i].ElementAt(13)</h6>
+                                        </div>
+                                    </td>
+                                }
+                                else if (Model.KyQuays[i].ElementAt(13) >= 8 && Model.KyQuays[i].ElementAt(13) <= 15)
+                                {
+                                    <td class="Cam">
+                                        <div class="font-italic fs-5 text-secondary align-items-lg-center align-middle text-center">
+                                            <h6>@Model.KyQuays[i].ElementAt(13)</h6>
+                                        </div>
+                                    </td>
+                                }
+                                else if (Model.KyQuays[i].ElementAt(13) >= 16 && Model.KyQuays[i].ElementAt(13) <= 23)
+                                {
+                                    <td class="Vang">
+                                        <div class="font-italic fs-5 text-secondary align-items-lg-center align-middle text-center">
+                                            <h6>@Model.KyQuays[i].ElementAt(13)</h6>
+                                        </div>
+                                    </td>
+                                }
+                                else if (Model.KyQuays[i].ElementAt(13) >= 24 && Model.KyQuays[i].ElementAt(13) <= 31)
+                                {
+                                    <td class="Luc">
+                                        <div class="font-italic fs-5 text-secondary align-items-lg-center align-middle text-center">
+                                            <h6>@Model.KyQuays[i].ElementAt(13)</h6>
+                                        </div>
+                                    </td>
+                                }
+                                else if (Model.KyQuays[i].ElementAt(13) >= 32 && Model.KyQuays[i].ElementAt(13) <= 39)
+                                {
+                                    <td class="Lam">
+                                        <div class="font-italic fs-5 text-secondary align-items-lg-center align-middle text-center">
+                                            <h6>@Model.KyQuays[i].ElementAt(13)</h6>
+                                        </div>
+                                    </td>
+                                }
+                                else if (Model.KyQuays[i].ElementAt(13) >= 41 && Model.KyQuays[i].ElementAt(13) <= 47)
+                                {
+                                    <td class="Cham">
+                                        <div class="font-italic fs-5 text-secondary align-items-lg-center align-middle text-center">
+                                            <h6>@Model.KyQuays[i].ElementAt(13)</h6>
+                                        </div>
+                                    </td>
+                                }
+                                else if (Model.KyQuays[i].ElementAt(13) >= 48 && Model.KyQuays[i].ElementAt(13) <= 55)
+                                {
+                                    <td class="Tim">
+                                        <div class="font-italic fs-5 text-secondary align-items-lg-center align-middle text-center">
+                                            <h6>@Model.KyQuays[i].ElementAt(13)</h6>
+                                        </div>
+                                    </td>
+                                }
+                                else if (Model.KyQuays[i].ElementAt(13) >= 56 && Model.KyQuays[i].ElementAt(13) <= 63)
+                                {
+                                    <td class="BlueGreen">
+                                        <div class="font-italic fs-5 text-secondary align-items-lg-center align-middle text-center">
+                                            <h6>@Model.KyQuays[i].ElementAt(13)</h6>
+                                        </div>
+                                    </td>
+                                }
+                                else if (Model.KyQuays[i].ElementAt(13) >= 64 && Model.KyQuays[i].ElementAt(13) <= 71)
+                                {
+                                    <td class="Pink">
+                                        <div class="font-italic fs-5 text-secondary align-items-lg-center align-middle text-center">
+                                            <h6>@Model.KyQuays[i].ElementAt(13)</h6>
+                                        </div>
+                                    </td>
+                                }
+                                else if (Model.KyQuays[i].ElementAt(13) >= 72 && Model.KyQuays[i].ElementAt(13) <= 80)
+                                {
+                                    <td class="LightBlue">
+                                        <div class="font-italic fs-5 text-secondary align-items-lg-center align-middle text-center">
+                                            <h6>@Model.KyQuays[i].ElementAt(13)</h6>
+                                        </div>
+                                    </td>
+                                }
+                            }
+                        </tr>
+                        <tr>
+                            @foreach (var i in Model.KyQuays.Keys.OrderByDescending(x => x.Value))
+                            {
+                                if (Model.KyQuays[i].ElementAt(14) >= 1 && Model.KyQuays[i].ElementAt(14) <= 7)
+                                {
+                                    <td class="Do">
+                                        <div class="font-italic fs-5 text-secondary align-items-lg-center align-middle text-center">
+                                            <h6>@Model.KyQuays[i].ElementAt(14)</h6>
+                                        </div>
+                                    </td>
+                                }
+                                else if (Model.KyQuays[i].ElementAt(14) >= 8 && Model.KyQuays[i].ElementAt(14) <= 15)
+                                {
+                                    <td class="Cam">
+                                        <div class="font-italic fs-5 text-secondary align-items-lg-center align-middle text-center">
+                                            <h6>@Model.KyQuays[i].ElementAt(14)</h6>
+                                        </div>
+                                    </td>
+                                }
+                                else if (Model.KyQuays[i].ElementAt(14) >= 16 && Model.KyQuays[i].ElementAt(14) <= 23)
+                                {
+                                    <td class="Vang">
+                                        <div class="font-italic fs-5 text-secondary align-items-lg-center align-middle text-center">
+                                            <h6>@Model.KyQuays[i].ElementAt(14)</h6>
+                                        </div>
+                                    </td>
+                                }
+                                else if (Model.KyQuays[i].ElementAt(14) >= 24 && Model.KyQuays[i].ElementAt(14) <= 31)
+                                {
+                                    <td class="Luc">
+                                        <div class="font-italic fs-5 text-secondary align-items-lg-center align-middle text-center">
+                                            <h6>@Model.KyQuays[i].ElementAt(14)</h6>
+                                        </div>
+                                    </td>
+                                }
+                                else if (Model.KyQuays[i].ElementAt(14) >= 32 && Model.KyQuays[i].ElementAt(14) <= 39)
+                                {
+                                    <td class="Lam">
+                                        <div class="font-italic fs-5 text-secondary align-items-lg-center align-middle text-center">
+                                            <h6>@Model.KyQuays[i].ElementAt(14)</h6>
+                                        </div>
+                                    </td>
+                                }
+                                else if (Model.KyQuays[i].ElementAt(14) >= 41 && Model.KyQuays[i].ElementAt(14) <= 47)
+                                {
+                                    <td class="Cham">
+                                        <div class="font-italic fs-5 text-secondary align-items-lg-center align-middle text-center">
+                                            <h6>@Model.KyQuays[i].ElementAt(14)</h6>
+                                        </div>
+                                    </td>
+                                }
+                                else if (Model.KyQuays[i].ElementAt(14) >= 48 && Model.KyQuays[i].ElementAt(14) <= 55)
+                                {
+                                    <td class="Tim">
+                                        <div class="font-italic fs-5 text-secondary align-items-lg-center align-middle text-center">
+                                            <h6>@Model.KyQuays[i].ElementAt(14)</h6>
+                                        </div>
+                                    </td>
+                                }
+                                else if (Model.KyQuays[i].ElementAt(14) >= 56 && Model.KyQuays[i].ElementAt(14) <= 63)
+                                {
+                                    <td class="BlueGreen">
+                                        <div class="font-italic fs-5 text-secondary align-items-lg-center align-middle text-center">
+                                            <h6>@Model.KyQuays[i].ElementAt(14)</h6>
+                                        </div>
+                                    </td>
+                                }
+                                else if (Model.KyQuays[i].ElementAt(14) >= 64 && Model.KyQuays[i].ElementAt(14) <= 71)
+                                {
+                                    <td class="Pink">
+                                        <div class="font-italic fs-5 text-secondary align-items-lg-center align-middle text-center">
+                                            <h6>@Model.KyQuays[i].ElementAt(14)</h6>
+                                        </div>
+                                    </td>
+                                }
+                                else if (Model.KyQuays[i].ElementAt(14) >= 72 && Model.KyQuays[i].ElementAt(14) <= 80)
+                                {
+                                    <td class="LightBlue">
+                                        <div class="font-italic fs-5 text-secondary align-items-lg-center align-middle text-center">
+                                            <h6>@Model.KyQuays[i].ElementAt(14)</h6>
+                                        </div>
+                                    </td>
+                                }
+                            }
+                        </tr>
+                        <tr>
+                            @foreach (var i in Model.KyQuays.Keys.OrderByDescending(x => x.Value))
+                            {
+                                if (Model.KyQuays[i].ElementAt(15) >= 1 && Model.KyQuays[i].ElementAt(15) <= 7)
+                                {
+                                    <td class="Do">
+                                        <div class="font-italic fs-5 text-secondary align-items-lg-center align-middle text-center">
+                                            <h6>@Model.KyQuays[i].ElementAt(15)</h6>
+                                        </div>
+                                    </td>
+                                }
+                                else if (Model.KyQuays[i].ElementAt(15) >= 8 && Model.KyQuays[i].ElementAt(15) <= 15)
+                                {
+                                    <td class="Cam">
+                                        <div class="font-italic fs-5 text-secondary align-items-lg-center align-middle text-center">
+                                            <h6>@Model.KyQuays[i].ElementAt(15)</h6>
+                                        </div>
+                                    </td>
+                                }
+                                else if (Model.KyQuays[i].ElementAt(15) >= 16 && Model.KyQuays[i].ElementAt(15) <= 23)
+                                {
+                                    <td class="Vang">
+                                        <div class="font-italic fs-5 text-secondary align-items-lg-center align-middle text-center">
+                                            <h6>@Model.KyQuays[i].ElementAt(15)</h6>
+                                        </div>
+                                    </td>
+                                }
+                                else if (Model.KyQuays[i].ElementAt(15) >= 24 && Model.KyQuays[i].ElementAt(15) <= 31)
+                                {
+                                    <td class="Luc">
+                                        <div class="font-italic fs-5 text-secondary align-items-lg-center align-middle text-center">
+                                            <h6>@Model.KyQuays[i].ElementAt(15)</h6>
+                                        </div>
+                                    </td>
+                                }
+                                else if (Model.KyQuays[i].ElementAt(15) >= 32 && Model.KyQuays[i].ElementAt(15) <= 39)
+                                {
+                                    <td class="Lam">
+                                        <div class="font-italic fs-5 text-secondary align-items-lg-center align-middle text-center">
+                                            <h6>@Model.KyQuays[i].ElementAt(15)</h6>
+                                        </div>
+                                    </td>
+                                }
+                                else if (Model.KyQuays[i].ElementAt(15) >= 41 && Model.KyQuays[i].ElementAt(15) <= 47)
+                                {
+                                    <td class="Cham">
+                                        <div class="font-italic fs-5 text-secondary align-items-lg-center align-middle text-center">
+                                            <h6>@Model.KyQuays[i].ElementAt(15)</h6>
+                                        </div>
+                                    </td>
+                                }
+                                else if (Model.KyQuays[i].ElementAt(15) >= 48 && Model.KyQuays[i].ElementAt(15) <= 55)
+                                {
+                                    <td class="Tim">
+                                        <div class="font-italic fs-5 text-secondary align-items-lg-center align-middle text-center">
+                                            <h6>@Model.KyQuays[i].ElementAt(15)</h6>
+                                        </div>
+                                    </td>
+                                }
+                                else if (Model.KyQuays[i].ElementAt(15) >= 56 && Model.KyQuays[i].ElementAt(15) <= 63)
+                                {
+                                    <td class="BlueGreen">
+                                        <div class="font-italic fs-5 text-secondary align-items-lg-center align-middle text-center">
+                                            <h6>@Model.KyQuays[i].ElementAt(15)</h6>
+                                        </div>
+                                    </td>
+                                }
+                                else if (Model.KyQuays[i].ElementAt(15) >= 64 && Model.KyQuays[i].ElementAt(15) <= 71)
+                                {
+                                    <td class="Pink">
+                                        <div class="font-italic fs-5 text-secondary align-items-lg-center align-middle text-center">
+                                            <h6>@Model.KyQuays[i].ElementAt(15)</h6>
+                                        </div>
+                                    </td>
+                                }
+                                else if (Model.KyQuays[i].ElementAt(15) >= 72 && Model.KyQuays[i].ElementAt(15) <= 80)
+                                {
+                                    <td class="LightBlue">
+                                        <div class="font-italic fs-5 text-secondary align-items-lg-center align-middle text-center">
+                                            <h6>@Model.KyQuays[i].ElementAt(15)</h6>
+                                        </div>
+                                    </td>
+                                }
+                            }
+                        </tr>
+                        <tr>
+                            @foreach (var i in Model.KyQuays.Keys.OrderByDescending(x => x.Value))
+                            {
+                                if (Model.KyQuays[i].ElementAt(16) >= 1 && Model.KyQuays[i].ElementAt(16) <= 7)
+                                {
+                                    <td class="Do">
+                                        <div class="font-italic fs-5 text-secondary align-items-lg-center align-middle text-center">
+                                            <h6>@Model.KyQuays[i].ElementAt(16)</h6>
+                                        </div>
+                                    </td>
+                                }
+                                else if (Model.KyQuays[i].ElementAt(16) >= 8 && Model.KyQuays[i].ElementAt(16) <= 15)
+                                {
+                                    <td class="Cam">
+                                        <div class="font-italic fs-5 text-secondary align-items-lg-center align-middle text-center">
+                                            <h6>@Model.KyQuays[i].ElementAt(16)</h6>
+                                        </div>
+                                    </td>
+                                }
+                                else if (Model.KyQuays[i].ElementAt(16) >= 16 && Model.KyQuays[i].ElementAt(16) <= 23)
+                                {
+                                    <td class="Vang">
+                                        <div class="font-italic fs-5 text-secondary align-items-lg-center align-middle text-center">
+                                            <h6>@Model.KyQuays[i].ElementAt(16)</h6>
+                                        </div>
+                                    </td>
+                                }
+                                else if (Model.KyQuays[i].ElementAt(16) >= 24 && Model.KyQuays[i].ElementAt(16) <= 31)
+                                {
+                                    <td class="Luc">
+                                        <div class="font-italic fs-5 text-secondary align-items-lg-center align-middle text-center">
+                                            <h6>@Model.KyQuays[i].ElementAt(16)</h6>
+                                        </div>
+                                    </td>
+                                }
+                                else if (Model.KyQuays[i].ElementAt(16) >= 32 && Model.KyQuays[i].ElementAt(16) <= 39)
+                                {
+                                    <td class="Lam">
+                                        <div class="font-italic fs-5 text-secondary align-items-lg-center align-middle text-center">
+                                            <h6>@Model.KyQuays[i].ElementAt(16)</h6>
+                                        </div>
+                                    </td>
+                                }
+                                else if (Model.KyQuays[i].ElementAt(16) >= 41 && Model.KyQuays[i].ElementAt(16) <= 47)
+                                {
+                                    <td class="Cham">
+                                        <div class="font-italic fs-5 text-secondary align-items-lg-center align-middle text-center">
+                                            <h6>@Model.KyQuays[i].ElementAt(16)</h6>
+                                        </div>
+                                    </td>
+                                }
+                                else if (Model.KyQuays[i].ElementAt(16) >= 48 && Model.KyQuays[i].ElementAt(16) <= 55)
+                                {
+                                    <td class="Tim">
+                                        <div class="font-italic fs-5 text-secondary align-items-lg-center align-middle text-center">
+                                            <h6>@Model.KyQuays[i].ElementAt(16)</h6>
+                                        </div>
+                                    </td>
+                                }
+                                else if (Model.KyQuays[i].ElementAt(16) >= 56 && Model.KyQuays[i].ElementAt(16) <= 63)
+                                {
+                                    <td class="BlueGreen">
+                                        <div class="font-italic fs-5 text-secondary align-items-lg-center align-middle text-center">
+                                            <h6>@Model.KyQuays[i].ElementAt(16)</h6>
+                                        </div>
+                                    </td>
+                                }
+                                else if (Model.KyQuays[i].ElementAt(16) >= 64 && Model.KyQuays[i].ElementAt(16) <= 71)
+                                {
+                                    <td class="Pink">
+                                        <div class="font-italic fs-5 text-secondary align-items-lg-center align-middle text-center">
+                                            <h6>@Model.KyQuays[i].ElementAt(16)</h6>
+                                        </div>
+                                    </td>
+                                }
+                                else if (Model.KyQuays[i].ElementAt(16) >= 72 && Model.KyQuays[i].ElementAt(16) <= 80)
+                                {
+                                    <td class="LightBlue">
+                                        <div class="font-italic fs-5 text-secondary align-items-lg-center align-middle text-center">
+                                            <h6>@Model.KyQuays[i].ElementAt(16)</h6>
+                                        </div>
+                                    </td>
+                                }
+                            }
+                        </tr>
+                        <tr>
+                            @foreach (var i in Model.KyQuays.Keys.OrderByDescending(x => x.Value))
+                            {
+                                if (Model.KyQuays[i].ElementAt(17) >= 1 && Model.KyQuays[i].ElementAt(17) <= 7)
+                                {
+                                    <td class="Do">
+                                        <div class="font-italic fs-5 text-secondary align-items-lg-center align-middle text-center">
+                                            <h6>@Model.KyQuays[i].ElementAt(17)</h6>
+                                        </div>
+                                    </td>
+                                }
+                                else if (Model.KyQuays[i].ElementAt(17) >= 8 && Model.KyQuays[i].ElementAt(17) <= 15)
+                                {
+                                    <td class="Cam">
+                                        <div class="font-italic fs-5 text-secondary align-items-lg-center align-middle text-center">
+                                            <h6>@Model.KyQuays[i].ElementAt(17)</h6>
+                                        </div>
+                                    </td>
+                                }
+                                else if (Model.KyQuays[i].ElementAt(17) >= 16 && Model.KyQuays[i].ElementAt(17) <= 23)
+                                {
+                                    <td class="Vang">
+                                        <div class="font-italic fs-5 text-secondary align-items-lg-center align-middle text-center">
+                                            <h6>@Model.KyQuays[i].ElementAt(17)</h6>
+                                        </div>
+                                    </td>
+                                }
+                                else if (Model.KyQuays[i].ElementAt(17) >= 24 && Model.KyQuays[i].ElementAt(17) <= 31)
+                                {
+                                    <td class="Luc">
+                                        <div class="font-italic fs-5 text-secondary align-items-lg-center align-middle text-center">
+                                            <h6>@Model.KyQuays[i].ElementAt(17)</h6>
+                                        </div>
+                                    </td>
+                                }
+                                else if (Model.KyQuays[i].ElementAt(17) >= 32 && Model.KyQuays[i].ElementAt(17) <= 39)
+                                {
+                                    <td class="Lam">
+                                        <div class="font-italic fs-5 text-secondary align-items-lg-center align-middle text-center">
+                                            <h6>@Model.KyQuays[i].ElementAt(17)</h6>
+                                        </div>
+                                    </td>
+                                }
+                                else if (Model.KyQuays[i].ElementAt(17) >= 41 && Model.KyQuays[i].ElementAt(17) <= 47)
+                                {
+                                    <td class="Cham">
+                                        <div class="font-italic fs-5 text-secondary align-items-lg-center align-middle text-center">
+                                            <h6>@Model.KyQuays[i].ElementAt(17)</h6>
+                                        </div>
+                                    </td>
+                                }
+                                else if (Model.KyQuays[i].ElementAt(17) >= 48 && Model.KyQuays[i].ElementAt(17) <= 55)
+                                {
+                                    <td class="Tim">
+                                        <div class="font-italic fs-5 text-secondary align-items-lg-center align-middle text-center">
+                                            <h6>@Model.KyQuays[i].ElementAt(17)</h6>
+                                        </div>
+                                    </td>
+                                }
+                                else if (Model.KyQuays[i].ElementAt(17) >= 56 && Model.KyQuays[i].ElementAt(17) <= 63)
+                                {
+                                    <td class="BlueGreen">
+                                        <div class="font-italic fs-5 text-secondary align-items-lg-center align-middle text-center">
+                                            <h6>@Model.KyQuays[i].ElementAt(17)</h6>
+                                        </div>
+                                    </td>
+                                }
+                                else if (Model.KyQuays[i].ElementAt(17) >= 64 && Model.KyQuays[i].ElementAt(17) <= 71)
+                                {
+                                    <td class="Pink">
+                                        <div class="font-italic fs-5 text-secondary align-items-lg-center align-middle text-center">
+                                            <h6>@Model.KyQuays[i].ElementAt(17)</h6>
+                                        </div>
+                                    </td>
+                                }
+                                else if (Model.KyQuays[i].ElementAt(17) >= 72 && Model.KyQuays[i].ElementAt(17) <= 80)
+                                {
+                                    <td class="LightBlue">
+                                        <div class="font-italic fs-5 text-secondary align-items-lg-center align-middle text-center">
+                                            <h6>@Model.KyQuays[i].ElementAt(17)</h6>
+                                        </div>
+                                    </td>
+                                }
+                            }
+                        </tr>
+                        <tr>
+                            @foreach (var i in Model.KyQuays.Keys.OrderByDescending(x => x.Value))
+                            {
+                                if (Model.KyQuays[i].ElementAt(18) >= 1 && Model.KyQuays[i].ElementAt(18) <= 7)
+                                {
+                                    <td class="Do">
+                                        <div class="font-italic fs-5 text-secondary align-items-lg-center align-middle text-center">
+                                            <h6>@Model.KyQuays[i].ElementAt(18)</h6>
+                                        </div>
+                                    </td>
+                                }
+                                else if (Model.KyQuays[i].ElementAt(18) >= 8 && Model.KyQuays[i].ElementAt(18) <= 15)
+                                {
+                                    <td class="Cam">
+                                        <div class="font-italic fs-5 text-secondary align-items-lg-center align-middle text-center">
+                                            <h6>@Model.KyQuays[i].ElementAt(18)</h6>
+                                        </div>
+                                    </td>
+                                }
+                                else if (Model.KyQuays[i].ElementAt(18) >= 16 && Model.KyQuays[i].ElementAt(18) <= 23)
+                                {
+                                    <td class="Vang">
+                                        <div class="font-italic fs-5 text-secondary align-items-lg-center align-middle text-center">
+                                            <h6>@Model.KyQuays[i].ElementAt(18)</h6>
+                                        </div>
+                                    </td>
+                                }
+                                else if (Model.KyQuays[i].ElementAt(18) >= 24 && Model.KyQuays[i].ElementAt(18) <= 31)
+                                {
+                                    <td class="Luc">
+                                        <div class="font-italic fs-5 text-secondary align-items-lg-center align-middle text-center">
+                                            <h6>@Model.KyQuays[i].ElementAt(18)</h6>
+                                        </div>
+                                    </td>
+                                }
+                                else if (Model.KyQuays[i].ElementAt(18) >= 32 && Model.KyQuays[i].ElementAt(18) <= 39)
+                                {
+                                    <td class="Lam">
+                                        <div class="font-italic fs-5 text-secondary align-items-lg-center align-middle text-center">
+                                            <h6>@Model.KyQuays[i].ElementAt(18)</h6>
+                                        </div>
+                                    </td>
+                                }
+                                else if (Model.KyQuays[i].ElementAt(18) >= 41 && Model.KyQuays[i].ElementAt(18) <= 47)
+                                {
+                                    <td class="Cham">
+                                        <div class="font-italic fs-5 text-secondary align-items-lg-center align-middle text-center">
+                                            <h6>@Model.KyQuays[i].ElementAt(18)</h6>
+                                        </div>
+                                    </td>
+                                }
+                                else if (Model.KyQuays[i].ElementAt(18) >= 48 && Model.KyQuays[i].ElementAt(18) <= 55)
+                                {
+                                    <td class="Tim">
+                                        <div class="font-italic fs-5 text-secondary align-items-lg-center align-middle text-center">
+                                            <h6>@Model.KyQuays[i].ElementAt(18)</h6>
+                                        </div>
+                                    </td>
+                                }
+                                else if (Model.KyQuays[i].ElementAt(18) >= 56 && Model.KyQuays[i].ElementAt(18) <= 63)
+                                {
+                                    <td class="BlueGreen">
+                                        <div class="font-italic fs-5 text-secondary align-items-lg-center align-middle text-center">
+                                            <h6>@Model.KyQuays[i].ElementAt(18)</h6>
+                                        </div>
+                                    </td>
+                                }
+                                else if (Model.KyQuays[i].ElementAt(18) >= 64 && Model.KyQuays[i].ElementAt(18) <= 71)
+                                {
+                                    <td class="Pink">
+                                        <div class="font-italic fs-5 text-secondary align-items-lg-center align-middle text-center">
+                                            <h6>@Model.KyQuays[i].ElementAt(18)</h6>
+                                        </div>
+                                    </td>
+                                }
+                                else if (Model.KyQuays[i].ElementAt(18) >= 72 && Model.KyQuays[i].ElementAt(18) <= 80)
+                                {
+                                    <td class="LightBlue">
+                                        <div class="font-italic fs-5 text-secondary align-items-lg-center align-middle text-center">
+                                            <h6>@Model.KyQuays[i].ElementAt(18)</h6>
+                                        </div>
+                                    </td>
+                                }
+                            }
+                        </tr>
+                        <tr>
+                            @foreach (var i in Model.KyQuays.Keys.OrderByDescending(x => x.Value))
+                            {
+                                if (Model.KyQuays[i].ElementAt(19) >= 1 && Model.KyQuays[i].ElementAt(19) <= 7)
+                                {
+                                    <td class="Do">
+                                        <div class="font-italic fs-5 text-secondary align-items-lg-center align-middle text-center">
+                                            <h6>@Model.KyQuays[i].ElementAt(19)</h6>
+                                        </div>
+                                    </td>
+                                }
+                                else if (Model.KyQuays[i].ElementAt(19) >= 8 && Model.KyQuays[i].ElementAt(19) <= 15)
+                                {
+                                    <td class="Cam">
+                                        <div class="font-italic fs-5 text-secondary align-items-lg-center align-middle text-center">
+                                            <h6>@Model.KyQuays[i].ElementAt(19)</h6>
+                                        </div>
+                                    </td>
+                                }
+                                else if (Model.KyQuays[i].ElementAt(19) >= 16 && Model.KyQuays[i].ElementAt(19) <= 23)
+                                {
+                                    <td class="Vang">
+                                        <div class="font-italic fs-5 text-secondary align-items-lg-center align-middle text-center">
+                                            <h6>@Model.KyQuays[i].ElementAt(19)</h6>
+                                        </div>
+                                    </td>
+                                }
+                                else if (Model.KyQuays[i].ElementAt(19) >= 24 && Model.KyQuays[i].ElementAt(19) <= 31)
+                                {
+                                    <td class="Luc">
+                                        <div class="font-italic fs-5 text-secondary align-items-lg-center align-middle text-center">
+                                            <h6>@Model.KyQuays[i].ElementAt(19)</h6>
+                                        </div>
+                                    </td>
+                                }
+                                else if (Model.KyQuays[i].ElementAt(19) >= 32 && Model.KyQuays[i].ElementAt(19) <= 39)
+                                {
+                                    <td class="Lam">
+                                        <div class="font-italic fs-5 text-secondary align-items-lg-center align-middle text-center">
+                                            <h6>@Model.KyQuays[i].ElementAt(19)</h6>
+                                        </div>
+                                    </td>
+                                }
+                                else if (Model.KyQuays[i].ElementAt(19) >= 41 && Model.KyQuays[i].ElementAt(19) <= 47)
+                                {
+                                    <td class="Cham">
+                                        <div class="font-italic fs-5 text-secondary align-items-lg-center align-middle text-center">
+                                            <h6>@Model.KyQuays[i].ElementAt(19)</h6>
+                                        </div>
+                                    </td>
+                                }
+                                else if (Model.KyQuays[i].ElementAt(19) >= 48 && Model.KyQuays[i].ElementAt(19) <= 55)
+                                {
+                                    <td class="Tim">
+                                        <div class="font-italic fs-5 text-secondary align-items-lg-center align-middle text-center">
+                                            <h6>@Model.KyQuays[i].ElementAt(19)</h6>
+                                        </div>
+                                    </td>
+                                }
+                                else if (Model.KyQuays[i].ElementAt(19) >= 56 && Model.KyQuays[i].ElementAt(19) <= 63)
+                                {
+                                    <td class="BlueGreen">
+                                        <div class="font-italic fs-5 text-secondary align-items-lg-center align-middle text-center">
+                                            <h6>@Model.KyQuays[i].ElementAt(19)</h6>
+                                        </div>
+                                    </td>
+                                }
+                                else if (Model.KyQuays[i].ElementAt(19) >= 64 && Model.KyQuays[i].ElementAt(19) <= 71)
+                                {
+                                    <td class="Pink">
+                                        <div class="font-italic fs-5 text-secondary align-items-lg-center align-middle text-center">
+                                            <h6>@Model.KyQuays[i].ElementAt(19)</h6>
+                                        </div>
+                                    </td>
+                                }
+                                else if (Model.KyQuays[i].ElementAt(19) >= 72 && Model.KyQuays[i].ElementAt(19) <= 80)
+                                {
+                                    <td class="LightBlue">
+                                        <div class="font-italic fs-5 text-secondary align-items-lg-center align-middle text-center">
+                                            <h6>@Model.KyQuays[i].ElementAt(19)</h6>
                                         </div>
                                     </td>
                                 }

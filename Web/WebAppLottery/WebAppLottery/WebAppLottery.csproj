@@ -189,6 +189,7 @@
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="images\BackArrow.png" />
     <Content Include="images\bg01.jpg" />
     <Content Include="images\bg02.jpg" />
     <Content Include="images\HDSDStep1.png" />

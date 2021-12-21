@@ -46,7 +46,7 @@ namespace WebAppLottery.Controllers
                 int count72_80 = 0;
 
                 int loaiVe = (int)m.ListLoaiVe;
-                DateTime from, to;                
+                DateTime from, to;
                 string sysFormat = CultureInfo.CurrentCulture.DateTimeFormat.ShortDatePattern;
                 if (sysFormat == "d/M/yyyy")
                 {
@@ -75,7 +75,7 @@ namespace WebAppLottery.Controllers
                     m.Data = _6Over45NoData.Select(x => new LotteryStatistic1
                     {
                         LotNumber = Convert.ToInt32(x.LotNumber),
-                        AllDatePublishList =  x.AllDatePublishList,
+                        AllDatePublishList = x.AllDatePublishList,
                         DatePublish = x.DatePublish,
                         TotalNumberAppearInRange = x.TotalNumberAppearInRange,
                         DatePublishList = x.DatePublishList
@@ -91,12 +91,12 @@ namespace WebAppLottery.Controllers
                         DatePublish = x.DatePublish,
                         TotalNumberAppearInRange = x.TotalNumberAppearInRange,
                         DatePublishList = x.DatePublishList
-                    }).OrderBy(x=>x.LotNumber).ToList();
+                    }).OrderBy(x => x.LotNumber).ToList();
                 }
                 else if (m.ListLoaiVe == IndexPageModel.LoaiVe._Keno)
                 {
                     var numbers = _KenoTimeLine.GetKenoNumber(from, to);
-                    _KenoNoData = _KenoTimeLine.GetKenoNumberStatistic(numbers, from, to);
+                    _KenoNoData = _KenoTimeLine.GetKenoNumberStatistic(numbers);
                     m.Data = _KenoNoData.Select(x => new LotteryStatistic1
                     {
                         LotNumber = Convert.ToInt32(x.LotNumber),
@@ -105,14 +105,14 @@ namespace WebAppLottery.Controllers
                         TotalNumberAppearInRange = x.TotalNumberAppearInRange,
                         DatePublishList = x.DatePublishList,
                     }).OrderBy(x => Convert.ToInt32(x.LotNumber)).ToList();
-                    m.KyQuays = _KenoTimeLine.GetKenoNumberKyquay(numbers, from, to);
+                    m.KyQuays = _KenoTimeLine.GetKenoNumberKyquay(numbers);
                 }
 
                 //************************Render Body*************************//    
                 m.AllDatePublist = m.Data[0].AllDatePublishList;
 
                 //************************Render GroupNumberStatistic*************************//
-                SortedDictionary<DateTime, SortedSet<int>> hitNumberByDate = 
+                SortedDictionary<DateTime, SortedSet<int>> hitNumberByDate =
                     new SortedDictionary<DateTime, SortedSet<int>>();
                 foreach (var i in m.Data)
                 {
@@ -172,14 +172,17 @@ namespace WebAppLottery.Controllers
                     }
                 }
 
-                //Prepare data for Color timeline
-                foreach (var item in hitNumberByDate)
-                    foreach (var aNo in m.Data)
-                        foreach (var date in aNo.DatePublishList.DatePublishList1)
-                            if (item.Key == date)
-                                item.Value.Add(Convert.ToInt32(aNo.LotNumber));               
+                if (m.ListLoaiVe != IndexPageModel.LoaiVe._Keno)
+                {
+                    //Prepare data for Color timeline
+                    foreach (var item in hitNumberByDate)
+                        foreach (var aNo in m.Data)
+                            foreach (var date in aNo.DatePublishList.DatePublishList1)
+                                if (item.Key == date)
+                                    item.Value.Add(Convert.ToInt32(aNo.LotNumber));
+                    m.groupNumberStatistic = hitNumberByDate;
+                }
 
-                m.groupNumberStatistic = hitNumberByDate;
                 m.NoAppear1To7 = count1_7;
                 m.NoAppear8To15 = count8_15;
                 m.NoAppear16To23 = count16_23;
@@ -266,28 +269,7 @@ namespace WebAppLottery.Controllers
             return View("Data", m);
         }
 
-        [HttpGet]
-        public ActionResult Keno(DataPageModel m)
-        {
-            string val;
-            try
-            {
-                val = DataVietlott._Keno.Insert(DataVietlott.Common.ReadAppConfig("KenoURL"));
-                m.Status = val + "\n";
-
-                m.ErrorMessage = "";                            
-                ModelState.Clear();
-            }
-            catch (Exception e)
-            {
-                m.ErrorMessage = e.Message;
-            }
-
-            return View(m);
-        }
-
-        [HttpPost]
-        public ActionResult SubmitKeno(DataPageModel m)
+        private ActionResult SubmitKeno(DataPageModel m)
         {
             string val;
             try
@@ -304,6 +286,18 @@ namespace WebAppLottery.Controllers
             }
 
             return View("Keno", m);
+        }
+
+        [HttpGet]
+        public ActionResult Keno(DataPageModel m)
+        {
+            return SubmitKeno(m);
+        }
+
+        [HttpPost]
+        public ActionResult KenoSubmit(DataPageModel m)
+        {
+            return SubmitKeno(m);
         }
 
         public ActionResult Admin()

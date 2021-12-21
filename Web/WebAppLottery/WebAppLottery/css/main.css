@@ -505,7 +505,7 @@ input.input100 {
 .wsize3 {
     max-width: 100%;
     width: 1000px;
-    height: 500px;
+    height:450px;
     overflow-y: auto;
     overflow-x: auto;
 }
@@ -513,6 +513,14 @@ input.input100 {
     max-width: 100%;
     width: 1000px;
     height: 110px;
+    overflow-y: auto;
+    overflow-x: auto;
+}
+
+.wsize6 {
+    max-width: 100%;
+    width: 1000px;
+    height: 700px;
     overflow-y: auto;
     overflow-x: auto;
 }
