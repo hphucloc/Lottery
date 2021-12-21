@@ -3,8 +3,6 @@ C:\Users\Admin\Documents\GitHub\Lottery\GetData\bin\Debug\EntityFramework.SqlSer
 C:\Users\Admin\Documents\GitHub\Lottery\GetData\bin\Debug\LotteryDAL.dll
 C:\Users\Admin\Documents\GitHub\Lottery\GetData\bin\Debug\EntityFramework.xml
 C:\Users\Admin\Documents\GitHub\Lottery\GetData\bin\Debug\EntityFramework.SqlServer.xml
-C:\Users\Admin\Documents\GitHub\Lottery\GetData\bin\Debug\LotteryDAL.pdb
-C:\Users\Admin\Documents\GitHub\Lottery\GetData\bin\Debug\LotteryDAL.dll.config
 C:\Users\Admin\Documents\GitHub\Lottery\GetData\obj\x86\Debug\GetData.Form1.resources
 C:\Users\Admin\Documents\GitHub\Lottery\GetData\obj\x86\Debug\GetData.Properties.Resources.resources
 C:\Users\Admin\Documents\GitHub\Lottery\GetData\obj\x86\Debug\GetData.csproj.GenerateResource.cache
@@ -31,3 +29,4 @@ C:\Users\hphuc\Documents\GitHub\Lottery\GetData\obj\x86\Debug\GetData.exe
 C:\Users\hphuc\Documents\GitHub\Lottery\GetData\obj\x86\Debug\GetData.pdb
 C:\Users\hphuc\Documents\GitHub\Lottery\GetData\bin\Debug\LotteryDAL.dll
 C:\Users\hphuc\Documents\GitHub\Lottery\GetData\obj\x86\Debug\GetData.csprojAssemblyReference.cache
+C:\Users\Admin\Documents\GitHub\Lottery\GetData\obj\x86\Debug\GetData.csproj.AssemblyReference.cache

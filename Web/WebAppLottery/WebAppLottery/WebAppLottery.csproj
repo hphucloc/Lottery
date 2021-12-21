@@ -59,13 +59,13 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>bin\HtmlAgilityPack.dll</HintPath>
     </Reference>
-    <Reference Include="LotteryBusiness, Version=1.0.0.5, Culture=neutral, processorArchitecture=MSIL">
+    <Reference Include="LotteryBusiness, Version=1.0.0.7, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\DllVersion\1.0.0.6\LotteryBusiness.dll</HintPath>
+      <HintPath>..\..\..\DllVersion\1.0.0.8\LotteryBusiness.dll</HintPath>
     </Reference>
-    <Reference Include="LotteryDAL, Version=1.0.0.5, Culture=neutral, processorArchitecture=MSIL">
+    <Reference Include="LotteryDAL, Version=1.0.0.6, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\DllVersion\1.0.0.6\LotteryDAL.dll</HintPath>
+      <HintPath>..\..\..\DllVersion\1.0.0.7\LotteryDAL.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System" />

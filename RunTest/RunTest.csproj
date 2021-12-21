@@ -40,10 +40,12 @@
     <Reference Include="EntityFramework.SqlServer">
       <HintPath>..\LotteryBusiness\bin\Debug\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
-    <Reference Include="LotteryBusiness">
+    <Reference Include="LotteryBusiness, Version=1.0.0.6, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
       <HintPath>..\LotteryBusiness\bin\Debug\LotteryBusiness.dll</HintPath>
     </Reference>
-    <Reference Include="LotteryDAL">
+    <Reference Include="LotteryDAL, Version=1.0.0.6, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
       <HintPath>..\LotteryBusiness\bin\Debug\LotteryDAL.dll</HintPath>
     </Reference>
     <Reference Include="System" />

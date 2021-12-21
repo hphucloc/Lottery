@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -20,13 +21,13 @@ namespace LotteryBusiness
         public System.DateTime DatePublishMax { get; set; }
         public System.DateTime DatePublishMin { get; set; }
         public int TotalNumberAppear { get; set; }
-        public int TotalNumberAppearInRange { get; set; }
-        public int? KyQuay { get; set; }
+        public int TotalNumberAppearInRange { get; set; }       
     }
 
     public class DatePublishList2
     {
         public List<DateTime> DatePublishList1 = new List<DateTime>();
-        public List<DateTime> DateBoughtList = new List<DateTime>();
+        public SortedSet<int?> LstKyQuay = new SortedSet<int?>();
+        //public List<DateTime> DateBoughtList = new List<DateTime>();
     }
 }

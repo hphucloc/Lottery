@@ -14,6 +14,7 @@ namespace WebAppLottery.Controllers
     {
         private List<LoterryStatistic> _6Over45NoData { get; set; }
         private List<LoterryStatistic> _6Over55NoData { get; set; }
+        private List<LoterryStatistic> _KenoNoData { get; set; }
         [HttpGet]
         public ActionResult Index(IndexPageModel m)
         {            
@@ -39,8 +40,11 @@ namespace WebAppLottery.Controllers
                 int count24_31 = 0;
                 int count32_39 = 0;
                 int count40_47 = 0;
-                int countUpper47 = 0;
-                
+                int count48_55 = 0;
+                int count56_63 = 0;
+                int count64_71 = 0;
+                int count72_80 = 0;
+
                 int loaiVe = (int)m.ListLoaiVe;
                 DateTime from, to;                
                 string sysFormat = CultureInfo.CurrentCulture.DateTimeFormat.ShortDatePattern;
@@ -89,6 +93,20 @@ namespace WebAppLottery.Controllers
                         DatePublishList = x.DatePublishList
                     }).OrderBy(x=>x.LotNumber).ToList();
                 }
+                else if (m.ListLoaiVe == IndexPageModel.LoaiVe._Keno)
+                {
+                    var numbers = _KenoTimeLine.GetKenoNumber(from, to);
+                    _KenoNoData = _KenoTimeLine.GetKenoNumberStatistic(numbers, from, to);
+                    m.Data = _KenoNoData.Select(x => new LotteryStatistic1
+                    {
+                        LotNumber = Convert.ToInt32(x.LotNumber),
+                        AllDatePublishList = x.AllDatePublishList,
+                        DatePublish = x.DatePublish,
+                        TotalNumberAppearInRange = x.TotalNumberAppearInRange,
+                        DatePublishList = x.DatePublishList,
+                    }).OrderBy(x => Convert.ToInt32(x.LotNumber)).ToList();
+                    m.KyQuays = _KenoTimeLine.GetKenoNumberKyquay(numbers, from, to);
+                }
 
                 //************************Render Body*************************//    
                 m.AllDatePublist = m.Data[0].AllDatePublishList;
@@ -127,9 +145,21 @@ namespace WebAppLottery.Controllers
                     {
                         count40_47 += i.TotalNumberAppearInRange;
                     }
-                    else
+                    else if (Convert.ToInt32(i.LotNumber) >= 48 && Convert.ToInt32(i.LotNumber) <= 55)
                     {
-                        countUpper47 += i.TotalNumberAppearInRange;
+                        count48_55 += i.TotalNumberAppearInRange;
+                    }
+                    else if (Convert.ToInt32(i.LotNumber) >= 56 && Convert.ToInt32(i.LotNumber) <= 63)
+                    {
+                        count56_63 += i.TotalNumberAppearInRange;
+                    }
+                    else if (Convert.ToInt32(i.LotNumber) >= 64 && Convert.ToInt32(i.LotNumber) <= 71)
+                    {
+                        count64_71 += i.TotalNumberAppearInRange;
+                    }
+                    else if (Convert.ToInt32(i.LotNumber) >= 72 && Convert.ToInt32(i.LotNumber) <= 80)
+                    {
+                        count72_80 += i.TotalNumberAppearInRange;
                     }
 
                     //Get all publih Date               
@@ -142,11 +172,12 @@ namespace WebAppLottery.Controllers
                     }
                 }
 
+                //Prepare data for Color timeline
                 foreach (var item in hitNumberByDate)
                     foreach (var aNo in m.Data)
                         foreach (var date in aNo.DatePublishList.DatePublishList1)
                             if (item.Key == date)
-                                item.Value.Add(Convert.ToInt32(aNo.LotNumber));
+                                item.Value.Add(Convert.ToInt32(aNo.LotNumber));               
 
                 m.groupNumberStatistic = hitNumberByDate;
                 m.NoAppear1To7 = count1_7;
@@ -155,7 +186,10 @@ namespace WebAppLottery.Controllers
                 m.NoAppear24To31 = count24_31;
                 m.NoAppear32To39 = count32_39;
                 m.NoAppear40To47 = count40_47;
-                m.NoAppear48To55 = countUpper47;             
+                m.NoAppear48To55 = count48_55;
+                m.NoAppear56To63 = count56_63;
+                m.NoAppear64To71 = count64_71;
+                m.NoAppear72To80 = count72_80;
             }
             return View("Index", m);            
         }

@@ -19,6 +19,6 @@ namespace WebAppLottery.Models
         //public System.DateTime DatePublishMax { get; set; }
         //public System.DateTime DatePublishMin { get; set; }
         //public int TotalNumberAppear { get; set; }
-        public int TotalNumberAppearInRange { get; set; }
+        public int TotalNumberAppearInRange { get; set; }       
     }
 }

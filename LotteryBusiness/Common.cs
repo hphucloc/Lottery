@@ -121,6 +121,7 @@ namespace LotteryBusiness
                     sta.DateCreated = no.DateCreated;
                     sta.DatePublish = no.DatePublish;
                     sta.DatePublishList.DatePublishList1.Add(no.DatePublish);
+                    sta.DatePublishList.LstKyQuay.Add(no.KyQuay);
                     sta.TotalNumberAppear = no.TotalNumberAppear;
                     lst.Add(sta);
                 }
@@ -153,7 +154,56 @@ namespace LotteryBusiness
 
             return lst;
         }
-        
+
+        public static List<LoterryStatistic> GetLotNumberStatisticKeno(IQueryable<LotteryNumber> Number)
+        {
+            List<LoterryStatistic> lst = new List<LoterryStatistic>();
+                      
+            foreach (LotteryNumber no in Number)
+            {
+                if(lst.FirstOrDefault(x=>x.LotNumber == no.LotNumber) == null)
+                {                      
+                    LoterryStatistic sta = new LoterryStatistic();
+                    sta.NumberTypeId = no.NumberTypeId;
+                    sta.NumberWinLevelId = no.NumberWinLevelId;
+                    sta.LotNumber = no.LotNumber;
+                    sta.DateCreated = no.DateCreated;
+                    sta.DatePublish = no.DatePublish;
+                    sta.DatePublishList.DatePublishList1.Add(no.DatePublish);
+                    sta.DatePublishList.LstKyQuay.Add(no.KyQuay);
+                    sta.TotalNumberAppear = no.TotalNumberAppear;                    
+                    lst.Add(sta);
+                }
+                else
+                {
+                    lst.FirstOrDefault(x => x.LotNumber == no.LotNumber).DatePublishList.DatePublishList1.Add(no.DatePublish);
+                    lst.FirstOrDefault(x => x.LotNumber == no.LotNumber).DatePublishList.LstKyQuay.Add(no.KyQuay);
+                }               
+            }
+            
+
+            //Lay ngay lon nhat va nho nhat
+            foreach (LoterryStatistic no in lst)
+            {
+                no.DatePublishMax = Number.Max(a => a.DatePublish);
+                no.DatePublishMin = Number.Min(a => a.DatePublish);
+                no.TotalNumberAppear = GetTotalNumberAppear(no.LotNumber, no.NumberTypeId);
+                no.TotalNumberAppearInRange = no.DatePublishList.DatePublishList1.Count;
+            }
+
+            //Lay tat ca ngay publish
+            foreach (LoterryStatistic no in lst)
+            {
+                var a = Number.GroupBy(n => n.DatePublish).ToList();
+                foreach (var state in a)
+                {
+                    no.AllDatePublishList.Add(state.First().DatePublish);
+                }
+            }
+
+            return lst.OrderBy(x=> Convert.ToInt32(x.LotNumber)).ToList();
+        }
+
         public static int GetTotalNumberAppear(string No, short numberType)
         {
             return Db.Numbers.Count(x => x.LotNumber == No && x.NumberTypeId == numberType);

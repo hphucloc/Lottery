@@ -41,8 +41,11 @@ namespace WebAppLottery.Models
         public int? NoAppear32To39 { get; set; }
         public int? NoAppear40To47 { get; set; }
         public int? NoAppear48To55 { get; set; }
+        public int? NoAppear56To63 { get; set; }
+        public int? NoAppear64To71 { get; set; }
+        public int? NoAppear72To80 { get; set; }
         public SortedDictionary<DateTime, SortedSet<int>> groupNumberStatistic { get; set; }
-
+        public SortedDictionary<int?, SortedSet<int>> KyQuays { get; set; }
         //Render body
         public List<WebAppLottery.Models.LotteryStatistic1> Data { get; set; }      
 

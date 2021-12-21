@@ -12,29 +12,17 @@ namespace RunTest
     {
         static void Main(string[] args)
         {
-            List<LoterryStatistic> lst = new List<LoterryStatistic>();
-            IQueryable<LotteryNumber> number = Common.GetNumber((Int16)Enum_NumberType._Keno, DateTime.Now.AddMonths(-3), DateTime.Now);
 
-            //List<string> numbers = new List<string>();         
-            foreach (LotteryNumber no in number)
+            var a = _KenoTimeLine.GetKenoChanleLonNho
+                (DateTime.Now.AddMonths(-3), DateTime.Now);
+            foreach (var i in a)
             {
-                LotteryNumber n = new LotteryNumber();
-                if (no.LotNumber.Length == 40)
+                Console.WriteLine(i.Key);                
+                foreach(var j in a[i.Key])
                 {
-                    for (int i = 0; i <= 38; i += 2)
-                    {
-                        numbers.Add(no.LotNumber.Substring(i, 2));
-                        
-                    }
-                }
-                else
-                {
-                    numbers.Add(no.LotNumber);
-                }
+                    Console.Write(j[0] + "\t" +j[1]);
+                }               
             }
-
-            foreach (var a in numbers)
-                Console.WriteLine(a);
 
             Console.ReadLine();
         }
