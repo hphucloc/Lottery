@@ -9,7 +9,7 @@
             </div>
             <div class="col-12">
                 <table class="table table-secondary table-striped table-bordered TableData">
-                    <thead>
+                    <thead>                       
                         <tr>
                             <td class="Do">
                                 1->7
@@ -37,7 +37,7 @@
                             }
                         </tr>
                     </thead>
-                    <tbody class="table-light">
+                    <tbody class="table-light">                       
                         <tr>
                             <td>
                                 <p> @Model.NoAppear1To7</p>
@@ -69,14 +69,15 @@
             </div>
             <div class="col-12">
                 <table class="table table-bordered TableData">
-                    @*<thead class="table-dark">
+                    <thead class="table-dark">
                         <tr class="text-info">
-                            @foreach (var i in Model.groupNumberStatistic.Keys.OrderByDescending(x => x.Date))
+                            @*@foreach (var i in Model.groupNumberStatistic.Keys.OrderByDescending(x => x.Date))
                             {
                                 <td>@string.Format("{0:d/M}", i.Date)</td>
-                            }
+                            }*@
+                            <td colspan="2"><img src="~/images/BackArrow.png" /></td>                         
                         </tr>
-                    </thead>*@
+                    </thead>
                     <tbody>
                         <tr>
                             @foreach (var i in Model.groupNumberStatistic.Keys.OrderByDescending(x => x.Date))
@@ -642,14 +643,15 @@
             </div>
             <div class="col-12">
                 <table class="table table-bordered TableData">
-                    @*<thead class="table-dark">                        
-                        <tr class="text-info">                           
-                            @foreach (var i in Model.KyQuays.OrderByDescending(x=>x.Key))
-                            {
-                                <td>@string.Format("{0:0,0}", i.Key)</td>
-                            }
+                    <thead class="table-dark">                        
+                        <tr class="text-info">
+                            @*@foreach (var i in Model.KyQuays.OrderByDescending(x=>x.Key))
+        {
+            <td>@string.Format("{0:0,0}", i.Key)</td>
+        }*@
+                            <td colspan="2"><img src="~/images/BackArrow.png" /></td>
                         </tr>
-                    </thead>*@
+                    </thead>
                     <tbody>
                         <tr>
                             @foreach (var i in Model.KyQuays.Keys.OrderByDescending(x => x.Value))

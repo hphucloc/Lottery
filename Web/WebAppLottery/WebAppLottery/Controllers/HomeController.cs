@@ -114,7 +114,7 @@ namespace WebAppLottery.Controllers
                 //************************Render GroupNumberStatistic*************************//
                 SortedDictionary<DateTime, SortedSet<int>> hitNumberByDate =
                     new SortedDictionary<DateTime, SortedSet<int>>();
-                foreach (var i in m.Data)
+                foreach (var i in m.Data)                
                 {
                     if (Convert.ToInt32(i.LotNumber) >= 1 && Convert.ToInt32(i.LotNumber) <= 7)
                     {

@@ -1,6 +1,6 @@
 ﻿@model WebAppLottery.Models.IndexPageModel
 @{
-    int c = 0;
+//int c = 0;
 }
 @if (Model.Data != null)
 {
@@ -25,7 +25,7 @@
                     <tbody>
                         @foreach (var i in Model.Data)
                         {
-                            c = 0;
+                            //c = 0;
                             <tr>
                                 <td class="align-middle">
                                     <input type="checkbox" checked data-toggle="toggle" data-onstyle="dark" data-offstyle="success"
@@ -36,13 +36,13 @@
                                 <td class="align-middle"><h6>@i.TotalNumberAppearInRange</h6></td>
                                 @foreach (var j in Model.AllDatePublist.OrderByDescending(x => x.Date))
                                 {
-                                    c = c + 1;
+                                    //c = c + 1;
                                     <td class="align-middle">
                                         @foreach (var k in i.DatePublishList.DatePublishList1.OrderByDescending(x => x.Date))
                                         {
                                             if (j.Date == k.Date)
                                             {
-                                                c = 0;
+                                                //c = 0;
                                                 <div class="MauNenSoTrung font-italic fs-5 text-secondary align-items-lg-center align-middle text-center">
                                                     <h6>@string.Format("{0:d/M}", k.Date)</h6>
                                                 </div>
@@ -76,11 +76,12 @@
                         </tr>
                     </thead>
                     <tbody>
+                        @foreach (var i in Model.KyQuays)
+                        {
                         <tr>
-                            <td>
-
-                            </td>
+                            
                         </tr>
+                        }
                     </tbody>
                 </table>
             </div>
