@@ -226,8 +226,7 @@ namespace WebAppLottery.Controllers
                 m.IsGet6Over45 = true;
                 m.IsGet6Over55 = true;
                 m.IsGet3DMax = true;
-                m.IsGet3DMaxPro = true;
-                m.IsGetKeno = true;
+                m.IsGet3DMaxPro = true;               
                 ModelState.Clear();
             }
             catch (Exception e)
@@ -266,6 +265,10 @@ namespace WebAppLottery.Controllers
                 if (string.IsNullOrEmpty(m.ErrorMessage))
                     m.ErrorMessage = "";
 
+                m.IsGet6Over45 = true;
+                m.IsGet6Over55 = true;
+                m.IsGet3DMax = true;
+                m.IsGet3DMaxPro = true;
                 ModelState.Clear();
             }
             catch (Exception e)
