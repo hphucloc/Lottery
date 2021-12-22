@@ -38,7 +38,7 @@
         </div>
     </div>
 
-    @using (Html.BeginForm("SubmitKeno", "Home", FormMethod.Post))
+    @using (Html.BeginForm("KenoSubmit", "Home", FormMethod.Post))
     {
         <div class="bg-img1 size1 flex-w flex-c-m p-t-55 p-b-55 p-l-15 p-r-15"
              style="background-image: url('../../images/bg01.jpg');">
@@ -55,7 +55,7 @@
                     <tbody>
                         <tr>
                             <td>
-                                @Html.TextAreaFor(x => x.Status, new { @class = "form-control StatusDataPage" })
+                                @Html.TextAreaFor(x => x.Status, new { @class = "form-control StatusDataPage", @readonly = "readonly" })
                             </td>
                         </tr>
                     </tbody>
@@ -74,7 +74,7 @@
         $(document).ready(function () {            
             setInterval(function () {
                 $(":button").click();
-            }, 6000);
+            }, 60000);
         });
       
     </script>

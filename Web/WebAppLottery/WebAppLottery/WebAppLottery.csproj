@@ -198,6 +198,7 @@
     <Content Include="js\bootstrap.min.js" />
     <Content Include="js\bootstrap4-toggle.min.js" />
     <Content Include="js\main.js" />
+    <Content Include="js\moment.js" />
     <Content Include="Scripts\bootstrap-toggle.js" />
     <Content Include="Scripts\bootstrap-toggle.min.js" />
     <Content Include="Scripts\bootstrap.bundle.js" />

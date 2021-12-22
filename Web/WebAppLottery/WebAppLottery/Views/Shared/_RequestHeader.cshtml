@@ -17,7 +17,7 @@
     <tbody>
         <tr>
             <td>
-                @Html.EnumDropDownListFor(x => x.ListLoaiVe, new { })
+                @Html.EnumDropDownListFor(x => x.ListLoaiVe, new { @onchange ="LoaiVeOnChange(this.value)" })
             </td>
             <td>
                 @Html.HiddenFor(x => x.HiddenFrom)
@@ -38,6 +38,20 @@
     function SubmitClick() {
         $('#HiddenFrom').val(null);
         $('#HiddenTo').val(null);
+    }
+
+    function LoaiVeOnChange(val) {
+        if (val == 5) //Keno
+        {
+            var d = new Date();
+            d.setDate(d.getDate() - 2);
+        } else {
+            var d = new Date();
+            d.setDate(d.getDate() - 90);           
+        }
+
+        $('#From').val(moment(d).format('YYYY-MM-DD'));
+        $('#HiddenFrom').val(moment(d).format('YYYY-MM-DD'));
     }
 </script>
 

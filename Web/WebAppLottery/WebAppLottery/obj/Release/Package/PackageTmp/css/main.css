@@ -505,7 +505,7 @@ input.input100 {
 .wsize3 {
     max-width: 100%;
     width: 1000px;
-    height: 500px;
+    height:450px;
     overflow-y: auto;
     overflow-x: auto;
 }
@@ -513,6 +513,14 @@ input.input100 {
     max-width: 100%;
     width: 1000px;
     height: 110px;
+    overflow-y: auto;
+    overflow-x: auto;
+}
+
+.wsize6 {
+    max-width: 100%;
+    width: 1000px;
+    height: 600px;
     overflow-y: auto;
     overflow-x: auto;
 }
@@ -525,10 +533,14 @@ input.input100 {
     overflow-x: auto;
 }
 
-.MauNenSoTrung{
-    background-color:greenyellow;
-    width:40px;
-    height:20px;   
+.SoTrungFontSize {
+    font-size: 10px;
+}
+
+.MauNenSoTrung {
+    background-color: greenyellow;
+    width: 40px;
+    height: 20px;    
 }
 
 .HeaderLinkColor{
@@ -631,6 +643,42 @@ input.input100 {
     --bs-table-hover-color: #000;
     color: #000000;
     border-color: #000000;    
+}
+
+.BlueGreen {
+    --bs-table-bg: #D5E6AF;
+    --bs-table-striped-bg: #eccccf;
+    --bs-table-striped-color: #000;
+    --bs-table-active-bg: #dfc2c4;
+    --bs-table-active-color: #000;
+    --bs-table-hover-bg: #e5c7ca;
+    --bs-table-hover-color: #000;
+    color: #000000;
+    border-color: #000000;
+}
+
+.Pink {
+    --bs-table-bg: #DF92BE;
+    --bs-table-striped-bg: #eccccf;
+    --bs-table-striped-color: #000;
+    --bs-table-active-bg: #dfc2c4;
+    --bs-table-active-color: #000;
+    --bs-table-hover-bg: #e5c7ca;
+    --bs-table-hover-color: #000;
+    color: #000000;
+    border-color: #000000;
+}
+
+.LightBlue {
+    --bs-table-bg: #B9DFF6;
+    --bs-table-striped-bg: #eccccf;
+    --bs-table-striped-color: #000;
+    --bs-table-active-bg: #dfc2c4;
+    --bs-table-active-color: #000;
+    --bs-table-hover-bg: #e5c7ca;
+    --bs-table-hover-color: #000;
+    color: #000000;
+    border-color: #000000;
 }
 
 .WidthHeader{

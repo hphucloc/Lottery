@@ -67,7 +67,7 @@
                     <tbody>
                         <tr>
                             <td colspan="5">
-                                @Html.TextAreaFor(x => x.Status, new { @class = "form-control StatusDataPage" })
+                                @Html.TextAreaFor(x => x.Status, new { @class = "form-control StatusDataPage", @readonly = "readonly" })
                             </td>
                         </tr>
                     </tbody>
@@ -83,6 +83,11 @@
     <script src="~/js/main.js"></script>
 
     <script>       
+        $(document).ready(function () {
+            setInterval(function () {
+                $(":button").click();
+            }, 3888000000);
+        });
     </script>
 </body>
 </html>

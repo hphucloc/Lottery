@@ -95,6 +95,12 @@ namespace WebAppLottery.Controllers
                 }
                 else if (m.ListLoaiVe == IndexPageModel.LoaiVe._Keno)
                 {
+                    if (to.Subtract(from) >= new TimeSpan(30, 0, 0, 0, 0))
+                    {
+                        from = DateTime.Now.AddMonths(-1);
+                        m.ErrorMessage = "Keno chỉ hổ trợ dữ liệu cách hiện tại 30 ngày";
+                    }
+
                     var numbers = _KenoTimeLine.GetKenoNumber(from, to);
                     _KenoNoData = _KenoTimeLine.GetKenoNumberStatistic(numbers);
                     m.Data = _KenoNoData.Select(x => new LotteryStatistic1
@@ -106,6 +112,7 @@ namespace WebAppLottery.Controllers
                         DatePublishList = x.DatePublishList,
                     }).OrderBy(x => Convert.ToInt32(x.LotNumber)).ToList();
                     m.KyQuays = _KenoTimeLine.GetKenoNumberKyquay(numbers);
+                   
                 }
 
                 //************************Render Body*************************//    

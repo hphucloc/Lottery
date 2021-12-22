@@ -520,7 +520,7 @@ input.input100 {
 .wsize6 {
     max-width: 100%;
     width: 1000px;
-    height: 700px;
+    height: 600px;
     overflow-y: auto;
     overflow-x: auto;
 }
@@ -533,10 +533,14 @@ input.input100 {
     overflow-x: auto;
 }
 
-.MauNenSoTrung{
-    background-color:greenyellow;
-    width:40px;
-    height:20px;   
+.SoTrungFontSize {
+    font-size: 10px;
+}
+
+.MauNenSoTrung {
+    background-color: greenyellow;
+    width: 40px;
+    height: 20px;    
 }
 
 .HeaderLinkColor{
