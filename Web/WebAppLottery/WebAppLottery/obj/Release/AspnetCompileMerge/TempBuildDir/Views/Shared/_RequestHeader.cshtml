@@ -1,0 +1,60 @@
+﻿@model WebAppLottery.Models.IndexPageModel
+<table class="table">
+    <thead class="table-primary">
+        <tr>
+            <td class="WidthHeader">
+                Loại vé
+            </td>
+            <td class="WidthHeader">
+                Từ ngày
+            </td>
+            <td class="WidthHeader">
+                Đến ngày
+            </td>
+            <td class="WidthHeader"></td>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+                @Html.EnumDropDownListFor(x => x.ListLoaiVe, new { @onchange ="LoaiVeOnChange(this.value)" })
+            </td>
+            <td>
+                @Html.HiddenFor(x => x.HiddenFrom)
+                @Html.EditorFor(x => x.From, new { htmlAttributes = new { @class = "form-control" } })
+            </td>
+            <td>
+                @Html.HiddenFor(x => x.HiddenTo)
+                @Html.EditorFor(x => x.To, new { htmlAttributes = new { @class = "form-control" } })
+            </td>
+            <td class="d-flex flex-row-reverse">
+                <button type="submit" class="btn btn-success btn-sm" onclick="SubmitClick()">Lấy dữ liệu</button>
+            </td>
+        </tr>
+    </tbody>
+</table>
+
+<script>       
+    function SubmitClick() {
+        $('#HiddenFrom').val(null);
+        $('#HiddenTo').val(null);
+    }
+
+    function LoaiVeOnChange(val) {
+        if (val == 5) //Keno
+        {
+            var d = new Date();
+            d.setDate(d.getDate() - 2);
+        } else {
+            var d = new Date();
+            d.setDate(d.getDate() - 90);           
+        }
+
+        $('#From').val(moment(d).format('YYYY-MM-DD'));
+        $('#HiddenFrom').val(moment(d).format('YYYY-MM-DD'));
+    }
+</script>
+
+    
+    
+   

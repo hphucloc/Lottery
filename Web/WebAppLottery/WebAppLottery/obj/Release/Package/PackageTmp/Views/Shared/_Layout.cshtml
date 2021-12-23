@@ -75,41 +75,49 @@
     </div>
     @using (Html.BeginForm("Request", "Home", FormMethod.Post))
     {
-        <div class="bg-img1 size1 flex-w flex-c-m p-t-55 p-b-55 p-l-15 p-r-15"
-             style="background-image: url('../../images/bg02.jpg');">
-            <div class="wsize1 bor1 bg-light p-t-11 p-b-1 p-l-15 p-r-15 respon1 d-flex justify-content-center border border-info">
-                <div class="wsize5">
-                    @Html.Partial("_RequestHeader", Model)
+    <div class="bg-img1 size1 flex-w flex-c-m p-t-55 p-b-55 p-l-15 p-r-15"
+         style="background-image: url('../../images/bg02.jpg');">
+        <div class="wsize1 bor1 bg-light p-t-11 p-b-1 p-l-15 p-r-15 respon1 d-flex justify-content-center border border-info">
+            <div class="wsize5">
+                @Html.Partial("_RequestHeader", Model)
+            </div>
+        </div>
+        @if (Model.NoAppear1To7 != null &&
+            Model.NoAppear8To15 != null &&
+            Model.NoAppear16To23 != null &&
+            Model.NoAppear24To31 != null &&
+            Model.NoAppear32To39 != null &&
+            Model.NoAppear40To47 != null &&
+            Model.NoAppear48To55 != null)
+        {
+            <div class="wsize1 bor1 bg1 p-t-1 p-b-1 p-l-15 p-r-15 respon1 d-flex justify-content-start border border-info">
+                <div class="wsize3">
+                    @Html.Partial("_GroupNumberStatistic", Model)
                 </div>
             </div>
-            @if (Model.NoAppear1To7 != null &&
-                Model.NoAppear8To15 != null &&
-                Model.NoAppear16To23 != null &&
-                Model.NoAppear24To31 != null &&
-                Model.NoAppear32To39 != null &&
-                Model.NoAppear40To47 != null &&
-                Model.NoAppear48To55 != null)
-            {
-                <div class="wsize1 bor1 bg1 p-t-1 p-b-1 p-l-15 p-r-15 respon1 d-flex justify-content-start border border-info">
-                    <div class="wsize3">
-                        @Html.Partial("_GroupNumberStatistic", Model)
-                    </div>
+        }
+        @if (Model.Data != null)
+        {
+            <div class="wsize1 bor1 bg1 p-t-1 p-b-1 p-l-15 p-r-15 respon1 d-flex justify-content-start border border-info">
+                <div class="wsize6">
+                    @RenderBody()
                 </div>
-            }
-            @if (Model.Data != null)
-            {
-                <div class="wsize1 bor1 bg1 p-t-1 p-b-1 p-l-15 p-r-15 respon1 d-flex justify-content-start border border-info">
-                    <div class="wsize6">
-                        @RenderBody()
-                    </div>
+            </div>
+        }
+        else
+        {
+            @RenderBody()
+        }
+        @if (Model.ListLoaiVe == WebAppLottery.Models.IndexPageModel.LoaiVe._Keno)
+        {
+            <div class="wsize1 bor1 bg-light p-t-11 p-b-1 p-l-15 p-r-15 respon1 d-flex justify-content-center border border-info">
+                <div class="wsize7">
+                    @Html.Partial("_ChanLeLonNho", Model)
                 </div>
-            }
-            else
-            {
-                @RenderBody()
-            }
+            </div>
+        }
 
-        </div>
+    </div>
     }
 
     @Scripts.Render("~/bundles/jquery")

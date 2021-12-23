@@ -1,0 +1,35 @@
+﻿@model WebAppLottery.Models.IndexPageModel
+<div class="container-fluid">
+    <div class="col-12">
+        <h6>Chẳn Lẽ/Lớn Nhỏ</h6>
+    </div>
+    <div class="col-12">
+        <table class="table table-secondary table-striped table-bordered TableData">
+            <thead class="table-dark">
+                <tr class="text-info">
+                    <td class="align-items-lg-center align-middle text-center"><h6 id="QuantitySoDaChon"></h6>Kỳ quay</td>
+                    @foreach (var i in Model.ChanleLonNhos.Keys.OrderByDescending(x => x.Value))
+                    {
+                        <td class="align-items-lg-center align-middle text-center">@string.Format("{0:0,0}", i.Value)</td>
+                    }
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="align-items-lg-center align-middle text-center">Chẳn lẽ</td>
+                    @foreach (var i in Model.ChanleLonNhos.Keys.OrderByDescending(x => x.Value))
+                    {
+                        <td class="align-items-lg-center align-middle text-center">@Model.ChanleLonNhos[i][0]</td>
+                    }
+                </tr>
+                <tr>
+                    <td class="align-items-lg-center align-middle text-center">Lớn nhỏ</td>
+                    @foreach (var i in Model.ChanleLonNhos.Keys.OrderByDescending(x => x.Value))
+                    {
+                        <td class="align-items-lg-center align-middle text-center">@Model.ChanleLonNhos[i][1]</td>
+                    }
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

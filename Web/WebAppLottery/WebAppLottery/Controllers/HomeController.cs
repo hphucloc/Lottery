@@ -112,7 +112,7 @@ namespace WebAppLottery.Controllers
                         DatePublishList = x.DatePublishList,
                     }).OrderBy(x => Convert.ToInt32(x.LotNumber)).ToList();
                     m.KyQuays = _KenoTimeLine.GetKenoNumberKyquay(numbers);
-                   
+                    m.ChanleLonNhos = _KenoTimeLine.GetKenoChanleLonNho(from, to);
                 }
 
                 //************************Render Body*************************//    
