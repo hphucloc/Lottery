@@ -17,10 +17,10 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
       <publishTime>10/25/2021 17:11:53</publishTime>
     </File>
     <File Include="bin/App_global.asax.compiled">
-      <publishTime>12/23/2021 14:32:13</publishTime>
+      <publishTime>12/23/2021 17:15:25</publishTime>
     </File>
     <File Include="bin/App_global.asax.dll">
-      <publishTime>12/23/2021 14:32:13</publishTime>
+      <publishTime>12/23/2021 17:15:25</publishTime>
     </File>
     <File Include="bin/EntityFramework.dll">
       <publishTime>10/25/2021 17:11:57</publishTime>
@@ -215,10 +215,10 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
       <publishTime>10/25/2021 17:11:54</publishTime>
     </File>
     <File Include="bin/WebAppLottery.dll">
-      <publishTime>12/23/2021 14:31:50</publishTime>
+      <publishTime>12/23/2021 17:15:16</publishTime>
     </File>
     <File Include="bin/WebAppLottery.pdb">
-      <publishTime>12/23/2021 14:31:50</publishTime>
+      <publishTime>12/23/2021 17:15:16</publishTime>
     </File>
     <File Include="bin/WebGrease.dll">
       <publishTime>10/25/2021 17:11:57</publishTime>
@@ -356,7 +356,7 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
       <publishTime>11/05/2021 14:20:01</publishTime>
     </File>
     <File Include="css/main.css">
-      <publishTime>12/23/2021 14:16:21</publishTime>
+      <publishTime>12/23/2021 17:03:06</publishTime>
     </File>
     <File Include="css/util.css">
       <publishTime>10/25/2021 17:11:53</publishTime>
@@ -398,7 +398,7 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
       <publishTime>12/22/2021 15:41:24</publishTime>
     </File>
     <File Include="PrecompiledApp.config">
-      <publishTime>12/23/2021 14:32:01</publishTime>
+      <publishTime>12/23/2021 17:15:19</publishTime>
     </File>
     <File Include="Scripts/bootstrap-toggle.js">
       <publishTime>11/20/2021 15:15:00</publishTime>
@@ -851,7 +851,7 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
       <publishTime>10/25/2021 17:11:53</publishTime>
     </File>
     <File Include="Views/Home/Data.cshtml">
-      <publishTime>12/23/2021 13:37:22</publishTime>
+      <publishTime>12/23/2021 17:13:51</publishTime>
     </File>
     <File Include="Views/Home/Index.cshtml">
       <publishTime>12/23/2021 14:09:59</publishTime>
@@ -863,7 +863,7 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
       <publishTime>10/25/2021 17:11:53</publishTime>
     </File>
     <File Include="Views/Shared/_ChanLeLonNho.cshtml">
-      <publishTime>12/23/2021 14:25:04</publishTime>
+      <publishTime>12/23/2021 16:53:28</publishTime>
     </File>
     <File Include="Views/Shared/_GroupNumberStatistic.cshtml">
       <publishTime>12/22/2021 13:22:30</publishTime>
@@ -881,7 +881,7 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
       <publishTime>10/25/2021 17:11:53</publishTime>
     </File>
     <File Include="Web.config">
-      <publishTime>12/23/2021 14:31:54</publishTime>
+      <publishTime>12/23/2021 17:15:18</publishTime>
     </File>
   </ItemGroup>
 </Project>

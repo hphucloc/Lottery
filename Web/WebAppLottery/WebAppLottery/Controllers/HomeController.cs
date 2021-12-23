@@ -95,10 +95,10 @@ namespace WebAppLottery.Controllers
                 }
                 else if (m.ListLoaiVe == IndexPageModel.LoaiVe._Keno)
                 {
-                    if (to.Subtract(from) >= new TimeSpan(30, 0, 0, 0, 0))
+                    if (to.Date.Subtract(from.Date) >= new TimeSpan(7, 0, 0, 0, 0))
                     {
-                        from = DateTime.Now.AddMonths(-1);
-                        m.ErrorMessage = "Keno chỉ hổ trợ dữ liệu cách hiện tại 30 ngày";
+                        from = DateTime.Now.AddDays(-7);
+                        m.ErrorMessage = "Keno chỉ hổ trợ dữ liệu cách hiện tại 7 ngày";
                     }
 
                     var numbers = _KenoTimeLine.GetKenoNumber(from, to);
@@ -113,6 +113,12 @@ namespace WebAppLottery.Controllers
                     }).OrderBy(x => Convert.ToInt32(x.LotNumber)).ToList();
                     m.KyQuays = _KenoTimeLine.GetKenoNumberKyquay(numbers);
                     m.ChanleLonNhos = _KenoTimeLine.GetKenoChanleLonNho(from, to);
+                    m.HoaChanLeNo = m.ChanleLonNhos.Count(x => x.Value[0].ToLower().Contains("Hòa".ToLower()));
+                    m.ChanNo= m.ChanleLonNhos.Count(x => x.Value[0].ToLower().Contains("Chẵn".ToLower()));
+                    m.LeNo = m.ChanleLonNhos.Count(x => x.Value[0].ToLower().Contains("Lẻ".ToLower()));
+                    m.HoaLonNhoNo = m.ChanleLonNhos.Count(x => x.Value[1].ToLower().Contains("Hòa".ToLower()));
+                    m.LonNo = m.ChanleLonNhos.Count(x => x.Value[1].ToLower().Contains("Lớn".ToLower()));
+                    m.NhoNo = m.ChanleLonNhos.Count(x => x.Value[1].ToLower().Contains("Nhỏ".ToLower()));
                 }
 
                 //************************Render Body*************************//    

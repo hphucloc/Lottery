@@ -17,6 +17,8 @@ namespace WebAppLottery.Models
             _6Over55 = 3,
             [Description("Keno")]
             _Keno = 5,
+            //[Description("3DMAX")]
+            //_3DMax = 2,
         }
 
         //request header       
@@ -51,5 +53,12 @@ namespace WebAppLottery.Models
         public List<WebAppLottery.Models.LotteryStatistic1> Data { get; set; }      
 
         public List<DateTime> AllDatePublist { get; set; }        
+
+        public int? HoaChanLeNo { get; set; }
+        public int? ChanNo { get; set; }
+        public int? LeNo { get; set; }
+        public int? HoaLonNhoNo { get; set; }
+        public int? LonNo { get; set; }
+        public int? NhoNo { get; set; }
     }
 }

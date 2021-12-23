@@ -528,7 +528,7 @@ input.input100 {
 .wsize7 {
     max-width: 100%;
     width: 1000px;
-    height: 260px;
+    height: 350px;
     overflow-y: auto;
     overflow-x: auto;
 }

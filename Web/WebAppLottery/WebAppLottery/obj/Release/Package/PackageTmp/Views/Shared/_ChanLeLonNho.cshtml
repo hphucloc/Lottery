@@ -14,16 +14,46 @@
                     }
                 </tr>
             </thead>
-            <tbody>
-                <tr>
-                    <td class="align-items-lg-center align-middle text-center">Chẳn lẽ</td>
+            <tbody class="align-items-lg-center align-middle text-center">
+                <tr class="align-items-lg-center align-middle text-center">
+                    <td class="align-items-lg-center align-middle text-center">
+                        <table class="table">
+                            <tbody>
+                                <tr>
+                                    <td>Hòa</td>                                   
+                                    <td>Chẵn</td>                                  
+                                    <td>Lẻ</td>                                   
+                                </tr>
+                                <tr>                                    
+                                    <td>@Model.HoaChanLeNo</td>                                   
+                                    <td>@Model.ChanNo</td>                                 
+                                    <td>@Model.LeNo</td>
+                                </tr>
+                            </tbody>                          
+                        </table>
+                    </td>
                     @foreach (var i in Model.ChanleLonNhos.Keys.OrderByDescending(x => x.Value))
                     {
                         <td class="align-items-lg-center align-middle text-center">@Model.ChanleLonNhos[i][0]</td>
                     }
                 </tr>
                 <tr>
-                    <td class="align-items-lg-center align-middle text-center">Lớn nhỏ</td>
+                    <td class="align-items-lg-center align-middle text-center">
+                        <table class="table">
+                            <tbody>
+                                <tr>
+                                    <td>Hòa</td>                                   
+                                    <td>Lớn</td>                                 
+                                    <td>Nhỏ</td>                                   
+                                </tr>
+                                <tr>                                   
+                                    <td>@Model.HoaLonNhoNo</td>                                   
+                                    <td>@Model.LonNo</td>                                    
+                                    <td>@Model.NhoNo</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </td>
                     @foreach (var i in Model.ChanleLonNhos.Keys.OrderByDescending(x => x.Value))
                     {
                         <td class="align-items-lg-center align-middle text-center">@Model.ChanleLonNhos[i][1]</td>
