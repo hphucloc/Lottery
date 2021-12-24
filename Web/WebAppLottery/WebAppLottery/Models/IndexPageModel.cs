@@ -17,8 +17,8 @@ namespace WebAppLottery.Models
             _6Over55 = 3,
             [Description("Keno")]
             _Keno = 5,
-            //[Description("3DMAX")]
-            //_3DMax = 2,
+            [Description("3DMAX")]
+            _3DMax = 2,
         }
 
         //request header       
@@ -50,7 +50,10 @@ namespace WebAppLottery.Models
         public SortedDictionary<int?, SortedSet<int>> KyQuays { get; set; }
         public SortedDictionary<int?, string[]> ChanleLonNhos { get; set; }
         //Render body
-        public List<WebAppLottery.Models.LotteryStatistic1> Data { get; set; }      
+        public List<WebAppLottery.Models.LotteryStatistic1> Data { get; set; }
+        public List<WebAppLottery.Models.LotteryStatistic1> GiaiNhat { get; set; }
+        public List<WebAppLottery.Models.LotteryStatistic1> GiaiNhi { get; set; }
+        public List<WebAppLottery.Models.LotteryStatistic1> GiaiBa { get; set; }
 
         public List<DateTime> AllDatePublist { get; set; }        
 

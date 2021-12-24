@@ -11,10 +11,7 @@ using WebAppLottery.Models;
 namespace WebAppLottery.Controllers
 {
     public class HomeController : Controller
-    {
-        private List<LoterryStatistic> _6Over45NoData { get; set; }
-        private List<LoterryStatistic> _6Over55NoData { get; set; }
-        private List<LoterryStatistic> _KenoNoData { get; set; }
+    {     
         [HttpGet]
         public ActionResult Index(IndexPageModel m)
         {            
@@ -70,9 +67,8 @@ namespace WebAppLottery.Controllers
                 m.From = from;
                 m.To = to;
                 if (m.ListLoaiVe == IndexPageModel.LoaiVe._6Over45)
-                {
-                    _6Over45NoData = _6Over45TimeLine.Get6Over45Number(from, to);
-                    m.Data = _6Over45NoData.Select(x => new LotteryStatistic1
+                {                  
+                    m.Data = _6Over45TimeLine.Get6Over45Number(from, to).Select(x => new LotteryStatistic1
                     {
                         LotNumber = Convert.ToInt32(x.LotNumber),
                         AllDatePublishList = x.AllDatePublishList,
@@ -80,11 +76,10 @@ namespace WebAppLottery.Controllers
                         TotalNumberAppearInRange = x.TotalNumberAppearInRange,
                         DatePublishList = x.DatePublishList
                     }).OrderBy(x => x.LotNumber).ToList();
-                }
+                }                
                 else if (m.ListLoaiVe == IndexPageModel.LoaiVe._6Over55)
-                {
-                    _6Over55NoData = _6Over55TimeLine.Get6Over55Number(from, to);
-                    m.Data = _6Over55NoData.Select(x => new LotteryStatistic1
+                {                                
+                    m.Data = _6Over55TimeLine.Get6Over55Number(from, to).Select(x => new LotteryStatistic1
                     {
                         LotNumber = Convert.ToInt32(x.LotNumber),
                         AllDatePublishList = x.AllDatePublishList,
@@ -102,7 +97,7 @@ namespace WebAppLottery.Controllers
                     }
 
                     var numbers = _KenoTimeLine.GetKenoNumber(from, to);
-                    _KenoNoData = _KenoTimeLine.GetKenoNumberStatistic(numbers);
+                    var _KenoNoData = _KenoTimeLine.GetKenoNumberStatistic(numbers);
                     m.Data = _KenoNoData.Select(x => new LotteryStatistic1
                     {
                         LotNumber = Convert.ToInt32(x.LotNumber),
@@ -119,6 +114,41 @@ namespace WebAppLottery.Controllers
                     m.HoaLonNhoNo = m.ChanleLonNhos.Count(x => x.Value[1].ToLower().Contains("Hòa".ToLower()));
                     m.LonNo = m.ChanleLonNhos.Count(x => x.Value[1].ToLower().Contains("Lớn".ToLower()));
                     m.NhoNo = m.ChanleLonNhos.Count(x => x.Value[1].ToLower().Contains("Nhỏ".ToLower()));
+                }
+                else if (m.ListLoaiVe == IndexPageModel.LoaiVe._3DMax)
+                {
+                    m.Data = _3DMaxTimeLine.Get3DMaxNumberDacBiet(from, to).Select(x => new LotteryStatistic1
+                    {
+                        LotNumber = Convert.ToInt32(x.LotNumber),
+                        AllDatePublishList = x.AllDatePublishList,
+                        DatePublish = x.DatePublish,
+                        TotalNumberAppearInRange = x.TotalNumberAppearInRange,
+                        DatePublishList = x.DatePublishList
+                    }).OrderBy(x => x.LotNumber).ToList();
+                    m.GiaiNhat = _3DMaxTimeLine.Get3DMaxNumberGiaiNhat(from, to).Select(x => new LotteryStatistic1
+                    {
+                        LotNumber = Convert.ToInt32(x.LotNumber),
+                        AllDatePublishList = x.AllDatePublishList,
+                        DatePublish = x.DatePublish,
+                        TotalNumberAppearInRange = x.TotalNumberAppearInRange,
+                        DatePublishList = x.DatePublishList
+                    }).OrderBy(x => x.LotNumber).ToList();
+                    m.GiaiNhi = _3DMaxTimeLine.Get3DMaxNumberGiaiNhi(from, to).Select(x => new LotteryStatistic1
+                    {
+                        LotNumber = Convert.ToInt32(x.LotNumber),
+                        AllDatePublishList = x.AllDatePublishList,
+                        DatePublish = x.DatePublish,
+                        TotalNumberAppearInRange = x.TotalNumberAppearInRange,
+                        DatePublishList = x.DatePublishList
+                    }).OrderBy(x => x.LotNumber).ToList();
+                    m.GiaiBa = _3DMaxTimeLine.Get3DMaxNumberGiaiBa(from, to).Select(x => new LotteryStatistic1
+                    {
+                        LotNumber = Convert.ToInt32(x.LotNumber),
+                        AllDatePublishList = x.AllDatePublishList,
+                        DatePublish = x.DatePublish,
+                        TotalNumberAppearInRange = x.TotalNumberAppearInRange,
+                        DatePublishList = x.DatePublishList
+                    }).OrderBy(x => x.LotNumber).ToList();
                 }
 
                 //************************Render Body*************************//    

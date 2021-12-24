@@ -9,7 +9,7 @@
             </div>
             <div class="col-12">
                 <table class="table table-secondary table-striped table-bordered TableData">
-                    <thead>                       
+                    <thead>
                         <tr>
                             <td class="Do">
                                 1->7
@@ -37,7 +37,7 @@
                             }
                         </tr>
                     </thead>
-                    <tbody class="table-light">                       
+                    <tbody class="table-light">
                         <tr>
                             <td>
                                 <p> @Model.NoAppear1To7</p>
@@ -72,10 +72,10 @@
                     <thead class="table-dark">
                         <tr class="text-info">
                             @*@foreach (var i in Model.groupNumberStatistic.Keys.OrderByDescending(x => x.Date))
-                            {
-                                <td>@string.Format("{0:d/M}", i.Date)</td>
-                            }*@
-                            <td colspan="2"><img src="~/images/BackArrow.png" /></td>                         
+                                {
+                                    <td>@string.Format("{0:d/M}", i.Date)</td>
+                                }*@
+                            <td colspan="2"><img src="~/images/BackArrow.png" /></td>
                         </tr>
                     </thead>
                     <tbody>
@@ -137,7 +137,7 @@
                                     </td>
                                 }
                                 else if (Model.groupNumberStatistic[i].Count() >= 6 &&
-                                    Model.groupNumberStatistic[i].Count() >= 6 &&Model.groupNumberStatistic[i].ElementAt(0) >= 48 && Model.groupNumberStatistic[i].ElementAt(0) <= 55)
+                                    Model.groupNumberStatistic[i].Count() >= 6 && Model.groupNumberStatistic[i].ElementAt(0) >= 48 && Model.groupNumberStatistic[i].ElementAt(0) <= 55)
                                 {
                                     <td class="Tim">
                                         <div class="font-italic fs-5 text-secondary align-items-lg-center align-middle text-center">
@@ -563,7 +563,8 @@
             </div>
         </div>
     }
-    else
+    else if (Model.ListLoaiVe != WebAppLottery.Models.IndexPageModel.LoaiVe._6Over45 ||
+             Model.ListLoaiVe != WebAppLottery.Models.IndexPageModel.LoaiVe._6Over55)
     {
         <div class="container-fluid">
             <div class="col-12">
@@ -643,12 +644,8 @@
             </div>
             <div class="col-12">
                 <table class="table table-bordered TableData">
-                    <thead class="table-dark">                        
+                    <thead class="table-dark">
                         <tr class="text-info">
-                            @*@foreach (var i in Model.KyQuays.OrderByDescending(x=>x.Key))
-        {
-            <td>@string.Format("{0:0,0}", i.Key)</td>
-        }*@
                             <td colspan="2"><img src="~/images/BackArrow.png" /></td>
                         </tr>
                     </thead>
@@ -2354,6 +2351,52 @@
                             }
                         </tr>
                     </tbody>
+                </table>
+            </div>
+        </div>
+    }
+    else if (Model.ListLoaiVe != WebAppLottery.Models.IndexPageModel.LoaiVe._3DMax)
+    {
+        <div class="container-fluid">
+            <div class="col-12">
+                <h6>Tổng số lần xuất hiện theo nhóm</h6>
+            </div>
+            <div class="col-12">
+                <table class="table table-secondary table-striped table-bordered TableData">
+                    <thead>
+                        <tr>
+                            <td class="Do">
+                                1->100
+                            </td>
+                            <td class="Cam">
+                                101->200
+                            </td>
+                            <td class="Vang">
+                                201->300
+                            </td>
+                            <td class="Luc">
+                                301->400
+                            </td>
+                            <td class="Lam">
+                                401->500
+                            </td>
+                            <td class="Cham">
+                                501->600
+                            </td>
+                            <td class="Tim">
+                                601->700
+                            </td>
+                            <td class="BlueGreen">
+                                701->800
+                            </td>
+                            <td class="Pink">
+                                801->900
+                            </td>
+                            <td class="LightBlue">
+                                901->999
+                            </td>
+                        </tr>
+                    </thead>
                 </table>
             </div>
         </div>
