@@ -98,18 +98,21 @@ namespace LotteryBusiness
 
             return lst;
         }
+
+
+
         public static List<LoterryStatistic> GetLotNumberStatistic(IQueryable<LotteryNumber> Number)
         {
             List<LoterryStatistic> lst = new List<LoterryStatistic>();
 
-            string prvLotNumber = null;
-            string curLotNumber = null;
+            int prvLotNumber = 0;
+            int curLotNumber = 0;
 
             //Bo so trung
             foreach (LotteryNumber no in Number)
             {
-                curLotNumber = no.LotNumber;
-                if (curLotNumber != prvLotNumber)
+                curLotNumber = Convert.ToInt32(no.LotNumber);
+                if (curLotNumber != Convert.ToInt32(prvLotNumber))
                 {
                     if (lst.Count > 0)
                         lst[lst.Count - 1].DatePublishList.DatePublishList1.Sort();
