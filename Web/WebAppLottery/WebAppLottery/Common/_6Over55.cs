@@ -104,6 +104,7 @@ namespace DataVietlott
             {
                 c++;
                 value += lotNumber.LotNumber + " ";
+                lotNumber.LotNumber = (Convert.ToInt32(lotNumber.LotNumber)).ToString();
                 Db.Numbers.Add(lotNumber);
                 Db.Entry(lotNumber).State = System.Data.Entity.EntityState.Added;
                 Db.SaveChanges();
