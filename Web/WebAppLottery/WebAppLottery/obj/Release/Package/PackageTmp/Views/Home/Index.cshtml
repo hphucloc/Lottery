@@ -1,6 +1,6 @@
 ﻿@model WebAppLottery.Models.IndexPageModel
 @{
-//int c = 0;
+    //int c = 0;
 }
 @if (Model.Data != null)
 {
@@ -17,9 +17,9 @@
                             <td><h6 id="QuantitySoDaChon"></h6>Số</td>
                             <td>Xuất hiện</td>
                             @*@foreach (var i in Model.AllDatePublist.OrderByDescending(x => x.Date))
-                            {
-                                <td>@string.Format("{0:d/M}", i.Date)</td>
-                            }*@
+                                {
+                                    <td>@string.Format("{0:d/M}", i.Date)</td>
+                                }*@
                             <td>Ngày</td>
                         </tr>
                     </thead>
@@ -62,7 +62,8 @@
             </div>
         </div>
     }
-    else
+    else if (Model.ListLoaiVe != WebAppLottery.Models.IndexPageModel.LoaiVe._6Over45 ||
+             Model.ListLoaiVe != WebAppLottery.Models.IndexPageModel.LoaiVe._6Over55)
     {
         <div class="container-fluid">
             <div class="col-12">
@@ -73,7 +74,7 @@
                     <thead class="table-dark">
                         <tr class="text-info">
                             <td><h6 id="QuantitySoDaChon"></h6>Số</td>
-                            <td>Xuất hiện</td>  
+                            <td>Xuất hiện</td>
                             <td>Kỳ quay</td>
                         </tr>
                     </thead>
@@ -93,7 +94,7 @@
                                     <td class="align-middle">
                                         @foreach (var k in i.DatePublishList.LstKyQuay.OrderByDescending(x => x))
                                         {
-                                            if(j.Key == k.Value)
+                                            if (j.Key == k.Value)
                                             {
                                                 <div class="MauNenSoTrung font-italic fs-5 text-secondary align-items-lg-center align-middle text-center">
                                                     <p class="SoTrungFontSize">@string.Format("{0:0,0}", k.Value)</p>
@@ -106,7 +107,11 @@
                         }
                     </tbody>
                 </table>
-            </div>           
+            </div>
         </div>
     }
+    //else if (Model.ListLoaiVe != WebAppLottery.Models.IndexPageModel.LoaiVe._3DMax)
+    //{
+
+    //}
 }

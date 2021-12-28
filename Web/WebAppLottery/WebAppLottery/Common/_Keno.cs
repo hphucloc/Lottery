@@ -80,7 +80,7 @@ namespace DataVietlott
             foreach (Number lotNumber in ListNumber)
             {
                 c++;
-                value += lotNumber.LotNumber + " ";
+                value += lotNumber.LotNumber + " ";               
                 Db.Numbers.Add(lotNumber);
                 Db.Entry(lotNumber).State = System.Data.Entity.EntityState.Added;
                 Db.SaveChanges();
