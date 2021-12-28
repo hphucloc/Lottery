@@ -51,9 +51,12 @@ namespace WebAppLottery.Models
         public SortedDictionary<int?, string[]> ChanleLonNhos { get; set; }
         //Render body
         public List<WebAppLottery.Models.LotteryStatistic1> Data { get; set; }
-        public List<WebAppLottery.Models.LotteryStatistic1> GiaiNhat { get; set; }
-        public List<WebAppLottery.Models.LotteryStatistic1> GiaiNhi { get; set; }
-        public List<WebAppLottery.Models.LotteryStatistic1> GiaiBa { get; set; }
+
+        //3DMAX
+        public List<LotteryBusiness.LoterryStatistic> OriginalData { get; set; }
+        public List<LotteryBusiness.LoterryStatistic> GiaiNhat { get; set; }
+        public List<LotteryBusiness.LoterryStatistic> GiaiNhi { get; set; }
+        public List<LotteryBusiness.LoterryStatistic> GiaiBa { get; set; }
 
         public List<DateTime> AllDatePublist { get; set; }        
 

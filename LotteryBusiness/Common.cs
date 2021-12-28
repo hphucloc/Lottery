@@ -99,8 +99,6 @@ namespace LotteryBusiness
             return lst;
         }
 
-
-
         public static List<LoterryStatistic> GetLotNumberStatistic(IQueryable<LotteryNumber> Number)
         {
             List<LoterryStatistic> lst = new List<LoterryStatistic>();

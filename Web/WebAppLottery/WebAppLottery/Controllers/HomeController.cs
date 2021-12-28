@@ -117,38 +117,10 @@ namespace WebAppLottery.Controllers
                 }
                 else if (m.ListLoaiVe == IndexPageModel.LoaiVe._3DMax)
                 {
-                    m.Data = _3DMaxTimeLine.Get3DMaxNumberDacBiet(from, to).Select(x => new LotteryStatistic1
-                    {
-                        LotNumber = Convert.ToInt32(x.LotNumber),
-                        AllDatePublishList = x.AllDatePublishList,
-                        DatePublish = x.DatePublish,
-                        TotalNumberAppearInRange = x.TotalNumberAppearInRange,
-                        DatePublishList = x.DatePublishList
-                    }).OrderBy(x => x.LotNumber).ToList();
-                    m.GiaiNhat = _3DMaxTimeLine.Get3DMaxNumberGiaiNhat(from, to).Select(x => new LotteryStatistic1
-                    {
-                        LotNumber = Convert.ToInt32(x.LotNumber),
-                        AllDatePublishList = x.AllDatePublishList,
-                        DatePublish = x.DatePublish,
-                        TotalNumberAppearInRange = x.TotalNumberAppearInRange,
-                        DatePublishList = x.DatePublishList
-                    }).OrderBy(x => x.LotNumber).ToList();
-                    m.GiaiNhi = _3DMaxTimeLine.Get3DMaxNumberGiaiNhi(from, to).Select(x => new LotteryStatistic1
-                    {
-                        LotNumber = Convert.ToInt32(x.LotNumber),
-                        AllDatePublishList = x.AllDatePublishList,
-                        DatePublish = x.DatePublish,
-                        TotalNumberAppearInRange = x.TotalNumberAppearInRange,
-                        DatePublishList = x.DatePublishList
-                    }).OrderBy(x => x.LotNumber).ToList();
-                    m.GiaiBa = _3DMaxTimeLine.Get3DMaxNumberGiaiBa(from, to).Select(x => new LotteryStatistic1
-                    {
-                        LotNumber = Convert.ToInt32(x.LotNumber),
-                        AllDatePublishList = x.AllDatePublishList,
-                        DatePublish = x.DatePublish,
-                        TotalNumberAppearInRange = x.TotalNumberAppearInRange,
-                        DatePublishList = x.DatePublishList
-                    }).OrderBy(x => x.LotNumber).ToList();
+                    m.OriginalData = _3DMaxTimeLine.Get3DMaxNumberDacBiet(from, to).OrderByDescending(x => x.DatePublish).ToList();
+                    m.GiaiNhat = _3DMaxTimeLine.Get3DMaxNumberGiaiNhat(from, to).OrderByDescending(x => x.DatePublish).ToList();
+                    m.GiaiNhi = _3DMaxTimeLine.Get3DMaxNumberGiaiNhi(from, to).OrderByDescending(x => x.DatePublish).ToList();
+                    m.GiaiBa = _3DMaxTimeLine.Get3DMaxNumberGiaiBa(from, to).OrderByDescending(x => x.DatePublish).ToList();
                 }
 
                 //************************Render Body*************************//    
