@@ -124,90 +124,187 @@ namespace WebAppLottery.Controllers
                 }
 
                 //************************Render Body*************************//    
-                m.AllDatePublist = m.Data[0].AllDatePublishList;
+                if (m.Data != null && m.Data.Count > 0)
+                {
+                    m.AllDatePublist = m.Data[0].AllDatePublishList;
+                }
+                else if (m.OriginalData != null && m.OriginalData.Count > 0)
+                {
+                    m.AllDatePublist = m.OriginalData[0].AllDatePublishList;
+                }
 
                 //************************Render GroupNumberStatistic*************************//
-                SortedDictionary<DateTime, SortedSet<int>> hitNumberByDate =
-                    new SortedDictionary<DateTime, SortedSet<int>>();
-                foreach (var i in m.Data)                
+                if (m.Data != null && m.Data.Count > 0)
                 {
-                    if (Convert.ToInt32(i.LotNumber) >= 1 && Convert.ToInt32(i.LotNumber) <= 7)
+                    SortedDictionary<DateTime, SortedSet<int>> hitNumberByDate =
+                        new SortedDictionary<DateTime, SortedSet<int>>();
+                    foreach (var i in m.Data)
                     {
-                        count1_7 += i.TotalNumberAppearInRange;
-                    }
-                    else
-                        if (Convert.ToInt32(i.LotNumber) >= 8 && Convert.ToInt32(i.LotNumber) <= 15)
-                    {
-                        count8_15 += i.TotalNumberAppearInRange;
-                    }
-                    else
-                        if (Convert.ToInt32(i.LotNumber) >= 6 && Convert.ToInt32(i.LotNumber) <= 23)
-                    {
-                        count16_23 += i.TotalNumberAppearInRange;
-                    }
-                    else
-                        if (Convert.ToInt32(i.LotNumber) >= 24 && Convert.ToInt32(i.LotNumber) <= 31)
-                    {
-                        count24_31 += i.TotalNumberAppearInRange;
-                    }
-                    else
-                        if (Convert.ToInt32(i.LotNumber) >= 32 && Convert.ToInt32(i.LotNumber) <= 39)
-                    {
-                        count32_39 += i.TotalNumberAppearInRange;
-                    }
-                    else
-                        if (Convert.ToInt32(i.LotNumber) >= 40 && Convert.ToInt32(i.LotNumber) <= 47)
-                    {
-                        count40_47 += i.TotalNumberAppearInRange;
-                    }
-                    else if (Convert.ToInt32(i.LotNumber) >= 48 && Convert.ToInt32(i.LotNumber) <= 55)
-                    {
-                        count48_55 += i.TotalNumberAppearInRange;
-                    }
-                    else if (Convert.ToInt32(i.LotNumber) >= 56 && Convert.ToInt32(i.LotNumber) <= 63)
-                    {
-                        count56_63 += i.TotalNumberAppearInRange;
-                    }
-                    else if (Convert.ToInt32(i.LotNumber) >= 64 && Convert.ToInt32(i.LotNumber) <= 71)
-                    {
-                        count64_71 += i.TotalNumberAppearInRange;
-                    }
-                    else if (Convert.ToInt32(i.LotNumber) >= 72 && Convert.ToInt32(i.LotNumber) <= 80)
-                    {
-                        count72_80 += i.TotalNumberAppearInRange;
-                    }
-
-                    //Get all publih Date               
-                    foreach (var date in i.AllDatePublishList)
-                    {
-                        if (!hitNumberByDate.ContainsKey(date))
+                        if (Convert.ToInt32(i.LotNumber) >= 1 && Convert.ToInt32(i.LotNumber) <= 7)
                         {
-                            hitNumberByDate.Add(date, new SortedSet<int>());
+                            count1_7 += i.TotalNumberAppearInRange;
+                        }
+                        else
+                            if (Convert.ToInt32(i.LotNumber) >= 8 && Convert.ToInt32(i.LotNumber) <= 15)
+                        {
+                            count8_15 += i.TotalNumberAppearInRange;
+                        }
+                        else
+                            if (Convert.ToInt32(i.LotNumber) >= 6 && Convert.ToInt32(i.LotNumber) <= 23)
+                        {
+                            count16_23 += i.TotalNumberAppearInRange;
+                        }
+                        else
+                            if (Convert.ToInt32(i.LotNumber) >= 24 && Convert.ToInt32(i.LotNumber) <= 31)
+                        {
+                            count24_31 += i.TotalNumberAppearInRange;
+                        }
+                        else
+                            if (Convert.ToInt32(i.LotNumber) >= 32 && Convert.ToInt32(i.LotNumber) <= 39)
+                        {
+                            count32_39 += i.TotalNumberAppearInRange;
+                        }
+                        else
+                            if (Convert.ToInt32(i.LotNumber) >= 40 && Convert.ToInt32(i.LotNumber) <= 47)
+                        {
+                            count40_47 += i.TotalNumberAppearInRange;
+                        }
+                        else if (Convert.ToInt32(i.LotNumber) >= 48 && Convert.ToInt32(i.LotNumber) <= 55)
+                        {
+                            count48_55 += i.TotalNumberAppearInRange;
+                        }
+                        else if (Convert.ToInt32(i.LotNumber) >= 56 && Convert.ToInt32(i.LotNumber) <= 63)
+                        {
+                            count56_63 += i.TotalNumberAppearInRange;
+                        }
+                        else if (Convert.ToInt32(i.LotNumber) >= 64 && Convert.ToInt32(i.LotNumber) <= 71)
+                        {
+                            count64_71 += i.TotalNumberAppearInRange;
+                        }
+                        else if (Convert.ToInt32(i.LotNumber) >= 72 && Convert.ToInt32(i.LotNumber) <= 80)
+                        {
+                            count72_80 += i.TotalNumberAppearInRange;
+                        }
+
+                        //Get all publih Date               
+                        foreach (var date in i.AllDatePublishList)
+                        {
+                            if (!hitNumberByDate.ContainsKey(date))
+                            {
+                                hitNumberByDate.Add(date, new SortedSet<int>());
+                            }
                         }
                     }
-                }
 
-                if (m.ListLoaiVe != IndexPageModel.LoaiVe._Keno)
+                    if (m.ListLoaiVe != IndexPageModel.LoaiVe._Keno)
+                    {
+                        //Prepare data for Color timeline
+                        foreach (var item in hitNumberByDate)
+                        {
+                            foreach (var aNo in m.Data)
+                                foreach (var date in aNo.DatePublishList.DatePublishList1)
+                                    if (item.Key == date)
+                                        item.Value.Add(Convert.ToInt32(aNo.LotNumber));
+                            m.groupNumberStatistic = hitNumberByDate;
+
+                        }
+                    }
+
+                    m.NoAppear1To7 = count1_7;
+                    m.NoAppear8To15 = count8_15;
+                    m.NoAppear16To23 = count16_23;
+                    m.NoAppear24To31 = count24_31;
+                    m.NoAppear32To39 = count32_39;
+                    m.NoAppear40To47 = count40_47;
+                    m.NoAppear48To55 = count48_55;
+                    m.NoAppear56To63 = count56_63;
+                    m.NoAppear64To71 = count64_71;
+                    m.NoAppear72To80 = count72_80;
+                }
+                else if (m.OriginalData != null && m.OriginalData.Count > 0)
                 {
+                    SortedDictionary<DateTime, SortedSet<string>> hitNumberByDate =
+                        new SortedDictionary<DateTime, SortedSet<string>>();
+                    foreach (var i in m.OriginalData)
+                    {
+                        if (Convert.ToInt32(i.LotNumber) >= 1 && Convert.ToInt32(i.LotNumber) <= 100)
+                        {
+                            count1_7 += i.TotalNumberAppearInRange;
+                        }
+                        else
+                            if (Convert.ToInt32(i.LotNumber) >= 101 && Convert.ToInt32(i.LotNumber) <= 200)
+                        {
+                            count8_15 += i.TotalNumberAppearInRange;
+                        }
+                        else
+                            if (Convert.ToInt32(i.LotNumber) >= 201 && Convert.ToInt32(i.LotNumber) <= 300)
+                        {
+                            count16_23 += i.TotalNumberAppearInRange;
+                        }
+                        else
+                            if (Convert.ToInt32(i.LotNumber) >= 301 && Convert.ToInt32(i.LotNumber) <= 400)
+                        {
+                            count24_31 += i.TotalNumberAppearInRange;
+                        }
+                        else
+                            if (Convert.ToInt32(i.LotNumber) >= 401 && Convert.ToInt32(i.LotNumber) <= 500)
+                        {
+                            count32_39 += i.TotalNumberAppearInRange;
+                        }
+                        else
+                            if (Convert.ToInt32(i.LotNumber) >= 501 && Convert.ToInt32(i.LotNumber) <= 600)
+                        {
+                            count40_47 += i.TotalNumberAppearInRange;
+                        }
+                        else if (Convert.ToInt32(i.LotNumber) >= 601 && Convert.ToInt32(i.LotNumber) <= 700)
+                        {
+                            count48_55 += i.TotalNumberAppearInRange;
+                        }
+                        else if (Convert.ToInt32(i.LotNumber) >= 701 && Convert.ToInt32(i.LotNumber) <= 800)
+                        {
+                            count56_63 += i.TotalNumberAppearInRange;
+                        }
+                        else if (Convert.ToInt32(i.LotNumber) >= 801 && Convert.ToInt32(i.LotNumber) <= 900)
+                        {
+                            count64_71 += i.TotalNumberAppearInRange;
+                        }
+                        else if (Convert.ToInt32(i.LotNumber) >= 901 && Convert.ToInt32(i.LotNumber) <= 999)
+                        {
+                            count72_80 += i.TotalNumberAppearInRange;
+                        }
+
+                        //Get all publih Date               
+                        foreach (var date in i.AllDatePublishList)
+                        {
+                            if (!hitNumberByDate.ContainsKey(date))
+                            {
+                                hitNumberByDate.Add(date, new SortedSet<string>());
+                            }
+                        }
+                    }
+
                     //Prepare data for Color timeline
                     foreach (var item in hitNumberByDate)
-                        foreach (var aNo in m.Data)
+                    {
+                        foreach (var aNo in m.OriginalData)
                             foreach (var date in aNo.DatePublishList.DatePublishList1)
                                 if (item.Key == date)
-                                    item.Value.Add(Convert.ToInt32(aNo.LotNumber));
-                    m.groupNumberStatistic = hitNumberByDate;
-                }
+                                    item.Value.Add(aNo.LotNumber);
+                        m.groupNumberStatistic3DMax = hitNumberByDate;
 
-                m.NoAppear1To7 = count1_7;
-                m.NoAppear8To15 = count8_15;
-                m.NoAppear16To23 = count16_23;
-                m.NoAppear24To31 = count24_31;
-                m.NoAppear32To39 = count32_39;
-                m.NoAppear40To47 = count40_47;
-                m.NoAppear48To55 = count48_55;
-                m.NoAppear56To63 = count56_63;
-                m.NoAppear64To71 = count64_71;
-                m.NoAppear72To80 = count72_80;
+                    }
+
+                    m.NoAppear1To7 = count1_7;
+                    m.NoAppear8To15 = count8_15;
+                    m.NoAppear16To23 = count16_23;
+                    m.NoAppear24To31 = count24_31;
+                    m.NoAppear32To39 = count32_39;
+                    m.NoAppear40To47 = count40_47;
+                    m.NoAppear48To55 = count48_55;
+                    m.NoAppear56To63 = count56_63;
+                    m.NoAppear64To71 = count64_71;
+                    m.NoAppear72To80 = count72_80;
+                }
             }
             return View("Index", m);            
         }

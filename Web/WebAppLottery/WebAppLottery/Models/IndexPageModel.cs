@@ -53,6 +53,7 @@ namespace WebAppLottery.Models
         public List<WebAppLottery.Models.LotteryStatistic1> Data { get; set; }
 
         //3DMAX
+        public SortedDictionary<DateTime, SortedSet<string>> groupNumberStatistic3DMax { get; set; }
         public List<LotteryBusiness.LoterryStatistic> OriginalData { get; set; }
         public List<LotteryBusiness.LoterryStatistic> GiaiNhat { get; set; }
         public List<LotteryBusiness.LoterryStatistic> GiaiNhi { get; set; }
