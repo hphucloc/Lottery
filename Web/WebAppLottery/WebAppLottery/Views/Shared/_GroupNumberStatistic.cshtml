@@ -2403,7 +2403,53 @@ else if (Model.OriginalData != null && Model.OriginalData.Count > 0 && Model.Ori
                             </td>
                         </tr>
                     </thead>
-                    <tbody>                       
+                    <tbody class="table-light">
+                        <tr>
+                            <td>
+                                <p> @Model.NoAppear1To7</p>
+                            </td>
+                            <td>
+                                <p> @Model.NoAppear8To15</p>
+                            </td>
+                            <td>
+                                <p> @Model.NoAppear16To23</p>
+                            </td>
+                            <td>
+                                <p> @Model.NoAppear24To31</p>
+                            </td>
+                            <td>
+                                <p> @Model.NoAppear32To39</p>
+                            </td>
+                            <td>
+                                <p> @Model.NoAppear40To47</p>
+                            </td>
+                            <td>
+                                <p> @Model.NoAppear48To55</p>
+                            </td>
+                            <td>
+                                <p> @Model.NoAppear56To63</p>
+                            </td>
+                            <td>
+                                <p> @Model.NoAppear64To71</p>
+                            </td>
+                            <td>
+                                <p> @Model.NoAppear72To80</p>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="col-12">
+                <table class="table table-bordered TableData">
+                    <thead class="table-dark">
+                        <tr class="text-info">                           
+                            @foreach (var i in Model.groupNumberStatistic3DMax.Keys.OrderByDescending(x => x.Date))
+                            {
+                                <td>@string.Format("{0:d/M}", i.Date)</td>
+                            }
+                        </tr>
+                    </thead>
+                    <tbody>
                         <tr>
                             @foreach (var i in Model.groupNumberStatistic3DMax.Keys.OrderByDescending(x => x.Date))
                             {
@@ -2478,19 +2524,19 @@ else if (Model.OriginalData != null && Model.OriginalData.Count > 0 && Model.Ori
                                             <h6>@Model.groupNumberStatistic3DMax[i].ElementAt(0)</h6>
                                         </div>
                                     </td>
-                                            }
-                                            else if (Convert.ToInt32(Model.groupNumberStatistic3DMax[i].ElementAt(0)) >= 801 &&
-                                                Convert.ToInt32(Model.groupNumberStatistic3DMax[i].ElementAt(0)) <= 900)
-                                            {
+                                }
+                                else if (Convert.ToInt32(Model.groupNumberStatistic3DMax[i].ElementAt(0)) >= 801 &&
+                                    Convert.ToInt32(Model.groupNumberStatistic3DMax[i].ElementAt(0)) <= 900)
+                                {
                                     <td class="Pink">
                                         <div class="font-italic fs-5 text-secondary align-items-lg-center align-middle text-center">
                                             <h6>@Model.groupNumberStatistic3DMax[i].ElementAt(0)</h6>
                                         </div>
                                     </td>
-                                            }
-                                            else if (Convert.ToInt32(Model.groupNumberStatistic3DMax[i].ElementAt(0)) >= 901 &&
-                                                Convert.ToInt32(Model.groupNumberStatistic3DMax[i].ElementAt(0)) <= 999)
-                                            {
+                                }
+                                else if (Convert.ToInt32(Model.groupNumberStatistic3DMax[i].ElementAt(0)) >= 901 &&
+                                    Convert.ToInt32(Model.groupNumberStatistic3DMax[i].ElementAt(0)) <= 999)
+                                {
                                     <td class="LightBlue">
                                         <div class="font-italic fs-5 text-secondary align-items-lg-center align-middle text-center">
                                             <h6>@Model.groupNumberStatistic3DMax[i].ElementAt(0)</h6>
@@ -2501,28 +2547,28 @@ else if (Model.OriginalData != null && Model.OriginalData.Count > 0 && Model.Ori
                         </tr>
                         <tr>
                             @foreach (var i in Model.groupNumberStatistic3DMax.Keys.OrderByDescending(x => x.Date))
-                                        {
-                                            if (Convert.ToInt32(Model.groupNumberStatistic3DMax[i].ElementAt(1)) >= 1 &&
-                                                Convert.ToInt32(Model.groupNumberStatistic3DMax[i].ElementAt(1)) <= 100)
-                                            {
+                            {
+                                if (Convert.ToInt32(Model.groupNumberStatistic3DMax[i].ElementAt(1)) >= 1 &&
+                                    Convert.ToInt32(Model.groupNumberStatistic3DMax[i].ElementAt(1)) <= 100)
+                                {
                                     <td class="Do">
                                         <div class="font-italic fs-5 text-secondary align-items-lg-center align-middle text-center">
                                             <h6>@Model.groupNumberStatistic3DMax[i].ElementAt(1)</h6>
                                         </div>
                                     </td>
-                                            }
-                                            else if (Convert.ToInt32(Model.groupNumberStatistic3DMax[i].ElementAt(1)) >= 101 &&
-                                                Convert.ToInt32(Model.groupNumberStatistic3DMax[i].ElementAt(1)) <= 200)
-                                            {
+                                }
+                                else if (Convert.ToInt32(Model.groupNumberStatistic3DMax[i].ElementAt(1)) >= 101 &&
+                                    Convert.ToInt32(Model.groupNumberStatistic3DMax[i].ElementAt(1)) <= 200)
+                                {
                                     <td class="Cam">
                                         <div class="font-italic fs-5 text-secondary align-items-lg-center align-middle text-center">
                                             <h6>@Model.groupNumberStatistic3DMax[i].ElementAt(1)</h6>
                                         </div>
                                     </td>
-                                            }
-                                            else if (Convert.ToInt32(Model.groupNumberStatistic3DMax[i].ElementAt(1)) >= 201 &&
-                                                Convert.ToInt32(Model.groupNumberStatistic3DMax[i].ElementAt(1)) <= 300)
-                                            {
+                                }
+                                else if (Convert.ToInt32(Model.groupNumberStatistic3DMax[i].ElementAt(1)) >= 201 &&
+                                    Convert.ToInt32(Model.groupNumberStatistic3DMax[i].ElementAt(1)) <= 300)
+                                {
                                     <td class="Vang">
                                         <div class="font-italic fs-5 text-secondary align-items-lg-center align-middle text-center">
                                             <h6>@Model.groupNumberStatistic3DMax[i].ElementAt(1)</h6>
@@ -2537,19 +2583,19 @@ else if (Model.OriginalData != null && Model.OriginalData.Count > 0 && Model.Ori
                                             <h6>@Model.groupNumberStatistic3DMax[i].ElementAt(1)</h6>
                                         </div>
                                     </td>
-                                            }
-                                            else if (Convert.ToInt32(Model.groupNumberStatistic3DMax[i].ElementAt(1)) >= 401 &&
-                                                Convert.ToInt32(Model.groupNumberStatistic3DMax[i].ElementAt(1)) <= 500)
-                                            {
+                                }
+                                else if (Convert.ToInt32(Model.groupNumberStatistic3DMax[i].ElementAt(1)) >= 401 &&
+                                    Convert.ToInt32(Model.groupNumberStatistic3DMax[i].ElementAt(1)) <= 500)
+                                {
                                     <td class="Lam">
                                         <div class="font-italic fs-5 text-secondary align-items-lg-center align-middle text-center">
                                             <h6>@Model.groupNumberStatistic3DMax[i].ElementAt(1)</h6>
                                         </div>
                                     </td>
-                                            }
-                                            else if (Convert.ToInt32(Model.groupNumberStatistic3DMax[i].ElementAt(1)) >= 501 &&
-                                                Convert.ToInt32(Model.groupNumberStatistic3DMax[i].ElementAt(1)) <= 600)
-                                            {
+                                }
+                                else if (Convert.ToInt32(Model.groupNumberStatistic3DMax[i].ElementAt(1)) >= 501 &&
+                                    Convert.ToInt32(Model.groupNumberStatistic3DMax[i].ElementAt(1)) <= 600)
+                                {
                                     <td class="Cham">
                                         <div class="font-italic fs-5 text-secondary align-items-lg-center align-middle text-center">
                                             <h6>@Model.groupNumberStatistic3DMax[i].ElementAt(1)</h6>
@@ -2564,28 +2610,28 @@ else if (Model.OriginalData != null && Model.OriginalData.Count > 0 && Model.Ori
                                             <h6>@Model.groupNumberStatistic3DMax[i].ElementAt(1)</h6>
                                         </div>
                                     </td>
-                                            }
-                                            else if (Convert.ToInt32(Model.groupNumberStatistic3DMax[i].ElementAt(1)) >= 701 &&
-                                                Convert.ToInt32(Model.groupNumberStatistic3DMax[i].ElementAt(1)) <= 800)
-                                            {
+                                }
+                                else if (Convert.ToInt32(Model.groupNumberStatistic3DMax[i].ElementAt(1)) >= 701 &&
+                                    Convert.ToInt32(Model.groupNumberStatistic3DMax[i].ElementAt(1)) <= 800)
+                                {
                                     <td class="BlueGreen">
                                         <div class="font-italic fs-5 text-secondary align-items-lg-center align-middle text-center">
                                             <h6>@Model.groupNumberStatistic3DMax[i].ElementAt(1)</h6>
                                         </div>
                                     </td>
-                                            }
-                                            else if (Convert.ToInt32(Model.groupNumberStatistic3DMax[i].ElementAt(1)) >= 801 &&
-                                                Convert.ToInt32(Model.groupNumberStatistic3DMax[i].ElementAt(1)) <= 900)
-                                            {
+                                }
+                                else if (Convert.ToInt32(Model.groupNumberStatistic3DMax[i].ElementAt(1)) >= 801 &&
+                                    Convert.ToInt32(Model.groupNumberStatistic3DMax[i].ElementAt(1)) <= 900)
+                                {
                                     <td class="Pink">
                                         <div class="font-italic fs-5 text-secondary align-items-lg-center align-middle text-center">
                                             <h6>@Model.groupNumberStatistic3DMax[i].ElementAt(1)</h6>
                                         </div>
                                     </td>
-                                            }
-                                            else if (Convert.ToInt32(Model.groupNumberStatistic3DMax[i].ElementAt(1)) >= 901 &&
-                                                Convert.ToInt32(Model.groupNumberStatistic3DMax[i].ElementAt(1)) <= 999)
-                                            {
+                                }
+                                else if (Convert.ToInt32(Model.groupNumberStatistic3DMax[i].ElementAt(1)) >= 901 &&
+                                    Convert.ToInt32(Model.groupNumberStatistic3DMax[i].ElementAt(1)) <= 999)
+                                {
                                     <td class="LightBlue">
                                         <div class="font-italic fs-5 text-secondary align-items-lg-center align-middle text-center">
                                             <h6>@Model.groupNumberStatistic3DMax[i].ElementAt(1)</h6>
@@ -2593,7 +2639,7 @@ else if (Model.OriginalData != null && Model.OriginalData.Count > 0 && Model.Ori
                                     </td>
                                 }
                             }
-                        </tr>                                                                             
+                        </tr>
                     </tbody>
                 </table>
             </div>

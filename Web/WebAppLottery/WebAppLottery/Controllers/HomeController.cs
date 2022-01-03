@@ -204,12 +204,10 @@ namespace WebAppLottery.Controllers
                             foreach (var aNo in m.Data)
                                 foreach (var date in aNo.DatePublishList.DatePublishList1)
                                     if (item.Key == date)
-                                        item.Value.Add(Convert.ToInt32(aNo.LotNumber));
-                            m.groupNumberStatistic = hitNumberByDate;
-
+                                        item.Value.Add(Convert.ToInt32(aNo.LotNumber));                            
                         }
                     }
-
+                    m.groupNumberStatistic = hitNumberByDate;
                     m.NoAppear1To7 = count1_7;
                     m.NoAppear8To15 = count8_15;
                     m.NoAppear16To23 = count16_23;
@@ -289,11 +287,20 @@ namespace WebAppLottery.Controllers
                         foreach (var aNo in m.OriginalData)
                             foreach (var date in aNo.DatePublishList.DatePublishList1)
                                 if (item.Key == date)
-                                    item.Value.Add(aNo.LotNumber);
-                        m.groupNumberStatistic3DMax = hitNumberByDate;
-
+                                    item.Value.Add(aNo.LotNumber);                       
                     }
 
+                    int j = 0;
+                    foreach(var i in hitNumberByDate)
+                    {
+                        for(int k = j; k == 0; k--)
+                        {
+
+                        }
+                        j++;
+                    }
+
+                    m.groupNumberStatistic3DMax = hitNumberByDate;
                     m.NoAppear1To7 = count1_7;
                     m.NoAppear8To15 = count8_15;
                     m.NoAppear16To23 = count16_23;

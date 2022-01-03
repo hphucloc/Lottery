@@ -1,4 +1,5 @@
 Chien thuat 1: nhin 1 so, xem bộ so ke tiep xuat hien cua nhung ky truoc. Lay nhung so ma xuat hien chung o nhung ky do.
 Chien thuat 2: Dua theo màu de phan doan mau xuất hiện kế tiếp, tham khao nhung ky truoc.
 Chien thuat 3: Dua theo chu ky xo so
-Chien thuat 4: De y nhung so chua ra 10 ngay tro len
+Chien thuat 4: De y nhung so chua ra 20 ky tro len
+Chien thuat 5: Nghien cuu quy tac so xo cua cac so
