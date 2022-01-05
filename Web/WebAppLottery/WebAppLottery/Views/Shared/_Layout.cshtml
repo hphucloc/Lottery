@@ -68,12 +68,12 @@
                                     </button>
 
                                     @*<button type="button" class="dropdown-item btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalLienHe">
-            Chia sẻ kinh nghiệm
-        </button>*@
+                                            Chia sẻ kinh nghiệm
+                                        </button>*@
 
                                     @*<button type="button" class="dropdown-item btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalLienHe">
-            Tin tức
-        </button>*@
+                                            Tin tức
+                                        </button>*@
 
                                 </div>
                             </li>
@@ -93,47 +93,58 @@
             </div>
         </div>
 
-
-        @if (Model.ListLoaiVe != WebAppLottery.Models.IndexPageModel.LoaiVe._3DMax)
+        @if (Model.Data != null || Model.OriginalData != null) //Home page
         {
-            <div class="wsize1 bor1 bg1 p-t-1 p-b-1 p-l-15 p-r-15 respon1 d-flex justify-content-start border border-info">
-                <div class="wsize3">
-                    @Html.Partial("_GroupNumberStatistic", Model)
+            if (Model.ListLoaiVe == WebAppLottery.Models.IndexPageModel.LoaiVe._6Over45 ||
+                 Model.ListLoaiVe == WebAppLottery.Models.IndexPageModel.LoaiVe._6Over55 ||
+                 Model.ListLoaiVe == WebAppLottery.Models.IndexPageModel.LoaiVe._Keno)
+            {
+                <div class="wsize1 bor1 bg1 p-t-1 p-b-1 p-l-15 p-r-15 respon1 d-flex justify-content-start border border-info">
+                    <div class="wsize3">
+                        @Html.Partial("_GroupNumberStatistic", Model)
+                    </div>
                 </div>
-            </div>
-        }
-        else
-        {
-            <div class="wsize1 bor1 bg1 p-t-1 p-b-1 p-l-15 p-r-15 respon1 d-flex justify-content-start border border-info">
-                <div class="wsize7">
-                    @Html.Partial("_GroupNumberStatistic", Model)
+            }
+            else if (Model.ListLoaiVe == WebAppLottery.Models.IndexPageModel.LoaiVe._3DMax)
+            {
+                <div class="wsize1 bor1 bg1 p-t-1 p-b-1 p-l-15 p-r-15 respon1 d-flex justify-content-start border border-info">
+                    <div class="wsize7">
+                        @Html.Partial("_GroupNumberStatistic", Model)
+                    </div>
                 </div>
-            </div>
-        }
+            }
 
 
-        @if (Model.ListLoaiVe != WebAppLottery.Models.IndexPageModel.LoaiVe._3DMax &&
-            Model.Data != null && Model.Data.Count > 0)
-        {
-            <div class="wsize1 bor1 bg1 p-t-1 p-b-1 p-l-15 p-r-15 respon1 d-flex justify-content-start border border-info">
-                <div class="wsize6">
-                    @RenderBody()
+            if (Model.ListLoaiVe == WebAppLottery.Models.IndexPageModel.LoaiVe._6Over45 ||
+                     Model.ListLoaiVe == WebAppLottery.Models.IndexPageModel.LoaiVe._6Over55 ||
+                     Model.ListLoaiVe == WebAppLottery.Models.IndexPageModel.LoaiVe._Keno &&
+                    Model.Data != null && Model.Data.Count > 0)
+            {
+                <div class="wsize1 bor1 bg1 p-t-1 p-b-1 p-l-15 p-r-15 respon1 d-flex justify-content-start border border-info">
+                    <div class="wsize6">
+                        @RenderBody()
+                    </div>
                 </div>
-            </div>
+            }
+            else if (Model.ListLoaiVe == WebAppLottery.Models.IndexPageModel.LoaiVe._3DMax &&
+                 Model.OriginalData != null && Model.OriginalData.Count > 0)
+            {
+                @RenderBody()
+            }
+
+
+            if (Model.ListLoaiVe == WebAppLottery.Models.IndexPageModel.LoaiVe._Keno)
+            {
+                <div class="wsize1 bor1 bg-light p-t-11 p-b-1 p-l-15 p-r-15 respon1 d-flex justify-content-center border border-info">
+                    <div class="wsize7">
+                        @Html.Partial("_ChanLeLonNho", Model)
+                    </div>
+                </div>
+            }
         }
         else
         {
             @RenderBody()
-        }
-
-
-        @if (Model.ListLoaiVe == WebAppLottery.Models.IndexPageModel.LoaiVe._Keno)
-        {
-            <div class="wsize1 bor1 bg-light p-t-11 p-b-1 p-l-15 p-r-15 respon1 d-flex justify-content-center border border-info">
-                <div class="wsize7">
-                    @Html.Partial("_ChanLeLonNho", Model)
-                </div>
-            </div>
         }
 
     </div>

@@ -290,17 +290,28 @@ namespace WebAppLottery.Controllers
                                     item.Value.Add(aNo.LotNumber);                       
                     }
 
-                    int j = 0;
-                    foreach(var i in hitNumberByDate)
+                    //Count number appear
+                    List<int> temp = new List<int>();
+                    foreach (var i in hitNumberByDate.Keys)
                     {
-                        for(int k = j; k == 0; k--)
+                        foreach (var j in hitNumberByDate[i])
                         {
-
+                            temp.Add(Convert.ToInt32(j));
                         }
-                        j++;
+                    }
+                    SortedDictionary<DateTime, SortedSet<string>> hitNumberByDate2 =
+                       new SortedDictionary<DateTime, SortedSet<string>>();
+                    foreach (var i in hitNumberByDate.Keys)
+                    {
+                        SortedSet<string> k = new SortedSet<string>();
+                        foreach (var j in hitNumberByDate[i])
+                        {                            
+                            k.Add(j + " (" + temp.Count(x => x == Convert.ToInt32(j)) + ")");                            
+                        }
+                        hitNumberByDate2.Add(i, k);
                     }
 
-                    m.groupNumberStatistic3DMax = hitNumberByDate;
+                    m.groupNumberStatistic3DMax = hitNumberByDate2;
                     m.NoAppear1To7 = count1_7;
                     m.NoAppear8To15 = count8_15;
                     m.NoAppear16To23 = count16_23;
