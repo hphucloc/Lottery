@@ -134,7 +134,7 @@ namespace WebAppLottery.Controllers
                 }
 
                 //************************Render GroupNumberStatistic*************************//
-                if (m.Data != null && m.Data.Count > 0)
+                if (m.Data != null && m.Data.Count > 0) //6/45, 6/55, Keno
                 {
                     SortedDictionary<DateTime, SortedSet<int>> hitNumberByDate =
                         new SortedDictionary<DateTime, SortedSet<int>>();
@@ -218,9 +218,11 @@ namespace WebAppLottery.Controllers
                     m.NoAppear56To63 = count56_63;
                     m.NoAppear64To71 = count64_71;
                     m.NoAppear72To80 = count72_80;
-                }
-                else if (m.OriginalData != null && m.OriginalData.Count > 0)
+                } 
+                else if (m.OriginalData != null && m.OriginalData.Count > 0 && 
+                    m.ListLoaiVe == IndexPageModel.LoaiVe._3DMax) //3DMax
                 {
+                    #region GiaiDacBiet
                     SortedDictionary<DateTime, SortedSet<string>> hitNumberByDate =
                         new SortedDictionary<DateTime, SortedSet<string>>();
                     foreach (var i in m.OriginalData)
@@ -299,7 +301,7 @@ namespace WebAppLottery.Controllers
                             temp.Add(Convert.ToInt32(j));
                         }
                     }
-                    SortedDictionary<DateTime, SortedSet<string>> hitNumberByDate2 =
+                    SortedDictionary<DateTime, SortedSet<string>> hitNumberByDateDB =
                        new SortedDictionary<DateTime, SortedSet<string>>();
                     foreach (var i in hitNumberByDate.Keys)
                     {
@@ -308,10 +310,11 @@ namespace WebAppLottery.Controllers
                         {                            
                             k.Add(j + " (" + temp.Count(x => x == Convert.ToInt32(j)) + ")");                            
                         }
-                        hitNumberByDate2.Add(i, k);
+                        if (k.Count == 2)
+                            hitNumberByDateDB.Add(i, k);
                     }
 
-                    m.groupNumberStatistic3DMax = hitNumberByDate2;
+                    m.groupNumberStatistic3DMax = hitNumberByDateDB;
                     m.NoAppear1To7 = count1_7;
                     m.NoAppear8To15 = count8_15;
                     m.NoAppear16To23 = count16_23;
@@ -322,6 +325,225 @@ namespace WebAppLottery.Controllers
                     m.NoAppear56To63 = count56_63;
                     m.NoAppear64To71 = count64_71;
                     m.NoAppear72To80 = count72_80;
+                    #endregion
+
+                    count1_7 = count8_15 = count16_23 = count24_31 = 
+                        count32_39 = count40_47 = count48_55 =
+                        count56_63 = count64_71 = count72_80 = 0;                    
+
+                    #region GiaiNhat
+                    hitNumberByDate = new SortedDictionary<DateTime, SortedSet<string>>();
+                    foreach (var i in m.GiaiNhat)
+                    {
+                        if (Convert.ToInt32(i.LotNumber) >= 1 && Convert.ToInt32(i.LotNumber) <= 100)
+                        {
+                            count1_7 += i.TotalNumberAppearInRange;
+                        }
+                        else
+                            if (Convert.ToInt32(i.LotNumber) >= 101 && Convert.ToInt32(i.LotNumber) <= 200)
+                        {
+                            count8_15 += i.TotalNumberAppearInRange;
+                        }
+                        else
+                            if (Convert.ToInt32(i.LotNumber) >= 201 && Convert.ToInt32(i.LotNumber) <= 300)
+                        {
+                            count16_23 += i.TotalNumberAppearInRange;
+                        }
+                        else
+                            if (Convert.ToInt32(i.LotNumber) >= 301 && Convert.ToInt32(i.LotNumber) <= 400)
+                        {
+                            count24_31 += i.TotalNumberAppearInRange;
+                        }
+                        else
+                            if (Convert.ToInt32(i.LotNumber) >= 401 && Convert.ToInt32(i.LotNumber) <= 500)
+                        {
+                            count32_39 += i.TotalNumberAppearInRange;
+                        }
+                        else
+                            if (Convert.ToInt32(i.LotNumber) >= 501 && Convert.ToInt32(i.LotNumber) <= 600)
+                        {
+                            count40_47 += i.TotalNumberAppearInRange;
+                        }
+                        else if (Convert.ToInt32(i.LotNumber) >= 601 && Convert.ToInt32(i.LotNumber) <= 700)
+                        {
+                            count48_55 += i.TotalNumberAppearInRange;
+                        }
+                        else if (Convert.ToInt32(i.LotNumber) >= 701 && Convert.ToInt32(i.LotNumber) <= 800)
+                        {
+                            count56_63 += i.TotalNumberAppearInRange;
+                        }
+                        else if (Convert.ToInt32(i.LotNumber) >= 801 && Convert.ToInt32(i.LotNumber) <= 900)
+                        {
+                            count64_71 += i.TotalNumberAppearInRange;
+                        }
+                        else if (Convert.ToInt32(i.LotNumber) >= 901 && Convert.ToInt32(i.LotNumber) <= 999)
+                        {
+                            count72_80 += i.TotalNumberAppearInRange;
+                        }
+
+                        //Get all publih Date               
+                        foreach (var date in i.AllDatePublishList)
+                        {
+                            if (!hitNumberByDate.ContainsKey(date))
+                            {
+                                hitNumberByDate.Add(date, new SortedSet<string>());
+                            }
+                        }
+                    }
+
+                    //Prepare data for Color timeline
+                    foreach (var item in hitNumberByDate)
+                    {
+                        foreach (var aNo in m.GiaiNhat)
+                            foreach (var date in aNo.DatePublishList.DatePublishList1)
+                                if (item.Key == date)
+                                    item.Value.Add(aNo.LotNumber);
+                    }
+
+                    //Count number appear
+                    temp = new List<int>();
+                    foreach (var i in hitNumberByDate.Keys)
+                    {
+                        foreach (var j in hitNumberByDate[i])
+                        {
+                            temp.Add(Convert.ToInt32(j));
+                        }
+                    }
+
+                    SortedDictionary<DateTime, SortedSet<string>> hitNumberByDateG1 =
+                       new SortedDictionary<DateTime, SortedSet<string>>();
+                    foreach (var i in hitNumberByDate.Keys)
+                    {
+                        SortedSet<string> k = new SortedSet<string>();
+                        foreach (var j in hitNumberByDate[i])
+                        {
+                            k.Add(j + " (" + temp.Count(x => x == Convert.ToInt32(j)) + ")");
+                        }
+                        if (k.Count == 4)
+                            hitNumberByDateG1.Add(i, k);
+                    }
+
+                    m.groupNumberStatistic3DMaxGiaiNhat = hitNumberByDateG1;
+                    m.NoAppear1To7G1 = count1_7;
+                    m.NoAppear8To15G1 = count8_15;
+                    m.NoAppear16To23G1 = count16_23;
+                    m.NoAppear24To31G1 = count24_31;
+                    m.NoAppear32To39G1 = count32_39;
+                    m.NoAppear40To47G1 = count40_47;
+                    m.NoAppear48To55G1 = count48_55;
+                    m.NoAppear56To63G1 = count56_63;
+                    m.NoAppear64To71G1 = count64_71;
+                    m.NoAppear72To80G1 = count72_80;
+                    #endregion                   
+
+                    count1_7 = count8_15 = count16_23 = count24_31 =
+                        count32_39 = count40_47 = count48_55 =
+                        count56_63 = count64_71 = count72_80 = 0;
+
+                    #region GiaiNhi
+                    hitNumberByDate = new SortedDictionary<DateTime, SortedSet<string>>();
+                    foreach (var i in m.GiaiNhi)
+                    {
+                        if (Convert.ToInt32(i.LotNumber) >= 1 && Convert.ToInt32(i.LotNumber) <= 100)
+                        {
+                            count1_7 += i.TotalNumberAppearInRange;
+                        }
+                        else
+                            if (Convert.ToInt32(i.LotNumber) >= 101 && Convert.ToInt32(i.LotNumber) <= 200)
+                        {
+                            count8_15 += i.TotalNumberAppearInRange;
+                        }
+                        else
+                            if (Convert.ToInt32(i.LotNumber) >= 201 && Convert.ToInt32(i.LotNumber) <= 300)
+                        {
+                            count16_23 += i.TotalNumberAppearInRange;
+                        }
+                        else
+                            if (Convert.ToInt32(i.LotNumber) >= 301 && Convert.ToInt32(i.LotNumber) <= 400)
+                        {
+                            count24_31 += i.TotalNumberAppearInRange;
+                        }
+                        else
+                            if (Convert.ToInt32(i.LotNumber) >= 401 && Convert.ToInt32(i.LotNumber) <= 500)
+                        {
+                            count32_39 += i.TotalNumberAppearInRange;
+                        }
+                        else
+                            if (Convert.ToInt32(i.LotNumber) >= 501 && Convert.ToInt32(i.LotNumber) <= 600)
+                        {
+                            count40_47 += i.TotalNumberAppearInRange;
+                        }
+                        else if (Convert.ToInt32(i.LotNumber) >= 601 && Convert.ToInt32(i.LotNumber) <= 700)
+                        {
+                            count48_55 += i.TotalNumberAppearInRange;
+                        }
+                        else if (Convert.ToInt32(i.LotNumber) >= 701 && Convert.ToInt32(i.LotNumber) <= 800)
+                        {
+                            count56_63 += i.TotalNumberAppearInRange;
+                        }
+                        else if (Convert.ToInt32(i.LotNumber) >= 801 && Convert.ToInt32(i.LotNumber) <= 900)
+                        {
+                            count64_71 += i.TotalNumberAppearInRange;
+                        }
+                        else if (Convert.ToInt32(i.LotNumber) >= 901 && Convert.ToInt32(i.LotNumber) <= 999)
+                        {
+                            count72_80 += i.TotalNumberAppearInRange;
+                        }
+
+                        //Get all publih Date               
+                        foreach (var date in i.AllDatePublishList)
+                        {
+                            if (!hitNumberByDate.ContainsKey(date))
+                            {
+                                hitNumberByDate.Add(date, new SortedSet<string>());
+                            }
+                        }
+                    }
+
+                    //Prepare data for Color timeline
+                    foreach (var item in hitNumberByDate)
+                    {
+                        foreach (var aNo in m.GiaiNhi)
+                            foreach (var date in aNo.DatePublishList.DatePublishList1)
+                                if (item.Key == date)
+                                    item.Value.Add(aNo.LotNumber);
+                    }
+
+                    //Count number appear
+                    temp = new List<int>();
+                    foreach (var i in hitNumberByDate.Keys)
+                    {
+                        foreach (var j in hitNumberByDate[i])
+                        {
+                            temp.Add(Convert.ToInt32(j));
+                        }
+                    }
+
+                    SortedDictionary<DateTime, SortedSet<string>> hitNumberByDateG2 =
+                       new SortedDictionary<DateTime, SortedSet<string>>();
+                    foreach (var i in hitNumberByDate.Keys)
+                    {
+                        SortedSet<string> k = new SortedSet<string>();
+                        foreach (var j in hitNumberByDate[i])
+                        {
+                            k.Add(j + " (" + temp.Count(x => x == Convert.ToInt32(j)) + ")");
+                        }
+                        if(k.Count==6)
+                            hitNumberByDateG2.Add(i, k);
+                    }
+
+                    m.groupNumberStatistic3DMaxGiaiNhi = hitNumberByDateG2;
+                    m.NoAppear1To7G2 = count1_7;
+                    m.NoAppear8To15G2 = count8_15;
+                    m.NoAppear16To23G2 = count16_23;
+                    m.NoAppear24To31G2 = count24_31;
+                    m.NoAppear32To39G2 = count32_39;
+                    m.NoAppear40To47G2 = count40_47;
+                    m.NoAppear48To55G2 = count48_55;
+                    m.NoAppear56To63G2 = count56_63;
+                    m.NoAppear64To71G2 = count64_71;
+                    m.NoAppear72To80G2 = count72_80;
+                    #endregion                   
                 }
             }
             return View("Index", m);            

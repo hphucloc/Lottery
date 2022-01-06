@@ -55,9 +55,42 @@ namespace WebAppLottery.Models
         //3DMAX
         public SortedDictionary<DateTime, SortedSet<string>> groupNumberStatistic3DMax { get; set; }
         public List<LotteryBusiness.LoterryStatistic> OriginalData { get; set; }
+        public int? NoAppear1To7G1 { get; set; }
+        public int? NoAppear8To15G1 { get; set; }
+        public int? NoAppear16To23G1 { get; set; }
+        public int? NoAppear24To31G1 { get; set; }
+        public int? NoAppear32To39G1 { get; set; }
+        public int? NoAppear40To47G1 { get; set; }
+        public int? NoAppear48To55G1 { get; set; }
+        public int? NoAppear56To63G1 { get; set; }
+        public int? NoAppear64To71G1 { get; set; }
+        public int? NoAppear72To80G1 { get; set; }
         public List<LotteryBusiness.LoterryStatistic> GiaiNhat { get; set; }
+        public SortedDictionary<DateTime, SortedSet<string>> groupNumberStatistic3DMaxGiaiNhat { get; set; }
+        public int? NoAppear1To7G2 { get; set; }
+        public int? NoAppear8To15G2 { get; set; }
+        public int? NoAppear16To23G2 { get; set; }
+        public int? NoAppear24To31G2 { get; set; }
+        public int? NoAppear32To39G2 { get; set; }
+        public int? NoAppear40To47G2 { get; set; }
+        public int? NoAppear48To55G2 { get; set; }
+        public int? NoAppear56To63G2 { get; set; }
+        public int? NoAppear64To71G2 { get; set; }
+        public int? NoAppear72To80G2 { get; set; }
         public List<LotteryBusiness.LoterryStatistic> GiaiNhi { get; set; }
+        public SortedDictionary<DateTime, SortedSet<string>> groupNumberStatistic3DMaxGiaiNhi { get; set; }
+        public int? NoAppear1To7G3 { get; set; }
+        public int? NoAppear8To15G3 { get; set; }
+        public int? NoAppear16To23G3 { get; set; }
+        public int? NoAppear24To31G3 { get; set; }
+        public int? NoAppear32To39G3 { get; set; }
+        public int? NoAppear40To47G3 { get; set; }
+        public int? NoAppear48To55G3 { get; set; }
+        public int? NoAppear56To63G3 { get; set; }
+        public int? NoAppear64To71G3 { get; set; }
+        public int? NoAppear72To80G3 { get; set; }
         public List<LotteryBusiness.LoterryStatistic> GiaiBa { get; set; }
+        public SortedDictionary<DateTime, SortedSet<string>> groupNumberStatistic3DMaxGiaiBa { get; set; }
 
         public List<DateTime> AllDatePublist { get; set; }        
 

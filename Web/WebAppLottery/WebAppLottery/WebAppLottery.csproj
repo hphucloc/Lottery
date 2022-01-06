@@ -246,6 +246,7 @@
     <Content Include="Web.config" />
     <Content Include="Views\Home\Keno.cshtml" />
     <Content Include="Views\Shared\_ChanLeLonNho.cshtml" />
+    <Content Include="Views\Shared\_GroupNumberStatistic3DMax.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
