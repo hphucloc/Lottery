@@ -56,6 +56,7 @@
     <Compile Include="FullLotteryStatistic.cs" />
     <Compile Include="LoterryStatistic.cs" />
     <Compile Include="LotNumber.cs" />
+    <Compile Include="_3DMaxProTimeLine.cs" />
     <Compile Include="_KenoTimeLine.cs" />
     <Compile Include="_3DMaxTimeLine.cs" />
     <Compile Include="_6Over55TimeLine.cs" />

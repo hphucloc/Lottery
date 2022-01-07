@@ -41,12 +41,27 @@
                                     @if (Model.ListLoaiVe == WebAppLottery.Models.IndexPageModel.LoaiVe._6Over55)
                                     {
                                         <a href="https://vietlott.vn/vi/trung-thuong/ket-qua-trung-thuong/winning-number-655"
-                                           title="Đi đến trang Vietlott 655" target="_blank" class="dropdown-item dropdown text-decoration-none HeaderLinkColor">Vietlott website</a>
+                                           title="Đi đến trang Vietlott 6/55" target="_blank" class="dropdown-item dropdown text-decoration-none HeaderLinkColor">6/55 trên Vietlott website</a>
                                     }
                                     else if (Model.ListLoaiVe == WebAppLottery.Models.IndexPageModel.LoaiVe._6Over45)
                                     {
                                         <a href="https://vietlott.vn/vi/trung-thuong/ket-qua-trung-thuong/winning-number-645"
-                                           title="Đi đến trang Vietlott 645" target="_blank" class="dropdown-item dropdown text-decoration-none HeaderLinkColor">Vietlott website</a>
+                                           title="Đi đến trang Vietlott 6/45" target="_blank" class="dropdown-item dropdown text-decoration-none HeaderLinkColor">6/45 trên Vietlott website</a>
+                                    }
+                                    else if (Model.ListLoaiVe == WebAppLottery.Models.IndexPageModel.LoaiVe._Keno)
+                                    {
+                                        <a href="https://vietlott.vn/vi/trung-thuong/ket-qua-trung-thuong/winning-number-keno"
+                                           title="Đi đến trang Vietlott Keno" target="_blank" class="dropdown-item dropdown text-decoration-none HeaderLinkColor">Keno trênVietlott website</a>
+                                    }
+                                    else if (Model.ListLoaiVe == WebAppLottery.Models.IndexPageModel.LoaiVe._3DMax)
+                                    {
+                                        <a href="https://vietlott.vn/vi/trung-thuong/ket-qua-trung-thuong/winning-number-max-3D"
+                                           title="Đi đến trang Vietlott 3DMax" target="_blank" class="dropdown-item dropdown text-decoration-none HeaderLinkColor">3DMax trên Vietlott website</a>
+                                    }
+                                    else if (Model.ListLoaiVe == WebAppLottery.Models.IndexPageModel.LoaiVe._3DMaxPro)
+                                    {
+                                        <a href="https://vietlott.vn/vi/trung-thuong/ket-qua-trung-thuong/winning-number-max-3Dpro"
+                                           title="Đi đến trang Vietlott 3DMaxPRO" target="_blank" class="dropdown-item dropdown text-decoration-none HeaderLinkColor">3DMaxPRO trên Vietlott website</a>
                                     }
 
                                     <button type="button" class="dropdown-item btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalHDSD">
@@ -58,12 +73,12 @@
                                     </button>
 
                                     @*<button type="button" class="dropdown-item btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalLienHe">
-                                            Chia sẻ kinh nghiệm
-                                        </button>*@
+            Chia sẻ kinh nghiệm
+        </button>*@
 
                                     @*<button type="button" class="dropdown-item btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalLienHe">
-                                            Tin tức
-                                        </button>*@
+            Tin tức
+        </button>*@
 
                                 </div>
                             </li>
@@ -82,39 +97,57 @@
                 @Html.Partial("_RequestHeader", Model)
             </div>
         </div>
-        @if (Model.NoAppear1To7 != null &&
-            Model.NoAppear8To15 != null &&
-            Model.NoAppear16To23 != null &&
-            Model.NoAppear24To31 != null &&
-            Model.NoAppear32To39 != null &&
-            Model.NoAppear40To47 != null &&
-            Model.NoAppear48To55 != null)
+
+        @if (Model.Data != null || Model.OriginalData != null) //Home page
         {
-            <div class="wsize1 bor1 bg1 p-t-1 p-b-1 p-l-15 p-r-15 respon1 d-flex justify-content-start border border-info">
-                <div class="wsize3">
-                    @Html.Partial("_GroupNumberStatistic", Model)
+            if (Model.ListLoaiVe == WebAppLottery.Models.IndexPageModel.LoaiVe._6Over45 ||
+                 Model.ListLoaiVe == WebAppLottery.Models.IndexPageModel.LoaiVe._6Over55 ||
+                 Model.ListLoaiVe == WebAppLottery.Models.IndexPageModel.LoaiVe._Keno)
+            {
+                <div class="wsize1 bor1 bg1 p-t-1 p-b-1 p-l-15 p-r-15 respon1 d-flex justify-content-start border border-info">
+                    <div class="wsize3">
+                        @Html.Partial("_GroupNumberStatistic", Model)
+                    </div>
                 </div>
-            </div>
-        }
-        @if (Model.Data != null)
-        {
-            <div class="wsize1 bor1 bg1 p-t-1 p-b-1 p-l-15 p-r-15 respon1 d-flex justify-content-start border border-info">
-                <div class="wsize6">
-                    @RenderBody()
+            }
+            else if (Model.ListLoaiVe == WebAppLottery.Models.IndexPageModel.LoaiVe._3DMax ||
+                Model.ListLoaiVe == WebAppLottery.Models.IndexPageModel.LoaiVe._3DMaxPro)
+            {               
+                @Html.Partial("_GroupNumberStatistic3DMax", Model)                  
+            }
+
+
+            if (Model.ListLoaiVe == WebAppLottery.Models.IndexPageModel.LoaiVe._6Over45 ||
+                     Model.ListLoaiVe == WebAppLottery.Models.IndexPageModel.LoaiVe._6Over55 ||
+                     Model.ListLoaiVe == WebAppLottery.Models.IndexPageModel.LoaiVe._Keno &&
+                    Model.Data != null && Model.Data.Count > 0)
+            {
+                <div class="wsize1 bor1 bg1 p-t-1 p-b-1 p-l-15 p-r-15 respon1 d-flex justify-content-start border border-info">
+                    <div class="wsize6">
+                        @RenderBody()
+                    </div>
                 </div>
-            </div>
+            }
+            else if ((Model.ListLoaiVe == WebAppLottery.Models.IndexPageModel.LoaiVe._3DMax ||
+                Model.ListLoaiVe == WebAppLottery.Models.IndexPageModel.LoaiVe._3DMaxPro) &&
+                 Model.OriginalData != null && Model.OriginalData.Count > 0)
+            {
+                @RenderBody()
+            }
+
+
+            if (Model.ListLoaiVe == WebAppLottery.Models.IndexPageModel.LoaiVe._Keno)
+            {
+                <div class="wsize1 bor1 bg-light p-t-11 p-b-1 p-l-15 p-r-15 respon1 d-flex justify-content-center border border-info">
+                    <div class="wsize7">
+                        @Html.Partial("_ChanLeLonNho", Model)
+                    </div>
+                </div>
+            }
         }
         else
         {
             @RenderBody()
-        }
-        @if (Model.ListLoaiVe == WebAppLottery.Models.IndexPageModel.LoaiVe._Keno)
-        {
-            <div class="wsize1 bor1 bg-light p-t-11 p-b-1 p-l-15 p-r-15 respon1 d-flex justify-content-center border border-info">
-                <div class="wsize7">
-                    @Html.Partial("_ChanLeLonNho", Model)
-                </div>
-            </div>
         }
 
     </div>

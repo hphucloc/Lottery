@@ -1,7 +1,8 @@
 ﻿@model WebAppLottery.Models.IndexPageModel
-@if (Model.Data != null)
+@if (Model.Data != null && Model.Data.Count > 0)
 {
-    if (Model.ListLoaiVe != WebAppLottery.Models.IndexPageModel.LoaiVe._Keno)
+    if (Model.ListLoaiVe == WebAppLottery.Models.IndexPageModel.LoaiVe._6Over45 ||
+        Model.ListLoaiVe == WebAppLottery.Models.IndexPageModel.LoaiVe._6Over55)
     {
         <div class="container-fluid">
             <div class="col-12">
@@ -563,8 +564,7 @@
             </div>
         </div>
     }
-    else if (Model.ListLoaiVe != WebAppLottery.Models.IndexPageModel.LoaiVe._6Over45 ||
-             Model.ListLoaiVe != WebAppLottery.Models.IndexPageModel.LoaiVe._6Over55)
+    else if (Model.ListLoaiVe == WebAppLottery.Models.IndexPageModel.LoaiVe._Keno)
     {
         <div class="container-fluid">
             <div class="col-12">
@@ -2355,50 +2355,4 @@
             </div>
         </div>
     }
-    @*else if (Model.ListLoaiVe != WebAppLottery.Models.IndexPageModel.LoaiVe._3DMax)
-    {
-        <div class="container-fluid">
-            <div class="col-12">
-                <h6>Tổng số lần xuất hiện theo nhóm</h6>
-            </div>
-            <div class="col-12">
-                <table class="table table-secondary table-striped table-bordered TableData">
-                    <thead>
-                        <tr>
-                            <td class="Do">
-                                1->100
-                            </td>
-                            <td class="Cam">
-                                101->200
-                            </td>
-                            <td class="Vang">
-                                201->300
-                            </td>
-                            <td class="Luc">
-                                301->400
-                            </td>
-                            <td class="Lam">
-                                401->500
-                            </td>
-                            <td class="Cham">
-                                501->600
-                            </td>
-                            <td class="Tim">
-                                601->700
-                            </td>
-                            <td class="BlueGreen">
-                                701->800
-                            </td>
-                            <td class="Pink">
-                                801->900
-                            </td>
-                            <td class="LightBlue">
-                                901->999
-                            </td>
-                        </tr>
-                    </thead>
-                </table>
-            </div>
-        </div>
-    }*@
 }

@@ -549,6 +549,14 @@ input.input100 {
     overflow-x: auto;
 }
 
+.wsize10 {
+    max-width: 100%;
+    width: 1000px;
+    height: 800px;
+    overflow-y: auto;
+    overflow-x: auto;
+}
+
 .wsize4 {
     max-width: 100%;
     width: 600px;

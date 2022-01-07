@@ -41,22 +41,27 @@
                                     @if (Model.ListLoaiVe == WebAppLottery.Models.IndexPageModel.LoaiVe._6Over55)
                                     {
                                         <a href="https://vietlott.vn/vi/trung-thuong/ket-qua-trung-thuong/winning-number-655"
-                                           title="Đi đến trang Vietlott 6/55" target="_blank" class="dropdown-item dropdown text-decoration-none HeaderLinkColor">Vietlott website</a>
+                                           title="Đi đến trang Vietlott 6/55" target="_blank" class="dropdown-item dropdown text-decoration-none HeaderLinkColor">6/55 trên Vietlott website</a>
                                     }
                                     else if (Model.ListLoaiVe == WebAppLottery.Models.IndexPageModel.LoaiVe._6Over45)
                                     {
                                         <a href="https://vietlott.vn/vi/trung-thuong/ket-qua-trung-thuong/winning-number-645"
-                                           title="Đi đến trang Vietlott 6/45" target="_blank" class="dropdown-item dropdown text-decoration-none HeaderLinkColor">Vietlott website</a>
+                                           title="Đi đến trang Vietlott 6/45" target="_blank" class="dropdown-item dropdown text-decoration-none HeaderLinkColor">6/45 trên Vietlott website</a>
                                     }
                                     else if (Model.ListLoaiVe == WebAppLottery.Models.IndexPageModel.LoaiVe._Keno)
                                     {
                                         <a href="https://vietlott.vn/vi/trung-thuong/ket-qua-trung-thuong/winning-number-keno"
-                                           title="Đi đến trang Vietlott Keno" target="_blank" class="dropdown-item dropdown text-decoration-none HeaderLinkColor">Vietlott website</a>
+                                           title="Đi đến trang Vietlott Keno" target="_blank" class="dropdown-item dropdown text-decoration-none HeaderLinkColor">Keno trênVietlott website</a>
                                     }
                                     else if (Model.ListLoaiVe == WebAppLottery.Models.IndexPageModel.LoaiVe._3DMax)
                                     {
                                         <a href="https://vietlott.vn/vi/trung-thuong/ket-qua-trung-thuong/winning-number-max-3D"
-                                           title="Đi đến trang Vietlott 3DMAX" target="_blank" class="dropdown-item dropdown text-decoration-none HeaderLinkColor">Vietlott website</a>
+                                           title="Đi đến trang Vietlott 3DMax" target="_blank" class="dropdown-item dropdown text-decoration-none HeaderLinkColor">3DMax trên Vietlott website</a>
+                                    }
+                                    else if (Model.ListLoaiVe == WebAppLottery.Models.IndexPageModel.LoaiVe._3DMaxPro)
+                                    {
+                                        <a href="https://vietlott.vn/vi/trung-thuong/ket-qua-trung-thuong/winning-number-max-3Dpro"
+                                           title="Đi đến trang Vietlott 3DMaxPRO" target="_blank" class="dropdown-item dropdown text-decoration-none HeaderLinkColor">3DMaxPRO trên Vietlott website</a>
                                     }
 
                                     <button type="button" class="dropdown-item btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalHDSD">
@@ -68,12 +73,12 @@
                                     </button>
 
                                     @*<button type="button" class="dropdown-item btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalLienHe">
-                                            Chia sẻ kinh nghiệm
-                                        </button>*@
+            Chia sẻ kinh nghiệm
+        </button>*@
 
                                     @*<button type="button" class="dropdown-item btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalLienHe">
-                                            Tin tức
-                                        </button>*@
+            Tin tức
+        </button>*@
 
                                 </div>
                             </li>
@@ -105,7 +110,8 @@
                     </div>
                 </div>
             }
-            else if (Model.ListLoaiVe == WebAppLottery.Models.IndexPageModel.LoaiVe._3DMax)
+            else if (Model.ListLoaiVe == WebAppLottery.Models.IndexPageModel.LoaiVe._3DMax ||
+                Model.ListLoaiVe == WebAppLottery.Models.IndexPageModel.LoaiVe._3DMaxPro)
             {               
                 @Html.Partial("_GroupNumberStatistic3DMax", Model)                  
             }
@@ -122,7 +128,8 @@
                     </div>
                 </div>
             }
-            else if (Model.ListLoaiVe == WebAppLottery.Models.IndexPageModel.LoaiVe._3DMax &&
+            else if ((Model.ListLoaiVe == WebAppLottery.Models.IndexPageModel.LoaiVe._3DMax ||
+                Model.ListLoaiVe == WebAppLottery.Models.IndexPageModel.LoaiVe._3DMaxPro) &&
                  Model.OriginalData != null && Model.OriginalData.Count > 0)
             {
                 @RenderBody()

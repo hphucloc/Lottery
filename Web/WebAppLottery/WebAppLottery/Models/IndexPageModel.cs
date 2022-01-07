@@ -19,6 +19,8 @@ namespace WebAppLottery.Models
             _Keno = 5,
             [Description("3DMAX")]
             _3DMax = 2,
+            [Description("3DMAXPro")]
+            _3DMaxPro = 4,
         }
 
         //request header       
