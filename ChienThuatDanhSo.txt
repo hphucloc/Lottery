@@ -3,3 +3,5 @@ Chien thuat 2: Dua theo màu de phan doan mau xuất hiện kế tiếp, tham kh
 Chien thuat 3: Dua theo chu ky xo so
 Chien thuat 4: De y nhung so chua ra 20 ky tro len
 Chien thuat 5: Nghien cuu quy tac so xo cua cac so
+	13: Chu ky > 10
+Chien thuat 6: Nghien cuu day so Fibonacy

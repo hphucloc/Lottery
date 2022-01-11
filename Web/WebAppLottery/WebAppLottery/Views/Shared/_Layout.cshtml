@@ -42,11 +42,19 @@
                                     {
                                         <a href="https://vietlott.vn/vi/trung-thuong/ket-qua-trung-thuong/winning-number-655"
                                            title="Đi đến trang Vietlott 6/55" target="_blank" class="dropdown-item dropdown text-decoration-none HeaderLinkColor">6/55 trên Vietlott website</a>
+
+                                        <button type="button" class="dropdown-item btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalLienHe">
+                                            Dự đoán số
+                                        </button>
                                     }
                                     else if (Model.ListLoaiVe == WebAppLottery.Models.IndexPageModel.LoaiVe._6Over45)
                                     {
                                         <a href="https://vietlott.vn/vi/trung-thuong/ket-qua-trung-thuong/winning-number-645"
                                            title="Đi đến trang Vietlott 6/45" target="_blank" class="dropdown-item dropdown text-decoration-none HeaderLinkColor">6/45 trên Vietlott website</a>
+
+                                        <button type="button" class="dropdown-item btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalLienHe">
+                                            Dự đoán số
+                                        </button>
                                     }
                                     else if (Model.ListLoaiVe == WebAppLottery.Models.IndexPageModel.LoaiVe._Keno)
                                     {
@@ -73,12 +81,8 @@
                                     </button>
 
                                     @*<button type="button" class="dropdown-item btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalLienHe">
-            Chia sẻ kinh nghiệm
-        </button>*@
-
-                                    @*<button type="button" class="dropdown-item btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalLienHe">
-            Tin tức
-        </button>*@
+                                            Tin tức
+                                        </button>*@
 
                                 </div>
                             </li>
@@ -90,67 +94,67 @@
     </div>
     @using (Html.BeginForm("Request", "Home", FormMethod.Post))
     {
-    <div class="bg-img1 size1 flex-w flex-c-m p-t-55 p-b-55 p-l-15 p-r-15"
-         style="background-image: url('../../images/bg02.jpg');">
-        <div class="wsize1 bor1 bg-light p-t-11 p-b-1 p-l-15 p-r-15 respon1 d-flex justify-content-center border border-info">
-            <div class="wsize5">
-                @Html.Partial("_RequestHeader", Model)
+        <div class="bg-img1 size1 flex-w flex-c-m p-t-55 p-b-55 p-l-15 p-r-15"
+             style="background-image: url('../../images/bg02.jpg');">
+            <div class="wsize1 bor1 bg-light p-t-11 p-b-1 p-l-15 p-r-15 respon1 d-flex justify-content-center border border-info">
+                <div class="wsize5">
+                    @Html.Partial("_RequestHeader", Model)
+                </div>
             </div>
-        </div>
 
-        @if (Model.Data != null || Model.OriginalData != null) //Home page
-        {
-            if (Model.ListLoaiVe == WebAppLottery.Models.IndexPageModel.LoaiVe._6Over45 ||
-                 Model.ListLoaiVe == WebAppLottery.Models.IndexPageModel.LoaiVe._6Over55 ||
-                 Model.ListLoaiVe == WebAppLottery.Models.IndexPageModel.LoaiVe._Keno)
+            @if (Model.Data != null || Model.OriginalData != null) //Home page
             {
-                <div class="wsize1 bor1 bg1 p-t-1 p-b-1 p-l-15 p-r-15 respon1 d-flex justify-content-start border border-info">
-                    <div class="wsize3">
-                        @Html.Partial("_GroupNumberStatistic", Model)
-                    </div>
-                </div>
-            }
-            else if (Model.ListLoaiVe == WebAppLottery.Models.IndexPageModel.LoaiVe._3DMax ||
-                Model.ListLoaiVe == WebAppLottery.Models.IndexPageModel.LoaiVe._3DMaxPro)
-            {               
-                @Html.Partial("_GroupNumberStatistic3DMax", Model)                  
-            }
-
-
-            if (Model.ListLoaiVe == WebAppLottery.Models.IndexPageModel.LoaiVe._6Over45 ||
+                if (Model.ListLoaiVe == WebAppLottery.Models.IndexPageModel.LoaiVe._6Over45 ||
                      Model.ListLoaiVe == WebAppLottery.Models.IndexPageModel.LoaiVe._6Over55 ||
-                     Model.ListLoaiVe == WebAppLottery.Models.IndexPageModel.LoaiVe._Keno &&
-                    Model.Data != null && Model.Data.Count > 0)
-            {
-                <div class="wsize1 bor1 bg1 p-t-1 p-b-1 p-l-15 p-r-15 respon1 d-flex justify-content-start border border-info">
-                    <div class="wsize6">
-                        @RenderBody()
+                     Model.ListLoaiVe == WebAppLottery.Models.IndexPageModel.LoaiVe._Keno)
+                {
+                    <div class="wsize1 bor1 bg1 p-t-1 p-b-1 p-l-15 p-r-15 respon1 d-flex justify-content-start border border-info">
+                        <div class="wsize3">
+                            @Html.Partial("_GroupNumberStatistic", Model)
+                        </div>
                     </div>
-                </div>
+                }
+                else if (Model.ListLoaiVe == WebAppLottery.Models.IndexPageModel.LoaiVe._3DMax ||
+                    Model.ListLoaiVe == WebAppLottery.Models.IndexPageModel.LoaiVe._3DMaxPro)
+                {
+                    @Html.Partial("_GroupNumberStatistic3DMax", Model)
+                }
+
+
+                if (Model.ListLoaiVe == WebAppLottery.Models.IndexPageModel.LoaiVe._6Over45 ||
+                         Model.ListLoaiVe == WebAppLottery.Models.IndexPageModel.LoaiVe._6Over55 ||
+                         Model.ListLoaiVe == WebAppLottery.Models.IndexPageModel.LoaiVe._Keno &&
+                        Model.Data != null && Model.Data.Count > 0)
+                {
+                    <div class="wsize1 bor1 bg1 p-t-1 p-b-1 p-l-15 p-r-15 respon1 d-flex justify-content-start border border-info">
+                        <div class="wsize6">
+                            @RenderBody()
+                        </div>
+                    </div>
+                }
+                else if ((Model.ListLoaiVe == WebAppLottery.Models.IndexPageModel.LoaiVe._3DMax ||
+                    Model.ListLoaiVe == WebAppLottery.Models.IndexPageModel.LoaiVe._3DMaxPro) &&
+                     Model.OriginalData != null && Model.OriginalData.Count > 0)
+                {
+                    @RenderBody()
+                }
+
+
+                if (Model.ListLoaiVe == WebAppLottery.Models.IndexPageModel.LoaiVe._Keno)
+                {
+                    <div class="wsize1 bor1 bg-light p-t-11 p-b-1 p-l-15 p-r-15 respon1 d-flex justify-content-center border border-info">
+                        <div class="wsize7">
+                            @Html.Partial("_ChanLeLonNho", Model)
+                        </div>
+                    </div>
+                }
             }
-            else if ((Model.ListLoaiVe == WebAppLottery.Models.IndexPageModel.LoaiVe._3DMax ||
-                Model.ListLoaiVe == WebAppLottery.Models.IndexPageModel.LoaiVe._3DMaxPro) &&
-                 Model.OriginalData != null && Model.OriginalData.Count > 0)
+            else
             {
                 @RenderBody()
             }
 
-
-            if (Model.ListLoaiVe == WebAppLottery.Models.IndexPageModel.LoaiVe._Keno)
-            {
-                <div class="wsize1 bor1 bg-light p-t-11 p-b-1 p-l-15 p-r-15 respon1 d-flex justify-content-center border border-info">
-                    <div class="wsize7">
-                        @Html.Partial("_ChanLeLonNho", Model)
-                    </div>
-                </div>
-            }
-        }
-        else
-        {
-            @RenderBody()
-        }
-
-    </div>
+        </div>
     }
 
     @Scripts.Render("~/bundles/jquery")
@@ -175,6 +179,10 @@
             else {
                 $('#QuantitySoDaChon').text(parseInt(q) + 1);
             }
+        }
+
+        function NumberAppearPeriod() {
+            alert('ABC');
         }
     </script>
     <!--===============================================================================================-->
@@ -215,6 +223,24 @@
                     <h6>Mọi sự góp ý, vui lòng email:</h6> <h5 class="font-italic text-primary">hphucloc@gmail.com</h5>
                     <h6>Xin chân thành cảm ơn.</h6>
                     <h5 class="text-primary">Huỳnh Phúc Lộc</h5>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Full Number Chu Ky Xuat Hien FULLSCREEN MODAL -->
+    <div class="modal fade" id="modalFullNoChuKyXUatHien" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="FullNoChuKyXUatHien" aria-hidden="true">
+        <div class="modal-dialog modal-fullscreen">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="HDSD">CHU KỲ XUẤT HIỆN ĐẦY ĐỦ</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>

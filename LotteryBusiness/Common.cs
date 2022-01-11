@@ -209,6 +209,7 @@ namespace LotteryBusiness
         {
             return Db.Numbers.Count(x => x.LotNumber == No && x.NumberTypeId == numberType);
         }
+
         public static void NewNumber(DateTime publishDdate, List<string> number, short numberType, short numberWinLevel)
         {
             Number n = null;

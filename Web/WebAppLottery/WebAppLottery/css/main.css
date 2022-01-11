@@ -603,6 +603,7 @@ input.input100 {
     --bs-table-hover-color: #000;
     color: #000000;
     border-color: #000000;
+    cursor:pointer;
 }
 
 .Cam {
@@ -615,6 +616,7 @@ input.input100 {
     --bs-table-hover-color: #000;
     color: #000000;
     border-color: #000000;
+    cursor: pointer;
 }
 
 .Vang {
@@ -626,7 +628,8 @@ input.input100 {
     --bs-table-hover-bg: #e5c7ca;
     --bs-table-hover-color: #000;
     color: #000000;
-    border-color: #000000;  
+    border-color: #000000;
+    cursor: pointer;
 }
 
 .Luc {
@@ -639,6 +642,7 @@ input.input100 {
     --bs-table-hover-color: #000;
     color: #000000;
     border-color: #000000;
+    cursor: pointer;
 }
 
 .Lam {
@@ -650,7 +654,8 @@ input.input100 {
     --bs-table-hover-bg: #e5c7ca;
     --bs-table-hover-color: #000;
     color: #000000;
-    border-color: #000000;    
+    border-color: #000000;
+    cursor: pointer;
 }
 
 .Cham {
@@ -662,7 +667,8 @@ input.input100 {
     --bs-table-hover-bg: #e5c7ca;
     --bs-table-hover-color: #000;
     color: #000000;
-    border-color: #000000;    
+    border-color: #000000;
+    cursor: pointer;
 }
 
 .Tim {
@@ -674,7 +680,8 @@ input.input100 {
     --bs-table-hover-bg: #e5c7ca;
     --bs-table-hover-color: #000;
     color: #000000;
-    border-color: #000000;    
+    border-color: #000000;
+    cursor: pointer;
 }
 
 .BlueGreen {
@@ -687,6 +694,7 @@ input.input100 {
     --bs-table-hover-color: #000;
     color: #000000;
     border-color: #000000;
+    cursor: pointer;
 }
 
 .Pink {
@@ -699,6 +707,7 @@ input.input100 {
     --bs-table-hover-color: #000;
     color: #000000;
     border-color: #000000;
+    cursor: pointer;
 }
 
 .LightBlue {
@@ -711,6 +720,7 @@ input.input100 {
     --bs-table-hover-color: #000;
     color: #000000;
     border-color: #000000;
+    cursor: pointer;
 }
 
 .WidthHeader{
