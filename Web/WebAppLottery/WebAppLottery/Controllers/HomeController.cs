@@ -1210,5 +1210,11 @@ namespace WebAppLottery.Controllers
         {            
             return View();
         }
+
+        [HttpGet]
+        public ActionResult FullChuKyDisplay(string no, string loaive)
+        {
+            return Json("Number: " + no + ", LoaiVe: " + loaive, JsonRequestBehavior.AllowGet);
+        }
     }
 }

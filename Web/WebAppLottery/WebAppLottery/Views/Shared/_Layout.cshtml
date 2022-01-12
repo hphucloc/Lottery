@@ -121,9 +121,9 @@
                 }
 
 
-                if (Model.ListLoaiVe == WebAppLottery.Models.IndexPageModel.LoaiVe._6Over45 ||
+                if ((Model.ListLoaiVe == WebAppLottery.Models.IndexPageModel.LoaiVe._6Over45 ||
                          Model.ListLoaiVe == WebAppLottery.Models.IndexPageModel.LoaiVe._6Over55 ||
-                         Model.ListLoaiVe == WebAppLottery.Models.IndexPageModel.LoaiVe._Keno &&
+                         Model.ListLoaiVe == WebAppLottery.Models.IndexPageModel.LoaiVe._Keno) &&
                         Model.Data != null && Model.Data.Count > 0)
                 {
                     <div class="wsize1 bor1 bg1 p-t-1 p-b-1 p-l-15 p-r-15 respon1 d-flex justify-content-start border border-info">
@@ -180,9 +180,30 @@
                 $('#QuantitySoDaChon').text(parseInt(q) + 1);
             }
         }
+        
+        function NumberAppearPeriod(number) {
+            var loaive = $('#ListLoaiVe').val();    
 
-        function NumberAppearPeriod() {
-            alert('ABC');
+            //alert(loaive + '_' + number);
+            $.ajax({
+                url: '@Url.Action("FullChuKyDisplay", "Home")',
+                dataType: 'json',
+                type: 'Get',
+                contentType: 'application/json; charset=utf-8',
+                data: "no=" + number + "&loaive=" + loaive,
+                async: true,
+                processData: false,
+                cache: false,
+                success: function (data) {
+                    $('#modaltitleFullNoChuKyXuatHien').text('CHU KỲ XUẤT HIỆN ĐẦY ĐỦ CỦA SỐ: ' + number);
+                    $('#modalbodyFullNoChuKyXuatHien').html(data);
+                    // show modal
+                    $('#modalFullNoChuKyXuatHien').modal('show');
+                },
+                error: function (xhr) {
+                    alert('error');
+                }
+            });
         }
     </script>
     <!--===============================================================================================-->
@@ -232,16 +253,14 @@
     </div>
 
     <!-- Full Number Chu Ky Xuat Hien FULLSCREEN MODAL -->
-    <div class="modal fade" id="modalFullNoChuKyXUatHien" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="FullNoChuKyXUatHien" aria-hidden="true">
+    <div class="modal fade" id="modalFullNoChuKyXuatHien" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="FullNoChuKyXUatHien" aria-hidden="true">
         <div class="modal-dialog modal-fullscreen">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="HDSD">CHU KỲ XUẤT HIỆN ĐẦY ĐỦ</h5>
+                    <h5 class="modal-title" id="modaltitleFullNoChuKyXuatHien"></h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
-                <div class="modal-body">
-                    
-                </div>
+                <div class="modal-body" id="modalbodyFullNoChuKyXuatHien"></div>                                  
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
                 </div>
