@@ -11,7 +11,13 @@ namespace LotteryBusiness
         {
             IQueryable<LotteryNumber> number = Common.GetNumber((Int16)Enum_NumberWinLevel.DacBiet, (Int16)Enum_NumberType._6Over55, datePublishFrom, datePublishTo);
             return Common.GetLotNumberStatistic(number);
-        }        
+        }
+
+        public static List<LoterryStatistic> Get6Over55Number(string lotNumber, DateTime datePublishFrom, DateTime datePublishTo)
+        {
+            IQueryable<LotteryNumber> number = Common.GetNumber(lotNumber, (Int16)Enum_NumberWinLevel.DacBiet, (Int16)Enum_NumberType._6Over55, datePublishFrom, datePublishTo);
+            return Common.GetLotNumberStatistic(number);
+        }
 
         public static void NewNumber(DateTime publishDdate, List<string> number)
         {

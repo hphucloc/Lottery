@@ -9,6 +9,7 @@ namespace LotteryBusiness
     public class Common
     {
         private static LotteryEntities Db = LotteryDAL.LotteryConnection.Instance;
+
         public static IQueryable<LotteryNumber> GetNumber(Int16 numberWinLevelId, Int16 numberTypeId, DateTime datePublishFrom, DateTime datePublishTo)
         {
             var t = Db.Numbers.Where(n => n.NumberWinLevelId == numberWinLevelId && n.NumberTypeId == numberTypeId &&
@@ -26,6 +27,7 @@ namespace LotteryBusiness
 
             return t;
         }
+
         public static IQueryable<LotteryNumber> GetNumber(string number, Int16 numberWinLevelId, Int16 numberTypeId, DateTime datePublishFrom, DateTime datePublishTo)
         {
             var t = Db.Numbers.Where(n => n.NumberWinLevelId == numberWinLevelId && n.NumberTypeId == numberTypeId && n.LotNumber == number &&
@@ -60,44 +62,7 @@ namespace LotteryBusiness
                 });
 
             return t;
-        }
-
-        public static List<FullLotteryStatistic> GetFullLotNumberStatistic(IQueryable<LotteryNumber> Number)
-        {
-            List<FullLotteryStatistic> lst = new List<FullLotteryStatistic>();
-
-            //string prvLotNumber = -1;
-            //int? curLotNumber = -1;
-
-            ////Bo so trung
-            //foreach (LotteryNumber no in Number)
-            //{
-            //    curLotNumber = no.LotNumber;
-            //    if (curLotNumber != prvLotNumber)
-            //    {
-            //        //if (lst.Count > 0)
-            //        //    lst[lst.Count - 1].DatePublishList.DatePublishList1.Sort();
-
-            //        //LoterryStatistic sta = new LoterryStatistic();
-            //        //sta.NumberTypeId = no.NumberTypeId;
-            //        //sta.NumberWinLevelId = no.NumberWinLevelId;
-            //        //sta.LotNumber = no.LotNumber;
-            //        //sta.DateCreated = no.DateCreated;
-            //        //sta.DatePublish = no.DatePublish;
-            //        //sta.DatePublishList.DatePublishList1.Add(no.DatePublish);
-            //        //sta.TotalNumberAppear = no.TotalNumberAppear;
-            //        //lst.Add(sta);
-            //    }
-            //    else
-            //    {
-            //        //lst[lst.Count - 1].DatePublishList.DatePublishList1.Add(no.DatePublish);
-            //    }
-            //    prvLotNumber = curLotNumber;
-
-            //}
-
-            return lst;
-        }
+        }       
 
         public static List<LoterryStatistic> GetLotNumberStatistic(IQueryable<LotteryNumber> Number)
         {

@@ -41,6 +41,34 @@ namespace LotteryBusiness
             return numbers;            
         }
 
+        public static List<LotteryNumber> GetKenoNumber(string getNumber, DateTime datePublishFrom, DateTime datePublishTo)
+        {
+            IQueryable<LotteryNumber> number = Common.GetNumber((int)Enum_NumberWinLevel.DacBiet, 
+                (Int16)Enum_NumberType._Keno, datePublishFrom, datePublishTo).Where(x=>x.LotNumber == getNumber);
+
+            List<LotteryNumber> numbers = new List<LotteryNumber>();
+            foreach (LotteryNumber no in number)
+            {
+                if (no.LotNumber.Length == 40)
+                {
+                    for (int i = 0; i <= 38; i += 2)
+                    {
+                        LotteryNumber n = new LotteryNumber();
+                        n.DateCreated = no.DateCreated;
+                        n.DatePublish = no.DatePublish;
+                        n.DateUpdated = no.DateUpdated;
+                        n.LotNumber = no.LotNumber.Substring(i, 2);
+                        n.NumberTypeId = no.NumberTypeId;
+                        n.NumberWinLevelId = no.NumberWinLevelId;
+                        n.KyQuay = no.KyQuay;
+                        numbers.Add(n);
+                    }
+                }
+            }
+
+            return numbers;
+        }
+
         public static SortedDictionary<int?, SortedSet<int>> GetKenoNumberKyquay(List<LotteryNumber> numbers)
         {
             SortedDictionary<int?, SortedSet<int>> kyQuays = new SortedDictionary<int?, SortedSet<int>>();

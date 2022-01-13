@@ -36,25 +36,24 @@
                                 <button class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                     <span class="navbar-toggler-icon"></span>
                                 </button>
-
                                 <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
                                     @if (Model.ListLoaiVe == WebAppLottery.Models.IndexPageModel.LoaiVe._6Over55)
                                     {
                                         <a href="https://vietlott.vn/vi/trung-thuong/ket-qua-trung-thuong/winning-number-655"
                                            title="Đi đến trang Vietlott 6/55" target="_blank" class="dropdown-item dropdown text-decoration-none HeaderLinkColor">6/55 trên Vietlott website</a>
 
-                                        <button type="button" class="dropdown-item btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalLienHe">
+                                        @*<button type="button" class="dropdown-item btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalLienHe">
                                             Dự đoán số
-                                        </button>
+                                        </button>*@
                                     }
                                     else if (Model.ListLoaiVe == WebAppLottery.Models.IndexPageModel.LoaiVe._6Over45)
                                     {
                                         <a href="https://vietlott.vn/vi/trung-thuong/ket-qua-trung-thuong/winning-number-645"
                                            title="Đi đến trang Vietlott 6/45" target="_blank" class="dropdown-item dropdown text-decoration-none HeaderLinkColor">6/45 trên Vietlott website</a>
 
-                                        <button type="button" class="dropdown-item btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalLienHe">
+                                        @*<button type="button" class="dropdown-item btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalLienHe">
                                             Dự đoán số
-                                        </button>
+                                        </button>*@
                                     }
                                     else if (Model.ListLoaiVe == WebAppLottery.Models.IndexPageModel.LoaiVe._Keno)
                                     {
@@ -138,6 +137,10 @@
                 {
                     @RenderBody()
                 }
+                else
+                {
+                    @RenderBody()
+                }
 
 
                 if (Model.ListLoaiVe == WebAppLottery.Models.IndexPageModel.LoaiVe._Keno)
@@ -180,9 +183,9 @@
                 $('#QuantitySoDaChon').text(parseInt(q) + 1);
             }
         }
-        
+
         function NumberAppearPeriod(number) {
-            var loaive = $('#ListLoaiVe').val();    
+            var loaive = $('#ListLoaiVe').val();
 
             //alert(loaive + '_' + number);
             $.ajax({
@@ -195,7 +198,7 @@
                 processData: false,
                 cache: false,
                 success: function (data) {
-                    $('#modaltitleFullNoChuKyXuatHien').text('CHU KỲ XUẤT HIỆN ĐẦY ĐỦ CỦA SỐ: ' + number);
+                    $('#modaltitleFullNoChuKyXuatHien').text('DỰ ĐOÁN');
                     $('#modalbodyFullNoChuKyXuatHien').html(data);
                     // show modal
                     $('#modalFullNoChuKyXuatHien').modal('show');
@@ -260,7 +263,7 @@
                     <h5 class="modal-title" id="modaltitleFullNoChuKyXuatHien"></h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
-                <div class="modal-body" id="modalbodyFullNoChuKyXuatHien"></div>                                  
+                <div class="modal-body" id="modalbodyFullNoChuKyXuatHien"></div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
                 </div>
