@@ -1212,72 +1212,219 @@ namespace WebAppLottery.Controllers
             return View();
         }
 
+        private StringBuilder FullChuKyDisplay645(string no, string loaive)
+        {
+            StringBuilder sb = new StringBuilder();
+
+            var data = _6Over45TimeLine.Get6Over45Number(no, DateTime.MinValue, DateTime.MaxValue).Select(x => new LotteryStatistic1
+            {
+                LotNumber = Convert.ToInt32(x.LotNumber),
+                AllDatePublishList = x.AllDatePublishList,
+                DatePublish = x.DatePublish,
+                TotalNumberAppearInRange = x.TotalNumberAppearInRange,
+                DatePublishList = x.DatePublishList
+            }).OrderBy(x => x.LotNumber).ToList();
+
+            List<DateTime> allDatePublist = new List<DateTime>();
+            allDatePublist = data[0].AllDatePublishList;
+
+            sb.Append("<div class='container-fluid'>");
+            sb.Append("<div class='col-12'><h6>6Over45, CHU KỲ XUẤT HIỆN ĐẦY ĐỦ CỦA SỐ: " + no + "</h6>");
+            sb.Append("<table class='table table-secondary table-striped table-bordered TableData'>" +
+                "<thead class='table-dark'><tr class='text-info'><td>Xuất hiện</td><td>Ngày</td></tr></thead><tbody>");
+            sb.Append("<tr>");
+            foreach (var i in data)
+            {
+                sb.Append("<td class='align-middle'><h6>");
+                sb.Append(i.TotalNumberAppearInRange);
+                sb.Append("</h6></td>");
+                foreach (var j in allDatePublist.OrderByDescending(x => x.Date))
+                {
+                    sb.Append("<td class='align-middle'>");
+                    foreach (var k in i.DatePublishList.DatePublishList1.OrderByDescending(x => x.Date))
+                    {
+                        if (j.Date == k.Date)
+                        {
+                            sb.Append("<div class='MauNenSoTrung font-italic fs-5 text-secondary align-items-lg-center align-middle text-center'>");
+                            sb.Append("<p class='SoTrungFontSize'>");
+                            sb.Append(string.Format("{0:d/M}", k.Date));
+                            sb.Append("</p>");
+                            sb.Append("</div>");
+                        }
+                    }
+                    sb.Append("</td>");
+                }
+            }
+            sb.Append("</tr>");
+            sb.Append("<tr>");
+            sb.Append("<td>Chu kỳ (ngày)</td>");
+            foreach (var i in data)
+            {
+                var t = i.DatePublishList.DatePublishList1.OrderByDescending(x => x.Date).ToList();
+                for (int j = 0; j < t.Count() - 1; j++)
+                {
+                    sb.Append("<td class='align-middle'>");
+                    sb.Append("<div class='font-italic fs-6 text-secondary align-items-lg-center align-middle text-center'>");
+                    sb.Append(string.Format("{0}", (t[j].Date - t[j + 1].Date).TotalDays));
+                    sb.Append("</div>");
+                    sb.Append("</td>");
+                }
+            }
+            sb.Append("</tr>");
+            sb.Append("</body>");
+            sb.Append("</div>");
+            sb.Append("</div>");
+
+            return sb;
+        }
+
+        private StringBuilder FullChuKyDisplay655(string no, string loaive)
+        {
+            StringBuilder sb = new StringBuilder();
+
+            var data = _6Over55TimeLine.Get6Over55Number(no, DateTime.MinValue, DateTime.MaxValue).Select(x => new LotteryStatistic1
+            {
+                LotNumber = Convert.ToInt32(x.LotNumber),
+                AllDatePublishList = x.AllDatePublishList,
+                DatePublish = x.DatePublish,
+                TotalNumberAppearInRange = x.TotalNumberAppearInRange,
+                DatePublishList = x.DatePublishList
+            }).OrderBy(x => x.LotNumber).ToList();
+
+            List<DateTime> allDatePublist = new List<DateTime>();
+            allDatePublist = data[0].AllDatePublishList;
+
+            sb.Append("<div class='container-fluid'>");
+            sb.Append("<div class='col-12'><h6>6Over55, CHU KỲ XUẤT HIỆN ĐẦY ĐỦ CỦA SỐ: " + no + "</h6>");
+            sb.Append("<table class='table table-secondary table-striped table-bordered TableData'>" +
+                "<thead class='table-dark'><tr class='text-info'><td>Xuất hiện</td><td>Ngày</td></tr></thead><tbody>");
+            sb.Append("<tr>");
+            foreach (var i in data)
+            {
+                sb.Append("<td class='align-middle'><h6>");
+                sb.Append(i.TotalNumberAppearInRange);
+                sb.Append("</h6></td>");
+                foreach (var j in allDatePublist.OrderByDescending(x => x.Date))
+                {
+                    sb.Append("<td class='align-middle'>");
+                    foreach (var k in i.DatePublishList.DatePublishList1.OrderByDescending(x => x.Date))
+                    {
+                        if (j.Date == k.Date)
+                        {
+                            sb.Append("<div class='MauNenSoTrung font-italic fs-5 text-secondary align-items-lg-center align-middle text-center'>");
+                            sb.Append("<p class='SoTrungFontSize'>");
+                            sb.Append(string.Format("{0:d/M}", k.Date));
+                            sb.Append("</p>");
+                            sb.Append("</div>");
+                        }
+                    }
+                    sb.Append("</td>");
+                }
+            }
+            sb.Append("</tr>");
+            sb.Append("<tr>");
+            sb.Append("<td>Chu kỳ (ngày)</td>");
+            foreach (var i in data)
+            {
+                var t = i.DatePublishList.DatePublishList1.OrderByDescending(x => x.Date).ToList();
+                for (int j = 0; j < t.Count() - 1; j++)
+                {
+                    sb.Append("<td class='align-middle'>");
+                    sb.Append("<div class='font-italic fs-6 text-secondary align-items-lg-center align-middle text-center'>");
+                    sb.Append(string.Format("{0}", (t[j].Date - t[j + 1].Date).TotalDays));
+                    sb.Append("</div>");
+                    sb.Append("</td>");
+                }
+            }
+            sb.Append("</tr>");
+            sb.Append("</body>");
+            sb.Append("</div>");
+            sb.Append("</div>");
+
+            return sb;
+        }
+
+        private StringBuilder FullChuKyDisplayKeno(string no, string loaive)
+        {
+            StringBuilder sb = new StringBuilder();
+            var numbers = _KenoTimeLine.GetKenoNumber(no, DateTime.MinValue, DateTime.MaxValue);
+            var _KenoNoData = _KenoTimeLine.GetKenoNumberStatistic(numbers);
+            var data = _KenoNoData.Select(x => new LotteryStatistic1
+            {
+                LotNumber = Convert.ToInt32(x.LotNumber),
+                AllDatePublishList = x.AllDatePublishList,
+                DatePublish = x.DatePublish,
+                TotalNumberAppearInRange = x.TotalNumberAppearInRange,
+                DatePublishList = x.DatePublishList,
+            }).OrderBy(x => Convert.ToInt32(x.LotNumber)).ToList();
+
+            List<DateTime> allDatePublist = new List<DateTime>();
+            allDatePublist = data[0].AllDatePublishList;
+
+            sb.Append("<div class='container-fluid'>");
+            sb.Append("<div class='col-12'><h6>Keno, CHU KỲ XUẤT HIỆN ĐẦY ĐỦ CỦA SỐ: " + no + "</h6>");
+            sb.Append("<table class='table table-secondary table-striped table-bordered TableData'>" +
+                "<thead class='table-dark'><tr class='text-info'><td>Xuất hiện</td><td>Ngày</td></tr></thead><tbody>");
+            sb.Append("<tr>");
+            foreach (var i in data)
+            {
+                sb.Append("<td class='align-middle'><h6>");
+                sb.Append(i.TotalNumberAppearInRange);
+                sb.Append("</h6></td>");
+                foreach (var j in allDatePublist.OrderByDescending(x => x.Date))
+                {
+                    sb.Append("<td class='align-middle'>");
+                    foreach (var k in i.DatePublishList.DatePublishList1.OrderByDescending(x => x.Date))
+                    {
+                        if (j.Date == k.Date)
+                        {
+                            sb.Append("<div class='MauNenSoTrung font-italic fs-5 text-secondary align-items-lg-center align-middle text-center'>");
+                            sb.Append("<p class='SoTrungFontSize'>");
+                            sb.Append(string.Format("{0:d/M}", k.Date));
+                            sb.Append("</p>");
+                            sb.Append("</div>");
+                        }
+                    }
+                    sb.Append("</td>");
+                }
+            }
+            sb.Append("</tr>");
+            sb.Append("<tr>");
+            sb.Append("<td>Chu kỳ (ngày)</td>");
+            foreach (var i in data)
+            {
+                var t = i.DatePublishList.DatePublishList1.OrderByDescending(x => x.Date).ToList();
+                for (int j = 0; j < t.Count() - 1; j++)
+                {
+                    sb.Append("<td class='align-middle'>");
+                    sb.Append("<div class='font-italic fs-6 text-secondary align-items-lg-center align-middle text-center'>");
+                    sb.Append(string.Format("{0}", (t[j].Date - t[j + 1].Date).TotalDays));
+                    sb.Append("</div>");
+                    sb.Append("</td>");
+                }
+            }
+            sb.Append("</tr>");
+            sb.Append("</body>");
+            sb.Append("</div>");
+            sb.Append("</div>");
+
+            return sb;
+        }
+
         [HttpGet]
-        public ActionResult FullChuKyDisplay(string no, string loaive)
-        {            
+        public ActionResult DuDoan(string no, string loaive)
+        {
             StringBuilder sb = new StringBuilder();
             switch (Convert.ToInt32(loaive))
             {
                 case 1://6/45
-                    var data = _6Over45TimeLine.Get6Over45Number(no, DateTime.MinValue, DateTime.MaxValue).Select(x => new LotteryStatistic1
-                    {
-                        LotNumber = Convert.ToInt32(x.LotNumber),
-                        AllDatePublishList = x.AllDatePublishList,
-                        DatePublish = x.DatePublish,
-                        TotalNumberAppearInRange = x.TotalNumberAppearInRange,
-                        DatePublishList = x.DatePublishList
-                    }).OrderBy(x => x.LotNumber).ToList();
-
-                    List<DateTime> allDatePublist = new List<DateTime>();
-                    allDatePublist = data[0].AllDatePublishList;
-
-                    sb.Append("<div class='container-fluid'>");
-                    sb.Append("<div class='col-12'><h6>CHU KỲ XUẤT HIỆN ĐẦY ĐỦ CỦA SỐ: " + no + "</h6>");
-                    sb.Append("<table class='table table-secondary table-striped table-bordered TableData'>" +
-                        "<thead class='table-dark'><tr class='text-info'><td>Xuất hiện</td><td>Ngày</td></tr></thead><tbody>");
-                    sb.Append("<tr>");
-                    foreach (var i in data)
-                    {                        
-                        sb.Append("<td class='align-middle'><h6>");
-                        sb.Append(i.TotalNumberAppearInRange);
-                        sb.Append("</h6></td>");
-                        foreach (var j in allDatePublist.OrderByDescending(x => x.Date))
-                        {
-                            sb.Append("<td class='align-middle'>");
-                            foreach (var k in i.DatePublishList.DatePublishList1.OrderByDescending(x => x.Date))
-                            {
-                                if (j.Date == k.Date)
-                                {
-                                    sb.Append("<div class='MauNenSoTrung font-italic fs-5 text-secondary align-items-lg-center align-middle text-center'>");
-                                    sb.Append("<p class='SoTrungFontSize'>");
-                                    sb.Append(string.Format("{0:d/M}", k.Date));
-                                    sb.Append("</p>");
-                                    sb.Append("</div>");
-                                }
-                            }
-                            sb.Append("</td>");                            
-                        }
-                    }
-                    sb.Append("</tr>");
-                    sb.Append("<tr>");
-                    sb.Append("<td>Chu kỳ</td>");
-                    foreach (var i in data)
-                    {                                                                        
-                        var t = i.DatePublishList.DatePublishList1.OrderByDescending(x => x.Date).ToList();
-                        for (int j = 0; j < t.Count() - 1; j++)
-                        {
-                            sb.Append("<td class='align-middle'>");
-                            sb.Append("<div class='font-italic fs-6 text-secondary align-items-lg-center align-middle text-center'>");                                                    
-                            sb.Append(string.Format("{0}", (t[j].Date - t[j+1].Date).TotalDays));                           
-                            sb.Append("</div>");
-                            sb.Append("</td>");
-                        }                                               
-                    }
-                    sb.Append("</tr>");
-                    sb.Append("</body>");
-                    sb.Append("</div>");
-                    sb.Append("</div>");
-
+                    sb = FullChuKyDisplay645(no, loaive);
+                    break;
+                case 3://6/55
+                    sb = FullChuKyDisplay655(no, loaive);
+                    break;
+                case 5: //Keno
+                    sb = FullChuKyDisplayKeno(no, loaive);
                     break;
                 default:
                     break;

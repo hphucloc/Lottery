@@ -185,11 +185,9 @@
         }
 
         function NumberAppearPeriod(number) {
-            var loaive = $('#ListLoaiVe').val();
-
-            //alert(loaive + '_' + number);
+            var loaive = $('#ListLoaiVe').val();            
             $.ajax({
-                url: '@Url.Action("FullChuKyDisplay", "Home")',
+                url: '@Url.Action("DuDoan", "Home")',
                 dataType: 'json',
                 type: 'Get',
                 contentType: 'application/json; charset=utf-8',
