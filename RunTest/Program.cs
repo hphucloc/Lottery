@@ -53,17 +53,20 @@ namespace RunTest
             //    Console.WriteLine();
             //}
 
-            var a = _6Over45TimeLine.Get6Over45Number(DateTime.Now.AddMonths(-3), DateTime.Now).Select(x => new LotteryStatistic1
-            {
-                LotNumber = Convert.ToInt32(x.LotNumber),
-                AllDatePublishList = x.AllDatePublishList,
-                DatePublish = x.DatePublish,
-                TotalNumberAppearInRange = x.TotalNumberAppearInRange,
-                DatePublishList = x.DatePublishList
-            }).OrderBy(x => x.LotNumber).ToList();
+            //var a = _6Over45TimeLine.Get6Over45Number(DateTime.Now.AddMonths(-3), DateTime.Now).Select(x => new LotteryStatistic1
+            //{
+            //    LotNumber = Convert.ToInt32(x.LotNumber),
+            //    AllDatePublishList = x.AllDatePublishList,
+            //    DatePublish = x.DatePublish,
+            //    TotalNumberAppearInRange = x.TotalNumberAppearInRange,
+            //    DatePublishList = x.DatePublishList
+            //}).OrderBy(x => x.LotNumber).ToList();
+
+            var a = _3DMaxTimeLine.Get3DMaxNumberDacBiet("367", DateTime.MinValue, DateTime.MaxValue);
 
             foreach (var i in a)
                 Console.WriteLine(i.LotNumber);
+
 
             Console.ReadLine();
         }

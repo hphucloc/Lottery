@@ -164,7 +164,7 @@
     @Scripts.Render("~/bundles/bootstrap")
     @RenderSection("scripts", required: false)
 
-    <script>
+<script>
         $(document).ready(function () {
             $("#ListLoaiVe").addClass('LoaiVe100');
             if (!!$('#HiddenFrom').val())
@@ -185,7 +185,7 @@
         }
 
         function NumberAppearPeriod(number) {
-            var loaive = $('#ListLoaiVe').val();            
+            var loaive = $('#ListLoaiVe').val();
             $.ajax({
                 url: '@Url.Action("DuDoan", "Home")',
                 dataType: 'json',
@@ -206,7 +206,30 @@
                 }
             });
         }
-    </script>
+
+        function NumberAppearPeriod3DMax3DPro(number, giai) {
+            var loaive = $('#ListLoaiVe').val();
+            $.ajax({
+                url: '@Url.Action("DuDoan3DMax3DPro", "Home")',
+                dataType: 'json',
+                type: 'Get',
+                contentType: 'application/json; charset=utf-8',
+                data: "no=" + number + "&loaive=" + loaive + "&giai=" + giai,
+                async: true,
+                processData: false,
+                cache: false,
+                success: function (data) {
+                    $('#modaltitleFullNoChuKyXuatHien').text('DỰ ĐOÁN');
+                    $('#modalbodyFullNoChuKyXuatHien').html(data);
+                    // show modal
+                    $('#modalFullNoChuKyXuatHien').modal('show');
+                },
+                error: function (xhr) {
+                    alert('error');
+                }
+            });
+        }
+</script>
     <!--===============================================================================================-->
     <script src="~/js/main.js"></script>
     <script src="~/js/moment.js"></script>

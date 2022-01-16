@@ -4,3 +4,4 @@ Chien thuat 3: Dua theo chu ky xo so
 Chien thuat 4: De y nhung so chua ra 20 ky tro len
 Chien thuat 5: Nghien cuu quy tac so xo cua cac so
 Chien thuat 6: Ap dung day so Fibonacci: 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 144, 233, 377, 610... 
+Chien Thuat 7: Nghien cuu thien van, nghien cuu su van hanh cac ngoi sao, trang thai, vi tri , su lien ket cua chung voi so xo.

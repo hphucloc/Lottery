@@ -39,28 +39,12 @@ namespace LotteryBusiness
 
         public static List<LoterryStatistic> Get3DMaxNumberDacBiet(string getNumber, DateTime datePublishFrom, DateTime datePublishTo)
         {
-            IQueryable<LotteryNumber> number = Common.GetNumber((Int16)Enum_NumberWinLevel.DacBiet,
-                (Int16)Enum_NumberType._3DMax, datePublishFrom, datePublishTo).Where(x => x.LotNumber == getNumber);
+            List<LoterryStatistic> number = Get3DMaxNumberDacBiet(datePublishFrom, datePublishTo).Where(x => x.LotNumber == getNumber).ToList();
 
             List<LotteryNumber> numbers = new List<LotteryNumber>();
-            foreach (LotteryNumber no in number)
+            foreach (LoterryStatistic no in number)
             {
-                if (no.LotNumber.Length == 6)
-                {
-                    for (int i = 0; i <= 3; i += 3)
-                    {
-                        LotteryNumber n = new LotteryNumber();
-                        n.DateCreated = no.DateCreated;
-                        n.DatePublish = no.DatePublish;
-                        n.DateUpdated = no.DateUpdated;
-                        n.LotNumber = no.LotNumber.Substring(i, 3);
-                        n.NumberTypeId = no.NumberTypeId;
-                        n.NumberWinLevelId = no.NumberWinLevelId;
-                        n.KyQuay = no.KyQuay;
-                        if (n.LotNumber.Length == 3)
-                            numbers.Add(n);
-                    }
-                }
+                
             }
 
             return Common.GetLotNumberStatisticKeno(numbers.AsQueryable());
