@@ -1391,22 +1391,22 @@ namespace WebAppLottery.Controllers
             
 
             List<DateTime> allDatePublist = new List<DateTime>();
-            allDatePublist = data[0].AllDatePublishList;
+            allDatePublist = data[0].DatePublishList.DatePublishList1;
 
             sb.Append("<div class='container-fluid'>");
             switch (giai)
             {
                 case "0":
-                    sb.Append("<div class='col-12'><h6>3DMax - Giải Đặc Biệt, CHU KỲ XUẤT HIỆN ĐẦY ĐỦ CỦA SỐ: " + no + "</h6>");
+                    sb.Append("<div class='col-12'><h6>3DMax - Giải Đặc Biệt, CHU KỲ XUẤT HIỆN ĐẦY ĐỦ CỦA SỐ: " + no.Substring(0, 3) + "</h6>");
                     break;
                 case "1":
-                    sb.Append("<div class='col-12'><h6>3DMax - Giải Nhất, CHU KỲ XUẤT HIỆN ĐẦY ĐỦ CỦA SỐ: " + no + "</h6>");
+                    sb.Append("<div class='col-12'><h6>3DMax - Giải Nhất, CHU KỲ XUẤT HIỆN ĐẦY ĐỦ CỦA SỐ: " + no.Substring(0, 3) + "</h6>");
                     break;
                 case "2":
-                    sb.Append("<div class='col-12'><h6>3DMax - Giải Nhì, CHU KỲ XUẤT HIỆN ĐẦY ĐỦ CỦA SỐ: " + no + "</h6>");
+                    sb.Append("<div class='col-12'><h6>3DMax - Giải Nhì, CHU KỲ XUẤT HIỆN ĐẦY ĐỦ CỦA SỐ: " + no.Substring(0, 3) + "</h6>");
                     break;
                 case "3":
-                    sb.Append("<div class='col-12'><h6>3DMax - Giải Ba, CHU KỲ XUẤT HIỆN ĐẦY ĐỦ CỦA SỐ: " + no + "</h6>");
+                    sb.Append("<div class='col-12'><h6>3DMax - Giải Ba, CHU KỲ XUẤT HIỆN ĐẦY ĐỦ CỦA SỐ: " + no.Substring(0, 3) + "</h6>");
                     break;
                 default:
                     break;
@@ -1424,18 +1424,12 @@ namespace WebAppLottery.Controllers
                 sb.Append("</h6></td>");
                 foreach (var j in allDatePublist.OrderByDescending(x => x.Date))
                 {
-                    sb.Append("<td class='align-middle'>");
-                    foreach (var k in i.DatePublishList.DatePublishList1.OrderByDescending(x => x.Date))
-                    {
-                        if (j.Date == k.Date)
-                        {
-                            sb.Append("<div class='MauNenSoTrung font-italic fs-5 text-secondary align-items-lg-center align-middle text-center'>");
-                            sb.Append("<p class='SoTrungFontSize'>");
-                            sb.Append(string.Format("{0:d/M}", k.Date));
-                            sb.Append("</p>");
-                            sb.Append("</div>");
-                        }
-                    }
+                    sb.Append("<td class='align-middle'>");                  
+                    sb.Append("<div class='MauNenSoTrung font-italic fs-5 text-secondary align-items-lg-center align-middle text-center'>");
+                    sb.Append("<p class='SoTrungFontSize'>");
+                    sb.Append(string.Format("{0:d/M}", j.Date));
+                    sb.Append("</p>");
+                    sb.Append("</div>");                       
                     sb.Append("</td>");
                 }
             }
@@ -1444,8 +1438,9 @@ namespace WebAppLottery.Controllers
             sb.Append("<td>Chu kỳ (ngày)</td>");
             foreach (var i in data)
             {
-                var t = i.DatePublishList.DatePublishList1.OrderByDescending(x => x.Date).ToList();
-                for (int j = 0; j < t.Count() - 1; j++)
+                var t = allDatePublist.OrderByDescending(x => x.Date).ToList();
+                int c = t.Count <= 1 ? 1 : t.Count - 1;
+                for (int j = 0; j < c; j++)
                 {
                     if (j == 0)
                     {
@@ -1453,13 +1448,17 @@ namespace WebAppLottery.Controllers
                         sb.Append("<div class='font-italic fs-6 text-secondary align-items-lg-center align-middle text-center'>");
                         sb.Append(string.Format("{0}", (DateTime.Now.Date - t[j].Date).TotalDays));
                         sb.Append("</div>");
+                        sb.Append("</td>");                        
+                    }
+
+                    if (t.Count > 1)
+                    {
+                        sb.Append("<td class='align-middle'>");
+                        sb.Append("<div class='font-italic fs-6 text-secondary align-items-lg-center align-middle text-center'>");
+                        sb.Append(string.Format("{0}", (t[j].Date - t[j + 1].Date).TotalDays));
+                        sb.Append("</div>");
                         sb.Append("</td>");
                     }
-                    sb.Append("<td class='align-middle'>");
-                    sb.Append("<div class='font-italic fs-6 text-secondary align-items-lg-center align-middle text-center'>");
-                    sb.Append(string.Format("{0}", (t[j].Date - t[j + 1].Date).TotalDays));
-                    sb.Append("</div>");
-                    sb.Append("</td>");
                 }
             }
             sb.Append("</tr>");
@@ -1473,21 +1472,47 @@ namespace WebAppLottery.Controllers
         private StringBuilder FullChuKyDisplay3DPro(string no, string loaive, string giai)
         {
             StringBuilder sb = new StringBuilder();
-
-            var data = _6Over55TimeLine.Get6Over55Number(no, DateTime.MinValue, DateTime.MaxValue).Select(x => new LotteryStatistic1
+            List<LoterryStatistic> data = null;
+            switch (giai)
             {
-                LotNumber = Convert.ToInt32(x.LotNumber),
-                AllDatePublishList = x.AllDatePublishList,
-                DatePublish = x.DatePublish,
-                TotalNumberAppearInRange = x.TotalNumberAppearInRange,
-                DatePublishList = x.DatePublishList
-            }).OrderBy(x => x.LotNumber).ToList();
+                case "0":
+                    data = _3DMaxProTimeLine.Get3DMaxProNumberDacBiet(no.Substring(0, 3), DateTime.MinValue, DateTime.MaxValue);
+                    break;
+                case "1":
+                    data = _3DMaxProTimeLine.Get3DMaxProNumberGiaiNhat(no.Substring(0, 3), DateTime.MinValue, DateTime.MaxValue);
+                    break;
+                case "2":
+                    data = _3DMaxProTimeLine.Get3DMaxProNumberGiaiNhi(no.Substring(0, 3), DateTime.MinValue, DateTime.MaxValue);
+                    break;
+                case "3":
+                    data = _3DMaxProTimeLine.Get3DMaxProNumberGiaiBa(no.Substring(0, 3), DateTime.MinValue, DateTime.MaxValue);
+                    break;
+                default:
+                    break;
+            }
+
 
             List<DateTime> allDatePublist = new List<DateTime>();
-            allDatePublist = data[0].AllDatePublishList;
+            allDatePublist = data[0].DatePublishList.DatePublishList1;
 
             sb.Append("<div class='container-fluid'>");
-            sb.Append("<div class='col-12'><h6>6Over55, CHU KỲ XUẤT HIỆN ĐẦY ĐỦ CỦA SỐ: " + no + "</h6>");
+            switch (giai)
+            {
+                case "0":
+                    sb.Append("<div class='col-12'><h6>3DMaxPro - Giải Đặc Biệt, CHU KỲ XUẤT HIỆN ĐẦY ĐỦ CỦA SỐ: " + no.Substring(0, 3) + "</h6>");
+                    break;
+                case "1":
+                    sb.Append("<div class='col-12'><h6>3DMaxPro - Giải Nhất, CHU KỲ XUẤT HIỆN ĐẦY ĐỦ CỦA SỐ: " + no.Substring(0, 3) + "</h6>");
+                    break;
+                case "2":
+                    sb.Append("<div class='col-12'><h6>3DMaxPro - Giải Nhì, CHU KỲ XUẤT HIỆN ĐẦY ĐỦ CỦA SỐ: " + no.Substring(0, 3) + "</h6>");
+                    break;
+                case "3":
+                    sb.Append("<div class='col-12'><h6>3DMaxPro - Giải Ba, CHU KỲ XUẤT HIỆN ĐẦY ĐỦ CỦA SỐ: " + no.Substring(0, 3) + "</h6>");
+                    break;
+                default:
+                    break;
+            }
             sb.Append("<table class='table table-secondary table-striped table-bordered TableData'>" +
                 "<thead class='table-dark'><tr class='text-info'><td>Xuất hiện</td><td>Ngày</td></tr></thead><tbody>");
             sb.Append("<tr>");
@@ -1502,17 +1527,11 @@ namespace WebAppLottery.Controllers
                 foreach (var j in allDatePublist.OrderByDescending(x => x.Date))
                 {
                     sb.Append("<td class='align-middle'>");
-                    foreach (var k in i.DatePublishList.DatePublishList1.OrderByDescending(x => x.Date))
-                    {
-                        if (j.Date == k.Date)
-                        {
-                            sb.Append("<div class='MauNenSoTrung font-italic fs-5 text-secondary align-items-lg-center align-middle text-center'>");
-                            sb.Append("<p class='SoTrungFontSize'>");
-                            sb.Append(string.Format("{0:d/M}", k.Date));
-                            sb.Append("</p>");
-                            sb.Append("</div>");
-                        }
-                    }
+                    sb.Append("<div class='MauNenSoTrung font-italic fs-5 text-secondary align-items-lg-center align-middle text-center'>");
+                    sb.Append("<p class='SoTrungFontSize'>");
+                    sb.Append(string.Format("{0:d/M}", j.Date));
+                    sb.Append("</p>");
+                    sb.Append("</div>");
                     sb.Append("</td>");
                 }
             }
@@ -1521,8 +1540,9 @@ namespace WebAppLottery.Controllers
             sb.Append("<td>Chu kỳ (ngày)</td>");
             foreach (var i in data)
             {
-                var t = i.DatePublishList.DatePublishList1.OrderByDescending(x => x.Date).ToList();
-                for (int j = 0; j < t.Count() - 1; j++)
+                var t = allDatePublist.OrderByDescending(x => x.Date).ToList();
+                int c = t.Count <= 1 ? 1 : t.Count - 1;
+                for (int j = 0; j < c; j++)
                 {
                     if (j == 0)
                     {
@@ -1532,11 +1552,15 @@ namespace WebAppLottery.Controllers
                         sb.Append("</div>");
                         sb.Append("</td>");
                     }
-                    sb.Append("<td class='align-middle'>");
-                    sb.Append("<div class='font-italic fs-6 text-secondary align-items-lg-center align-middle text-center'>");
-                    sb.Append(string.Format("{0}", (t[j].Date - t[j + 1].Date).TotalDays));
-                    sb.Append("</div>");
-                    sb.Append("</td>");
+
+                    if (t.Count > 1)
+                    {
+                        sb.Append("<td class='align-middle'>");
+                        sb.Append("<div class='font-italic fs-6 text-secondary align-items-lg-center align-middle text-center'>");
+                        sb.Append(string.Format("{0}", (t[j].Date - t[j + 1].Date).TotalDays));
+                        sb.Append("</div>");
+                        sb.Append("</td>");
+                    }
                 }
             }
             sb.Append("</tr>");

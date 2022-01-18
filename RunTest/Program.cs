@@ -62,7 +62,7 @@ namespace RunTest
             //    DatePublishList = x.DatePublishList
             //}).OrderBy(x => x.LotNumber).ToList();
 
-            var a = _3DMaxTimeLine.Get3DMaxNumberDacBiet("367", DateTime.MinValue, DateTime.MaxValue);
+            var a = _3DMaxProTimeLine.Get3DMaxProNumberDacBiet("825", DateTime.MinValue, DateTime.MaxValue);
 
             foreach (var i in a)
                 Console.WriteLine(i.LotNumber);
