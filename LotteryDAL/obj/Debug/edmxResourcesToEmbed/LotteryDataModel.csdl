@@ -30,6 +30,12 @@
       <End Role="NumberWinLevel" EntitySet="NumberWinLevels" />
       <End Role="Number" EntitySet="Numbers" />
     </AssociationSet>
+    <FunctionImport Name="GetNextAppear" ReturnType="Collection(LotteryDataModel.GetNextAppear_Result)">
+      <Parameter Name="LeadOffset" Mode="In" Type="Int32" />
+      <Parameter Name="number" Mode="In" Type="String" />
+      <Parameter Name="numberTypeId" Mode="In" Type="Int32" />
+      <Parameter Name="numberWinLevelId" Mode="In" Type="Int32" />
+    </FunctionImport>
   </EntityContainer>
   <EntityType Name="Number">
     <Key>
@@ -70,4 +76,12 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <ComplexType Name="GetNextAppear_Result">
+    <Property Type="Int64" Name="NumberId" Nullable="false" />
+    <Property Type="Int16" Name="NumberTypeId" Nullable="false" />
+    <Property Type="Int16" Name="NumberWinLevelId" Nullable="false" />
+    <Property Type="String" Name="LotNumber" Nullable="true" MaxLength="200" />
+    <Property Type="DateTime" Name="DatePublish" Nullable="false" Precision="23" />
+    <Property Type="DateTime" Name="NextPublishDate" Nullable="true" Precision="23" />
+  </ComplexType>
 </Schema>

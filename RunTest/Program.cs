@@ -62,11 +62,20 @@ namespace RunTest
             //    DatePublishList = x.DatePublishList
             //}).OrderBy(x => x.LotNumber).ToList();
 
-            var a = _3DMaxProTimeLine.Get3DMaxProNumberDacBiet("825", DateTime.MinValue, DateTime.MaxValue);
+            //var a = _3DMaxProTimeLine.Get3DMaxProNumberDacBiet("825", DateTime.MinValue, DateTime.MaxValue);
+
+            //foreach (var i in a)
+            // Console.WriteLine(i.LotNumber);
+
+            //var a = Common.GetNumbersNextAppear(6, "2", 1, 1);
+
+            //foreach (var i in a)
+            //    Console.WriteLine(i.LotNumber + ", " + i.NextPublishDate);
+
+            var a = _6Over45TimeLine.GetNumberNextAppear("2");
 
             foreach (var i in a)
-                Console.WriteLine(i.LotNumber);
-
+                Console.WriteLine(i);
 
             Console.ReadLine();
         }

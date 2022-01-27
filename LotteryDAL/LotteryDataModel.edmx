@@ -58,6 +58,12 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Function Name="GetNextAppear" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="LeadOffset" Type="int" Mode="In" />
+          <Parameter Name="number" Type="nvarchar" Mode="In" />
+          <Parameter Name="numberTypeId" Type="int" Mode="In" />
+          <Parameter Name="numberWinLevelId" Type="int" Mode="In" />
+        </Function>
         <EntityContainer Name="LotteryDataModelStoreContainer">
           <EntitySet Name="Number" EntityType="Self.Number" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="NumberType" EntityType="Self.NumberType" Schema="dbo" store:Type="Tables" />
@@ -105,6 +111,12 @@
             <End Role="NumberWinLevel" EntitySet="NumberWinLevels" />
             <End Role="Number" EntitySet="Numbers" />
           </AssociationSet>
+          <FunctionImport Name="GetNextAppear" ReturnType="Collection(LotteryDataModel.GetNextAppear_Result)">
+            <Parameter Name="LeadOffset" Mode="In" Type="Int32" />
+            <Parameter Name="number" Mode="In" Type="String" />
+            <Parameter Name="numberTypeId" Mode="In" Type="Int32" />
+            <Parameter Name="numberWinLevelId" Mode="In" Type="Int32" />
+          </FunctionImport>
           </EntityContainer>
         <EntityType Name="Number">
           <Key>
@@ -145,6 +157,14 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <ComplexType Name="GetNextAppear_Result">
+          <Property Type="Int64" Name="NumberId" Nullable="false" />
+          <Property Type="Int16" Name="NumberTypeId" Nullable="false" />
+          <Property Type="Int16" Name="NumberWinLevelId" Nullable="false" />
+          <Property Type="String" Name="LotNumber" Nullable="true" MaxLength="200" />
+          <Property Type="DateTime" Name="DatePublish" Nullable="false" Precision="23" />
+          <Property Type="DateTime" Name="NextPublishDate" Nullable="true" Precision="23" />
+        </ComplexType>
         </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -183,6 +203,18 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="GetNextAppear" FunctionName="LotteryDataModel.Store.GetNextAppear">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="LotteryDataModel.GetNextAppear_Result">
+                <ScalarProperty Name="NumberId" ColumnName="NumberId" />
+                <ScalarProperty Name="NumberTypeId" ColumnName="NumberTypeId" />
+                <ScalarProperty Name="NumberWinLevelId" ColumnName="NumberWinLevelId" />
+                <ScalarProperty Name="LotNumber" ColumnName="LotNumber" />
+                <ScalarProperty Name="DatePublish" ColumnName="DatePublish" />
+                <ScalarProperty Name="NextPublishDate" ColumnName="NextPublishDate" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>

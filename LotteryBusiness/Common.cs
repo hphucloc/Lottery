@@ -9,12 +9,12 @@ namespace LotteryBusiness
 {
     public class NumbersNextAppear
     {
-        public int NumberId { get; set; }
-        public int NumberTypeID { get; set; }
-        public int NumberWinLevelID { get; set; }
+        public Int64 NumberId { get; set; }
+        public Int16 NumberTypeID { get; set; }
+        public Int16 NumberWinLevelID { get; set; }
         public string LotNumber { get; set; }
         public DateTime DatePublish { get; set; }
-        public DateTime NextPublishDate { get; set; }
+        public DateTime? NextPublishDate { get; set; }
     }
 
     public class Common
@@ -186,7 +186,8 @@ namespace LotteryBusiness
             return Db.Numbers.Count(x => x.LotNumber == No && x.NumberTypeId == numberType);
         }
 
-        public static Dictionary<DateTime, List<int>> GetNumbersNextAppear(string number, int numberType, int numberWinLevel)
+        //public static Dictionary<DateTime, List<int>> GetNumbersNextAppear(int leadOffset, string number, int @numberTypeId, int numberWinLevelId)
+        public static List<NumbersNextAppear> GetNumbersNextAppear(int leadOffset, string number, int @numberTypeId, int numberWinLevelId)
         {
             Dictionary<DateTime, List<int>> numberNextAppear = new Dictionary<DateTime, List<int>>();
 
@@ -216,15 +217,19 @@ namespace LotteryBusiness
             //    }
             //}
 
-            
-            var clientIdParameter = new SqlParameter("@ClientId", 4);
 
-            var result = new DbContext().
-                .SqlQuery<NumbersNextAppear>("GetResultsForCampaign @ClientId", clientIdParameter)
+            var pLeadOffset = new SqlParameter("@leadOffset", leadOffset);
+            var pNUmber = new SqlParameter("@number", number);
+            var pNumberTypeId = new SqlParameter("@numberTypeId", numberTypeId);
+            var pNumberWinLevelId = new SqlParameter("@NumberWinLevelId", numberWinLevelId);
+
+            var result = Db.Database.SqlQuery<NumbersNextAppear>("GetNextAppear @leadOffset, @number, @numberTypeId, @numberWinLevelId ",
+                    pLeadOffset, pNUmber, pNumberTypeId, pNumberWinLevelId)
                 .ToList();
-           
 
-            return numberNextAppear;
+
+
+            return result;
         }
 
         public static void NewNumber(DateTime publishDdate, List<string> number, short numberType, short numberWinLevel)

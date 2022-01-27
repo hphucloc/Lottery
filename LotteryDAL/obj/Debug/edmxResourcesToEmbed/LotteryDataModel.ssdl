@@ -53,6 +53,12 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <Function Name="GetNextAppear" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="LeadOffset" Type="int" Mode="In" />
+    <Parameter Name="number" Type="nvarchar" Mode="In" />
+    <Parameter Name="numberTypeId" Type="int" Mode="In" />
+    <Parameter Name="numberWinLevelId" Type="int" Mode="In" />
+  </Function>
   <EntityContainer Name="LotteryDataModelStoreContainer">
     <EntitySet Name="Number" EntityType="Self.Number" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="NumberType" EntityType="Self.NumberType" Schema="dbo" store:Type="Tables" />

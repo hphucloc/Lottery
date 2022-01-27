@@ -32,9 +32,16 @@ namespace LotteryBusiness
             Common.NewNumber(publishDdate, number, (Int16)Enum_NumberType._6Over45, (Int16)Enum_NumberWinLevel.DacBiet);
         }
 
-        public static List<int> GetNumberNextAppear(SortedSet<DateTime> dateAppear)
+        public static List<string> GetNumberNextAppear(string number)
         {
-            return Common.GetNumberNextAppear(dateAppear, (Int16)Enum_NumberType._6Over45, (Int16)Enum_NumberWinLevel.DacBiet);
+            List<string> rdata = new List<string>();
+            var data = Common.GetNumbersNextAppear(6, number, 1, 1);
+
+            var lstDateNextAppear = data.Where(x => x.LotNumber == number && x.NextPublishDate != null).Select(x => x.NextPublishDate);
+
+            rdata = data.Where(x => lstDateNextAppear.Contains(x.DatePublish)).Select(x => x.LotNumber).ToList();
+
+            return rdata;
         }
 
         public static void CreateBoughtNumber(List<int> number, DateTime dateBought, short numberType, short numberWinLevel)

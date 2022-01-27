@@ -12,6 +12,8 @@ namespace LotteryDAL
     using System;
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
+    using System.Data.Entity.Core.Objects;
+    using System.Linq;
     
     public partial class LotteryEntities : DbContext
     {
@@ -28,5 +30,26 @@ namespace LotteryDAL
         public virtual DbSet<NumberType> NumberTypes { get; set; }
         public virtual DbSet<NumberWinLevel> NumberWinLevels { get; set; }
         public virtual DbSet<Number> Numbers { get; set; }
+    
+        public virtual ObjectResult<GetNextAppear_Result> GetNextAppear(Nullable<int> leadOffset, string number, Nullable<int> numberTypeId, Nullable<int> numberWinLevelId)
+        {
+            var leadOffsetParameter = leadOffset.HasValue ?
+                new ObjectParameter("LeadOffset", leadOffset) :
+                new ObjectParameter("LeadOffset", typeof(int));
+    
+            var numberParameter = number != null ?
+                new ObjectParameter("number", number) :
+                new ObjectParameter("number", typeof(string));
+    
+            var numberTypeIdParameter = numberTypeId.HasValue ?
+                new ObjectParameter("numberTypeId", numberTypeId) :
+                new ObjectParameter("numberTypeId", typeof(int));
+    
+            var numberWinLevelIdParameter = numberWinLevelId.HasValue ?
+                new ObjectParameter("numberWinLevelId", numberWinLevelId) :
+                new ObjectParameter("numberWinLevelId", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<GetNextAppear_Result>("GetNextAppear", leadOffsetParameter, numberParameter, numberTypeIdParameter, numberWinLevelIdParameter);
+        }
     }
 }

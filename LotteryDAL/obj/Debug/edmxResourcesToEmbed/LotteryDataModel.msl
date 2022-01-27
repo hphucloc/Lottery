@@ -33,5 +33,17 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="GetNextAppear" FunctionName="LotteryDataModel.Store.GetNextAppear">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="LotteryDataModel.GetNextAppear_Result">
+          <ScalarProperty Name="NumberId" ColumnName="NumberId" />
+          <ScalarProperty Name="NumberTypeId" ColumnName="NumberTypeId" />
+          <ScalarProperty Name="NumberWinLevelId" ColumnName="NumberWinLevelId" />
+          <ScalarProperty Name="LotNumber" ColumnName="LotNumber" />
+          <ScalarProperty Name="DatePublish" ColumnName="DatePublish" />
+          <ScalarProperty Name="NextPublishDate" ColumnName="NextPublishDate" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
   </EntityContainerMapping>
 </Mapping>

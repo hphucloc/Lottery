@@ -24,10 +24,10 @@ namespace LotteryBusiness
             Common.NewNumber(publishDdate, number, (Int16)Enum_NumberType._6Over55, (Int16)Enum_NumberWinLevel.DacBiet);
         }
 
-        public static List<int> GetNumberNextAppear(SortedSet<DateTime> dateAppear)
-        {
-            return Common.GetNumberNextAppear(dateAppear, (Int16)Enum_NumberType._6Over55, (Int16)Enum_NumberWinLevel.DacBiet);
-        }
+        //public static List<int> GetNumberNextAppear(SortedSet<DateTime> dateAppear)
+        //{
+        //    return Common.GetNumberNextAppear(dateAppear, (Int16)Enum_NumberType._6Over55, (Int16)Enum_NumberWinLevel.DacBiet);
+        //}
 
         public static void CreateBoughtNumber(List<int> number, DateTime dateBought, short numberType, short numberWinLevel)
         {

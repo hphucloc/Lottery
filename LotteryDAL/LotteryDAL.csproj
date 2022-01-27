@@ -61,6 +61,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="EnumLocal.cs" />
+    <Compile Include="GetNextAppear_Result.cs">
+      <DependentUpon>LotteryDataModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="LotteryConnection.cs" />
     <Compile Include="LotteryDataModel.Context.cs">
       <AutoGen>True</AutoGen>
