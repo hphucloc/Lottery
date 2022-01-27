@@ -2,10 +2,21 @@
 using System;
 using System.Collections.Generic;
 using System.Data.Entity;
+using System.Data.SqlClient;
 using System.Linq;
 
 namespace LotteryBusiness
 {
+    public class NumbersNextAppear
+    {
+        public int NumberId { get; set; }
+        public int NumberTypeID { get; set; }
+        public int NumberWinLevelID { get; set; }
+        public string LotNumber { get; set; }
+        public DateTime DatePublish { get; set; }
+        public DateTime NextPublishDate { get; set; }
+    }
+
     public class Common
     {
         private static LotteryEntities Db = LotteryDAL.LotteryConnection.Instance;
@@ -175,35 +186,9 @@ namespace LotteryBusiness
             return Db.Numbers.Count(x => x.LotNumber == No && x.NumberTypeId == numberType);
         }
 
-        public static void NewNumber(DateTime publishDdate, List<string> number, short numberType, short numberWinLevel)
+        public static Dictionary<DateTime, List<int>> GetNumbersNextAppear(string number, int numberType, int numberWinLevel)
         {
-            Number n = null;
-            foreach (var no in number)
-            {
-                n = new Number();
-                n.DateCreated = DateTime.Now;
-                n.DatePublish = publishDdate;
-                n.LotNumber = no;
-                n.NumberTypeId = numberType;
-                n.NumberWinLevelId = numberWinLevel;
-                Db.Entry(n).State = System.Data.Entity.EntityState.Added;
-                Db.Numbers.Add(n);
-            }
-            try
-            {              
-                Db.SaveChanges();
-            }
-            catch (Exception)
-            {
-                foreach (var i in number) {
-                    Db.Database.ExecuteSqlCommand("INSERT INTO dbo.Number(NumberTypeId, NumberWinLevelId, LotNumber, DatePublish, DateCreated) VALUES({0}, {1}, {2}, {3}, {4})",
-                        numberType, numberWinLevel, i, publishDdate, publishDdate);
-                }
-            }
-        }
-        public static List<int> GetNumberNextAppear(SortedSet<DateTime> dateAppear, short numberType, short numberWinLevel)
-        {
-            List<int> numberNextAppear = new List<int>();
+            Dictionary<DateTime, List<int>> numberNextAppear = new Dictionary<DateTime, List<int>>();
 
             //foreach(DateTime i in dateAppear)
             //{
@@ -231,8 +216,44 @@ namespace LotteryBusiness
             //    }
             //}
 
+            
+            var clientIdParameter = new SqlParameter("@ClientId", 4);
+
+            var result = new DbContext().
+                .SqlQuery<NumbersNextAppear>("GetResultsForCampaign @ClientId", clientIdParameter)
+                .ToList();
+           
+
             return numberNextAppear;
         }
+
+        public static void NewNumber(DateTime publishDdate, List<string> number, short numberType, short numberWinLevel)
+        {
+            Number n = null;
+            foreach (var no in number)
+            {
+                n = new Number();
+                n.DateCreated = DateTime.Now;
+                n.DatePublish = publishDdate;
+                n.LotNumber = no;
+                n.NumberTypeId = numberType;
+                n.NumberWinLevelId = numberWinLevel;
+                Db.Entry(n).State = System.Data.Entity.EntityState.Added;
+                Db.Numbers.Add(n);
+            }
+            try
+            {              
+                Db.SaveChanges();
+            }
+            catch (Exception)
+            {
+                foreach (var i in number) {
+                    Db.Database.ExecuteSqlCommand("INSERT INTO dbo.Number(NumberTypeId, NumberWinLevelId, LotNumber, DatePublish, DateCreated) VALUES({0}, {1}, {2}, {3}, {4})",
+                        numberType, numberWinLevel, i, publishDdate, publishDdate);
+                }
+            }
+        }
+        
         public static void CreateBoughtNumber(List<int> number, DateTime dateBought, short numberType, short numberWinLevel)
         {
             foreach (byte i in number)
