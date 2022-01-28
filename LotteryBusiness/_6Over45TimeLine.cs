@@ -41,7 +41,7 @@ namespace LotteryBusiness
 
             rdata = data.Where(x => lstDateNextAppear.Contains(x.DatePublish)).Select(x => x.LotNumber).ToList();
 
-            return rdata;
+            return rdata.OrderBy(x => Convert.ToInt32(x)).ToList();
         }
 
         public static void CreateBoughtNumber(List<int> number, DateTime dateBought, short numberType, short numberWinLevel)
