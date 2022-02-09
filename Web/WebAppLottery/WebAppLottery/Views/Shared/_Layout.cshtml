@@ -194,7 +194,7 @@
         function NumberAppearPeriod(number) {
             var loaive = $('#ListLoaiVe').val();
             $.ajax({
-                url: '@Url.Action("DuDoan", "Home")',
+                url: '@Url.Action("FullChuKyDisplay645655", "Home")',
                 dataType: 'json',
                 type: 'Get',
                 contentType: 'application/json; charset=utf-8',
@@ -203,7 +203,7 @@
                 processData: false,
                 cache: false,
                 success: function (data) {
-                    $('#modaltitleFullNoChuKyXuatHien').text('DỰ ĐOÁN');
+                    $('#modaltitleFullNoChuKyXuatHien').text('CHU KỲ XUẤT HIỆN ĐẦY ĐỦ');
                     $('#modalbodyFullNoChuKyXuatHien').html(data);
                     // show modal
                     $('#modalFullNoChuKyXuatHien').modal('show');
@@ -217,7 +217,7 @@
         function NumberAppearPeriod3DMax3DPro(number, giai) {
             var loaive = $('#ListLoaiVe').val();
             $.ajax({
-                url: '@Url.Action("DuDoan3DMax3DPro", "Home")',
+                url: '@Url.Action("FullChuKyDisplay3DMax3DPro", "Home")',
                 dataType: 'json',
                 type: 'Get',
                 contentType: 'application/json; charset=utf-8',
@@ -226,7 +226,7 @@
                 processData: false,
                 cache: false,
                 success: function (data) {
-                    $('#modaltitleFullNoChuKyXuatHien').text('DỰ ĐOÁN');
+                    $('#modaltitleFullNoChuKyXuatHien').text('CHU KỲ XUẤT HIỆN ĐẦY ĐỦ');
                     $('#modalbodyFullNoChuKyXuatHien').html(data);
                     // show modal
                     $('#modalFullNoChuKyXuatHien').modal('show');

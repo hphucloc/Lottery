@@ -1572,7 +1572,7 @@ namespace WebAppLottery.Controllers
         }
 
         [HttpGet]
-        public ActionResult DuDoan(string no, string loaive)
+        public ActionResult FullChuKyDisplay645655(string no, string loaive)
         {
             StringBuilder sb = new StringBuilder();
             switch (Convert.ToInt32(loaive))
@@ -1590,7 +1590,7 @@ namespace WebAppLottery.Controllers
             return Json(sb.ToString(), JsonRequestBehavior.AllowGet);
         }
 
-        public ActionResult DuDoan3DMax3DPro(string no, string loaive, string giai)
+        public ActionResult FullChuKyDisplay3DMax3DPro(string no, string loaive, string giai)
         {
             StringBuilder sb = new StringBuilder();
             switch (Convert.ToInt32(loaive))
