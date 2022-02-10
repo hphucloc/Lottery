@@ -1283,7 +1283,8 @@ namespace WebAppLottery.Controllers
                 }
             }
             sb.Append("</tr>");
-            sb.Append("</body>");
+            sb.Append("</tbody>");
+            sb.Append("</table>");
             sb.Append("</div>");
             sb.Append("</div>");
 
@@ -1360,7 +1361,8 @@ namespace WebAppLottery.Controllers
                 }
             }
             sb.Append("</tr>");
-            sb.Append("</body>");
+            sb.Append("</tbody>");
+            sb.Append("</table>");
             sb.Append("</div>");
             sb.Append("</div>");
 
@@ -1462,7 +1464,8 @@ namespace WebAppLottery.Controllers
                 }
             }
             sb.Append("</tr>");
-            sb.Append("</body>");
+            sb.Append("</tbody>");
+            sb.Append("</table>");
             sb.Append("</div>");
             sb.Append("</div>");
 
@@ -1564,7 +1567,8 @@ namespace WebAppLottery.Controllers
                 }
             }
             sb.Append("</tr>");
-            sb.Append("</body>");
+            sb.Append("</tbody>");
+            sb.Append("</table>");
             sb.Append("</div>");
             sb.Append("</div>");
 
@@ -1572,7 +1576,7 @@ namespace WebAppLottery.Controllers
         }
 
         [HttpGet]
-        public ActionResult FullChuKyDisplay645655(string no, string loaive)
+        public ActionResult FullChuKyDisplay645655(string no, string loaive) 
         {
             StringBuilder sb = new StringBuilder();
             switch (Convert.ToInt32(loaive))
@@ -1590,6 +1594,7 @@ namespace WebAppLottery.Controllers
             return Json(sb.ToString(), JsonRequestBehavior.AllowGet);
         }
 
+        [HttpGet]
         public ActionResult FullChuKyDisplay3DMax3DPro(string no, string loaive, string giai)
         {
             StringBuilder sb = new StringBuilder();
@@ -1604,6 +1609,552 @@ namespace WebAppLottery.Controllers
                 default:
                     break;
             }
+
+            return Json(sb.ToString(), JsonRequestBehavior.AllowGet);
+        }
+
+        [HttpGet]
+        public ActionResult DuDoan645()
+        {
+            
+            string cacSo = null;
+            var latestData = _6Over45TimeLine.GetLatest6Over45Number();
+
+            //HOP
+            List<string> lstNextAppearData = new List<string>();
+            foreach (var i in latestData)
+            {
+                cacSo += " " + i.LotNumber;
+                lstNextAppearData.AddRange(_6Over45TimeLine.GetNumberNextAppear(i.LotNumber));
+            }
+            Dictionary<int, int> dicNextAppearDataHop = new Dictionary<int, int>();
+            foreach (var i in lstNextAppearData.OrderBy(x => Convert.ToInt32(x)))
+            {
+                if (!dicNextAppearDataHop.ContainsKey(Convert.ToInt32(i)))
+                    dicNextAppearDataHop.Add(Convert.ToInt32(i), lstNextAppearData.Count(x => x == i));
+            }
+            dicNextAppearDataHop = dicNextAppearDataHop.OrderByDescending(x => x.Value).ToDictionary(x => x.Key, x => x.Value);
+
+            //Chi Tiet
+            List<string> lstNextAppearData1 = new List<string>();
+            lstNextAppearData1.AddRange(_6Over45TimeLine.GetNumberNextAppear(latestData[0].LotNumber));
+            Dictionary<int, int> dicNextAppearData1 = new Dictionary<int, int>();
+            foreach (var i in lstNextAppearData1.OrderBy(x => Convert.ToInt32(x)))
+            {
+                if (!dicNextAppearData1.ContainsKey(Convert.ToInt32(i)))
+                    dicNextAppearData1.Add(Convert.ToInt32(i), lstNextAppearData1.Count(x => x == i));
+            }
+            dicNextAppearData1 = dicNextAppearData1.OrderByDescending(x => x.Value).ToDictionary(x => x.Key, x => x.Value);
+
+            List<string> lstNextAppearData2 = new List<string>();
+            lstNextAppearData2.AddRange(_6Over45TimeLine.GetNumberNextAppear(latestData[1].LotNumber));
+            Dictionary<int, int> dicNextAppearData2 = new Dictionary<int, int>();
+            foreach (var i in lstNextAppearData2.OrderBy(x => Convert.ToInt32(x)))
+            {
+                if (!dicNextAppearData2.ContainsKey(Convert.ToInt32(i)))
+                    dicNextAppearData2.Add(Convert.ToInt32(i), lstNextAppearData2.Count(x => x == i));
+            }
+            dicNextAppearData2 = dicNextAppearData2.OrderByDescending(x => x.Value).ToDictionary(x => x.Key, x => x.Value);
+
+            List<string> lstNextAppearData3 = new List<string>();
+            lstNextAppearData3.AddRange(_6Over45TimeLine.GetNumberNextAppear(latestData[2].LotNumber));
+            Dictionary<int, int> dicNextAppearData3 = new Dictionary<int, int>();
+            foreach (var i in lstNextAppearData3.OrderBy(x => Convert.ToInt32(x)))
+            {
+                if (!dicNextAppearData3.ContainsKey(Convert.ToInt32(i)))
+                    dicNextAppearData3.Add(Convert.ToInt32(i), lstNextAppearData3.Count(x => x == i));
+            }
+            dicNextAppearData3 = dicNextAppearData3.OrderByDescending(x => x.Value).ToDictionary(x => x.Key, x => x.Value);
+
+            List<string> lstNextAppearData4 = new List<string>();
+            lstNextAppearData4.AddRange(_6Over45TimeLine.GetNumberNextAppear(latestData[3].LotNumber));
+            Dictionary<int, int> dicNextAppearData4 = new Dictionary<int, int>();
+            foreach (var i in lstNextAppearData4.OrderBy(x => Convert.ToInt32(x)))
+            {
+                if (!dicNextAppearData4.ContainsKey(Convert.ToInt32(i)))
+                    dicNextAppearData4.Add(Convert.ToInt32(i), lstNextAppearData4.Count(x => x == i));
+            }
+            dicNextAppearData4 = dicNextAppearData4.OrderByDescending(x => x.Value).ToDictionary(x => x.Key, x => x.Value);
+
+            List<string> lstNextAppearData5 = new List<string>();
+            lstNextAppearData5.AddRange(_6Over45TimeLine.GetNumberNextAppear(latestData[4].LotNumber));
+            Dictionary<int, int> dicNextAppearData5 = new Dictionary<int, int>();
+            foreach (var i in lstNextAppearData5.OrderBy(x => Convert.ToInt32(x)))
+            {
+                if (!dicNextAppearData5.ContainsKey(Convert.ToInt32(i)))
+                    dicNextAppearData5.Add(Convert.ToInt32(i), lstNextAppearData5.Count(x => x == i));
+            }
+            dicNextAppearData5 = dicNextAppearData5.OrderByDescending(x => x.Value).ToDictionary(x => x.Key, x => x.Value);
+
+            List<string> lstNextAppearData6 = new List<string>();
+            lstNextAppearData6.AddRange(_6Over45TimeLine.GetNumberNextAppear(latestData[5].LotNumber));
+            Dictionary<int, int> dicNextAppearData6 = new Dictionary<int, int>();
+            foreach (var i in lstNextAppearData6.OrderBy(x => Convert.ToInt32(x)))
+            {
+                if (!dicNextAppearData6.ContainsKey(Convert.ToInt32(i)))
+                    dicNextAppearData6.Add(Convert.ToInt32(i), lstNextAppearData6.Count(x => x == i));
+            }
+            dicNextAppearData6 = dicNextAppearData6.OrderByDescending(x => x.Value).ToDictionary(x => x.Key, x => x.Value);
+
+            StringBuilder sb = new StringBuilder();
+
+            sb.Append("<h5>I/ Chiến thuật 1</h5>");
+
+
+           
+            sb.Append("<div class='container-fluid'>");
+
+            sb.Append("<div class='col-12'>");
+            sb.Append("<h6>+ Số xuất hiện kế tiếp của số: " + latestData[0].LotNumber + "</h6>");
+            sb.Append("</div>");
+            sb.Append("<div class='col-12'>");
+            sb.Append("<table class='table table-secondary table-striped table-bordered TableData'>" +
+                "<thead class='table-secondary'><tr class='text-info'><td>Số kế tiếp</td>");
+            foreach (var i in dicNextAppearData1)
+            {
+                sb.Append("<td>" + i.Key + "</td>");
+            }
+            sb.Append("</tr></thead>");
+            sb.Append("<tbody>");
+            sb.Append("<tr>");
+            sb.Append("<td>Số lần xuất hiện</td>");
+            foreach (var i in dicNextAppearData1.Keys)
+            {
+                sb.Append("<td>" + dicNextAppearData1[i] + "</td>");
+            }
+            sb.Append("</tr>");
+            sb.Append("</tbody>");
+            sb.Append("</table>");
+            sb.Append("</div>");
+
+            sb.Append("<div class='col-12'>");
+            sb.Append("<h6>+ Số xuất hiện kế tiếp của số: " + latestData[1].LotNumber + "</h6>");
+            sb.Append("</div>");
+            sb.Append("<div class='col-12'>");
+            sb.Append("<table class='table table-secondary table-striped table-bordered TableData'>" +
+                "<thead class='table-secondary'><tr class='text-info'><td>Số kế tiếp</td>");
+            foreach (var i in dicNextAppearData2)
+            {
+                sb.Append("<td>" + i.Key + "</td>");
+            }
+            sb.Append("</tr></thead>");
+            sb.Append("<tbody>");
+            sb.Append("<tr>");
+            sb.Append("<td>Số lần xuất hiện</td>");
+            foreach (var i in dicNextAppearData2.Keys)
+            {
+                sb.Append("<td>" + dicNextAppearData2[i] + "</td>");
+            }
+            sb.Append("</tr>");
+            sb.Append("</tbody>");
+            sb.Append("</table>");
+            sb.Append("</div>");
+
+            sb.Append("<div class='col-12'>");
+            sb.Append("<h6>+ Số xuất hiện kế tiếp của số: " + latestData[2].LotNumber + "</h6>");
+            sb.Append("</div>");
+            sb.Append("<div class='col-12'>");
+            sb.Append("<table class='table table-secondary table-striped table-bordered TableData'>" +
+                "<thead class='table-secondary'><tr class='text-info'><td>Số kế tiếp</td>");
+            foreach (var i in dicNextAppearData3)
+            {
+                sb.Append("<td>" + i.Key + "</td>");
+            }
+            sb.Append("</tr></thead>");
+            sb.Append("<tbody>");
+            sb.Append("<tr>");
+            sb.Append("<td>Số lần xuất hiện</td>");
+            foreach (var i in dicNextAppearData3.Keys)
+            {
+                sb.Append("<td>" + dicNextAppearData3[i] + "</td>");
+            }
+            sb.Append("</tr>");
+            sb.Append("</tbody>");
+            sb.Append("</table>");
+            sb.Append("</div>");
+
+            sb.Append("<div class='col-12'>");
+            sb.Append("<h6>+ Số xuất hiện kế tiếp của số: " + latestData[3].LotNumber + "</h6>");
+            sb.Append("</div>");
+            sb.Append("<div class='col-12'>");
+            sb.Append("<table class='table table-secondary table-striped table-bordered TableData'>" +
+                "<thead class='table-secondary'><tr class='text-info'><td>Số kế tiếp</td>");
+            foreach (var i in dicNextAppearData4)
+            {
+                sb.Append("<td>" + i.Key + "</td>");
+            }
+            sb.Append("</tr></thead>");
+            sb.Append("<tbody>");
+            sb.Append("<tr>");
+            sb.Append("<td>Số lần xuất hiện</td>");
+            foreach (var i in dicNextAppearData4.Keys)
+            {
+                sb.Append("<td>" + dicNextAppearData4[i] + "</td>");
+            }
+            sb.Append("</tr>");
+            sb.Append("</tbody>");
+            sb.Append("</table>");
+            sb.Append("</div>");
+
+            sb.Append("<div class='col-12'>");
+            sb.Append("<h6>+ Số xuất hiện kế tiếp của số: " + latestData[4].LotNumber + "</h6>");
+            sb.Append("</div>");
+            sb.Append("<div class='col-12'>");
+            sb.Append("<table class='table table-secondary table-striped table-bordered TableData'>" +
+                "<thead class='table-secondary'><tr class='text-info'><td>Số kế tiếp</td>");
+            foreach (var i in dicNextAppearData5)
+            {
+                sb.Append("<td>" + i.Key + "</td>");
+            }
+            sb.Append("</tr></thead>");
+            sb.Append("<tbody>");
+            sb.Append("<tr>");
+            sb.Append("<td>Số lần xuất hiện</td>");
+            foreach (var i in dicNextAppearData5.Keys)
+            {
+                sb.Append("<td>" + dicNextAppearData5[i] + "</td>");
+            }
+            sb.Append("</tr>");
+            sb.Append("</tbody>");
+            sb.Append("</table>");
+            sb.Append("</div>");
+
+            sb.Append("<div class='col-12'>");
+            sb.Append("<h6>+ Số xuất hiện kế tiếp của số: " + latestData[5].LotNumber + "</h6>");
+            sb.Append("</div>");
+            sb.Append("<div class='col-12'>");
+            sb.Append("<table class='table table-secondary table-striped table-bordered TableData'>" +
+                "<thead class='table-secondary'><tr class='text-info'><td>Số kế tiếp</td>");
+            foreach (var i in dicNextAppearData6)
+            {
+                sb.Append("<td>" + i.Key + "</td>");
+            }
+            sb.Append("</tr></thead>");
+            sb.Append("<tbody>");
+            sb.Append("<tr>");
+            sb.Append("<td>Số lần xuất hiện</td>");
+            foreach (var i in dicNextAppearData6.Keys)
+            {
+                sb.Append("<td>" + dicNextAppearData6[i] + "</td>");
+            }
+            sb.Append("</tr>");
+            sb.Append("</tbody>");
+            sb.Append("</table>");
+            sb.Append("</div>");
+
+
+            sb.Append("<div class='col-12'>");
+            sb.Append("<h6>+ Số xuất hiện kế tiếp các số: " + cacSo + ", và kết quả HỢP của nó:</h6>");
+            sb.Append("</div>");
+            sb.Append("<div class='col-12'>");
+            sb.Append("<table class='table table-secondary table-striped table-bordered TableData'>" +
+                "<thead class='table-dark'><tr class='text-info'><td>Số kế tiếp</td>");
+            foreach(var i in dicNextAppearDataHop)
+            {
+                sb.Append("<td>" + i.Key + "</td>");
+            }
+            sb.Append("</tr></thead>");
+            sb.Append("<tbody>");
+            sb.Append("<tr>");
+            sb.Append("<td>Số lần xuất hiện</td>");
+            foreach (var i in dicNextAppearDataHop.Keys)
+            {
+                sb.Append("<td>" + dicNextAppearDataHop[i] + "</td>");
+            }
+            sb.Append("</tr>");
+            sb.Append("</tbody>");
+            sb.Append("</table>");
+            sb.Append("</div>");            
+            sb.Append("</div>");
+
+            return Json(sb.ToString(), JsonRequestBehavior.AllowGet);
+        }
+
+        public ActionResult DuDoan655()
+        {
+
+            string cacSo = null;
+            var latestData = _6Over55TimeLine.GetLatest6Over55Number();
+
+            //HOP
+            List<string> lstNextAppearData = new List<string>();
+            foreach (var i in latestData)
+            {
+                cacSo += " " + i.LotNumber;
+                lstNextAppearData.AddRange(_6Over55TimeLine.GetNumberNextAppear(i.LotNumber));
+            }
+            Dictionary<int, int> dicNextAppearDataHop = new Dictionary<int, int>();
+            foreach (var i in lstNextAppearData.OrderBy(x => Convert.ToInt32(x)))
+            {
+                if (!dicNextAppearDataHop.ContainsKey(Convert.ToInt32(i)))
+                    dicNextAppearDataHop.Add(Convert.ToInt32(i), lstNextAppearData.Count(x => x == i));
+            }
+            dicNextAppearDataHop = dicNextAppearDataHop.OrderByDescending(x => x.Value).ToDictionary(x => x.Key, x => x.Value);
+
+            //Chi Tiet
+            List<string> lstNextAppearData1 = new List<string>();
+            lstNextAppearData1.AddRange(_6Over55TimeLine.GetNumberNextAppear(latestData[0].LotNumber));
+            Dictionary<int, int> dicNextAppearData1 = new Dictionary<int, int>();
+            foreach (var i in lstNextAppearData1.OrderBy(x => Convert.ToInt32(x)))
+            {
+                if (!dicNextAppearData1.ContainsKey(Convert.ToInt32(i)))
+                    dicNextAppearData1.Add(Convert.ToInt32(i), lstNextAppearData1.Count(x => x == i));
+            }
+            dicNextAppearData1 = dicNextAppearData1.OrderByDescending(x => x.Value).ToDictionary(x => x.Key, x => x.Value);
+
+            List<string> lstNextAppearData2 = new List<string>();
+            lstNextAppearData2.AddRange(_6Over55TimeLine.GetNumberNextAppear(latestData[1].LotNumber));
+            Dictionary<int, int> dicNextAppearData2 = new Dictionary<int, int>();
+            foreach (var i in lstNextAppearData2.OrderBy(x => Convert.ToInt32(x)))
+            {
+                if (!dicNextAppearData2.ContainsKey(Convert.ToInt32(i)))
+                    dicNextAppearData2.Add(Convert.ToInt32(i), lstNextAppearData2.Count(x => x == i));
+            }
+            dicNextAppearData2 = dicNextAppearData2.OrderByDescending(x => x.Value).ToDictionary(x => x.Key, x => x.Value);
+
+            List<string> lstNextAppearData3 = new List<string>();
+            lstNextAppearData3.AddRange(_6Over55TimeLine.GetNumberNextAppear(latestData[2].LotNumber));
+            Dictionary<int, int> dicNextAppearData3 = new Dictionary<int, int>();
+            foreach (var i in lstNextAppearData3.OrderBy(x => Convert.ToInt32(x)))
+            {
+                if (!dicNextAppearData3.ContainsKey(Convert.ToInt32(i)))
+                    dicNextAppearData3.Add(Convert.ToInt32(i), lstNextAppearData3.Count(x => x == i));
+            }
+            dicNextAppearData3 = dicNextAppearData3.OrderByDescending(x => x.Value).ToDictionary(x => x.Key, x => x.Value);
+
+            List<string> lstNextAppearData4 = new List<string>();
+            lstNextAppearData4.AddRange(_6Over55TimeLine.GetNumberNextAppear(latestData[3].LotNumber));
+            Dictionary<int, int> dicNextAppearData4 = new Dictionary<int, int>();
+            foreach (var i in lstNextAppearData4.OrderBy(x => Convert.ToInt32(x)))
+            {
+                if (!dicNextAppearData4.ContainsKey(Convert.ToInt32(i)))
+                    dicNextAppearData4.Add(Convert.ToInt32(i), lstNextAppearData4.Count(x => x == i));
+            }
+            dicNextAppearData4 = dicNextAppearData4.OrderByDescending(x => x.Value).ToDictionary(x => x.Key, x => x.Value);
+
+            List<string> lstNextAppearData5 = new List<string>();
+            lstNextAppearData5.AddRange(_6Over55TimeLine.GetNumberNextAppear(latestData[4].LotNumber));
+            Dictionary<int, int> dicNextAppearData5 = new Dictionary<int, int>();
+            foreach (var i in lstNextAppearData5.OrderBy(x => Convert.ToInt32(x)))
+            {
+                if (!dicNextAppearData5.ContainsKey(Convert.ToInt32(i)))
+                    dicNextAppearData5.Add(Convert.ToInt32(i), lstNextAppearData5.Count(x => x == i));
+            }
+            dicNextAppearData5 = dicNextAppearData5.OrderByDescending(x => x.Value).ToDictionary(x => x.Key, x => x.Value);
+
+            List<string> lstNextAppearData6 = new List<string>();
+            lstNextAppearData6.AddRange(_6Over55TimeLine.GetNumberNextAppear(latestData[5].LotNumber));
+            Dictionary<int, int> dicNextAppearData6 = new Dictionary<int, int>();
+            foreach (var i in lstNextAppearData6.OrderBy(x => Convert.ToInt32(x)))
+            {
+                if (!dicNextAppearData6.ContainsKey(Convert.ToInt32(i)))
+                    dicNextAppearData6.Add(Convert.ToInt32(i), lstNextAppearData6.Count(x => x == i));
+            }
+            dicNextAppearData6 = dicNextAppearData6.OrderByDescending(x => x.Value).ToDictionary(x => x.Key, x => x.Value);
+
+            List<string> lstNextAppearData7 = new List<string>();
+            lstNextAppearData7.AddRange(_6Over55TimeLine.GetNumberNextAppear(latestData[6].LotNumber));
+            Dictionary<int, int> dicNextAppearData7 = new Dictionary<int, int>();
+            foreach (var i in lstNextAppearData7.OrderBy(x => Convert.ToInt32(x)))
+            {
+                if (!dicNextAppearData7.ContainsKey(Convert.ToInt32(i)))
+                    dicNextAppearData7.Add(Convert.ToInt32(i), lstNextAppearData7.Count(x => x == i));
+            }
+            dicNextAppearData6 = dicNextAppearData6.OrderByDescending(x => x.Value).ToDictionary(x => x.Key, x => x.Value);
+
+            StringBuilder sb = new StringBuilder();
+
+            sb.Append("<h5>I/ Chiến thuật 1</h5>");
+
+
+
+            sb.Append("<div class='container-fluid'>");
+
+            sb.Append("<div class='col-12'>");
+            sb.Append("<h6>+ Số xuất hiện kế tiếp của số: " + latestData[0].LotNumber + "</h6>");
+            sb.Append("</div>");
+            sb.Append("<div class='col-12'>");
+            sb.Append("<table class='table table-secondary table-striped table-bordered TableData'>" +
+                "<thead class='table-secondary'><tr class='text-info'><td>Số kế tiếp</td>");
+            foreach (var i in dicNextAppearData1)
+            {
+                sb.Append("<td>" + i.Key + "</td>");
+            }
+            sb.Append("</tr></thead>");
+            sb.Append("<tbody>");
+            sb.Append("<tr>");
+            sb.Append("<td>Số lần xuất hiện</td>");
+            foreach (var i in dicNextAppearData1.Keys)
+            {
+                sb.Append("<td>" + dicNextAppearData1[i] + "</td>");
+            }
+            sb.Append("</tr>");
+            sb.Append("</tbody>");
+            sb.Append("</table>");
+            sb.Append("</div>");
+
+            sb.Append("<div class='col-12'>");
+            sb.Append("<h6>+ Số xuất hiện kế tiếp của số: " + latestData[1].LotNumber + "</h6>");
+            sb.Append("</div>");
+            sb.Append("<div class='col-12'>");
+            sb.Append("<table class='table table-secondary table-striped table-bordered TableData'>" +
+                "<thead class='table-secondary'><tr class='text-info'><td>Số kế tiếp</td>");
+            foreach (var i in dicNextAppearData2)
+            {
+                sb.Append("<td>" + i.Key + "</td>");
+            }
+            sb.Append("</tr></thead>");
+            sb.Append("<tbody>");
+            sb.Append("<tr>");
+            sb.Append("<td>Số lần xuất hiện</td>");
+            foreach (var i in dicNextAppearData2.Keys)
+            {
+                sb.Append("<td>" + dicNextAppearData2[i] + "</td>");
+            }
+            sb.Append("</tr>");
+            sb.Append("</tbody>");
+            sb.Append("</table>");
+            sb.Append("</div>");
+
+            sb.Append("<div class='col-12'>");
+            sb.Append("<h6>+ Số xuất hiện kế tiếp của số: " + latestData[2].LotNumber + "</h6>");
+            sb.Append("</div>");
+            sb.Append("<div class='col-12'>");
+            sb.Append("<table class='table table-secondary table-striped table-bordered TableData'>" +
+                "<thead class='table-secondary'><tr class='text-info'><td>Số kế tiếp</td>");
+            foreach (var i in dicNextAppearData3)
+            {
+                sb.Append("<td>" + i.Key + "</td>");
+            }
+            sb.Append("</tr></thead>");
+            sb.Append("<tbody>");
+            sb.Append("<tr>");
+            sb.Append("<td>Số lần xuất hiện</td>");
+            foreach (var i in dicNextAppearData3.Keys)
+            {
+                sb.Append("<td>" + dicNextAppearData3[i] + "</td>");
+            }
+            sb.Append("</tr>");
+            sb.Append("</tbody>");
+            sb.Append("</table>");
+            sb.Append("</div>");
+
+            sb.Append("<div class='col-12'>");
+            sb.Append("<h6>+ Số xuất hiện kế tiếp của số: " + latestData[3].LotNumber + "</h6>");
+            sb.Append("</div>");
+            sb.Append("<div class='col-12'>");
+            sb.Append("<table class='table table-secondary table-striped table-bordered TableData'>" +
+                "<thead class='table-secondary'><tr class='text-info'><td>Số kế tiếp</td>");
+            foreach (var i in dicNextAppearData4)
+            {
+                sb.Append("<td>" + i.Key + "</td>");
+            }
+            sb.Append("</tr></thead>");
+            sb.Append("<tbody>");
+            sb.Append("<tr>");
+            sb.Append("<td>Số lần xuất hiện</td>");
+            foreach (var i in dicNextAppearData4.Keys)
+            {
+                sb.Append("<td>" + dicNextAppearData4[i] + "</td>");
+            }
+            sb.Append("</tr>");
+            sb.Append("</tbody>");
+            sb.Append("</table>");
+            sb.Append("</div>");
+
+            sb.Append("<div class='col-12'>");
+            sb.Append("<h6>+ Số xuất hiện kế tiếp của số: " + latestData[4].LotNumber + "</h6>");
+            sb.Append("</div>");
+            sb.Append("<div class='col-12'>");
+            sb.Append("<table class='table table-secondary table-striped table-bordered TableData'>" +
+                "<thead class='table-secondary'><tr class='text-info'><td>Số kế tiếp</td>");
+            foreach (var i in dicNextAppearData5)
+            {
+                sb.Append("<td>" + i.Key + "</td>");
+            }
+            sb.Append("</tr></thead>");
+            sb.Append("<tbody>");
+            sb.Append("<tr>");
+            sb.Append("<td>Số lần xuất hiện</td>");
+            foreach (var i in dicNextAppearData5.Keys)
+            {
+                sb.Append("<td>" + dicNextAppearData5[i] + "</td>");
+            }
+            sb.Append("</tr>");
+            sb.Append("</tbody>");
+            sb.Append("</table>");
+            sb.Append("</div>");
+
+            sb.Append("<div class='col-12'>");
+            sb.Append("<h6>+ Số xuất hiện kế tiếp của số: " + latestData[5].LotNumber + "</h6>");
+            sb.Append("</div>");
+            sb.Append("<div class='col-12'>");
+            sb.Append("<table class='table table-secondary table-striped table-bordered TableData'>" +
+                "<thead class='table-secondary'><tr class='text-info'><td>Số kế tiếp</td>");
+            foreach (var i in dicNextAppearData6)
+            {
+                sb.Append("<td>" + i.Key + "</td>");
+            }
+            sb.Append("</tr></thead>");
+            sb.Append("<tbody>");
+            sb.Append("<tr>");
+            sb.Append("<td>Số lần xuất hiện</td>");
+            foreach (var i in dicNextAppearData6.Keys)
+            {
+                sb.Append("<td>" + dicNextAppearData6[i] + "</td>");
+            }
+            sb.Append("</tr>");
+            sb.Append("</tbody>");
+            sb.Append("</table>");
+            sb.Append("</div>");
+
+            sb.Append("<div class='col-12'>");
+            sb.Append("<h6>+ Số xuất hiện kế tiếp của số: " + latestData[6].LotNumber + "</h6>");
+            sb.Append("</div>");
+            sb.Append("<div class='col-12'>");
+            sb.Append("<table class='table table-secondary table-striped table-bordered TableData'>" +
+                "<thead class='table-secondary'><tr class='text-info'><td>Số kế tiếp</td>");
+            foreach (var i in dicNextAppearData7)
+            {
+                sb.Append("<td>" + i.Key + "</td>");
+            }
+            sb.Append("</tr></thead>");
+            sb.Append("<tbody>");
+            sb.Append("<tr>");
+            sb.Append("<td>Số lần xuất hiện</td>");
+            foreach (var i in dicNextAppearData7.Keys)
+            {
+                sb.Append("<td>" + dicNextAppearData7[i] + "</td>");
+            }
+            sb.Append("</tr>");
+            sb.Append("</tbody>");
+            sb.Append("</table>");
+            sb.Append("</div>");
+
+
+            sb.Append("<div class='col-12'>");
+            sb.Append("<h6>+ Số xuất hiện kế tiếp các số: " + cacSo + ", và kết quả HỢP của nó:</h6>");
+            sb.Append("</div>");
+            sb.Append("<div class='col-12'>");
+            sb.Append("<table class='table table-secondary table-striped table-bordered TableData'>" +
+                "<thead class='table-dark'><tr class='text-info'><td>Số kế tiếp</td>");
+            foreach (var i in dicNextAppearDataHop)
+            {
+                sb.Append("<td>" + i.Key + "</td>");
+            }
+            sb.Append("</tr></thead>");
+            sb.Append("<tbody>");
+            sb.Append("<tr>");
+            sb.Append("<td>Số lần xuất hiện</td>");
+            foreach (var i in dicNextAppearDataHop.Keys)
+            {
+                sb.Append("<td>" + dicNextAppearDataHop[i] + "</td>");
+            }
+            sb.Append("</tr>");
+            sb.Append("</tbody>");
+            sb.Append("</table>");
+            sb.Append("</div>");
+            sb.Append("</div>");
 
             return Json(sb.ToString(), JsonRequestBehavior.AllowGet);
         }

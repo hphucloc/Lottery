@@ -27,6 +27,6 @@ C:\Users\Admin\Documents\GitHub\Lottery\RunTest\bin\Debug\EntityFramework.xml
 C:\Users\Admin\Documents\GitHub\Lottery\RunTest\bin\Debug\EntityFramework.SqlServer.xml
 C:\Users\Admin\Documents\GitHub\Lottery\RunTest\bin\Debug\LotteryBusiness.pdb
 C:\Users\Admin\Documents\GitHub\Lottery\RunTest\bin\Debug\LotteryBusiness.dll.config
-C:\Users\Admin\Documents\GitHub\Lottery\RunTest\obj\Debug\RunTest.csproj.CopyComplete
 C:\Users\Admin\Documents\GitHub\Lottery\RunTest\obj\Debug\RunTest.csproj.AssemblyReference.cache
 C:\Users\hphuc\Documents\GitHub\Lottery\RunTest\obj\Debug\RunTest.csprojAssemblyReference.cache
+C:\Users\Admin\Documents\GitHub\Lottery\RunTest\obj\Debug\RunTest.csproj.CopyComplete

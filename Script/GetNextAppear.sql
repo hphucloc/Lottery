@@ -5,7 +5,7 @@ SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
 GO
-ALTER PROC [dbo].[GetNextAppear]
+CREATE PROC [dbo].[GetNextAppear]
 @leadOffset int,
 @number nvarchar(200),
 @numberTypeId int,
@@ -15,7 +15,7 @@ BEGIN
 	select a.NumberId, a.NumberTypeId, a.NumberWinLevelId, a.LotNumber, a.DatePublish, 
 	LEAD(DatePublish, @leadOffset) OVER(ORDER BY a.DatePublish) 'NextPublishDate'
 	from Number a
-	where a.NumberTypeId = @numberTypeId and NumberWinLevelId = @numberWinLevelId and NextPublishDate is not null
+	where a.NumberTypeId = @numberTypeId and NumberWinLevelId = @numberWinLevelId
 	order by a.DatePublish;
 END
 

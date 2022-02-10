@@ -35,9 +35,14 @@ namespace LotteryBusiness
             List<string> rdata = new List<string>();
             var data = Common.GetNumbersNextAppear(7, number, 3, 1);
 
+            //Get NextPublishDate of LotNumber
             var lstDateNextAppear = data.Where(x => x.LotNumber == number && x.NextPublishDate != null).Select(x => x.NextPublishDate);
 
-            rdata = data.Where(x => lstDateNextAppear.Contains(x.DatePublish)).Select(x => x.LotNumber).ToList();
+            //rdata = data.Where(x => lstDateNextAppear.Contains(x.DatePublish)).Select(x => x.LotNumber).ToList();
+            foreach(var i in lstDateNextAppear)
+            {
+                rdata.AddRange(data.Where(x => x.DatePublish.Date == i.Value.Date).Select(x => x.LotNumber));
+            }
 
             return rdata.OrderBy(x => Convert.ToInt32(x)).ToList();
         }
