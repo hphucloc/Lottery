@@ -72,10 +72,15 @@ namespace RunTest
             //foreach (var i in a)
             //    Console.WriteLine(i.LotNumber + ", " + i.NextPublishDate);
 
-            var a = _6Over45TimeLine.GetNumberNextAppear("2");
+            //var a = _6Over55TimeLine.GetNumberNextAppear("2");
 
-            foreach (var i in a)
-                Console.WriteLine(i);
+            //foreach (var i in a)
+
+            //    Console.WriteLine(i);
+
+           // var a = _6Over55TimeLine.GetLatest6Over55Number();
+          //  foreach (var i in a)
+            //    Console.WriteLine(i.LotNumber);
 
             Console.ReadLine();
         }
