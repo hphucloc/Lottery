@@ -1618,22 +1618,22 @@ namespace WebAppLottery.Controllers
         {
             
             string cacSo = null;
-            var latestData = _6Over45TimeLine.GetLatest6Over45Number();
-
-            //HOP
+            var latestData = _6Over45TimeLine.GetLatest6Over45Number();            
             List<string> lstNextAppearData = new List<string>();
             foreach (var i in latestData)
             {
                 cacSo += " " + i.LotNumber;
                 lstNextAppearData.AddRange(_6Over45TimeLine.GetNumberNextAppear(i.LotNumber));
             }
+
+            //HOP
             Dictionary<int, int> dicNextAppearDataHop = new Dictionary<int, int>();
             foreach (var i in lstNextAppearData.OrderBy(x => Convert.ToInt32(x)))
             {
                 if (!dicNextAppearDataHop.ContainsKey(Convert.ToInt32(i)))
                     dicNextAppearDataHop.Add(Convert.ToInt32(i), lstNextAppearData.Count(x => x == i));
             }
-            dicNextAppearDataHop = dicNextAppearDataHop.OrderByDescending(x => x.Value).ToDictionary(x => x.Key, x => x.Value);
+            dicNextAppearDataHop = dicNextAppearDataHop.OrderByDescending(x => x.Value).ToDictionary(x => x.Key, x => x.Value);          
 
             //Chi Tiet
             List<string> lstNextAppearData1 = new List<string>();
@@ -1696,11 +1696,60 @@ namespace WebAppLottery.Controllers
             }
             dicNextAppearData6 = dicNextAppearData6.OrderByDescending(x => x.Value).ToDictionary(x => x.Key, x => x.Value);
 
+            //HOP FIRST 6 NUMBERS
+            Dictionary<int, int> dicUnionFirst6No = new Dictionary<int, int>();
+            foreach (var i in dicNextAppearData1.Take(6))
+            {
+                if (!dicUnionFirst6No.ContainsKey(i.Key))
+                    dicUnionFirst6No.Add(i.Key, i.Value);
+                else
+                    dicUnionFirst6No[i.Key] += i.Value;
+            }         
+            foreach (var i in dicNextAppearData2.Take(6))
+            {
+                if (!dicUnionFirst6No.ContainsKey(i.Key))
+                    dicUnionFirst6No.Add(i.Key, i.Value);
+                else
+                    dicUnionFirst6No[i.Key] += i.Value;
+            }
+            foreach (var i in dicNextAppearData3.Take(6))
+            {
+                if (!dicUnionFirst6No.ContainsKey(i.Key))
+                    dicUnionFirst6No.Add(i.Key, i.Value);
+                else
+                    dicUnionFirst6No[i.Key] += i.Value;
+            }
+            foreach (var i in dicNextAppearData4.Take(6))
+            {
+                if (!dicUnionFirst6No.ContainsKey(i.Key))
+                    dicUnionFirst6No.Add(i.Key, i.Value);
+                else
+                    dicUnionFirst6No[i.Key] += i.Value;
+            }
+            foreach (var i in dicNextAppearData5.Take(6))
+            {
+                if (!dicUnionFirst6No.ContainsKey(i.Key))
+                    dicUnionFirst6No.Add(i.Key, i.Value);
+                else
+                    dicUnionFirst6No[i.Key] += i.Value;
+            }
+            foreach (var i in dicNextAppearData6.Take(6))
+            {
+                if (!dicUnionFirst6No.ContainsKey(i.Key))
+                    dicUnionFirst6No.Add(i.Key, i.Value);
+                else
+                    dicUnionFirst6No[i.Key] += i.Value;
+            }
+            dicUnionFirst6No = dicUnionFirst6No.OrderByDescending(x => x.Value).ToDictionary(x => x.Key, x => x.Value);
+
+            //GIAO FIRST 6 NUMBERS
+            Dictionary<int, int> dicIntersectionFirst6No = new Dictionary<int, int>();
+            var listOfLists = new List<List<int>>() { list1, list2, list3 };
+
+            //UI
             StringBuilder sb = new StringBuilder();
 
             sb.Append("<h5>I/ Chiến thuật 1</h5>");
-
-
            
             sb.Append("<div class='container-fluid'>");
 
@@ -1842,6 +1891,29 @@ namespace WebAppLottery.Controllers
             sb.Append("</table>");
             sb.Append("</div>");
 
+            sb.Append("<div class='col-12'>");
+            sb.Append("<h6>+ Số xuất hiện kế tiếp các số: " + cacSo + ", và kết quả HỢP 6 số đầu tiên:</h6>");
+            sb.Append("</div>");
+            sb.Append("<div class='col-12'>");
+            sb.Append("<table class='table table-secondary table-striped table-bordered TableData'>" +
+                "<thead class='table-secondary'><tr class='text-info'><td>Số kế tiếp</td>");
+            foreach (var i in dicUnionFirst6No)
+            {
+                sb.Append("<td>" + i.Key + "</td>");
+            }
+            sb.Append("</tr></thead>");
+            sb.Append("<tbody>");
+            sb.Append("<tr>");
+            sb.Append("<td>Số lần xuất hiện</td>");
+            foreach (var i in dicUnionFirst6No.Keys)
+            {
+                sb.Append("<td>" + dicUnionFirst6No[i] + "</td>");
+            }
+            sb.Append("</tr>");
+            sb.Append("</tbody>");
+            sb.Append("</table>");
+            sb.Append("</div>");
+
 
             sb.Append("<div class='col-12'>");
             sb.Append("<h6>+ Số xuất hiện kế tiếp các số: " + cacSo + ", và kết quả HỢP của nó:</h6>");
@@ -1864,7 +1936,10 @@ namespace WebAppLottery.Controllers
             sb.Append("</tr>");
             sb.Append("</tbody>");
             sb.Append("</table>");
-            sb.Append("</div>");            
+            sb.Append("</div>");
+            
+
+
             sb.Append("</div>");
 
             return Json(sb.ToString(), JsonRequestBehavior.AllowGet);
@@ -1960,7 +2035,7 @@ namespace WebAppLottery.Controllers
                 if (!dicNextAppearData7.ContainsKey(Convert.ToInt32(i)))
                     dicNextAppearData7.Add(Convert.ToInt32(i), lstNextAppearData7.Count(x => x == i));
             }
-            dicNextAppearData6 = dicNextAppearData6.OrderByDescending(x => x.Value).ToDictionary(x => x.Key, x => x.Value);
+            dicNextAppearData7 = dicNextAppearData7.OrderByDescending(x => x.Value).ToDictionary(x => x.Key, x => x.Value);
 
             StringBuilder sb = new StringBuilder();
 
