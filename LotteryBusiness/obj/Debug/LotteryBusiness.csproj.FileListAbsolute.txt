@@ -48,5 +48,4 @@ C:\Users\hphuc\Documents\GitHub\Lottery\LotteryBusiness\bin\Debug\EntityFramewor
 C:\Users\hphuc\Documents\GitHub\Lottery\LotteryBusiness\obj\Debug\LotteryBusiness.csproj.CopyComplete
 C:\Users\hphuc\Documents\GitHub\Lottery\LotteryBusiness\obj\Debug\LotteryBusiness.dll
 C:\Users\hphuc\Documents\GitHub\Lottery\LotteryBusiness\obj\Debug\LotteryBusiness.pdb
-C:\Users\Admin\Documents\GitHub\Lottery\LotteryBusiness\obj\Debug\LotteryBusiness.csproj.CopyComplete
 C:\Users\Admin\Documents\GitHub\Lottery\LotteryBusiness\obj\Debug\LotteryBusiness.csproj.AssemblyReference.cache

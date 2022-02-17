@@ -186,52 +186,20 @@ namespace LotteryBusiness
             return Db.Numbers.Count(x => x.LotNumber == No && x.NumberTypeId == numberType);
         }
 
-        //public static Dictionary<DateTime, List<int>> GetNumbersNextAppear(int leadOffset, string number, int @numberTypeId, int numberWinLevelId)
-        public static List<NumbersNextAppear> GetNumbersNextAppear(int leadOffset, string number, int @numberTypeId, int numberWinLevelId)
+        public static List<NumbersNextAppear> GetNumbersNextAppear(int leadOffset, int @numberTypeId, int numberWinLevelId)
         {
-            Dictionary<DateTime, List<int>> numberNextAppear = new Dictionary<DateTime, List<int>>();
+            Dictionary<DateTime, List<int>> numberNextAppear = new Dictionary<DateTime, List<int>>();            
 
-            //foreach(DateTime i in dateAppear)
-            //{
-            //    DateTime dayOfWeek = i;
-            //    if (numberType == (short)Enum_NumberType._6Over45)
-            //    {
-            //        if (i.DayOfWeek == DayOfWeek.Wednesday || i.DayOfWeek == DayOfWeek.Friday)
-            //            dayOfWeek = dayOfWeek.AddDays(2).Date;
-            //        else if (i.DayOfWeek == DayOfWeek.Sunday)
-            //            dayOfWeek = dayOfWeek.AddDays(3).Date;
-            //    }
-            //    else if (numberType == (short)Enum_NumberType._6Over55)
-            //    {
-            //        if (i.DayOfWeek == DayOfWeek.Thursday || i.DayOfWeek == DayOfWeek.Tuesday)
-            //            dayOfWeek = dayOfWeek.AddDays(2).Date;
-            //        else if (i.DayOfWeek == DayOfWeek.Saturday)
-            //            dayOfWeek = dayOfWeek.AddDays(3).Date;
-            //    }
-
-            //    var number = Db.Numbers.Where(x => DbFunctions.TruncateTime(x.DatePublish) == dayOfWeek
-            //        && x.NumberTypeId == numberType && x.NumberWinLevelId== numberWinLevel).Select(x => x.LotNumber).ToList();
-            //    foreach(string j in number)
-            //    {
-            //        numberNextAppear.Add(j);
-            //    }
-            //}
-
-
-            var pLeadOffset = new SqlParameter("@leadOffset", leadOffset);
-            var pNUmber = new SqlParameter("@number", number);
+            var pLeadOffset = new SqlParameter("@leadOffset", leadOffset);         
             var pNumberTypeId = new SqlParameter("@numberTypeId", numberTypeId);
             var pNumberWinLevelId = new SqlParameter("@NumberWinLevelId", numberWinLevelId);
 
-            var result = Db.Database.SqlQuery<NumbersNextAppear>("GetNextAppear @leadOffset, @number, @numberTypeId, @numberWinLevelId ",
-                    pLeadOffset, pNUmber, pNumberTypeId, pNumberWinLevelId)
+            var result = Db.Database.SqlQuery<NumbersNextAppear>("GetNextAppear @leadOffset, @numberTypeId, @numberWinLevelId ",
+                    pLeadOffset, pNumberTypeId, pNumberWinLevelId)
                 .ToList();
 
-
-
             return result;
-        }
-
+        }        
         public static void NewNumber(DateTime publishDdate, List<string> number, short numberType, short numberWinLevel)
         {
             Number n = null;

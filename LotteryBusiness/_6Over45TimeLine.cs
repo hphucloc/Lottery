@@ -41,7 +41,7 @@ namespace LotteryBusiness
         public static List<string> GetNumberNextAppear(string number)
         {
             List<string> rdata = new List<string>();
-            var data = Common.GetNumbersNextAppear(6, number, 1, 1);
+            var data = Common.GetNumbersNextAppear(6, 1, 1);
 
             var lstDateNextAppear = data.Where(x => x.LotNumber == number && x.NextPublishDate != null).Select(x => x.NextPublishDate);
 
@@ -52,6 +52,13 @@ namespace LotteryBusiness
             }
 
             return rdata.OrderBy(x => Convert.ToInt32(x)).ToList();
+        }
+
+        public static List<string> GetColorNextAppear()
+        {
+            var data = Common.GetNumbersNextAppear(6, 1, 1);
+            var lstDateNextAppear = data.Where(x => x.LotNumber == number && x.NextPublishDate != null).Select(x => x.NextPublishDate);
+
         }
 
         public static void CreateBoughtNumber(List<int> number, DateTime dateBought, short numberType, short numberWinLevel)
