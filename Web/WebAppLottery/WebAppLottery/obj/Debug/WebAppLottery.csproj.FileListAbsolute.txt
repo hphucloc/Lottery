@@ -166,3 +166,4 @@ C:\Users\hphuc\Documents\GitHub\Lottery\Web\WebAppLottery\WebAppLottery\bin\Lott
 C:\Users\hphuc\Documents\GitHub\Lottery\Web\WebAppLottery\WebAppLottery\bin\EntityFramework.dll
 C:\Users\hphuc\Documents\GitHub\Lottery\Web\WebAppLottery\WebAppLottery\bin\EntityFramework.SqlServer.dll
 C:\Users\Admin\Documents\GitHub\Lottery\Web\WebAppLottery\WebAppLottery\obj\Debug\WebAppLottery.csproj.AssemblyReference.cache
+C:\Users\hphuc\Documents\GitHub\Lottery\Web\WebAppLottery\WebAppLottery\obj\Debug\WebAppLottery.csprojAssemblyReference.cache

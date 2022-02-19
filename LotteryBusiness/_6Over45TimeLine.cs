@@ -54,6 +54,17 @@ namespace LotteryBusiness
             return rdata.OrderBy(x => Convert.ToInt32(x)).ToList();
         }
 
+        public static List<string> GetColorNextAppear()
+        {
+            List<string> rdata = new List<string>();
+
+            List<LoterryStatistic> latestAppear = GetLatest6Over45Number();
+
+
+
+            return rdata;
+        }
+
         public static void CreateBoughtNumber(List<int> number, DateTime dateBought, short numberType, short numberWinLevel)
         {
             Common.CreateBoughtNumber(number, dateBought, (Int16)Enum_NumberType._6Over45, (Int16)Enum_NumberWinLevel.DacBiet);

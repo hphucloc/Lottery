@@ -1742,9 +1742,24 @@ namespace WebAppLottery.Controllers
             }
             dicUnionFirst6No = dicUnionFirst6No.OrderByDescending(x => x.Value).ToDictionary(x => x.Key, x => x.Value);
 
-            //GIAO FIRST 6 NUMBERS
+            //GIAO NUMBERS 15 số đâu tiên xuất hiện nhiều nhất.
             Dictionary<int, int> dicIntersectionFirst6No = new Dictionary<int, int>();
-            var listOfLists = new List<List<int>>() { list1, list2, list3 };
+            var temp1 = new List<List<int>>() {
+                dicNextAppearData1.Keys.Take(15).ToList(),
+                dicNextAppearData2.Keys.Take(15).ToList(),
+                dicNextAppearData3.Keys.Take(15).ToList(),
+                dicNextAppearData4.Keys.Take(15).ToList(),
+                dicNextAppearData5.Keys.Take(15).ToList(),
+                dicNextAppearData6.Keys.Take(15).ToList(),
+            };
+            var intersection = temp1.Aggregate<IEnumerable<int>>(
+               (x, y) => x.Intersect(y)
+               ).ToList();          
+            foreach (var i in intersection.Take(6))
+            {
+                dicIntersectionFirst6No.Add(i, dicNextAppearDataHop[i]);
+            }
+            dicIntersectionFirst6No = dicIntersectionFirst6No.OrderByDescending(x => x.Value).ToDictionary(x => x.Key, x => x.Value);
 
             //UI
             StringBuilder sb = new StringBuilder();
@@ -1914,6 +1929,29 @@ namespace WebAppLottery.Controllers
             sb.Append("</table>");
             sb.Append("</div>");
 
+            sb.Append("<div class='col-12'>");
+            sb.Append("<h6>+ Số xuất hiện kế tiếp các số: " + cacSo + ", và kết quả GIAO 15 số đầu tiên:</h6>");
+            sb.Append("</div>");
+            sb.Append("<div class='col-12'>");
+            sb.Append("<table class='table table-secondary table-striped table-bordered TableData'>" +
+                "<thead class='table-secondary'><tr class='text-info'><td>Số kế tiếp</td>");
+            foreach (var i in dicIntersectionFirst6No)
+            {
+                sb.Append("<td>" + i.Key + "</td>");
+            }
+            sb.Append("</tr></thead>");
+            sb.Append("<tbody>");
+            sb.Append("<tr>");
+            sb.Append("<td>Số lần xuất hiện</td>");
+            foreach (var i in dicIntersectionFirst6No.Keys)
+            {
+                sb.Append("<td>" + dicIntersectionFirst6No[i] + "</td>");
+            }
+            sb.Append("</tr>");
+            sb.Append("</tbody>");
+            sb.Append("</table>");
+            sb.Append("</div>");
+
 
             sb.Append("<div class='col-12'>");
             sb.Append("<h6>+ Số xuất hiện kế tiếp các số: " + cacSo + ", và kết quả HỢP của nó:</h6>");
@@ -1949,15 +1987,15 @@ namespace WebAppLottery.Controllers
         {
 
             string cacSo = null;
-            var latestData = _6Over55TimeLine.GetLatest6Over55Number();
-
-            //HOP
+            var latestData = _6Over55TimeLine.GetLatest6Over55Number();           
             List<string> lstNextAppearData = new List<string>();
             foreach (var i in latestData)
             {
                 cacSo += " " + i.LotNumber;
                 lstNextAppearData.AddRange(_6Over55TimeLine.GetNumberNextAppear(i.LotNumber));
             }
+
+            //HOP
             Dictionary<int, int> dicNextAppearDataHop = new Dictionary<int, int>();
             foreach (var i in lstNextAppearData.OrderBy(x => Convert.ToInt32(x)))
             {
@@ -2037,11 +2075,81 @@ namespace WebAppLottery.Controllers
             }
             dicNextAppearData7 = dicNextAppearData7.OrderByDescending(x => x.Value).ToDictionary(x => x.Key, x => x.Value);
 
+            //HOP FIRST 6 NUMBERS
+            Dictionary<int, int> dicUnionFirst7No = new Dictionary<int, int>();
+            foreach (var i in dicNextAppearData1.Take(6))
+            {
+                if (!dicUnionFirst7No.ContainsKey(i.Key))
+                    dicUnionFirst7No.Add(i.Key, i.Value);
+                else
+                    dicUnionFirst7No[i.Key] += i.Value;
+            }
+            foreach (var i in dicNextAppearData2.Take(6))
+            {
+                if (!dicUnionFirst7No.ContainsKey(i.Key))
+                    dicUnionFirst7No.Add(i.Key, i.Value);
+                else
+                    dicUnionFirst7No[i.Key] += i.Value;
+            }
+            foreach (var i in dicNextAppearData3.Take(6))
+            {
+                if (!dicUnionFirst7No.ContainsKey(i.Key))
+                    dicUnionFirst7No.Add(i.Key, i.Value);
+                else
+                    dicUnionFirst7No[i.Key] += i.Value;
+            }
+            foreach (var i in dicNextAppearData4.Take(6))
+            {
+                if (!dicUnionFirst7No.ContainsKey(i.Key))
+                    dicUnionFirst7No.Add(i.Key, i.Value);
+                else
+                    dicUnionFirst7No[i.Key] += i.Value;
+            }
+            foreach (var i in dicNextAppearData5.Take(6))
+            {
+                if (!dicUnionFirst7No.ContainsKey(i.Key))
+                    dicUnionFirst7No.Add(i.Key, i.Value);
+                else
+                    dicUnionFirst7No[i.Key] += i.Value;
+            }
+            foreach (var i in dicNextAppearData6.Take(6))
+            {
+                if (!dicUnionFirst7No.ContainsKey(i.Key))
+                    dicUnionFirst7No.Add(i.Key, i.Value);
+                else
+                    dicUnionFirst7No[i.Key] += i.Value;
+            }
+            foreach (var i in dicNextAppearData7.Take(6))
+            {
+                if (!dicUnionFirst7No.ContainsKey(i.Key))
+                    dicUnionFirst7No.Add(i.Key, i.Value);
+                else
+                    dicUnionFirst7No[i.Key] += i.Value;
+            }
+            dicUnionFirst7No = dicUnionFirst7No.OrderByDescending(x => x.Value).ToDictionary(x => x.Key, x => x.Value);
+
+            //GIAO NUMBERS 15 số đâu tiên xuất hiện nhiều nhất.
+            Dictionary<int, int> dicIntersectionFirst7No = new Dictionary<int, int>();
+            var temp1 = new List<List<int>>() {
+                dicNextAppearData1.Keys.Take(15).ToList(),
+                dicNextAppearData2.Keys.Take(15).ToList(),
+                dicNextAppearData3.Keys.Take(15).ToList(),
+                dicNextAppearData4.Keys.Take(15).ToList(),
+                dicNextAppearData5.Keys.Take(15).ToList(),
+                dicNextAppearData6.Keys.Take(15).ToList(),
+            };
+            var intersection = temp1.Aggregate<IEnumerable<int>>(
+               (x, y) => x.Intersect(y)
+               ).ToList();         
+            foreach (var i in intersection.Take(7))
+            {
+                dicIntersectionFirst7No.Add(i, dicNextAppearDataHop[i]);
+            }
+            dicIntersectionFirst7No = dicIntersectionFirst7No.OrderByDescending(x => x.Value).ToDictionary(x => x.Key, x => x.Value);
+
             StringBuilder sb = new StringBuilder();
 
             sb.Append("<h5>I/ Chiến thuật 1</h5>");
-
-
 
             sb.Append("<div class='container-fluid'>");
 
@@ -2200,6 +2308,52 @@ namespace WebAppLottery.Controllers
             foreach (var i in dicNextAppearData7.Keys)
             {
                 sb.Append("<td>" + dicNextAppearData7[i] + "</td>");
+            }
+            sb.Append("</tr>");
+            sb.Append("</tbody>");
+            sb.Append("</table>");
+            sb.Append("</div>");
+
+            sb.Append("<div class='col-12'>");
+            sb.Append("<h6>+ Số xuất hiện kế tiếp các số: " + cacSo + ", và kết quả HỢP 7 số đầu tiên:</h6>");
+            sb.Append("</div>");
+            sb.Append("<div class='col-12'>");
+            sb.Append("<table class='table table-secondary table-striped table-bordered TableData'>" +
+                "<thead class='table-secondary'><tr class='text-info'><td>Số kế tiếp</td>");
+            foreach (var i in dicUnionFirst7No)
+            {
+                sb.Append("<td>" + i.Key + "</td>");
+            }
+            sb.Append("</tr></thead>");
+            sb.Append("<tbody>");
+            sb.Append("<tr>");
+            sb.Append("<td>Số lần xuất hiện</td>");
+            foreach (var i in dicUnionFirst7No.Keys)
+            {
+                sb.Append("<td>" + dicUnionFirst7No[i] + "</td>");
+            }
+            sb.Append("</tr>");
+            sb.Append("</tbody>");
+            sb.Append("</table>");
+            sb.Append("</div>");
+
+            sb.Append("<div class='col-12'>");
+            sb.Append("<h6>+ Số xuất hiện kế tiếp các số: " + cacSo + ", và kết quả GIAO 7 số đầu tiên:</h6>");
+            sb.Append("</div>");
+            sb.Append("<div class='col-12'>");
+            sb.Append("<table class='table table-secondary table-striped table-bordered TableData'>" +
+                "<thead class='table-secondary'><tr class='text-info'><td>Số kế tiếp</td>");
+            foreach (var i in dicIntersectionFirst7No)
+            {
+                sb.Append("<td>" + i.Key + "</td>");
+            }
+            sb.Append("</tr></thead>");
+            sb.Append("<tbody>");
+            sb.Append("<tr>");
+            sb.Append("<td>Số lần xuất hiện</td>");
+            foreach (var i in dicIntersectionFirst7No.Keys)
+            {
+                sb.Append("<td>" + dicIntersectionFirst7No[i] + "</td>");
             }
             sb.Append("</tr>");
             sb.Append("</tbody>");
