@@ -185,23 +185,21 @@ namespace LotteryBusiness
         {
             return Db.Numbers.Count(x => x.LotNumber == No && x.NumberTypeId == numberType);
         }
-        
-        public static List<NumbersNextAppear> GetNumbersNextAppear(int leadOffset, string number, int @numberTypeId, int numberWinLevelId)
+
+        public static List<NumbersNextAppear> GetNumbersNextAppear(int leadOffset, int @numberTypeId, int numberWinLevelId)
         {
             Dictionary<DateTime, List<int>> numberNextAppear = new Dictionary<DateTime, List<int>>();            
 
-            var pLeadOffset = new SqlParameter("@leadOffset", leadOffset);
-            var pNUmber = new SqlParameter("@number", number);
+            var pLeadOffset = new SqlParameter("@leadOffset", leadOffset);         
             var pNumberTypeId = new SqlParameter("@numberTypeId", numberTypeId);
             var pNumberWinLevelId = new SqlParameter("@NumberWinLevelId", numberWinLevelId);
 
-            var result = Db.Database.SqlQuery<NumbersNextAppear>("GetNextAppear @leadOffset, @number, @numberTypeId, @numberWinLevelId ",
-                    pLeadOffset, pNUmber, pNumberTypeId, pNumberWinLevelId)
+            var result = Db.Database.SqlQuery<NumbersNextAppear>("GetNextAppear @leadOffset, @numberTypeId, @numberWinLevelId ",
+                    pLeadOffset, pNumberTypeId, pNumberWinLevelId)
                 .ToList();
 
             return result;
-        }
-
+        }        
         public static void NewNumber(DateTime publishDdate, List<string> number, short numberType, short numberWinLevel)
         {
             Number n = null;

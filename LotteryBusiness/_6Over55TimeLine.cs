@@ -33,7 +33,7 @@ namespace LotteryBusiness
         public static List<string> GetNumberNextAppear(string number)
         {
             List<string> rdata = new List<string>();
-            var data = Common.GetNumbersNextAppear(7, number, 3, 1);
+            var data = Common.GetNumbersNextAppear(7, 3, 1);
 
             //Get NextPublishDate of LotNumber
             var lstDateNextAppear = data.Where(x => x.LotNumber == number && x.NextPublishDate != null).Select(x => x.NextPublishDate);
