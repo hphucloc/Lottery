@@ -57,7 +57,8 @@ namespace LotteryBusiness
         public static List<string> GetColorNextAppear()
         {
             var data = Common.GetNumbersNextAppear(6, 1, 1);
-            var lstDateNextAppear = data.Where(x => x.LotNumber == number && x.NextPublishDate != null).Select(x => x.NextPublishDate);
+            var latestNumber = GetLatest6Over45Number();
+            var lstDateNextAppear = data.Where(x => x.LotNumber ==  && x.NextPublishDate != null).Select(x => x.NextPublishDate);
 
         }
 
