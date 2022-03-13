@@ -36,7 +36,8 @@ C:\Users\Admin\Documents\GitHub\Lottery\LotteryBusiness\bin\Debug\EntityFramewor
 C:\Users\Admin\Documents\GitHub\Lottery\LotteryBusiness\obj\Debug\LotteryBusiness.csproj.CoreCompileInputs.cache
 C:\Users\Admin\Documents\GitHub\Lottery\LotteryBusiness\obj\Debug\LotteryBusiness.dll
 C:\Users\Admin\Documents\GitHub\Lottery\LotteryBusiness\obj\Debug\LotteryBusiness.pdb
-C:\Users\hphuc\Documents\GitHub\Lottery\LotteryBusiness\obj\Debug\LotteryBusiness.csproj.CoreCompileInputs.cache
+C:\Users\Admin\Documents\GitHub\Lottery\LotteryBusiness\obj\Debug\LotteryBusiness.csproj.AssemblyReference.cache
+C:\Users\Admin\Documents\GitHub\Lottery\LotteryBusiness\obj\Debug\LotteryBusiness.csproj.CopyComplete
 C:\Users\hphuc\Documents\GitHub\Lottery\LotteryBusiness\bin\Debug\LotteryBusiness.dll.config
 C:\Users\hphuc\Documents\GitHub\Lottery\LotteryBusiness\bin\Debug\LotteryBusiness.dll
 C:\Users\hphuc\Documents\GitHub\Lottery\LotteryBusiness\bin\Debug\LotteryBusiness.pdb
@@ -45,8 +46,7 @@ C:\Users\hphuc\Documents\GitHub\Lottery\LotteryBusiness\bin\Debug\EntityFramewor
 C:\Users\hphuc\Documents\GitHub\Lottery\LotteryBusiness\bin\Debug\LotteryDAL.dll
 C:\Users\hphuc\Documents\GitHub\Lottery\LotteryBusiness\bin\Debug\EntityFramework.xml
 C:\Users\hphuc\Documents\GitHub\Lottery\LotteryBusiness\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\hphuc\Documents\GitHub\Lottery\LotteryBusiness\obj\Debug\LotteryBusiness.csproj.CoreCompileInputs.cache
 C:\Users\hphuc\Documents\GitHub\Lottery\LotteryBusiness\obj\Debug\LotteryBusiness.csproj.CopyComplete
 C:\Users\hphuc\Documents\GitHub\Lottery\LotteryBusiness\obj\Debug\LotteryBusiness.dll
 C:\Users\hphuc\Documents\GitHub\Lottery\LotteryBusiness\obj\Debug\LotteryBusiness.pdb
-C:\Users\Admin\Documents\GitHub\Lottery\LotteryBusiness\obj\Debug\LotteryBusiness.csproj.AssemblyReference.cache
-C:\Users\Admin\Documents\GitHub\Lottery\LotteryBusiness\obj\Debug\LotteryBusiness.csproj.CopyComplete

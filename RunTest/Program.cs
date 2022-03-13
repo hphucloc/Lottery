@@ -72,40 +72,46 @@ namespace RunTest
             //foreach (var i in a)
             //    Console.WriteLine(i.LotNumber + ", " + i.NextPublishDate);
 
-            var a = _6Over55TimeLine.GetNumberNextAppear("3");
-            foreach (var i in a)
-                Console.Write("\t" +i);
+            //var a = _6Over55TimeLine.GetNumberNextAppear("3");
+            //foreach (var i in a)
+            //    Console.Write("\t" +i);
 
-            Console.WriteLine();
-            a = _6Over55TimeLine.GetNumberNextAppear("20");
-            foreach (var i in a)
-                Console.Write("\t" + i);
+            //Console.WriteLine();
+            //a = _6Over55TimeLine.GetNumberNextAppear("20");
+            //foreach (var i in a)
+            //    Console.Write("\t" + i);
 
-            Console.WriteLine();
-            a = _6Over55TimeLine.GetNumberNextAppear("27");
-            foreach (var i in a)
-                Console.Write("\t" + i);
+            //Console.WriteLine();
+            //a = _6Over55TimeLine.GetNumberNextAppear("27");
+            //foreach (var i in a)
+            //    Console.Write("\t" + i);
 
-            Console.WriteLine();
-            a = _6Over55TimeLine.GetNumberNextAppear("37");
-            foreach (var i in a)
-                Console.Write("\t" + i);
+            //Console.WriteLine();
+            //a = _6Over55TimeLine.GetNumberNextAppear("37");
+            //foreach (var i in a)
+            //    Console.Write("\t" + i);
 
-            Console.WriteLine();
-            a = _6Over55TimeLine.GetNumberNextAppear("44");
-            foreach (var i in a)
-                Console.Write("\t" + i);
+            //Console.WriteLine();
+            //a = _6Over55TimeLine.GetNumberNextAppear("44");
+            //foreach (var i in a)
+            //    Console.Write("\t" + i);
 
-            Console.WriteLine();
-            a = _6Over55TimeLine.GetNumberNextAppear("45");
-            foreach (var i in a)
-                Console.Write("\t" + i);
-
-
+            //Console.WriteLine();
+            //a = _6Over55TimeLine.GetNumberNextAppear("45");
+            //foreach (var i in a)
+            //    Console.Write("\t" + i);
 
             //var a = _6Over55TimeLine.GetLatest6Over55Number();
             //foreach (var i in a)
             //    Console.WriteLine(i.LotNumber);
+
+
+            var a = _6Over45TimeLine.GetColorNextAppear();
+            foreach(var i in a.Keys)
+                foreach(var j in a[i])
+            {
+                Console.WriteLine(j);
+            }
 
             Console.ReadLine();
         }
