@@ -16,7 +16,7 @@ namespace LotteryBusiness
 
         public static List<LoterryStatistic> GetLatest6Over45Number()
         {
-            IQueryable<LotteryNumber> number = Common.GetNumber((Int16)Enum_NumberWinLevel.DacBiet, (Int16)Enum_NumberType._6Over45, DateTime.Now.AddDays(-7), DateTime.Now);          
+            IQueryable<LotteryNumber> number = Common.GetNumber((Int16)Enum_NumberWinLevel.DacBiet, (Int16)Enum_NumberType._6Over45, DateTime.Now.AddMonths(-3), DateTime.Now);          
             return Common.GetLotNumberStatistic(number.OrderByDescending(x=>x.DatePublish).Take(6));
         }
 
@@ -487,7 +487,7 @@ namespace LotteryBusiness
         {            
             List<DateTime> lstNextDateAppear = new List<DateTime>();
             var data = Common.GetNumbersNextAppear(6, 1, 1);
-            var latestNumber = GetLatest6Over45Number().OrderBy(x => x.LotNumber).ToList();
+            var latestNumber = GetLatest6Over45Number().OrderBy(x => Convert.ToInt32(x.LotNumber)).ToList();
             
             for (var i = 0; i < data.Count(); i += 6)
             {                                          

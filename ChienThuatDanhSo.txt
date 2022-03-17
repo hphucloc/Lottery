@@ -5,3 +5,5 @@ Chien thuat 4: De y nhung so chua ra 20 ky tro len
 Chien thuat 5: Nghien cuu quy tac so xo cua cac so
 	13: Chu ky > 10
 Chien thuat 6: Nghien cuu day so Fibonacy
+
+17/03/2022: 3 9 11 40 46 49 19 12 - 30

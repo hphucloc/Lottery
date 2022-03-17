@@ -1615,8 +1615,7 @@ namespace WebAppLottery.Controllers
 
         [HttpGet]
         public ActionResult DuDoan645()
-        {
-            
+        {            
             string cacSo = null;
             var latestData = _6Over45TimeLine.GetLatest6Over45Number();            
             List<string> lstNextAppearData = new List<string>();
@@ -1975,8 +1974,72 @@ namespace WebAppLottery.Controllers
             sb.Append("</tbody>");
             sb.Append("</table>");
             sb.Append("</div>");
-            
 
+            var dicNumberNextAppearExactly = _6Over45TimeLine.GetNumberNextAppearExactly();
+            sb.Append("<h5>II/ Chiến thuật 2</h5>");
+            sb.Append("<div class='container-fluid'>");
+
+            sb.Append("<div class='col-12'>");
+            sb.Append("<h6>+ Số xuất hiện kế tiếp chính xác</h6>");
+            sb.Append("</div>");
+            sb.Append("<div class='col-12'>");
+            sb.Append("<table class='table table-secondary table-striped table-bordered TableData'>" +
+                "<thead class='table-dark'><tr class='text-info'>");
+            foreach (var i in dicNumberNextAppearExactly.Keys)
+            {
+                sb.Append("<td colspan='6'>" + i.ToShortDateString() + "</td>");
+            }
+            sb.Append("</tr></thead>");
+            sb.Append("<tbody>");
+            sb.Append("<tr>");
+            foreach (var i in dicNumberNextAppearExactly.Keys)
+            {                
+                foreach (var j in dicNumberNextAppearExactly[i])
+                {
+                    sb.Append("<td>");
+                    sb.Append(string.Format("{0}", j));
+                    sb.Append("</td>");
+                }              
+            }
+            sb.Append("</tr>");
+            sb.Append("</tbody>");
+            sb.Append("</table>");
+            sb.Append("</div>");
+
+            sb.Append("</div>");
+            sb.Append("</div>");
+
+            var dicColorNextAppear = _6Over45TimeLine.GetColorNextAppear();
+            sb.Append("<h5>III/ Chiến thuật 3</h5>");
+            sb.Append("<div class='container-fluid'>");
+
+            sb.Append("<div class='col-12'>");
+            sb.Append("<h6>+ Màu xuất hiện kế tiếp</h6>");
+            sb.Append("</div>");
+            sb.Append("<div class='col-12'>");
+            sb.Append("<table class='table table-secondary table-bordered TableData'>" +
+                "<thead class='table-dark'><tr class='text-info'>");
+            foreach (var i in dicColorNextAppear.Keys)
+            {
+                sb.Append("<td colspan='6'>" + i.ToShortDateString() + "</td>");
+            }
+            sb.Append("</tr></thead>");
+            sb.Append("<tbody class='table-light'");
+            sb.Append("<tr>");
+            foreach (var i in dicColorNextAppear.Keys)
+            {
+                foreach (var j in dicColorNextAppear[i])
+                {
+                    sb.Append(string.Format("<td class='{0}'></td>", j));
+                }
+            }
+            sb.Append("</tr>");
+            sb.Append("</tbody>");
+            sb.Append("</table>");
+            sb.Append("</div>");
+
+            sb.Append("</div>");
+            sb.Append("</div>");
 
             sb.Append("</div>");
 
@@ -2383,6 +2446,73 @@ namespace WebAppLottery.Controllers
             sb.Append("</tbody>");
             sb.Append("</table>");
             sb.Append("</div>");
+
+            var dicNumberNextAppearExactly = _6Over55TimeLine.GetNumberNextAppearExactly();
+            sb.Append("<h5>II/ Chiến thuật 2</h5>");
+            sb.Append("<div class='container-fluid'>");
+
+            sb.Append("<div class='col-12'>");
+            sb.Append("<h6>+ Số xuất hiện kế tiếp chính xác</h6>");
+            sb.Append("</div>");
+            sb.Append("<div class='col-12'>");
+            sb.Append("<table class='table table-secondary table-striped table-bordered TableData'>" +
+                "<thead class='table-dark'><tr class='text-info'>");
+            foreach (var i in dicNumberNextAppearExactly.Keys)
+            {
+                sb.Append("<td colspan='7'>" + i.ToShortDateString() + "</td>");
+            }
+            sb.Append("</tr></thead>");
+            sb.Append("<tbody>");
+            sb.Append("<tr>");
+            foreach (var i in dicNumberNextAppearExactly.Keys)
+            {                
+                foreach (var j in dicNumberNextAppearExactly[i])
+                {
+                    sb.Append("<td>");
+                    sb.Append(string.Format("{0}", j));
+                    sb.Append("</td>");
+                }                
+            }
+            sb.Append("</tr>");
+            sb.Append("</tbody>");
+            sb.Append("</table>");
+            sb.Append("</div>");
+
+            sb.Append("</div>");
+            sb.Append("</div>");
+
+            var dicColorNextAppear = _6Over55TimeLine.GetColorNextAppear();
+            sb.Append("<h5>III/ Chiến thuật 3</h5>");
+            sb.Append("<div class='container-fluid'>");
+
+            sb.Append("<div class='col-12'>");
+            sb.Append("<h6>+ Màu xuất hiện kế tiếp</h6>");
+            sb.Append("</div>");
+            sb.Append("<div class='col-12'>");
+            sb.Append("<table class='table table-secondary table-bordered TableData'>" +
+                "<thead class='table-dark'><tr class='text-info'>");
+            foreach (var i in dicColorNextAppear.Keys)
+            {
+                sb.Append("<td colspan='7'>" + i.ToShortDateString() + "</td>");
+            }
+            sb.Append("</tr></thead>");
+            sb.Append("<tbody class='table-light'");
+            sb.Append("<tr>");
+            foreach (var i in dicColorNextAppear.Keys)
+            {
+                foreach (var j in dicColorNextAppear[i])
+                {
+                    sb.Append(string.Format("<td class='{0}'></td>", j));
+                }
+            }
+            sb.Append("</tr>");
+            sb.Append("</tbody>");
+            sb.Append("</table>");
+            sb.Append("</div>");
+
+            sb.Append("</div>");
+            sb.Append("</div>");
+
             sb.Append("</div>");
 
             return Json(sb.ToString(), JsonRequestBehavior.AllowGet);
