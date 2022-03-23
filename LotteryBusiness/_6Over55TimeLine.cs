@@ -632,6 +632,23 @@ namespace LotteryBusiness
             return dicColorNextAppear;          
         }
 
+        public static Dictionary<int, int> GetNumberNotAppearMoreThan20()
+        {
+            Dictionary<int, int> dicNumberNotAppearMoreThan20 = new Dictionary<int, int>();
+
+            var data = Get6Over55Number(DateTime.MinValue, DateTime.MaxValue);
+
+            dicNumberNotAppearMoreThan20 = data
+                .Where(x => (DateTime.Now.Date - x.DatePublishList.DatePublishList1.OrderByDescending(y => y).First().Date).Days > 40)
+                .Select(x => new KeyValuePair<int, int>
+              (
+                  Convert.ToInt32(x.LotNumber),
+                  (DateTime.Now.Date - x.DatePublishList.DatePublishList1.OrderByDescending(y => y).First().Date).Days
+              )).ToDictionary(x => x.Key, y => y.Value);
+
+            return dicNumberNotAppearMoreThan20.OrderByDescending(x => x.Value).ToDictionary(x => x.Key, x => x.Value);
+        }
+
         public static void CreateBoughtNumber(List<int> number, DateTime dateBought, short numberType, short numberWinLevel)
         {
             Common.CreateBoughtNumber(number, dateBought, (Int16)Enum_NumberType._6Over55, (Int16)Enum_NumberWinLevel.DacBiet);

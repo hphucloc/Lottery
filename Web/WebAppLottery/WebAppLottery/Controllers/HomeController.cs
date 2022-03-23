@@ -2041,6 +2041,36 @@ namespace WebAppLottery.Controllers
             sb.Append("</div>");
             sb.Append("</div>");
 
+            var dicNumberNotAppearMore20 = _6Over45TimeLine.GetNumberNotAppearMoreThan20();
+            sb.Append("<h5>IV/ Chiến thuật 4</h5>");
+            sb.Append("<div class='container-fluid'>");
+
+            sb.Append("<div class='col-12'>");
+            sb.Append("<h6>+ Số chưa xuất hiện nhiều hơn 40 ngày</h6>");
+            sb.Append("</div>");
+            sb.Append("<div class='col-12'>");
+            sb.Append("<table class='table table-secondary table-striped table-bordered TableData'>" +
+                "<thead class='table-secondary'><tr class='text-info'><td>Số</td>");
+            foreach (var i in dicNumberNotAppearMore20)
+            {
+                sb.Append("<td>" + i.Key + "</td>");
+            }
+            sb.Append("</tr></thead>");
+            sb.Append("<tbody>");
+            sb.Append("<tr>");
+            sb.Append("<td>Số ngày chưa xuất hiện</td>");
+            foreach (var i in dicNumberNotAppearMore20.Keys)
+            {
+                sb.Append("<td>" + dicNumberNotAppearMore20[i] + "</td>");
+            }
+            sb.Append("</tr>");
+            sb.Append("</tbody>");
+            sb.Append("</table>");
+            sb.Append("</div>");
+
+            sb.Append("</div>");
+            sb.Append("</div>");
+
             sb.Append("</div>");
 
             return Json(sb.ToString(), JsonRequestBehavior.AllowGet);
@@ -2504,6 +2534,36 @@ namespace WebAppLottery.Controllers
                 {
                     sb.Append(string.Format("<td class='{0}'></td>", j));
                 }
+            }
+            sb.Append("</tr>");
+            sb.Append("</tbody>");
+            sb.Append("</table>");
+            sb.Append("</div>");
+
+            sb.Append("</div>");
+            sb.Append("</div>");
+
+            var dicNumberNotAppearMore20 = _6Over55TimeLine.GetNumberNotAppearMoreThan20();
+            sb.Append("<h5>IV/ Chiến thuật 4</h5>");
+            sb.Append("<div class='container-fluid'>");
+
+            sb.Append("<div class='col-12'>");
+            sb.Append("<h6>+ Số chưa xuất hiện nhiều hơn 40 ngày</h6>");
+            sb.Append("</div>");
+            sb.Append("<div class='col-12'>");
+            sb.Append("<table class='table table-secondary table-striped table-bordered TableData'>" +
+                "<thead class='table-secondary'><tr class='text-info'><td>Số</td>");
+            foreach (var i in dicNumberNotAppearMore20)
+            {
+                sb.Append("<td>" + i.Key + "</td>");
+            }
+            sb.Append("</tr></thead>");
+            sb.Append("<tbody>");
+            sb.Append("<tr>");
+            sb.Append("<td>Số ngày chưa xuất hiện</td>");
+            foreach (var i in dicNumberNotAppearMore20.Keys)
+            {
+                sb.Append("<td>" + dicNumberNotAppearMore20[i] + "</td>");
             }
             sb.Append("</tr>");
             sb.Append("</tbody>");

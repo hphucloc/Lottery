@@ -105,14 +105,21 @@ namespace RunTest
             //foreach (var i in a)
             //    Console.WriteLine(i.LotNumber);
 
-            
-            var a = _6Over45TimeLine.GetColorNextAppear();
-            foreach (var i in a.Keys)
+
+            //var a = _6Over45TimeLine.GetColorNextAppear();
+            //foreach (var i in a.Keys)
+            //{
+            //    foreach (var j in a[i])
+            //    {
+            //        Console.WriteLine(j);
+            //    }
+            //    Console.WriteLine();
+            //}
+
+            var a = _6Over45TimeLine.GetNumberNotAppearMoreThan20();
+            foreach(var i in a.Keys)
             {
-                foreach (var j in a[i])
-                {
-                    Console.WriteLine(j);
-                }
+                Console.Write(i + "/" + a[i]);
                 Console.WriteLine();
             }
 
