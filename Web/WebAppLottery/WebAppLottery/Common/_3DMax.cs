@@ -62,8 +62,14 @@ namespace DataVietlott
             string value = null;
 
             string content = Common.Content(url);
+
+            if (string.IsNullOrEmpty(content))
+            {
+                return "Error to get Data 3DMax";
+            }
+
             var array = content.Split("\r\n        ".ToCharArray());
-            var list = Common.RemoveEmptyElement(array);
+            var list = Common.RemoveEmptyElement(array);            
 
             //Remove 4 first items in list
             for (byte i = 0; i <= 4; i++)

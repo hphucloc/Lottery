@@ -2577,5 +2577,75 @@ namespace WebAppLottery.Controllers
 
             return Json(sb.ToString(), JsonRequestBehavior.AllowGet);
         }
+
+        [HttpPost]
+        public ActionResult InsertData(DataPageModel m)
+        {
+            try
+            {
+                if (m.ListLoaiVe == DataPageModel.LoaiVe._6Over45)
+                {
+                    var vdata = new HashSet<int>();
+                    vdata.Add(Convert.ToInt32(m.No1));
+                    vdata.Add(Convert.ToInt32(m.No2));
+                    vdata.Add(Convert.ToInt32(m.No3));
+                    vdata.Add(Convert.ToInt32(m.No4));
+                    vdata.Add(Convert.ToInt32(m.No5));
+                    vdata.Add(Convert.ToInt32(m.No6));
+                    if (m.ListLoaiVe == null || m.PublishDate == null || vdata.Count != 6)
+                    {
+                        m.ErrorMessage = "Error in input data";
+                        return View("Data", m);
+                    }
+                    Common.NewNumber(m.PublishDate.Value, new List<string> { m.No1, m.No2, m.No3, m.No4, m.No5, m.No6 }, (short)m.ListLoaiVe, 1);
+                    m.ErrorMessage = string.Format("Insert data successfully on {0}: {1}-{2}-{3}-{4}-{5}-{6}", m.PublishDate.Value.ToShortDateString(),
+                        m.No1, m.No2, m.No3, m.No4, m.No5, m.No6);
+                }
+                else if (m.ListLoaiVe == DataPageModel.LoaiVe._6Over55)
+                {
+                    var vdata = new HashSet<int>();
+                    vdata.Add(Convert.ToInt32(m.No1));
+                    vdata.Add(Convert.ToInt32(m.No2));
+                    vdata.Add(Convert.ToInt32(m.No3));
+                    vdata.Add(Convert.ToInt32(m.No4));
+                    vdata.Add(Convert.ToInt32(m.No5));
+                    vdata.Add(Convert.ToInt32(m.No6));
+                    vdata.Add(Convert.ToInt32(m.No7));
+                    if (m.ListLoaiVe == null || m.PublishDate == null || vdata.Count != 7)
+                    {
+                        m.ErrorMessage = "Error in input data";
+                        return View("Data", m);
+                    }
+                    Common.NewNumber(m.PublishDate.Value, new List<string> { m.No1, m.No2, m.No3, m.No4, m.No5, m.No6, m.No7 }, (short)m.ListLoaiVe, 1);
+                    m.ErrorMessage = string.Format("Insert data successfully on {0}: {1}-{2}-{3}-{4}-{5}-{6}-{7}", m.PublishDate.Value.ToShortDateString(),
+                        m.No1, m.No2, m.No3, m.No4, m.No5, m.No6, m.No7);
+                }
+
+
+                m.No1 = null;
+                m.No2 = null;
+                m.No3 = null;
+                m.No4 = null;
+                m.No5 = null;
+                m.No6 = null;
+                m.No7 = null;
+                m.PublishDate = null;
+                m.IsGet6Over45 = true;
+                m.IsGet6Over55 = true;
+                m.IsGet3DMax = true;
+                m.IsGet3DMaxPro = true;
+                ModelState.Clear();
+                
+            }catch(Exception E)
+            {
+                m.IsGet6Over45 = true;
+                m.IsGet6Over55 = true;
+                m.IsGet3DMax = true;
+                m.IsGet3DMaxPro = true;
+                m.ErrorMessage = E.Message;
+            }
+
+            return View("Data", m);
+        }
     }
 }

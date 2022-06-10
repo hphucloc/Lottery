@@ -51,3 +51,15 @@ C:\Users\hphuc\Documents\GitHub\Lottery\LotteryBusiness\obj\Debug\LotteryBusines
 C:\Users\hphuc\Documents\GitHub\Lottery\LotteryBusiness\obj\Debug\LotteryBusiness.dll
 C:\Users\hphuc\Documents\GitHub\Lottery\LotteryBusiness\obj\Debug\LotteryBusiness.pdb
 C:\Users\hphuc\Documents\GitHub\Lottery\LotteryBusiness\obj\Debug\LotteryBusiness.csprojAssemblyReference.cache
+C:\Users\Admin\OneDrive\Documents\GitHub\Lottery\LotteryBusiness\bin\Debug\LotteryBusiness.dll.config
+C:\Users\Admin\OneDrive\Documents\GitHub\Lottery\LotteryBusiness\bin\Debug\LotteryBusiness.dll
+C:\Users\Admin\OneDrive\Documents\GitHub\Lottery\LotteryBusiness\bin\Debug\LotteryBusiness.pdb
+C:\Users\Admin\OneDrive\Documents\GitHub\Lottery\LotteryBusiness\bin\Debug\EntityFramework.dll
+C:\Users\Admin\OneDrive\Documents\GitHub\Lottery\LotteryBusiness\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Admin\OneDrive\Documents\GitHub\Lottery\LotteryBusiness\bin\Debug\LotteryDAL.dll
+C:\Users\Admin\OneDrive\Documents\GitHub\Lottery\LotteryBusiness\bin\Debug\EntityFramework.xml
+C:\Users\Admin\OneDrive\Documents\GitHub\Lottery\LotteryBusiness\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Admin\OneDrive\Documents\GitHub\Lottery\LotteryBusiness\obj\Debug\LotteryBusiness.csproj.CoreCompileInputs.cache
+C:\Users\Admin\OneDrive\Documents\GitHub\Lottery\LotteryBusiness\obj\Debug\LotteryBusiness.dll
+C:\Users\Admin\OneDrive\Documents\GitHub\Lottery\LotteryBusiness\obj\Debug\LotteryBusiness.pdb
+C:\Users\Admin\OneDrive\Documents\GitHub\Lottery\LotteryBusiness\obj\Debug\LotteryBusiness.csproj.CopyComplete

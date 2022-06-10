@@ -11,16 +11,17 @@ namespace DataVietlott
     {
         private static LotteryEntities Db = LotteryDAL.LotteryConnection.Instance;
         public static string Content(string url)
-        {          
+        {
+            //url = "https://vietlott.vn/vi/trung-thuong/ket-qua-trung-thuong/winning-number-keno";
             HtmlWeb web = new HtmlWeb();
             HtmlDocument doc = web.Load(url);
 
-            foreach (HtmlNode link in doc.DocumentNode.SelectNodes("//table[@class='table table-hover']"))
-            {
-                return link.InnerText;
-            }
-
-            return "-1";
+            if (doc.DocumentNode.SelectNodes("//table[@class='table table-hover']") != null)
+                foreach (HtmlNode link in doc.DocumentNode.SelectNodes("//table[@class='table table-hover']"))
+                {
+                    return link.InnerText;
+                }
+            return null;
         }
         public static List<string> RemoveEmptyElement(string[] input)
         {

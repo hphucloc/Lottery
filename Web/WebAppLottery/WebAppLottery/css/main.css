@@ -726,3 +726,23 @@ input.input100 {
 .WidthHeader{
     min-width: 150px;
 }
+.WidthInsertNo {
+    width: 50px;
+}
+
+.roundedcorner {
+    background: #fff;
+    font-family: Times New Roman, Times, serif;
+    font-size: 11pt;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 1px;
+    margin-bottom: 1px;
+    padding: 3px;
+    border-top: 1px solid #CCCCCC;
+    border-left: 1px solid #CCCCCC;
+    border-right: 1px solid #999999;
+    border-bottom: 1px solid #999999;
+    -moz-border-radius: 8px;
+    -webkit-border-radius: 8px;
+}  

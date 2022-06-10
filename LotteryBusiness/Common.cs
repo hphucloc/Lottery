@@ -220,13 +220,15 @@ namespace LotteryBusiness
             }
             catch (Exception)
             {
-                foreach (var i in number) {
+
+                foreach (var i in number)
+                {
                     Db.Database.ExecuteSqlCommand("INSERT INTO dbo.Number(NumberTypeId, NumberWinLevelId, LotNumber, DatePublish, DateCreated) VALUES({0}, {1}, {2}, {3}, {4})",
                         numberType, numberWinLevel, i, publishDdate, publishDdate);
                 }
+                //throw new Exception();
             }
-        }
-        
+        }        
         public static void CreateBoughtNumber(List<int> number, DateTime dateBought, short numberType, short numberWinLevel)
         {
             foreach (byte i in number)

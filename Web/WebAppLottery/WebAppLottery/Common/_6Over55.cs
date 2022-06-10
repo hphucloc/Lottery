@@ -89,6 +89,10 @@ namespace DataVietlott
             string value = null;
 
             string content = Common.Content(url);
+            if (string.IsNullOrEmpty(content))
+            {
+                return "Error to get Data 6/55";
+            }
             var array = content.Split("\r\n        ".ToCharArray());
             var list = Common.RemoveEmptyElement(array);
 
