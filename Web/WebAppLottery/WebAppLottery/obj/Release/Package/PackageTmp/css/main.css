@@ -729,6 +729,9 @@ input.input100 {
 .WidthInsertNo {
     width: 50px;
 }
+.PasswordAddDataManualy {
+    width: 100px;
+}
 
 .roundedcorner {
     background: #fff;

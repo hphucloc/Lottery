@@ -55,6 +55,9 @@
             <tbody>
                 <tr>
                     <td>
+                        @Html.PasswordFor(x => x.PasswordAddDataManualy, new { @class = "form-control PasswordAddDataManualy" })
+                    </td>
+                    <td>
                         @Html.EnumDropDownListFor(x => x.ListLoaiVe, new { @onchange = "", @class = "form-control" })
                     </td>
                     <td>

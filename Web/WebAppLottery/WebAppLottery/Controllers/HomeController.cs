@@ -2583,6 +2583,11 @@ namespace WebAppLottery.Controllers
         {
             try
             {
+                if (!m.PasswordAddDataManualy.Equals("Vera"))
+                {
+                    throw new Exception("Wrong Password");
+                }
+
                 if (m.ListLoaiVe == DataPageModel.LoaiVe._6Over45)
                 {
                     var vdata = new HashSet<int>();
