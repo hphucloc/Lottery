@@ -2603,7 +2603,7 @@ namespace WebAppLottery.Controllers
                         return View("Data", m);
                     }
                     Common.NewNumber(m.PublishDate.Value, new List<string> { m.No1, m.No2, m.No3, m.No4, m.No5, m.No6 }, (short)m.ListLoaiVe, 1);
-                    m.ErrorMessage = string.Format("Insert data successfully on {0}: {1}-{2}-{3}-{4}-{5}-{6}", m.PublishDate.Value.ToShortDateString(),
+                    m.ErrorMessage = string.Format("Insert 6/45 successfully on {0}: {1}-{2}-{3}-{4}-{5}-{6}", m.PublishDate.Value.ToShortDateString(),
                         m.No1, m.No2, m.No3, m.No4, m.No5, m.No6);
                 }
                 else if (m.ListLoaiVe == DataPageModel.LoaiVe._6Over55)
@@ -2622,7 +2622,7 @@ namespace WebAppLottery.Controllers
                         return View("Data", m);
                     }
                     Common.NewNumber(m.PublishDate.Value, new List<string> { m.No1, m.No2, m.No3, m.No4, m.No5, m.No6, m.No7 }, (short)m.ListLoaiVe, 1);
-                    m.ErrorMessage = string.Format("Insert data successfully on {0}: {1}-{2}-{3}-{4}-{5}-{6}-{7}", m.PublishDate.Value.ToShortDateString(),
+                    m.ErrorMessage = string.Format("Insert 6/55 successfully on {0}: {1}-{2}-{3}-{4}-{5}-{6}-{7}", m.PublishDate.Value.ToShortDateString(),
                         m.No1, m.No2, m.No3, m.No4, m.No5, m.No6, m.No7);
                 }
 

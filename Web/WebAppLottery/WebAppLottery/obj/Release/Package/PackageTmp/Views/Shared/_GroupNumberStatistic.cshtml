@@ -73,10 +73,13 @@
                     <thead class="table-dark">
                         <tr class="text-info">
                             @*@foreach (var i in Model.groupNumberStatistic.Keys.OrderByDescending(x => x.Date))
-                                {
-                                    <td>@string.Format("{0:d/M}", i.Date)</td>
-                                }*@
-                            <td colspan="2"><img src="~/images/BackArrow.png" /></td>
+                            {
+                                <td>@string.Format("{0:d/M}", i.Date)</td>
+                            }*@
+                            <td colspan="5">
+                                @Model.groupNumberStatistic.Keys.OrderByDescending(x => x.Date).FirstOrDefault().Date.ToShortDateString()
+                                <img src="~/images/BackArrow.png" />
+                            </td>
                         </tr>
                     </thead>
                     <tbody>
@@ -646,7 +649,10 @@
                 <table class="table table-bordered TableData">
                     <thead class="table-dark">
                         <tr class="text-info">
-                            <td colspan="2"><img src="~/images/BackArrow.png" /></td>
+                            <td colspan="5">
+                                @Model.groupNumberStatistic.Keys.OrderByDescending(x => x.Date).FirstOrDefault().Date.ToShortDateString()
+                                <img src="~/images/BackArrow.png" />
+                            </td>
                         </tr>
                     </thead>
                     <tbody>
