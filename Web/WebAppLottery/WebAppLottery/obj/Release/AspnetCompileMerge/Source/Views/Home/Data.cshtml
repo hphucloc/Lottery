@@ -43,90 +43,122 @@
          style="background-image: url('../../images/bg01.jpg');">
         @using (Html.BeginForm("InsertData", "Home", FormMethod.Post))
         {
-    <div class="wsize5 bor1 bg1 p-t-1 p-b-1 p-l-15 p-r-15 d-flex justify-content-start border border-info">
-        <table class="table">
-            <thead>
-                <tr>
-                    <td>
-                        <h5>Add Data Manualy</h5>
-                    </td>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>
-                        @Html.PasswordFor(x => x.PasswordAddDataManualy, new { @class = "form-control PasswordAddDataManualy" })
-                    </td>
-                    <td>
-                        @Html.EnumDropDownListFor(x => x.ListLoaiVe, new { @onchange = "", @class = "form-control" })
-                    </td>
-                    <td>
-                        @Html.EditorFor(x => x.PublishDate, new { htmlAttributes = new { @class = "form-control" } })
-                    </td>
-                    <td>
-                        @Html.TextBoxFor(x => x.No1, new { @class = "WidthInsertNo roundedcorner" })
-                    </td>
-                    <td>
-                        @Html.TextBoxFor(x => x.No2, new { @class = "WidthInsertNo roundedcorner" })
-                    </td>
-                    <td>
-                        @Html.TextBoxFor(x => x.No3, new { @class = "WidthInsertNo roundedcorner" })
-                    </td>
-                    <td>
-                        @Html.TextBoxFor(x => x.No4, new { @class = "WidthInsertNo roundedcorner" })
-                    </td>
-                    <td>
-                        @Html.TextBoxFor(x => x.No5, new { @class = "WidthInsertNo roundedcorner" })
-                    </td>
-                    <td>
-                        @Html.TextBoxFor(x => x.No6, new { @class = "WidthInsertNo roundedcorner" })
-                    </td>
-                    <td>
-                        @Html.TextBoxFor(x => x.No7, new { @class = "WidthInsertNo roundedcorner" })
-                    </td>
-                    <td>
-                        <button type="submit" class="btn btn-success btn-sm">Insert</button>
-                    </td>
-                </tr>
-            </tbody>
-        </table>
-    </div>
-    }
-    @using (Html.BeginForm("DataWithFilter", "Home", FormMethod.Post))
-    {
-        <div class="wsize1 bor1 bg1 p-t-1 p-b-1 p-l-15 p-r-15 d-flex justify-content-start border border-info">
-            <table class="table">
-                <thead>
-                    <tr>
-                        <td>
-                            @Html.CheckBoxFor(x => x.IsGet6Over45, new { }) <i>Is get 6/45</i>
-                        </td>
-                        <td>
-                            @Html.CheckBoxFor(x => x.IsGet6Over55, new { }) <i>Is get 6/55</i>
-                        </td>
-                        <td>
-                            @Html.CheckBoxFor(x => x.IsGet3DMax, new { }) <i>Is get 3D Max</i>
-                        </td>
-                        <td>
-                            @Html.CheckBoxFor(x => x.IsGet3DMaxPro, new { }) <i>Is get 3D Max Pro</i>
-                        </td>
-                        <td>
-                            <button type="submit" class="btn btn-success btn-lg">Get Data</button>
-                        </td>
-                    </tr>
+            <div class="wsize5 bor1 bg1 p-t-1 p-b-1 p-l-15 p-r-15 d-flex justify-content-start border border-info">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <td>
+                                <h5>Add Data Manualy</h5>
+                            </td>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>
+                                @Html.PasswordFor(x => x.PasswordAddDataManualy, new { @class = "form-control PasswordAddDataManualy" })
+                            </td>
+                            <td>
+                                @Html.EnumDropDownListFor(x => x.ListLoaiVe, new { @onchange = "", @class = "form-control" })
+                            </td>
+                            <td>
+                                @Html.EditorFor(x => x.PublishDate, new { htmlAttributes = new { @class = "form-control" } })
+                            </td>
+                            <td>
+                                @Html.TextBoxFor(x => x.No1, new { @class = "WidthInsertNo roundedcorner" })
+                            </td>
+                            <td>
+                                @Html.TextBoxFor(x => x.No2, new { @class = "WidthInsertNo roundedcorner" })
+                            </td>
+                            <td>
+                                @Html.TextBoxFor(x => x.No3, new { @class = "WidthInsertNo roundedcorner" })
+                            </td>
+                            <td>
+                                @Html.TextBoxFor(x => x.No4, new { @class = "WidthInsertNo roundedcorner" })
+                            </td>
+                            <td>
+                                @Html.TextBoxFor(x => x.No5, new { @class = "WidthInsertNo roundedcorner" })
+                            </td>
+                            <td>
+                                @Html.TextBoxFor(x => x.No6, new { @class = "WidthInsertNo roundedcorner" })
+                            </td>
+                            <td>
+                                @Html.TextBoxFor(x => x.No7, new { @class = "WidthInsertNo roundedcorner" })
+                            </td>
+                            <td>
+                                <button type="submit" class="btn btn-success btn-sm">Insert</button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        }
 
-                </thead>
-                <tbody>
-                    <tr>
-                        <td colspan="5">
-                            @Html.TextAreaFor(x => x.Status, new { @class = "form-control StatusDataPage", @readonly = "readonly" })
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
+        @using (Html.BeginForm("DataWithFilter", "Home", FormMethod.Post))
+        {
+            <div class="wsize7 bor1 bg1 p-t-1 p-b-1 p-l-15 p-r-15 d-flex justify-content-start border border-info">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <td>
+                                @Html.CheckBoxFor(x => x.IsGet6Over45, new { }) <i>Is get 6/45</i>
+                            </td>
+                            <td>
+                                @Html.CheckBoxFor(x => x.IsGet6Over55, new { }) <i>Is get 6/55</i>
+                            </td>
+                            <td>
+                                @Html.CheckBoxFor(x => x.IsGet3DMax, new { }) <i>Is get 3D Max</i>
+                            </td>
+                            <td>
+                                @Html.CheckBoxFor(x => x.IsGet3DMaxPro, new { }) <i>Is get 3D Max Pro</i>
+                            </td>
+                            <td>
+                                <button type="submit" class="btn btn-success btn-lg">Get Data</button>
+                            </td>
+                        </tr>
 
-        </div>
-    }
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td colspan="5">
+                                @Html.TextAreaFor(x => x.Status, new { @class = "form-control StatusDataPage", @readonly = "readonly" })
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+
+            </div>
+        }
+
+        @using (Html.BeginForm("InsertDataMultiple", "Home", FormMethod.Post))
+        {
+            <div class="wsize7 bor1 bg1 p-t-1 p-b-1 p-l-15 p-r-15 d-flex justify-content-start border border-info">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <td>
+                                <h5>Add Mutiple Data Manualy</h5>
+                            </td>
+                            <td>
+                                @Html.PasswordFor(x => x.PasswordAddDataManualy, new { @class = "form-control PasswordAddDataManualy" })
+                            </td>
+                            <td>
+                                @Html.EnumDropDownListFor(x => x.ListLoaiVe, new { @onchange = "", @class = "form-control" })
+                            </td>
+                            <td>
+                                <button type="submit" class="btn btn-success btn-sm">Insert</button>
+                            </td>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td colspan="4">
+                                @Html.TextAreaFor(x => x.AddMultipleDataManualy, new { @class = "roundedcorner form-control AddMultipleDataPage" })
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        }
     </div>    
 
     @Scripts.Render("~/bundles/jquery")

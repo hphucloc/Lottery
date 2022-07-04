@@ -590,7 +590,13 @@ input.input100 {
 .StatusDataPage {
     max-width: 100%;
     width: 600px;
-    height: 480px;
+    height: 240px;
+}
+
+.AddMultipleDataPage {
+    max-width: 100%;
+    width: 100%;
+    height: 250px;
 }
 
 .Do {
