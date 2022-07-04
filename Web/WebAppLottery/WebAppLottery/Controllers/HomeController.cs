@@ -2652,5 +2652,104 @@ namespace WebAppLottery.Controllers
 
             return View("Data", m);
         }
+
+        [HttpPost]
+        public ActionResult InsertDataMultiple(DataPageModel m)
+        {
+            try
+            {
+                if (!m.PasswordAddDataManualy.Equals("Vera"))
+                {
+                    throw new Exception("Wrong Password");
+                }
+
+                if (m.ListLoaiVe == DataPageModel.LoaiVe._6Over45)
+                {
+                    m.AddMultipleDataManualy = m.AddMultipleDataManualy.Replace('\r', '\t');
+                    m.AddMultipleDataManualy = m.AddMultipleDataManualy.Replace("\n", null);
+                    var data = m.AddMultipleDataManualy.Split(new[] { "\t" }, StringSplitOptions.RemoveEmptyEntries);
+                    string dateInserted = null;
+                    for (int i = 0; i < data.Count(); i++)
+                    {
+                        int k = 0;
+                        var output = data[i + 2]
+                            .ToLookup(c => Math.Floor(k++ / (double)2))
+                            .Select(e => new String(e.ToArray())).ToList();
+
+                        if (output.Count < 6)
+                        {
+                            throw new Exception("Error in data");
+                        }
+                        if (m.ListLoaiVe == null)
+                        {
+                            m.ErrorMessage = "Error in LoaiVe";
+                            return View("Data", m);
+                        }
+
+                        Common.NewNumber(Convert.ToDateTime(DateTime.ParseExact(data[i], "dd/MM/yyyy", CultureInfo.InvariantCulture)),
+                            new List<string> { output[0], output[1], output[2], output[3], output[4], output[5] }, (short)m.ListLoaiVe, 1);
+                        dateInserted += data[i] + ", ";                                                
+                        i = i + 2;
+                    }
+                    m.ErrorMessage = string.Format("Insert 6/45 successfully on {0}", dateInserted);
+                }
+                else if (m.ListLoaiVe == DataPageModel.LoaiVe._6Over55)
+                {
+                    m.AddMultipleDataManualy = m.AddMultipleDataManualy.Replace('\r', '\t');
+                    m.AddMultipleDataManualy = m.AddMultipleDataManualy.Replace("\n", null);
+                    var data = m.AddMultipleDataManualy.Split(new[] { "\t" }, StringSplitOptions.RemoveEmptyEntries);
+                    string dateInserted = null;
+                    for (int i = 0; i < data.Count(); i++)
+                    {
+                        int k = 0;
+                        var output = data[i + 2]
+                            .ToLookup(c => Math.Floor(k++ / (double)2))
+                            .Select(e => new String(e.ToArray())).ToList();
+                        output.RemoveAt(6); //Remove '|' char
+                        if (output.Count < 7)
+                        {
+                            throw new Exception("Error in data");
+                        }
+                        if (m.ListLoaiVe == null)
+                        {
+                            m.ErrorMessage = "Error in LoaiVe";
+                            return View("Data", m);
+                        }
+
+                        Common.NewNumber(Convert.ToDateTime(DateTime.ParseExact(data[i], "dd/MM/yyyy", CultureInfo.InvariantCulture)),
+                            new List<string> { output[0], output[1], output[2], output[3], output[4], output[5], output[6] }, (short)m.ListLoaiVe, 1);
+                        dateInserted += data[i] + ", ";
+                        i = i + 2;
+                    }
+                    m.ErrorMessage = string.Format("Insert 6/55 successfully on {0}", dateInserted);
+                }
+
+
+                m.No1 = null;
+                m.No2 = null;
+                m.No3 = null;
+                m.No4 = null;
+                m.No5 = null;
+                m.No6 = null;
+                m.No7 = null;                
+                m.PublishDate = null;
+                m.IsGet6Over45 = true;
+                m.IsGet6Over55 = true;
+                m.IsGet3DMax = true;
+                m.IsGet3DMaxPro = true;
+                ModelState.Clear();
+
+            }
+            catch (Exception E)
+            {
+                m.IsGet6Over45 = true;
+                m.IsGet6Over55 = true;
+                m.IsGet3DMax = true;
+                m.IsGet3DMaxPro = true;
+                m.ErrorMessage = E.Message;
+            }
+
+            return View("Data", m);
+        }
     }
 }
