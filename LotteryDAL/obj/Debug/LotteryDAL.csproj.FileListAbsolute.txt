@@ -61,6 +61,6 @@ C:\Users\Admin\OneDrive\Documents\GitHub\Lottery\LotteryDAL\bin\Debug\NuGet.Core
 C:\Users\Admin\OneDrive\Documents\GitHub\Lottery\LotteryDAL\bin\Debug\EntityFramework.xml
 C:\Users\Admin\OneDrive\Documents\GitHub\Lottery\LotteryDAL\bin\Debug\EntityFramework.SqlServer.xml
 C:\Users\Admin\OneDrive\Documents\GitHub\Lottery\LotteryDAL\obj\Debug\LotteryDAL.csproj.CoreCompileInputs.cache
+C:\Users\Admin\OneDrive\Documents\GitHub\Lottery\LotteryDAL\obj\Debug\LotteryDAL.csproj.CopyComplete
 C:\Users\Admin\OneDrive\Documents\GitHub\Lottery\LotteryDAL\obj\Debug\LotteryDAL.dll
 C:\Users\Admin\OneDrive\Documents\GitHub\Lottery\LotteryDAL\obj\Debug\LotteryDAL.pdb
-C:\Users\Admin\OneDrive\Documents\GitHub\Lottery\LotteryDAL\obj\Debug\LotteryDAL.csproj.CopyComplete

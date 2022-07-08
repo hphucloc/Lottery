@@ -23,7 +23,7 @@ namespace LotteryBusiness
 
         public static IQueryable<LotteryNumber> GetNumber(Int16 numberWinLevelId, Int16 numberTypeId, DateTime datePublishFrom, DateTime datePublishTo)
         {
-            var t = Db.Numbers.Where(n => n.NumberWinLevelId == numberWinLevelId && n.NumberTypeId == numberTypeId &&
+            return Db.Numbers.Where(n => n.NumberWinLevelId == numberWinLevelId && n.NumberTypeId == numberTypeId &&
                 n.DatePublish >= datePublishFrom && n.DatePublish <= datePublishTo).OrderBy(p => p.LotNumber).Select(p => new LotteryNumber()
                 {
                     DateCreated = p.DateCreated,
@@ -35,13 +35,11 @@ namespace LotteryBusiness
                     NumberWinLevelId = p.NumberWinLevelId,
                     KyQuay = p.KyQuay
                 });
-
-            return t;
         }
 
         public static IQueryable<LotteryNumber> GetNumber(string number, Int16 numberWinLevelId, Int16 numberTypeId, DateTime datePublishFrom, DateTime datePublishTo)
         {
-            var t = Db.Numbers.Where(n => n.NumberWinLevelId == numberWinLevelId && n.NumberTypeId == numberTypeId && n.LotNumber == number &&
+            return Db.Numbers.Where(n => n.NumberWinLevelId == numberWinLevelId && n.NumberTypeId == numberTypeId && n.LotNumber == number &&
                 n.DatePublish >= datePublishFrom && n.DatePublish <= datePublishTo).OrderBy(p => p.LotNumber).Select(p => new LotteryNumber()
                 {
                     DateCreated = p.DateCreated,
@@ -53,14 +51,13 @@ namespace LotteryBusiness
                     NumberWinLevelId = p.NumberWinLevelId,
                     KyQuay = p.KyQuay
                 });
-
-            return t;
+            
         }
 
         public static IQueryable<LotteryNumber> GetNumber(Int16 numberTypeId, DateTime datePublishFrom, DateTime datePublishTo)
         {
-            var t = Db.Numbers.Where(n => n.NumberTypeId == numberTypeId &&
-                n.DatePublish >= datePublishFrom && n.DatePublish <= datePublishTo).OrderByDescending(x=>x.KyQuay).Select(p => new LotteryNumber()
+            return Db.Numbers.Where(n => n.NumberTypeId == numberTypeId &&
+                n.DatePublish >= datePublishFrom && n.DatePublish <= datePublishTo).OrderByDescending(x => x.KyQuay).Select(p => new LotteryNumber()
                 {
                     DateCreated = p.DateCreated,
                     DatePublish = p.DatePublish,
@@ -71,8 +68,6 @@ namespace LotteryBusiness
                     NumberWinLevelId = p.NumberWinLevelId,
                     KyQuay = p.KyQuay
                 });
-
-            return t;
         }       
 
         public static List<LoterryStatistic> GetLotNumberStatistic(IQueryable<LotteryNumber> Number)
@@ -82,8 +77,23 @@ namespace LotteryBusiness
             int prvLotNumber = 0;
             int curLotNumber = 0;
 
+            List<LotteryNumber> lstData = new List<LotteryNumber>();
+            foreach (LotteryNumber i in Number)
+            {
+                LotteryNumber a = new LotteryNumber();
+                a.DateCreated = i.DateCreated;
+                a.DatePublish = i.DatePublish;
+                a.DateUpdated = i.DateUpdated;
+                a.LotNumber = Convert.ToInt32(i.LotNumber).ToString();
+                a.NumberId = i.NumberId;
+                a.NumberTypeId = i.NumberTypeId;
+                a.NumberWinLevelId = i.NumberWinLevelId;
+                a.KyQuay = i.KyQuay;
+                lstData.Add(a);
+            }           
+
             //Bo so trung
-            foreach (LotteryNumber no in Number)
+            foreach (LotteryNumber no in lstData.OrderBy(x=>x.LotNumber))
             {
                 curLotNumber = Convert.ToInt32(no.LotNumber);
                 if (curLotNumber != Convert.ToInt32(prvLotNumber))

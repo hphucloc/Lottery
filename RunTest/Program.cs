@@ -116,12 +116,16 @@ namespace RunTest
             //    Console.WriteLine();
             //}
 
-            var a = _6Over45TimeLine.GetNumberNotAppearMoreThan20();
-            foreach(var i in a.Keys)
-            {
-                Console.Write(i + "/" + a[i]);
-                Console.WriteLine();
-            }
+            //var a = _6Over45TimeLine.GetNumberNotAppearMoreThan20();
+            //foreach(var i in a.Keys)
+            //{
+            //    Console.Write(i + "/" + a[i]);
+            //    Console.WriteLine();
+            //}
+
+
+            string a = Convert.ToInt32("07").ToString();
+            Console.WriteLine(a);
 
             Console.ReadLine();
         }
