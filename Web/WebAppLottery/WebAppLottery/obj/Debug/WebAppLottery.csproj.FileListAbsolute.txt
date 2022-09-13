@@ -250,6 +250,6 @@ C:\Users\Admin\OneDrive\Documents\GitHub\Lottery\Web\WebAppLottery\WebAppLottery
 C:\Users\Admin\OneDrive\Documents\GitHub\Lottery\Web\WebAppLottery\WebAppLottery\bin\Newtonsoft.Json.xml
 C:\Users\Admin\OneDrive\Documents\GitHub\Lottery\Web\WebAppLottery\WebAppLottery\bin\Antlr3.Runtime.pdb
 C:\Users\Admin\OneDrive\Documents\GitHub\Lottery\Web\WebAppLottery\WebAppLottery\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
-C:\Users\Admin\OneDrive\Documents\GitHub\Lottery\Web\WebAppLottery\WebAppLottery\obj\Debug\WebAppLottery.csproj.CopyComplete
-C:\Users\Admin\OneDrive\Documents\GitHub\Lottery\Web\WebAppLottery\WebAppLottery\obj\Debug\WebAppLottery.csproj.AssemblyReference.cache
 C:\Users\hphuc\Documents\GitHub\Lottery\Web\WebAppLottery\WebAppLottery\obj\Debug\WebAppLottery.csprojAssemblyReference.cache
+C:\Users\Admin\OneDrive\Documents\GitHub\Lottery\Web\WebAppLottery\WebAppLottery\obj\Debug\WebAppLottery.csproj.AssemblyReference.cache
+C:\Users\Admin\OneDrive\Documents\GitHub\Lottery\Web\WebAppLottery\WebAppLottery\obj\Debug\WebAppLottery.csproj.CopyComplete

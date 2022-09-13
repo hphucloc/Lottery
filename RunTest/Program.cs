@@ -29,16 +29,16 @@ namespace RunTest
     {
         static void Main(string[] args)
         {
-            //var a = _KenoTimeLine.GetKenoChanleLonNho
-            //    (DateTime.Now.AddMonths(-3), DateTime.Now);
-            //foreach (var i in a)
-            //{
-            //    Console.WriteLine(i.Key);
-            //    foreach (var j in a[i.Key])
-            //    {
-            //        Console.Write(j[0] + "\t" + j[1]);
-            //    }
-            //}
+            var a = _KenoTimeLine.GetKenoChanleLonNho
+                (DateTime.Now.AddDays(-2), DateTime.Now);
+            foreach (var i in a)
+            {
+                Console.WriteLine(i.Key);
+                foreach (var j in a[i.Key])
+                {
+                    Console.Write(j[0] + "\t" + j[1]);
+                }
+            }
 
             //var a = _KenoTimeLine.GetKenoNumber(DateTime.Now.AddMonths(-3), DateTime.Now);
             //var b = _KenoTimeLine.GetKenoNumberKyquay(a);
@@ -122,11 +122,7 @@ namespace RunTest
             //    Console.Write(i + "/" + a[i]);
             //    Console.WriteLine();
             //}
-
-
-            string a = Convert.ToInt32("07").ToString();
-            Console.WriteLine(a);
-
+           
             Console.ReadLine();
         }
     }
