@@ -18,7 +18,11 @@ namespace LotteryBusiness
             IQueryable<LotteryNumber> number = Common.GetNumber((Int16)Enum_NumberWinLevel.DacBiet, (Int16)Enum_NumberType._6Over55, DateTime.Now.AddMonths(-3), DateTime.Now);
             return Common.GetLotNumberStatistic(number.OrderByDescending(x => x.DatePublish).Take(7));
         }
-
+        public static List<LoterryStatistic> GetSecondLatest6Over55Number()
+        {
+            IQueryable<LotteryNumber> number = Common.GetNumber((Int16)Enum_NumberWinLevel.DacBiet, (Int16)Enum_NumberType._6Over55, DateTime.Now.AddMonths(-3), DateTime.Now);
+            return Common.GetLotNumberStatistic(number.OrderByDescending(x => x.DatePublish).Skip(7).Take(7));
+        }
         public static List<LoterryStatistic> Get6Over55Number(string lotNumber, DateTime datePublishFrom, DateTime datePublishTo)
         {
             IQueryable<LotteryNumber> number = Common.GetNumber(lotNumber, (Int16)Enum_NumberWinLevel.DacBiet, (Int16)Enum_NumberType._6Over55, datePublishFrom, datePublishTo);
@@ -592,37 +596,37 @@ namespace LotteryBusiness
                 {
                     if (j > 0 && j <= 7)
                     {
-                        lstColor.Add("Do");
+                        lstColor.Add("Do_" + j);
                     }
                     else
                     if (j > 7 && j <= 15)
                     {
-                        lstColor.Add("Cam");
+                        lstColor.Add("Cam_" + j);
                     }
                     else
                     if (j > 15 && j <= 23)
                     {
-                        lstColor.Add("Vang");
+                        lstColor.Add("Vang_" + j);
                     }
                     else
                     if (j > 23 && j <= 31)
                     {
-                        lstColor.Add("Luc");
+                        lstColor.Add("Luc_" + j);
                     }
                     else
                     if (j > 31 && j <= 39)
                     {
-                        lstColor.Add("Lam");
+                        lstColor.Add("Lam_" + j);
                     }
                     else
                     if (j > 39 && j <= 47)
                     {
-                        lstColor.Add("Cham");
+                        lstColor.Add("Cham_" +j);
                     }
                     else
                     if (j > 47 && j <= 55)
                     {
-                        lstColor.Add("Tim");
+                        lstColor.Add("Tim_" +j);
                     }
                 }
 

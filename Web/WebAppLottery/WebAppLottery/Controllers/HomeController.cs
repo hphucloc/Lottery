@@ -1617,7 +1617,8 @@ namespace WebAppLottery.Controllers
         public ActionResult DuDoan645()
         {            
             string cacSo = null;
-            var latestData = _6Over45TimeLine.GetLatest6Over45Number();            
+            var latestData = _6Over45TimeLine.GetLatest6Over45Number();
+            var secondLatestData = _6Over45TimeLine.GetSecondLatest6Over45Number();
             List<string> lstNextAppearData = new List<string>();
             foreach (var i in latestData)
             {
@@ -2009,20 +2010,117 @@ namespace WebAppLottery.Controllers
             sb.Append("</div>");
             sb.Append("</div>");
 
-            var dicColorNextAppear = _6Over45TimeLine.GetColorNextAppear();
+            var dicColorNextAppear = _6Over45TimeLine.GetColorNextAppear();           
             sb.Append("<h5>III/ Chiến thuật 3</h5>");
             sb.Append("<div class='container-fluid'>");
 
             sb.Append("<div class='col-12'>");
-            sb.Append("<h6>+ Màu xuất hiện kế tiếp</h6>");
+            sb.Append("<h6>+ Thực tế </h6>");
             sb.Append("</div>");
             sb.Append("<div class='col-12'>");
             sb.Append("<table class='table table-secondary table-bordered TableData'>" +
                 "<thead class='table-dark'><tr class='text-info'>");
-            foreach (var i in dicColorNextAppear.Keys)
+            sb.Append("<td colspan='6'>" + secondLatestData.First().DatePublish.ToShortDateString() + "</td>");
+            sb.Append("</tr></thead>");
+            sb.Append("<tbody class='table-light'");
+            sb.Append("<tr>");
+            foreach (var i in secondLatestData.OrderBy(x => Convert.ToInt32(x.LotNumber)))
             {
-                sb.Append("<td colspan='6'>" + i.ToShortDateString() + "</td>");
+                if (Convert.ToInt32(i.LotNumber) > 0 && Convert.ToInt32(i.LotNumber) <= 7)
+                {
+                    sb.Append(string.Format("<td class='{0}'>{1}</td>", "Do", i.LotNumber));
+                }
+                else
+                if (Convert.ToInt32(i.LotNumber) > 7 && Convert.ToInt32(i.LotNumber) <= 15)
+                {
+                    sb.Append(string.Format("<td class='{0}'>{1}</td>", "Cam", i.LotNumber));
+                }
+                else
+                if (Convert.ToInt32(i.LotNumber) > 15 && Convert.ToInt32(i.LotNumber) <= 23)
+                {
+                    sb.Append(string.Format("<td class='{0}'>{1}</td>", "Vang", i.LotNumber));
+                }
+                else
+                if (Convert.ToInt32(i.LotNumber) > 23 && Convert.ToInt32(i.LotNumber) <= 31)
+                {
+                    sb.Append(string.Format("<td class='{0}'>{1}</td>", "Luc", i.LotNumber));
+                }
+                else
+                if (Convert.ToInt32(i.LotNumber) > 31 && Convert.ToInt32(i.LotNumber) <= 39)
+                {
+                    sb.Append(string.Format("<td class='{0}'>{1}</td>", "Lam", i.LotNumber));
+                }
+                else
+                if (Convert.ToInt32(i.LotNumber) > 39 && Convert.ToInt32(i.LotNumber) <= 47)
+                {
+                    sb.Append(string.Format("<td class='{0}'>{1}</td>", "Cham", i.LotNumber));
+                }
             }
+            sb.Append("</tr>");
+            sb.Append("</tbody>");
+            sb.Append("</table>");
+            sb.Append("</div>");
+
+            sb.Append("<div class='col-12'>");
+            sb.Append("<h6>+ Thực tế </h6>");
+            sb.Append("</div>");
+            sb.Append("<div class='col-12'>");
+            sb.Append("<table class='table table-secondary table-bordered TableData'>" +
+                "<thead class='table-dark'><tr class='text-info'>");
+            sb.Append("<td colspan='6'>" + latestData.First().DatePublish.ToShortDateString() + "</td>");
+            sb.Append("</tr></thead>");
+            sb.Append("<tbody class='table-light'");
+            sb.Append("<tr>");
+            foreach (var i in latestData.OrderBy(x => Convert.ToInt32(x.LotNumber)))
+            {
+                if (Convert.ToInt32(i.LotNumber) > 0 && Convert.ToInt32(i.LotNumber) <= 7)
+                {
+                    sb.Append(string.Format("<td class='{0}'>{1}</td>", "Do", i.LotNumber));
+                }
+                else
+                if (Convert.ToInt32(i.LotNumber) > 7 && Convert.ToInt32(i.LotNumber) <= 15)
+                {
+                    sb.Append(string.Format("<td class='{0}'>{1}</td>", "Cam", i.LotNumber));
+                }
+                else
+                if (Convert.ToInt32(i.LotNumber) > 15 && Convert.ToInt32(i.LotNumber) <= 23)
+                {
+                    sb.Append(string.Format("<td class='{0}'>{1}</td>", "Vang", i.LotNumber));
+                }
+                else
+                if (Convert.ToInt32(i.LotNumber) > 23 && Convert.ToInt32(i.LotNumber) <= 31)
+                {
+                    sb.Append(string.Format("<td class='{0}'>{1}</td>", "Luc", i.LotNumber));
+                }
+                else
+                if (Convert.ToInt32(i.LotNumber) > 31 && Convert.ToInt32(i.LotNumber) <= 39)
+                {
+                    sb.Append(string.Format("<td class='{0}'>{1}</td>", "Lam", i.LotNumber));
+                }
+                else
+                if (Convert.ToInt32(i.LotNumber) > 39 && Convert.ToInt32(i.LotNumber) <= 47)
+                {
+                    sb.Append(string.Format("<td class='{0}'>{1}</td>", "Cham", i.LotNumber));
+                }
+            }
+            sb.Append("</tr>");
+            sb.Append("</tbody>");
+            sb.Append("</table>");
+            sb.Append("</div>");
+
+            sb.Append("<div class='col-12'>");
+            sb.Append("<h6>+ Dự đoán</h6>");
+            sb.Append("</div>");
+            sb.Append("<div class='col-12'>");
+            sb.Append("<table class='table table-secondary table-bordered TableData'>" +
+                "<thead class='table-dark'><tr class='text-info'>");
+            if(dicColorNextAppear.Count > 0)
+                foreach (var i in dicColorNextAppear.Keys)
+                {
+                    sb.Append("<td colspan='6'>" + i.ToShortDateString() + "</td>");
+                }
+            else
+                sb.Append("<td colspan='6'>" + "<i>Không có dữ liệu để dự đoán<i/>" + "</td>");
             sb.Append("</tr></thead>");
             sb.Append("<tbody class='table-light'");
             sb.Append("<tr>");
@@ -2030,7 +2128,7 @@ namespace WebAppLottery.Controllers
             {
                 foreach (var j in dicColorNextAppear[i])
                 {
-                    sb.Append(string.Format("<td class='{0}'></td>", j));
+                    sb.Append(string.Format("<td class='{0}'>{1}</td>", j.Split('_')[0], j.Split('_')[1]));
                 }
             }
             sb.Append("</tr>");
@@ -2078,9 +2176,9 @@ namespace WebAppLottery.Controllers
 
         public ActionResult DuDoan655()
         {
-
             string cacSo = null;
-            var latestData = _6Over55TimeLine.GetLatest6Over55Number();           
+            var latestData = _6Over55TimeLine.GetLatest6Over55Number();
+            var secondLatestData = _6Over55TimeLine.GetSecondLatest6Over55Number();
             List<string> lstNextAppearData = new List<string>();
             foreach (var i in latestData)
             {
@@ -2516,15 +2614,122 @@ namespace WebAppLottery.Controllers
             sb.Append("<div class='container-fluid'>");
 
             sb.Append("<div class='col-12'>");
-            sb.Append("<h6>+ Màu xuất hiện kế tiếp</h6>");
+            sb.Append("<h6>+ Thực tế </h6>");
             sb.Append("</div>");
             sb.Append("<div class='col-12'>");
             sb.Append("<table class='table table-secondary table-bordered TableData'>" +
                 "<thead class='table-dark'><tr class='text-info'>");
-            foreach (var i in dicColorNextAppear.Keys)
+            sb.Append("<td colspan='7'>" + secondLatestData.First().DatePublish.ToShortDateString() + "</td>");
+            sb.Append("</tr></thead>");
+            sb.Append("<tbody class='table-light'");
+            sb.Append("<tr>");
+            foreach (var i in secondLatestData.OrderBy(x => Convert.ToInt32(x.LotNumber)))
             {
-                sb.Append("<td colspan='7'>" + i.ToShortDateString() + "</td>");
+                if (Convert.ToInt32(i.LotNumber) > 0 && Convert.ToInt32(i.LotNumber) <= 7)
+                {
+                    sb.Append(string.Format("<td class='{0}'>{1}</td>", "Do", i.LotNumber));
+                }
+                else
+                if (Convert.ToInt32(i.LotNumber) > 7 && Convert.ToInt32(i.LotNumber) <= 15)
+                {
+                    sb.Append(string.Format("<td class='{0}'>{1}</td>", "Cam", i.LotNumber));
+                }
+                else
+                if (Convert.ToInt32(i.LotNumber) > 15 && Convert.ToInt32(i.LotNumber) <= 23)
+                {
+                    sb.Append(string.Format("<td class='{0}'>{1}</td>", "Vang", i.LotNumber));
+                }
+                else
+                if (Convert.ToInt32(i.LotNumber) > 23 && Convert.ToInt32(i.LotNumber) <= 31)
+                {
+                    sb.Append(string.Format("<td class='{0}'>{1}</td>", "Luc", i.LotNumber));
+                }
+                else
+                if (Convert.ToInt32(i.LotNumber) > 31 && Convert.ToInt32(i.LotNumber) <= 39)
+                {
+                    sb.Append(string.Format("<td class='{0}'>{1}</td>", "Lam", i.LotNumber));
+                }
+                else
+                if (Convert.ToInt32(i.LotNumber) > 39 && Convert.ToInt32(i.LotNumber) <= 47)
+                {
+                    sb.Append(string.Format("<td class='{0}'>{1}</td>", "Cham", i.LotNumber));
+                }
+                else
+                if (Convert.ToInt32(i.LotNumber) > 47 && Convert.ToInt32(i.LotNumber) <= 55)
+                {
+                    sb.Append(string.Format("<td class='{0}'>{1}</td>", "Tim", i.LotNumber));
+                }
             }
+            sb.Append("</tr>");
+            sb.Append("</tbody>");
+            sb.Append("</table>");
+            sb.Append("</div>");
+
+            sb.Append("<div class='col-12'>");
+            sb.Append("<h6>+ Thực tế </h6>");
+            sb.Append("</div>");
+            sb.Append("<div class='col-12'>");
+            sb.Append("<table class='table table-secondary table-bordered TableData'>" +
+                "<thead class='table-dark'><tr class='text-info'>");
+            sb.Append("<td colspan='7'>" + latestData.First().DatePublish.ToShortDateString() + "</td>");
+            sb.Append("</tr></thead>");
+            sb.Append("<tbody class='table-light'");
+            sb.Append("<tr>");
+            foreach (var i in latestData.OrderBy(x => Convert.ToInt32(x.LotNumber)))
+            {
+                if (Convert.ToInt32(i.LotNumber) > 0 && Convert.ToInt32(i.LotNumber) <= 7)
+                {
+                    sb.Append(string.Format("<td class='{0}'>{1}</td>", "Do", i.LotNumber));
+                }
+                else
+                if (Convert.ToInt32(i.LotNumber) > 7 && Convert.ToInt32(i.LotNumber) <= 15)
+                {
+                    sb.Append(string.Format("<td class='{0}'>{1}</td>", "Cam", i.LotNumber));
+                }
+                else
+                if (Convert.ToInt32(i.LotNumber) > 15 && Convert.ToInt32(i.LotNumber) <= 23)
+                {
+                    sb.Append(string.Format("<td class='{0}'>{1}</td>", "Vang", i.LotNumber));
+                }
+                else
+                if (Convert.ToInt32(i.LotNumber) > 23 && Convert.ToInt32(i.LotNumber) <= 31)
+                {
+                    sb.Append(string.Format("<td class='{0}'>{1}</td>", "Luc", i.LotNumber));
+                }
+                else
+                if (Convert.ToInt32(i.LotNumber) > 31 && Convert.ToInt32(i.LotNumber) <= 39)
+                {
+                    sb.Append(string.Format("<td class='{0}'>{1}</td>", "Lam", i.LotNumber));
+                }
+                else
+                if (Convert.ToInt32(i.LotNumber) > 39 && Convert.ToInt32(i.LotNumber) <= 47)
+                {
+                    sb.Append(string.Format("<td class='{0}'>{1}</td>", "Cham", i.LotNumber));
+                }
+                else
+                if (Convert.ToInt32(i.LotNumber) > 47 && Convert.ToInt32(i.LotNumber) <= 55)
+                {
+                    sb.Append(string.Format("<td class='{0}'>{1}</td>", "Tim", i.LotNumber));
+                }
+            }
+            sb.Append("</tr>");
+            sb.Append("</tbody>");
+            sb.Append("</table>");
+            sb.Append("</div>");
+
+            sb.Append("<div class='col-12'>");
+            sb.Append("<h6>+ Dự đoán</h6>");
+            sb.Append("</div>");
+            sb.Append("<div class='col-12'>");
+            sb.Append("<table class='table table-secondary table-bordered TableData'>" +
+                "<thead class='table-dark'><tr class='text-info'>");
+            if(dicColorNextAppear.Count>0)
+                foreach (var i in dicColorNextAppear.Keys)
+                {               
+                    sb.Append("<td colspan='7'>" + i.ToShortDateString() + "</td>");                                   
+                }
+            else
+                sb.Append("<td colspan='7'>" + "<i>Không có dữ liệu để dự đoán<i/>" + "</td>");
             sb.Append("</tr></thead>");
             sb.Append("<tbody class='table-light'");
             sb.Append("<tr>");
@@ -2532,7 +2737,7 @@ namespace WebAppLottery.Controllers
             {
                 foreach (var j in dicColorNextAppear[i])
                 {
-                    sb.Append(string.Format("<td class='{0}'></td>", j));
+                    sb.Append(string.Format("<td class='{0}'>{1}</td>", j.Split('_')[0], j.Split('_')[1]));
                 }
             }
             sb.Append("</tr>");

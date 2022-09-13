@@ -44,13 +44,17 @@
 
                                         <a onclick="DuDoan655()" title="Dự đoán 6/55" class="dropdown-item dropdown text-decoration-none HeaderLinkColor">Dự đoán 6/55</a>
 
+                                        <a onclick="ThongKeDuDoan655()" title="Thống kê Dự đoán 6/55" class="dropdown-item dropdown text-decoration-none HeaderLinkColor">Thống Kê Dự đoán 6/55</a>
+
                                     }
                                     else if (Model.ListLoaiVe == WebAppLottery.Models.IndexPageModel.LoaiVe._6Over45)
                                     {
                                         <a href="https://vietlott.vn/vi/trung-thuong/ket-qua-trung-thuong/winning-number-645"
                                            title="Đi đến trang Vietlott 6/45" target="_blank" class="dropdown-item dropdown text-decoration-none HeaderLinkColor">6/45 trên Vietlott website</a>
 
-                                        <a onclick="DuDoan645()" title="Dự đoán 6/55" class="dropdown-item dropdown text-decoration-none HeaderLinkColor">Dự đoán 6/45</a>
+                                        <a onclick="DuDoan645()" title="Dự đoán 6/45" class="dropdown-item dropdown text-decoration-none HeaderLinkColor">Dự đoán 6/45</a>
+
+                                        <a onclick="ThongKeDuDoan645()" title="Thống Kê Dự đoán 6/45" class="dropdown-item dropdown text-decoration-none HeaderLinkColor">Thống Kê Dự đoán 6/45</a>
                                     }
                                     else if (Model.ListLoaiVe == WebAppLottery.Models.IndexPageModel.LoaiVe._Keno)
                                     {
@@ -156,7 +160,7 @@
     @Scripts.Render("~/bundles/bootstrap")
     @RenderSection("scripts", required: false)
 
-<script>
+    <script>
     $(document).ready(function () {
         $("#ListLoaiVe").addClass('LoaiVe100');
         if (!!$('#HiddenFrom').val())
@@ -263,7 +267,7 @@
         });
     }
 
-    function DuDoan655() {          
+    function DuDoan655() {
         $.ajax({
             url: '@Url.Action("DuDoan655", "Home")',
             dataType: 'json',
@@ -285,7 +289,49 @@
     }
 
 
-</script>
+    function ThongKeDuDoan645() {
+        $.ajax({
+            url: '@Url.Action("ThongKeDuDoan645", "Home")',
+            dataType: 'json',
+            type: 'Get',
+            contentType: 'application/json; charset=utf-8',
+            async: true,
+            processData: false,
+            cache: false,
+            success: function (data) {
+                $('#modaltitleThongKeDuDoan').text('THỐNG KÊ DỰ ĐOÁN 6/45');
+                $('#modalbodyThongKeDuDoan').html(data);
+                // show modal
+                $('#modalThongKeDuDoan').modal('show');
+            },
+            error: function (xhr) {
+                alert('error');
+            }
+        });
+        }
+
+    function ThongKeDuDoan655() {
+        $.ajax({
+            url: '@Url.Action("ThongKeDuDoan655", "Home")',
+            dataType: 'json',
+            type: 'Get',
+            contentType: 'application/json; charset=utf-8',
+            async: true,
+            processData: false,
+            cache: false,
+            success: function (data) {
+                $('#modaltitleThongKeDuDoan').text('THỐNG KÊ DỰ ĐOÁN 6/55');
+                $('#modalbodyThongKeDuDoan').html(data);
+                // show modal
+                $('#modalThongKeDuDoan').modal('show');
+            },
+            error: function (xhr) {
+                alert('error');
+            }
+        });
+    }
+
+    </script>
     <!--===============================================================================================-->
     <script src="~/js/main.js"></script>
     <script src="~/js/moment.js"></script>
@@ -357,6 +403,22 @@
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body" id="modalbodyDuDoan"></div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Thong Ke Du Doan FULLSCREEN MODAL -->
+    <div class="modal fade" id="modalThongKeDuDoan" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="ThongKeDuDoan" aria-hidden="true">
+        <div class="modal-dialog modal-fullscreen">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="modaltitleThongKeDuDoan">Thống Kê Dự Đoán</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body" id="modalbodyThongKeDuDoan"></div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
                 </div>
