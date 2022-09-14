@@ -1211,6 +1211,11 @@ namespace LotteryBusiness
             return dicNumberNotAppearMoreThan20.OrderByDescending(x => x.Value).ToDictionary(x => x.Key, x => x.Value);
         }
 
+        public static List<NumbersNextAppear> GetNumbersNextAppearLeadOffset(int leadOffset, int @numberTypeId, int numberWinLevelId)
+        {
+            return Common.GetNumbersNextAppear(leadOffset, numberTypeId, numberWinLevelId);
+        }
+
         public static void CreateBoughtNumber(List<int> number, DateTime dateBought, short numberType, short numberWinLevel)
         {
             Common.CreateBoughtNumber(number, dateBought, (Int16)Enum_NumberType._6Over55, (Int16)Enum_NumberWinLevel.DacBiet);

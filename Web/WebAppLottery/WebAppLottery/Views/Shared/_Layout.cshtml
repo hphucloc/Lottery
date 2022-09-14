@@ -329,12 +329,16 @@
             url: '@Url.Action("ThongKeDuDoan645", "Home")',
             dataType: 'json',
             type: 'Get',
+            data: {
+                from: $('#From').val(),
+                to: $('#To').val(),
+            },
             contentType: 'application/json; charset=utf-8',
             async: true,
-            processData: false,
+            processData: true,
             cache: false,
             success: function (data) {
-                $('#modaltitleThongKeDuDoan').text('THỐNG KÊ DỰ ĐOÁN 6/45');
+                $('#modaltitleThongKeDuDoan').text('THỐNG KÊ DỰ ĐOÁN 6/45');               
                 $('#modalbodyThongKeDuDoan').html(data);
                 // show modal
                 $('#modalThongKeDuDoan').modal('show');
@@ -350,9 +354,13 @@
             url: '@Url.Action("ThongKeDuDoan655", "Home")',
             dataType: 'json',
             type: 'Get',
+            data: {
+                from: $('#From').val(),
+                to: $('#To').val(),
+            },
             contentType: 'application/json; charset=utf-8',
             async: true,
-            processData: false,
+            processData: true,
             cache: false,
             success: function (data) {
                 $('#modaltitleThongKeDuDoan').text('THỐNG KÊ DỰ ĐOÁN 6/55');

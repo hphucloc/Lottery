@@ -2897,16 +2897,28 @@ namespace WebAppLottery.Controllers
             return Json(sb.ToString(), JsonRequestBehavior.AllowGet);
         }
         [HttpGet]
-        public ActionResult ThongKeDuDoan645()
+        public ActionResult ThongKeDuDoan645(string from, string to)
         {
             StringBuilder sb = new StringBuilder();
 
+            DateTime fromDate = Convert.ToDateTime(from, CultureInfo.InvariantCulture);
+            DateTime toDate = Convert.ToDateTime(to, CultureInfo.InvariantCulture);
+
+            var fullDataWithNextAppear = _6Over45TimeLine.GetNumbersNextAppearLeadOffset(6, 1, 1).ToList();
+            var filterDataWithNextAppear = fullDataWithNextAppear.Where(x => x.DatePublish >= fromDate && x.DatePublish <= toDate).ToList();
+            
             return Json(sb.ToString(), JsonRequestBehavior.AllowGet);
         }
         [HttpGet]
-        public ActionResult ThongKeDuDoan655()
+        public ActionResult ThongKeDuDoan655(string from, string to)
         {
             StringBuilder sb = new StringBuilder();
+
+            DateTime fromDate = Convert.ToDateTime(from, CultureInfo.InvariantCulture);
+            DateTime toDate = Convert.ToDateTime(to, CultureInfo.InvariantCulture);
+
+            var fullDataWithNextAppear = _6Over45TimeLine.GetNumbersNextAppearLeadOffset(7, 3, 1).ToList();
+            var filterDataWithNextAppear = fullDataWithNextAppear.Where(x => x.DatePublish >= fromDate && x.DatePublish <= toDate).ToList();
 
             return Json(sb.ToString(), JsonRequestBehavior.AllowGet);
         }
@@ -3084,5 +3096,7 @@ namespace WebAppLottery.Controllers
 
             return View("Data", m);
         }
+
+       
     }
 }
