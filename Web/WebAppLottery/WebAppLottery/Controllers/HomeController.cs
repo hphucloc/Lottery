@@ -1986,10 +1986,13 @@ namespace WebAppLottery.Controllers
             sb.Append("<div class='col-12'>");
             sb.Append("<table class='table table-secondary table-striped table-bordered TableData'>" +
                 "<thead class='table-dark'><tr class='text-info'>");
+            if(dicNumberNextAppearExactly.Count>0)
             foreach (var i in dicNumberNextAppearExactly.Keys)
             {
                 sb.Append("<td colspan='6'>" + i.ToShortDateString() + "</td>");
             }
+            else
+                sb.Append("<td colspan='6'>" + "<i>Không có dữ liệu để dự đoán</i>" + "</td>");            
             sb.Append("</tr></thead>");
             sb.Append("<tbody>");
             sb.Append("<tr>");
@@ -2011,6 +2014,7 @@ namespace WebAppLottery.Controllers
             sb.Append("</div>");
 
             var dicColorNextAppear = _6Over45TimeLine.GetColorNextAppear();           
+            var dicColorNextAppear2 = _6Over45TimeLine.GetColorNextAppear2();
             sb.Append("<h5>III/ Chiến thuật 3</h5>");
             sb.Append("<div class='container-fluid'>");
 
@@ -2056,6 +2060,59 @@ namespace WebAppLottery.Controllers
                     sb.Append(string.Format("<td class='{0}'>{1}</td>", "Cham", i.LotNumber));
                 }
             }
+            sb.Append("</tr>");
+            sb.Append("</tbody>");
+            sb.Append("</table>");
+            sb.Append("</div>");
+
+            sb.Append("<div class='col-12'>");
+            sb.Append("<h6>+ Đã Dự đoán</h6>");
+            sb.Append("</div>");
+            sb.Append("<div class='col-12'>");
+            sb.Append("<table class='table table-secondary table-bordered TableData'>" +
+                "<thead class='table-dark'><tr class='text-info'>");
+            //Remove last element because it is next publish
+            if (dicColorNextAppear2.Count > 0)
+                dicColorNextAppear2.Remove(dicColorNextAppear2.Keys.Last());
+            if (dicColorNextAppear2.Count > 0)
+            {                
+                foreach (var i in dicColorNextAppear2.Keys)
+                {
+                    sb.Append("<td colspan='6'>" + i.ToShortDateString() + "</td>");
+                }
+            }
+            else
+                sb.Append("<td colspan='6'>" + "<i>Không có dữ liệu để dự đoán<i/>" + "</td>");
+            sb.Append("</tr></thead>");
+            sb.Append("<tbody class='table-light'");
+            sb.Append("<tr>");
+            
+            foreach (var i in dicColorNextAppear2.Keys)
+            {
+                foreach (var j in dicColorNextAppear2[i])
+                {
+                    sb.Append(string.Format("<td class='{0}'>{1}</td>", j.Split('_')[0], j.Split('_')[1]));
+                }
+            }
+            sb.Append("</tr>");
+            sb.Append("</tbody>");
+            sb.Append("</table>");
+            sb.Append("</div>");
+
+            sb.Append("<div class='col-12'>");
+            sb.Append("<h6>+ Đã mua </h6>");
+            sb.Append("</div>");
+            sb.Append("<div class='col-12'>");
+            sb.Append("<table class='table table-secondary table-bordered TableData'>" +
+                "<thead class='table-dark'><tr class='text-info'>");
+            //sb.Append("<td colspan='6'> <input class='form-control text-box single-line' data-val='true' data-val-date='The field From must be a date.' id='NgayMua' name='NgayMua' type='date' value='" + DateTime.Now.ToShortDateString() + "'/> </td>");
+            sb.Append("</tr></thead>");
+            sb.Append("<tbody class='table-light'");
+            sb.Append("<tr>");
+            for (var i = 0; i < 6; i++)
+            {
+                sb.Append("<td class='Den'> <input class='form-control roundedcorner' maxlength='2' type='text' onchange='setColor(this)'/> </td>");
+            }              
             sb.Append("</tr>");
             sb.Append("</tbody>");
             sb.Append("</table>");
@@ -2173,7 +2230,7 @@ namespace WebAppLottery.Controllers
 
             return Json(sb.ToString(), JsonRequestBehavior.AllowGet);
         }
-
+        [HttpGet]
         public ActionResult DuDoan655()
         {
             string cacSo = null;
@@ -2585,11 +2642,15 @@ namespace WebAppLottery.Controllers
             sb.Append("<div class='col-12'>");
             sb.Append("<table class='table table-secondary table-striped table-bordered TableData'>" +
                 "<thead class='table-dark'><tr class='text-info'>");
+            if(dicNumberNextAppearExactly.Count>0)
             foreach (var i in dicNumberNextAppearExactly.Keys)
             {
                 sb.Append("<td colspan='7'>" + i.ToShortDateString() + "</td>");
             }
-            sb.Append("</tr></thead>");
+            else
+                sb.Append("<td colspan='7'>" + "<i>Không có dữ liệu để dự đoán</i>" + "</td>");
+                
+               sb.Append("</tr></thead>");
             sb.Append("<tbody>");
             sb.Append("<tr>");
             foreach (var i in dicNumberNextAppearExactly.Keys)
@@ -2610,6 +2671,7 @@ namespace WebAppLottery.Controllers
             sb.Append("</div>");
 
             var dicColorNextAppear = _6Over55TimeLine.GetColorNextAppear();
+            var dicColorNextAppear2 = _6Over55TimeLine.GetColorNextAppear2();
             sb.Append("<h5>III/ Chiến thuật 3</h5>");
             sb.Append("<div class='container-fluid'>");
 
@@ -2659,6 +2721,58 @@ namespace WebAppLottery.Controllers
                 {
                     sb.Append(string.Format("<td class='{0}'>{1}</td>", "Tim", i.LotNumber));
                 }
+            }
+            sb.Append("</tr>");
+            sb.Append("</tbody>");
+            sb.Append("</table>");
+            sb.Append("</div>");
+
+            sb.Append("<div class='col-12'>");
+            sb.Append("<h6>+ Dự đoán</h6>");
+            sb.Append("</div>");
+            sb.Append("<div class='col-12'>");
+            sb.Append("<table class='table table-secondary table-bordered TableData'>" +
+                "<thead class='table-dark'><tr class='text-info'>");
+            //Remove last element because it is next publish
+            if (dicColorNextAppear2.Count > 0)
+                dicColorNextAppear2.Remove(dicColorNextAppear2.Keys.Last());
+            if (dicColorNextAppear2.Count > 0)
+            {               
+                foreach (var i in dicColorNextAppear2.Keys)
+                {
+                    sb.Append("<td colspan='7'>" + i.ToShortDateString() + "</td>");
+                }
+            }
+            else
+                sb.Append("<td colspan='7'>" + "<i>Không có dữ liệu để dự đoán</i>" + "</td>");
+            sb.Append("</tr></thead>");
+            sb.Append("<tbody class='table-light'");
+            sb.Append("<tr>");
+            foreach (var i in dicColorNextAppear2.Keys)
+            {
+                foreach (var j in dicColorNextAppear2[i])
+                {
+                    sb.Append(string.Format("<td class='{0}'>{1}</td>", j.Split('_')[0], j.Split('_')[1]));
+                }
+            }
+            sb.Append("</tr>");
+            sb.Append("</tbody>");
+            sb.Append("</table>");
+            sb.Append("</div>");
+
+            sb.Append("<div class='col-12'>");
+            sb.Append("<h6>+ Đã mua </h6>");
+            sb.Append("</div>");
+            sb.Append("<div class='col-12'>");
+            sb.Append("<table class='table table-secondary table-bordered TableData'>" +
+                "<thead class='table-dark'><tr class='text-info'>");
+            //sb.Append("<td colspan='7'> <input class='form-control text-box single-line' data-val='true' data-val-date='The field From must be a date.' id='NgayMua' name='NgayMua' type='date' value='" + DateTime.Now.ToShortDateString() + "'/> </td>");
+            sb.Append("</tr></thead>");
+            sb.Append("<tbody class='table-light'");
+            sb.Append("<tr>");
+            for (var i = 0; i < 7; i++)
+            {
+                sb.Append("<td class='Den'> <input class='form-control roundedcorner' maxlength='2' type='text' onchange='setColor(this)'/> </td>");
             }
             sb.Append("</tr>");
             sb.Append("</tbody>");
@@ -2779,6 +2893,20 @@ namespace WebAppLottery.Controllers
             sb.Append("</div>");
 
             sb.Append("</div>");
+
+            return Json(sb.ToString(), JsonRequestBehavior.AllowGet);
+        }
+        [HttpGet]
+        public ActionResult ThongKeDuDoan645()
+        {
+            StringBuilder sb = new StringBuilder();
+
+            return Json(sb.ToString(), JsonRequestBehavior.AllowGet);
+        }
+        [HttpGet]
+        public ActionResult ThongKeDuDoan655()
+        {
+            StringBuilder sb = new StringBuilder();
 
             return Json(sb.ToString(), JsonRequestBehavior.AllowGet);
         }

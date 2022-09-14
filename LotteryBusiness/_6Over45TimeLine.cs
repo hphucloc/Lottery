@@ -488,7 +488,10 @@ namespace LotteryBusiness
 
             return dicColorNextAppear;
         }
-
+        /// <summary>
+        ///  Get color appear of previuos publish
+        /// </summary>
+        /// <returns></returns>
         public static Dictionary<DateTime, List<string>> GetColorNextAppear2()
         {
             /* 1/ Xac dinh mau cua lastestNumber
@@ -500,7 +503,7 @@ namespace LotteryBusiness
 
             List<DateTime> lstNextDateAppear = new List<DateTime>();
             var data = Common.GetNumbersNextAppear(6, 1, 1);
-            var latestNumber = GetLatest6Over45Number().OrderBy(x => Convert.ToInt32(x.LotNumber)).ToList();
+            var latestNumber = GetSecondLatest6Over45Number().OrderBy(x => Convert.ToInt32(x.LotNumber)).ToList();
 
             string s1 = null, s2 = null, s3 = null, s4 = null, s5 = null, s6 = null;
             for (var i = 0; i < latestNumber.Count(); i++)

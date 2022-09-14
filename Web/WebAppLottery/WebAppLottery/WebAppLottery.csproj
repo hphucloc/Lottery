@@ -243,7 +243,9 @@
     <Content Include="Content\bootstrap-grid.min.css.map" />
     <Content Include="Content\bootstrap-grid.css.map" />
     <Content Include="Scripts\bootstrap4-toggle.min.js" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Views\Home\Keno.cshtml" />
     <Content Include="Views\Shared\_ChanLeLonNho.cshtml" />
     <Content Include="Views\Shared\_GroupNumberStatistic3DMax.cshtml" />

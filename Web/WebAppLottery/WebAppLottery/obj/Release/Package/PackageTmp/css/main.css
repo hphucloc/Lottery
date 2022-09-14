@@ -639,7 +639,7 @@ input.input100 {
 }
 
 .Luc {
-    --bs-table-bg: rgb(0,255,0);
+    --bs-table-bg: #00FF00;
     --bs-table-striped-bg: #eccccf;
     --bs-table-striped-color: #000;
     --bs-table-active-bg: #dfc2c4;
@@ -754,4 +754,17 @@ input.input100 {
     border-bottom: 1px solid #999999;
     -moz-border-radius: 8px;
     -webkit-border-radius: 8px;
-}  
+}
+
+.Den {
+    --bs-table-bg: #000;
+    --bs-table-striped-bg: #eccccf;
+    --bs-table-striped-color: #000;
+    --bs-table-active-bg: #dfc2c4;
+    --bs-table-active-color: #000;
+    --bs-table-hover-bg: #e5c7ca;
+    --bs-table-hover-color: #000;
+    color: #000000;
+    border-color: #000000;
+    cursor: pointer;
+}

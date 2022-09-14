@@ -44,13 +44,17 @@
 
                                         <a onclick="DuDoan655()" title="Dự đoán 6/55" class="dropdown-item dropdown text-decoration-none HeaderLinkColor">Dự đoán 6/55</a>
 
+                                        @*<a onclick="ThongKeDuDoan655()" title="Thống kê Dự đoán 6/55" class="dropdown-item dropdown text-decoration-none HeaderLinkColor">Thống kê dự đoán 6/55</a>*@
+
                                     }
                                     else if (Model.ListLoaiVe == WebAppLottery.Models.IndexPageModel.LoaiVe._6Over45)
                                     {
                                         <a href="https://vietlott.vn/vi/trung-thuong/ket-qua-trung-thuong/winning-number-645"
                                            title="Đi đến trang Vietlott 6/45" target="_blank" class="dropdown-item dropdown text-decoration-none HeaderLinkColor">6/45 trên Vietlott website</a>
 
-                                        <a onclick="DuDoan645()" title="Dự đoán 6/55" class="dropdown-item dropdown text-decoration-none HeaderLinkColor">Dự đoán 6/45</a>
+                                        <a onclick="DuDoan645()" title="Dự đoán 6/45" class="dropdown-item dropdown text-decoration-none HeaderLinkColor">Dự đoán 6/45</a>
+
+                                        @*<a onclick="ThongKeDuDoan645()" title="Thống Kê Dự đoán 6/45" class="dropdown-item dropdown text-decoration-none HeaderLinkColor">Thống kê dự đoán 6/45</a>*@
                                     }
                                     else if (Model.ListLoaiVe == WebAppLottery.Models.IndexPageModel.LoaiVe._Keno)
                                     {
@@ -85,89 +89,99 @@
     </div>
     @using (Html.BeginForm("Request", "Home", FormMethod.Post))
     {
-        <div class="bg-img1 size1 flex-w flex-c-m p-t-55 p-b-55 p-l-15 p-r-15"
-             style="background-image: url('../../images/bg02.jpg');">
-            <div class="wsize1 bor1 bg-light p-t-11 p-b-1 p-l-15 p-r-15 respon1 d-flex justify-content-center border border-info">
-                <div class="wsize5">
-                    @Html.Partial("_RequestHeader", Model)
+<div class="bg-img1 size1 flex-w flex-c-m p-t-55 p-b-55 p-l-15 p-r-15"
+     style="background-image: url('../../images/bg00.jpg');">
+     @*style="background-color: black;">*@
+    <div class="wsize1 bor1 bg-light p-t-11 p-b-1 p-l-15 p-r-15 respon1 d-flex justify-content-center border border-info">
+        <div class="wsize5">
+            @Html.Partial("_RequestHeader", Model)
+        </div>
+    </div>
+
+    @if (Model.Data != null || Model.OriginalData != null) //Home page
+    {
+        if (Model.ListLoaiVe == WebAppLottery.Models.IndexPageModel.LoaiVe._6Over45 ||           
+             Model.ListLoaiVe == WebAppLottery.Models.IndexPageModel.LoaiVe._Keno)
+        {
+            <div class="wsize1 bor1 bg1 p-t-1 p-b-1 p-l-15 p-r-15 respon1 d-flex justify-content-start border border-info">
+                <div class="wsize3">
+                    @Html.Partial("_GroupNumberStatistic", Model)
                 </div>
             </div>
-
-            @if (Model.Data != null || Model.OriginalData != null) //Home page
-            {
-                if (Model.ListLoaiVe == WebAppLottery.Models.IndexPageModel.LoaiVe._6Over45 ||
-                     Model.ListLoaiVe == WebAppLottery.Models.IndexPageModel.LoaiVe._6Over55 ||
-                     Model.ListLoaiVe == WebAppLottery.Models.IndexPageModel.LoaiVe._Keno)
-                {
-                    <div class="wsize1 bor1 bg1 p-t-1 p-b-1 p-l-15 p-r-15 respon1 d-flex justify-content-start border border-info">
-                        <div class="wsize3">
-                            @Html.Partial("_GroupNumberStatistic", Model)
-                        </div>
-                    </div>
-                }
-                else if (Model.ListLoaiVe == WebAppLottery.Models.IndexPageModel.LoaiVe._3DMax ||
-                    Model.ListLoaiVe == WebAppLottery.Models.IndexPageModel.LoaiVe._3DMaxPro)
-                {
-                    @Html.Partial("_GroupNumberStatistic3DMax", Model)
-                }
+        }
+        else
+        if (Model.ListLoaiVe == WebAppLottery.Models.IndexPageModel.LoaiVe._6Over55)           
+        {
+            <div class="wsize1 bor1 bg1 p-t-1 p-b-1 p-l-15 p-r-15 respon1 d-flex justify-content-start border border-info">
+                <div class="wsize3" style="height:500px">
+                    @Html.Partial("_GroupNumberStatistic", Model)
+                </div>
+            </div>
+        }
+        else if (Model.ListLoaiVe == WebAppLottery.Models.IndexPageModel.LoaiVe._3DMax ||
+            Model.ListLoaiVe == WebAppLottery.Models.IndexPageModel.LoaiVe._3DMaxPro)
+        {
+            @Html.Partial("_GroupNumberStatistic3DMax", Model)
+        }
 
 
-                if ((Model.ListLoaiVe == WebAppLottery.Models.IndexPageModel.LoaiVe._6Over45 ||
-                         Model.ListLoaiVe == WebAppLottery.Models.IndexPageModel.LoaiVe._6Over55 ||
-                         Model.ListLoaiVe == WebAppLottery.Models.IndexPageModel.LoaiVe._Keno) &&
-                        Model.Data != null && Model.Data.Count > 0)
-                {
-                    <div class="wsize1 bor1 bg1 p-t-1 p-b-1 p-l-15 p-r-15 respon1 d-flex justify-content-start border border-info">
-                        <div class="wsize6">
-                            @RenderBody()
-                        </div>
-                    </div>
-                }
-                else if ((Model.ListLoaiVe == WebAppLottery.Models.IndexPageModel.LoaiVe._3DMax ||
-                    Model.ListLoaiVe == WebAppLottery.Models.IndexPageModel.LoaiVe._3DMaxPro) &&
-                     Model.OriginalData != null && Model.OriginalData.Count > 0)
-                {
+        if ((Model.ListLoaiVe == WebAppLottery.Models.IndexPageModel.LoaiVe._6Over45 ||
+                 Model.ListLoaiVe == WebAppLottery.Models.IndexPageModel.LoaiVe._6Over55 ||
+                 Model.ListLoaiVe == WebAppLottery.Models.IndexPageModel.LoaiVe._Keno) &&
+                Model.Data != null && Model.Data.Count > 0)
+        {
+            <div class="wsize1 bor1 bg1 p-t-1 p-b-1 p-l-15 p-r-15 respon1 d-flex justify-content-start border border-info">
+                <div class="wsize6">
                     @RenderBody()
-                }
-                else
-                {
-                    @RenderBody()
-                }
+                </div>
+            </div>
+        }
+        else if ((Model.ListLoaiVe == WebAppLottery.Models.IndexPageModel.LoaiVe._3DMax ||
+            Model.ListLoaiVe == WebAppLottery.Models.IndexPageModel.LoaiVe._3DMaxPro) &&
+             Model.OriginalData != null && Model.OriginalData.Count > 0)
+        {
+            @RenderBody()
+        }
+        else
+        {
+            @RenderBody()
+        }
 
 
-                if (Model.ListLoaiVe == WebAppLottery.Models.IndexPageModel.LoaiVe._Keno)
-                {
-                    <div class="wsize1 bor1 bg-light p-t-11 p-b-1 p-l-15 p-r-15 respon1 d-flex justify-content-center border border-info">
-                        <div class="wsize7">
-                            @Html.Partial("_ChanLeLonNho", Model)
-                        </div>
-                    </div>
-                }
-            }
-            else
-            {
-                @RenderBody()
-            }
+        if (Model.ListLoaiVe == WebAppLottery.Models.IndexPageModel.LoaiVe._Keno)
+        {
+            <div class="wsize1 bor1 bg-light p-t-11 p-b-1 p-l-15 p-r-15 respon1 d-flex justify-content-center border border-info">
+                <div class="wsize7">
+                    @Html.Partial("_ChanLeLonNho", Model)
+                </div>
+            </div>
+        }
+    }
+    else
+    {
+        @RenderBody()
+    }
 
-        </div>
+</div>
     }
 
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")
     @RenderSection("scripts", required: false)
 
-<script>
+    <script>
     $(document).ready(function () {
         $("#ListLoaiVe").addClass('LoaiVe100');
         if (!!$('#HiddenFrom').val())
             $('#From').val($('#HiddenFrom').val());
         if (!!$('#HiddenTo').val())
             $('#To').val($('#HiddenTo').val());
+      
     });
 
-    function SubmitClick() {
+    function SubmitClick(parent) {
         $('#HiddenFrom').val(null);
-        $('#HiddenTo').val(null);
+        $('#HiddenTo').val(null);             
     }
 
     function LoaiVeOnChange(val) {
@@ -263,7 +277,7 @@
         });
     }
 
-    function DuDoan655() {          
+    function DuDoan655() {
         $.ajax({
             url: '@Url.Action("DuDoan655", "Home")',
             dataType: 'json',
@@ -282,10 +296,77 @@
                 alert('error');
             }
         });
+        }
+
+        function setColor(parent) {
+            if (parseInt($(parent).val()) > 0 && parseInt($(parent).val()) <=7)
+                $(parent).css('background-color', '#ff0000');
+            else
+                if (parseInt($(parent).val()) > 7 && parseInt($(parent).val()) <= 15)
+                $(parent).css('background-color', '#ff7f00');  
+            else
+                if (parseInt($(parent).val()) > 15 && parseInt($(parent).val()) <= 23)
+                    $(parent).css('background-color', '#ffff00');
+            else
+                if (parseInt($(parent).val()) > 23 && parseInt($(parent).val()) <= 31)
+                    $(parent).css('background-color', '#00FF00');  
+            else
+                if (parseInt($(parent).val()) > 31 && parseInt($(parent).val()) <= 39)
+                    $(parent).css('background-color', '#0000ff');  
+            else
+                if (parseInt($(parent).val()) > 39 && parseInt($(parent).val()) <= 47)
+                    $(parent).css('background-color', '#4b0082');
+            else
+                if (parseInt($(parent).val()) > 47 && parseInt($(parent).val()) <= 55)
+                    $(parent).css('background-color', '#8f00ff');
+            else
+                $(parent).css('background-color', '#000000');
+        }
+
+
+    function ThongKeDuDoan645() {
+        $.ajax({
+            url: '@Url.Action("ThongKeDuDoan645", "Home")',
+            dataType: 'json',
+            type: 'Get',
+            contentType: 'application/json; charset=utf-8',
+            async: true,
+            processData: false,
+            cache: false,
+            success: function (data) {
+                $('#modaltitleThongKeDuDoan').text('THỐNG KÊ DỰ ĐOÁN 6/45');
+                $('#modalbodyThongKeDuDoan').html(data);
+                // show modal
+                $('#modalThongKeDuDoan').modal('show');
+            },
+            error: function (xhr) {
+                alert('error');
+            }
+        });
+        }
+
+    function ThongKeDuDoan655() {
+        $.ajax({
+            url: '@Url.Action("ThongKeDuDoan655", "Home")',
+            dataType: 'json',
+            type: 'Get',
+            contentType: 'application/json; charset=utf-8',
+            async: true,
+            processData: false,
+            cache: false,
+            success: function (data) {
+                $('#modaltitleThongKeDuDoan').text('THỐNG KÊ DỰ ĐOÁN 6/55');
+                $('#modalbodyThongKeDuDoan').html(data);
+                // show modal
+                $('#modalThongKeDuDoan').modal('show');
+            },
+            error: function (xhr) {
+                alert('error');
+            }
+        });
     }
 
-
-</script>
+    </script>
     <!--===============================================================================================-->
     <script src="~/js/main.js"></script>
     <script src="~/js/moment.js"></script>
@@ -357,6 +438,22 @@
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body" id="modalbodyDuDoan"></div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Thong Ke Du Doan FULLSCREEN MODAL -->
+    <div class="modal fade" id="modalThongKeDuDoan" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="ThongKeDuDoan" aria-hidden="true">
+        <div class="modal-dialog modal-fullscreen">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="modaltitleThongKeDuDoan">Thống Kê Dự Đoán</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body" id="modalbodyThongKeDuDoan"></div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
                 </div>
