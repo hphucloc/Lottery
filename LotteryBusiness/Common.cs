@@ -246,6 +246,33 @@ namespace LotteryBusiness
                 Db.Database.ExecuteSqlCommand("INSERT INTO dbo.NumberBought(DateBought, LotNumber, NumberTypeId, NumberWinLevelId, CreatedDate) VALUES({0}, {1}, {2}, {3}, {4})",
                     dateBought, i, numberType, numberWinLevel, DateTime.Now);
             }
-        }       
+        }
+
+        public static List<FullLotteryStatistic> ConvertLotNumberToListFullLotteryStatistic(List<LoterryStatistic> data)
+        {
+            var allPublishDate = data[0].AllDatePublishList.OrderBy(x => x.Date);
+            List<FullLotteryStatistic> lstItem = new List<FullLotteryStatistic>();
+            foreach (var i in allPublishDate)
+            {
+                FullLotteryStatistic item = new FullLotteryStatistic()
+                {
+                    PublishDate = i,
+                    Numbers = new List<byte>()
+                };
+                foreach (var j in data)
+                {
+                    foreach (var k in j.DatePublishList.DatePublishList1)
+                    {
+                        if (i.Date == k.Date)
+                        {
+                            item.Numbers.Add(Convert.ToByte(j.LotNumber));
+                        }
+                    }
+                }
+                lstItem.Add(item);
+
+            }
+            return lstItem.OrderByDescending(x => x.PublishDate).ToList();
+        }
     }
 }

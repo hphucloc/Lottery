@@ -488,6 +488,7 @@ namespace LotteryBusiness
 
             return dicColorNextAppear;
         }
+
         /// <summary>
         ///  Get color appear of previuos publish
         /// </summary>
@@ -921,6 +922,434 @@ namespace LotteryBusiness
             return dicColorNextAppear;
         }
 
+        public static Dictionary<FullLotteryStatistic, Dictionary<DateTime, List<string>>> GetColorNextAppear3(DateTime from, DateTime to)
+        {
+            Dictionary<FullLotteryStatistic, Dictionary<DateTime, List<string>>> rVal = new Dictionary<FullLotteryStatistic, Dictionary<DateTime, List<string>>>();
+
+            var data = Common.ConvertLotNumberToListFullLotteryStatistic(Get6Over45Number(from, to));
+            var data2 = Common.GetNumbersNextAppear(6, 1, 1);
+            foreach (var i in data)
+            {
+                string s1 = null, s2 = null, s3 = null, s4 = null, s5 = null, s6 = null;
+                for (var j = 0; j < i.Numbers.Count(); j++)
+                {
+                    switch (j)
+                    {
+                        case 0:
+                            if (Convert.ToInt32(i.Numbers[j]) > 0 && Convert.ToInt32(i.Numbers[j]) <= 7)
+                            {
+                                s1 = "0-7";
+                            }
+                            if (Convert.ToInt32(i.Numbers[j]) > 7 && Convert.ToInt32(i.Numbers[j]) <= 15)
+                            {
+                                s1 = "7-15";
+                            }
+                            if (Convert.ToInt32(i.Numbers[j]) > 15 && Convert.ToInt32(i.Numbers[j]) <= 23)
+                            {
+                                s1 = "15-23";
+                            }
+                            if (Convert.ToInt32(i.Numbers[j]) > 23 && Convert.ToInt32(i.Numbers[j]) <= 31)
+                            {
+                                s1 = "23-31";
+                            }
+                            if (Convert.ToInt32(i.Numbers[j]) > 31 && Convert.ToInt32(i.Numbers[j]) <= 39)
+                            {
+                                s1 = "31-39";
+                            }
+                            if (Convert.ToInt32(i.Numbers[j]) > 39 && Convert.ToInt32(i.Numbers[j]) <= 47)
+                            {
+                                s1 = "39-47";
+                            }
+
+                            break;
+                        case 1:
+                            if (Convert.ToInt32(i.Numbers[j]) > 0 && Convert.ToInt32(i.Numbers[j]) <= 7)
+                            {
+                                s2 = "0-7";
+                            }
+                            if (Convert.ToInt32(i.Numbers[j]) > 7 && Convert.ToInt32(i.Numbers[j]) <= 15)
+                            {
+                                s2 = "7-15";
+                            }
+                            if (Convert.ToInt32(i.Numbers[j]) > 15 && Convert.ToInt32(i.Numbers[j]) <= 23)
+                            {
+                                s2 = "15-23";
+                            }
+                            if (Convert.ToInt32(i.Numbers[j]) > 23 && Convert.ToInt32(i.Numbers[j]) <= 31)
+                            {
+                                s2 = "23-31";
+                            }
+                            if (Convert.ToInt32(i.Numbers[j]) > 31 && Convert.ToInt32(i.Numbers[j]) <= 39)
+                            {
+                                s2 = "31-39";
+                            }
+                            if (Convert.ToInt32(i.Numbers[j]) > 39 && Convert.ToInt32(i.Numbers[j]) <= 47)
+                            {
+                                s2 = "39-47";
+                            }
+                            break;
+                        case 2:
+                            if (Convert.ToInt32(i.Numbers[j]) > 0 && Convert.ToInt32(i.Numbers[j]) <= 7)
+                            {
+                                s3 = "0-7";
+                            }
+                            if (Convert.ToInt32(i.Numbers[j]) > 7 && Convert.ToInt32(i.Numbers[j]) <= 15)
+                            {
+                                s3 = "7-15";
+                            }
+                            if (Convert.ToInt32(i.Numbers[j]) > 15 && Convert.ToInt32(i.Numbers[j]) <= 23)
+                            {
+                                s3 = "15-23";
+                            }
+                            if (Convert.ToInt32(i.Numbers[j]) > 23 && Convert.ToInt32(i.Numbers[j]) <= 31)
+                            {
+                                s3 = "23-31";
+                            }
+                            if (Convert.ToInt32(i.Numbers[j]) > 31 && Convert.ToInt32(i.Numbers[j]) <= 39)
+                            {
+                                s3 = "31-39";
+                            }
+                            if (Convert.ToInt32(i.Numbers[j]) > 39 && Convert.ToInt32(i.Numbers[j]) <= 47)
+                            {
+                                s3 = "39-47";
+                            }
+                            break;
+                        case 3:
+                            if (Convert.ToInt32(i.Numbers[j]) > 0 && Convert.ToInt32(i.Numbers[j]) <= 7)
+                            {
+                                s4 = "0-7";
+                            }
+                            if (Convert.ToInt32(i.Numbers[j]) > 7 && Convert.ToInt32(i.Numbers[j]) <= 15)
+                            {
+                                s4 = "7-15";
+                            }
+                            if (Convert.ToInt32(i.Numbers[j]) > 15 && Convert.ToInt32(i.Numbers[j]) <= 23)
+                            {
+                                s4 = "15-23";
+                            }
+                            if (Convert.ToInt32(i.Numbers[j]) > 23 && Convert.ToInt32(i.Numbers[j]) <= 31)
+                            {
+                                s4 = "23-31";
+                            }
+                            if (Convert.ToInt32(i.Numbers[j]) > 31 && Convert.ToInt32(i.Numbers[j]) <= 39)
+                            {
+                                s4 = "31-39";
+                            }
+                            if (Convert.ToInt32(i.Numbers[j]) > 39 && Convert.ToInt32(i.Numbers[j]) <= 47)
+                            {
+                                s4 = "39-47";
+                            }
+                            break;
+                        case 4:
+                            if (Convert.ToInt32(i.Numbers[j]) > 0 && Convert.ToInt32(i.Numbers[j]) <= 7)
+                            {
+                                s5 = "0-7";
+                            }
+                            if (Convert.ToInt32(i.Numbers[j]) > 7 && Convert.ToInt32(i.Numbers[j]) <= 15)
+                            {
+                                s5 = "7-15";
+                            }
+                            if (Convert.ToInt32(i.Numbers[j]) > 15 && Convert.ToInt32(i.Numbers[j]) <= 23)
+                            {
+                                s5 = "15-23";
+                            }
+                            if (Convert.ToInt32(i.Numbers[j]) > 23 && Convert.ToInt32(i.Numbers[j]) <= 31)
+                            {
+                                s5 = "23-31";
+                            }
+                            if (Convert.ToInt32(i.Numbers[j]) > 31 && Convert.ToInt32(i.Numbers[j]) <= 39)
+                            {
+                                s5 = "31-39";
+                            }
+                            if (Convert.ToInt32(i.Numbers[j]) > 39 && Convert.ToInt32(i.Numbers[j]) <= 47)
+                            {
+                                s5 = "39-47";
+                            }
+                            break;
+                        case 5:
+                            if (Convert.ToInt32(i.Numbers[j]) > 0 && Convert.ToInt32(i.Numbers[j]) <= 7)
+                            {
+                                s6 = "0-7";
+                            }
+                            if (Convert.ToInt32(i.Numbers[j]) > 7 && Convert.ToInt32(i.Numbers[j]) <= 15)
+                            {
+                                s6 = "7-15";
+                            }
+                            if (Convert.ToInt32(i.Numbers[j]) > 15 && Convert.ToInt32(i.Numbers[j]) <= 23)
+                            {
+                                s6 = "15-23";
+                            }
+                            if (Convert.ToInt32(i.Numbers[j]) > 23 && Convert.ToInt32(i.Numbers[j]) <= 31)
+                            {
+                                s6 = "23-31";
+                            }
+                            if (Convert.ToInt32(i.Numbers[j]) > 31 && Convert.ToInt32(i.Numbers[j]) <= 39)
+                            {
+                                s6 = "31-39";
+                            }
+                            if (Convert.ToInt32(i.Numbers[j]) > 39 && Convert.ToInt32(i.Numbers[j]) <= 47)
+                            {
+                                s6 = "39-47";
+                            }
+                            break;
+                        default:
+                            break;
+                    }
+                }
+                string pattern1 = string.Format("{0}/{1}/{2}/{3}/{4}/{5}", s1, s2, s3, s4, s5, s6);
+
+                List<DateTime> lstNextDateAppear = new List<DateTime>();
+                string a1 = null, a2 = null, a3 = null, a4 = null, a5 = null, a6 = null;
+                for (var j = 0; j < data2.Count(); j += 6)
+                {
+                    if (j + 6 < data2.Count)
+                    {
+                        //a1
+                        if (Convert.ToInt32(data2[j].LotNumber) > 0 && Convert.ToInt32(data2[j].LotNumber) <= 7)
+                        {
+                            a1 = "0-7";
+                        }
+                        else
+                    if (Convert.ToInt32(data2[j].LotNumber) > 7 && Convert.ToInt32(data2[j].LotNumber) <= 15)
+                        {
+                            a1 = "7-15";
+                        }
+                        else
+                    if (Convert.ToInt32(data2[j].LotNumber) > 15 && Convert.ToInt32(data2[j].LotNumber) <= 23)
+                        {
+                            a1 = "15-23";
+                        }
+                        else
+                    if (Convert.ToInt32(data2[j].LotNumber) > 23 && Convert.ToInt32(data2[j].LotNumber) <= 31)
+                        {
+                            a1 = "23-31";
+                        }
+                        else
+                    if (Convert.ToInt32(data2[j].LotNumber) > 31 && Convert.ToInt32(data2[j].LotNumber) <= 39)
+                        {
+                            a1 = "31-39";
+                        }
+                        else
+                    if (Convert.ToInt32(data2[j].LotNumber) > 39 && Convert.ToInt32(data2[j].LotNumber) <= 47)
+                        {
+                            a1 = "39-47";
+                        }
+
+                        //a2
+                        if (Convert.ToInt32(data2[j + 1].LotNumber) > 0 && Convert.ToInt32(data2[j + 1].LotNumber) <= 7)
+                        {
+                            a2 = "0-7";
+                        }
+                        else
+                        if (Convert.ToInt32(data2[j + 1].LotNumber) > 7 && Convert.ToInt32(data2[j + 1].LotNumber) <= 15)
+                        {
+                            a2 = "7-15";
+                        }
+                        else
+                        if (Convert.ToInt32(data2[j + 1].LotNumber) > 15 && Convert.ToInt32(data2[j + 1].LotNumber) <= 23)
+                        {
+                            a2 = "15-23";
+                        }
+                        else
+                        if (Convert.ToInt32(data2[j + 1].LotNumber) > 23 && Convert.ToInt32(data2[j + 1].LotNumber) <= 31)
+                        {
+                            a2 = "23-31";
+                        }
+                        else
+                        if (Convert.ToInt32(data2[j + 1].LotNumber) > 31 && Convert.ToInt32(data2[j + 1].LotNumber) <= 39)
+                        {
+                            a2 = "31-39";
+                        }
+                        else
+                        if (Convert.ToInt32(data2[j + 1].LotNumber) > 39 && Convert.ToInt32(data2[j + 1].LotNumber) <= 47)
+                        {
+                            a2 = "39-47";
+                        }
+                        //a3
+                        if (Convert.ToInt32(data2[j + 2].LotNumber) > 0 && Convert.ToInt32(data2[j + 2].LotNumber) <= 7)
+                        {
+                            a3 = "0-7";
+                        }
+                        else
+                        if (Convert.ToInt32(data2[j + 2].LotNumber) > 7 && Convert.ToInt32(data2[j + 2].LotNumber) <= 15)
+                        {
+                            a3 = "7-15";
+                        }
+                        else
+                        if (Convert.ToInt32(data2[j + 2].LotNumber) > 15 && Convert.ToInt32(data2[j + 2].LotNumber) <= 23)
+                        {
+                            a3 = "15-23";
+                        }
+                        else
+                        if (Convert.ToInt32(data2[j + 2].LotNumber) > 23 && Convert.ToInt32(data2[j + 2].LotNumber) <= 31)
+                        {
+                            a3 = "23-31";
+                        }
+                        else
+                        if (Convert.ToInt32(data2[j + 2].LotNumber) > 31 && Convert.ToInt32(data2[j + 2].LotNumber) <= 39)
+                        {
+                            a3 = "31-39";
+                        }
+                        else
+                        if (Convert.ToInt32(data2[j + 2].LotNumber) > 39 && Convert.ToInt32(data2[j + 2].LotNumber) <= 47)
+                        {
+                            a3 = "39-47";
+                        }
+
+                        //a4
+                        if (Convert.ToInt32(data2[j + 3].LotNumber) > 0 && Convert.ToInt32(data2[j + 3].LotNumber) <= 7)
+                        {
+                            a4 = "0-7";
+                        }
+                        else
+                        if (Convert.ToInt32(data2[j + 3].LotNumber) > 7 && Convert.ToInt32(data2[j + 3].LotNumber) <= 15)
+                        {
+                            a4 = "7-15";
+                        }
+                        else
+                        if (Convert.ToInt32(data2[j + 3].LotNumber) > 15 && Convert.ToInt32(data2[j + 3].LotNumber) <= 23)
+                        {
+                            a4 = "15-23";
+                        }
+                        else
+                        if (Convert.ToInt32(data2[j + 3].LotNumber) > 23 && Convert.ToInt32(data2[j + 3].LotNumber) <= 31)
+                        {
+                            a4 = "23-31";
+                        }
+                        else
+                        if (Convert.ToInt32(data2[j + 3].LotNumber) > 31 && Convert.ToInt32(data2[j + 3].LotNumber) <= 39)
+                        {
+                            a4 = "31-39";
+                        }
+                        else
+                        if (Convert.ToInt32(data2[j + 3].LotNumber) > 39 && Convert.ToInt32(data2[j + 3].LotNumber) <= 47)
+                        {
+                            a4 = "39-47";
+                        }
+
+                        //a5
+                        if (Convert.ToInt32(data2[j + 4].LotNumber) > 0 && Convert.ToInt32(data2[j + 4].LotNumber) <= 7)
+                        {
+                            a5 = "0-7";
+                        }
+                        else
+                        if (Convert.ToInt32(data2[j + 4].LotNumber) > 7 && Convert.ToInt32(data2[j + 4].LotNumber) <= 15)
+                        {
+                            a5 = "7-15";
+                        }
+                        else
+                        if (Convert.ToInt32(data2[j + 4].LotNumber) > 15 && Convert.ToInt32(data2[j + 4].LotNumber) <= 23)
+                        {
+                            a5 = "15-23";
+                        }
+                        else
+                        if (Convert.ToInt32(data2[j + 4].LotNumber) > 23 && Convert.ToInt32(data2[j + 4].LotNumber) <= 31)
+                        {
+                            a5 = "23-31";
+                        }
+                        else
+                        if (Convert.ToInt32(data2[j + 4].LotNumber) > 31 && Convert.ToInt32(data2[j + 4].LotNumber) <= 39)
+                        {
+                            a5 = "31-39";
+                        }
+                        else
+                        if (Convert.ToInt32(data2[j + 4].LotNumber) > 39 && Convert.ToInt32(data2[j + 4].LotNumber) <= 47)
+                        {
+                            a5 = "39-47";
+                        }
+
+                        //a6
+                        if (Convert.ToInt32(data2[j + 5].LotNumber) > 0 && Convert.ToInt32(data2[j + 5].LotNumber) <= 7)
+                        {
+                            a6 = "0-7";
+                        }
+                        else
+                        if (Convert.ToInt32(data2[j + 5].LotNumber) > 7 && Convert.ToInt32(data2[j + 5].LotNumber) <= 15)
+                        {
+                            a6 = "7-15";
+                        }
+                        else
+                        if (Convert.ToInt32(data2[j + 5].LotNumber) > 15 && Convert.ToInt32(data2[j + 5].LotNumber) <= 23)
+                        {
+                            a6 = "15-23";
+                        }
+                        else
+                        if (Convert.ToInt32(data2[j + 5].LotNumber) > 23 && Convert.ToInt32(data2[j + 5].LotNumber) <= 31)
+                        {
+                            a6 = "23-31";
+                        }
+                        else
+                        if (Convert.ToInt32(data2[j + 5].LotNumber) > 31 && Convert.ToInt32(data2[j + 5].LotNumber) <= 39)
+                        {
+                            a6 = "31-39";
+                        }
+                        else
+                        if (Convert.ToInt32(data2[j + 5].LotNumber) > 39 && Convert.ToInt32(data2[j + 5].LotNumber) <= 47)
+                        {
+                            a6 = "39-47";
+                        }
+
+                        //Get NextPublishDate
+                        string pattern2 = string.Format("{0}/{1}/{2}/{3}/{4}/{5}", a1, a2, a3, a4, a5, a6);
+                        if (pattern1 == pattern2 && data2[j].NextPublishDate != null)
+                        {
+                            lstNextDateAppear.Add(data2[j].NextPublishDate.Value.Date);
+                        }
+                    }
+                }
+
+                Dictionary<DateTime, List<int>> dicNumberNextAppearExactly = new Dictionary<DateTime, List<int>>();
+                foreach (var j in lstNextDateAppear)
+                    dicNumberNextAppearExactly.Add(j.Date,
+                        data2.Where(x => x.DatePublish.Date == j.Date).OrderBy(x => Convert.ToInt32(x.LotNumber))
+                            .Select(x => Convert.ToInt32(x.LotNumber)).ToList());
+
+                Dictionary<DateTime, List<string>> dicColorNextAppear = new Dictionary<DateTime, List<string>>();
+                foreach (var j in dicNumberNextAppearExactly.Keys)
+                {
+                    List<string> lstColor = new List<string>();
+                    foreach (var k in dicNumberNextAppearExactly[j])
+                    {
+                        if (k > 0 && k <= 7)
+                        {
+                            lstColor.Add("Do_" + j);
+                        }
+                        else
+                        if (k > 7 && k <= 15)
+                        {
+                            lstColor.Add("Cam_" + j);
+                        }
+                        else
+                        if (k > 15 && k <= 23)
+                        {
+                            lstColor.Add("Vang_" + j);
+                        }
+                        else
+                        if (k > 23 && k <= 31)
+                        {
+                            lstColor.Add("Luc_" + j);
+                        }
+                        else
+                        if (k > 31 && k <= 39)
+                        {
+                            lstColor.Add("Lam_" + j);
+                        }
+                        else
+                        if (k > 39 && k <= 47)
+                        {
+                            lstColor.Add("Cham_" + j);
+                        }
+                    }
+
+                    dicColorNextAppear.Add(j, lstColor);
+                }
+
+                rVal.Add(i, dicColorNextAppear);
+            }
+           
+            return rVal;
+        }
+       
         public static Dictionary<DateTime, List<int>> GetNumberNextAppearExactly()
         {            
             List<DateTime> lstNextDateAppear = new List<DateTime>();
