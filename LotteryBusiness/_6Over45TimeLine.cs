@@ -1349,6 +1349,16 @@ namespace LotteryBusiness
            
             return rVal;
         }
+
+        public static Dictionary<ColorAppear1, ColorAppear1> GetColorNextAppear4(Dictionary<FullLotteryStatistic, Dictionary<DateTime, List<string>>> data)
+        {
+
+            Dictionary<ColorAppear1, ColorAppear1> rVal = new Dictionary<ColorAppear1, ColorAppear1>();
+
+
+
+            return rVal;
+        }
        
         public static Dictionary<DateTime, List<int>> GetNumberNextAppearExactly()
         {            

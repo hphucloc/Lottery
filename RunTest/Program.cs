@@ -123,12 +123,12 @@ namespace RunTest
             //    Console.WriteLine();
             //}
 
-            var a = _6Over55TimeLine.GetColorNextAppear3(DateTime.Now.AddMonths(-10), DateTime.Now);           
-            //foreach (var i in a)
-            //{
-            //    Console.Write(i.);
-            //    Console.WriteLine();
-            //}
+            var a = _6Over55TimeLine.GetColorNextAppear3(DateTime.Now.AddMonths(-10), DateTime.Now);
+            foreach (var i in a)
+            {
+                Console.Write(i.Key.PublishDate.Date);
+                Console.WriteLine();
+            }
 
             Console.ReadLine();
         }
