@@ -420,3 +420,4 @@ C:\Users\hphuc\Documents\GitHub\Lottery\RunTest\bin\Debug\System.Security.Access
 C:\Users\hphuc\Documents\GitHub\Lottery\RunTest\bin\Debug\System.Security.Principal.Windows.xml
 C:\Users\hphuc\Documents\GitHub\Lottery\RunTest\bin\Debug\Tensorflow.Binding.xml
 C:\Users\hphuc\Documents\GitHub\Lottery\RunTest\obj\Debug\RunTest.csproj.Fody.CopyLocal.cache
+C:\Users\Admin\OneDrive\Documents\GitHub\Lottery\RunTest\obj\Debug\RunTest.csproj.CopyComplete

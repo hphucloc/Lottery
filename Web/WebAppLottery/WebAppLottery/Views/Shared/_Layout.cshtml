@@ -44,7 +44,7 @@
 
                                         <a onclick="DuDoan655()" title="Dự đoán 6/55" class="dropdown-item dropdown text-decoration-none HeaderLinkColor">Dự đoán 6/55</a>
 
-                                        <a onclick="ThongKeDuDoan655()" title="Thống kê Dự đoán 6/55" class="dropdown-item dropdown text-decoration-none HeaderLinkColor">Thống kê dự đoán 6/55</a>
+                                        @*<a onclick="ThongKeDuDoan655()" title="Thống kê Dự đoán 6/55" class="dropdown-item dropdown text-decoration-none HeaderLinkColor">Thống kê dự đoán 6/55</a>*@
 
                                     }
                                     else if (Model.ListLoaiVe == WebAppLottery.Models.IndexPageModel.LoaiVe._6Over45)
@@ -54,7 +54,7 @@
 
                                         <a onclick="DuDoan645()" title="Dự đoán 6/45" class="dropdown-item dropdown text-decoration-none HeaderLinkColor">Dự đoán 6/45</a>
 
-                                        <a onclick="ThongKeDuDoan645()" title="Thống Kê Dự đoán 6/45" class="dropdown-item dropdown text-decoration-none HeaderLinkColor">Thống kê dự đoán 6/45</a>
+                                        @*<a onclick="ThongKeDuDoan645()" title="Thống Kê Dự đoán 6/45" class="dropdown-item dropdown text-decoration-none HeaderLinkColor">Thống kê dự đoán 6/45</a>*@
                                     }
                                     else if (Model.ListLoaiVe == WebAppLottery.Models.IndexPageModel.LoaiVe._Keno)
                                     {
@@ -176,7 +176,9 @@
             $('#From').val($('#HiddenFrom').val());
         if (!!$('#HiddenTo').val())
             $('#To').val($('#HiddenTo').val());
-      
+        $("#ListLoaiVe").children('option[value="5"]').hide();
+        $("#ListLoaiVe").children('option[value="2"]').hide();
+        $("#ListLoaiVe").children('option[value="4"]').hide();
     });
 
     function SubmitClick(parent) {

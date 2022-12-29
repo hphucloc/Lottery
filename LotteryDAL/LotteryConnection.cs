@@ -3,9 +3,8 @@
 namespace LotteryDAL
 {
     public class LotteryConnection
-    {      
-        private static readonly Lazy<LotteryEntities> lazy =
-        new Lazy<LotteryEntities>(() => new LotteryEntities());
+    {
+        private static Lazy<LotteryEntities> lazy = new Lazy<LotteryEntities>(() => new LotteryEntities());
 
         public static LotteryEntities Instance { get { return lazy.Value; } }
 
