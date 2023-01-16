@@ -5,7 +5,7 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <_PublishTargetUrl>ftp://vietnamlott.net/httpdocs</_PublishTargetUrl>
-    <History>True|2022-07-08T11:47:00.1274908Z;True|2022-06-10T16:36:14.4249564+07:00;True|2022-01-18T23:40:57.9409695+07:00;True|2021-12-27T23:20:20.7599737+07:00;False|2021-12-27T23:15:15.4346838+07:00;True|2021-12-17T00:54:29.5307068+07:00;False|2021-12-17T00:36:43.5843467+07:00;True|2021-12-17T00:30:26.6994781+07:00;True|2021-12-16T02:43:50.2366163+07:00;True|2021-12-16T02:33:15.1733184+07:00;True|2021-12-14T23:11:47.0178136+07:00;True|2021-12-05T11:32:08.8774730+07:00;False|2021-12-05T11:30:30.3572263+07:00;</History>
+    <History>True|2023-01-16T15:23:23.8126905Z;True|2022-07-08T18:47:00.1274908+07:00;True|2022-06-10T16:36:14.4249564+07:00;True|2022-01-18T23:40:57.9409695+07:00;True|2021-12-27T23:20:20.7599737+07:00;False|2021-12-27T23:15:15.4346838+07:00;True|2021-12-17T00:54:29.5307068+07:00;False|2021-12-17T00:36:43.5843467+07:00;True|2021-12-17T00:30:26.6994781+07:00;True|2021-12-16T02:43:50.2366163+07:00;True|2021-12-16T02:33:15.1733184+07:00;True|2021-12-14T23:11:47.0178136+07:00;True|2021-12-05T11:32:08.8774730+07:00;False|2021-12-05T11:30:30.3572263+07:00;</History>
     <TimeStampOfAssociatedLegacyPublishXmlFile />
     <EncryptedPassword>AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAnSV9oKU6rkOIePPyIR/mHwAAAAACAAAAAAAQZgAAAAEAACAAAACiep9xWhQhAasLH3EzvLGCBrynmuHFpcutYkKF02ss9wAAAAAOgAAAAAIAACAAAADrHi+J1rxvOm33P35EtWvR2YJ8UUqIe7jfD24E7WWy1SAAAACK561OoJDBb4U2T0c+tLrGOVhw2Ox/DdjFst6u3fqqhEAAAABsfSPtV+kmAb48GQeqoRtC+kZLH8s9ll79AkeJyyVEJwbJa3jAQEfz9WTLvA4rBp4cm/RGjIwjiIERJdfadrix</EncryptedPassword>
   </PropertyGroup>
@@ -17,10 +17,10 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
       <publishTime>12/29/2022 23:35:54</publishTime>
     </File>
     <File Include="bin/App_global.asax.compiled">
-      <publishTime>12/29/2022 23:58:25</publishTime>
+      <publishTime>01/16/2023 22:21:34</publishTime>
     </File>
     <File Include="bin/App_global.asax.dll">
-      <publishTime>12/29/2022 23:58:25</publishTime>
+      <publishTime>01/16/2023 22:21:34</publishTime>
     </File>
     <File Include="bin/EntityFramework.dll">
       <publishTime>12/29/2022 23:35:55</publishTime>
@@ -215,10 +215,10 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
       <publishTime>12/29/2022 23:35:54</publishTime>
     </File>
     <File Include="bin/WebAppLottery.dll">
-      <publishTime>12/29/2022 23:58:11</publishTime>
+      <publishTime>01/16/2023 22:21:20</publishTime>
     </File>
     <File Include="bin/WebAppLottery.pdb">
-      <publishTime>12/29/2022 23:58:11</publishTime>
+      <publishTime>01/16/2023 22:21:20</publishTime>
     </File>
     <File Include="bin/WebGrease.dll">
       <publishTime>12/29/2022 23:35:54</publishTime>
@@ -401,7 +401,7 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
       <publishTime>12/29/2022 23:35:51</publishTime>
     </File>
     <File Include="PrecompiledApp.config">
-      <publishTime>12/29/2022 23:58:20</publishTime>
+      <publishTime>01/16/2023 22:21:28</publishTime>
     </File>
     <File Include="Scripts/bootstrap-toggle.js">
       <publishTime>12/29/2022 23:35:47</publishTime>
