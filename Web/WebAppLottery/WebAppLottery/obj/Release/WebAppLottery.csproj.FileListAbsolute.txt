@@ -166,7 +166,6 @@ C:\Users\hphuc\Documents\GitHub\Lottery\Web\WebAppLottery\WebAppLottery\obj\Rele
 C:\Users\hphuc\Documents\GitHub\Lottery\Web\WebAppLottery\WebAppLottery\obj\Release\WebAppLottery.csproj.CopyComplete
 C:\Users\hphuc\Documents\GitHub\Lottery\Web\WebAppLottery\WebAppLottery\obj\Release\WebAppLottery.dll
 C:\Users\hphuc\Documents\GitHub\Lottery\Web\WebAppLottery\WebAppLottery\obj\Release\WebAppLottery.pdb
-C:\Users\hphuc\Documents\GitHub\Lottery\Web\WebAppLottery\WebAppLottery\obj\Release\WebAppLottery.csprojAssemblyReference.cache
 C:\Users\Admin\OneDrive\Documents\GitHub\Lottery\Web\WebAppLottery\WebAppLottery\bin\WebAppLottery.dll.config
 C:\Users\Admin\OneDrive\Documents\GitHub\Lottery\Web\WebAppLottery\WebAppLottery\bin\WebAppLottery.dll
 C:\Users\Admin\OneDrive\Documents\GitHub\Lottery\Web\WebAppLottery\WebAppLottery\bin\WebAppLottery.pdb
@@ -251,3 +250,4 @@ C:\Users\Admin\OneDrive\Documents\GitHub\Lottery\Web\WebAppLottery\WebAppLottery
 C:\Users\Admin\OneDrive\Documents\GitHub\Lottery\Web\WebAppLottery\WebAppLottery\obj\Release\WebAppLottery.csproj.CoreCompileInputs.cache
 C:\Users\Admin\OneDrive\Documents\GitHub\Lottery\Web\WebAppLottery\WebAppLottery\obj\Release\WebAppLottery.dll
 C:\Users\Admin\OneDrive\Documents\GitHub\Lottery\Web\WebAppLottery\WebAppLottery\obj\Release\WebAppLottery.pdb
+C:\Users\hphuc\Documents\GitHub\Lottery\Web\WebAppLottery\WebAppLottery\obj\Release\WebAppLottery.csproj.AssemblyReference.cache

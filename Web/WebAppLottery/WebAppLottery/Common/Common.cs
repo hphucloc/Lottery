@@ -9,7 +9,7 @@ namespace DataVietlott
 {
     class Common
     {
-        private static LotteryEntities Db = LotteryDAL.LotteryConnection.Instance;
+        private static LotteryEntities Db = new LotteryEntities();
         public static string Content(string url)
         {
             //url = "https://vietlott.vn/vi/trung-thuong/ket-qua-trung-thuong/winning-number-keno";

@@ -1,183 +1,87 @@
-C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\MSBuild\Microsoft\Microsoft.NET.Build.Extensions\net461\lib\Microsoft.Win32.Primitives.dll
-C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\MSBuild\Microsoft\Microsoft.NET.Build.Extensions\net461\lib\netstandard.dll
-C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\MSBuild\Microsoft\Microsoft.NET.Build.Extensions\net461\lib\System.AppContext.dll
-C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\MSBuild\Microsoft\Microsoft.NET.Build.Extensions\net461\lib\System.Collections.Concurrent.dll
-C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\MSBuild\Microsoft\Microsoft.NET.Build.Extensions\net461\lib\System.Collections.dll
-C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\MSBuild\Microsoft\Microsoft.NET.Build.Extensions\net461\lib\System.Collections.NonGeneric.dll
-C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\MSBuild\Microsoft\Microsoft.NET.Build.Extensions\net461\lib\System.Collections.Specialized.dll
-C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\MSBuild\Microsoft\Microsoft.NET.Build.Extensions\net461\lib\System.ComponentModel.dll
-C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\MSBuild\Microsoft\Microsoft.NET.Build.Extensions\net461\lib\System.ComponentModel.EventBasedAsync.dll
-C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\MSBuild\Microsoft\Microsoft.NET.Build.Extensions\net461\lib\System.ComponentModel.Primitives.dll
-C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\MSBuild\Microsoft\Microsoft.NET.Build.Extensions\net461\lib\System.ComponentModel.TypeConverter.dll
-C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\MSBuild\Microsoft\Microsoft.NET.Build.Extensions\net461\lib\System.Console.dll
-C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\MSBuild\Microsoft\Microsoft.NET.Build.Extensions\net461\lib\System.Data.Common.dll
-C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\MSBuild\Microsoft\Microsoft.NET.Build.Extensions\net461\lib\System.Diagnostics.Contracts.dll
-C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\MSBuild\Microsoft\Microsoft.NET.Build.Extensions\net461\lib\System.Diagnostics.Debug.dll
-C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\MSBuild\Microsoft\Microsoft.NET.Build.Extensions\net461\lib\System.Diagnostics.FileVersionInfo.dll
-C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\MSBuild\Microsoft\Microsoft.NET.Build.Extensions\net461\lib\System.Diagnostics.Process.dll
-C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\MSBuild\Microsoft\Microsoft.NET.Build.Extensions\net461\lib\System.Diagnostics.StackTrace.dll
-C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\MSBuild\Microsoft\Microsoft.NET.Build.Extensions\net461\lib\System.Diagnostics.TextWriterTraceListener.dll
-C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\MSBuild\Microsoft\Microsoft.NET.Build.Extensions\net461\lib\System.Diagnostics.Tools.dll
-C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\MSBuild\Microsoft\Microsoft.NET.Build.Extensions\net461\lib\System.Diagnostics.TraceSource.dll
-C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\MSBuild\Microsoft\Microsoft.NET.Build.Extensions\net461\lib\System.Diagnostics.Tracing.dll
-C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\MSBuild\Microsoft\Microsoft.NET.Build.Extensions\net461\lib\System.Drawing.Primitives.dll
-C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\MSBuild\Microsoft\Microsoft.NET.Build.Extensions\net461\lib\System.Dynamic.Runtime.dll
-C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\MSBuild\Microsoft\Microsoft.NET.Build.Extensions\net461\lib\System.Globalization.Calendars.dll
-C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\MSBuild\Microsoft\Microsoft.NET.Build.Extensions\net461\lib\System.Globalization.dll
-C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\MSBuild\Microsoft\Microsoft.NET.Build.Extensions\net461\lib\System.Globalization.Extensions.dll
-C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\MSBuild\Microsoft\Microsoft.NET.Build.Extensions\net461\lib\System.IO.Compression.dll
-C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\MSBuild\Microsoft\Microsoft.NET.Build.Extensions\net461\lib\System.IO.Compression.ZipFile.dll
-C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\MSBuild\Microsoft\Microsoft.NET.Build.Extensions\net461\lib\System.IO.dll
-C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\MSBuild\Microsoft\Microsoft.NET.Build.Extensions\net461\lib\System.IO.FileSystem.dll
-C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\MSBuild\Microsoft\Microsoft.NET.Build.Extensions\net461\lib\System.IO.FileSystem.DriveInfo.dll
-C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\MSBuild\Microsoft\Microsoft.NET.Build.Extensions\net461\lib\System.IO.FileSystem.Primitives.dll
-C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\MSBuild\Microsoft\Microsoft.NET.Build.Extensions\net461\lib\System.IO.FileSystem.Watcher.dll
-C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\MSBuild\Microsoft\Microsoft.NET.Build.Extensions\net461\lib\System.IO.IsolatedStorage.dll
-C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\MSBuild\Microsoft\Microsoft.NET.Build.Extensions\net461\lib\System.IO.MemoryMappedFiles.dll
-C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\MSBuild\Microsoft\Microsoft.NET.Build.Extensions\net461\lib\System.IO.Pipes.dll
-C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\MSBuild\Microsoft\Microsoft.NET.Build.Extensions\net461\lib\System.IO.UnmanagedMemoryStream.dll
-C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\MSBuild\Microsoft\Microsoft.NET.Build.Extensions\net461\lib\System.Linq.dll
-C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\MSBuild\Microsoft\Microsoft.NET.Build.Extensions\net461\lib\System.Linq.Expressions.dll
-C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\MSBuild\Microsoft\Microsoft.NET.Build.Extensions\net461\lib\System.Linq.Parallel.dll
-C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\MSBuild\Microsoft\Microsoft.NET.Build.Extensions\net461\lib\System.Linq.Queryable.dll
-C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\MSBuild\Microsoft\Microsoft.NET.Build.Extensions\net461\lib\System.Net.Http.dll
-C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\MSBuild\Microsoft\Microsoft.NET.Build.Extensions\net461\lib\System.Net.NameResolution.dll
-C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\MSBuild\Microsoft\Microsoft.NET.Build.Extensions\net461\lib\System.Net.NetworkInformation.dll
-C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\MSBuild\Microsoft\Microsoft.NET.Build.Extensions\net461\lib\System.Net.Ping.dll
-C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\MSBuild\Microsoft\Microsoft.NET.Build.Extensions\net461\lib\System.Net.Primitives.dll
-C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\MSBuild\Microsoft\Microsoft.NET.Build.Extensions\net461\lib\System.Net.Requests.dll
-C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\MSBuild\Microsoft\Microsoft.NET.Build.Extensions\net461\lib\System.Net.Security.dll
-C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\MSBuild\Microsoft\Microsoft.NET.Build.Extensions\net461\lib\System.Net.Sockets.dll
-C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\MSBuild\Microsoft\Microsoft.NET.Build.Extensions\net461\lib\System.Net.WebHeaderCollection.dll
-C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\MSBuild\Microsoft\Microsoft.NET.Build.Extensions\net461\lib\System.Net.WebSockets.Client.dll
-C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\MSBuild\Microsoft\Microsoft.NET.Build.Extensions\net461\lib\System.Net.WebSockets.dll
-C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\MSBuild\Microsoft\Microsoft.NET.Build.Extensions\net461\lib\System.ObjectModel.dll
-C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\MSBuild\Microsoft\Microsoft.NET.Build.Extensions\net461\lib\System.Reflection.dll
-C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\MSBuild\Microsoft\Microsoft.NET.Build.Extensions\net461\lib\System.Reflection.Extensions.dll
-C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\MSBuild\Microsoft\Microsoft.NET.Build.Extensions\net461\lib\System.Reflection.Primitives.dll
-C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\MSBuild\Microsoft\Microsoft.NET.Build.Extensions\net461\lib\System.Resources.Reader.dll
-C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\MSBuild\Microsoft\Microsoft.NET.Build.Extensions\net461\lib\System.Resources.ResourceManager.dll
-C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\MSBuild\Microsoft\Microsoft.NET.Build.Extensions\net461\lib\System.Resources.Writer.dll
-C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\MSBuild\Microsoft\Microsoft.NET.Build.Extensions\net461\lib\System.Runtime.CompilerServices.VisualC.dll
-C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\MSBuild\Microsoft\Microsoft.NET.Build.Extensions\net461\lib\System.Runtime.dll
-C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\MSBuild\Microsoft\Microsoft.NET.Build.Extensions\net461\lib\System.Runtime.Extensions.dll
-C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\MSBuild\Microsoft\Microsoft.NET.Build.Extensions\net461\lib\System.Runtime.Handles.dll
-C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\MSBuild\Microsoft\Microsoft.NET.Build.Extensions\net461\lib\System.Runtime.InteropServices.dll
-C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\MSBuild\Microsoft\Microsoft.NET.Build.Extensions\net461\lib\System.Runtime.InteropServices.RuntimeInformation.dll
-C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\MSBuild\Microsoft\Microsoft.NET.Build.Extensions\net461\lib\System.Runtime.Numerics.dll
-C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\MSBuild\Microsoft\Microsoft.NET.Build.Extensions\net461\lib\System.Runtime.Serialization.Formatters.dll
-C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\MSBuild\Microsoft\Microsoft.NET.Build.Extensions\net461\lib\System.Runtime.Serialization.Json.dll
-C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\MSBuild\Microsoft\Microsoft.NET.Build.Extensions\net461\lib\System.Runtime.Serialization.Primitives.dll
-C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\MSBuild\Microsoft\Microsoft.NET.Build.Extensions\net461\lib\System.Runtime.Serialization.Xml.dll
-C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\MSBuild\Microsoft\Microsoft.NET.Build.Extensions\net461\lib\System.Security.Claims.dll
-C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\MSBuild\Microsoft\Microsoft.NET.Build.Extensions\net461\lib\System.Security.Cryptography.Algorithms.dll
-C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\MSBuild\Microsoft\Microsoft.NET.Build.Extensions\net461\lib\System.Security.Cryptography.Csp.dll
-C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\MSBuild\Microsoft\Microsoft.NET.Build.Extensions\net461\lib\System.Security.Cryptography.Encoding.dll
-C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\MSBuild\Microsoft\Microsoft.NET.Build.Extensions\net461\lib\System.Security.Cryptography.Primitives.dll
-C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\MSBuild\Microsoft\Microsoft.NET.Build.Extensions\net461\lib\System.Security.Cryptography.X509Certificates.dll
-C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\MSBuild\Microsoft\Microsoft.NET.Build.Extensions\net461\lib\System.Security.Principal.dll
-C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\MSBuild\Microsoft\Microsoft.NET.Build.Extensions\net461\lib\System.Security.SecureString.dll
-C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\MSBuild\Microsoft\Microsoft.NET.Build.Extensions\net461\lib\System.Text.Encoding.dll
-C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\MSBuild\Microsoft\Microsoft.NET.Build.Extensions\net461\lib\System.Text.Encoding.Extensions.dll
-C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\MSBuild\Microsoft\Microsoft.NET.Build.Extensions\net461\lib\System.Text.RegularExpressions.dll
-C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\MSBuild\Microsoft\Microsoft.NET.Build.Extensions\net461\lib\System.Threading.dll
-C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\MSBuild\Microsoft\Microsoft.NET.Build.Extensions\net461\lib\System.Threading.Overlapped.dll
-C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\MSBuild\Microsoft\Microsoft.NET.Build.Extensions\net461\lib\System.Threading.Tasks.dll
-C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\MSBuild\Microsoft\Microsoft.NET.Build.Extensions\net461\lib\System.Threading.Tasks.Parallel.dll
-C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\MSBuild\Microsoft\Microsoft.NET.Build.Extensions\net461\lib\System.Threading.Thread.dll
-C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\MSBuild\Microsoft\Microsoft.NET.Build.Extensions\net461\lib\System.Threading.ThreadPool.dll
-C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\MSBuild\Microsoft\Microsoft.NET.Build.Extensions\net461\lib\System.Threading.Timer.dll
-C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\MSBuild\Microsoft\Microsoft.NET.Build.Extensions\net461\lib\System.ValueTuple.dll
-C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\MSBuild\Microsoft\Microsoft.NET.Build.Extensions\net461\lib\System.Xml.ReaderWriter.dll
-C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\MSBuild\Microsoft\Microsoft.NET.Build.Extensions\net461\lib\System.Xml.XDocument.dll
-C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\MSBuild\Microsoft\Microsoft.NET.Build.Extensions\net461\lib\System.Xml.XmlDocument.dll
-C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\MSBuild\Microsoft\Microsoft.NET.Build.Extensions\net461\lib\System.Xml.XmlSerializer.dll
-C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\MSBuild\Microsoft\Microsoft.NET.Build.Extensions\net461\lib\System.Xml.XPath.dll
-C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\MSBuild\Microsoft\Microsoft.NET.Build.Extensions\net461\lib\System.Xml.XPath.XDocument.dll
-C:\Users\Admin\OneDrive\Documents\GitHub\Lottery\packages\EntityFramework.6.4.4\lib\net45\EntityFramework.dll
-C:\Users\Admin\OneDrive\Documents\GitHub\Lottery\packages\EntityFramework.6.4.4\lib\net45\EntityFramework.SqlServer.dll
-C:\Users\Admin\OneDrive\Documents\GitHub\Lottery\packages\Google.Protobuf.3.21.4\lib\net45\Google.Protobuf.dll
-C:\Users\Admin\OneDrive\Documents\GitHub\Lottery\LotteryConsoleApplication\bin\Debug\HtmlAgilityPack.dll
-C:\Users\Admin\OneDrive\Documents\GitHub\Lottery\LotteryDAL\bin\Debug\LotteryDAL.dll
-C:\Users\Admin\OneDrive\Documents\GitHub\Lottery\packages\MethodBoundaryAspect.Fody.2.0.144\lib\net452\MethodBoundaryAspect.dll
-C:\Users\Admin\OneDrive\Documents\GitHub\Lottery\packages\Microsoft.Bcl.AsyncInterfaces.6.0.0\lib\net461\Microsoft.Bcl.AsyncInterfaces.dll
-C:\Users\Admin\OneDrive\Documents\GitHub\Lottery\packages\Microsoft.Extensions.DependencyInjection.Abstractions.6.0.0\lib\net461\Microsoft.Extensions.DependencyInjection.Abstractions.dll
-C:\Users\Admin\OneDrive\Documents\GitHub\Lottery\packages\Microsoft.Extensions.DependencyInjection.6.0.0\lib\net461\Microsoft.Extensions.DependencyInjection.dll
-C:\Users\Admin\OneDrive\Documents\GitHub\Lottery\packages\Microsoft.ML.1.7.1\lib\netstandard2.0\Microsoft.ML.Core.dll
-C:\Users\Admin\OneDrive\Documents\GitHub\Lottery\packages\Microsoft.ML.CpuMath.1.7.1\lib\netstandard2.0\Microsoft.ML.CpuMath.dll
-C:\Users\Admin\OneDrive\Documents\GitHub\Lottery\packages\Microsoft.ML.1.7.1\lib\netstandard2.0\Microsoft.ML.Data.dll
-C:\Users\Admin\OneDrive\Documents\GitHub\Lottery\packages\Microsoft.ML.DataView.1.7.1\lib\netstandard2.0\Microsoft.ML.DataView.dll
-C:\Users\Admin\OneDrive\Documents\GitHub\Lottery\packages\Microsoft.ML.1.7.1\lib\netstandard2.0\Microsoft.ML.dll
-C:\Users\Admin\OneDrive\Documents\GitHub\Lottery\packages\Microsoft.ML.FastTree.1.7.1\lib\netstandard2.0\Microsoft.ML.FastTree.dll
-C:\Users\Admin\OneDrive\Documents\GitHub\Lottery\packages\Microsoft.ML.ImageAnalytics.1.7.1\lib\netstandard2.0\Microsoft.ML.ImageAnalytics.dll
-C:\Users\Admin\OneDrive\Documents\GitHub\Lottery\packages\Microsoft.ML.1.7.1\lib\netstandard2.0\Microsoft.ML.KMeansClustering.dll
-C:\Users\Admin\OneDrive\Documents\GitHub\Lottery\packages\Microsoft.ML.LightGbm.1.7.1\lib\netstandard2.0\Microsoft.ML.LightGbm.dll
-C:\Users\Admin\OneDrive\Documents\GitHub\Lottery\packages\Microsoft.ML.Mkl.Components.1.7.1\lib\netstandard2.0\Microsoft.ML.Mkl.Components.dll
-C:\Users\Admin\OneDrive\Documents\GitHub\Lottery\packages\Microsoft.ML.Mkl.Redist.1.7.1\lib\netstandard2.0\Microsoft.ML.Mkl.Redist.dll
-C:\Users\Admin\OneDrive\Documents\GitHub\Lottery\packages\Microsoft.ML.1.7.1\lib\netstandard2.0\Microsoft.ML.PCA.dll
-C:\Users\Admin\OneDrive\Documents\GitHub\Lottery\packages\Microsoft.ML.Recommender.0.19.1\lib\netstandard2.0\Microsoft.ML.Recommender.dll
-C:\Users\Admin\OneDrive\Documents\GitHub\Lottery\packages\Microsoft.ML.1.7.1\lib\netstandard2.0\Microsoft.ML.StandardTrainers.dll
-C:\Users\Admin\OneDrive\Documents\GitHub\Lottery\packages\Microsoft.ML.TensorFlow.1.7.1\lib\netstandard2.0\Microsoft.ML.TensorFlow.dll
-C:\Users\Admin\OneDrive\Documents\GitHub\Lottery\packages\Microsoft.ML.1.7.1\lib\netstandard2.0\Microsoft.ML.Transforms.dll
-C:\Users\Admin\OneDrive\Documents\GitHub\Lottery\packages\Microsoft.ML.Vision.1.7.1\lib\netstandard2.0\Microsoft.ML.Vision.dll
-C:\Users\Admin\OneDrive\Documents\GitHub\Lottery\packages\Newtonsoft.Json.13.0.1\lib\net45\Newtonsoft.Json.dll
-C:\Users\Admin\OneDrive\Documents\GitHub\Lottery\packages\NumSharp.Lite.0.1.12\lib\netstandard2.0\NumSharp.Lite.dll
-C:\Users\Admin\OneDrive\Documents\GitHub\Lottery\packages\Protobuf.Text.0.5.0\lib\netstandard2.0\Protobuf.Text.dll
-C:\Users\Admin\OneDrive\Documents\GitHub\Lottery\packages\Serilog.2.10.0\lib\net46\Serilog.dll
-C:\Users\Admin\OneDrive\Documents\GitHub\Lottery\packages\Serilog.Sinks.Console.4.0.1\lib\net45\Serilog.Sinks.Console.dll
-C:\Users\Admin\OneDrive\Documents\GitHub\Lottery\packages\System.Buffers.4.5.1\lib\net461\System.Buffers.dll
-C:\Users\Admin\OneDrive\Documents\GitHub\Lottery\packages\System.CodeDom.6.0.0\lib\net461\System.CodeDom.dll
-C:\Users\Admin\OneDrive\Documents\GitHub\Lottery\packages\System.Collections.Immutable.6.0.0\lib\net461\System.Collections.Immutable.dll
-C:\Users\Admin\OneDrive\Documents\GitHub\Lottery\packages\System.Drawing.Common.6.0.0\lib\net461\System.Drawing.Common.dll
-C:\Users\Admin\OneDrive\Documents\GitHub\Lottery\packages\System.IO.FileSystem.AccessControl.5.0.0\lib\net461\System.IO.FileSystem.AccessControl.dll
-C:\Users\Admin\OneDrive\Documents\GitHub\Lottery\packages\System.Memory.4.5.5\lib\net461\System.Memory.dll
-C:\Users\Admin\OneDrive\Documents\GitHub\Lottery\packages\System.Numerics.Vectors.4.5.0\lib\net46\System.Numerics.Vectors.dll
-C:\Users\Admin\OneDrive\Documents\GitHub\Lottery\packages\System.Runtime.CompilerServices.Unsafe.6.0.0\lib\net461\System.Runtime.CompilerServices.Unsafe.dll
-C:\Users\Admin\OneDrive\Documents\GitHub\Lottery\packages\System.Security.AccessControl.6.0.0\lib\net461\System.Security.AccessControl.dll
-C:\Users\Admin\OneDrive\Documents\GitHub\Lottery\packages\System.Security.Principal.Windows.5.0.0\lib\net461\System.Security.Principal.Windows.dll
-C:\Users\Admin\OneDrive\Documents\GitHub\Lottery\packages\System.Threading.Channels.6.0.0\lib\net461\System.Threading.Channels.dll
-C:\Users\Admin\OneDrive\Documents\GitHub\Lottery\packages\System.Threading.Tasks.Extensions.4.5.4\lib\net461\System.Threading.Tasks.Extensions.dll
-C:\Users\Admin\OneDrive\Documents\GitHub\Lottery\packages\TensorFlow.NET.0.70.1\lib\netstandard2.0\Tensorflow.Binding.dll
-C:\Users\Admin\OneDrive\Documents\GitHub\Lottery\LotteryDAL\bin\Debug\LotteryDAL.pdb
-C:\Users\Admin\OneDrive\Documents\GitHub\Lottery\LotteryDAL\bin\Debug\LotteryDAL.dll.config
-C:\Users\Admin\OneDrive\Documents\GitHub\Lottery\packages\EntityFramework.6.4.4\lib\net45\EntityFramework.xml
-C:\Users\Admin\OneDrive\Documents\GitHub\Lottery\packages\EntityFramework.6.4.4\lib\net45\EntityFramework.SqlServer.xml
-C:\Users\Admin\OneDrive\Documents\GitHub\Lottery\packages\Google.Protobuf.3.21.4\lib\net45\Google.Protobuf.pdb
-C:\Users\Admin\OneDrive\Documents\GitHub\Lottery\packages\Google.Protobuf.3.21.4\lib\net45\Google.Protobuf.xml
-C:\Users\Admin\OneDrive\Documents\GitHub\Lottery\packages\Microsoft.Bcl.AsyncInterfaces.6.0.0\lib\net461\Microsoft.Bcl.AsyncInterfaces.xml
-C:\Users\Admin\OneDrive\Documents\GitHub\Lottery\packages\Microsoft.Extensions.DependencyInjection.6.0.0\lib\net461\Microsoft.Extensions.DependencyInjection.xml
-C:\Users\Admin\OneDrive\Documents\GitHub\Lottery\packages\Microsoft.Extensions.DependencyInjection.Abstractions.6.0.0\lib\net461\Microsoft.Extensions.DependencyInjection.Abstractions.xml
-C:\Users\Admin\OneDrive\Documents\GitHub\Lottery\packages\Microsoft.ML.1.7.1\lib\netstandard2.0\Microsoft.ML.xml
-C:\Users\Admin\OneDrive\Documents\GitHub\Lottery\packages\Microsoft.ML.1.7.1\lib\netstandard2.0\Microsoft.ML.Core.xml
-C:\Users\Admin\OneDrive\Documents\GitHub\Lottery\packages\Microsoft.ML.CpuMath.1.7.1\lib\netstandard2.0\Microsoft.ML.CpuMath.xml
-C:\Users\Admin\OneDrive\Documents\GitHub\Lottery\packages\Microsoft.ML.1.7.1\lib\netstandard2.0\Microsoft.ML.Data.xml
-C:\Users\Admin\OneDrive\Documents\GitHub\Lottery\packages\Microsoft.ML.DataView.1.7.1\lib\netstandard2.0\Microsoft.ML.DataView.xml
-C:\Users\Admin\OneDrive\Documents\GitHub\Lottery\packages\Microsoft.ML.FastTree.1.7.1\lib\netstandard2.0\Microsoft.ML.FastTree.xml
-C:\Users\Admin\OneDrive\Documents\GitHub\Lottery\packages\Microsoft.ML.ImageAnalytics.1.7.1\lib\netstandard2.0\Microsoft.ML.ImageAnalytics.xml
-C:\Users\Admin\OneDrive\Documents\GitHub\Lottery\packages\Microsoft.ML.1.7.1\lib\netstandard2.0\Microsoft.ML.KMeansClustering.xml
-C:\Users\Admin\OneDrive\Documents\GitHub\Lottery\packages\Microsoft.ML.LightGbm.1.7.1\lib\netstandard2.0\Microsoft.ML.LightGbm.xml
-C:\Users\Admin\OneDrive\Documents\GitHub\Lottery\packages\Microsoft.ML.Mkl.Components.1.7.1\lib\netstandard2.0\Microsoft.ML.Mkl.Components.xml
-C:\Users\Admin\OneDrive\Documents\GitHub\Lottery\packages\Microsoft.ML.Mkl.Redist.1.7.1\lib\netstandard2.0\Microsoft.ML.Mkl.Redist.xml
-C:\Users\Admin\OneDrive\Documents\GitHub\Lottery\packages\Microsoft.ML.1.7.1\lib\netstandard2.0\Microsoft.ML.PCA.xml
-C:\Users\Admin\OneDrive\Documents\GitHub\Lottery\packages\Microsoft.ML.Recommender.0.19.1\lib\netstandard2.0\Microsoft.ML.Recommender.xml
-C:\Users\Admin\OneDrive\Documents\GitHub\Lottery\packages\Microsoft.ML.1.7.1\lib\netstandard2.0\Microsoft.ML.StandardTrainers.xml
-C:\Users\Admin\OneDrive\Documents\GitHub\Lottery\packages\Microsoft.ML.TensorFlow.1.7.1\lib\netstandard2.0\Microsoft.ML.TensorFlow.xml
-C:\Users\Admin\OneDrive\Documents\GitHub\Lottery\packages\Microsoft.ML.1.7.1\lib\netstandard2.0\Microsoft.ML.Transforms.xml
-C:\Users\Admin\OneDrive\Documents\GitHub\Lottery\packages\Microsoft.ML.Vision.1.7.1\lib\netstandard2.0\Microsoft.ML.Vision.xml
-C:\Users\Admin\OneDrive\Documents\GitHub\Lottery\packages\Newtonsoft.Json.13.0.1\lib\net45\Newtonsoft.Json.xml
-C:\Users\Admin\OneDrive\Documents\GitHub\Lottery\packages\NumSharp.Lite.0.1.12\lib\netstandard2.0\NumSharp.Lite.pdb
-C:\Users\Admin\OneDrive\Documents\GitHub\Lottery\packages\Serilog.2.10.0\lib\net46\Serilog.xml
-C:\Users\Admin\OneDrive\Documents\GitHub\Lottery\packages\Serilog.Sinks.Console.4.0.1\lib\net45\Serilog.Sinks.Console.xml
-C:\Users\Admin\OneDrive\Documents\GitHub\Lottery\packages\System.Buffers.4.5.1\lib\net461\System.Buffers.xml
-C:\Users\Admin\OneDrive\Documents\GitHub\Lottery\packages\System.CodeDom.6.0.0\lib\net461\System.CodeDom.xml
-C:\Users\Admin\OneDrive\Documents\GitHub\Lottery\packages\System.Collections.Immutable.6.0.0\lib\net461\System.Collections.Immutable.xml
-C:\Users\Admin\OneDrive\Documents\GitHub\Lottery\packages\System.Drawing.Common.6.0.0\lib\net461\System.Drawing.Common.xml
-C:\Users\Admin\OneDrive\Documents\GitHub\Lottery\packages\System.IO.FileSystem.AccessControl.5.0.0\lib\net461\System.IO.FileSystem.AccessControl.xml
-C:\Users\Admin\OneDrive\Documents\GitHub\Lottery\packages\System.Memory.4.5.5\lib\net461\System.Memory.xml
-C:\Users\Admin\OneDrive\Documents\GitHub\Lottery\packages\System.Numerics.Vectors.4.5.0\lib\net46\System.Numerics.Vectors.xml
-C:\Users\Admin\OneDrive\Documents\GitHub\Lottery\packages\System.Runtime.CompilerServices.Unsafe.6.0.0\lib\net461\System.Runtime.CompilerServices.Unsafe.xml
-C:\Users\Admin\OneDrive\Documents\GitHub\Lottery\packages\System.Security.AccessControl.6.0.0\lib\net461\System.Security.AccessControl.xml
-C:\Users\Admin\OneDrive\Documents\GitHub\Lottery\packages\System.Security.Principal.Windows.5.0.0\lib\net461\System.Security.Principal.Windows.xml
-C:\Users\Admin\OneDrive\Documents\GitHub\Lottery\packages\System.Threading.Channels.6.0.0\lib\net461\System.Threading.Channels.xml
-C:\Users\Admin\OneDrive\Documents\GitHub\Lottery\packages\System.Threading.Tasks.Extensions.4.5.4\lib\net461\System.Threading.Tasks.Extensions.xml
-C:\Users\Admin\OneDrive\Documents\GitHub\Lottery\packages\TensorFlow.NET.0.70.1\lib\netstandard2.0\Tensorflow.Binding.xml
+C:\Users\hphuc\Documents\GitHub\Lottery\packages\EntityFramework.6.4.4\lib\net45\EntityFramework.dll
+C:\Users\hphuc\Documents\GitHub\Lottery\packages\EntityFramework.6.4.4\lib\net45\EntityFramework.SqlServer.dll
+C:\Users\hphuc\Documents\GitHub\Lottery\packages\Google.Protobuf.3.21.4\lib\net45\Google.Protobuf.dll
+C:\Users\hphuc\Documents\GitHub\Lottery\LotteryConsoleApplication\bin\Debug\HtmlAgilityPack.dll
+C:\Users\hphuc\Documents\GitHub\Lottery\LotteryDAL\bin\Debug\LotteryDAL.dll
+C:\Users\hphuc\Documents\GitHub\Lottery\packages\MethodBoundaryAspect.Fody.2.0.144\lib\net452\MethodBoundaryAspect.dll
+C:\Users\hphuc\Documents\GitHub\Lottery\packages\Microsoft.Bcl.AsyncInterfaces.6.0.0\lib\net461\Microsoft.Bcl.AsyncInterfaces.dll
+C:\Users\hphuc\Documents\GitHub\Lottery\packages\Microsoft.Extensions.DependencyInjection.Abstractions.6.0.0\lib\net461\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+C:\Users\hphuc\Documents\GitHub\Lottery\packages\Microsoft.Extensions.DependencyInjection.6.0.0\lib\net461\Microsoft.Extensions.DependencyInjection.dll
+C:\Users\hphuc\Documents\GitHub\Lottery\packages\Microsoft.ML.1.7.1\lib\netstandard2.0\Microsoft.ML.Core.dll
+C:\Users\hphuc\Documents\GitHub\Lottery\packages\Microsoft.ML.CpuMath.1.7.1\lib\netstandard2.0\Microsoft.ML.CpuMath.dll
+C:\Users\hphuc\Documents\GitHub\Lottery\packages\Microsoft.ML.1.7.1\lib\netstandard2.0\Microsoft.ML.Data.dll
+C:\Users\hphuc\Documents\GitHub\Lottery\packages\Microsoft.ML.DataView.1.7.1\lib\netstandard2.0\Microsoft.ML.DataView.dll
+C:\Users\hphuc\Documents\GitHub\Lottery\packages\Microsoft.ML.1.7.1\lib\netstandard2.0\Microsoft.ML.dll
+C:\Users\hphuc\Documents\GitHub\Lottery\packages\Microsoft.ML.FastTree.1.7.1\lib\netstandard2.0\Microsoft.ML.FastTree.dll
+C:\Users\hphuc\Documents\GitHub\Lottery\packages\Microsoft.ML.ImageAnalytics.1.7.1\lib\netstandard2.0\Microsoft.ML.ImageAnalytics.dll
+C:\Users\hphuc\Documents\GitHub\Lottery\packages\Microsoft.ML.1.7.1\lib\netstandard2.0\Microsoft.ML.KMeansClustering.dll
+C:\Users\hphuc\Documents\GitHub\Lottery\packages\Microsoft.ML.LightGbm.1.7.1\lib\netstandard2.0\Microsoft.ML.LightGbm.dll
+C:\Users\hphuc\Documents\GitHub\Lottery\packages\Microsoft.ML.Mkl.Components.1.7.1\lib\netstandard2.0\Microsoft.ML.Mkl.Components.dll
+C:\Users\hphuc\Documents\GitHub\Lottery\packages\Microsoft.ML.Mkl.Redist.1.7.1\lib\netstandard2.0\Microsoft.ML.Mkl.Redist.dll
+C:\Users\hphuc\Documents\GitHub\Lottery\packages\Microsoft.ML.1.7.1\lib\netstandard2.0\Microsoft.ML.PCA.dll
+C:\Users\hphuc\Documents\GitHub\Lottery\packages\Microsoft.ML.Recommender.0.19.1\lib\netstandard2.0\Microsoft.ML.Recommender.dll
+C:\Users\hphuc\Documents\GitHub\Lottery\packages\Microsoft.ML.1.7.1\lib\netstandard2.0\Microsoft.ML.StandardTrainers.dll
+C:\Users\hphuc\Documents\GitHub\Lottery\packages\Microsoft.ML.TensorFlow.1.7.1\lib\netstandard2.0\Microsoft.ML.TensorFlow.dll
+C:\Users\hphuc\Documents\GitHub\Lottery\packages\Microsoft.ML.1.7.1\lib\netstandard2.0\Microsoft.ML.Transforms.dll
+C:\Users\hphuc\Documents\GitHub\Lottery\packages\Microsoft.ML.Vision.1.7.1\lib\netstandard2.0\Microsoft.ML.Vision.dll
+C:\Users\hphuc\Documents\GitHub\Lottery\packages\Newtonsoft.Json.13.0.1\lib\net45\Newtonsoft.Json.dll
+C:\Users\hphuc\Documents\GitHub\Lottery\packages\NumSharp.Lite.0.1.12\lib\netstandard2.0\NumSharp.Lite.dll
+C:\Users\hphuc\Documents\GitHub\Lottery\packages\Protobuf.Text.0.5.0\lib\netstandard2.0\Protobuf.Text.dll
+C:\Users\hphuc\Documents\GitHub\Lottery\packages\Serilog.2.10.0\lib\net46\Serilog.dll
+C:\Users\hphuc\Documents\GitHub\Lottery\packages\Serilog.Sinks.Console.4.0.1\lib\net45\Serilog.Sinks.Console.dll
+C:\Users\hphuc\Documents\GitHub\Lottery\packages\System.Buffers.4.5.1\lib\net461\System.Buffers.dll
+C:\Users\hphuc\Documents\GitHub\Lottery\packages\System.CodeDom.6.0.0\lib\net461\System.CodeDom.dll
+C:\Users\hphuc\Documents\GitHub\Lottery\packages\System.Collections.Immutable.6.0.0\lib\net461\System.Collections.Immutable.dll
+C:\Users\hphuc\Documents\GitHub\Lottery\packages\System.Drawing.Common.6.0.0\lib\net461\System.Drawing.Common.dll
+C:\Users\hphuc\Documents\GitHub\Lottery\packages\System.IO.FileSystem.AccessControl.5.0.0\lib\net461\System.IO.FileSystem.AccessControl.dll
+C:\Users\hphuc\Documents\GitHub\Lottery\packages\System.Memory.4.5.5\lib\net461\System.Memory.dll
+C:\Users\hphuc\Documents\GitHub\Lottery\packages\System.Numerics.Vectors.4.5.0\lib\net46\System.Numerics.Vectors.dll
+C:\Users\hphuc\Documents\GitHub\Lottery\packages\System.Runtime.CompilerServices.Unsafe.6.0.0\lib\net461\System.Runtime.CompilerServices.Unsafe.dll
+C:\Users\hphuc\Documents\GitHub\Lottery\packages\System.Security.AccessControl.6.0.0\lib\net461\System.Security.AccessControl.dll
+C:\Users\hphuc\Documents\GitHub\Lottery\packages\System.Security.Principal.Windows.5.0.0\lib\net461\System.Security.Principal.Windows.dll
+C:\Users\hphuc\Documents\GitHub\Lottery\packages\System.Threading.Channels.6.0.0\lib\net461\System.Threading.Channels.dll
+C:\Users\hphuc\Documents\GitHub\Lottery\packages\System.Threading.Tasks.Extensions.4.5.4\lib\net461\System.Threading.Tasks.Extensions.dll
+C:\Users\hphuc\Documents\GitHub\Lottery\packages\TensorFlow.NET.0.70.1\lib\netstandard2.0\Tensorflow.Binding.dll
+C:\Users\hphuc\Documents\GitHub\Lottery\LotteryDAL\bin\Debug\LotteryDAL.pdb
+C:\Users\hphuc\Documents\GitHub\Lottery\LotteryDAL\bin\Debug\LotteryDAL.dll.config
+C:\Users\hphuc\Documents\GitHub\Lottery\packages\EntityFramework.6.4.4\lib\net45\EntityFramework.xml
+C:\Users\hphuc\Documents\GitHub\Lottery\packages\EntityFramework.6.4.4\lib\net45\EntityFramework.SqlServer.xml
+C:\Users\hphuc\Documents\GitHub\Lottery\packages\Google.Protobuf.3.21.4\lib\net45\Google.Protobuf.pdb
+C:\Users\hphuc\Documents\GitHub\Lottery\packages\Google.Protobuf.3.21.4\lib\net45\Google.Protobuf.xml
+C:\Users\hphuc\Documents\GitHub\Lottery\packages\Microsoft.Bcl.AsyncInterfaces.6.0.0\lib\net461\Microsoft.Bcl.AsyncInterfaces.xml
+C:\Users\hphuc\Documents\GitHub\Lottery\packages\Microsoft.Extensions.DependencyInjection.6.0.0\lib\net461\Microsoft.Extensions.DependencyInjection.xml
+C:\Users\hphuc\Documents\GitHub\Lottery\packages\Microsoft.Extensions.DependencyInjection.Abstractions.6.0.0\lib\net461\Microsoft.Extensions.DependencyInjection.Abstractions.xml
+C:\Users\hphuc\Documents\GitHub\Lottery\packages\Microsoft.ML.1.7.1\lib\netstandard2.0\Microsoft.ML.xml
+C:\Users\hphuc\Documents\GitHub\Lottery\packages\Microsoft.ML.1.7.1\lib\netstandard2.0\Microsoft.ML.Core.xml
+C:\Users\hphuc\Documents\GitHub\Lottery\packages\Microsoft.ML.CpuMath.1.7.1\lib\netstandard2.0\Microsoft.ML.CpuMath.xml
+C:\Users\hphuc\Documents\GitHub\Lottery\packages\Microsoft.ML.1.7.1\lib\netstandard2.0\Microsoft.ML.Data.xml
+C:\Users\hphuc\Documents\GitHub\Lottery\packages\Microsoft.ML.DataView.1.7.1\lib\netstandard2.0\Microsoft.ML.DataView.xml
+C:\Users\hphuc\Documents\GitHub\Lottery\packages\Microsoft.ML.FastTree.1.7.1\lib\netstandard2.0\Microsoft.ML.FastTree.xml
+C:\Users\hphuc\Documents\GitHub\Lottery\packages\Microsoft.ML.ImageAnalytics.1.7.1\lib\netstandard2.0\Microsoft.ML.ImageAnalytics.xml
+C:\Users\hphuc\Documents\GitHub\Lottery\packages\Microsoft.ML.1.7.1\lib\netstandard2.0\Microsoft.ML.KMeansClustering.xml
+C:\Users\hphuc\Documents\GitHub\Lottery\packages\Microsoft.ML.LightGbm.1.7.1\lib\netstandard2.0\Microsoft.ML.LightGbm.xml
+C:\Users\hphuc\Documents\GitHub\Lottery\packages\Microsoft.ML.Mkl.Components.1.7.1\lib\netstandard2.0\Microsoft.ML.Mkl.Components.xml
+C:\Users\hphuc\Documents\GitHub\Lottery\packages\Microsoft.ML.Mkl.Redist.1.7.1\lib\netstandard2.0\Microsoft.ML.Mkl.Redist.xml
+C:\Users\hphuc\Documents\GitHub\Lottery\packages\Microsoft.ML.1.7.1\lib\netstandard2.0\Microsoft.ML.PCA.xml
+C:\Users\hphuc\Documents\GitHub\Lottery\packages\Microsoft.ML.Recommender.0.19.1\lib\netstandard2.0\Microsoft.ML.Recommender.xml
+C:\Users\hphuc\Documents\GitHub\Lottery\packages\Microsoft.ML.1.7.1\lib\netstandard2.0\Microsoft.ML.StandardTrainers.xml
+C:\Users\hphuc\Documents\GitHub\Lottery\packages\Microsoft.ML.TensorFlow.1.7.1\lib\netstandard2.0\Microsoft.ML.TensorFlow.xml
+C:\Users\hphuc\Documents\GitHub\Lottery\packages\Microsoft.ML.1.7.1\lib\netstandard2.0\Microsoft.ML.Transforms.xml
+C:\Users\hphuc\Documents\GitHub\Lottery\packages\Microsoft.ML.Vision.1.7.1\lib\netstandard2.0\Microsoft.ML.Vision.xml
+C:\Users\hphuc\Documents\GitHub\Lottery\packages\Newtonsoft.Json.13.0.1\lib\net45\Newtonsoft.Json.xml
+C:\Users\hphuc\Documents\GitHub\Lottery\packages\NumSharp.Lite.0.1.12\lib\netstandard2.0\NumSharp.Lite.pdb
+C:\Users\hphuc\Documents\GitHub\Lottery\packages\Serilog.2.10.0\lib\net46\Serilog.xml
+C:\Users\hphuc\Documents\GitHub\Lottery\packages\Serilog.Sinks.Console.4.0.1\lib\net45\Serilog.Sinks.Console.xml
+C:\Users\hphuc\Documents\GitHub\Lottery\packages\System.Buffers.4.5.1\lib\net461\System.Buffers.xml
+C:\Users\hphuc\Documents\GitHub\Lottery\packages\System.CodeDom.6.0.0\lib\net461\System.CodeDom.xml
+C:\Users\hphuc\Documents\GitHub\Lottery\packages\System.Collections.Immutable.6.0.0\lib\net461\System.Collections.Immutable.xml
+C:\Users\hphuc\Documents\GitHub\Lottery\packages\System.Drawing.Common.6.0.0\lib\net461\System.Drawing.Common.xml
+C:\Users\hphuc\Documents\GitHub\Lottery\packages\System.IO.FileSystem.AccessControl.5.0.0\lib\net461\System.IO.FileSystem.AccessControl.xml
+C:\Users\hphuc\Documents\GitHub\Lottery\packages\System.Memory.4.5.5\lib\net461\System.Memory.xml
+C:\Users\hphuc\Documents\GitHub\Lottery\packages\System.Numerics.Vectors.4.5.0\lib\net46\System.Numerics.Vectors.xml
+C:\Users\hphuc\Documents\GitHub\Lottery\packages\System.Runtime.CompilerServices.Unsafe.6.0.0\lib\net461\System.Runtime.CompilerServices.Unsafe.xml
+C:\Users\hphuc\Documents\GitHub\Lottery\packages\System.Security.AccessControl.6.0.0\lib\net461\System.Security.AccessControl.xml
+C:\Users\hphuc\Documents\GitHub\Lottery\packages\System.Security.Principal.Windows.5.0.0\lib\net461\System.Security.Principal.Windows.xml
+C:\Users\hphuc\Documents\GitHub\Lottery\packages\System.Threading.Channels.6.0.0\lib\net461\System.Threading.Channels.xml
+C:\Users\hphuc\Documents\GitHub\Lottery\packages\System.Threading.Tasks.Extensions.4.5.4\lib\net461\System.Threading.Tasks.Extensions.xml
+C:\Users\hphuc\Documents\GitHub\Lottery\packages\TensorFlow.NET.0.70.1\lib\netstandard2.0\Tensorflow.Binding.xml

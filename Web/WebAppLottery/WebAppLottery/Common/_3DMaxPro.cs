@@ -9,7 +9,7 @@ namespace DataVietlott
 {
     public class _3DMaxPro
     {
-        private static LotteryEntities Db = LotteryDAL.LotteryConnection.Instance;       
+        private static LotteryEntities Db = new LotteryEntities();
         private static List<Number> ConvertListStringToListNumber(List<string> input)
         {
             List<Number> val = new List<Number>();

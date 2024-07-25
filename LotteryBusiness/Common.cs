@@ -19,7 +19,7 @@ namespace LotteryBusiness
 
     public class Common
     {
-        private static LotteryEntities Db = LotteryDAL.LotteryConnection.Instance;
+        private static LotteryEntities Db = new LotteryEntities();
 
         public static IQueryable<LotteryNumber> GetNumber(Int16 numberWinLevelId, Int16 numberTypeId, DateTime datePublishFrom, DateTime datePublishTo)
         {

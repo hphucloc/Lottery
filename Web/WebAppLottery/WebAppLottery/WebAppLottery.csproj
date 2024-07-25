@@ -15,7 +15,7 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>WebAppLottery</RootNamespace>
     <AssemblyName>WebAppLottery</AssemblyName>
-    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <MvcBuildViews>false</MvcBuildViews>
     <UseIISExpress>true</UseIISExpress>
     <Use64BitIISExpress />
@@ -63,9 +63,9 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\..\DllVersion\1.0.0.8\LotteryBusiness.dll</HintPath>
     </Reference>
-    <Reference Include="LotteryDAL, Version=1.0.0.6, Culture=neutral, processorArchitecture=MSIL">
+    <Reference Include="LotteryDAL, Version=1.0.0.7, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\DllVersion\1.0.0.7\LotteryDAL.dll</HintPath>
+      <HintPath>..\..\..\DllVersion\1.0.0.8\LotteryDAL.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System" />
@@ -397,6 +397,9 @@
   </ItemGroup>
   <ItemGroup>
     <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
