@@ -499,58 +499,67 @@ input.input100 {
 /*//////////////////////////////////////////////////////////////////
 [ Width ]*/
 .wsize1 {
-    width: 1300px;
+	max-width: 110%;
+    width: 900px;
 }
 .wsize3 {
-    width: 1300px;
+	max-width: 110%;
+    width: 900px;
     height: 450px;
     overflow-y: auto;
     overflow-x: auto;
 }
 .wsize5 {
-    width: 1300px;
+	max-width: 110%;
+    width: 900px;
     height: 110px;
     overflow-y: auto;
     overflow-x: auto;
 }
 
 .wsize6 {
-    width: 1300px;
+	max-width: 110%;
+    width: 900px;
     height: 800px;
     overflow-y: auto;
     overflow-x: auto;
 }
 
 .wsize7 {
-    width: 1300px;
+	max-width: 110%;
+    width: 900px;
     height: 350px;
     overflow-y: auto;
     overflow-x: auto;
 }
 
 .wsize8 {
-    width: 1300px;
+	max-width: 110%;
+    width: 900px;
     height: 800px;
     overflow-y: auto;
     overflow-x: auto;
 }
 
 .wsize9 {
-    width: 1300px;
+	max-width: 110%;
+    width: 900px;
     height: 800px;
     overflow-y: auto;
     overflow-x: auto;
 }
 
 .wsize10 {
-    width: 1300px;
+	max-width: 110%;
+    width: 900px;
     height: 800px;
     overflow-y: auto;
     overflow-x: auto;
 }
 
 .wsize4 {
-    width: 1300px;
+	max-width: 110%;
+    width: 900px;
     height: 800px;
     overflow-y: auto;
     overflow-x: auto;
