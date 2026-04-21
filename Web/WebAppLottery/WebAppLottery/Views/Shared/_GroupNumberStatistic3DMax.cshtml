@@ -92,7 +92,7 @@
                                 <tr class="text-info">
                                     @foreach (var i in Model.groupNumberStatistic3DMax.Keys.OrderByDescending(x => x.Date))
                                     {
-                                        <td>@string.Format("{0:d/M}", i.Date)</td>
+                                        <td>@string.Format("{0:d/M/yy}", i.Date)</td>
                                     }
                                 </tr>
                             </thead>

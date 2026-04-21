@@ -71,10 +71,10 @@
             <div class="col-12">
                 <table class="table table-bordered TableData">
                     <thead class="table-dark">
-                        <tr class="text-info">
+                        <tr class="text-info"> 
                             @foreach (var i in Model.groupNumberStatistic.Keys.OrderByDescending(x => x.Date))
                             {
-                                <td>@string.Format("{0:d/M}", i.Date)</td>
+                                <td style="font-size: 10px;">@string.Format("{0:d/M/yy}", i.Date)</td>
                             }
                             @*<td colspan="5">
                                 @Model.groupNumberStatistic.Keys.OrderByDescending(x => x.Date).FirstOrDefault().Date.ToShortDateString()
@@ -564,6 +564,9 @@
                         }
                     </tbody>
                 </table>
+            </div>
+            <div class="col-12">
+                @Html.TextAreaFor(x => x.NumberTableDisplay, new { style = "width: 100%; height: 70vh;" })                
             </div>
         </div>
     }

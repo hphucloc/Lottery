@@ -36,6 +36,7 @@ namespace WebAppLottery.Models
         public DateTime To { get; set; }
         public string HiddenTo { get; set; }
         public string ErrorMessage { get; set; }
+        public string NumberTableDisplay { get; set; }
 
         //numberGroupStatistic
         public int? NoAppear1To7 { get; set; }

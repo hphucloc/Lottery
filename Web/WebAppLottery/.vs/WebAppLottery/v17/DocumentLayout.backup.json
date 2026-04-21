@@ -1,0 +1,234 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\hphuc\\Documents\\GitHub\\Lottery\\Web\\WebAppLottery\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{8E347D15-5BBD-4722-9B90-108012FB375A}|WebAppLottery\\WebAppLottery.csproj|c:\\users\\hphuc\\documents\\github\\lottery\\web\\webapplottery\\webapplottery\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8E347D15-5BBD-4722-9B90-108012FB375A}|WebAppLottery\\WebAppLottery.csproj|solutionrelative:webapplottery\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8E347D15-5BBD-4722-9B90-108012FB375A}|WebAppLottery\\WebAppLottery.csproj|C:\\Users\\hphuc\\Documents\\GitHub\\Lottery\\Web\\WebAppLottery\\webapplottery\\common\\common.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8E347D15-5BBD-4722-9B90-108012FB375A}|WebAppLottery\\WebAppLottery.csproj|solutionrelative:webapplottery\\common\\common.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8E347D15-5BBD-4722-9B90-108012FB375A}|WebAppLottery\\WebAppLottery.csproj|C:\\Users\\hphuc\\Documents\\GitHub\\Lottery\\Web\\WebAppLottery\\webapplottery\\common\\_6over45.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8E347D15-5BBD-4722-9B90-108012FB375A}|WebAppLottery\\WebAppLottery.csproj|solutionrelative:webapplottery\\common\\_6over45.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8E347D15-5BBD-4722-9B90-108012FB375A}|WebAppLottery\\WebAppLottery.csproj|C:\\Users\\hphuc\\Documents\\GitHub\\Lottery\\Web\\WebAppLottery\\webapplottery\\views\\shared\\_requestheader.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{8E347D15-5BBD-4722-9B90-108012FB375A}|WebAppLottery\\WebAppLottery.csproj|solutionrelative:webapplottery\\views\\shared\\_requestheader.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8E347D15-5BBD-4722-9B90-108012FB375A}|WebAppLottery\\WebAppLottery.csproj|C:\\Users\\hphuc\\Documents\\GitHub\\Lottery\\Web\\WebAppLottery\\webapplottery\\views\\home\\data.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{8E347D15-5BBD-4722-9B90-108012FB375A}|WebAppLottery\\WebAppLottery.csproj|solutionrelative:webapplottery\\views\\home\\data.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8E347D15-5BBD-4722-9B90-108012FB375A}|WebAppLottery\\WebAppLottery.csproj|C:\\Users\\hphuc\\Documents\\GitHub\\Lottery\\Web\\WebAppLottery\\webapplottery\\web.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{8E347D15-5BBD-4722-9B90-108012FB375A}|WebAppLottery\\WebAppLottery.csproj|solutionrelative:webapplottery\\web.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8E347D15-5BBD-4722-9B90-108012FB375A}|WebAppLottery\\WebAppLottery.csproj|C:\\Users\\hphuc\\Documents\\GitHub\\Lottery\\Web\\WebAppLottery\\webapplottery\\models\\indexpagemodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8E347D15-5BBD-4722-9B90-108012FB375A}|WebAppLottery\\WebAppLottery.csproj|solutionrelative:webapplottery\\models\\indexpagemodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8E347D15-5BBD-4722-9B90-108012FB375A}|WebAppLottery\\WebAppLottery.csproj|C:\\Users\\hphuc\\Documents\\GitHub\\Lottery\\Web\\WebAppLottery\\webapplottery\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{8E347D15-5BBD-4722-9B90-108012FB375A}|WebAppLottery\\WebAppLottery.csproj|solutionrelative:webapplottery\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8E347D15-5BBD-4722-9B90-108012FB375A}|WebAppLottery\\WebAppLottery.csproj|C:\\Users\\hphuc\\Documents\\GitHub\\Lottery\\Web\\WebAppLottery\\webapplottery\\views\\shared\\_groupnumberstatistic.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{8E347D15-5BBD-4722-9B90-108012FB375A}|WebAppLottery\\WebAppLottery.csproj|solutionrelative:webapplottery\\views\\shared\\_groupnumberstatistic.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8E347D15-5BBD-4722-9B90-108012FB375A}|WebAppLottery\\WebAppLottery.csproj|C:\\Users\\hphuc\\Documents\\GitHub\\Lottery\\Web\\WebAppLottery\\webapplottery\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{8E347D15-5BBD-4722-9B90-108012FB375A}|WebAppLottery\\WebAppLottery.csproj|solutionrelative:webapplottery\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8E347D15-5BBD-4722-9B90-108012FB375A}|WebAppLottery\\WebAppLottery.csproj|C:\\Users\\hphuc\\Documents\\GitHub\\Lottery\\Web\\WebAppLottery\\webapplottery\\js\\main.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{8E347D15-5BBD-4722-9B90-108012FB375A}|WebAppLottery\\WebAppLottery.csproj|solutionrelative:webapplottery\\js\\main.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8E347D15-5BBD-4722-9B90-108012FB375A}|WebAppLottery\\WebAppLottery.csproj|C:\\Users\\hphuc\\Documents\\GitHub\\Lottery\\Web\\WebAppLottery\\webapplottery\\css\\main.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{8E347D15-5BBD-4722-9B90-108012FB375A}|WebAppLottery\\WebAppLottery.csproj|solutionrelative:webapplottery\\css\\main.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8E347D15-5BBD-4722-9B90-108012FB375A}|WebAppLottery\\WebAppLottery.csproj|C:\\Users\\hphuc\\Documents\\GitHub\\Lottery\\Web\\WebAppLottery\\webapplottery\\content\\site.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{8E347D15-5BBD-4722-9B90-108012FB375A}|WebAppLottery\\WebAppLottery.csproj|solutionrelative:webapplottery\\content\\site.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 5,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:129:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "_6Over45.cs",
+              "DocumentMoniker": "C:\\Users\\hphuc\\Documents\\GitHub\\Lottery\\Web\\WebAppLottery\\WebAppLottery\\Common\\_6Over45.cs",
+              "RelativeDocumentMoniker": "WebAppLottery\\Common\\_6Over45.cs",
+              "ToolTip": "C:\\Users\\hphuc\\Documents\\GitHub\\Lottery\\Web\\WebAppLottery\\WebAppLottery\\Common\\_6Over45.cs",
+              "RelativeToolTip": "WebAppLottery\\Common\\_6Over45.cs",
+              "ViewState": "AgIAAAoAAAAAAAAAAAAiwBIAAAAQAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-22T07:25:29.504Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Common.cs",
+              "DocumentMoniker": "C:\\Users\\hphuc\\Documents\\GitHub\\Lottery\\Web\\WebAppLottery\\WebAppLottery\\Common\\Common.cs",
+              "RelativeDocumentMoniker": "WebAppLottery\\Common\\Common.cs",
+              "ToolTip": "C:\\Users\\hphuc\\Documents\\GitHub\\Lottery\\Web\\WebAppLottery\\WebAppLottery\\Common\\Common.cs",
+              "RelativeToolTip": "WebAppLottery\\Common\\Common.cs",
+              "ViewState": "AgIAACEAAAAAAAAAAAAiwCwAAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-22T07:28:24.057Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Web.config",
+              "DocumentMoniker": "C:\\Users\\hphuc\\Documents\\GitHub\\Lottery\\Web\\WebAppLottery\\WebAppLottery\\Web.config",
+              "RelativeDocumentMoniker": "WebAppLottery\\Web.config",
+              "ToolTip": "C:\\Users\\hphuc\\Documents\\GitHub\\Lottery\\Web\\WebAppLottery\\WebAppLottery\\Web.config",
+              "RelativeToolTip": "WebAppLottery\\Web.config",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAABYAAABwAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000601|",
+              "WhenOpened": "2025-10-22T07:23:34.827Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Data.cshtml",
+              "DocumentMoniker": "C:\\Users\\hphuc\\Documents\\GitHub\\Lottery\\Web\\WebAppLottery\\WebAppLottery\\Views\\Home\\Data.cshtml",
+              "RelativeDocumentMoniker": "WebAppLottery\\Views\\Home\\Data.cshtml",
+              "ToolTip": "C:\\Users\\hphuc\\Documents\\GitHub\\Lottery\\Web\\WebAppLottery\\WebAppLottery\\Views\\Home\\Data.cshtml",
+              "RelativeToolTip": "WebAppLottery\\Views\\Home\\Data.cshtml",
+              "ViewState": "AgIAAHUAAAAAAAAAAAAAAIMAAAAyAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-10-22T07:20:04.006Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "HomeController.cs",
+              "DocumentMoniker": "C:\\Users\\hphuc\\Documents\\GitHub\\Lottery\\Web\\WebAppLottery\\WebAppLottery\\Controllers\\HomeController.cs",
+              "RelativeDocumentMoniker": "WebAppLottery\\Controllers\\HomeController.cs",
+              "ToolTip": "C:\\Users\\hphuc\\Documents\\GitHub\\Lottery\\Web\\WebAppLottery\\WebAppLottery\\Controllers\\HomeController.cs",
+              "RelativeToolTip": "WebAppLottery\\Controllers\\HomeController.cs",
+              "ViewState": "AgIAAEsEAAAAAAAAAAAqwFQEAAA0AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-29T14:57:04.104Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "_RequestHeader.cshtml",
+              "DocumentMoniker": "C:\\Users\\hphuc\\Documents\\GitHub\\Lottery\\Web\\WebAppLottery\\WebAppLottery\\Views\\Shared\\_RequestHeader.cshtml",
+              "RelativeDocumentMoniker": "WebAppLottery\\Views\\Shared\\_RequestHeader.cshtml",
+              "ToolTip": "C:\\Users\\hphuc\\Documents\\GitHub\\Lottery\\Web\\WebAppLottery\\WebAppLottery\\Views\\Shared\\_RequestHeader.cshtml",
+              "RelativeToolTip": "WebAppLottery\\Views\\Shared\\_RequestHeader.cshtml",
+              "ViewState": "AgIAAAQAAAAAAAAAAAAYwBMAAABPAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-07-30T17:42:17.78Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "main.js",
+              "DocumentMoniker": "C:\\Users\\hphuc\\Documents\\GitHub\\Lottery\\Web\\WebAppLottery\\WebAppLottery\\js\\main.js",
+              "RelativeDocumentMoniker": "WebAppLottery\\js\\main.js",
+              "ToolTip": "C:\\Users\\hphuc\\Documents\\GitHub\\Lottery\\Web\\WebAppLottery\\WebAppLottery\\js\\main.js",
+              "RelativeToolTip": "WebAppLottery\\js\\main.js",
+              "ViewState": "AQIAABAAAAAAAAAAAAAgwAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
+              "WhenOpened": "2025-07-30T17:41:40.301Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "IndexPageModel.cs",
+              "DocumentMoniker": "C:\\Users\\hphuc\\Documents\\GitHub\\Lottery\\Web\\WebAppLottery\\WebAppLottery\\Models\\IndexPageModel.cs",
+              "RelativeDocumentMoniker": "WebAppLottery\\Models\\IndexPageModel.cs",
+              "ToolTip": "C:\\Users\\hphuc\\Documents\\GitHub\\Lottery\\Web\\WebAppLottery\\WebAppLottery\\Models\\IndexPageModel.cs",
+              "RelativeToolTip": "WebAppLottery\\Models\\IndexPageModel.cs",
+              "ViewState": "AQIAACoAAAAAAAAAAAA3wAkAAAAfAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-30T16:25:22.967Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "_GroupNumberStatistic.cshtml",
+              "DocumentMoniker": "C:\\Users\\hphuc\\Documents\\GitHub\\Lottery\\Web\\WebAppLottery\\WebAppLottery\\Views\\Shared\\_GroupNumberStatistic.cshtml",
+              "RelativeDocumentMoniker": "WebAppLottery\\Views\\Shared\\_GroupNumberStatistic.cshtml",
+              "ToolTip": "C:\\Users\\hphuc\\Documents\\GitHub\\Lottery\\Web\\WebAppLottery\\WebAppLottery\\Views\\Shared\\_GroupNumberStatistic.cshtml",
+              "RelativeToolTip": "WebAppLottery\\Views\\Shared\\_GroupNumberStatistic.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAEoCAAAlAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.002242|",
+              "WhenOpened": "2025-07-29T14:51:03.093Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "main.css",
+              "DocumentMoniker": "C:\\Users\\hphuc\\Documents\\GitHub\\Lottery\\Web\\WebAppLottery\\WebAppLottery\\css\\main.css",
+              "RelativeDocumentMoniker": "WebAppLottery\\css\\main.css",
+              "ToolTip": "C:\\Users\\hphuc\\Documents\\GitHub\\Lottery\\Web\\WebAppLottery\\WebAppLottery\\css\\main.css",
+              "RelativeToolTip": "WebAppLottery\\css\\main.css",
+              "ViewState": "AQIAAO0BAAAAAAAAAAAUwPcBAAAEAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2025-07-29T14:20:51.823Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "Site.css",
+              "DocumentMoniker": "C:\\Users\\hphuc\\Documents\\GitHub\\Lottery\\Web\\WebAppLottery\\WebAppLottery\\Content\\Site.css",
+              "RelativeDocumentMoniker": "WebAppLottery\\Content\\Site.css",
+              "ToolTip": "C:\\Users\\hphuc\\Documents\\GitHub\\Lottery\\Web\\WebAppLottery\\WebAppLottery\\Content\\Site.css",
+              "RelativeToolTip": "WebAppLottery\\Content\\Site.css",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2025-07-29T14:20:16.889Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "_Layout.cshtml",
+              "DocumentMoniker": "C:\\Users\\hphuc\\Documents\\GitHub\\Lottery\\Web\\WebAppLottery\\WebAppLottery\\Views\\Shared\\_Layout.cshtml",
+              "RelativeDocumentMoniker": "WebAppLottery\\Views\\Shared\\_Layout.cshtml",
+              "ToolTip": "C:\\Users\\hphuc\\Documents\\GitHub\\Lottery\\Web\\WebAppLottery\\WebAppLottery\\Views\\Shared\\_Layout.cshtml",
+              "RelativeToolTip": "WebAppLottery\\Views\\Shared\\_Layout.cshtml",
+              "ViewState": "AQIAAK0AAAAAAAAAAAAYwLwAAAANAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.002242|",
+              "WhenOpened": "2024-09-21T09:46:40.675Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\hphuc\\Documents\\GitHub\\Lottery\\Web\\WebAppLottery\\WebAppLottery\\Views\\Home\\Index.cshtml",
+              "RelativeDocumentMoniker": "WebAppLottery\\Views\\Home\\Index.cshtml",
+              "ToolTip": "C:\\Users\\hphuc\\Documents\\GitHub\\Lottery\\Web\\WebAppLottery\\WebAppLottery\\Views\\Home\\Index.cshtml",
+              "RelativeToolTip": "WebAppLottery\\Views\\Home\\Index.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAkAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.002242|",
+              "WhenOpened": "2024-09-21T09:46:30.908Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

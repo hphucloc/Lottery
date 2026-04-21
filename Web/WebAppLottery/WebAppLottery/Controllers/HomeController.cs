@@ -17,7 +17,7 @@ namespace WebAppLottery.Controllers
         public ActionResult Index(IndexPageModel m)
         {            
             m.ListLoaiVe = IndexPageModel.LoaiVe._6Over45;
-            m.From = DateTime.Now.AddMonths(-3);
+            m.From = DateTime.Now.AddYears(-1);
             m.HiddenFrom = string.Format("{0:yyyy-MM-dd}", m.From);
             m.To = DateTime.Now;
             m.HiddenTo = string.Format("{0:yyyy-MM-dd}", m.To);
@@ -60,7 +60,7 @@ namespace WebAppLottery.Controllers
                 }
                 else
                 {
-                    from = DateTime.Now.AddMonths(-3);
+                    from = DateTime.Now.AddYears(-1);
                     to = DateTime.Now;
                     m.ErrorMessage = "Unsuppoted System DateTime Format";
                 }
@@ -77,7 +77,10 @@ namespace WebAppLottery.Controllers
                         TotalNumberAppearInRange = x.TotalNumberAppearInRange,
                         DatePublishList = x.DatePublishList
                     }).OrderBy(x => x.LotNumber).ToList();
-                }                
+
+                    
+
+                }
                 else if (m.ListLoaiVe == IndexPageModel.LoaiVe._6Over55)
                 {                                
                     m.Data = _6Over55TimeLine.Get6Over55Number(from, to).Select(x => new LotteryStatistic1
@@ -88,6 +91,7 @@ namespace WebAppLottery.Controllers
                         TotalNumberAppearInRange = x.TotalNumberAppearInRange,
                         DatePublishList = x.DatePublishList
                     }).OrderBy(x => x.LotNumber).ToList();
+
                 }
                 else if (m.ListLoaiVe == IndexPageModel.LoaiVe._Keno)
                 {
@@ -147,7 +151,7 @@ namespace WebAppLottery.Controllers
                     SortedDictionary<DateTime, SortedSet<int>> hitNumberByDate =
                         new SortedDictionary<DateTime, SortedSet<int>>();
                     foreach (var i in m.Data)
-                    {
+                    {                        
                         if (Convert.ToInt32(i.LotNumber) >= 1 && Convert.ToInt32(i.LotNumber) <= 7)
                         {
                             count1_7 += i.TotalNumberAppearInRange;
@@ -194,14 +198,14 @@ namespace WebAppLottery.Controllers
                             count72_80 += i.TotalNumberAppearInRange;
                         }
 
-                        //Get all publih Date               
+                        //Get all publish Date               
                         foreach (var date in i.AllDatePublishList)
                         {
                             if (!hitNumberByDate.ContainsKey(date))
-                            {
+                            {                                
                                 hitNumberByDate.Add(date, new SortedSet<int>());
                             }
-                        }
+                        }                        
                     }
 
                     if (m.ListLoaiVe != IndexPageModel.LoaiVe._Keno)
@@ -226,6 +230,19 @@ namespace WebAppLottery.Controllers
                     m.NoAppear56To63 = count56_63;
                     m.NoAppear64To71 = count64_71;
                     m.NoAppear72To80 = count72_80;
+
+                    foreach (var i in m.groupNumberStatistic)
+                    {
+                        //render for AI data
+                        m.NumberTableDisplay += i.Key.Date.ToShortDateString() + ": ";
+                        foreach(var j in i.Value)
+                        {
+                            m.NumberTableDisplay += j + ",";
+                        }
+                        m.NumberTableDisplay += "\r\n";
+
+                        //end
+                    }
                 } 
                 else if (m.OriginalData != null && m.OriginalData.Count > 0 && 
                     m.ListLoaiVe == IndexPageModel.LoaiVe._3DMax) //3DMax
@@ -1107,11 +1124,11 @@ namespace WebAppLottery.Controllers
             string val;
             try
             {
-                val = DataVietlott._6Over45.Insert(DataVietlott.Common.ReadAppConfig("6Over45URL"));
-                m.Status = val + "\n";
-
                 val = DataVietlott._6Over55.Insert(DataVietlott.Common.ReadAppConfig("6Over55URL"));
                 m.Status += val + "\n";
+
+                val = DataVietlott._6Over45.Insert(DataVietlott.Common.ReadAppConfig("6Over45URL"));
+                m.Status = val + "\n";               
 
                 val = DataVietlott._3DMax.Insert(DataVietlott.Common.ReadAppConfig("3dMaxURL"));
                 m.Status += val + "\n";

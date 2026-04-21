@@ -103,7 +103,7 @@
         if (Model.ListLoaiVe == WebAppLottery.Models.IndexPageModel.LoaiVe._6Over45 ||           
              Model.ListLoaiVe == WebAppLottery.Models.IndexPageModel.LoaiVe._Keno)
         {
-            <div class="wsize1 bor1 bg1 p-t-1 p-b-1 p-l-15 p-r-15 respon1 d-flex justify-content-start border border-info">
+            <div class="wsize2 bor1 bg1 p-t-1 p-b-1 p-l-15 p-r-15 respon1 d-flex justify-content-start border border-info">
                 <div class="wsize3">
                     @Html.Partial("_GroupNumberStatistic", Model)
                 </div>
@@ -112,7 +112,7 @@
         else
         if (Model.ListLoaiVe == WebAppLottery.Models.IndexPageModel.LoaiVe._6Over55)           
         {
-            <div class="wsize1 bor1 bg1 p-t-1 p-b-1 p-l-15 p-r-15 respon1 d-flex justify-content-start border border-info">
+            <div class="wsize2 bor1 bg1 p-t-1 p-b-1 p-l-15 p-r-15 respon1 d-flex justify-content-start border border-info">
                 <div class="wsize3" style="height:500px">
                     @Html.Partial("_GroupNumberStatistic", Model)
                 </div>
@@ -130,8 +130,8 @@
                  Model.ListLoaiVe == WebAppLottery.Models.IndexPageModel.LoaiVe._Keno) &&
                 Model.Data != null && Model.Data.Count > 0)
         {
-            <div class="wsize1 bor1 bg1 p-t-1 p-b-1 p-l-15 p-r-15 respon1 d-flex justify-content-start border border-info">
-                <div class="wsize6">
+            <div class="wsize2 bor1 bg1 p-t-1 p-b-1 p-l-15 p-r-15 respon1 d-flex justify-content-start border border-info">
+                <div class="wsize3">
                     @RenderBody()
                 </div>
             </div>
@@ -193,7 +193,7 @@
             d.setDate(d.getDate() - 2);
         } else {
             var d = new Date();
-            d.setDate(d.getDate() - 90);
+            d.setDate(d.getDate() - 365);
         }
 
         $('#From').val(moment(d).format('YYYY-MM-DD'));
