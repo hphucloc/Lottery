@@ -196,6 +196,47 @@ namespace LotteryBusiness
             return Db.Numbers.Count(x => x.LotNumber == No && x.NumberTypeId == numberType);
         }
 
+        public static string ExecuteSql(string sql)
+        {
+            var conn = Db.Database.Connection;
+            if (conn.State != System.Data.ConnectionState.Open)
+                conn.Open();
+
+            using (var cmd = conn.CreateCommand())
+            {
+                cmd.CommandText = sql;
+                cmd.CommandTimeout = 60;
+
+                var upper = sql.TrimStart().ToUpper();
+                if (upper.StartsWith("SELECT") || upper.StartsWith("WITH"))
+                {
+                    using (var reader = cmd.ExecuteReader())
+                    {
+                        var sb = new System.Text.StringBuilder();
+                        var cols = Enumerable.Range(0, reader.FieldCount)
+                                            .Select(i => reader.GetName(i));
+                        sb.AppendLine(string.Join("\t", cols));
+                        sb.AppendLine(new string('-', 60));
+                        int rows = 0;
+                        while (reader.Read())
+                        {
+                            var vals = Enumerable.Range(0, reader.FieldCount)
+                                                 .Select(i => reader.IsDBNull(i) ? "NULL" : reader[i].ToString());
+                            sb.AppendLine(string.Join("\t", vals));
+                            rows++;
+                        }
+                        sb.AppendLine(string.Format("-- {0} row(s) returned", rows));
+                        return sb.ToString();
+                    }
+                }
+                else
+                {
+                    int affected = cmd.ExecuteNonQuery();
+                    return string.Format("-- {0} row(s) affected", affected);
+                }
+            }
+        }
+
         public static List<NumbersNextAppear> GetNumbersNextAppear(int leadOffset, int @numberTypeId, int numberWinLevelId)
         {
             Dictionary<DateTime, List<int>> numberNextAppear = new Dictionary<DateTime, List<int>>();            

@@ -5,7 +5,7 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <_PublishTargetUrl>ftp://vietnamlott.net/httpdocs</_PublishTargetUrl>
-    <History>True|2026-04-20T15:20:07.0057968Z||;True|2025-09-10T23:30:02.1990870+07:00||;True|2025-09-10T23:25:48.5438254+07:00||;True|2025-08-28T21:12:51.0301781+07:00||;True|2025-07-31T00:13:48.2754726+07:00||;True|2025-07-30T23:51:19.4037587+07:00||;True|2025-07-30T23:47:16.6201046+07:00||;False|2025-07-29T21:15:20.8404990+07:00||;False|2025-07-29T20:51:18.3645304+07:00||;False|2025-07-29T21:43:32.3344956+07:00||;True|2024-09-25T20:26:47.4553365+07:00||;False|2024-09-21T16:55:49.2581398+07:00||;True|2024-09-18T22:09:28.2269540+07:00||;True|2024-07-25T23:53:12.5575968+07:00||;True|2024-07-25T23:35:27.9072009+07:00||;True|2024-07-25T22:49:09.8111928+07:00||;True|2024-07-25T22:28:41.4778986+07:00||;True|2024-07-25T22:13:21.7870394+07:00||;True|2024-07-25T22:06:12.8351876+07:00||;True|2024-07-25T20:41:57.0837093+07:00||;True|2024-07-25T20:13:48.8605713+07:00||;True|2024-07-18T12:29:59.2560505+07:00||;False|2024-07-18T12:19:50.8818408+07:00||;True|2023-01-16T22:23:23.8126905+07:00||;True|2022-07-08T18:47:00.1274908+07:00||;True|2022-06-10T16:36:14.4249564+07:00||;True|2022-01-18T23:40:57.9409695+07:00||;True|2021-12-27T23:20:20.7599737+07:00||;False|2021-12-27T23:15:15.4346838+07:00||;True|2021-12-17T00:54:29.5307068+07:00||;False|2021-12-17T00:36:43.5843467+07:00||;True|2021-12-17T00:30:26.6994781+07:00||;True|2021-12-16T02:43:50.2366163+07:00||;True|2021-12-16T02:33:15.1733184+07:00||;True|2021-12-14T23:11:47.0178136+07:00||;True|2021-12-05T11:32:08.8774730+07:00||;False|2021-12-05T11:30:30.3572263+07:00||;</History>
+    <History>True|2026-04-21T16:10:09.2913743Z||;False|2026-04-21T22:59:43.5777714+07:00||;True|2026-04-21T22:55:47.8723176+07:00||;True|2026-04-20T22:20:07.0057968+07:00||;True|2025-09-10T23:30:02.1990870+07:00||;True|2025-09-10T23:25:48.5438254+07:00||;True|2025-08-28T21:12:51.0301781+07:00||;True|2025-07-31T00:13:48.2754726+07:00||;True|2025-07-30T23:51:19.4037587+07:00||;True|2025-07-30T23:47:16.6201046+07:00||;False|2025-07-29T21:15:20.8404990+07:00||;False|2025-07-29T20:51:18.3645304+07:00||;False|2025-07-29T21:43:32.3344956+07:00||;True|2024-09-25T20:26:47.4553365+07:00||;False|2024-09-21T16:55:49.2581398+07:00||;True|2024-09-18T22:09:28.2269540+07:00||;True|2024-07-25T23:53:12.5575968+07:00||;True|2024-07-25T23:35:27.9072009+07:00||;True|2024-07-25T22:49:09.8111928+07:00||;True|2024-07-25T22:28:41.4778986+07:00||;True|2024-07-25T22:13:21.7870394+07:00||;True|2024-07-25T22:06:12.8351876+07:00||;True|2024-07-25T20:41:57.0837093+07:00||;True|2024-07-25T20:13:48.8605713+07:00||;True|2024-07-18T12:29:59.2560505+07:00||;False|2024-07-18T12:19:50.8818408+07:00||;True|2023-01-16T22:23:23.8126905+07:00||;True|2022-07-08T18:47:00.1274908+07:00||;True|2022-06-10T16:36:14.4249564+07:00||;True|2022-01-18T23:40:57.9409695+07:00||;True|2021-12-27T23:20:20.7599737+07:00||;False|2021-12-27T23:15:15.4346838+07:00||;True|2021-12-17T00:54:29.5307068+07:00||;False|2021-12-17T00:36:43.5843467+07:00||;True|2021-12-17T00:30:26.6994781+07:00||;True|2021-12-16T02:43:50.2366163+07:00||;True|2021-12-16T02:33:15.1733184+07:00||;True|2021-12-14T23:11:47.0178136+07:00||;True|2021-12-05T11:32:08.8774730+07:00||;False|2021-12-05T11:30:30.3572263+07:00||;</History>
     <TimeStampOfAssociatedLegacyPublishXmlFile />
     <EncryptedPassword>AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAy9aS8343bUCYj+mj1pogQgAAAAACAAAAAAAQZgAAAAEAACAAAACW6tMilceo843qRJTEhLxRNrHTXPJIKT2YRHahXi5n6wAAAAAOgAAAAAIAACAAAAD4a6kp2crXnAs3sKjwB/XUDFZHcJ2w17taYoRh8o0HLTAAAADxGm67tYzUzNJCupP3FfxL1mTcpPtPurpxBHtZsY848XT8A039OWWlo8qtGdLwJ7JAAAAA0SK9TUM/DMO8SUrKgepr23z8Ka1kg8bVEFPdKTkvWICK0PE5zRY3WRm/xKN0G/4wWOO33genh/HfPoofudxQsQ==</EncryptedPassword>
     <LastFailureDetails />
@@ -18,10 +18,10 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
       <publishTime>10/25/2021 17:11:53</publishTime>
     </File>
     <File Include="bin/App_global.asax.compiled">
-      <publishTime>04/20/2026 21:59:58</publishTime>
+      <publishTime>04/21/2026 23:07:29</publishTime>
     </File>
     <File Include="bin/App_global.asax.dll">
-      <publishTime>04/20/2026 21:59:58</publishTime>
+      <publishTime>04/21/2026 23:07:29</publishTime>
     </File>
     <File Include="bin/EntityFramework.dll">
       <publishTime>04/17/2020 03:38:42</publishTime>
@@ -216,10 +216,10 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
       <publishTime>10/25/2021 17:11:54</publishTime>
     </File>
     <File Include="bin/WebAppLottery.dll">
-      <publishTime>04/20/2026 21:59:06</publishTime>
+      <publishTime>04/21/2026 23:07:10</publishTime>
     </File>
     <File Include="bin/WebAppLottery.pdb">
-      <publishTime>04/20/2026 21:59:06</publishTime>
+      <publishTime>04/21/2026 23:07:10</publishTime>
     </File>
     <File Include="bin/WebGrease.dll">
       <publishTime>10/25/2021 17:11:57</publishTime>
@@ -402,7 +402,7 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
       <publishTime>12/22/2021 15:41:24</publishTime>
     </File>
     <File Include="PrecompiledApp.config">
-      <publishTime>04/20/2026 21:59:35</publishTime>
+      <publishTime>04/21/2026 23:07:13</publishTime>
     </File>
     <File Include="Scripts/bootstrap-toggle.js">
       <publishTime>11/20/2021 15:15:00</publishTime>
@@ -855,7 +855,7 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
       <publishTime>10/25/2021 17:11:53</publishTime>
     </File>
     <File Include="Views/Home/Data.cshtml">
-      <publishTime>07/04/2022 17:47:07</publishTime>
+      <publishTime>04/21/2026 22:59:01</publishTime>
     </File>
     <File Include="Views/Home/Index.cshtml">
       <publishTime>01/28/2022 03:12:43</publishTime>
@@ -870,7 +870,7 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
       <publishTime>12/23/2021 16:53:28</publishTime>
     </File>
     <File Include="Views/Shared/_GroupNumberStatistic.cshtml">
-      <publishTime>07/31/2025 00:36:01</publishTime>
+      <publishTime>04/21/2026 22:49:47</publishTime>
     </File>
     <File Include="Views/Shared/_GroupNumberStatistic3DMax.cshtml">
       <publishTime>07/29/2025 21:49:52</publishTime>

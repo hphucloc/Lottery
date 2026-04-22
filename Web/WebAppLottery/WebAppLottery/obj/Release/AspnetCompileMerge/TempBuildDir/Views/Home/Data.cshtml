@@ -159,7 +159,39 @@
                 </table>
             </div>
         }
-    </div>    
+        @using (Html.BeginForm("ExecuteSql", "Home", FormMethod.Post))
+        {
+            <div class="wsize7 bor1 bg1 p-t-1 p-b-1 p-l-15 p-r-15 d-flex justify-content-start border border-warning">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <td>
+                                <h5>Execute SQL</h5>
+                            </td>
+                            <td>
+                                @Html.PasswordFor(x => x.PasswordAddDataManualy, new { @class = "form-control PasswordAddDataManualy" })
+                            </td>
+                            <td>
+                                <button type="submit" class="btn btn-warning btn-sm">Run</button>
+                            </td>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td colspan="3">
+                                @Html.TextAreaFor(x => x.SqlCommand, new { @class = "form-control", @rows = "4", @placeholder = "SELECT * FROM dbo.Number WHERE ..." })
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="3">
+                                @Html.TextAreaFor(x => x.SqlResult, new { @class = "form-control StatusDataPage", @readonly = "readonly", @rows = "8" })
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        }
+    </div>
 
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")

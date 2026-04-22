@@ -49,5 +49,7 @@ namespace WebAppLottery.Models
         public string No7 { get; set; }
         public string PasswordAddDataManualy { get; set; }
         public string AddMultipleDataManualy { get; set; }
+        public string SqlCommand { get; set; }
+        public string SqlResult { get; set; }
     }
 }

@@ -7,6 +7,7 @@ using System.Web;
 using System.Web.Mvc;
 
 using LotteryBusiness;
+using LotteryDAL;
 using WebAppLottery.Models;
 
 namespace WebAppLottery.Controllers
@@ -3114,6 +3115,79 @@ namespace WebAppLottery.Controllers
             return View("Data", m);
         }
 
-       
+        [HttpPost]
+        public ActionResult ExecuteSql(DataPageModel m)
+        {
+            try
+            {
+                if (!m.PasswordAddDataManualy.Equals("Vera"))
+                    throw new Exception("Wrong Password");
+
+                if (string.IsNullOrWhiteSpace(m.SqlCommand))
+                    throw new Exception("SQL is empty");
+
+                using (var db = new LotteryEntities())
+                {
+                    var conn = db.Database.Connection;
+                    if (conn.State != System.Data.ConnectionState.Open)
+                        conn.Open();
+
+                    using (var cmd = conn.CreateCommand())
+                    {
+                        cmd.CommandText = m.SqlCommand;
+                        cmd.CommandTimeout = 60;
+
+                        string upper = m.SqlCommand.TrimStart().ToUpper();
+                        if (upper.StartsWith("SELECT") || upper.StartsWith("WITH"))
+                        {
+                            var sb = new System.Text.StringBuilder();
+                            using (var reader = cmd.ExecuteReader())
+                            {
+                                for (int col = 0; col < reader.FieldCount; col++)
+                                {
+                                    if (col > 0) sb.Append("\t");
+                                    sb.Append(reader.GetName(col));
+                                }
+                                sb.AppendLine();
+                                sb.AppendLine(new string('-', 60));
+                                int rows = 0;
+                                while (reader.Read())
+                                {
+                                    for (int col = 0; col < reader.FieldCount; col++)
+                                    {
+                                        if (col > 0) sb.Append("\t");
+                                        sb.Append(reader.IsDBNull(col) ? "NULL" : reader[col].ToString());
+                                    }
+                                    sb.AppendLine();
+                                    rows++;
+                                }
+                                sb.AppendLine(string.Format("-- {0} row(s) returned", rows));
+                            }
+                            m.SqlResult = sb.ToString();
+                        }
+                        else
+                        {
+                            int affected = cmd.ExecuteNonQuery();
+                            m.SqlResult = string.Format("-- {0} row(s) affected", affected);
+                        }
+                    }
+                }
+                m.ErrorMessage = "";
+            }
+            catch (Exception e)
+            {
+                m.SqlResult = "";
+                m.ErrorMessage = e.Message;
+            }
+
+            m.IsGet6Over45 = true;
+            m.IsGet6Over55 = true;
+            m.IsGet3DMax = true;
+            m.IsGet3DMaxPro = true;
+            ModelState.Clear();
+            return View("Data", m);
+        }
+
+
     }
 }
