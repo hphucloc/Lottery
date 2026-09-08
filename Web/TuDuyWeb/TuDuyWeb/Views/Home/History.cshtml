@@ -1,0 +1,47 @@
+@model IReadOnlyList<TuDuyWeb.Models.MemorySessionSummaryViewModel>
+
+@{
+    ViewBag.Title = "Lich su";
+}
+
+<section class="card">
+    <div class="section-head">
+        <h1>Lich su session</h1>
+        <p>Danh sach 30 session gan nhat de ban xem lai nhip tu duy theo tung ngay.</p>
+    </div>
+
+    @if (Model == null || Model.Count == 0)
+    {
+        <p class="muted">Chua co session nao trong database.</p>
+    }
+    else
+    {
+        <div class="table-wrap">
+            <table class="session-table">
+                <thead>
+                    <tr>
+                        <th>Ngay</th>
+                        <th>Trang thai</th>
+                        <th>Cau hoi</th>
+                        <th>Xu ly</th>
+                        <th>Tong ket</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var session in Model)
+                    {
+                        <tr>
+                            <td>@session.SessionDate.ToString("dd/MM/yyyy")</td>
+                            <td>@session.InterviewStatus</td>
+                            <td>@session.QuestionCount</td>
+                            <td>@session.ProcessingStatus</td>
+                            <td>@(string.IsNullOrWhiteSpace(session.Summary) ? "Chua co tom tat" : session.Summary)</td>
+                            <td><a href="@Url.Action("Details", "Home", new { id = session.Id })">Xem chi tiet</a></td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    }
+</section>

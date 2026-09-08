@@ -10,7 +10,6 @@ namespace GetData
 {
     class Common
     {
-        private static LotteryEntities Db = LotteryDAL.LotteryConnection.Instance;
         public static string Content(string url)
         {          
             HtmlWeb web = new HtmlWeb();
@@ -47,15 +46,24 @@ namespace GetData
         }
         public static bool CheckDateExisted(DateTime date)
         {
-            return Db.Numbers.Any(a => a.DatePublish == date.Date);
+            using (var db = new LotteryEntities())
+            {
+                return db.Numbers.Any(a => a.DatePublish == date.Date);
+            }
         }
         public static bool CheckDateExisted(DateTime date, Int16 numberTypeId)
         {
-            return Db.Numbers.Any(a => DbFunctions.TruncateTime(a.DatePublish) == date.Date && a.NumberTypeId == numberTypeId);
+            using (var db = new LotteryEntities())
+            {
+                return db.Numbers.Any(a => DbFunctions.TruncateTime(a.DatePublish) == date.Date && a.NumberTypeId == numberTypeId);
+            }
         }
         public static bool CheckKyQuayExisted(int kyQuay, int numberTypeID)
         {
-            return Db.Numbers.Any(x => x.KyQuay == kyQuay);
+            using (var db = new LotteryEntities())
+            {
+                return db.Numbers.Any(x => x.KyQuay == kyQuay);
+            }
         }
     }
 }

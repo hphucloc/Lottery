@@ -1,0 +1,72 @@
+@model TuDuyWeb.Models.HomeIndexViewModel
+
+@{
+    ViewBag.Title = "Hom nay";
+}
+
+<section class="hero">
+    <div>
+        <span class="eyebrow">Session hom nay</span>
+        <h1>@Model.SessionDate.ToString("dddd, dd/MM/yyyy")</h1>
+        <p class="muted">Trang nay tao hoac mo session theo ngay va luu vao bang `memory_sessions` cung `memory_questions`.</p>
+    </div>
+    <div class="hero-meta">
+        <div class="metric">
+            <span>Trang thai</span>
+            <strong>@Model.InterviewStatus</strong>
+        </div>
+        <div class="metric">
+            <span>So cau hoi</span>
+            <strong>@Model.Questions.Count</strong>
+        </div>
+    </div>
+</section>
+
+@if (!string.IsNullOrWhiteSpace(Model.StatusMessage))
+{
+    <section class="alert success">@Model.StatusMessage</section>
+}
+
+@using (Html.BeginForm("Save", "Home", FormMethod.Post, new { @class = "stack" }))
+{
+    @Html.AntiForgeryToken()
+    @Html.HiddenFor(x => x.SessionId)
+    @Html.HiddenFor(x => x.SessionDate)
+    @Html.HiddenFor(x => x.InterviewStatus)
+
+    <section class="card">
+        <div class="section-head">
+            <h2>Cau hoi trong ngay</h2>
+            <p>Ban co the tra loi ngan gon truoc, sau do bo sung sau.</p>
+        </div>
+
+        @for (var i = 0; i < Model.Questions.Count; i++)
+        {
+            <div class="question-block">
+                @Html.HiddenFor(x => x.Questions[i].QuestionNo)
+                @Html.HiddenFor(x => x.Questions[i].QuestionType)
+                @Html.HiddenFor(x => x.Questions[i].QuestionText)
+                <label class="question-title" for="Questions_@(i)__AnswerText">
+                    Câu @Model.Questions[i].QuestionNo. @Model.Questions[i].QuestionText
+                </label>
+                <span class="question-tag">@Model.Questions[i].QuestionType</span>
+                @Html.TextAreaFor(
+                    x => x.Questions[i].AnswerText,
+                    new { rows = "4", @class = "text-input", placeholder = "Ghi lai suy nghi cua ban..." })
+            </div>
+        }
+    </section>
+
+    <section class="card">
+        <div class="section-head">
+            <h2>Tong ket ngan</h2>
+            <p>Phan nay se luu vao cot `summary` de sau nay ban xem lai nhanh hon.</p>
+        </div>
+        @Html.TextAreaFor(x => x.Summary, new { rows = "5", @class = "text-input", placeholder = "Tom tat ngay hom nay bang 3-5 dong..." })
+    </section>
+
+    <div class="actions">
+        <button type="submit" class="primary-button">Luu buoi tu duy</button>
+        <a class="secondary-link" href="@Url.Action("History", "Home")">Xem lich su</a>
+    </div>
+}

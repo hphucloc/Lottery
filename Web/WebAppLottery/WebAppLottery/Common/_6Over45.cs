@@ -1,4 +1,4 @@
-﻿using HtmlAgilityPack;
+using HtmlAgilityPack;
 using LotteryDAL;
 using System;
 using System.Collections.Generic;
@@ -9,7 +9,6 @@ namespace DataVietlott
 {
     public class _6Over45
     {
-        private static LotteryEntities Db = new LotteryEntities();  
         private static List<Number> ConvertListStringToListNumber(List<string> input)
         {
             List<Number> val = new List<Number>();
@@ -25,17 +24,16 @@ namespace DataVietlott
                     aNo.NumberTypeId = (Int16)Enum_NumberType._6Over45;
                     aNo.NumberWinLevelId = (Int16)Enum_NumberWinLevel.DacBiet;
                     aNo.DateCreated = DateTime.Now;
-                    aNo.LotNumber = input[no + 2].Substring(0,2);      
-                                
+                    aNo.LotNumber = input[no + 2].Substring(0,2);
                     val.Add(aNo);
-                   
+
                     aNo = new Number();
                     aNo.DatePublish = Convert.ToDateTime(input[no],cul);
                     aNo.NumberTypeId = (Int16)Enum_NumberType._6Over45;
                     aNo.NumberWinLevelId = (Int16)Enum_NumberWinLevel.DacBiet;
                     aNo.LotNumber = input[no + 2].Substring(2,2);
                     aNo.DateCreated = DateTime.Now;
-                    val.Add(aNo);                   
+                    val.Add(aNo);
 
                     aNo = new Number();
                     aNo.DatePublish = Convert.ToDateTime(input[no],cul);
@@ -67,14 +65,15 @@ namespace DataVietlott
                     aNo.NumberWinLevelId = (Int16)Enum_NumberWinLevel.DacBiet;
                     aNo.LotNumber = input[no + 2].Substring(10, 2);
                     aNo.DateCreated = DateTime.Now;
-                    val.Add(aNo);                    
+                    val.Add(aNo);
                 }
 
                 no += 5;
             }
 
             return val;
-        }        
+        }
+
         public static string Insert(string url)
         {
             string value = null;
@@ -95,23 +94,26 @@ namespace DataVietlott
 
             int c = 0;
             List<Number> ListNumber = ConvertListStringToListNumber(list);
-            foreach (Number lotNumber in ListNumber)
-            {
-                c++;
-                value += lotNumber.LotNumber + " ";
-                lotNumber.LotNumber = (Convert.ToInt32(lotNumber.LotNumber)).ToString();
-                Db.Numbers.Add(lotNumber);
-                Db.Entry(lotNumber).State = System.Data.Entity.EntityState.Added;
-                Db.SaveChanges();
 
-                if (c == 6)
+            using (var db = new LotteryEntities())
+            {
+                foreach (Number lotNumber in ListNumber)
                 {
-                    value += "\t(" + lotNumber.DatePublish.ToShortDateString() + ")\n\t";
-                    c = 0;
+                    c++;
+                    value += lotNumber.LotNumber + " ";
+                    lotNumber.LotNumber = (Convert.ToInt32(lotNumber.LotNumber)).ToString();
+                    db.Numbers.Add(lotNumber);
+                    db.Entry(lotNumber).State = System.Data.Entity.EntityState.Added;
+
+                    if (c == 6)
+                    {
+                        value += "\t(" + lotNumber.DatePublish.ToShortDateString() + ")\n\t";
+                        c = 0;
+                    }
                 }
+                db.SaveChanges();
             }
 
-            
             return "+ " + DateTime.Now + ", Đã Lấy 6/45 thành công các số: \n\t" + (string.IsNullOrEmpty(value) ? "none" : value);
         }
     }

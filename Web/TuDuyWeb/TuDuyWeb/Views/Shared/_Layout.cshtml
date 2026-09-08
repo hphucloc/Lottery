@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewBag.Title - Tu Duy Moi Ngay</title>
+    <link href="~/Content/Site.css" rel="stylesheet" />
+</head>
+<body>
+    <div class="page-shell">
+        <header class="site-header">
+            <div>
+                <a class="brand" href="@Url.Action("Index", "Home")">tuduy.vietnamlott.net</a>
+                <p class="subtitle">Khung ghi lai tu duy, cam xuc, quyet dinh va bai hoc moi ngay.</p>
+            </div>
+            <nav class="site-nav">
+                <a href="@Url.Action("Index", "Home")">Hom nay</a>
+                <a href="@Url.Action("History", "Home")">Lich su</a>
+            </nav>
+        </header>
+
+        <main class="page-content">
+            @RenderBody()
+        </main>
+    </div>
+</body>
+</html>

@@ -72,9 +72,18 @@
                                            title="Đi đến trang Vietlott 3DMaxPRO" target="_blank" class="dropdown-item dropdown text-decoration-none HeaderLinkColor">3DMaxPRO trên Vietlott website</a>
                                     }
 
-                                    <button type="button" class="dropdown-item btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalHDSD">
+                                    @*<button type="button" class="dropdown-item btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalHDSD">
                                         Hướng dẫn sử dụng
-                                    </button>
+                                    </button>*@
+
+                                
+                                    <a href="@Url.Action("Index", "Home")"
+                                       target="_self"
+                                       title="Đi đến trang Home"
+                                       class="dropdown-item dropdown text-decoration-none HeaderLinkColor">   
+                                       Home
+                                    </a>
+                               
 
                                     <button type="button" class="dropdown-item btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalLienHe">
                                         Góp ý/Liên hệ
@@ -192,8 +201,8 @@
             var d = new Date();
             d.setDate(d.getDate() - 2);
         } else {
-            var d = new Date();
-            d.setDate(d.getDate() - 365);
+            var d = new Date('2015/01/01');
+           // d.setDate(');
         }
 
         $('#From').val(moment(d).format('YYYY-MM-DD'));

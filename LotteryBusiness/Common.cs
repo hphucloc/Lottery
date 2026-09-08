@@ -1,4 +1,4 @@
-﻿using LotteryDAL;
+using LotteryDAL;
 using System;
 using System.Collections.Generic;
 using System.Data.Entity;
@@ -19,58 +19,64 @@ namespace LotteryBusiness
 
     public class Common
     {
-        private static LotteryEntities Db = new LotteryEntities();
-
-        public static IQueryable<LotteryNumber> GetNumber(Int16 numberWinLevelId, Int16 numberTypeId, DateTime datePublishFrom, DateTime datePublishTo)
+        public static List<LotteryNumber> GetNumber(Int16 numberWinLevelId, Int16 numberTypeId, DateTime datePublishFrom, DateTime datePublishTo)
         {
-            return Db.Numbers.Where(n => n.NumberWinLevelId == numberWinLevelId && n.NumberTypeId == numberTypeId &&
-                n.DatePublish >= datePublishFrom && n.DatePublish <= datePublishTo).OrderBy(p => p.LotNumber).Select(p => new LotteryNumber()
-                {
-                    DateCreated = p.DateCreated,
-                    DatePublish = p.DatePublish,
-                    DateUpdated = p.DateUpdated,
-                    LotNumber = p.LotNumber,
-                    NumberId = p.NumberId,
-                    NumberTypeId = p.NumberTypeId,
-                    NumberWinLevelId = p.NumberWinLevelId,
-                    KyQuay = p.KyQuay
-                });
+            using (var db = new LotteryEntities())
+            {
+                return db.Numbers.Where(n => n.NumberWinLevelId == numberWinLevelId && n.NumberTypeId == numberTypeId &&
+                    n.DatePublish >= datePublishFrom && n.DatePublish <= datePublishTo).OrderBy(p => p.LotNumber).Select(p => new LotteryNumber()
+                    {
+                        DateCreated = p.DateCreated,
+                        DatePublish = p.DatePublish,
+                        DateUpdated = p.DateUpdated,
+                        LotNumber = p.LotNumber,
+                        NumberId = p.NumberId,
+                        NumberTypeId = p.NumberTypeId,
+                        NumberWinLevelId = p.NumberWinLevelId,
+                        KyQuay = p.KyQuay
+                    }).ToList();
+            }
         }
 
-        public static IQueryable<LotteryNumber> GetNumber(string number, Int16 numberWinLevelId, Int16 numberTypeId, DateTime datePublishFrom, DateTime datePublishTo)
+        public static List<LotteryNumber> GetNumber(string number, Int16 numberWinLevelId, Int16 numberTypeId, DateTime datePublishFrom, DateTime datePublishTo)
         {
-            return Db.Numbers.Where(n => n.NumberWinLevelId == numberWinLevelId && n.NumberTypeId == numberTypeId && n.LotNumber == number &&
-                n.DatePublish >= datePublishFrom && n.DatePublish <= datePublishTo).OrderBy(p => p.LotNumber).Select(p => new LotteryNumber()
-                {
-                    DateCreated = p.DateCreated,
-                    DatePublish = p.DatePublish,
-                    DateUpdated = p.DateUpdated,
-                    LotNumber = p.LotNumber,
-                    NumberId = p.NumberId,
-                    NumberTypeId = p.NumberTypeId,
-                    NumberWinLevelId = p.NumberWinLevelId,
-                    KyQuay = p.KyQuay
-                });
-            
+            using (var db = new LotteryEntities())
+            {
+                return db.Numbers.Where(n => n.NumberWinLevelId == numberWinLevelId && n.NumberTypeId == numberTypeId && n.LotNumber == number &&
+                    n.DatePublish >= datePublishFrom && n.DatePublish <= datePublishTo).OrderBy(p => p.LotNumber).Select(p => new LotteryNumber()
+                    {
+                        DateCreated = p.DateCreated,
+                        DatePublish = p.DatePublish,
+                        DateUpdated = p.DateUpdated,
+                        LotNumber = p.LotNumber,
+                        NumberId = p.NumberId,
+                        NumberTypeId = p.NumberTypeId,
+                        NumberWinLevelId = p.NumberWinLevelId,
+                        KyQuay = p.KyQuay
+                    }).ToList();
+            }
         }
 
-        public static IQueryable<LotteryNumber> GetNumber(Int16 numberTypeId, DateTime datePublishFrom, DateTime datePublishTo)
+        public static List<LotteryNumber> GetNumber(Int16 numberTypeId, DateTime datePublishFrom, DateTime datePublishTo)
         {
-            return Db.Numbers.Where(n => n.NumberTypeId == numberTypeId &&
-                n.DatePublish >= datePublishFrom && n.DatePublish <= datePublishTo).OrderByDescending(x => x.KyQuay).Select(p => new LotteryNumber()
-                {
-                    DateCreated = p.DateCreated,
-                    DatePublish = p.DatePublish,
-                    DateUpdated = p.DateUpdated,
-                    LotNumber = p.LotNumber,
-                    NumberId = p.NumberId,
-                    NumberTypeId = p.NumberTypeId,
-                    NumberWinLevelId = p.NumberWinLevelId,
-                    KyQuay = p.KyQuay
-                });
-        }       
+            using (var db = new LotteryEntities())
+            {
+                return db.Numbers.Where(n => n.NumberTypeId == numberTypeId &&
+                    n.DatePublish >= datePublishFrom && n.DatePublish <= datePublishTo).OrderByDescending(x => x.KyQuay).Select(p => new LotteryNumber()
+                    {
+                        DateCreated = p.DateCreated,
+                        DatePublish = p.DatePublish,
+                        DateUpdated = p.DateUpdated,
+                        LotNumber = p.LotNumber,
+                        NumberId = p.NumberId,
+                        NumberTypeId = p.NumberTypeId,
+                        NumberWinLevelId = p.NumberWinLevelId,
+                        KyQuay = p.KyQuay
+                    }).ToList();
+            }
+        }
 
-        public static List<LoterryStatistic> GetLotNumberStatistic(IQueryable<LotteryNumber> Number)
+        public static List<LoterryStatistic> GetLotNumberStatistic(IEnumerable<LotteryNumber> Number)
         {
             List<LoterryStatistic> lst = new List<LoterryStatistic>();
 
@@ -90,7 +96,7 @@ namespace LotteryBusiness
                 a.NumberWinLevelId = i.NumberWinLevelId;
                 a.KyQuay = i.KyQuay;
                 lstData.Add(a);
-            }           
+            }
 
             //Bo so trung
             foreach (LotteryNumber no in lstData.OrderBy(x=>x.LotNumber))
@@ -117,14 +123,15 @@ namespace LotteryBusiness
                     lst[lst.Count - 1].DatePublishList.DatePublishList1.Add(no.DatePublish);
                 }
                 prvLotNumber = curLotNumber;
-
             }
+
+            var numberList = Number.ToList();
 
             //Lay ngay lon nhat va nho nhat
             foreach(LoterryStatistic no in lst)
             {
-                no.DatePublishMax = Number.Max(a => a.DatePublish);
-                no.DatePublishMin = Number.Min(a => a.DatePublish);
+                no.DatePublishMax = numberList.Max(a => a.DatePublish);
+                no.DatePublishMin = numberList.Min(a => a.DatePublish);
                 no.TotalNumberAppear = GetTotalNumberAppear(no.LotNumber, no.NumberTypeId);
                 no.TotalNumberAppearInRange = no.DatePublishList.DatePublishList1.Count;
             }
@@ -132,24 +139,24 @@ namespace LotteryBusiness
             //Lay tat ca ngay publish
             foreach (LoterryStatistic no in lst)
             {
-                var a = Number.GroupBy(n => n.DatePublish).ToList();
+                var a = numberList.GroupBy(n => n.DatePublish).ToList();
                 foreach (var state in a)
                 {
                     no.AllDatePublishList.Add(state.First().DatePublish);
                 }
-            }          
+            }
 
             return lst;
         }
 
-        public static List<LoterryStatistic> GetLotNumberStatisticKeno(IQueryable<LotteryNumber> Number)
+        public static List<LoterryStatistic> GetLotNumberStatisticKeno(IEnumerable<LotteryNumber> Number)
         {
             List<LoterryStatistic> lst = new List<LoterryStatistic>();
-                      
+
             foreach (LotteryNumber no in Number)
             {
                 if(lst.FirstOrDefault(x=>x.LotNumber == no.LotNumber) == null)
-                {                      
+                {
                     LoterryStatistic sta = new LoterryStatistic();
                     sta.NumberTypeId = no.NumberTypeId;
                     sta.NumberWinLevelId = no.NumberWinLevelId;
@@ -158,22 +165,23 @@ namespace LotteryBusiness
                     sta.DatePublish = no.DatePublish;
                     sta.DatePublishList.DatePublishList1.Add(no.DatePublish);
                     sta.DatePublishList.LstKyQuay.Add(no.KyQuay);
-                    sta.TotalNumberAppear = no.TotalNumberAppear;                    
+                    sta.TotalNumberAppear = no.TotalNumberAppear;
                     lst.Add(sta);
                 }
                 else
                 {
                     lst.FirstOrDefault(x => x.LotNumber == no.LotNumber).DatePublishList.DatePublishList1.Add(no.DatePublish);
                     lst.FirstOrDefault(x => x.LotNumber == no.LotNumber).DatePublishList.LstKyQuay.Add(no.KyQuay);
-                }               
+                }
             }
-            
+
+            var numberList = Number.ToList();
 
             //Lay ngay lon nhat va nho nhat
             foreach (LoterryStatistic no in lst)
             {
-                no.DatePublishMax = Number.Max(a => a.DatePublish);
-                no.DatePublishMin = Number.Min(a => a.DatePublish);
+                no.DatePublishMax = numberList.Max(a => a.DatePublish);
+                no.DatePublishMin = numberList.Min(a => a.DatePublish);
                 no.TotalNumberAppear = GetTotalNumberAppear(no.LotNumber, no.NumberTypeId);
                 no.TotalNumberAppearInRange = no.DatePublishList.DatePublishList1.Count;
             }
@@ -181,7 +189,7 @@ namespace LotteryBusiness
             //Lay tat ca ngay publish
             foreach (LoterryStatistic no in lst)
             {
-                var a = Number.GroupBy(n => n.DatePublish).ToList();
+                var a = numberList.GroupBy(n => n.DatePublish).ToList();
                 foreach (var state in a)
                 {
                     no.AllDatePublishList.Add(state.First().DatePublish);
@@ -193,99 +201,110 @@ namespace LotteryBusiness
 
         public static int GetTotalNumberAppear(string No, short numberType)
         {
-            return Db.Numbers.Count(x => x.LotNumber == No && x.NumberTypeId == numberType);
+            using (var db = new LotteryEntities())
+            {
+                return db.Numbers.Count(x => x.LotNumber == No && x.NumberTypeId == numberType);
+            }
         }
 
         public static string ExecuteSql(string sql)
         {
-            var conn = Db.Database.Connection;
-            if (conn.State != System.Data.ConnectionState.Open)
-                conn.Open();
-
-            using (var cmd = conn.CreateCommand())
+            using (var db = new LotteryEntities())
             {
-                cmd.CommandText = sql;
-                cmd.CommandTimeout = 60;
+                var conn = db.Database.Connection;
+                if (conn.State != System.Data.ConnectionState.Open)
+                    conn.Open();
 
-                var upper = sql.TrimStart().ToUpper();
-                if (upper.StartsWith("SELECT") || upper.StartsWith("WITH"))
+                using (var cmd = conn.CreateCommand())
                 {
-                    using (var reader = cmd.ExecuteReader())
+                    cmd.CommandText = sql;
+                    cmd.CommandTimeout = 60;
+
+                    var upper = sql.TrimStart().ToUpper();
+                    if (upper.StartsWith("SELECT") || upper.StartsWith("WITH"))
                     {
-                        var sb = new System.Text.StringBuilder();
-                        var cols = Enumerable.Range(0, reader.FieldCount)
-                                            .Select(i => reader.GetName(i));
-                        sb.AppendLine(string.Join("\t", cols));
-                        sb.AppendLine(new string('-', 60));
-                        int rows = 0;
-                        while (reader.Read())
+                        using (var reader = cmd.ExecuteReader())
                         {
-                            var vals = Enumerable.Range(0, reader.FieldCount)
-                                                 .Select(i => reader.IsDBNull(i) ? "NULL" : reader[i].ToString());
-                            sb.AppendLine(string.Join("\t", vals));
-                            rows++;
+                            var sb = new System.Text.StringBuilder();
+                            var cols = Enumerable.Range(0, reader.FieldCount)
+                                                .Select(i => reader.GetName(i));
+                            sb.AppendLine(string.Join("\t", cols));
+                            sb.AppendLine(new string('-', 60));
+                            int rows = 0;
+                            while (reader.Read())
+                            {
+                                var vals = Enumerable.Range(0, reader.FieldCount)
+                                                     .Select(i => reader.IsDBNull(i) ? "NULL" : reader[i].ToString());
+                                sb.AppendLine(string.Join("\t", vals));
+                                rows++;
+                            }
+                            sb.AppendLine(string.Format("-- {0} row(s) returned", rows));
+                            return sb.ToString();
                         }
-                        sb.AppendLine(string.Format("-- {0} row(s) returned", rows));
-                        return sb.ToString();
                     }
-                }
-                else
-                {
-                    int affected = cmd.ExecuteNonQuery();
-                    return string.Format("-- {0} row(s) affected", affected);
+                    else
+                    {
+                        int affected = cmd.ExecuteNonQuery();
+                        return string.Format("-- {0} row(s) affected", affected);
+                    }
                 }
             }
         }
 
         public static List<NumbersNextAppear> GetNumbersNextAppear(int leadOffset, int @numberTypeId, int numberWinLevelId)
         {
-            Dictionary<DateTime, List<int>> numberNextAppear = new Dictionary<DateTime, List<int>>();            
+            using (var db = new LotteryEntities())
+            {
+                var pLeadOffset = new SqlParameter("@leadOffset", leadOffset);
+                var pNumberTypeId = new SqlParameter("@numberTypeId", numberTypeId);
+                var pNumberWinLevelId = new SqlParameter("@NumberWinLevelId", numberWinLevelId);
 
-            var pLeadOffset = new SqlParameter("@leadOffset", leadOffset);         
-            var pNumberTypeId = new SqlParameter("@numberTypeId", numberTypeId);
-            var pNumberWinLevelId = new SqlParameter("@NumberWinLevelId", numberWinLevelId);
+                return db.Database.SqlQuery<NumbersNextAppear>("GetNextAppear @leadOffset, @numberTypeId, @numberWinLevelId ",
+                        pLeadOffset, pNumberTypeId, pNumberWinLevelId)
+                    .ToList();
+            }
+        }
 
-            var result = Db.Database.SqlQuery<NumbersNextAppear>("GetNextAppear @leadOffset, @numberTypeId, @numberWinLevelId ",
-                    pLeadOffset, pNumberTypeId, pNumberWinLevelId)
-                .ToList();
-
-            return result;
-        }        
         public static void NewNumber(DateTime publishDdate, List<string> number, short numberType, short numberWinLevel)
         {
-            Number n = null;
-            foreach (var no in number)
+            using (var db = new LotteryEntities())
             {
-                n = new Number();
-                n.DateCreated = DateTime.Now;
-                n.DatePublish = publishDdate;
-                n.LotNumber = no;
-                n.NumberTypeId = numberType;
-                n.NumberWinLevelId = numberWinLevel;
-                Db.Entry(n).State = System.Data.Entity.EntityState.Added;
-                Db.Numbers.Add(n);
-            }
-            try
-            {              
-                Db.SaveChanges();
-            }
-            catch (Exception)
-            {
-
-                foreach (var i in number)
+                Number n = null;
+                foreach (var no in number)
                 {
-                    Db.Database.ExecuteSqlCommand("INSERT INTO dbo.Number(NumberTypeId, NumberWinLevelId, LotNumber, DatePublish, DateCreated) VALUES({0}, {1}, {2}, {3}, {4})",
-                        numberType, numberWinLevel, i, publishDdate, publishDdate);
+                    n = new Number();
+                    n.DateCreated = DateTime.Now;
+                    n.DatePublish = publishDdate;
+                    n.LotNumber = no;
+                    n.NumberTypeId = numberType;
+                    n.NumberWinLevelId = numberWinLevel;
+                    db.Entry(n).State = EntityState.Added;
+                    db.Numbers.Add(n);
                 }
-                //throw new Exception();
+                try
+                {
+                    db.SaveChanges();
+                }
+                catch (Exception)
+                {
+                    foreach (var i in number)
+                    {
+                        db.Database.ExecuteSqlCommand("INSERT INTO dbo.Number(NumberTypeId, NumberWinLevelId, LotNumber, DatePublish, DateCreated) VALUES({0}, {1}, {2}, {3}, {4})",
+                            numberType, numberWinLevel, i, publishDdate, publishDdate);
+                    }
+                }
             }
-        }        
+        }
+
         public static void CreateBoughtNumber(List<int> number, DateTime dateBought, short numberType, short numberWinLevel)
         {
-            foreach (byte i in number)
+            using (var db = new LotteryEntities())
             {
-                Db.Database.ExecuteSqlCommand("INSERT INTO dbo.NumberBought(DateBought, LotNumber, NumberTypeId, NumberWinLevelId, CreatedDate) VALUES({0}, {1}, {2}, {3}, {4})",
-                    dateBought, i, numberType, numberWinLevel, DateTime.Now);
+                foreach (byte i in number)
+                {
+                    db.Database.ExecuteSqlCommand("INSERT INTO dbo.NumberBought(DateBought, LotNumber, NumberTypeId, NumberWinLevelId, CreatedDate) VALUES({0}, {1}, {2}, {3}, {4})",
+                        dateBought, i, numberType, numberWinLevel, DateTime.Now);
+                }
             }
         }
 
@@ -311,7 +330,6 @@ namespace LotteryBusiness
                     }
                 }
                 lstItem.Add(item);
-
             }
             return lstItem.OrderByDescending(x => x.PublishDate).ToList();
         }

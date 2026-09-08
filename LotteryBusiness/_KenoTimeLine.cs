@@ -11,12 +11,12 @@ namespace LotteryBusiness
     {
         public static List<LoterryStatistic> GetKenoNumberStatistic(List<LotteryNumber> numbers)
         {                       
-            return Common.GetLotNumberStatisticKeno(numbers.AsQueryable());
+            return Common.GetLotNumberStatisticKeno(numbers);
         }
 
         public static List<LotteryNumber> GetKenoNumber(DateTime datePublishFrom, DateTime datePublishTo)
         {
-            IQueryable<LotteryNumber> number = Common.GetNumber((int)Enum_NumberWinLevel.DacBiet, (Int16)Enum_NumberType._Keno, datePublishFrom, datePublishTo);
+            var number = Common.GetNumber((int)Enum_NumberWinLevel.DacBiet, (Int16)Enum_NumberType._Keno, datePublishFrom, datePublishTo);
 
             List<LotteryNumber> numbers = new List<LotteryNumber>();
             foreach (LotteryNumber no in number)
@@ -43,7 +43,7 @@ namespace LotteryBusiness
 
         public static List<LotteryNumber> GetKenoNumber(string getNumber, DateTime datePublishFrom, DateTime datePublishTo)
         {
-            IQueryable<LotteryNumber> number = Common.GetNumber((int)Enum_NumberWinLevel.DacBiet, 
+            var number = Common.GetNumber((int)Enum_NumberWinLevel.DacBiet,
                 (Int16)Enum_NumberType._Keno, datePublishFrom, datePublishTo).Where(x=>x.LotNumber == getNumber);
 
             List<LotteryNumber> numbers = new List<LotteryNumber>();
@@ -93,8 +93,8 @@ namespace LotteryBusiness
         {
             SortedDictionary<int?, string[]> lstChanLeLonNho = new SortedDictionary<int?, string[]>();
 
-            IQueryable<LotteryNumber> lstChanle = Common.GetNumber((int)Enum_NumberWinLevel.GiaiChanLe, (Int16)Enum_NumberType._Keno, datePublishFrom, datePublishTo);
-            IQueryable<LotteryNumber> lstLonNho = Common.GetNumber((int)Enum_NumberWinLevel.GiaiLonNho, (Int16)Enum_NumberType._Keno, datePublishFrom, datePublishTo);
+            var lstChanle = Common.GetNumber((int)Enum_NumberWinLevel.GiaiChanLe, (Int16)Enum_NumberType._Keno, datePublishFrom, datePublishTo);
+            var lstLonNho = Common.GetNumber((int)Enum_NumberWinLevel.GiaiLonNho, (Int16)Enum_NumberType._Keno, datePublishFrom, datePublishTo);
 
             foreach (var i in lstChanle)
             {

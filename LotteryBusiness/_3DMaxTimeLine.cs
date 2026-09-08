@@ -11,7 +11,7 @@ namespace LotteryBusiness
     {
         public static List<LoterryStatistic> Get3DMaxNumberDacBiet(DateTime datePublishFrom, DateTime datePublishTo)
         {
-            IQueryable<LotteryNumber> number = Common.GetNumber((Int16)Enum_NumberWinLevel.DacBiet, (Int16)Enum_NumberType._3DMax, datePublishFrom, datePublishTo);
+            var number =Common.GetNumber((Int16)Enum_NumberWinLevel.DacBiet, (Int16)Enum_NumberType._3DMax, datePublishFrom, datePublishTo);
 
             List<LotteryNumber> numbers = new List<LotteryNumber>();
             foreach (LotteryNumber no in number)
@@ -34,7 +34,7 @@ namespace LotteryBusiness
                 }
             }
 
-            return Common.GetLotNumberStatisticKeno(numbers.AsQueryable());
+            return Common.GetLotNumberStatisticKeno(numbers);
         }
 
         public static List<LoterryStatistic> Get3DMaxNumberDacBiet(string getNumber, DateTime datePublishFrom, DateTime datePublishTo)
@@ -44,7 +44,7 @@ namespace LotteryBusiness
 
         public static List<LoterryStatistic> Get3DMaxNumberGiaiNhat(DateTime datePublishFrom, DateTime datePublishTo)
         {
-            IQueryable<LotteryNumber> number = Common.GetNumber((Int16)Enum_NumberWinLevel.GiaiNhat, (Int16)Enum_NumberType._3DMax, datePublishFrom, datePublishTo);
+            var number =Common.GetNumber((Int16)Enum_NumberWinLevel.GiaiNhat, (Int16)Enum_NumberType._3DMax, datePublishFrom, datePublishTo);
             List<LotteryNumber> numbers = new List<LotteryNumber>();
             foreach (LotteryNumber no in number)
             {
@@ -66,7 +66,7 @@ namespace LotteryBusiness
                 }
             }
 
-            return Common.GetLotNumberStatisticKeno(numbers.AsQueryable());
+            return Common.GetLotNumberStatisticKeno(numbers);
         }
 
         public static List<LoterryStatistic> Get3DMaxNumberGiaiNhat(string getNumber, DateTime datePublishFrom, DateTime datePublishTo)
@@ -76,7 +76,7 @@ namespace LotteryBusiness
 
         public static List<LoterryStatistic> Get3DMaxNumberGiaiNhi(DateTime datePublishFrom, DateTime datePublishTo)
         {
-            IQueryable<LotteryNumber> number = Common.GetNumber((Int16)Enum_NumberWinLevel.GiaiNhi, (Int16)Enum_NumberType._3DMax, datePublishFrom, datePublishTo);
+            var number =Common.GetNumber((Int16)Enum_NumberWinLevel.GiaiNhi, (Int16)Enum_NumberType._3DMax, datePublishFrom, datePublishTo);
             List<LotteryNumber> numbers = new List<LotteryNumber>();
             foreach (LotteryNumber no in number)
             {
@@ -98,7 +98,7 @@ namespace LotteryBusiness
                 }
             }
 
-            return Common.GetLotNumberStatisticKeno(numbers.AsQueryable());           
+            return Common.GetLotNumberStatisticKeno(numbers);           
         }
 
         public static List<LoterryStatistic> Get3DMaxNumberGiaiNhi(string getNumber, DateTime datePublishFrom, DateTime datePublishTo)
@@ -108,7 +108,7 @@ namespace LotteryBusiness
 
         public static List<LoterryStatistic> Get3DMaxNumberGiaiBa(DateTime datePublishFrom, DateTime datePublishTo)
         {
-            IQueryable<LotteryNumber> number = Common.GetNumber((Int16)Enum_NumberWinLevel.GiaiBa, (Int16)Enum_NumberType._3DMax, datePublishFrom, datePublishTo);
+            var number =Common.GetNumber((Int16)Enum_NumberWinLevel.GiaiBa, (Int16)Enum_NumberType._3DMax, datePublishFrom, datePublishTo);
 
             List<LotteryNumber> numbers = new List<LotteryNumber>();
             foreach (LotteryNumber no in number)
@@ -131,7 +131,7 @@ namespace LotteryBusiness
                 }
             }
 
-            return Common.GetLotNumberStatisticKeno(numbers.AsQueryable());
+            return Common.GetLotNumberStatisticKeno(numbers);
         }
 
         public static List<LoterryStatistic> Get3DMaxNumberGiaiBa(string getNumber, DateTime datePublishFrom, DateTime datePublishTo)

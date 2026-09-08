@@ -10,7 +10,6 @@ namespace LotteryApplication
 
     public class _6Over45
     {
-        private static LotteryEntities Db = LotteryDAL.LotteryConnection.Instance;       
         private static List<Number> ConvertListStringToListNumber(List<string> input)
         {
             List<Number> val = new List<Number>();
@@ -89,13 +88,16 @@ namespace LotteryApplication
             }
 
             List<Number> ListNumber = ConvertListStringToListNumber(list);
-            foreach (Number lotNumber in ListNumber)
+            using (var db = new LotteryEntities())
             {
-                Db.Numbers.Add(lotNumber);
-                Db.Entry(lotNumber).State = System.Data.Entity.EntityState.Added;
-            }
+                foreach (Number lotNumber in ListNumber)
+                {
+                    db.Numbers.Add(lotNumber);
+                    db.Entry(lotNumber).State = System.Data.Entity.EntityState.Added;
+                }
 
-            Db.SaveChanges();
+                db.SaveChanges();
+            }
 
         }
     }

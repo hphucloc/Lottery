@@ -26,6 +26,12 @@
     <div class="container-fluid justify-content-end bg-dark">
         <div class="row align-items-lg-center">
             <div class="col-11 align-middle">
+                <a href="@Url.Action("Index", "Home")"
+                   title="Đi đến trang Home"
+                   class="text-light text-decoration-none HeaderHomeLink">
+                    <i class="fa fa-home"></i>
+                    <span class="d-none d-md-inline">Home</span>
+                </a>
                 @Html.LabelFor(x => x.ErrorMessage, Model.ErrorMessage, new { @class = "text-danger" })
             </div>
             <div class="col1 text-end">
@@ -72,9 +78,9 @@
                                            title="Đi đến trang Vietlott 3DMaxPRO" target="_blank" class="dropdown-item dropdown text-decoration-none HeaderLinkColor">3DMaxPRO trên Vietlott website</a>
                                     }
 
-                                    <button type="button" class="dropdown-item btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalHDSD">
+                                    @*<button type="button" class="dropdown-item btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalHDSD">
                                         Hướng dẫn sử dụng
-                                    </button>
+                                    </button>*@
 
                                     <button type="button" class="dropdown-item btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalLienHe">
                                         Góp ý/Liên hệ
@@ -193,7 +199,7 @@
             d.setDate(d.getDate() - 2);
         } else {
             var d = new Date();
-            d.setDate(d.getDate() - 365);
+            d.setDate('1/1/2015');
         }
 
         $('#From').val(moment(d).format('YYYY-MM-DD'));

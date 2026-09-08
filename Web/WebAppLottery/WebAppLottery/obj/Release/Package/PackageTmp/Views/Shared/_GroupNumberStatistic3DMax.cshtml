@@ -290,6 +290,15 @@
                             </tbody>
                         </table>
                     </div>
+                    <div class="col-12">
+                        @{
+                            var sbDB = new System.Text.StringBuilder();
+                            foreach (var kv in Model.groupNumberStatistic3DMax.OrderByDescending(x => x.Key.Date)) {
+                                sbDB.AppendLine(kv.Key.Date.ToShortDateString() + ": " + string.Join(",", kv.Value.Select(s => s.Contains(" (") ? s.Substring(0, s.IndexOf(" (")) : s)));
+                            }
+                        }
+                        <textarea style="width: 100%; height: 70vh;" readonly>@sbDB</textarea>
+                    </div>
                 </div>
             </div>
         </div>
@@ -768,6 +777,15 @@
                                 </tr>
                             </tbody>
                         </table>
+                    </div>
+                    <div class="col-12">
+                        @{
+                            var sbG1 = new System.Text.StringBuilder();
+                            foreach (var kv in Model.groupNumberStatistic3DMaxGiaiNhat.OrderByDescending(x => x.Key.Date)) {
+                                sbG1.AppendLine(kv.Key.Date.ToShortDateString() + ": " + string.Join(",", kv.Value.Select(s => s.Contains(" (") ? s.Substring(0, s.IndexOf(" (")) : s)));
+                            }
+                        }
+                        <textarea style="width: 100%; height: 70vh;" readonly>@sbG1</textarea>
                     </div>
                 </div>
             </div>
@@ -1437,6 +1455,15 @@
                                 </tr>
                             </tbody>
                         </table>
+                    </div>
+                    <div class="col-12">
+                        @{
+                            var sbG2 = new System.Text.StringBuilder();
+                            foreach (var kv in Model.groupNumberStatistic3DMaxGiaiNhi.OrderByDescending(x => x.Key.Date)) {
+                                sbG2.AppendLine(kv.Key.Date.ToShortDateString() + ": " + string.Join(",", kv.Value.Select(s => s.Contains(" (") ? s.Substring(0, s.IndexOf(" (")) : s)));
+                            }
+                        }
+                        <textarea style="width: 100%; height: 70vh;" readonly>@sbG2</textarea>
                     </div>
                 </div>
             </div>
@@ -2296,6 +2323,15 @@
                                 </tr>
                             </tbody>
                         </table>
+                    </div>
+                    <div class="col-12">
+                        @{
+                            var sbG3 = new System.Text.StringBuilder();
+                            foreach (var kv in Model.groupNumberStatistic3DMaxGiaiBa.OrderByDescending(x => x.Key.Date)) {
+                                sbG3.AppendLine(kv.Key.Date.ToShortDateString() + ": " + string.Join(",", kv.Value.Select(s => s.Contains(" (") ? s.Substring(0, s.IndexOf(" (")) : s)));
+                            }
+                        }
+                        <textarea style="width: 100%; height: 70vh;" readonly>@sbG3</textarea>
                     </div>
                 </div>
             </div>

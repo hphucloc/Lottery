@@ -114,7 +114,6 @@ namespace GetData
             InsertKeno();
         }
 
-        private LotteryEntities Db = LotteryDAL.LotteryConnection.Instance;
         private List<Number> ConvertListStringToListNumber3DMAX(List<string> input)
         {
             List<Number> val = new List<Number>();
@@ -178,18 +177,21 @@ namespace GetData
 
             int c = 0;
             List<Number> ListNumber = ConvertListStringToListNumber3DMAX(list);
-            foreach (Number lotNumber in ListNumber)
+            using (var db = new LotteryEntities())
             {
-                c++;
-                value += lotNumber.LotNumber + " ";
-                Db.Numbers.Add(lotNumber);
-                Db.Entry(lotNumber).State = System.Data.Entity.EntityState.Added;
-                Db.SaveChanges();
-
-                if (c == 4)
+                foreach (Number lotNumber in ListNumber)
                 {
-                    value += "\t(" + lotNumber.DatePublish.ToShortDateString() + ")\n\t";
-                    c = 0;
+                    c++;
+                    value += lotNumber.LotNumber + " ";
+                    db.Numbers.Add(lotNumber);
+                    db.Entry(lotNumber).State = System.Data.Entity.EntityState.Added;
+                    db.SaveChanges();
+
+                    if (c == 4)
+                    {
+                        value += "\t(" + lotNumber.DatePublish.ToShortDateString() + ")\n\t";
+                        c = 0;
+                    }
                 }
             }
 
@@ -260,18 +262,21 @@ namespace GetData
 
             int c = 0;
             List<Number> ListNumber = ConvertListStringToListNumber3DMAXPRO(list);
-            foreach (Number lotNumber in ListNumber)
+            using (var db = new LotteryEntities())
             {
-                c++;
-                value += lotNumber.LotNumber + " ";
-                Db.Numbers.Add(lotNumber);
-                Db.Entry(lotNumber).State = System.Data.Entity.EntityState.Added;
-                Db.SaveChanges();
-
-                if (c == 4)
+                foreach (Number lotNumber in ListNumber)
                 {
-                    value += "\t(" + lotNumber.DatePublish.ToShortDateString() + ")\n\t";
-                    c = 0;
+                    c++;
+                    value += lotNumber.LotNumber + " ";
+                    db.Numbers.Add(lotNumber);
+                    db.Entry(lotNumber).State = System.Data.Entity.EntityState.Added;
+                    db.SaveChanges();
+
+                    if (c == 4)
+                    {
+                        value += "\t(" + lotNumber.DatePublish.ToShortDateString() + ")\n\t";
+                        c = 0;
+                    }
                 }
             }
 
@@ -346,18 +351,21 @@ namespace GetData
 
             int c = 0;
             List<Number> ListNumber = ConvertListStringToListNumberKENO(list);
-            foreach (Number lotNumber in ListNumber)
+            using (var db = new LotteryEntities())
             {
-                c++;
-                value += lotNumber.LotNumber + " ";
-                Db.Numbers.Add(lotNumber);
-                Db.Entry(lotNumber).State = System.Data.Entity.EntityState.Added;
-                Db.SaveChanges();
-
-                if (c == 3)
+                foreach (Number lotNumber in ListNumber)
                 {
-                    value += "\t(" + lotNumber.DatePublish.ToShortDateString() + ", ky quay:" + lotNumber.KyQuay + ")\n\t";
-                    c = 0;
+                    c++;
+                    value += lotNumber.LotNumber + " ";
+                    db.Numbers.Add(lotNumber);
+                    db.Entry(lotNumber).State = System.Data.Entity.EntityState.Added;
+                    db.SaveChanges();
+
+                    if (c == 3)
+                    {
+                        value += "\t(" + lotNumber.DatePublish.ToShortDateString() + ", ky quay:" + lotNumber.KyQuay + ")\n\t";
+                        c = 0;
+                    }
                 }
             }
 

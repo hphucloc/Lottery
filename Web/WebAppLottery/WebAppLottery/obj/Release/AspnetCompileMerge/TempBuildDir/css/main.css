@@ -589,6 +589,20 @@ input.input100 {
     cursor:pointer;
 }
 
+.HeaderHomeLink{
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-weight: 600;
+    letter-spacing: 0;
+}
+
+.HeaderHomeLink:hover {
+    color: #ffffff;
+    text-decoration: none;
+    opacity: 0.9;
+}
+
 .TableData{
     margin-left: -20px;
 }

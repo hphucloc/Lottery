@@ -1,0 +1,261 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    font-family: "Segoe UI", Tahoma, sans-serif;
+    background:
+        linear-gradient(rgba(245, 241, 232, 0.74), rgba(248, 247, 243, 0.84)),
+        url('Me.jpeg') center center / cover no-repeat fixed;
+    color: #1f2933;
+}
+
+a {
+    color: #8f2d1f;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+.page-shell {
+    max-width: 980px;
+    margin: 0 auto;
+    padding: 24px;
+}
+
+.site-header {
+    display: flex;
+    justify-content: space-between;
+    gap: 16px;
+    align-items: flex-start;
+    margin-bottom: 28px;
+}
+
+.brand {
+    display: inline-block;
+    font-size: 24px;
+    font-weight: 700;
+    color: #1d3557;
+}
+
+.subtitle {
+    margin: 8px 0 0;
+    max-width: 620px;
+    color: #52606d;
+}
+
+.site-nav {
+    display: flex;
+    gap: 16px;
+    padding-top: 8px;
+}
+
+.page-content,
+.stack {
+    display: grid;
+    gap: 20px;
+}
+
+.hero,
+.card,
+.alert {
+    background: rgba(255, 255, 255, 0.9);
+    border: 1px solid #d9d4c8;
+    border-radius: 18px;
+    box-shadow: 0 12px 30px rgba(31, 41, 51, 0.06);
+}
+
+.hero {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    padding: 24px;
+}
+
+.eyebrow {
+    display: inline-block;
+    margin-bottom: 10px;
+    font-size: 12px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: #8f2d1f;
+}
+
+.hero h1,
+.card h1,
+.card h2 {
+    margin: 0 0 8px;
+}
+
+.muted {
+    color: #52606d;
+}
+
+.hero-meta {
+    min-width: 220px;
+    display: grid;
+    gap: 12px;
+}
+
+.metric {
+    padding: 14px 16px;
+    border-radius: 14px;
+    background: #f1e7d7;
+}
+
+.metric span {
+    display: block;
+    font-size: 12px;
+    color: #7b8794;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+}
+
+.metric strong {
+    display: block;
+    margin-top: 6px;
+    font-size: 20px;
+}
+
+.alert {
+    padding: 14px 18px;
+}
+
+.alert.success {
+    border-color: #c7d9c3;
+    background: #eef8eb;
+}
+
+.card {
+    padding: 24px;
+}
+
+.section-head {
+    margin-bottom: 18px;
+}
+
+.section-head p {
+    margin: 0;
+    color: #52606d;
+}
+
+.question-block,
+.detail-block {
+    padding: 18px 0;
+    border-top: 1px solid #ece7dc;
+}
+
+.question-block:first-of-type,
+.detail-block:first-of-type {
+    border-top: 0;
+    padding-top: 0;
+}
+
+.question-title {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+}
+
+.question-tag {
+    display: inline-block;
+    margin-bottom: 12px;
+    padding: 4px 10px;
+    border-radius: 999px;
+    background: #f7d6bf;
+    color: #8f2d1f;
+    font-size: 12px;
+    text-transform: uppercase;
+}
+
+.text-input {
+    width: 100%;
+    min-height: 108px;
+    padding: 12px 14px;
+    border: 1px solid #d6d0c4;
+    border-radius: 12px;
+    box-sizing: border-box;
+    resize: vertical;
+    font: inherit;
+    background: #fffdfa;
+}
+
+.actions {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.primary-button {
+    border: 0;
+    border-radius: 999px;
+    padding: 12px 20px;
+    background: #1d3557;
+    color: #ffffff;
+    font: inherit;
+    cursor: pointer;
+}
+
+.secondary-link {
+    font-weight: 600;
+}
+
+.table-wrap {
+    overflow-x: auto;
+}
+
+.session-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.session-table th,
+.session-table td {
+    padding: 12px 10px;
+    border-top: 1px solid #ece7dc;
+    text-align: left;
+    vertical-align: top;
+}
+
+.session-table thead th {
+    border-top: 0;
+    color: #52606d;
+    font-size: 13px;
+    text-transform: uppercase;
+}
+
+.detail-head {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.detail-question {
+    font-weight: 600;
+}
+
+.long-text {
+    white-space: pre-wrap;
+    line-height: 1.7;
+}
+
+@media (max-width: 768px) {
+    .page-shell {
+        padding: 16px;
+    }
+
+    .site-header,
+    .hero,
+    .actions {
+        flex-direction: column;
+    }
+
+    .hero-meta {
+        min-width: 100%;
+        width: 100%;
+    }
+
+    .site-nav {
+        padding-top: 0;
+    }
+}

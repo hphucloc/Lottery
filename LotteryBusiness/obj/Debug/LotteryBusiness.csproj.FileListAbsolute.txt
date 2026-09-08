@@ -321,6 +321,6 @@ C:\Users\hphuc\Documents\GitHub\Lottery\LotteryBusiness\bin\Debug\Tensorflow.Bin
 C:\Users\hphuc\Documents\GitHub\Lottery\LotteryBusiness\obj\Debug\LotteryBusiness.csproj.AssemblyReference.cache
 C:\Users\hphuc\Documents\GitHub\Lottery\LotteryBusiness\obj\Debug\LotteryBusiness.csproj.CoreCompileInputs.cache
 C:\Users\hphuc\Documents\GitHub\Lottery\LotteryBusiness\obj\Debug\LotteryBusiness.csproj.Fody.CopyLocal.cache
-C:\Users\hphuc\Documents\GitHub\Lottery\LotteryBusiness\obj\Debug\LotteryBusiness.csproj.CopyComplete
 C:\Users\hphuc\Documents\GitHub\Lottery\LotteryBusiness\obj\Debug\LotteryBusiness.dll
 C:\Users\hphuc\Documents\GitHub\Lottery\LotteryBusiness\obj\Debug\LotteryBusiness.pdb
+C:\Users\hphuc\Documents\GitHub\Lottery\LotteryBusiness\obj\Debug\LotteryB.66D10373.Up2Date

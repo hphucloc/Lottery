@@ -9,25 +9,25 @@ namespace LotteryBusiness
     {
         public static List<LoterryStatistic> Get6Over55Number(DateTime datePublishFrom, DateTime datePublishTo)
         {
-            IQueryable<LotteryNumber> number = Common.GetNumber((Int16)Enum_NumberWinLevel.DacBiet, (Int16)Enum_NumberType._6Over55, datePublishFrom, datePublishTo);
+            var number =Common.GetNumber((Int16)Enum_NumberWinLevel.DacBiet, (Int16)Enum_NumberType._6Over55, datePublishFrom, datePublishTo);
             return Common.GetLotNumberStatistic(number);
         }
 
         public static List<LoterryStatistic> GetLatest6Over55Number()
         {
-            IQueryable<LotteryNumber> number = Common.GetNumber((Int16)Enum_NumberWinLevel.DacBiet, (Int16)Enum_NumberType._6Over55, DateTime.Now.AddMonths(-3), DateTime.Now);
+            var number =Common.GetNumber((Int16)Enum_NumberWinLevel.DacBiet, (Int16)Enum_NumberType._6Over55, DateTime.Now.AddMonths(-3), DateTime.Now);
             return Common.GetLotNumberStatistic(number.OrderByDescending(x => x.DatePublish).Take(7));
         }
 
         public static List<LoterryStatistic> GetSecondLatest6Over55Number()
         {
-            IQueryable<LotteryNumber> number = Common.GetNumber((Int16)Enum_NumberWinLevel.DacBiet, (Int16)Enum_NumberType._6Over55, DateTime.Now.AddMonths(-3), DateTime.Now);
+            var number =Common.GetNumber((Int16)Enum_NumberWinLevel.DacBiet, (Int16)Enum_NumberType._6Over55, DateTime.Now.AddMonths(-3), DateTime.Now);
             return Common.GetLotNumberStatistic(number.OrderByDescending(x => x.DatePublish).Skip(7).Take(7));
         }
 
         public static List<LoterryStatistic> Get6Over55Number(string lotNumber, DateTime datePublishFrom, DateTime datePublishTo)
         {
-            IQueryable<LotteryNumber> number = Common.GetNumber(lotNumber, (Int16)Enum_NumberWinLevel.DacBiet, (Int16)Enum_NumberType._6Over55, datePublishFrom, datePublishTo);
+            var number =Common.GetNumber(lotNumber, (Int16)Enum_NumberWinLevel.DacBiet, (Int16)Enum_NumberType._6Over55, datePublishFrom, datePublishTo);
             return Common.GetLotNumberStatistic(number);
         }
 

@@ -320,6 +320,6 @@ C:\Users\hphuc\Documents\GitHub\Lottery\LotteryDAL\bin\Debug\Tensorflow.Binding.
 C:\Users\hphuc\Documents\GitHub\Lottery\LotteryDAL\obj\Debug\LotteryDAL.csproj.AssemblyReference.cache
 C:\Users\hphuc\Documents\GitHub\Lottery\LotteryDAL\obj\Debug\LotteryDAL.csproj.CoreCompileInputs.cache
 C:\Users\hphuc\Documents\GitHub\Lottery\LotteryDAL\obj\Debug\LotteryDAL.csproj.Fody.CopyLocal.cache
-C:\Users\hphuc\Documents\GitHub\Lottery\LotteryDAL\obj\Debug\LotteryDAL.csproj.CopyComplete
 C:\Users\hphuc\Documents\GitHub\Lottery\LotteryDAL\obj\Debug\LotteryDAL.dll
 C:\Users\hphuc\Documents\GitHub\Lottery\LotteryDAL\obj\Debug\LotteryDAL.pdb
+C:\Users\hphuc\Documents\GitHub\Lottery\LotteryDAL\obj\Debug\LotteryDAL.csproj.Up2Date

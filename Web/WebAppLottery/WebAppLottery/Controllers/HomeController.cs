@@ -18,7 +18,7 @@ namespace WebAppLottery.Controllers
         public ActionResult Index(IndexPageModel m)
         {            
             m.ListLoaiVe = IndexPageModel.LoaiVe._6Over45;
-            m.From = DateTime.Now.AddYears(-1);
+            m.From = Convert.ToDateTime("01/01/2015");
             m.HiddenFrom = string.Format("{0:yyyy-MM-dd}", m.From);
             m.To = DateTime.Now;
             m.HiddenTo = string.Format("{0:yyyy-MM-dd}", m.To);

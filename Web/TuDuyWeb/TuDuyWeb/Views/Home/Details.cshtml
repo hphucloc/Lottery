@@ -1,0 +1,44 @@
+@model TuDuyWeb.Models.MemorySessionDetailViewModel
+
+@{
+    ViewBag.Title = "Chi tiet session";
+}
+
+<section class="hero">
+    <div>
+        <span class="eyebrow">Chi tiet session</span>
+        <h1>@Model.SessionDate.ToString("dd/MM/yyyy")</h1>
+        <p class="muted">Trang thai `@Model.InterviewStatus`, xu ly `@Model.ProcessingStatus`, cap nhat luc @Model.UpdatedAt.ToLocalTime().ToString("dd/MM/yyyy HH:mm").</p>
+    </div>
+    <div class="hero-meta">
+        <div class="metric">
+            <span>So cau hoi</span>
+            <strong>@Model.QuestionCount</strong>
+        </div>
+    </div>
+</section>
+
+<section class="card">
+    <div class="section-head">
+        <h2>Tong ket</h2>
+    </div>
+    <p class="long-text">@(string.IsNullOrWhiteSpace(Model.Summary) ? "Chua co tom tat." : Model.Summary)</p>
+</section>
+
+<section class="card">
+    <div class="section-head">
+        <h2>Cau tra loi</h2>
+    </div>
+
+    @foreach (var question in Model.Questions)
+    {
+        <article class="detail-block">
+            <div class="detail-head">
+                <strong>Cau @question.QuestionNo</strong>
+                <span class="question-tag">@question.QuestionType</span>
+            </div>
+            <p class="detail-question">@question.QuestionText</p>
+            <p class="long-text">@(string.IsNullOrWhiteSpace(question.AnswerText) ? "Chua tra loi." : question.AnswerText)</p>
+        </article>
+    }
+</section>

@@ -9,7 +9,6 @@ namespace LotteryApplication
 {
     class Common
     {
-        private static LotteryEntities Db = LotteryDAL.LotteryConnection.Instance;
         public static string Content(string url)
         {          
             HtmlWeb web = new HtmlWeb();
@@ -32,11 +31,17 @@ namespace LotteryApplication
         }
         public static bool CheckDateExisted(DateTime date)
         {
-            return Db.Numbers.Any(a => a.DatePublish == date.Date);
+            using (var db = new LotteryEntities())
+            {
+                return db.Numbers.Any(a => a.DatePublish == date.Date);
+            }
         }
         public static bool CheckDateExisted(DateTime date, Int16 numberTypeId)
         {
-            return Db.Numbers.Any(a => DbFunctions.TruncateTime(a.DatePublish) == date.Date && a.NumberTypeId == numberTypeId);
+            using (var db = new LotteryEntities())
+            {
+                return db.Numbers.Any(a => DbFunctions.TruncateTime(a.DatePublish) == date.Date && a.NumberTypeId == numberTypeId);
+            }
         }
         public static string ReadAppConfig(string key)
         {
