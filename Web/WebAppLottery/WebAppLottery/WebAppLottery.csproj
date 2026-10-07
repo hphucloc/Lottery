@@ -148,6 +148,8 @@
     <Compile Include="Common\_6Over45.cs" />
     <Compile Include="Common\_6Over55.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\LotteryApiController.cs" />
+    <Compile Include="Models\LotteryDraw.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -188,6 +190,7 @@
     <Content Include="css\util.css" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
+    <Content Include="api-docs\openapi.json" />
     <Content Include="Content\Site.css" />
     <Content Include="images\BackArrow.png" />
     <Content Include="images\bg01.jpg" />

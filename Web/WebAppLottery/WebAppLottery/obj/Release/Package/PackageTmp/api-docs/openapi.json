@@ -1,0 +1,257 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "Vietlott history API",
+    "version": "1.0.0",
+    "description": "Read all stored history for all four lottery games through complete pagination."
+  },
+  "servers": [
+    {
+      "url": "https://vietnamlott.net"
+    }
+  ],
+  "paths": {
+    "/api/v1/lottery/{game}/draws": {
+      "get": {
+        "operationId": "getLotteryDraws",
+        "summary": "Read a page of complete lottery history",
+        "description": "Read history newest first. Full retrieval requires all four games and every page until hasMore=false. Check warnings and latestAvailableDrawDate. No scraping or predictions.",
+        "parameters": [
+          {
+            "name": "game",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "enum": [
+                "645",
+                "655",
+                "3dmax",
+                "3dmaxpro"
+              ]
+            }
+          },
+          {
+            "name": "from",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "format": "date"
+            },
+            "description": "Inclusive earliest date, yyyy-MM-dd."
+          },
+          {
+            "name": "to",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "format": "date"
+            },
+            "description": "Inclusive latest date, yyyy-MM-dd."
+          },
+          {
+            "name": "limit",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "minimum": 1,
+              "maximum": 100
+            },
+            "description": "Use 50 for transport pages and continue via nextOffset until all history is read. Omitting limit returns full history and may exceed Action response limits."
+          },
+          {
+            "name": "offset",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "minimum": 0,
+              "maximum": 1000000,
+              "default": 0
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Stored history; empty draws means no matching data.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DrawPage"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid game, dates, or pagination",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Bearer key missing or invalid when configured",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "503": {
+            "description": "Database unavailable",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        },
+        "x-openai-isConsequential": false
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "Error": {
+        "type": "object",
+        "properties": {
+          "error": {
+            "type": "string"
+          },
+          "message": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "error"
+        ]
+      },
+      "Prize": {
+        "type": "object",
+        "properties": {
+          "levelId": {
+            "type": "integer"
+          },
+          "level": {
+            "type": "string"
+          },
+          "numbers": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        },
+        "required": [
+          "levelId",
+          "level",
+          "numbers"
+        ]
+      },
+      "Draw": {
+        "type": "object",
+        "properties": {
+          "date": {
+            "type": "string",
+            "format": "date"
+          },
+          "drawNumber": {
+            "type": [
+              "integer",
+              "null"
+            ]
+          },
+          "prizes": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Prize"
+            }
+          },
+          "warnings": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        },
+        "required": [
+          "date",
+          "drawNumber",
+          "prizes",
+          "warnings"
+        ]
+      },
+      "DrawPage": {
+        "type": "object",
+        "properties": {
+          "game": {
+            "type": "string"
+          },
+          "source": {
+            "type": "string"
+          },
+          "timezone": {
+            "type": "string"
+          },
+          "fetchedAtUtc": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "latestAvailableDrawDate": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "format": "date"
+          },
+          "totalDraws": {
+            "type": "integer"
+          },
+          "limit": {
+            "type": [
+              "integer",
+              "null"
+            ]
+          },
+          "offset": {
+            "type": "integer"
+          },
+          "hasMore": {
+            "type": "boolean"
+          },
+          "nextOffset": {
+            "type": [
+              "integer",
+              "null"
+            ]
+          },
+          "draws": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Draw"
+            }
+          }
+        },
+        "required": [
+          "game",
+          "source",
+          "timezone",
+          "fetchedAtUtc",
+          "latestAvailableDrawDate",
+          "totalDraws",
+          "limit",
+          "offset",
+          "hasMore",
+          "nextOffset",
+          "draws"
+        ]
+      }
+    }
+  }
+}

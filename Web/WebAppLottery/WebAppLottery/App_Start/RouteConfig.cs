@@ -13,6 +13,13 @@ namespace WebAppLottery
         {
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
 
+            routes.MapRoute("LotteryOpenApi", "api/v1/lottery/openapi",
+                new { controller = "LotteryApi", action = "OpenApi" });
+            routes.MapRoute("LotteryAll", "api/v1/lottery/all",
+                new { controller = "LotteryApi", action = "All" });
+            routes.MapRoute("LotteryDraws", "api/v1/lottery/{game}/draws",
+                new { controller = "LotteryApi", action = "Draws" });
+
             routes.MapRoute(
                 name: "Default",
                 url: "{controller}/{action}/{id}",
