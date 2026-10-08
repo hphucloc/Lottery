@@ -28,3 +28,25 @@ textarea {
     height: 32px;
     border-radius: 5px;
 }
+
+.homepage-credentials {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 8px;
+    padding: 8px 0;
+    margin-right: 12px;
+}
+
+.homepage-credentials .form-control {
+    width: 140px;
+    height: 32px;
+}
+
+.homepage-menu .navbar-nav .dropdown-menu {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    left: auto;
+    z-index: 1000;
+}

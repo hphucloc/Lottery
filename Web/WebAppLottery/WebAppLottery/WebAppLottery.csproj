@@ -155,6 +155,7 @@
     </Compile>
     <Compile Include="Models\DataPageModel.cs" />
     <Compile Include="Models\IndexPageModel.cs" />
+    <Compile Include="Models\CustomerAccess.cs" />
     <Compile Include="Common\LotteryStatistic1.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

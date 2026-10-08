@@ -24,12 +24,43 @@ namespace WebAppLottery.Controllers
             m.HiddenTo = string.Format("{0:yyyy-MM-dd}", m.To);
             m.ErrorMessage = "";
 
+            try { CustomerAccess.Load(); }
+            catch (Exception ex)
+            {
+                System.Diagnostics.Trace.TraceError("Customer load failed: {0}", ex.GetType().Name);
+                m.ErrorMessage = "Không thể tải dữ liệu Customer. Vui lòng thử lại hoặc liên hệ quản trị viên.";
+            }
+
             return View(m);
         }
 
         [HttpPost]
+        [ValidateAntiForgeryToken]
         public new ActionResult Request(IndexPageModel m)
         {
+            try
+            {
+                if (string.IsNullOrWhiteSpace(m.Username)) m.ErrorMessage = "Vui lòng nhập Username.";
+                else if (string.IsNullOrEmpty(m.Password)) m.ErrorMessage = "Vui lòng nhập Password.";
+                else
+                {
+                    var now = TimeZoneInfo.ConvertTimeFromUtc(DateTime.UtcNow, TimeZoneInfo.FindSystemTimeZoneById("SE Asia Standard Time"));
+                    m.ErrorMessage = CustomerAccess.Validate(CustomerAccess.Load(), m.Username, m.Password, now);
+                }
+            }
+            catch (Exception ex)
+            {
+                System.Diagnostics.Trace.TraceError("Customer validation failed: {0}", ex.GetType().Name);
+                m.ErrorMessage = "Không thể kiểm tra tài khoản. Vui lòng thử lại hoặc liên hệ quản trị viên.";
+            }
+            m.Password = null;
+            ModelState.Remove("Password");
+            if (!string.IsNullOrEmpty(m.ErrorMessage)) return View("Index", m);
+            if (!ModelState.IsValid)
+            {
+                m.ErrorMessage = "Thông tin yêu cầu không hợp lệ. Vui lòng kiểm tra loại vé và ngày.";
+                return View("Index", m);
+            }
             if (ModelState.IsValid)
             {
                 //************************Render Header*************************//

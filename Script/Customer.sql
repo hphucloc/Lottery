@@ -1,0 +1,17 @@
+USE [Lottery]
+GO
+
+CREATE TABLE dbo.Customer
+(
+    ID INT IDENTITY(1,1) PRIMARY KEY,
+    Username NVARCHAR(100) NOT NULL,
+    [Password] NVARCHAR(255) NOT NULL,
+    FromDate DATETIME2 NULL,
+    ToDate DATETIME2 NULL,
+    IsValid BIT NOT NULL DEFAULT 1,
+    CreatedDate DATETIME2 NOT NULL DEFAULT SYSDATETIME(),
+    UpdatedDate DATETIME2 NULL,
+    DeletedDate DATETIME2 NULL,
+    Note NVARCHAR(MAX) NULL
+);
+GO

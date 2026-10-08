@@ -36,6 +36,9 @@ namespace WebAppLottery.Models
         public DateTime To { get; set; }
         public string HiddenTo { get; set; }
         public string ErrorMessage { get; set; }
+        public string Username { get; set; }
+        [DataType(DataType.Password)]
+        public string Password { get; set; }
         public string NumberTableDisplay { get; set; }
 
         //numberGroupStatistic
